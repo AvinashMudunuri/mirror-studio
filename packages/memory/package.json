@@ -1,5 +1,5 @@
 {
-  "name": "@mirror/agents",
+  "name": "@mirror/memory",
   "version": "0.1.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,15 +9,13 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.32.1",
-    "@mirror/memory": "*",
     "@mirror/schemas": "*",
-    "openai": "^4.104.0",
-    "uuid": "^14.0.1",
-    "zod": "^3.24.1"
+    "pg": "^8.13.1",
+    "openai": "^4.77.0"
   },
   "devDependencies": {
+    "typescript": "^5.7.2",
     "@types/node": "^22.10.2",
-    "typescript": "^5.7.2"
+    "@types/pg": "^8.11.10"
   }
 }
