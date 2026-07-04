@@ -6,6 +6,7 @@ export * from './llm-gateway';
 export * from './ceo-agent';
 export * from './developer-agent';
 export * from './story-architect';
+export * from './character-designer';
 
 // Types
 export type { AgentConfig, AgentContext } from './base-agent-v2';

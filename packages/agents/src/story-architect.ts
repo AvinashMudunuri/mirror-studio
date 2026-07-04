@@ -55,7 +55,7 @@ export interface EmotionalBeat {
   description: string;
 }
 
-export interface CharacterArc {
+export interface StoryCharacterArc {
   characterId: string;
   startState: string;
   endState: string;
@@ -113,7 +113,7 @@ export interface EpisodeOutline {
   branches: Branch[];
   
   emotionalArc: EmotionalBeat[];
-  characterArcs: CharacterArc[];
+  characterArcs: StoryCharacterArc[];
   
   traitMapping: TraitMapping[];
   relationshipDynamics: Array<{
