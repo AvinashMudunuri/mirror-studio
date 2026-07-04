@@ -48,7 +48,12 @@ export interface LLMResponse {
 export class LLMGateway {
   private anthropic?: Anthropic;
   private openai?: OpenAI;
-  private config: Required<LLMConfig>;
+  private config: LLMConfig & {
+    defaultProvider: 'claude' | 'gpt';
+    defaultModel: string;
+    defaultTemperature: number;
+    defaultMaxTokens: number;
+  };
   
   constructor(config: LLMConfig) {
     this.config = {

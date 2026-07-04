@@ -29,7 +29,11 @@ export const AgentIdSchema = z.enum([
   'ANALYTICS',
   'ILLUSTRATION',
   'VOICE_SCRIPT',
-  'JSON_EXPORT'
+  'JSON_EXPORT',
+  'TECH_LEAD',
+  'BACKEND_DEVELOPER',
+  'FRONTEND_DEVELOPER',
+  'DEVOPS'
 ]);
 
 export type AgentId = z.infer<typeof AgentIdSchema>;
