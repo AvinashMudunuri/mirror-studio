@@ -9,12 +9,19 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "test": "turbo run test",
+    "test": "jest",
+    "test:integration": "jest tests/integration",
     "lint": "turbo run lint",
-    "clean": "turbo run clean && rm -rf node_modules"
+    "clean": "turbo run clean && rm -rf node_modules",
+    "sample:episode": "tsx scripts/create-sample-episode.ts"
   },
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.16",
     "@types/uuid": "^10.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
     "tsx": "^4.23.0",
     "turbo": "^2.10.3",
     "typescript": "^5.7.2",
