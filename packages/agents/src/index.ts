@@ -5,6 +5,7 @@ export * from './llm-gateway';
 // Agent implementations
 export * from './ceo-agent';
 export * from './developer-agent';
+export * from './story-architect';
 
 // Types
 export type { AgentConfig, AgentContext } from './base-agent-v2';
