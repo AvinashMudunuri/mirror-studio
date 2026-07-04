@@ -7,6 +7,7 @@ export * from './ceo-agent';
 export * from './developer-agent';
 export * from './story-architect';
 export * from './character-designer';
+export * from './dialogue-writer';
 
 // Types
 export type { AgentConfig, AgentContext } from './base-agent-v2';

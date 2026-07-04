@@ -25,7 +25,7 @@ export interface Scene {
   emotionalBeat: string;
 }
 
-export interface ChoiceOption {
+export interface StoryChoiceOption {
   id: string;
   text: string;
   consequence?: string;
@@ -36,7 +36,7 @@ export interface ChoicePoint {
   scene: string; // scene ID
   prompt: string;
   context?: string;
-  options: ChoiceOption[];
+  options: StoryChoiceOption[];
   traitMapping: Record<string, Record<TraitId, number>>; // option ID -> trait -> delta
 }
 
