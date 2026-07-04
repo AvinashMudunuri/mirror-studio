@@ -13,7 +13,8 @@
     "test:integration": "jest tests/integration",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
-    "sample:episode": "tsx scripts/create-sample-episode.ts"
+    "sample:episode": "tsx scripts/create-sample-episode.ts",
+    "demo:episode": "tsx scripts/demo-sample-episode.ts"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
