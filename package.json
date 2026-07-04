@@ -14,7 +14,8 @@
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
     "sample:episode": "tsx scripts/create-sample-episode.ts",
-    "demo:episode": "tsx scripts/demo-sample-episode.ts"
+    "demo:episode": "tsx scripts/demo-sample-episode.ts",
+    "real:episode": "tsx scripts/create-real-episode-simple.ts"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
