@@ -57,10 +57,15 @@ export DIALOGUE_WRITER_TEMPERATURE="0.9"
 export DEVELOPER_AGENT_TEMPERATURE="0.1"
 ```
 
+**Note for Claude 5+ models:** Temperature values are automatically mapped to Claude's `effort` parameter:
+- **Low effort** (0.0 - 0.3): Deterministic, consistent outputs
+- **Medium effort** (0.4 - 0.6): Balanced reasoning
+- **High effort** (0.7 - 1.0): Creative, exploratory outputs
+
 Default temperatures by role:
-- **Creative** (0.8): Story Architect, Dialogue Writer
-- **Balanced** (0.6): Character Designer, Creative Director, CEO
-- **Analytical** (0.3): Developer Agent
+- **Creative** (0.8 → high effort): Story Architect, Dialogue Writer
+- **Balanced** (0.6 → medium effort): Character Designer, Creative Director, CEO
+- **Analytical** (0.3 → low effort): Developer Agent
 
 ### Token Limits
 

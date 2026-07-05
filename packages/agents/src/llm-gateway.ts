@@ -110,8 +110,12 @@ export class LLMGateway {
     }
 
     const model = options.model || this.config.defaultModel;
-    const temperature = options.temperature ?? this.config.defaultTemperature;
     const maxTokens = options.maxTokens || this.config.defaultMaxTokens;
+    
+    // Claude 5+ models use 'effort' instead of 'temperature'
+    // Map temperature to effort: low temp = low effort, high temp = high effort
+    const temperature = options.temperature ?? this.config.defaultTemperature;
+    const effort = this.mapTemperatureToEffort(temperature);
 
     console.log(`[LLM] Calling Claude (${model}) with ${userPrompt.length} chars`);
 
@@ -122,14 +126,23 @@ export class LLMGateway {
       }
     ];
 
-    const response = await this.anthropic.messages.create({
+    // Build request params based on model version
+    const requestParams: any = {
       model,
       max_tokens: maxTokens,
-      temperature,
-      system: options.systemPrompt,
       messages,
+      system: options.systemPrompt,
       stop_sequences: options.stopSequences
-    });
+    };
+    
+    // Claude 5+ uses 'effort', older models use 'temperature'
+    if (this.isClaudeFiveOrNewer(model)) {
+      requestParams.effort = effort;
+    } else {
+      requestParams.temperature = temperature;
+    }
+
+    const response = await this.anthropic.messages.create(requestParams);
 
     const content = response.content[0];
     const text = content.type === 'text' ? content.text : '';
@@ -145,6 +158,29 @@ export class LLMGateway {
       },
       stopReason: response.stop_reason || 'end_turn'
     };
+  }
+  
+  /**
+   * Check if model is Claude 5 or newer (uses effort parameter)
+   */
+  private isClaudeFiveOrNewer(model: string): boolean {
+    return model.includes('claude-5') || 
+           model.includes('claude-sonnet-5') || 
+           model.includes('claude-opus-5') ||
+           model.includes('claude-fable-5') ||
+           model.includes('claude-haiku-5');
+  }
+  
+  /**
+   * Map temperature (0-1) to effort parameter for Claude 5+
+   * Low temperature (0-0.3) = low effort (deterministic)
+   * Medium temperature (0.4-0.6) = medium effort (balanced)
+   * High temperature (0.7-1.0) = high effort (creative)
+   */
+  private mapTemperatureToEffort(temperature: number): 'low' | 'medium' | 'high' {
+    if (temperature <= 0.3) return 'low';
+    if (temperature <= 0.6) return 'medium';
+    return 'high';
   }
 
   /**
