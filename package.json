@@ -11,6 +11,7 @@
     "build": "turbo run build",
     "test": "jest",
     "test:integration": "jest tests/integration",
+    "test:models": "node scripts/test-api-models.js",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
     "sample:episode": "npx tsx scripts/create-sample-episode.ts",
