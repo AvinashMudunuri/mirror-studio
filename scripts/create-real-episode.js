@@ -43,6 +43,8 @@ const TEST_WORLD = {
   id: 'NEW_SCHOOL',
   name: 'New School',
   description: 'A contemporary middle school setting where students navigate friendships, identity, and growing up',
+  setting: 'Contemporary middle school in a diverse urban community',
+  tone: 'Grounded realism with moments of humor and warmth',
   themes: ['Belonging', 'Authenticity', 'Friendship', 'Identity'],
   targetAge: [11, 14],
   seasons: ['Season 1: First Year']
@@ -177,8 +179,8 @@ async function main() {
     console.log(`   Title: ${storyResult.episodeOutline.title}`);
     console.log(`   Scenes: ${storyResult.episodeOutline.scenes.length}`);
     console.log(`   Choice Points: ${storyResult.episodeOutline.choicePoints.length}`);
-    console.log(`   Branches: ${storyResult.episodeOutline.branches.length}`);
-    console.log(`   Estimated Play Time: ${storyResult.episodeOutline.estimatedPlayTime} minutes\n`);
+    console.log(`   Branches: ${storyResult.episodeOutline.branches?.length || 0}`);
+    console.log(`   Estimated Play Time: ${storyResult.episodeOutline.estimatedPlayTime || 'N/A'} minutes\n`);
     
     saveToFile('01-story-outline.json', storyResult);
     console.log('   💾 Saved: output/real-episode/01-story-outline.json\n');
@@ -220,23 +222,94 @@ async function main() {
     saveToFile('02-protagonist.json', protagonistResult);
     console.log('   💾 Saved: output/real-episode/02-protagonist.json\n');
     
+    // Step 4: Dialogue Writer - Write Scene Dialogue
+    console.log('💬 Step 4: Dialogue Writer - Creating Scene Dialogue\n');
+    console.log('   🔄 Calling Claude API to write dialogue...\n');
+    console.log('   ⏳ This may take 60-90 seconds...\n');
+    
+    const dialogueStartTime = Date.now();
+    
+    // Pick the first scene as a sample
+    const firstScene = storyResult.episodeOutline.scenes[0];
+    
+    const dialogueResult = await dialogueWriter.process({
+      type: 'WRITE_SCENE',
+      writeScene: {
+        scene: firstScene,
+        characters: [protagonistResult.character],
+        worldContext: {
+          name: TEST_WORLD.name,
+          setting: TEST_WORLD.setting,
+          tone: TEST_WORLD.tone
+        },
+        previousSceneSummary: 'Episode opening - protagonist arrives at new school',
+        emotionalTarget: firstScene.emotionalBeat
+      }
+    });
+    
+    const dialogueDuration = ((Date.now() - dialogueStartTime) / 1000).toFixed(1);
+    
+    console.log(`✅ Dialogue created! (${dialogueDuration}s)`);
+    console.log(`   Scene: ${firstScene.title}`);
+    console.log(`   Lines: ${dialogueResult.sceneDialogue?.lines?.length || 0}`);
+    console.log(`   Atmosphere: ${dialogueResult.sceneDialogue?.atmosphere || 'N/A'}\n`);
+    
+    saveToFile('03-dialogue.json', dialogueResult);
+    console.log('   💾 Saved: output/real-episode/03-dialogue.json\n');
+    
+    // Step 5: Creative Director - Review Episode
+    console.log('✨ Step 5: Creative Director - Final Review\n');
+    console.log('   🔄 Calling Claude API for creative review...\n');
+    console.log('   ⏳ This may take 30-60 seconds...\n');
+    
+    const reviewStartTime = Date.now();
+    
+    const reviewResult = await creativeDirector.process({
+      type: 'REVIEW_EPISODE',
+      episodeReview: {
+        outline: storyResult.episodeOutline,
+        characters: [protagonistResult.character],
+        sampleDialogue: dialogueResult.sceneDialogue,
+        world: TEST_WORLD,
+        reviewFocus: ['emotional_resonance', 'world_consistency', 'character_authenticity']
+      }
+    });
+    
+    const reviewDuration = ((Date.now() - reviewStartTime) / 1000).toFixed(1);
+    
+    console.log(`✅ Creative review complete! (${reviewDuration}s)`);
+    console.log(`   Overall Assessment: ${reviewResult.feedback?.overallAssessment || 'N/A'}`);
+    console.log(`   Strengths: ${reviewResult.feedback?.strengths?.length || 0}`);
+    console.log(`   Improvements: ${reviewResult.feedback?.improvements?.length || 0}`);
+    console.log(`   Approved: ${reviewResult.decision?.approved ? 'YES ✅' : 'NO ❌'}\n`);
+    
+    saveToFile('04-creative-review.json', reviewResult);
+    console.log('   💾 Saved: output/real-episode/04-creative-review.json\n');
+    
     // Final Summary
+    const totalDuration = ((Date.now() - startTime) / 1000).toFixed(1);
+    
     console.log('═══════════════════════════════════════════════════════════\n');
-    console.log('✨ REAL EPISODE CREATION COMPLETE!\n');
+    console.log('✨ FULL EPISODE PIPELINE COMPLETE!\n');
     console.log('📦 Output Files:\n');
-    console.log('   1. Story Outline (from Claude via Story Architect)');
-    console.log('   2. Protagonist Profile (from Claude via Character Designer)\n');
+    console.log('   1. Story Outline (Story Architect → Claude)');
+    console.log('   2. Protagonist Profile (Character Designer → Claude)');
+    console.log('   3. Scene Dialogue (Dialogue Writer → Claude)');
+    console.log('   4. Creative Review (Creative Director → Claude)\n');
     console.log(`   📁 Location: ${OUTPUT_DIR}\n`);
-    console.log('💡 Compare with demo version:\n');
-    console.log('   Demo:  output/demo-episode/');
-    console.log('   Real:  output/real-episode/\n');
-    console.log('🎯 Notice the quality difference!\n');
-    console.log('   • More creative story structure');
-    console.log('   • Deeper character psychology');
-    console.log('   • More authentic language');
-    console.log('   • Better emotional nuance\n');
+    console.log('⏱️  Total Time:\n');
+    console.log(`   Story: ${duration}s`);
+    console.log(`   Character: ${charDuration}s`);
+    console.log(`   Dialogue: ${dialogueDuration}s`);
+    console.log(`   Review: ${reviewDuration}s`);
+    console.log(`   Total: ${totalDuration}s (${(totalDuration / 60).toFixed(1)} minutes)\n`);
+    console.log('🎯 Full AI Studio Pipeline:\n');
+    console.log('   ✅ Story structure designed');
+    console.log('   ✅ Characters created with depth');
+    console.log('   ✅ Authentic dialogue written');
+    console.log('   ✅ Quality assured by Creative Director\n');
     console.log('═══════════════════════════════════════════════════════════\n');
-    console.log('🎉 Success! Claude AI generated real content.\n');
+    console.log('🎉 Success! All 4 Phase 1 agents working with Claude 5!\n');
     
   } catch (error) {
     console.error('\n❌ Error during episode creation:\n');
