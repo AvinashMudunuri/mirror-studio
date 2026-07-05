@@ -77,6 +77,13 @@ export const AGENT_MODELS = {
     temperature: LLM_CONFIG.temperatures.analytical,
     maxTokens: LLM_CONFIG.maxTokens.large,
   },
+  
+  // Validation Agents
+  QA_REVIEWER: {
+    model: LLM_CONFIG.defaultModels.anthropic,
+    temperature: 0.2, // Very low for deterministic validation
+    maxTokens: LLM_CONFIG.maxTokens.medium,
+  },
 } as const;
 
 // Helper to override model for a specific agent via environment variable

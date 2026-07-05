@@ -3,13 +3,16 @@ export * from './base-agent-v2';
 export * from './llm-gateway';
 export * from './config';
 
-// Agent implementations
+// Content Creation Agents
 export * from './ceo-agent';
 export * from './developer-agent';
 export * from './story-architect';
 export * from './character-designer';
 export * from './dialogue-writer';
 export * from './creative-director';
+
+// Validation Agents
+export * from './qa-reviewer';
 
 // Types
 export type { AgentConfig, AgentContext } from './base-agent-v2';
