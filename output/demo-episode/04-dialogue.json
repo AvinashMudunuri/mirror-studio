@@ -1,0 +1,78 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1",
+      "lines": [
+        {
+          "id": "line-1",
+          "character": "NARRATOR",
+          "text": "Your heart is pounding as you stand in front of Jefferson Middle School.",
+          "emotion": "ANXIOUS"
+        },
+        {
+          "id": "line-2",
+          "character": "INTERNAL",
+          "text": "Okay. Deep breath. You can do this.",
+          "emotion": "ANXIOUS"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2",
+      "lines": [
+        {
+          "id": "line-3",
+          "character": "jordan-001",
+          "text": "Hey! You look lost. First day?",
+          "emotion": "HAPPY"
+        },
+        {
+          "id": "line-4",
+          "character": "alex-001",
+          "text": "Um, yeah. I can't find room 214.",
+          "emotion": "NERVOUS"
+        },
+        {
+          "id": "line-5",
+          "character": "jordan-001",
+          "text": "Oh, I know where that is! Want me to show you?",
+          "emotion": "HAPPY"
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "opt-1a",
+          "text": "That would be amazing, thank you!"
+        },
+        {
+          "id": "opt-1b",
+          "text": "Thanks, but I think I can find it."
+        }
+      ],
+      "responseDialogue": {
+        "opt-1a": [
+          {
+            "id": "resp-1a-1",
+            "character": "jordan-001",
+            "text": "Awesome! I'm Jordan, by the way.",
+            "emotion": "HAPPY"
+          }
+        ],
+        "opt-1b": [
+          {
+            "id": "resp-1b-1",
+            "character": "jordan-001",
+            "text": "Oh, okay! Good luck!",
+            "emotion": "NEUTRAL"
+          }
+        ]
+      }
+    }
+  ],
+  "voiceNotes": "Dialogue maintains authentic 11-14 year old voice with appropriate nervousness and warmth"
+}

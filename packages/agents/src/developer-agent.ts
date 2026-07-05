@@ -1,4 +1,5 @@
 import { BaseAgent, AgentConfig } from './base-agent-v2';
+import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 
 /**
  * Developer Agent - First AI agent that writes code
@@ -100,9 +101,9 @@ export class DeveloperAgent extends BaseAgent {
       id: 'BACKEND_DEVELOPER',
       name: 'Dev',
       role: 'Backend Developer',
-      model: 'claude-sonnet-4.5', // Best for code generation
-      temperature: 0.2, // Lower for more deterministic code
-      maxTokens: 8192 // Longer for code generation
+      model: getAgentModel('DEVELOPER_AGENT'),
+      temperature: getAgentTemperature('DEVELOPER_AGENT'),
+      maxTokens: getAgentMaxTokens('DEVELOPER_AGENT')
     });
   }
   

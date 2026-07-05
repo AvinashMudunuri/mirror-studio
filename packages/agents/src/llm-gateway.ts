@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import OpenAI from 'openai';
+import { LLM_CONFIG } from './config';
 
 /**
  * LLM Gateway - Unified interface for multiple LLM providers
@@ -58,9 +59,9 @@ export class LLMGateway {
   constructor(config: LLMConfig) {
     this.config = {
       defaultProvider: 'claude',
-      defaultModel: 'claude-sonnet-4.5',
-      defaultTemperature: 0.3,
-      defaultMaxTokens: 4096,
+      defaultModel: LLM_CONFIG.defaultModels.anthropic,
+      defaultTemperature: LLM_CONFIG.temperatures.balanced,
+      defaultMaxTokens: LLM_CONFIG.maxTokens.medium,
       ...config
     };
 
@@ -109,8 +110,12 @@ export class LLMGateway {
     }
 
     const model = options.model || this.config.defaultModel;
-    const temperature = options.temperature ?? this.config.defaultTemperature;
     const maxTokens = options.maxTokens || this.config.defaultMaxTokens;
+    
+    // Claude 5+ models use 'effort' instead of 'temperature'
+    // Map temperature to effort: low temp = low effort, high temp = high effort
+    const temperature = options.temperature ?? this.config.defaultTemperature;
+    const effort = this.mapTemperatureToEffort(temperature);
 
     console.log(`[LLM] Calling Claude (${model}) with ${userPrompt.length} chars`);
 
@@ -121,17 +126,62 @@ export class LLMGateway {
       }
     ];
 
-    const response = await this.anthropic.messages.create({
+    // Build request params based on model version
+    const requestParams: any = {
       model,
       max_tokens: maxTokens,
-      temperature,
-      system: options.systemPrompt,
       messages,
+      system: options.systemPrompt,
       stop_sequences: options.stopSequences
-    });
+    };
+    
+    // Claude 5+ (and Opus 4.6+) use adaptive thinking + output_config.effort.
+    // `effort` is NOT a top-level param — it's nested under output_config,
+    // and requires thinking: { type: 'adaptive' } alongside it.
+    if (this.isClaudeFiveOrNewer(model)) {
+      requestParams.thinking = { type: 'adaptive' };
+      // Only set output_config if effort is not 'high' (high is default)
+      // This keeps prompt caching more stable
+      if (effort !== 'high') {
+        requestParams.output_config = { effort };
+      }
+    } else {
+      requestParams.temperature = temperature;
+    }
 
-    const content = response.content[0];
-    const text = content.type === 'text' ? content.text : '';
+    const response = await this.anthropic.messages.create(requestParams);
+
+    // Claude 5+ with adaptive thinking returns thinking blocks + text blocks
+    // Log what we got back
+    console.log(`[LLM] Response contains ${response.content.length} content blocks:`);
+    response.content.forEach((block, i) => {
+      console.log(`[LLM]   Block ${i}: type=${block.type}, length=${block.type === 'text' ? block.text.length : 'N/A'}`);
+    });
+    
+    // Find the text block (don't assume content[0] is text)
+    const textBlock = response.content.find(b => b.type === 'text');
+    
+    if (!textBlock) {
+      console.warn('[LLM] No text block found in response, only thinking blocks');
+      console.warn('[LLM] Response content:', JSON.stringify(response.content.map(b => ({ type: b.type, preview: b.type === 'text' ? b.text.substring(0, 100) : 'thinking' })), null, 2));
+      
+      // If there's only thinking, return empty (caller should handle this)
+      return {
+        content: '',
+        model,
+        provider: 'claude',
+        usage: {
+          inputTokens: response.usage.input_tokens,
+          outputTokens: response.usage.output_tokens,
+          totalTokens: response.usage.input_tokens + response.usage.output_tokens
+        },
+        stopReason: response.stop_reason || 'end_turn'
+      };
+    }
+    
+    const text = textBlock.type === 'text' ? textBlock.text : '';
+    
+    console.log(`[LLM] Extracted text block with ${text.length} characters`);
 
     return {
       content: text,
@@ -144,6 +194,48 @@ export class LLMGateway {
       },
       stopReason: response.stop_reason || 'end_turn'
     };
+  }
+  
+  /**
+   * Check if model is Claude 5+ or Opus 4.6+ (uses effort + adaptive thinking)
+   */
+  private isClaudeFiveOrNewer(model: string): boolean {
+    // Claude 5 models
+    if (model.includes('claude-5') || 
+        model.includes('claude-sonnet-5') || 
+        model.includes('claude-opus-5') ||
+        model.includes('claude-fable-5') ||
+        model.includes('claude-haiku-5')) {
+      return true;
+    }
+    
+    // Opus 4.6+ also supports adaptive thinking + effort
+    if (model.includes('claude-opus-4')) {
+      const versionMatch = model.match(/opus-4[.-](\d+)/);
+      if (versionMatch) {
+        const minorVersion = parseInt(versionMatch[1], 10);
+        return minorVersion >= 6;
+      }
+    }
+    
+    return false;
+  }
+  
+  /**
+   * Map temperature (0-1) to effort parameter for Claude 5+
+   * 
+   * Note: 'high' effort is the default, so we only return it when explicitly needed.
+   * This optimization keeps prompt caching more stable by avoiding unnecessary
+   * output_config changes.
+   * 
+   * Low temperature (0-0.3) = low effort (deterministic)
+   * Medium temperature (0.4-0.6) = medium effort (balanced)
+   * High temperature (0.7-1.0) = high effort (creative, default)
+   */
+  private mapTemperatureToEffort(temperature: number): 'low' | 'medium' | 'high' {
+    if (temperature <= 0.3) return 'low';
+    if (temperature <= 0.6) return 'medium';
+    return 'high';
   }
 
   /**

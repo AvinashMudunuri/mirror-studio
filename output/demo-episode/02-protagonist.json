@@ -1,0 +1,82 @@
+{
+  "character": {
+    "id": "alex-001",
+    "name": "Alex Chen",
+    "age": 12,
+    "pronouns": "they/them",
+    "appearance": {
+      "brief": "East Asian, medium height, glasses",
+      "distinctiveFeatures": [
+        "Star-patterned backpack",
+        "Graphic novel keychain"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "Thoughtful",
+        "Creative",
+        "Observant"
+      ],
+      "bigFiveProfile": {
+        "openness": 75,
+        "conscientiousness": 60,
+        "extraversion": 45,
+        "agreeableness": 70,
+        "neuroticism": 55
+      },
+      "mannerisms": [
+        "Adjusts glasses when nervous",
+        "Doodles when thinking"
+      ],
+      "speechPatterns": [
+        "Thoughtful pauses",
+        "Uses \"like\" and \"kinda\""
+      ],
+      "emotionalTendencies": "Processes internally before expressing"
+    },
+    "background": {
+      "family": "Two parents, older sister away at college",
+      "interests": [
+        "Graphic novels",
+        "Drawing",
+        "Video games"
+      ],
+      "strengths": [
+        "Creative",
+        "Empathetic",
+        "Good listener"
+      ],
+      "struggles": [
+        "Social anxiety",
+        "Fear of judgment"
+      ],
+      "secrets": [
+        "Writes and draws their own comic series"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Make friends",
+        "Fit in"
+      ],
+      "unconscious": [
+        "Be accepted for who they are",
+        "Find their people"
+      ]
+    },
+    "relationships": {},
+    "voiceGuidelines": {
+      "vocabularyLevel": "Age-appropriate 12-year-old",
+      "sentenceComplexity": "Simple to moderate",
+      "emotionalExpressiveness": "Reserved but genuine",
+      "examples": [
+        "Um, hi?",
+        "That's actually pretty cool.",
+        "I guess I could try..."
+      ]
+    },
+    "storyRole": "Protagonist - relatable middle schooler",
+    "worldId": "NEW_SCHOOL"
+  },
+  "designNotes": "Relatable protagonist for 11-14 age group"
+}

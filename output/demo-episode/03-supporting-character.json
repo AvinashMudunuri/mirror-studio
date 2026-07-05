@@ -1,0 +1,80 @@
+{
+  "character": {
+    "id": "jordan-001",
+    "name": "Jordan Park",
+    "age": 13,
+    "pronouns": "she/her",
+    "appearance": {
+      "brief": "Korean American, athletic build, always smiling",
+      "distinctiveFeatures": [
+        "Soccer team jacket",
+        "Colorful friendship bracelets"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "Outgoing",
+        "Welcoming",
+        "Energetic"
+      ],
+      "bigFiveProfile": {
+        "openness": 80,
+        "conscientiousness": 65,
+        "extraversion": 85,
+        "agreeableness": 80,
+        "neuroticism": 30
+      },
+      "mannerisms": [
+        "Waves enthusiastically",
+        "Laughs easily"
+      ],
+      "speechPatterns": [
+        "Upbeat tone",
+        "Uses encouraging language"
+      ],
+      "emotionalTendencies": "Openly expressive and warm"
+    },
+    "background": {
+      "family": "Large extended family, two younger siblings",
+      "interests": [
+        "Soccer",
+        "Making friends",
+        "Organizing events"
+      ],
+      "strengths": [
+        "Social connector",
+        "Empathetic",
+        "Natural leader"
+      ],
+      "struggles": [
+        "Sometimes too eager",
+        "Doesn't always read the room"
+      ],
+      "secrets": []
+    },
+    "goals": {
+      "conscious": [
+        "Be a good friend",
+        "Make everyone feel welcome"
+      ],
+      "unconscious": [
+        "Be needed",
+        "Avoid being alone"
+      ]
+    },
+    "relationships": {},
+    "voiceGuidelines": {
+      "vocabularyLevel": "Age-appropriate 13-year-old",
+      "sentenceComplexity": "Enthusiastic and flowing",
+      "emotionalExpressiveness": "Very open and warm",
+      "examples": [
+        "Hey! You look lost, need help?",
+        "Oh my god, that's so cool!",
+        "Come sit with us!"
+      ]
+    },
+    "storyRole": "Supporting - welcoming friend",
+    "worldId": "NEW_SCHOOL"
+  },
+  "designNotes": "Warm, welcoming character to help protagonist feel comfortable"
+}

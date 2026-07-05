@@ -1,0 +1,155 @@
+{
+  "episodeOutline": {
+    "title": "First Day",
+    "synopsis": "Alex navigates their first day at Jefferson Middle School after moving from another city.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "Arrival",
+        "location": "School Entrance",
+        "characters": [
+          "alex"
+        ],
+        "duration": 2,
+        "description": "Alex arrives at the school, feeling nervous",
+        "emotionalBeat": "Anxiety and hope"
+      },
+      {
+        "id": "scene-2",
+        "title": "Lost in Hallways",
+        "location": "School Hallway",
+        "characters": [
+          "alex",
+          "jordan"
+        ],
+        "duration": 3,
+        "description": "Alex gets lost trying to find their homeroom",
+        "emotionalBeat": "Embarrassment turning to relief"
+      },
+      {
+        "id": "scene-3",
+        "title": "Lunch Table Decision",
+        "location": "Cafeteria",
+        "characters": [
+          "alex",
+          "jordan",
+          "casey"
+        ],
+        "duration": 4,
+        "description": "Alex must choose where to sit at lunch",
+        "emotionalBeat": "Social anxiety and decision pressure"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2",
+        "prompt": "Jordan offers to help you find your class. How do you respond?",
+        "options": [
+          {
+            "id": "opt-1a",
+            "text": "Accept gratefully"
+          },
+          {
+            "id": "opt-1b",
+            "text": "Politely decline, try alone"
+          }
+        ]
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-3",
+        "prompt": "Where do you sit at lunch?",
+        "options": [
+          {
+            "id": "opt-2a",
+            "text": "With Jordan at their table"
+          },
+          {
+            "id": "opt-2b",
+            "text": "Alone to observe"
+          }
+        ]
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-friendly",
+        "name": "Opening Up",
+        "triggeredBy": [
+          "opt-1a",
+          "opt-2a"
+        ],
+        "description": "Alex makes friends quickly",
+        "outcome": "Strong initial friendship with Jordan"
+      },
+      {
+        "id": "branch-cautious",
+        "name": "Taking It Slow",
+        "triggeredBy": [
+          "opt-1b",
+          "opt-2b"
+        ],
+        "description": "Alex observes before committing",
+        "outcome": "Slower friendship development but careful choices"
+      }
+    ],
+    "emotionalArc": [
+      {
+        "scene": "scene-1",
+        "emotion": "Nervous",
+        "intensity": 7,
+        "description": "First day jitters"
+      },
+      {
+        "scene": "scene-2",
+        "emotion": "Relieved",
+        "intensity": 5,
+        "description": "Help arrives"
+      },
+      {
+        "scene": "scene-3",
+        "emotion": "Hopeful",
+        "intensity": 6,
+        "description": "Potential friendship"
+      }
+    ],
+    "characterArcs": [
+      {
+        "characterId": "alex",
+        "startState": "Nervous outsider",
+        "endState": "Cautiously hopeful",
+        "keyMoments": [
+          "scene-1",
+          "scene-2",
+          "scene-3"
+        ]
+      }
+    ],
+    "traitMapping": [],
+    "relationshipDynamics": [],
+    "replayHooks": [
+      "Try different lunch choices",
+      "See alternate friendship paths"
+    ],
+    "estimatedPlayTime": 12,
+    "educationalGoals": [
+      "Practice social courage",
+      "Learn to ask for help"
+    ],
+    "conversationStarters": [
+      "What was your first day at a new school like?"
+    ]
+  },
+  "designNotes": "Focus on relatable first-day anxiety with hopeful outcome"
+}
