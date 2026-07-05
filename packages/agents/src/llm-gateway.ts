@@ -135,17 +135,26 @@ export class LLMGateway {
       stop_sequences: options.stopSequences
     };
     
-    // Claude 5+ uses 'effort', older models use 'temperature'
+    // Claude 5+ (and Opus 4.6+) use adaptive thinking + output_config.effort.
+    // `effort` is NOT a top-level param — it's nested under output_config,
+    // and requires thinking: { type: 'adaptive' } alongside it.
     if (this.isClaudeFiveOrNewer(model)) {
-      requestParams.effort = effort;
+      requestParams.thinking = { type: 'adaptive' };
+      // Only set output_config if effort is not 'high' (high is default)
+      // This keeps prompt caching more stable
+      if (effort !== 'high') {
+        requestParams.output_config = { effort };
+      }
     } else {
       requestParams.temperature = temperature;
     }
 
     const response = await this.anthropic.messages.create(requestParams);
 
-    const content = response.content[0];
-    const text = content.type === 'text' ? content.text : '';
+    // Claude 5+ with adaptive thinking returns thinking blocks + text blocks
+    // Find the text block (don't assume content[0] is text)
+    const textBlock = response.content.find(b => b.type === 'text');
+    const text = textBlock?.type === 'text' ? textBlock.text : '';
 
     return {
       content: text,
@@ -161,21 +170,40 @@ export class LLMGateway {
   }
   
   /**
-   * Check if model is Claude 5 or newer (uses effort parameter)
+   * Check if model is Claude 5+ or Opus 4.6+ (uses effort + adaptive thinking)
    */
   private isClaudeFiveOrNewer(model: string): boolean {
-    return model.includes('claude-5') || 
-           model.includes('claude-sonnet-5') || 
-           model.includes('claude-opus-5') ||
-           model.includes('claude-fable-5') ||
-           model.includes('claude-haiku-5');
+    // Claude 5 models
+    if (model.includes('claude-5') || 
+        model.includes('claude-sonnet-5') || 
+        model.includes('claude-opus-5') ||
+        model.includes('claude-fable-5') ||
+        model.includes('claude-haiku-5')) {
+      return true;
+    }
+    
+    // Opus 4.6+ also supports adaptive thinking + effort
+    if (model.includes('claude-opus-4')) {
+      const versionMatch = model.match(/opus-4[.-](\d+)/);
+      if (versionMatch) {
+        const minorVersion = parseInt(versionMatch[1], 10);
+        return minorVersion >= 6;
+      }
+    }
+    
+    return false;
   }
   
   /**
    * Map temperature (0-1) to effort parameter for Claude 5+
+   * 
+   * Note: 'high' effort is the default, so we only return it when explicitly needed.
+   * This optimization keeps prompt caching more stable by avoiding unnecessary
+   * output_config changes.
+   * 
    * Low temperature (0-0.3) = low effort (deterministic)
    * Medium temperature (0.4-0.6) = medium effort (balanced)
-   * High temperature (0.7-1.0) = high effort (creative)
+   * High temperature (0.7-1.0) = high effort (creative, default)
    */
   private mapTemperatureToEffort(temperature: number): 'low' | 'medium' | 'high' {
     if (temperature <= 0.3) return 'low';

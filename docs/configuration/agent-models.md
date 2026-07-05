@@ -57,10 +57,12 @@ export DIALOGUE_WRITER_TEMPERATURE="0.9"
 export DEVELOPER_AGENT_TEMPERATURE="0.1"
 ```
 
-**Note for Claude 5+ models:** Temperature values are automatically mapped to Claude's `effort` parameter:
+**Note for Claude 5+ models:** Temperature values are automatically mapped to Claude's `effort` parameter (nested in `output_config` with adaptive thinking):
 - **Low effort** (0.0 - 0.3): Deterministic, consistent outputs
 - **Medium effort** (0.4 - 0.6): Balanced reasoning
-- **High effort** (0.7 - 1.0): Creative, exploratory outputs
+- **High effort** (0.7 - 1.0): Creative, exploratory outputs (default - not sent to optimize caching)
+
+The system automatically uses `thinking: { type: 'adaptive' }` for Claude 5+ and Opus 4.6+, which enables the model to show its reasoning process alongside the final response.
 
 Default temperatures by role:
 - **Creative** (0.8 → high effort): Story Architect, Dialogue Writer

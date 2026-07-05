@@ -18,11 +18,12 @@ export const LLM_CONFIG = {
   },
   
   // Default temperature settings by agent role
-  // NOTE: For Claude 5+ models (claude-sonnet-5, claude-opus-5, etc.),
-  // temperature is automatically mapped to 'effort' parameter:
+  // NOTE: For Claude 5+ models (claude-sonnet-5, claude-opus-5, etc.) and Opus 4.6+,
+  // temperature is automatically mapped to 'effort' parameter nested in output_config
+  // with adaptive thinking enabled:
   //   0.0-0.3 = low effort (deterministic)
   //   0.4-0.6 = medium effort (balanced)
-  //   0.7-1.0 = high effort (creative)
+  //   0.7-1.0 = high effort (creative, default - not sent to optimize caching)
   temperatures: {
     creative: 0.8,      // Story Architect, Dialogue Writer
     analytical: 0.3,    // Developer Agent
