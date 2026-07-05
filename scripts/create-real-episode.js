@@ -8,14 +8,17 @@
 const path = require('path');
 const fs = require('fs');
 
-// Import from built packages
+// Import from built packages (resolve from script location)
+const packageRoot = path.resolve(__dirname, '..');
+const agentsPath = path.join(packageRoot, 'packages', 'agents', 'dist', 'index.js');
+
 const { 
   StoryArchitectAgent,
   CharacterDesignerAgent,
   DialogueWriterAgent,
   CreativeDirectorAgent,
   createLLMGateway
-} = require('../packages/agents/dist/index.js');
+} = require(agentsPath);
 
 const { v4: uuidv4 } = require('uuid');
 
