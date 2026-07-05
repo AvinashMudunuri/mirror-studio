@@ -12,6 +12,7 @@
     "@anthropic-ai/sdk": "^0.32.1",
     "@mirror/memory": "*",
     "@mirror/schemas": "*",
+    "jsonrepair": "^3.15.0",
     "openai": "^4.104.0",
     "uuid": "^14.0.1",
     "zod": "^3.24.1"

@@ -9,6 +9,7 @@
 
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
+import { jsonrepair } from 'jsonrepair';
 import type {
   Character,
   TraitId
@@ -372,8 +373,18 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
     
     let jsonString = jsonMatch[1];
     
-    // Clean common JSON issues that LLMs introduce
+    // First, apply basic cleaning
     jsonString = this.cleanJsonString(jsonString);
+    
+    // Then use jsonrepair to fix remaining issues
+    try {
+      console.log('[Story Architect] Attempting to repair JSON...');
+      jsonString = jsonrepair(jsonString);
+      console.log('[Story Architect] JSON repair successful');
+    } catch (repairError) {
+      console.warn('[Story Architect] JSON repair failed:', repairError);
+      // Continue with cleaned JSON, maybe native parse will work
+    }
     
     try {
       const parsed = JSON.parse(jsonString);
@@ -383,12 +394,17 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
         throw new Error('Invalid outline structure - missing episodeOutline.title');
       }
       
+      console.log('[Story Architect] Successfully parsed episode outline:', parsed.episodeOutline.title);
       return parsed as StoryArchitectOutput;
     } catch (error) {
       console.error('Failed to parse outline:', error);
       console.error('JSON string length:', jsonString.length);
       console.error('JSON preview (first 500 chars):', jsonString.substring(0, 500));
       console.error('JSON preview (around error position):', this.getJsonErrorContext(jsonString, error));
+      
+      // Save the failed JSON for debugging
+      console.error('Full JSON saved for debugging (first 2000 chars):', jsonString.substring(0, 2000));
+      
       throw new Error(`Failed to parse episode outline: ${error}`);
     }
   }
