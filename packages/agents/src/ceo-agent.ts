@@ -47,7 +47,7 @@ export class CEOAgent extends BaseAgent {
       id: 'CEO',
       name: 'Morgan',
       role: 'CEO and Strategic Overseer',
-      model: 'claude-3-opus-20240229',
+      model: 'claude-sonnet-5',
       temperature: 0.3, // Lower temperature for consistent decision-making
       maxTokens: 4096
     });

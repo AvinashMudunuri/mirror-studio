@@ -95,7 +95,7 @@ export class CreativeDirectorAgent extends BaseAgent {
       id: 'CREATIVE_DIRECTOR',
       name: 'Aria',
       role: 'Creative Vision Keeper',
-      model: 'claude-3-opus-20240229',
+      model: 'claude-sonnet-5',
       temperature: 0.6,
       maxTokens: 6144
     };

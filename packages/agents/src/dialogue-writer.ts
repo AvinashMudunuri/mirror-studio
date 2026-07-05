@@ -99,7 +99,7 @@ export class DialogueWriterAgent extends BaseAgent {
       id: 'DIALOGUE_WRITER',
       name: 'Echo',
       role: 'Dialogue and Voice Specialist',
-      model: 'claude-3-opus-20240229',
+      model: 'claude-sonnet-5',
       temperature: 0.7, // Higher for creative, authentic dialogue
       maxTokens: 8192
     };

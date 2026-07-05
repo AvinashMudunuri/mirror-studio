@@ -147,7 +147,7 @@ export class StoryArchitectAgent extends BaseAgent {
       id: 'STORY_ARCHITECT',
       name: 'River',
       role: 'Lead Story Designer',
-      model: 'claude-3-opus-20240229',
+      model: 'claude-sonnet-5',
       temperature: 0.5,
       maxTokens: 8192
     };

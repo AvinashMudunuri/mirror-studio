@@ -58,7 +58,7 @@ export class LLMGateway {
   constructor(config: LLMConfig) {
     this.config = {
       defaultProvider: 'claude',
-      defaultModel: 'claude-3-opus-20240229',
+      defaultModel: 'claude-sonnet-5',
       defaultTemperature: 0.3,
       defaultMaxTokens: 4096,
       ...config
