@@ -217,7 +217,9 @@ Be creative. Be honest about uncertainties. Suggest alternatives.`;
 YOUR TASK:
 Design a complete episode outline.
 
-FORMAT YOUR RESPONSE AS JSON:
+CRITICAL: Format your response as VALID JSON only. No comments, no trailing commas, no markdown except the code block wrapper.
+
+Return ONLY this JSON structure (wrapped in \`\`\`json code block):
 {
   "episodeOutline": {
     "title": "...",
@@ -264,7 +266,15 @@ FORMAT YOUR RESPONSE AS JSON:
   "designNotes": "...",
   "uncertainties": [...],
   "alternativesConsidered": [...]
-}`;
+}
+
+IMPORTANT REMINDERS:
+- Return ONLY valid JSON wrapped in \`\`\`json code block
+- NO trailing commas in arrays or objects
+- NO comments in the JSON
+- All string values must use double quotes
+- Ensure all brackets and braces are properly closed
+- Test that your JSON is valid before returning it`;
     
     const response = await this.callLLM(
       this.systemPrompt,
@@ -355,22 +365,73 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
     const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
     
     if (!jsonMatch) {
-      throw new Error('Failed to parse JSON from LLM response');
+      console.error('[Story Architect] No JSON found in response');
+      console.error('Response preview:', content.substring(0, 500));
+      throw new Error('Failed to parse JSON from LLM response - no JSON block found');
     }
     
+    let jsonString = jsonMatch[1];
+    
+    // Clean common JSON issues that LLMs introduce
+    jsonString = this.cleanJsonString(jsonString);
+    
     try {
-      const parsed = JSON.parse(jsonMatch[1]);
+      const parsed = JSON.parse(jsonString);
       
       // Validate required fields
       if (!parsed.episodeOutline || !parsed.episodeOutline.title) {
-        throw new Error('Invalid outline structure');
+        throw new Error('Invalid outline structure - missing episodeOutline.title');
       }
       
       return parsed as StoryArchitectOutput;
     } catch (error) {
       console.error('Failed to parse outline:', error);
+      console.error('JSON string length:', jsonString.length);
+      console.error('JSON preview (first 500 chars):', jsonString.substring(0, 500));
+      console.error('JSON preview (around error position):', this.getJsonErrorContext(jsonString, error));
       throw new Error(`Failed to parse episode outline: ${error}`);
     }
+  }
+  
+  /**
+   * Clean common JSON formatting issues introduced by LLMs
+   */
+  private cleanJsonString(json: string): string {
+    // Remove trailing commas before closing brackets/braces
+    json = json.replace(/,(\s*[}\]])/g, '$1');
+    
+    // Remove comments (// style)
+    json = json.replace(/\/\/[^\n]*/g, '');
+    
+    // Remove comments (/* */ style)
+    json = json.replace(/\/\*[\s\S]*?\*\//g, '');
+    
+    // Fix unescaped quotes in strings (basic attempt)
+    // This is tricky and imperfect, but helps with common cases
+    
+    // Trim whitespace
+    json = json.trim();
+    
+    return json;
+  }
+  
+  /**
+   * Get context around JSON parsing error for debugging
+   */
+  private getJsonErrorContext(json: string, error: any): string {
+    const message = error.message || '';
+    const posMatch = message.match(/position (\d+)/);
+    
+    if (posMatch) {
+      const pos = parseInt(posMatch[1], 10);
+      const start = Math.max(0, pos - 100);
+      const end = Math.min(json.length, pos + 100);
+      const context = json.substring(start, end);
+      const marker = ' '.repeat(Math.min(100, pos - start)) + '^';
+      return `\n${context}\n${marker}`;
+    }
+    
+    return 'Could not extract error position';
   }
   
   // ==================== Validation ====================
