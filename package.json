@@ -15,7 +15,7 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "sample:episode": "npx tsx scripts/create-sample-episode.ts",
     "demo:episode": "npx tsx scripts/demo-sample-episode.ts",
-    "real:episode": "npx tsx scripts/create-real-episode-simple.ts"
+    "real:episode": "node scripts/create-real-episode.js"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
