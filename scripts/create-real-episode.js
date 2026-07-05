@@ -229,30 +229,23 @@ async function main() {
     
     const dialogueStartTime = Date.now();
     
-    // Pick the first scene as a sample
-    const firstScene = storyResult.episodeOutline.scenes[0];
-    
     const dialogueResult = await dialogueWriter.process({
-      type: 'WRITE_SCENE',
-      writeScene: {
-        scene: firstScene,
+      type: 'WRITE_DIALOGUE',
+      writeRequest: {
+        episodeOutline: storyResult.episodeOutline,
         characters: [protagonistResult.character],
-        worldContext: {
-          name: TEST_WORLD.name,
-          setting: TEST_WORLD.setting,
-          tone: TEST_WORLD.tone
-        },
-        previousSceneSummary: 'Episode opening - protagonist arrives at new school',
-        emotionalTarget: firstScene.emotionalBeat
+        scenes: storyResult.episodeOutline.scenes,
+        emotionalBeats: storyResult.episodeOutline.emotionalArc || [],
+        choicePoints: storyResult.episodeOutline.choicePoints
       }
     });
     
     const dialogueDuration = ((Date.now() - dialogueStartTime) / 1000).toFixed(1);
     
     console.log(`✅ Dialogue created! (${dialogueDuration}s)`);
-    console.log(`   Scene: ${firstScene.title}`);
-    console.log(`   Lines: ${dialogueResult.sceneDialogue?.lines?.length || 0}`);
-    console.log(`   Atmosphere: ${dialogueResult.sceneDialogue?.atmosphere || 'N/A'}\n`);
+    console.log(`   Scenes with dialogue: ${dialogueResult.dialogue?.length || 0}`);
+    console.log(`   Total lines: ${dialogueResult.dialogue?.reduce((sum, scene) => sum + (scene.lines?.length || 0), 0) || 0}`);
+    console.log(`   Voice notes: ${dialogueResult.voiceNotes?.substring(0, 100) || 'N/A'}...\n`);
     
     saveToFile('03-dialogue.json', dialogueResult);
     console.log('   💾 Saved: output/real-episode/03-dialogue.json\n');
@@ -264,24 +257,41 @@ async function main() {
     
     const reviewStartTime = Date.now();
     
+    // Build a minimal Episode object for review
+    const episodeForReview = {
+      id: `ep-${EPISODE_BRIEF.episodeNumber}`,
+      worldId: TEST_WORLD.id,
+      seasonId: 'season-1',
+      episodeNumber: EPISODE_BRIEF.episodeNumber,
+      title: storyResult.episodeOutline.title,
+      synopsis: storyResult.episodeOutline.synopsis,
+      scenes: [], // Simplified for now
+      choices: [],
+      outcomes: [],
+      themes: storyResult.episodeOutline.themes,
+      educationalGoals: storyResult.episodeOutline.educationalGoals || [],
+      targetTraits: storyResult.episodeOutline.targetTraits.map(t => ({ traitId: t, changeAmount: 1 })),
+      status: 'DRAFT',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+    
     const reviewResult = await creativeDirector.process({
-      type: 'REVIEW_EPISODE',
+      type: 'EPISODE_REVIEW',
       episodeReview: {
-        outline: storyResult.episodeOutline,
-        characters: [protagonistResult.character],
-        sampleDialogue: dialogueResult.sceneDialogue,
-        world: TEST_WORLD,
-        reviewFocus: ['emotional_resonance', 'world_consistency', 'character_authenticity']
+        episode: episodeForReview,
+        worldContext: TEST_WORLD,
+        previousEpisodes: []
       }
     });
     
     const reviewDuration = ((Date.now() - reviewStartTime) / 1000).toFixed(1);
     
     console.log(`✅ Creative review complete! (${reviewDuration}s)`);
-    console.log(`   Overall Assessment: ${reviewResult.feedback?.overallAssessment || 'N/A'}`);
-    console.log(`   Strengths: ${reviewResult.feedback?.strengths?.length || 0}`);
-    console.log(`   Improvements: ${reviewResult.feedback?.improvements?.length || 0}`);
-    console.log(`   Approved: ${reviewResult.decision?.approved ? 'YES ✅' : 'NO ❌'}\n`);
+    console.log(`   Decision: ${reviewResult.decision || 'N/A'}`);
+    console.log(`   Creative Notes: ${reviewResult.creativeNotes?.substring(0, 100) || 'N/A'}...`);
+    console.log(`   Story Feedback: ${reviewResult.specificFeedback?.story?.length || 0} items`);
+    console.log(`   Character Feedback: ${reviewResult.specificFeedback?.characters?.length || 0} items\n`);
     
     saveToFile('04-creative-review.json', reviewResult);
     console.log('   💾 Saved: output/real-episode/04-creative-review.json\n');
