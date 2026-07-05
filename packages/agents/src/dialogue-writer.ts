@@ -405,12 +405,21 @@ ${cp.options.map(opt => `  ${opt.id}) ${opt.text}`).join('\n')}
   }
   
   private parseDialogueFromResponse(content: string): DialogueWriterOutput {
+    // Log the full response for debugging
+    if (!content || content.trim().length === 0) {
+      console.error('[Dialogue Writer] Empty response from LLM');
+      throw new Error('Empty response from LLM');
+    }
+    
+    console.log('[Dialogue Writer] Response length:', content.length);
+    console.log('[Dialogue Writer] Response preview (first 1000 chars):', content.substring(0, 1000));
+    
     // Extract JSON from response (handle markdown code blocks)
     const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
     
     if (!jsonMatch) {
       console.error('[Dialogue Writer] No JSON found in response');
-      console.error('Response preview:', content.substring(0, 500));
+      console.error('Full response:', content);
       throw new Error('Failed to parse JSON from LLM response - no JSON block found');
     }
     

@@ -152,9 +152,36 @@ export class LLMGateway {
     const response = await this.anthropic.messages.create(requestParams);
 
     // Claude 5+ with adaptive thinking returns thinking blocks + text blocks
+    // Log what we got back
+    console.log(`[LLM] Response contains ${response.content.length} content blocks:`);
+    response.content.forEach((block, i) => {
+      console.log(`[LLM]   Block ${i}: type=${block.type}, length=${block.type === 'text' ? block.text.length : 'N/A'}`);
+    });
+    
     // Find the text block (don't assume content[0] is text)
     const textBlock = response.content.find(b => b.type === 'text');
-    const text = textBlock?.type === 'text' ? textBlock.text : '';
+    
+    if (!textBlock) {
+      console.warn('[LLM] No text block found in response, only thinking blocks');
+      console.warn('[LLM] Response content:', JSON.stringify(response.content.map(b => ({ type: b.type, preview: b.type === 'text' ? b.text.substring(0, 100) : 'thinking' })), null, 2));
+      
+      // If there's only thinking, return empty (caller should handle this)
+      return {
+        content: '',
+        model,
+        provider: 'claude',
+        usage: {
+          inputTokens: response.usage.input_tokens,
+          outputTokens: response.usage.output_tokens,
+          totalTokens: response.usage.input_tokens + response.usage.output_tokens
+        },
+        stopReason: response.stop_reason || 'end_turn'
+      };
+    }
+    
+    const text = textBlock.type === 'text' ? textBlock.text : '';
+    
+    console.log(`[LLM] Extracted text block with ${text.length} characters`);
 
     return {
       content: text,
