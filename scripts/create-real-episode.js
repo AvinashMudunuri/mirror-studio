@@ -17,6 +17,7 @@ const {
   CharacterDesignerAgent,
   DialogueWriterAgent,
   CreativeDirectorAgent,
+  QAReviewerAgent,
   createLLMGateway
 } = require(agentsPath);
 
@@ -112,6 +113,7 @@ async function main() {
   const characterDesigner = new CharacterDesignerAgent();
   const dialogueWriter = new DialogueWriterAgent();
   const creativeDirector = new CreativeDirectorAgent();
+  const qaReviewer = new QAReviewerAgent();
   
   await Promise.all([
     storyArchitect.initialize({ 
@@ -141,13 +143,21 @@ async function main() {
       messageBus: mockMessageBus, 
       memory: mockMemory, 
       llm 
+    }),
+    qaReviewer.initialize({ 
+      workflowId, 
+      threadId, 
+      messageBus: mockMessageBus, 
+      memory: mockMemory, 
+      llm 
     })
   ]);
   
   console.log('✅ Story Architect (River) ready');
   console.log('✅ Character Designer (Kai) ready');
   console.log('✅ Dialogue Writer (Echo) ready');
-  console.log('✅ Creative Director (Aria) ready\n');
+  console.log('✅ Creative Director (Aria) ready');
+  console.log('✅ QA Reviewer (Alex) ready\n');
   
   console.log('═══════════════════════════════════════════════════════════\n');
   
@@ -296,6 +306,50 @@ async function main() {
     saveToFile('04-creative-review.json', reviewResult);
     console.log('   💾 Saved: output/real-episode/04-creative-review.json\n');
     
+    // Step 6: QA Reviewer - Technical Quality Check
+    console.log('🔍 Step 6: QA Reviewer - Technical Quality Check\n');
+    console.log('   🔄 Calling Claude API for QA review...\n');
+    console.log('   ⏳ This may take 10-20 seconds...\n');
+    
+    const qaStartTime = Date.now();
+    
+    const qaResult = await qaReviewer.process({
+      type: 'REVIEW_EPISODE',
+      episodeReview: {
+        episode: episodeForReview,
+        characters: [protagonistResult.character],
+        world: TEST_WORLD,
+        previousEpisodes: []
+      }
+    });
+    
+    const qaDuration = ((Date.now() - qaStartTime) / 1000).toFixed(1);
+    
+    console.log(`✅ QA review complete! (${qaDuration}s)`);
+    console.log(`   Status: ${qaResult.status}`);
+    console.log(`   Errors: ${qaResult.errors?.length || 0} blocking issues`);
+    console.log(`   Warnings: ${qaResult.warnings?.length || 0} concerns`);
+    console.log(`   Checks: ${qaResult.summary?.passedChecks || 0}/${qaResult.summary?.totalChecks || 0} passed\n`);
+    
+    if (qaResult.errors && qaResult.errors.length > 0) {
+      console.log('   ❌ Issues found:');
+      qaResult.errors.slice(0, 3).forEach(err => {
+        console.log(`      • [${err.severity}] ${err.message}`);
+        console.log(`        Location: ${err.location}`);
+        if (err.fix) {
+          console.log(`        Fix: ${err.fix}`);
+        }
+      });
+      if (qaResult.errors.length > 3) {
+        console.log(`      ... and ${qaResult.errors.length - 3} more\n`);
+      } else {
+        console.log('');
+      }
+    }
+    
+    saveToFile('05-qa-review.json', qaResult);
+    console.log('   💾 Saved: output/real-episode/05-qa-review.json\n');
+    
     // Final Summary
     const totalDuration = ((Date.now() - startTime) / 1000).toFixed(1);
     
@@ -305,21 +359,24 @@ async function main() {
     console.log('   1. Story Outline (Story Architect → Claude)');
     console.log('   2. Protagonist Profile (Character Designer → Claude)');
     console.log('   3. Scene Dialogue (Dialogue Writer → Claude)');
-    console.log('   4. Creative Review (Creative Director → Claude)\n');
+    console.log('   4. Creative Review (Creative Director → Claude)');
+    console.log('   5. QA Review (QA Reviewer → Claude)\n');
     console.log(`   📁 Location: ${OUTPUT_DIR}\n`);
     console.log('⏱️  Total Time:\n');
     console.log(`   Story: ${duration}s`);
     console.log(`   Character: ${charDuration}s`);
     console.log(`   Dialogue: ${dialogueDuration}s`);
     console.log(`   Review: ${reviewDuration}s`);
+    console.log(`   QA: ${qaDuration}s`);
     console.log(`   Total: ${totalDuration}s (${(totalDuration / 60).toFixed(1)} minutes)\n`);
     console.log('🎯 Full AI Studio Pipeline:\n');
     console.log('   ✅ Story structure designed');
     console.log('   ✅ Characters created with depth');
     console.log('   ✅ Authentic dialogue written');
-    console.log('   ✅ Quality assured by Creative Director\n');
+    console.log('   ✅ Quality assured by Creative Director');
+    console.log('   ✅ Technical validation by QA Reviewer\n');
     console.log('═══════════════════════════════════════════════════════════\n');
-    console.log('🎉 Success! All 4 Phase 1 agents working with Claude 5!\n');
+    console.log('🎉 Success! Phase 1 + QA Reviewer pipeline complete!\n');
     
   } catch (error) {
     console.error('\n❌ Error during episode creation:\n');
