@@ -1,4 +1,5 @@
 import { BaseAgent, AgentConfig } from './base-agent';
+import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 import { CEOInput, CEOOutput, CEOInputSchema, CEOOutputSchema } from '@mirror/schemas';
 
 /**
@@ -47,9 +48,9 @@ export class CEOAgent extends BaseAgent {
       id: 'CEO',
       name: 'Morgan',
       role: 'CEO and Strategic Overseer',
-      model: 'claude-sonnet-5',
-      temperature: 0.3, // Lower temperature for consistent decision-making
-      maxTokens: 4096
+      model: getAgentModel('CEO_AGENT'),
+      temperature: getAgentTemperature('CEO_AGENT'),
+      maxTokens: getAgentMaxTokens('CEO_AGENT')
     });
   }
   

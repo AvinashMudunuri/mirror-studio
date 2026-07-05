@@ -6,6 +6,7 @@
  */
 
 import { BaseAgent, AgentConfig } from './base-agent-v2';
+import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 import type { Character } from '@mirror/schemas';
 
 // ==================== Input/Output Schemas ====================
@@ -130,9 +131,9 @@ export class CharacterDesignerAgent extends BaseAgent {
       id: 'CHARACTER_DESIGNER',
       name: 'Kai',
       role: 'Character Psychology and Development Specialist',
-      model: 'claude-sonnet-5',
-      temperature: 0.6, // Slightly higher for creativity
-      maxTokens: 6144
+      model: getAgentModel('CHARACTER_DESIGNER'),
+      temperature: getAgentTemperature('CHARACTER_DESIGNER'),
+      maxTokens: getAgentMaxTokens('CHARACTER_DESIGNER')
     };
     super(config);
   }

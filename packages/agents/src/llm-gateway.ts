@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import OpenAI from 'openai';
+import { LLM_CONFIG } from './config';
 
 /**
  * LLM Gateway - Unified interface for multiple LLM providers
@@ -58,9 +59,9 @@ export class LLMGateway {
   constructor(config: LLMConfig) {
     this.config = {
       defaultProvider: 'claude',
-      defaultModel: 'claude-sonnet-5',
-      defaultTemperature: 0.3,
-      defaultMaxTokens: 4096,
+      defaultModel: LLM_CONFIG.defaultModels.anthropic,
+      defaultTemperature: LLM_CONFIG.temperatures.balanced,
+      defaultMaxTokens: LLM_CONFIG.maxTokens.medium,
       ...config
     };
 

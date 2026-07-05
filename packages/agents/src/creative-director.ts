@@ -1,4 +1,5 @@
 import { BaseAgent, AgentConfig } from './base-agent-v2';
+import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 import type { 
   Episode, 
   World,
@@ -95,9 +96,9 @@ export class CreativeDirectorAgent extends BaseAgent {
       id: 'CREATIVE_DIRECTOR',
       name: 'Aria',
       role: 'Creative Vision Keeper',
-      model: 'claude-sonnet-5',
-      temperature: 0.6,
-      maxTokens: 6144
+      model: getAgentModel('CREATIVE_DIRECTOR'),
+      temperature: getAgentTemperature('CREATIVE_DIRECTOR'),
+      maxTokens: getAgentMaxTokens('CREATIVE_DIRECTOR')
     };
     super(config);
   }

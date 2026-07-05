@@ -1,6 +1,7 @@
 // Core exports
 export * from './base-agent-v2';
 export * from './llm-gateway';
+export * from './config';
 
 // Agent implementations
 export * from './ceo-agent';

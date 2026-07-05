@@ -6,6 +6,7 @@
  */
 
 import { BaseAgent, AgentConfig } from './base-agent-v2';
+import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 import type { Character } from '@mirror/schemas';
 import type { 
   EpisodeOutline,
@@ -99,9 +100,9 @@ export class DialogueWriterAgent extends BaseAgent {
       id: 'DIALOGUE_WRITER',
       name: 'Echo',
       role: 'Dialogue and Voice Specialist',
-      model: 'claude-sonnet-5',
-      temperature: 0.7, // Higher for creative, authentic dialogue
-      maxTokens: 8192
+      model: getAgentModel('DIALOGUE_WRITER'),
+      temperature: getAgentTemperature('DIALOGUE_WRITER'),
+      maxTokens: getAgentMaxTokens('DIALOGUE_WRITER')
     };
     super(config);
   }

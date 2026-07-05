@@ -8,6 +8,7 @@
  */
 
 import { BaseAgent, AgentConfig } from './base-agent-v2';
+import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 import type {
   Character,
   TraitId
@@ -147,9 +148,9 @@ export class StoryArchitectAgent extends BaseAgent {
       id: 'STORY_ARCHITECT',
       name: 'River',
       role: 'Lead Story Designer',
-      model: 'claude-sonnet-5',
-      temperature: 0.5,
-      maxTokens: 8192
+      model: getAgentModel('STORY_ARCHITECT'),
+      temperature: getAgentTemperature('STORY_ARCHITECT'),
+      maxTokens: getAgentMaxTokens('STORY_ARCHITECT')
     };
     super(config);
   }
