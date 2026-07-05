@@ -100,7 +100,7 @@ export class DeveloperAgent extends BaseAgent {
       id: 'BACKEND_DEVELOPER',
       name: 'Dev',
       role: 'Backend Developer',
-      model: 'claude-3-5-sonnet-latest', // Best for code generation
+      model: 'claude-3-opus-20240229', // Best for code generation
       temperature: 0.2, // Lower for more deterministic code
       maxTokens: 8192 // Longer for code generation
     });

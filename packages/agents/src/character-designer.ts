@@ -130,7 +130,7 @@ export class CharacterDesignerAgent extends BaseAgent {
       id: 'CHARACTER_DESIGNER',
       name: 'Kai',
       role: 'Character Psychology and Development Specialist',
-      model: 'claude-3-5-sonnet-latest',
+      model: 'claude-3-opus-20240229',
       temperature: 0.6, // Slightly higher for creativity
       maxTokens: 6144
     };
