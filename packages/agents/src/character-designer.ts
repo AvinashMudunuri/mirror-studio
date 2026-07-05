@@ -7,6 +7,7 @@
 
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
+import { jsonrepair } from 'jsonrepair';
 import type { Character } from '@mirror/schemas';
 
 // ==================== Input/Output Schemas ====================
@@ -425,19 +426,16 @@ ${request.relationshipContext.map(c =>
   }
   
   private parseCharacterFromResponse(content: string): CharacterDesignerOutput {
-    const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
-    
-    if (!jsonMatch) {
-      throw new Error('Failed to parse JSON from LLM response');
-    }
+    const jsonString = this.repairAndExtractJson(content, 'Character Designer');
     
     try {
-      const parsed = JSON.parse(jsonMatch[1]);
+      const parsed = JSON.parse(jsonString);
       
       if (!parsed.character || !parsed.character.name) {
         throw new Error('Invalid character structure');
       }
       
+      console.log('[Character Designer] Successfully parsed character:', parsed.character.name);
       return parsed as CharacterDesignerOutput;
     } catch (error) {
       console.error('Failed to parse character:', error);
@@ -446,14 +444,10 @@ ${request.relationshipContext.map(c =>
   }
   
   private parseReviewFromResponse(content: string): CharacterDesignerOutput {
-    const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
-    
-    if (!jsonMatch) {
-      throw new Error('Failed to parse JSON from LLM response');
-    }
+    const jsonString = this.repairAndExtractJson(content, 'Character Review');
     
     try {
-      const parsed = JSON.parse(jsonMatch[1]);
+      const parsed = JSON.parse(jsonString);
       return { designNotes: parsed.designNotes || parsed.notes, ...parsed };
     } catch (error) {
       throw new Error(`Failed to parse review: ${error}`);
@@ -461,14 +455,10 @@ ${request.relationshipContext.map(c =>
   }
   
   private parseRelationshipFromResponse(content: string): CharacterDesignerOutput {
-    const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
-    
-    if (!jsonMatch) {
-      throw new Error('Failed to parse JSON from LLM response');
-    }
+    const jsonString = this.repairAndExtractJson(content, 'Relationship');
     
     try {
-      const parsed = JSON.parse(jsonMatch[1]);
+      const parsed = JSON.parse(jsonString);
       return parsed as CharacterDesignerOutput;
     } catch (error) {
       throw new Error(`Failed to parse relationship: ${error}`);
@@ -476,17 +466,45 @@ ${request.relationshipContext.map(c =>
   }
   
   private parseArcFromResponse(content: string): CharacterDesignerOutput {
-    const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
-    
-    if (!jsonMatch) {
-      throw new Error('Failed to parse JSON from LLM response');
-    }
+    const jsonString = this.repairAndExtractJson(content, 'Character Arc');
     
     try {
-      const parsed = JSON.parse(jsonMatch[1]);
+      const parsed = JSON.parse(jsonString);
       return parsed as CharacterDesignerOutput;
     } catch (error) {
       throw new Error(`Failed to parse arc: ${error}`);
     }
+  }
+  
+  /**
+   * Extract JSON from response and repair it
+   */
+  private repairAndExtractJson(content: string, context: string): string {
+    const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
+    
+    if (!jsonMatch) {
+      console.error(`[${context}] No JSON found in response`);
+      console.error('Response preview:', content.substring(0, 500));
+      throw new Error('Failed to parse JSON from LLM response - no JSON block found');
+    }
+    
+    let jsonString = jsonMatch[1];
+    
+    // Basic cleaning
+    jsonString = jsonString.replace(/,(\s*[}\]])/g, '$1'); // trailing commas
+    jsonString = jsonString.replace(/\/\/[^\n]*/g, ''); // comments
+    jsonString = jsonString.replace(/\/\*[\s\S]*?\*\//g, ''); // block comments
+    jsonString = jsonString.trim();
+    
+    // Use jsonrepair
+    try {
+      console.log(`[${context}] Attempting to repair JSON...`);
+      jsonString = jsonrepair(jsonString);
+      console.log(`[${context}] JSON repair successful`);
+    } catch (repairError) {
+      console.warn(`[${context}] JSON repair failed:`, repairError);
+    }
+    
+    return jsonString;
   }
 }

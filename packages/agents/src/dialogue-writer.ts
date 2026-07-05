@@ -7,6 +7,7 @@
 
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
+import { jsonrepair } from 'jsonrepair';
 import type { Character } from '@mirror/schemas';
 import type { 
   EpisodeOutline,
@@ -408,11 +409,28 @@ ${cp.options.map(opt => `  ${opt.id}) ${opt.text}`).join('\n')}
     const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
     
     if (!jsonMatch) {
-      throw new Error('Failed to parse JSON from LLM response');
+      console.error('[Dialogue Writer] No JSON found in response');
+      console.error('Response preview:', content.substring(0, 500));
+      throw new Error('Failed to parse JSON from LLM response - no JSON block found');
+    }
+    
+    let jsonString = jsonMatch[1];
+    
+    // First, apply basic cleaning
+    jsonString = this.cleanJsonString(jsonString);
+    
+    // Then use jsonrepair to fix remaining issues
+    try {
+      console.log('[Dialogue Writer] Attempting to repair JSON...');
+      jsonString = jsonrepair(jsonString);
+      console.log('[Dialogue Writer] JSON repair successful');
+    } catch (repairError) {
+      console.warn('[Dialogue Writer] JSON repair failed:', repairError);
+      // Continue with cleaned JSON, maybe native parse will work
     }
     
     try {
-      const parsed = JSON.parse(jsonMatch[1]);
+      const parsed = JSON.parse(jsonString);
       
       // Validate required fields
       if (!parsed.dialogue || !Array.isArray(parsed.dialogue)) {
@@ -429,11 +447,57 @@ ${cp.options.map(opt => `  ${opt.id}) ${opt.text}`).join('\n')}
         parsed.voiceNotes = 'Dialogue generated successfully.';
       }
       
+      console.log('[Dialogue Writer] Successfully parsed dialogue:', parsed.dialogue.length, 'scenes');
       return parsed as DialogueWriterOutput;
     } catch (error) {
       console.error('Failed to parse dialogue:', error);
+      console.error('JSON string length:', jsonString.length);
+      console.error('JSON preview (first 500 chars):', jsonString.substring(0, 500));
+      console.error('JSON preview (around error position):', this.getJsonErrorContext(jsonString, error));
+      
+      // Save the failed JSON for debugging
+      console.error('Full JSON saved for debugging (first 2000 chars):', jsonString.substring(0, 2000));
+      
       throw new Error(`Failed to parse dialogue output: ${error}`);
     }
+  }
+  
+  /**
+   * Clean common JSON formatting issues introduced by LLMs
+   */
+  private cleanJsonString(json: string): string {
+    // Remove trailing commas before closing brackets/braces
+    json = json.replace(/,(\s*[}\]])/g, '$1');
+    
+    // Remove comments (// style)
+    json = json.replace(/\/\/[^\n]*/g, '');
+    
+    // Remove comments (/* */ style)
+    json = json.replace(/\/\*[\s\S]*?\*\//g, '');
+    
+    // Trim whitespace
+    json = json.trim();
+    
+    return json;
+  }
+  
+  /**
+   * Get context around JSON parsing error for debugging
+   */
+  private getJsonErrorContext(json: string, error: any): string {
+    const message = error.message || '';
+    const posMatch = message.match(/position (\d+)/);
+    
+    if (posMatch) {
+      const pos = parseInt(posMatch[1], 10);
+      const start = Math.max(0, pos - 100);
+      const end = Math.min(json.length, pos + 100);
+      const context = json.substring(start, end);
+      const marker = ' '.repeat(Math.min(100, pos - start)) + '^';
+      return `\n${context}\n${marker}`;
+    }
+    
+    return 'Could not extract error position';
   }
   
   // ==================== Validation ====================

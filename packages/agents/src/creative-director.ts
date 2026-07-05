@@ -1,5 +1,6 @@
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
+import { jsonrepair } from 'jsonrepair';
 import type { 
   Episode, 
   World,
@@ -410,8 +411,25 @@ Be honest and constructive.`;
       };
     }
     
+    let jsonString = jsonMatch[0];
+    
+    // Basic cleaning
+    jsonString = jsonString.replace(/,(\s*[}\]])/g, '$1'); // trailing commas
+    jsonString = jsonString.replace(/\/\/[^\n]*/g, ''); // comments
+    jsonString = jsonString.replace(/\/\*[\s\S]*?\*\//g, ''); // block comments
+    jsonString = jsonString.trim();
+    
+    // Use jsonrepair
     try {
-      const parsed = JSON.parse(jsonMatch[0]);
+      console.log('[Creative Director] Attempting to repair JSON...');
+      jsonString = jsonrepair(jsonString);
+      console.log('[Creative Director] JSON repair successful');
+    } catch (repairError) {
+      console.warn('[Creative Director] JSON repair failed:', repairError);
+    }
+    
+    try {
+      const parsed = JSON.parse(jsonString);
       
       if (!parsed.decision || !['APPROVED', 'NEEDS_REVISION', 'REJECTED'].includes(parsed.decision)) {
         parsed.decision = 'NEEDS_REVISION';
@@ -429,6 +447,7 @@ Be honest and constructive.`;
         parsed.revisionPriority = 'MEDIUM';
       }
       
+      console.log('[Creative Director] Successfully parsed review:', parsed.decision);
       return parsed as CreativeDirectorOutput;
     } catch (error) {
       return {
