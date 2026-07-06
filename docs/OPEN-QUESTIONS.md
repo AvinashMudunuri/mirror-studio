@@ -100,7 +100,16 @@ fail-loud; creator outputs may warrant one self-repair attempt (the
 
 ## 7. Stale docs (misleading for new sessions)
 
-The PHASE-* files and several root-level summaries describe pre-PR-#9
+The LangGraph orchestration references (README tech stack, ROADMAP Week-1
+decision log, handbook, `.env.example`) are fixed as of 2026-07-06:
+LangGraph was never installed, and ADR 002
+(`docs/decisions/002-langgraph-features-adopted-natively.md`) documents
+the four capabilities we port natively instead — resume-from-run-folder,
+Zod validation at the `json-parsing.ts` hook (item 6), structured
+per-step events for the admin UI (item 1), and the bounded
+rebuttal/CEO-debate round in the revision loop (relates to item 4).
+
+Still stale: the PHASE-* files and several root-level summaries describe pre-PR-#9
 architecture (bus-driven orchestration, 4-agent pipeline, broken sample
 scripts as entry points). `INTEGRATION-TESTING-COMPLETE.md`,
 `TESTING-SUMMARY.md`, `NEXT-STEPS.md`, and `ANTHROPIC-API-TROUBLESHOOTING.md`

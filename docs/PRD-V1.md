@@ -461,7 +461,8 @@ Each agent remembers:
 * Gemini (optional)
 
 ### Orchestrator
-* LangGraph or custom workflow engine
+* LangGraph or custom workflow engine *(resolved: custom sequential
+  orchestrator shipped — ADR 001/002)*
 
 ### Storage
 * Object Storage

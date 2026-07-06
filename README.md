@@ -76,7 +76,9 @@ mirror-studio/
 ### AI
 - **Claude Sonnet 4.5** - Strategic and creative agents (Anthropic)
 - **GPT-5.4** - Specialist agents (OpenAI)
-- **LangGraph** - Agent orchestration
+- **Sequential orchestrator script** (`scripts/create-real-episode.js`) - Agent
+  orchestration (see ADR 001; LangGraph was considered early on but never
+  adopted — ADR 002 lists what we port from it natively)
 
 ### Infrastructure
 - **Turbo** - Monorepo build system

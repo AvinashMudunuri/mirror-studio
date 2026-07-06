@@ -451,7 +451,11 @@ This roadmap outlines the implementation strategy for Project MIRROR Studio, bre
 ### Week 1 Decisions
 - **Monorepo with Turbo**: Chosen for code sharing and build efficiency
 - **TypeScript + Zod**: Type safety at development and runtime
-- **LangGraph**: Agent orchestration (chosen over custom solution)
+- **LangGraph**: Agent orchestration (chosen over custom solution) —
+  *SUPERSEDED: never installed; the custom sequential orchestrator
+  (`scripts/create-real-episode.js`) shipped instead and is the decided
+  runtime model (ADR 001). LangGraph capabilities worth porting natively
+  are documented in ADR 002.*
 - **PostgreSQL**: Primary database (over MongoDB for strong typing)
 - **Redis**: Message bus and caching (over RabbitMQ for simplicity)
 
