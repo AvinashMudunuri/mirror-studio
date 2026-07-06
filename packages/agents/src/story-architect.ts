@@ -9,7 +9,7 @@
 
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
-import { jsonrepair } from 'jsonrepair';
+import { parseLlmJson } from './json-parsing';
 import type {
   Character,
   TraitId
@@ -417,100 +417,27 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
   }
   
   private parseOutlineFromResponse(content: string): StoryArchitectOutput {
-    // Extract JSON from response (handle markdown code blocks)
-    const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
-    
-    if (!jsonMatch) {
-      console.error('[Story Architect] No JSON found in response');
-      console.error('Response preview:', content.substring(0, 500));
-      throw new Error('Failed to parse JSON from LLM response - no JSON block found');
-    }
-    
-    let jsonString = jsonMatch[1];
-    
-    // First, apply basic cleaning
-    jsonString = this.cleanJsonString(jsonString);
-    
-    // Then use jsonrepair to fix remaining issues
+    let parsed: any;
     try {
-      console.log('[Story Architect] Attempting to repair JSON...');
-      jsonString = jsonrepair(jsonString);
-      console.log('[Story Architect] JSON repair successful');
-    } catch (repairError) {
-      console.warn('[Story Architect] JSON repair failed:', repairError);
-      // Continue with cleaned JSON, maybe native parse will work
-    }
-    
-    try {
-      let parsed = JSON.parse(jsonString);
-      
-      // Tolerate the model returning the outline object directly
-      // (observed on REVISION_REQUEST) instead of nested under
-      // "episodeOutline".
-      if (!parsed.episodeOutline && parsed.title && Array.isArray(parsed.scenes)) {
-        console.warn('[Story Architect] Response was a bare outline; wrapping in episodeOutline');
-        parsed = { episodeOutline: parsed, designNotes: parsed.designNotes || '' };
-      }
-      
-      // Validate required fields
-      if (!parsed.episodeOutline || !parsed.episodeOutline.title) {
-        throw new Error('Invalid outline structure - missing episodeOutline.title');
-      }
-      
-      console.log('[Story Architect] Successfully parsed episode outline:', parsed.episodeOutline.title);
-      return parsed as StoryArchitectOutput;
+      parsed = parseLlmJson(content, { context: 'Story Architect' });
     } catch (error) {
-      console.error('Failed to parse outline:', error);
-      console.error('JSON string length:', jsonString.length);
-      console.error('JSON preview (first 500 chars):', jsonString.substring(0, 500));
-      console.error('JSON preview (around error position):', this.getJsonErrorContext(jsonString, error));
-      
-      // Save the failed JSON for debugging
-      console.error('Full JSON saved for debugging (first 2000 chars):', jsonString.substring(0, 2000));
-      
-      throw new Error(`Failed to parse episode outline: ${error}`);
-    }
-  }
-  
-  /**
-   * Clean common JSON formatting issues introduced by LLMs
-   */
-  private cleanJsonString(json: string): string {
-    // Remove trailing commas before closing brackets/braces
-    json = json.replace(/,(\s*[}\]])/g, '$1');
-    
-    // Remove comments (// style)
-    json = json.replace(/\/\/[^\n]*/g, '');
-    
-    // Remove comments (/* */ style)
-    json = json.replace(/\/\*[\s\S]*?\*\//g, '');
-    
-    // Fix unescaped quotes in strings (basic attempt)
-    // This is tricky and imperfect, but helps with common cases
-    
-    // Trim whitespace
-    json = json.trim();
-    
-    return json;
-  }
-  
-  /**
-   * Get context around JSON parsing error for debugging
-   */
-  private getJsonErrorContext(json: string, error: any): string {
-    const message = error.message || '';
-    const posMatch = message.match(/position (\d+)/);
-    
-    if (posMatch) {
-      const pos = parseInt(posMatch[1], 10);
-      const start = Math.max(0, pos - 100);
-      const end = Math.min(json.length, pos + 100);
-      const context = json.substring(start, end);
-      const marker = ' '.repeat(Math.min(100, pos - start)) + '^';
-      return `\n${context}\n${marker}`;
+      throw new Error(`Failed to parse episode outline: ${error instanceof Error ? error.message : error}`);
     }
     
-    return 'Could not extract error position';
+    // Tolerate the model returning the outline object directly
+    // (observed on REVISION_REQUEST) instead of nested under
+    // "episodeOutline".
+    if (!parsed.episodeOutline && parsed.title && Array.isArray(parsed.scenes)) {
+      console.warn('[Story Architect] Response was a bare outline; wrapping in episodeOutline');
+      parsed = { episodeOutline: parsed, designNotes: parsed.designNotes || '' };
+    }
+    
+    if (!parsed.episodeOutline || !parsed.episodeOutline.title) {
+      throw new Error('Failed to parse episode outline: missing episodeOutline.title');
+    }
+    
+    console.log('[Story Architect] Successfully parsed episode outline:', parsed.episodeOutline.title);
+    return parsed as StoryArchitectOutput;
   }
   
   // ==================== Validation ====================

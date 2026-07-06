@@ -7,7 +7,7 @@
 
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
-import { jsonrepair } from 'jsonrepair';
+import { parseLlmJson } from './json-parsing';
 import type { Character } from '@mirror/schemas';
 import type { 
   EpisodeOutline,
@@ -491,122 +491,35 @@ BRANCH-AWARE ENDINGS (MANDATORY):
   }
   
   private parseDialogueFromResponse(content: string): DialogueWriterOutput {
-    // Log the full response for debugging
-    if (!content || content.trim().length === 0) {
-      console.error('[Dialogue Writer] Empty response from LLM');
-      throw new Error('Empty response from LLM');
-    }
+    console.log('[Dialogue Writer] Response length:', content?.length ?? 0);
     
-    console.log('[Dialogue Writer] Response length:', content.length);
-    console.log('[Dialogue Writer] Response preview (first 1000 chars):', content.substring(0, 1000));
-    
-    // Extract JSON from response (handle markdown code blocks). The model
-    // sometimes returns a bare ARRAY of scene dialogues instead of the
-    // {dialogue: [...]} envelope (observed live on REVISE_DIALOGUE), so
-    // match either an object or an array.
-    const jsonMatch =
-      content.match(/```(?:json)?\s*([\{\[][\s\S]*[\}\]])\s*```/) ||
-      content.match(/([\{\[][\s\S]*[\}\]])/);
-    
-    if (!jsonMatch) {
-      console.error('[Dialogue Writer] No JSON found in response');
-      console.error('Full response:', content);
-      throw new Error('Failed to parse JSON from LLM response - no JSON block found');
-    }
-    
-    let jsonString = jsonMatch[1];
-    
-    // First, apply basic cleaning
-    jsonString = this.cleanJsonString(jsonString);
-    
-    // Then use jsonrepair to fix remaining issues
+    let parsed: any;
     try {
-      console.log('[Dialogue Writer] Attempting to repair JSON...');
-      jsonString = jsonrepair(jsonString);
-      console.log('[Dialogue Writer] JSON repair successful');
-    } catch (repairError) {
-      console.warn('[Dialogue Writer] JSON repair failed:', repairError);
-      // Continue with cleaned JSON, maybe native parse will work
-    }
-    
-    try {
-      let parsed = JSON.parse(jsonString);
-      
-      // Tolerate a bare array of scene dialogues in place of the envelope.
-      if (Array.isArray(parsed) && parsed.every(s => s && typeof s.sceneId === 'string' && Array.isArray(s.lines))) {
-        console.warn('[Dialogue Writer] Response was a bare scene array; wrapping in dialogue envelope');
-        parsed = { dialogue: parsed };
-      }
-      
-      // Validate required fields
-      if (!parsed.dialogue || !Array.isArray(parsed.dialogue)) {
-        throw new Error('Invalid dialogue structure - missing dialogue array');
-      }
-      
-      // Ensure choiceDialogue/branchDialogue exist (can be empty)
-      if (!parsed.choiceDialogue) {
-        parsed.choiceDialogue = [];
-      }
-      if (!parsed.branchDialogue) {
-        parsed.branchDialogue = [];
-      }
-      
-      // Ensure voiceNotes exists
-      if (!parsed.voiceNotes) {
-        parsed.voiceNotes = 'Dialogue generated successfully.';
-      }
-      
-      console.log('[Dialogue Writer] Successfully parsed dialogue:', parsed.dialogue.length, 'scenes');
-      return parsed as DialogueWriterOutput;
+      // allowArray: the model sometimes returns a bare ARRAY of scene
+      // dialogues instead of the {dialogue: [...]} envelope (observed
+      // live on REVISE_DIALOGUE).
+      parsed = parseLlmJson(content, { context: 'Dialogue Writer', allowArray: true });
     } catch (error) {
-      console.error('Failed to parse dialogue:', error);
-      console.error('JSON string length:', jsonString.length);
-      console.error('JSON preview (first 500 chars):', jsonString.substring(0, 500));
-      console.error('JSON preview (around error position):', this.getJsonErrorContext(jsonString, error));
-      
-      // Save the failed JSON for debugging
-      console.error('Full JSON saved for debugging (first 2000 chars):', jsonString.substring(0, 2000));
-      
-      throw new Error(`Failed to parse dialogue output: ${error}`);
-    }
-  }
-  
-  /**
-   * Clean common JSON formatting issues introduced by LLMs
-   */
-  private cleanJsonString(json: string): string {
-    // Remove trailing commas before closing brackets/braces
-    json = json.replace(/,(\s*[}\]])/g, '$1');
-    
-    // Remove comments (// style)
-    json = json.replace(/\/\/[^\n]*/g, '');
-    
-    // Remove comments (/* */ style)
-    json = json.replace(/\/\*[\s\S]*?\*\//g, '');
-    
-    // Trim whitespace
-    json = json.trim();
-    
-    return json;
-  }
-  
-  /**
-   * Get context around JSON parsing error for debugging
-   */
-  private getJsonErrorContext(json: string, error: any): string {
-    const message = error.message || '';
-    const posMatch = message.match(/position (\d+)/);
-    
-    if (posMatch) {
-      const pos = parseInt(posMatch[1], 10);
-      const start = Math.max(0, pos - 100);
-      const end = Math.min(json.length, pos + 100);
-      const context = json.substring(start, end);
-      const marker = ' '.repeat(Math.min(100, pos - start)) + '^';
-      return `\n${context}\n${marker}`;
+      throw new Error(`Failed to parse dialogue output: ${error instanceof Error ? error.message : error}`);
     }
     
-    return 'Could not extract error position';
+    // Tolerate a bare array of scene dialogues in place of the envelope.
+    if (Array.isArray(parsed) && parsed.every(s => s && typeof s.sceneId === 'string' && Array.isArray(s.lines))) {
+      console.warn('[Dialogue Writer] Response was a bare scene array; wrapping in dialogue envelope');
+      parsed = { dialogue: parsed };
+    }
+    
+    if (!parsed.dialogue || !Array.isArray(parsed.dialogue)) {
+      throw new Error('Failed to parse dialogue output: missing dialogue array');
+    }
+    
+    // Ensure optional sections exist (can be empty)
+    if (!parsed.choiceDialogue) parsed.choiceDialogue = [];
+    if (!parsed.branchDialogue) parsed.branchDialogue = [];
+    if (!parsed.voiceNotes) parsed.voiceNotes = 'Dialogue generated successfully.';
+    
+    console.log('[Dialogue Writer] Successfully parsed dialogue:', parsed.dialogue.length, 'scenes');
+    return parsed as DialogueWriterOutput;
   }
   
   // ==================== Validation ====================

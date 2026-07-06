@@ -1,6 +1,8 @@
-import { BaseAgent, AgentConfig } from './base-agent';
+// base-agent-v2 provides a working callLLM (via the LLM gateway); the
+// legacy base-agent's callLLM was a stub that always threw.
+import { BaseAgent } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
-import { CEOInput, CEOOutput, CEOInputSchema, CEOOutputSchema } from '@mirror/schemas';
+import { CEOInput, CEOOutput, CEOInputSchema } from '@mirror/schemas';
 
 /**
  * CEO Agent (Morgan)

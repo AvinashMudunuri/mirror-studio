@@ -3,6 +3,7 @@ export * from './base-agent-v2';
 export * from './llm-gateway';
 export * from './config';
 export * from './errors';
+export * from './json-parsing';
 
 // Content Creation Agents
 export * from './ceo-agent';

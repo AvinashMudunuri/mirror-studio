@@ -1,7 +1,7 @@
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
-import { ReviewParseError, requireEnum } from './errors';
-import { jsonrepair } from 'jsonrepair';
+import { requireEnum } from './errors';
+import { parseReviewJson } from './json-parsing';
 import type { 
   Episode, 
   World,
@@ -424,44 +424,8 @@ Be honest and constructive.`;
   }
   
   private parseCreativeResponse(content: string): CreativeDirectorOutput {
-    const jsonMatch = content.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      // Fail loudly instead of fabricating a NEEDS_REVISION decision.
-      throw new ReviewParseError(
-        this.config.id,
-        'No JSON found in LLM review response',
-        content
-      );
-    }
-    
-    let jsonString = jsonMatch[0];
-    
-    // Basic cleaning
-    jsonString = jsonString.replace(/,(\s*[}\]])/g, '$1'); // trailing commas
-    jsonString = jsonString.replace(/\/\/[^\n]*/g, ''); // comments
-    jsonString = jsonString.replace(/\/\*[\s\S]*?\*\//g, ''); // block comments
-    jsonString = jsonString.trim();
-    
-    // Use jsonrepair
-    try {
-      console.log('[Creative Director] Attempting to repair JSON...');
-      jsonString = jsonrepair(jsonString);
-      console.log('[Creative Director] JSON repair successful');
-    } catch (repairError) {
-      console.warn('[Creative Director] JSON repair failed:', repairError);
-    }
-    
-    let parsed: any;
-    try {
-      parsed = JSON.parse(jsonString);
-    } catch (error) {
-      console.error('[Creative Director] Failed to parse JSON:', error);
-      throw new ReviewParseError(
-        this.config.id,
-        `LLM review response is not valid JSON: ${error}`,
-        content
-      );
-    }
+    // Fail loudly instead of fabricating a NEEDS_REVISION decision.
+    const parsed = parseReviewJson<any>(this.config.id, content);
     
     // The approval decision must come from the LLM, never be fabricated.
     parsed.decision = requireEnum(this.config.id, content, 'decision', parsed.decision,

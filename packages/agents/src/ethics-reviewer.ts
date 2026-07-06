@@ -1,7 +1,7 @@
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
-import { ReviewParseError, requireEnum, requireScore } from './errors';
-import { jsonrepair } from 'jsonrepair';
+import { requireEnum, requireScore } from './errors';
+import { parseReviewJson } from './json-parsing';
 import type { Episode, Character, World } from '@mirror/schemas';
 
 // ============================================================================
@@ -433,52 +433,7 @@ Return assessment in JSON format.`;
   // ==================== Helper Methods ====================
   
   private parseReview(content: string): EthicsReviewerOutput {
-    // Log response for debugging
-    console.log('[Ethics Reviewer] Response length:', content.length);
-    console.log('[Ethics Reviewer] Response preview:', content.substring(0, 500));
-    
-    // Extract JSON
-    const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
-    
-    if (!jsonMatch) {
-      console.error('[Ethics Reviewer] No JSON found in response');
-      console.error('Full response:', content);
-      throw new ReviewParseError(
-        this.config.id,
-        'No JSON found in LLM review response',
-        content
-      );
-    }
-    
-    let jsonString = jsonMatch[1];
-    
-    // Clean and repair JSON
-    jsonString = jsonString.replace(/,(\s*[}\]])/g, '$1');
-    jsonString = jsonString.replace(/\/\/[^\n]*/g, '');
-    jsonString = jsonString.replace(/\/\*[\s\S]*?\*\//g, '');
-    jsonString = jsonString.trim();
-    
-    try {
-      console.log('[Ethics Reviewer] Attempting to repair JSON...');
-      jsonString = jsonrepair(jsonString);
-      console.log('[Ethics Reviewer] JSON repair successful');
-    } catch (repairError) {
-      console.warn('[Ethics Reviewer] JSON repair failed:', repairError);
-    }
-    
-    let parsed: any;
-    try {
-      parsed = JSON.parse(jsonString);
-    } catch (error) {
-      console.error('[Ethics Reviewer] Failed to parse JSON:', error);
-      console.error('JSON string:', jsonString.substring(0, 1000));
-      throw new ReviewParseError(
-        this.config.id,
-        `LLM review response is not valid JSON: ${error}`,
-        content
-      );
-    }
-    
+    const parsed = parseReviewJson<any>(this.config.id, content);
     const normalized = this.normalizeOutput(parsed, content);
     console.log('[Ethics Reviewer] Successfully parsed review:', normalized.status);
     return normalized;
