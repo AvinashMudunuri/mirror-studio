@@ -5,29 +5,24 @@
       "lines": [
         {
           "id": "s1-l1",
-          "character": "narrator",
-          "text": "",
-          "action": "The hallway is loud with a school's worth of inside jokes you don't get yet. A girl peels off from a cluster by the lockers and angles toward you, unhurried, like she's got all day."
+          "character": "student_a",
+          "text": "...who's that?",
+          "emotion": "curious",
+          "action": "whispers to friend, not bothering to lower her voice much"
         },
         {
           "id": "s1-l2",
-          "character": "maya",
-          "text": "Okay, new-kid energy is unmistakable. You've got the 'is this even the right building' face.",
-          "emotion": "amused",
-          "action": "leans against the lockers, arms loosely crossed"
+          "character": "student_b",
+          "text": "New. Obviously.",
+          "emotion": "flat",
+          "action": "doesn't even look up from his phone"
         },
         {
           "id": "s1-l3",
-          "character": "maya",
-          "text": "I'm Maya. Chen — there's apparently four Mayas in this grade now, it's a whole thing, don't ask.",
-          "emotion": "wry"
-        },
-        {
-          "id": "s1-l4",
-          "character": "maya",
-          "text": "New kid, huh? Let's see what you've got.",
-          "emotion": "appraising",
-          "action": "tilts her head, small challenging smile"
+          "character": "narrator",
+          "text": "Room 214. Ten seconds. Maybe less.",
+          "emotion": "internal",
+          "action": "the door looks heavier than a door should"
         }
       ]
     },
@@ -36,59 +31,104 @@
       "lines": [
         {
           "id": "s2-l1",
-          "character": "ms_alvarez",
-          "text": "Morning — find a seat, we're starting in two minutes.",
-          "action": "doesn't look up from her desk, already grading something"
+          "character": "mr_okafor",
+          "text": "There they are. Come on in, don't let the door hit you on the way — grab a seat, any seat. We don't bite. Usually.",
+          "emotion": "warm, a little tired",
+          "action": "waves you in without looking up from his roster"
         },
         {
           "id": "s2-l2",
-          "character": "maya",
-          "text": "Hey — over here, plenty of room.",
-          "emotion": "friendly",
-          "action": "waves from the back row without really looking up from her phone"
+          "character": "jordan",
+          "text": "Hi. I mean — hey. There's, um, there's a seat here, if you—",
+          "emotion": "hopeful, self-interrupting",
+          "action": "sits up too fast, pencil rolling off the desk"
         },
         {
           "id": "s2-l3",
-          "character": "jordan",
-          "text": "...hi.",
-          "emotion": "guarded",
-          "action": "barely glances up from a sketchbook, pencil still moving"
+          "character": "maya",
+          "text": "Oh my gosh, hi! Come sit with us, there's totally room — right, Deja?",
+          "emotion": "bright, performative warmth",
+          "action": "already patting the empty chair before you've answered"
         },
         {
           "id": "s2-l4",
+          "character": "deja",
+          "text": "There's room if Priya moves, like, one (1) item off the table.",
+          "emotion": "dry",
+          "action": "taps a quick rhythm on the desk with two fingers"
+        },
+        {
+          "id": "s2-l5",
+          "character": "priya",
+          "text": "I have three things. Three. That's not a crime.",
+          "emotion": "mock-offended",
+          "action": "laughing, doesn't move the three things"
+        },
+        {
+          "id": "s2-l6",
           "character": "narrator",
-          "text": "",
-          "action": "Two open seats. One in the back, orbiting Maya's group. One by the window, next to Jordan, who's clearly stopped expecting anyone to take it."
+          "text": "In the back corner, a kid with headphones half-on keeps their eyes on their notebook. Nobody waves them over. Nobody looks at them at all.",
+          "emotion": "quiet",
+          "action": "Alex doesn't look up"
         }
       ]
     },
     {
-      "sceneId": "scene-3",
+      "sceneId": "scene-3a",
       "lines": [
         {
-          "id": "s3-l1",
-          "character": "ms_alvarez",
-          "text": "Time for partners — semester project, no do-overs, so let's let fate decide.",
-          "action": "shakes a jar of folded slips"
-        },
-        {
-          "id": "s3-l2",
-          "character": "ms_alvarez",
-          "text": "...and Jordan Reyes, you're with our newest Hawk."
-        },
-        {
-          "id": "s3-l3",
+          "id": "s3a-l1",
           "character": "jordan",
-          "text": "Oh. Okay. Cool. I mean — that's cool.",
-          "emotion": "surprised, trying not to show how surprised",
-          "action": "sits up a little straighter"
+          "text": "So — did you know our mascot's a fighting mountain goat? Ridgeline Rams. Except goats don't ram, that's — that's rams, so it, uh. It checks out, I guess.",
+          "emotion": "nervous, talking too fast",
+          "action": "immediately looks like he wants to sink into the floor"
         },
         {
-          "id": "s3-l4",
-          "character": "tyler",
-          "text": "Careful, that kid's project ideas are weird. You sure you want to actually try?",
-          "emotion": "smirking",
-          "action": "leans over from the next desk, just loud enough for Jordan to hear too"
+          "id": "s3a-l2",
+          "character": "jordan",
+          "text": "...I'll stop talking now.",
+          "emotion": "embarrassed",
+          "action": "goes back to doodling like the desk is very interesting"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3b",
+      "lines": [
+        {
+          "id": "s3b-l1",
+          "character": "maya",
+          "text": "Okay, obsessed with your bag, where is that from?",
+          "emotion": "genuinely charming",
+          "action": "leaning in like you're already old friends"
+        },
+        {
+          "id": "s3b-l2",
+          "character": "priya",
+          "text": "Wait, say the school you came from again? I'm putting it together in my head.",
+          "emotion": "curious, fast",
+          "action": "already typing something on her phone"
+        },
+        {
+          "id": "s3b-l3",
+          "character": "maya",
+          "text": "Okay, not to be that person, but — has Alex said one word since sixth grade? Like, blink twice if you're in there.",
+          "emotion": "light, testing",
+          "action": "nods toward the back corner without lowering her voice, watching your face"
+        },
+        {
+          "id": "s3b-l4",
+          "character": "priya",
+          "text": "Not to be dramatic, but yeah. Kind of a whole vibe.",
+          "emotion": "easy laugh",
+          "action": "shrugs like it's just a fact of nature"
+        },
+        {
+          "id": "s3b-l5",
+          "character": "deja",
+          "text": "Maya—",
+          "emotion": "half a protest",
+          "action": "taps the desk once, doesn't finish the sentence, laughs instead like she didn't mean to say anything"
         }
       ]
     },
@@ -97,35 +137,17 @@
       "lines": [
         {
           "id": "s4-l1",
-          "character": "tyler",
-          "text": "Oh my— what IS that. Reyes, did your lunch just declare war on the room?",
-          "emotion": "performing for an audience",
-          "action": "leans back dramatically, fanning the air"
+          "character": "mr_okafor",
+          "text": "Alright, partners for the semester project — no trading, no negotiating, I already know your tricks. Alex Rivera and... you.",
+          "emotion": "brisk, kind underneath",
+          "action": "doesn't look up from the list"
         },
         {
           "id": "s4-l2",
-          "character": "narrator",
-          "text": "",
-          "action": "A couple of kids at the table laugh. Not everyone. Enough."
-        },
-        {
-          "id": "s4-l3",
-          "character": "jordan",
-          "text": "...it's, um. It's my grandmother's. It's just—",
-          "emotion": "mortified",
-          "action": "fork frozen halfway to his mouth, ears going red"
-        },
-        {
-          "id": "s4-l4",
-          "character": "tyler",
-          "text": "It's just WHAT, man, it smells like a chemistry experiment—",
-          "emotion": "gleeful"
-        },
-        {
-          "id": "s4-l5",
-          "character": "narrator",
-          "text": "",
-          "action": "The laughter swells. Maya's not laughing. She's looking at you. So is everyone else, without quite admitting it."
+          "character": "alex",
+          "text": "You can ask to switch. I won't be weird about it.",
+          "emotion": "flat, rehearsed",
+          "action": "already gathering their stuff like they expect to be moved"
         }
       ]
     },
@@ -134,17 +156,17 @@
       "lines": [
         {
           "id": "s5-l1",
-          "character": "maya",
-          "text": "Hey — so, some of us do courtyard lunch tomorrow. Real food, less Tyler being Tyler. You in?",
-          "emotion": "casual, but watching for the answer",
-          "action": "catches up with you in the hallway after the bell"
+          "character": "narrator",
+          "text": "Alex sits alone, still sorting index cards into neat, useless piles. Across the room, someone's waving you over.",
+          "emotion": "quiet",
+          "action": "tray in hand, decision time"
         },
         {
           "id": "s5-l2",
-          "character": "jordan",
-          "text": "...there's, um. Robotics club. After school today. It's not — you don't have to. I just thought I'd mention it. In case.",
-          "emotion": "bracing for no",
-          "action": "hovers a few feet away, notebook hugged to his chest"
+          "character": "maya",
+          "text": "Over here! We saved you a spot!",
+          "emotion": "bright",
+          "action": "patting the bench, already scooting over"
         }
       ]
     },
@@ -153,16 +175,64 @@
       "lines": [
         {
           "id": "s6-l1",
-          "character": "narrator",
-          "text": "",
-          "action": "The courtyard's gone gold and quiet, the day emptying out of it. Ms. Alvarez finds you before you find the door."
+          "character": "maya",
+          "text": "Oops.",
+          "emotion": "mock-innocent",
+          "action": "bumps the table just hard enough — Alex's papers slide to the floor"
         },
         {
           "id": "s6-l2",
-          "character": "ms_alvarez",
-          "text": "So — how was your first day, really?",
-          "emotion": "genuinely asking, not performing concern",
-          "action": "sits on the edge of the bench, doesn't crowd you"
+          "character": "maya",
+          "text": "Guess gravity hates group projects too.",
+          "emotion": "performing for the crowd",
+          "action": "doesn't move to help"
+        },
+        {
+          "id": "s6-l3",
+          "character": "priya",
+          "text": "Okay that was kind of an accident—",
+          "emotion": "half-laughing, unsure",
+          "action": "laughs anyway, glancing at Maya to check if that was funny"
+        },
+        {
+          "id": "s6-l4",
+          "character": "deja",
+          "text": "...",
+          "emotion": "uncomfortable",
+          "action": "laughs a beat too late, then doesn't laugh at all — taps her knuckles against her tray, eyes on Alex"
+        },
+        {
+          "id": "s6-l5",
+          "character": "alex",
+          "text": "It's fine.",
+          "emotion": "tight, clearly not fine",
+          "action": "already crouching to gather the papers, not looking at anyone"
+        },
+        {
+          "id": "s6-l6",
+          "character": "jordan",
+          "text": "...Should we—",
+          "emotion": "scared, wanting to help",
+          "action": "half-stands, looks at you instead of finishing the sentence"
+        },
+        {
+          "id": "s6-l7",
+          "character": "narrator",
+          "text": "The cafeteria's gone quiet in that specific way, where everyone's watching without watching. Waiting to see where you land.",
+          "emotion": "tense",
+          "action": ""
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7",
+      "lines": [
+        {
+          "id": "s7-l1",
+          "character": "narrator",
+          "text": "The first bell of the year has come and gone. Somewhere between the hallway and the cafeteria, people decided who you are.",
+          "emotion": "reflective",
+          "action": "waiting at the bus stop"
         }
       ]
     }
@@ -173,61 +243,42 @@
       "options": [
         {
           "id": "a",
-          "text": "Oh, I've got plenty. You just haven't seen it yet."
+          "text": "Shoulders back. Easy nod. Own it."
         },
         {
           "id": "b",
-          "text": "Honestly? Terrified. Ten out of ten, would not recommend."
+          "text": "Duck in quiet. Read the room first."
         },
         {
           "id": "c",
-          "text": "*give a short, guarded nod and keep walking*"
+          "text": "Big smile, wave at everyone — worth a shot."
         }
       ],
       "responseDialogue": {
         "a": [
           {
-            "id": "resp-a-1",
-            "character": "maya",
-            "text": "Oh, we've got a live one.",
-            "emotion": "delighted, slightly surprised",
-            "action": "grins, pushes off the lockers"
-          },
-          {
-            "id": "resp-a-2",
-            "character": "maya",
-            "text": "I like it. Don't let it go to your head, though. Not on day one.",
-            "emotion": "teasing"
+            "id": "resp-1a-1",
+            "character": "student_a",
+            "text": "...okay, confident.",
+            "emotion": "half-impressed, half-skeptical",
+            "pause": 500
           }
         ],
         "b": [
           {
-            "id": "resp-b-1",
-            "character": "maya",
-            "text": "Honestly? Everybody's terrified first day. They're just better liars about it.",
-            "emotion": "softer than before",
-            "action": "corner of her mouth twitches, almost a real smile"
-          },
-          {
-            "id": "resp-b-2",
-            "character": "maya",
-            "text": "You get points for skipping the lying part.",
-            "emotion": "approving"
+            "id": "resp-1b-1",
+            "character": "narrator",
+            "text": "Nobody notices you slide in. That's kind of the point. That's also kind of the problem.",
+            "pause": 500
           }
         ],
         "c": [
           {
-            "id": "resp-c-1",
-            "character": "maya",
-            "text": "Tough crowd. Okay. Suit yourself.",
-            "emotion": "eyebrow raised, unbothered on the surface",
-            "action": "watches you go a beat longer than she needs to"
-          },
-          {
-            "id": "resp-c-2",
-            "character": "maya",
-            "text": "...See you around, new kid.",
-            "emotion": "quieter, almost to herself"
+            "id": "resp-1c-1",
+            "character": "student_b",
+            "text": "(a beat of confused silence before someone half-waves back)",
+            "emotion": "awkward",
+            "pause": 800
           }
         ]
       }
@@ -237,10 +288,412 @@
       "options": [
         {
           "id": "a",
-          "text": "*head for the seat near Maya's group*"
+          "text": "Sit with Jordan — he actually seems nice."
+        },
+        {
+          "id": "b",
+          "text": "Sit with Maya's table — looks like the place to be."
         }
-      ]
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "resp-2a-1",
+            "character": "jordan",
+            "text": "Oh — cool. Cool cool cool. You can, um, you can have the chair, I don't need the chair.",
+            "emotion": "flustered relief",
+            "pause": 400
+          }
+        ],
+        "b": [
+          {
+            "id": "resp-2b-1",
+            "character": "maya",
+            "text": "Yay! Okay, budge up, Priya.",
+            "emotion": "delighted",
+            "pause": 300
+          },
+          {
+            "id": "resp-2b-2",
+            "character": "priya",
+            "text": "I only have three things.",
+            "emotion": "mock-defensive",
+            "pause": 300
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3a",
+      "options": [
+        {
+          "id": "a",
+          "text": "Laugh for real — okay, that was actually funny."
+        },
+        {
+          "id": "b",
+          "text": "Smile politely, ask him something else."
+        },
+        {
+          "id": "c",
+          "text": "Look away, unsure what to say."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "resp-3a-a1",
+            "character": "jordan",
+            "text": "Wait, really? Okay — okay that's the first time that's landed all year.",
+            "emotion": "lit up, surprised",
+            "pause": 400
+          },
+          {
+            "id": "resp-3a-a2",
+            "character": "jordan",
+            "text": "I draw, um. Comics, kind of. Bad ones. Well — I think they're okay.",
+            "emotion": "shy pride",
+            "pause": 600
+          }
+        ],
+        "b": [
+          {
+            "id": "resp-3a-b1",
+            "character": "jordan",
+            "text": "Yeah — no, yeah, it wasn't that funny. So. What's your first period?",
+            "emotion": "recovering, a little deflated",
+            "pause": 500
+          }
+        ],
+        "c": [
+          {
+            "id": "resp-3a-c1",
+            "character": "jordan",
+            "text": "...Yeah. Forget I said anything.",
+            "emotion": "quietly hurt",
+            "pause": 700,
+            "action": "goes back to doodling, doesn't look up again for a while"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3b",
+      "options": [
+        {
+          "id": "a",
+          "text": "Laugh along — easiest way to fit in."
+        },
+        {
+          "id": "b",
+          "text": "\"Anyway — what class do you guys have next?\""
+        },
+        {
+          "id": "c",
+          "text": "\"I don't know, Alex seems fine to me.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "resp-3b-a1",
+            "character": "maya",
+            "text": "Right? I knew you'd get it.",
+            "emotion": "warm, approving",
+            "pause": 300
+          },
+          {
+            "id": "resp-3b-a2",
+            "character": "deja",
+            "text": "(laughs, but it doesn't quite reach her eyes)",
+            "emotion": "uneasy",
+            "pause": 400
+          }
+        ],
+        "b": [
+          {
+            "id": "resp-3b-b1",
+            "character": "maya",
+            "text": "Ooh, smooth. Fine, be mysterious. AP Bio, unfortunately.",
+            "emotion": "amused, lets it slide",
+            "pause": 400
+          },
+          {
+            "id": "resp-3b-b2",
+            "character": "deja",
+            "text": "(exhales, quiet, like she'd been holding that one)",
+            "emotion": "relieved",
+            "pause": 400
+          }
+        ],
+        "c": [
+          {
+            "id": "resp-3b-c1",
+            "character": "maya",
+            "text": "Oh. Okay.",
+            "emotion": "smile tightens, recalculating",
+            "pause": 600
+          },
+          {
+            "id": "resp-3b-c2",
+            "character": "deja",
+            "text": "(glances at you, something like surprise, doesn't say anything — but she's tapping the desk again, faster now)",
+            "emotion": "quietly interested",
+            "pause": 500
+          },
+          {
+            "id": "resp-3b-c3",
+            "character": "priya",
+            "text": "...anyway. AP Bio's next. Fun.",
+            "emotion": "awkward pivot",
+            "pause": 500
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"No, I'm actually glad we got paired.\""
+        },
+        {
+          "id": "b",
+          "text": "\"Cool. So what's the project even on?\""
+        },
+        {
+          "id": "c",
+          "text": "(glance toward your friend group first)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "resp-4a-1",
+            "character": "alex",
+            "text": "...Oh.",
+            "emotion": "thrown off",
+            "pause": 800
+          },
+          {
+            "id": "resp-4a-2",
+            "character": "alex",
+            "text": "Okay. Cool. I mean — cool, that's — okay.",
+            "emotion": "doesn't know what to do with sincerity",
+            "pause": 500
+          }
+        ],
+        "b": [
+          {
+            "id": "resp-4b-1",
+            "character": "alex",
+            "text": "Local history thing. There's a packet. It's not exciting, but it's not hard either.",
+            "emotion": "guarded relief, keeping it practical",
+            "pause": 300
+          }
+        ],
+        "c": [
+          {
+            "id": "resp-4c-1",
+            "character": "alex",
+            "text": "...Yeah. Figured.",
+            "emotion": "resigned, already expected this",
+            "pause": 900,
+            "action": "goes back to their notebook before you even answer"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sit with Alex, keep working on the project."
+        },
+        {
+          "id": "b",
+          "text": "Sit with your group — you've got a spot there now."
+        },
+        {
+          "id": "c",
+          "text": "\"Hey — come sit with us?\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "resp-5a-1",
+            "character": "alex",
+            "text": "...You don't have to do that.",
+            "emotion": "surprised, careful not to hope",
+            "pause": 700
+          }
+        ],
+        "b": [
+          {
+            "id": "resp-5b-1",
+            "character": "maya",
+            "text": "There you are! Okay, sit, sit, you have to hear what Priya's mom said this morning.",
+            "emotion": "warm, pulling you in",
+            "pause": 300
+          }
+        ],
+        "c": [
+          {
+            "id": "resp-5c-1",
+            "character": "alex",
+            "text": "I'm okay here.",
+            "emotion": "guarded, doesn't want pity",
+            "pause": 600
+          },
+          {
+            "id": "resp-5c-2",
+            "character": "alex",
+            "text": "...But thanks. I guess.",
+            "emotion": "small crack, unsure what to do with it",
+            "pause": 700
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-6",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Maya. Seriously. Not okay.\""
+        },
+        {
+          "id": "b",
+          "text": "(kneel down, help gather the papers, say nothing)"
+        },
+        {
+          "id": "c",
+          "text": "(stay back — not really your place)"
+        },
+        {
+          "id": "d",
+          "text": "(laugh along, keep the peace)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "resp-6a-1",
+            "character": "maya",
+            "text": "...Excuse me?",
+            "emotion": "genuinely caught off guard, mask slipping",
+            "pause": 800
+          },
+          {
+            "id": "resp-6a-2",
+            "character": "deja",
+            "text": "(quiet, almost to herself) ...Yeah. Yeah, actually.",
+            "emotion": "relieved someone finally said it",
+            "pause": 500,
+            "action": "starts helping pick up papers too, not looking at Maya"
+          },
+          {
+            "id": "resp-6a-3",
+            "character": "alex",
+            "text": "...You didn't have to do that.",
+            "emotion": "stunned, voice unsteady",
+            "pause": 900
+          }
+        ],
+        "b": [
+          {
+            "id": "resp-6b-1",
+            "character": "alex",
+            "text": "(barely audible) ...Thanks.",
+            "emotion": "quietly grateful, still bracing",
+            "pause": 700
+          },
+          {
+            "id": "resp-6b-2",
+            "character": "maya",
+            "text": "Wow, okay, saint alert.",
+            "emotion": "smirking, but backing off",
+            "pause": 400
+          }
+        ],
+        "c": [
+          {
+            "id": "resp-6c-1",
+            "character": "alex",
+            "text": "(gathers the papers alone, doesn't look at anyone, jaw tight)",
+            "emotion": "used to this",
+            "pause": 900
+          },
+          {
+            "id": "resp-6c-2",
+            "character": "jordan",
+            "text": "(shifts, looks at his shoes, doesn't move either)",
+            "emotion": "guilty",
+            "pause": 700
+          }
+        ],
+        "d": [
+          {
+            "id": "resp-6d-1",
+            "character": "maya",
+            "text": "See? Even the new kid gets it.",
+            "emotion": "delighted, validated",
+            "pause": 400
+          },
+          {
+            "id": "resp-6d-2",
+            "character": "alex",
+            "text": "(doesn't react at all — face just closes, like a door)",
+            "emotion": "devastated, hidden",
+            "pause": 1000
+          },
+          {
+            "id": "resp-6d-3",
+            "character": "deja",
+            "text": "(smiles, but it's the kind of smile that doesn't reach anywhere)",
+            "emotion": "complicit, uneasy",
+            "pause": 500
+          }
+        ]
+      }
     }
   ],
-  "voiceNotes": "Dialogue generated successfully."
+  "voiceNotes": "CASTING NOTE: The provided character profile is for Jules Okafor-Rivas, but Jules doesn't appear by name in any scene's character list. Rather than leaving that voice unused, I folded Jules's specific verbal DNA — fast-talking deflection, trailing off right when something matters, the desk-tapping (drummer's tell), the code-switch between blunt and careful — into 'Deja,' Maya's friend who was otherwise just a name with no interiority. This gives the crew a fracture point: Deja laughs along in scene-3b/6 but never fully commits to the cruelty, which sets up believable friction if the player earns her trust. If Jules is meant to appear as a separate, distinct character elsewhere in the episode, her lines can be lifted wholesale from Deja's — the voice work was built for exactly that profile.\n\nMR. OKAFOR: Brisk, dry, dad-energy — the kind of teacher who's clearly said 'we don't bite, usually' every first day for a decade. Doesn't hover, doesn't perform kindness, just quietly makes room for you without making it a thing.\n\nJORDAN: Runs sentences into the ground when nervous, self-interrupts, over-explains jokes that didn't need explaining. Vulnerability is loud and visible on him — he doesn't have Jules's gift for deflection, so every awkward beat lands exposed. This makes him easy to either wound or befriend cheaply, which is the point of his low-stakes test.\n\nMAYA CHEN: Charm as currency. Every compliment is also a transaction — she's testing what you'll trade for a seat at her table. Her dig at Alex is delivered light, almost affectionate, specifically so it's deniable ('I was just joking') — this is what makes it insidious rather than obviously villainous.\n\nPRIYA: Underwritten by design — she's a mirror for Maya, laughing a half-beat after to check the room first. Not cruel on her own, just uncommitted to anything that costs her anything.\n\nALEX RIVERA: The opposite of Jules — where Jules deflects with jokes, Alex deflects with pre-emptive surrender ('you can ask to switch, I won't be weird about it'). Short sentences, flat affect, clearly rehearsed lines that come from having done this exact scene with other partners before. The cracks (the 'oh,' the unfinished 'you didn't have to—') are where the real feeling leaks through, and they should feel expensive, not easy.\n\nGENERAL: Nobody in this episode says 'I feel excluded' or 'that hurt my feelings.' The hurt shows up sideways — in what Alex does with their hands, in Deja's laugh that's a half-second late, in Jordan going quiet instead of finishing a sentence. Resist any urge to have characters narrate their own emotional state directly; let the player infer it from behavior.",
+  "alternativeLines": [
+    {
+      "lineId": "s4-l2",
+      "alternatives": [
+        "You don't have to do the whole 'it's fine' thing. I know how this goes.",
+        "If you want to switch, just tell Mr. O. I get it."
+      ],
+      "reasoning": "Original keeps Alex's guard fully up and pre-emptive; these alternates let a touch more visible hurt through, which could work better if you want the audience to sympathize with Alex faster, at the cost of some of the deadpan restraint that makes the later cracks land harder."
+    },
+    {
+      "lineId": "s3b-l3",
+      "alternatives": [
+        "Not to start drama, but does Alex, like, talk? At all? Ever?",
+        "Okay, weird question — is Alex okay? Like actually okay?"
+      ],
+      "reasoning": "The second alt is intentionally more ambiguous — reads as concern OR as a setup for mockery, forcing the player to actually read tone rather than react to obvious cruelty. Riskier but could deepen the 'test' framing if Maya is meant to be more slippery than outright mean."
+    },
+    {
+      "lineId": "s6-l1",
+      "alternatives": [
+        "(bumps the table 'accidentally,' watching to see who laughs)",
+        "My bad. Guess we bumped it."
+      ],
+      "reasoning": "Original 'Oops' is clean and cutting in its brevity — matches Maya's performative deniability. The alternates spell out the intent more, which trades subtlety for clarity if playtesters find the original too subtle to register as a real transgression."
+    },
+    {
+      "lineId": "s6-l4",
+      "alternatives": [
+        "(doesn't laugh at all this time, just watches Alex's hands shake picking up the papers)",
+        "...C'mon, that's enough."
+      ],
+      "reasoning": "The second alt has Deja speak up unprompted before the player's choice, which could undercut the player's own agency in choice-6 — kept the original silent version so the moral weight of intervening stays with the player, not an NPC."
+    }
+  ]
 }

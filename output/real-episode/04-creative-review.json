@@ -1,44 +1,52 @@
 {
   "decision": "NEEDS_REVISION",
-  "creativeNotes": "There's a solid premise buried here — the collision between an authentic connection and a magnetic social invitation is a classic setup for a reason, and it maps well onto the season's educational goals. But right now this is a skeleton, not an episode. There are no scenes, no dialogue, no named characters, no actual choice architecture. I can't evaluate whether the emotional beats are earned because none exist yet on the page. What I can evaluate is the premise and structural intent, and on that level it's promising but dangerously generic. 'New kid at school torn between the popular table and the quirky outsider' is one of the most well-worn tracks in middle-grade/YA fiction — that's not disqualifying, but it means the execution has to bring something specific: a distinct voice, a specific school culture, textured secondary characters, and dialogue that doesn't sound like it was written by an adult's idea of what 13-year-olds say. Right now none of that specificity exists. I need named characters, a real hallway, a real cafeteria table with real social dynamics, and dialogue drafts before I can sign off.",
+  "creativeNotes": "There's real craft here — the dialogue mostly sounds like actual kids, the branching structure is clean, and the central dilemma (Alex) is handled with more nuance than the premise suggests at first glance. Deja is the best-written character in the piece; her half-protests and knuckle-taps do more emotional work than most of the on-the-nose lines. But the episode is currently coasting on a very well-worn 'new kid witnesses bullying, chooses to intervene or not' chassis, and it needs to work harder to earn its title as episode one of a season, not a standalone morality play. The biggest issue is Alex: right now they exist entirely as a plot device to test the player's character, with almost no interiority of their own. Fix that and this goes from good to excellent.",
   "specificFeedback": {
     "story": [
-      "No scenes are drafted — I need the actual beat-by-beat structure: first bell, first hallway encounter, first class, lunch table decision point, and the closing choice moment.",
-      "The 'invitation into the magnetic social circle' needs a concrete inciting moment — who invites the player, why, and what's the specific cost of accepting vs. declining? Right now it's abstract.",
-      "Consider giving the awkward new student a name and a specific, non-cliché awkwardness — not just 'nervous new kid' but something textured (obsessive about a niche hobby, blunt to the point of social miscalibration, etc.) so the connection feels earned rather than assigned.",
-      "The ending shouldn't just be 'you chose a table.' Give us a beat afterward — a text, a look across the cafeteria, a small consequence — that shows belonging is provisional and built over time, per the theme."
+      "The structure (hallway → homeroom → lunch → crisis → resolution) is a classic single-day framework and it works mechanically, but it's also the most predictable shape this story could take. Consider whether the crisis needs to be this legible as 'The Bullying Scene' — right now scene-6 reads like an after-school special beat rather than something Ridgeline Academy specifically would produce.",
+      "The Bridge Ending (branch-bridge) is the most interesting structural idea in the doc and it's buried in a footnote. If stacking empathy/confidence unlocks a genuinely different scene-7, that should be foregrounded as a design pillar, not an easter egg — it's the thing that rewards nuanced play instead of binary good/bad choices.",
+      "Nothing in this episode gives us texture on Ridgeline itself — no sense of what's specific to THIS school (traditions, rules, teachers' reputations, the actual social ecosystem). It could be any school in any YA property. Ground us physically and culturally, even in small details.",
+      "Scene-3a and 3b run in parallel but never cross-pollinate — Jordan and Maya's table never acknowledge each other exists. In a real classroom, seating choices ripple. Consider a beat where Jordan clocks you're now 'one of Maya's' or vice versa."
     ],
     "character": [
-      "No characters are named or characterized yet. The 'popular table' crowd needs at least one person who complicates the stereotype — not just gatekeepers, but someone with actual interiority we glimpse even briefly.",
-      "The awkward new student shouldn't be a device for the player's growth — they need their own want and stakes independent of whether the player befriends them.",
-      "Player-protagonist's own internal first-day anxiety needs a specific texture — what does THIS kid fear specifically (being invisible? being mislabeled? repeating an old mistake from their last school?) rather than generic first-day nerves."
+      "Alex has zero interiority beyond 'used to rejection.' Every line is a variation of bracing for pain (s4-l2, s6-l5, resp-6b-1). We need ONE moment where Alex is not defined by the group's treatment of them — a flash of dry humor, a specific interest, an opinion on the project topic that isn't just 'it's not exciting.' Right now Alex is a mirror for the player's virtue, not a person.",
+      "Maya is written as consistently, almost cartoonishly manipulative — 'watching for your reaction,' 'testing,' 'performing for the crowd' appear in nearly every stage direction. Give her one line that isn't a test — a genuine unguarded moment — so the eventual choice to befriend or reject her carries real weight instead of feeling like resisting an obvious trap.",
+      "Deja is doing the most interesting work in the cast (the half-protest, the tapping, the 'yeah actually' in resp-6a-2) but she has no scene of her own — she's reactive furniture until the climax. She deserves a beat where the player can engage her directly, since she's clearly the character most likely to be a real ally next episode.",
+      "Jordan's characterization is charming but a little thin — 'nervous, self-interrupting boy who draws comics' is a type we've seen many times. The comic detail in resp-3a-a2 is a good hook; push further into specificity (what does he draw, why does he say his comics are bad) rather than leaving it as a placeholder for 'more relatable than Maya's crowd.'"
     ],
     "dialogue": [
-      "No dialogue drafted yet — flag for next pass: avoid TV-writer-room slang that dates fast ('bet,' 'no cap' overuse). Aim for rhythm and character-specific speech patterns over trying to sound 'current.'",
-      "Give the popular-table leader a line that reveals unexpected depth or unexpected coldness — avoid one-dimensional 'mean girl/guy' shorthand.",
-      "The awkward student's dialogue should reveal charm through specificity, not through clumsiness alone — clumsy-but-lovable is a trope; give them something they're unexpectedly great at or confident about."
+      "Strongest writing in the episode: Priya's 'I have three things. Three. That's not a crime,' and Deja's dry '...' stage direction choices. These feel like real 13-year-olds.",
+      "Weakest: Mr. Okafor's lines ('We don't bite. Usually.' / 'no trading, no negotiating, I already know your tricks') are generic sitcom-teacher filler. He's got no specificity — give him one line that reveals he actually sees Alex's situation and is quietly engineering the pairing on purpose, which would add a layer of adult awareness without being heavy-handed.",
+      "Alex's dialogue is almost uniformly clipped and defensive — 'It's fine.' / 'You can ask to switch.' / '...Thanks.' This is consistent but monotonous; even guarded kids have texture. One dry or unexpectedly funny line would make Alex feel like a person rather than a wound.",
+      "The narrator lines occasionally over-explain the emotional beat instead of trusting the scene ('Waiting to see where you land' at the end of s6-l7 is good, but 's1-l3 'the door looks heavier than a door should' is doing too much telegraphing of theme for a moment that should just be tense)."
     ],
     "tone": [
-      "Synopsis leans into 'test' framing for every space (hallway, seat, lunch table) — good tension, but be careful this doesn't tip into anxiety-porn. Middle schoolers navigating real fear should also get moments of levity, absurdity, joy.",
-      "Make sure the 'choice-driven belonging' theme doesn't moralize — avoid making the popular kids purely a cautionary tale and the outsider purely a moral lesson. Real social dynamics are messier."
+      "The tonal balance between comedy (Jordan's rams joke, Priya's banter) and the harder material (Alex's isolation) is mostly well-calibrated — the show doesn't feel like it's punishing the player for existing in a school. Good instinct.",
+      "Scene-6 risks feeling like an Issue rather than a lived moment because every character's motivation is legible and stated in the stage directions ('performing for the crowd,' 'checking if that was funny'). Real social cruelty is often less self-aware and more mundane — trust the audience to read subtext without so much narrator scaffolding.",
+      "The educational goals are admirable but occasionally poke through the fourth wall of the fiction (the choice options sometimes read like a SEL worksheet — 'Say something kind about Alex, even if it's awkward' tells the player the 'correct' emotional valence rather than trusting them to intuit it from context)."
     ]
   },
   "inspirationReferences": [
     {
-      "type": "FILM",
-      "title": "Eighth Grade",
-      "reasoning": "Nails the specific texture of early-teen social anxiety without condescension — useful model for authentic discomfort rather than generic 'first day nerves.'"
+      "type": "TV",
+      "title": "PEN15",
+      "reasoning": "For calibrating how middle-school social cruelty can be devastatingly specific and awkward rather than cinematic and clean — useful model for making scene-6 feel less like an after-school special."
     },
     {
       "type": "BOOK",
-      "title": "The Thing About Jellyfish by Ali Benjamin",
-      "reasoning": "Handles a socially awkward middle-school character with real interiority and specificity rather than trope-driven quirkiness."
+      "title": "Wonder by R.J. Palacio",
+      "reasoning": "Handles a socially isolated character (Auggie) with real interiority and humor rather than pure pathos — a useful reference for giving Alex texture beyond their treatment by others."
+    },
+    {
+      "type": "GAME",
+      "title": "Life is Strange",
+      "reasoning": "Excellent model for branching dialogue where choices ripple forward without telegraphing morality — worth studying for how it lets small choices accumulate meaning rather than each one reading as a values test."
     },
     {
       "type": "TV",
-      "title": "Diary of a Future President",
-      "reasoning": "Balances multiple friend groups and social dynamics at a middle school with warmth and specificity, avoiding cliché popular-kid archetypes."
+      "title": "Freaks and Geeks",
+      "reasoning": "Gold standard for specificity in teen ensemble writing — every side character (a Deja, a Priya) has a distinct comic rhythm and interior life even in small scenes."
     }
   ],
-  "revisionPriority": "HIGH"
+  "revisionPriority": "MEDIUM"
 }

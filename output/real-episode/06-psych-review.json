@@ -3,79 +3,88 @@
   "concerns": [
     {
       "severity": "MODERATE",
-      "category": "EDUCATIONAL",
-      "issue": "The episode's scenes, choices, and outcomes arrays are empty. Only synopsis, themes, and educational goals are provided. A full psychological safety review cannot be completed without actual dialogue, choice text, and consequence framing, since tone, phrasing, and social dynamics (e.g., how the 'popular group' invitation is portrayed, how the awkward student is characterized) are where most risk or benefit actually lives.",
-      "location": "scenes/choices/outcomes fields (all empty)",
-      "recommendation": "Submit full scene and choice content for review before final approval. This assessment should be treated as preliminary/conditional pending that content.",
-      "mustFix": true
-    },
-    {
-      "severity": "MINOR",
-      "category": "AGE_INAPPROPRIATE",
-      "issue": "Target audience is listed as 11-14, but featured character Maya is 15 (more aligned with early high school). Slight mismatch between protagonist age and target reader age could affect relatability, especially for the younger end (11).",
-      "location": "Character profile (Maya, 15) vs. target audience (11-14)",
-      "recommendation": "Confirm player-character age aligns with 6th-8th grade experience (roughly 11-13), or adjust Maya's age/grade to match middle school setting more precisely.",
+      "category": "MENTAL_HEALTH",
+      "issue": "No adult intervention or acknowledgment of the bullying incident by Mr. Okafor or other staff. The exclusion/humiliation of Alex is witnessed by a crowd but no adult follows up, which could implicitly normalize the idea that peer bystanders alone bear responsibility for addressing bullying, with no modeling of reporting or trusted-adult support.",
+      "location": "scene-6, scene-7",
+      "recommendation": "Add a brief beat (even optional/branching) where a trusted adult (Mr. Okafor, counselor) checks in afterward, or where the player has the option to tell an adult, to normalize help-seeking as a legitimate and non-'snitching' response alongside peer courage.",
       "mustFix": false
     },
     {
       "severity": "MODERATE",
-      "category": "MENTAL_HEALTH",
-      "issue": "The premise of choosing between a 'genuine connection with an awkward new student' and 'the school's most magnetic social circle' risks reinforcing a false binary (popular = shallow, awkward = authentic) if not written carefully. This is a common trope that can either teach nuance or accidentally stigmatize social status-seeking or peer groups as inherently toxic.",
-      "location": "Synopsis / core premise",
-      "recommendation": "Ensure the 'popular' group isn't written as one-dimensionally cruel or superficial, and the 'awkward' student isn't a flat trope either. Educational goal #3 (holding multiple relationships) suggests the writers intend nuance — make sure scenes actually deliver a non-binary resolution where the player isn't forced to pick one group and vilify the other.",
-      "mustFix": false
+      "category": "EDUCATIONAL",
+      "issue": "The 'stay back' and 'laugh along' choice outcomes (6c, 6d) show fairly bleak, unresolved emotional consequences (Alex 'devastated, hidden', Jordan 'guilty') with no scene afterward addressing repair, reflection, or a path forward for a player who picked those options.",
+      "location": "choice-6 responseDialogue (c, d) and scene-7",
+      "recommendation": "Ensure scene-7 branches meaningfully for ALL outcome paths, including lower-empathy choices, offering a reflective moment (e.g., internal narration acknowledging the choice's weight) rather than leaving the player in unresolved guilt with no reframing or growth opportunity.",
+      "mustFix": true
     },
     {
       "severity": "MINOR",
       "category": "RELATIONSHIPS",
-      "issue": "No information yet on how peer pressure or social exclusion might be depicted; without seeing dialogue, there's a risk that exclusionary behavior (e.g., mocking the awkward student, gatekeeping the social circle) could be portrayed vividly enough to feel realistic but without adequate narrative pushback or adult/peer support modeling.",
-      "location": "Anticipated scene content (not yet provided)",
-      "recommendation": "When scenes are written, ensure any exclusionary or unkind behavior from peers is contextualized, not glamorized, and that the protagonist has visible internal reasoning or support resources (friend, mentor, self-reflection) rather than navigating alone.",
+      "issue": "Maya is portrayed as consistently manipulative/mean-girl coded without any redeeming complexity or moment of her own vulnerability, risking a flat 'popular kid = cruel' stereotype.",
+      "location": "scene-3b, scene-6",
+      "recommendation": "Consider giving Maya a brief humanizing beat (e.g., a flicker of insecurity or her own social pressure) so she isn't purely a one-dimensional antagonist, modeling that social cruelty often comes from complex places.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "AGE_INAPPROPRIATE",
+      "issue": "Target audience listed as 11-14 in the review request but episode data/character bio (Jules, 15) and system prompt reference 13-17; slight audience mismatch could affect calibration of themes/language, though content itself reads fine for upper-middle/early-high schoolers.",
+      "location": "targetAge field vs protagonist age",
+      "recommendation": "Align protagonist age and content calibration with stated target age range (11-14) or clarify age range in metadata.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "MENTAL_HEALTH",
+      "issue": "Alex's isolation is portrayed with emotional depth but the narrative doesn't give Alex much interiority/agency beyond reacting to the player; risks reducing Alex to a 'lesson object' for the protagonist's growth rather than a fully realized character.",
+      "location": "throughout, especially scene-4, scene-6",
+      "recommendation": "Consider adding a small character beat where Alex shows initiative, humor, or a glimpse of interests beyond the bullying narrative, to avoid the 'silent suffering side character' trope.",
       "mustFix": false
     }
   ],
   "recommendations": [
-    "Provide full scene/dialogue/choice content for a complete safety and tone review.",
-    "Write the 'popular' clique with at least one redeeming or humanizing trait to avoid stereotyping.",
-    "Give the awkward new student agency and depth beyond being a 'test' for the protagonist's empathy — they should feel like a full character, not a prop.",
-    "Include at least one choice path where the player can make a mistake (e.g., briefly siding with exclusion) and see a realistic, non-catastrophic consequence with a chance to repair it — this reinforces goal #4 (first impressions are choices, not fixed fates).",
-    "Consider having a trusted adult or sibling figure available as a subtle resource, even if not central, to normalize support-seeking without making the episode adult-directed.",
-    "Use Maya's established humor-as-deflection trait purposefully — if she uses jokes to avoid vulnerability, give at least one scene where this is gently named or contrasted with authentic connection, tying into the 'authenticity' theme."
+    "Add an adult check-in or resource-mention beat post-cafeteria incident to normalize help-seeking.",
+    "Ensure every choice branch in scene-7 offers emotional closure/reflection, not just the 'good' paths.",
+    "Give Maya and Alex slightly more three-dimensionality to avoid stereotyping.",
+    "Consider a brief epilogue note or debrief prompt after the episode encouraging player reflection on real-life parallels (standard SEL practice for this age group).",
+    "Clarify target age alignment between metadata and character/content design."
   ],
   "triggerWarnings": [
     {
-      "category": "SELF_ESTEEM",
-      "description": "Likely themes of social anxiety, fear of judgment, and first-day insecurity around fitting in.",
-      "severity": "MILD",
-      "location": "Throughout, implied by synopsis"
+      "category": "BULLYING",
+      "description": "Public humiliation/exclusion of a classmate (papers knocked down, mocking comments) witnessed by peers",
+      "severity": "MODERATE",
+      "location": "scene-6"
     },
     {
-      "category": "BULLYING",
-      "description": "Potential mild social exclusion or clique gatekeeping dynamics, depending on scene writing (not yet confirmed).",
+      "category": "SELF_ESTEEM",
+      "description": "Themes of social rejection, being unwanted, bracing for exclusion",
       "severity": "MILD",
-      "location": "Anticipated in social circle / lunch table scenes"
+      "location": "scene-4, scene-2"
     }
   ],
   "scores": {
-    "ageAppropriateness": 7,
-    "emotionalSafety": 7,
-    "educationalValue": 8,
-    "mentalHealthRep": 6,
-    "overall": 6
+    "ageAppropriateness": 9,
+    "emotionalSafety": 8,
+    "educationalValue": 9,
+    "mentalHealthRep": 7,
+    "overall": 8
   },
   "summary": {
     "strengths": [
-      "Strong, developmentally relevant premise centered on real middle-school social dynamics (first impressions, cliques, belonging)",
-      "Educational goals are well-articulated and psychologically sound (confidence + kindness, empathy as social risk, authentic adaptability)",
-      "Themes of belonging and authenticity are highly appropriate and valuable for the 11-14 age range",
-      "Premise sets up nuanced, non-punitive framing: 'first impressions are choices, not fixed fates' is a genuinely healthy, growth-oriented message"
+      "Excellent, realistic depiction of subtle social exclusion and peer pressure without gratuitous cruelty",
+      "Choice architecture meaningfully ties micro-decisions to larger values in an age-appropriate way",
+      "Dialogue is authentic to how young teens actually speak and self-interrupt",
+      "Strong emotional arc with clear escalation and stakes",
+      "Empowers player agency while showing nuanced social costs of both conformity and courage",
+      "Alex's guardedness and bracing-for-rejection is a realistic, non-stigmatizing portrayal of a bullied student's coping"
     ],
     "improvements": [
-      "Need actual scene/choice content to properly evaluate emotional safety and relationship modeling",
-      "Avoid falling into a simplistic 'popular kids bad, awkward kid good' binary",
-      "Ensure protagonist has some form of support or self-reflection rather than navigating social risk entirely solo",
-      "Clarify protagonist/character age alignment with target audience"
+      "Add adult/support-system presence to reinforce help-seeking as a valid option, not just peer courage",
+      "Provide meaningful reflective closure for lower-empathy choice paths, not just optimal ones",
+      "Add minor complexity to antagonist and marginalized character to avoid flattening",
+      "Consider brief post-episode reflection prompt for real-world transfer of skills"
     ],
-    "readyForAudience": false
+    "readyForAudience": true
   }
 }

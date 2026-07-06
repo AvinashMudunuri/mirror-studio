@@ -1,98 +1,94 @@
 {
   "character": {
-    "id": "protag-riley-okonkwo-abara-001",
-    "name": "Riley Okonkwo-Abara",
+    "id": "protagonist-jules-okafor-rivas",
+    "name": "Jules Okafor-Rivas",
     "age": 15,
-    "pronouns": "she/her",
+    "pronouns": "she/they (fluid, still figuring out preference day to day)",
     "appearance": {
-      "brief": "Medium-brown skin, box braids she re-does herself (usually a little uneven at the part), stocky build from years of competitive swimming she quit, wears her older brother's oversized hoodies even though she has her own clothes that fit.",
+      "brief": "Medium height, soft-bodied, dark brown skin, tight coils she often has pulled back messily with whatever's on hand — a pen, a scrunchie, once a chip bag clip. Wears her older brother's oversized hoodies even in summer.",
       "distinctiveFeatures": [
-        "Chews on pen caps until they're destroyed — has a drawer full of ruined pens she can't throw away",
-        "A thin scar above her left eyebrow from a pool-deck fall at age 10, which she covers with braids when she's feeling self-conscious",
-        "Draws small spirals on her hands and arms in ballpoint pen when anxious"
+        "A constellation of small burn scars on her left forearm from an old kitchen accident she doesn't talk about",
+        "Chews on pen caps until they're destroyed — has a drawer full of ruined pens",
+        "Draws on her own hands and arms in blue pen when bored or anxious"
       ]
     },
     "personality": {
       "coreTraits": [
         "fiercely loyal",
-        "control-seeking",
-        "secretly soft",
         "quick-witted",
-        "avoidant under pressure"
+        "self-deprecating",
+        "secretly tender-hearted",
+        "avoidant of vulnerability"
       ],
       "bigFiveProfile": {
-        "openness": 6,
-        "conscientiousness": 8,
-        "extraversion": 5,
-        "agreeableness": 6,
-        "neuroticism": 7
+        "openness": 8,
+        "conscientiousness": 4,
+        "extraversion": 6,
+        "agreeableness": 7,
+        "neuroticism": 8
       },
       "mannerisms": [
-        "Makes lists on her phone for everything, including feelings she doesn't want to deal with ('Things To Think About Later' — the list never gets opened)",
-        "Laughs a beat too loud right after saying something vulnerable, like she's trying to take it back",
-        "Physically steps in front of friends when conflict starts, even strangers' conflicts"
+        "Deflects compliments by immediately making a joke",
+        "Taps out rhythms on tables/desks when thinking — she used to take drum lessons",
+        "Goes very quiet and still right before she's about to cry, like she's trying to physically hold it in"
       ],
       "speechPatterns": [
-        "Deflects with sarcasm before answering a real question honestly",
-        "Uses precise, almost clinical language when discussing emotions ('that's a stress response,' 'I'm dysregulated') — armor of knowledge",
-        "Drops into blunt one-liners that land harder because she's usually deflecting"
+        "Uses humor as a shield — sarcasm is her first language",
+        "Talks fast when nervous, trails off mid-sentence when something actually matters to her",
+        "Occasionally code-switches between blunt Bronx-inflected bluntness and more formal, careful phrasing when talking to teachers or people she wants to impress"
       ],
-      "emotionalTendencies": "Riley over-functions for everyone around her and under-functions for herself. She reads a room in about four seconds and adjusts to be whatever's needed — the peacekeeper, the planner, the ride home. She rarely lets herself be the one who needs something, and when she finally does feel something big, it tends to come out sideways: irritability, over-control, or sudden withdrawal rather than tears or direct asks for help."
+      "emotionalTendencies": "Jules feels everything enormously but has trained herself to perform 'fine.' She's the friend who shows up with snacks during your crisis but disappears when she's the one in crisis. Anger comes easier to her than sadness — sadness feels too much like weakness, something she associates with her mom's depression after her parents' divorce."
     },
     "background": {
-      "family": "Nigerian-American dad (works nights as an ER nurse, exhausted but present), white mom who left when Riley was 11 and now lives two states away with a new family — contact is inconsistent, a few texts a month, a birthday call. Older brother Femi (19) dropped out of community college and moved back home 'temporarily' eight months ago; Riley has quietly taken over a lot of household logistics her dad used to handle.",
+      "family": "Lives with her mom, who has struggled with depression since the divorce three years ago, and her older brother Marcus (19), who works full-time and has become a de facto parent figure. Dad lives two states away and calls on birthdays, mostly. Money is tight — Jules has learned not to ask for things.",
       "interests": [
-        "Competitive swimming (quit last year, won't fully explain why, still swims alone at 6am sometimes)",
-        "True crime podcasts — she likes the ones where they solve it, hates the unsolved ones",
-        "Fixing things: bikes, broken zippers, other people's problems",
-        "A group chat with three friends that she basically runs like a small business"
+        "Drumming (used to be in a middle school band, quit when lessons became unaffordable)",
+        "True crime podcasts — she finds comfort in stories with clear villains and resolutions",
+        "Making elaborate playlists for her friends, each one a coded message she'd never say out loud"
       ],
       "strengths": [
-        "Genuinely excellent in a crisis — calm, decisive, resourceful",
-        "Notices when other people are struggling before anyone else does",
-        "Dry humor that diffuses tension in a room"
+        "Radar for when someone else is hurting, even when they hide it well",
+        "Genuinely funny — can defuse tension in a room instantly",
+        "Fiercely protective of the people she loves"
       ],
       "struggles": [
-        "Cannot ask for help without turning it into a joke or a logistics problem",
-        "Quietly convinced that her worth is tied to being useful/needed",
-        "Panic attacks she calls 'glitches' and hides by leaving rooms calmly instead of visibly falling apart"
+        "Chronic difficulty asking for help — sees needing people as a liability",
+        "Undiagnosed anxiety that manifests as irritability and 'shutting down'",
+        "School is a mess — she's smart but disorganized, missing assignments buried in her backpack for weeks"
       ],
       "secrets": [
-        "She quit swimming the week her mom left, not because of 'burnout' like she tells people — swimming was the last thing her mom used to come watch",
-        "She's been covering small amounts of Femi's financial mess (borrowed lunch money, a 'loan' from her babysitting savings) and hasn't told her dad",
-        "She has a note in her phone titled 'reasons to stay' that she started after a bad night in ninth grade and adds to occasionally, but has never told anyone it exists"
+        "She's the one who's been quietly doing extra chores and picking up slack at home because she's scared her mom will 'break' if she asks for anything",
+        "She still has the drumsticks from her old lessons hidden in her closet and takes them out sometimes just to hold them"
       ]
     },
     "goals": {
       "conscious": [
-        "Keep the household running smoothly so her dad doesn't have to worry",
-        "Get Femi back on track without anyone finding out how bad it's gotten",
-        "Maintain her reputation as 'the reliable one' among friends"
+        "Keep her family from falling apart — be the 'easy' kid so nobody has to worry about her",
+        "Get through the school year without anyone finding out how bad things are at home"
       ],
       "unconscious": [
-        "To be chosen and stayed-for without having to earn it through usefulness",
-        "To have permission to fall apart without losing people's respect or love",
-        "To grieve her mother's leaving without it meaning she's 'too much' or the reason for it"
+        "Wants permission to be a kid again — to need things without guilt",
+        "Craves being truly seen past the jokes, not just liked for being 'fun'"
       ]
     },
     "voiceGuidelines": {
-      "vocabularyLevel": "Sharp, contemporary teen vernacular mixed with oddly clinical/textbook phrasing when discussing feelings — she's absorbed therapy-speak from a school counselor and uses it like a shield, not real self-awareness.",
-      "sentenceComplexity": "Short, punchy sentences during conflict; longer, rambling sentences when she's stalling or nervous; goes quiet and monosyllabic when something actually hits close to home.",
-      "emotionalExpressiveness": "Expressive and quick with humor and anger; heavily guarded with sadness, fear, or need. Cries alone, never in front of people, and will physically leave a room before letting anyone see it happen.",
+      "vocabularyLevel": "Contemporary teen vernacular, quick and colloquial, peppered with pop culture references and podcast lingo. Not performatively 'cool' — genuinely how a sharp, online-savvy 15-year-old talks.",
+      "sentenceComplexity": "Short, punchy sentences when joking or deflecting; fragmented, hesitant sentences when approaching real emotion.",
+      "emotionalExpressiveness": "Indirect by default — she'll tell you she's fine while visibly not fine, and expects you to read between the lines like everyone in her family has learned to. Direct emotional expression is rare and therefore significant when it happens.",
       "examples": [
-        "Example line 1: \"I'm not stressed, I'm just experiencing a normal physiological reaction to an abnormal amount of responsibility. Anyway, did you eat lunch or are you also malfunctioning.\"",
-        "Example line 2: \"You don't have to fix it. You just have to not leave in the middle of it, okay? That's — that's literally all I'm asking.\"",
-        "Example line 3: \"I'm fine. I have a system. I always have a system.\" (beat) \"The system is falling apart a little bit, but it's still a system.\""
+        "Example line 1: \"Oh my god, I'm fine, I just — okay it's not a big deal, can we talk about literally anything else, please, I'm begging you.\"",
+        "Example line 2: \"...Yeah. No, it's — yeah. I don't know. Forget it.\"",
+        "Example line 3: \"You know what's messed up? I can tell you the entire timeline of, like, four different unsolved murders, but I could not tell you what I'm actually feeling right now if you paid me.\""
       ]
     },
-    "storyRole": "Protagonist whose external arc (holding her family together, managing friend group dynamics, deciding whether to return to swimming) masks an internal arc about learning she's allowed to need people — that being loved isn't conditional on being endlessly capable. She's the emotional engine of the story: her competence pulls other characters in, but her inability to be vulnerable creates the central tension in nearly every relationship she has.",
+    "storyRole": "Protagonist whose external arc (managing a crumbling home life while maintaining a 'together' facade at school) mirrors her internal arc (learning that needing help isn't failure). She's the emotional entry point for players — funny and guarded enough to be instantly likable, but slowly reveals depth.",
     "arcPotential": [
-      "Episode 2: Femi's situation comes to a head (a call from a collections agency, a missed shift) and Riley has to decide whether to keep covering for him or tell their dad — forces her first real crack in the 'I handle everything' persona.",
-      "Episode 5: A friend confronts her about always deflecting with jokes when things get real, threatening to pull back from the friendship unless Riley lets someone in for once.",
-      "Episode 8: She's invited to watch a friend's swim meet, unexpectedly triggering the grief around her mom; possible first time she lets someone see her actually cry.",
-      "Season finale: Riley finally opens the 'reasons to stay' note to someone, or gets back in the pool — either as a quiet act of choosing herself, tying competence and vulnerability together instead of treating them as opposites."
+      "Episode 2: Jules is forced to choose between covering for her mom's bad day and being honest with a teacher who's starting to notice something's wrong",
+      "Episode 5: A fight with her best friend forces Jules to confront how her humor-as-deflection has been pushing people away, not just protecting her",
+      "Episode 9: Jules finally picks up the drumsticks again — small, quiet moment of reclaiming joy for herself, not as a coping mechanism but as a want",
+      "Season finale: Jules has to actually ask her brother for help instead of trying to fix everything alone — the vulnerability climax of her arc"
     ]
   },
-  "designNotes": "Riley is built around a common but under-dramatized teen archetype: the 'together' kid who is quietly drowning under the weight of being needed. Her competence isn't a flaw to be corrected but a genuine strength complicated by an unhealthy root (fear that being needed is the only way to be loved). The clinical-language-as-armor choice makes her feel like a real modern teenager who's absorbed therapy culture without necessarily doing the deeper work yet, which avoids the 'perfectly self-aware TV therapy kid' trap. Her humor is a load-bearing wall, not comic relief — it's doing real psychological work, which should make her funny AND heartbreaking in the same scene. The swimming/mom connection gives a concrete, specific object (not abstract 'sadness') for the audience to track across episodes.",
-  "representationNotes": "Riley is mixed-race (Nigerian-American and white), which is reflected in small specific details (braid maintenance, name structure) rather than treated as a plot point or 'issue episode' — her racial identity exists alongside her story, not as the story. Her home situation (absent parent, financially precarious sibling, overworked remaining parent) reflects real, non-stereotyped family complexity without being a 'poverty narrative' or an 'absent Black father' cliché — her dad is present, working, loving, and imperfect due to circumstance, not character flaw. Her mental health struggles (panic attacks, control issues, difficulty asking for help) are written to be recognizable to teens without being pathologized or resolved too neatly — no single conversation 'fixes' her, matching how these patterns actually shift slowly through repeated relational experience."
+  "designNotes": "Jules is built around the contradiction of the 'funny friend' trope — she's genuinely funny, but the humor is doing labor most audiences won't immediately clock: it's a survival mechanism from parentification and unprocessed anxiety. I deliberately avoided making her a 'poor kid' cliché or an 'issue' character (no single-episode-lesson framing); her socioeconomic stress, her mother's depression, and her own anxiety are woven together as ongoing texture, not plot devices with tidy resolutions. Her love of true crime podcasts isn't random flavor — it reflects her psychological need for order and resolution in a life that feels chaotic. The drumsticks are a concrete symbolic object for her arc: reclaiming an abandoned joy is more resonant for teens than an abstract 'self care' message.",
+  "representationNotes": "Jules is a biracial (Nigerian-American father, Puerto Rican mother) teen navigating an under-depicted intersection: financial precarity, a parent's mental illness, and her own emerging queerness/gender fluidity — without any single identity being 'the point' of her story. Her queerness is present but not a coming-out plot; it's simply part of who she is, reflecting real teens for whom identity isn't always the central conflict. Care was taken to avoid the 'strong Black/Latina girl who doesn't need help' trope by making her avoidance of help-seeking an explicit flaw to be examined, not a virtue to be celebrated."
 }

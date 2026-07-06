@@ -1,0 +1,110 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "PACING",
+      "issue": "Scene 6 (climax) is reached via a fairly linear funnel — scenes 2-5 all point toward the same cafeteria confrontation regardless of earlier choices, and scene-4/scene-5 offer limited variation in structure even though they carry different trait weights.",
+      "location": "scene-4 through scene-6",
+      "impact": "Players may feel their early choices (Jordan vs Maya) cosmetically flavor dialogue but don't meaningfully redirect the plot until the very end, reducing sense of consequence during the middle stretch.",
+      "fix": "Add small branching consequences earlier (e.g., if player befriended Jordan, Jordan reacts differently in scene-6; if player joined Maya's crew, give a unique guilt-beat) to reinforce that path choice matters before the climax.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Several choices telegraph the 'correct' morally virtuous answer very clearly (e.g., choice-6 empathy-heavy options are obviously 'good', option d is obviously 'bad'), reducing genuine dilemma tension.",
+      "location": "choice-3a, choice-6",
+      "impact": "Reduces meaningful trade-off — players optimizing for empathy trait will always pick the obvious 'nice' option, making choices feel like a morality quiz rather than an expressive dilemma.",
+      "fix": "Introduce cost to the 'kind' options (e.g., standing up for Alex causes Maya's crew to socially retaliate against the player in a visible way next scene) so the empathetic choice has real trade-offs, not just trait rewards.",
+      "priority": 8
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "Scene-7 (resolution) is very short and vague — 'someone reaches out' is described generically rather than concretely dramatized per branch.",
+      "location": "scene-7",
+      "impact": "Ending feels anticlimactic after the high-tension scene-6 confrontation; players may feel let down after investing in the crisis choice.",
+      "fix": "Write out 3-4 concrete branch-specific endings (short dialogue exchanges) tied to major choice combinations so payoff feels earned.",
+      "priority": 6
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPLAYABILITY",
+      "issue": "Only one 'hidden' branch (Bridge Ending) is defined, and it's gated behind a fairly narrow condition (choice-5c AND choice-6a).",
+      "location": "outcomes array",
+      "impact": "Limits incentive to replay since most trait-based variation only affects dialogue flavor, not structural branching.",
+      "fix": "Add 1-2 more emergent narrative branches (e.g., a 'Maya redemption' path or 'Alex opens up more' path) tied to trait thresholds to reward replay exploration.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scenes 3a and 3b are mutually exclusive but symmetric in length/beat, which is good, but scene-2 to scene-3 transition may feel like two back-to-back 'sit and talk' scenes without a physical/action beat between them.",
+      "location": "scene-2 to scene-3a/3b",
+      "impact": "Slight monotony risk in the early-middle stretch — mostly dialogue-driven scenes in a row before the first physical/social action (scene-4 reassignment).",
+      "fix": "Add a brief sensory/environmental beat or micro-interaction (e.g., passing note, bell ringing) between scene-2 and scene-3 to vary rhythm.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "No explicit onboarding for what traits (CONFIDENCE/EMPATHY/ADAPTABILITY) mean or how choices affect them within the episode itself.",
+      "location": "throughout",
+      "impact": "First-time players may not understand the stakes of trait changes, reducing strategic engagement with choice architecture.",
+      "fix": "Add a lightweight, diegetic first-choice tooltip or post-choice flash of trait feedback (e.g., 'Confidence +1') to teach the system without breaking immersion.",
+      "priority": 5
+    }
+  ],
+  "strengths": [
+    "Excellent slow-burn tension building toward a genuinely charged public confrontation (scene-6) with real emotional stakes.",
+    "Strong NPC characterization (Maya's charm-as-manipulation, Alex's guardedness, Jordan's earnestness) gives choices emotional weight beyond abstract trait numbers.",
+    "Good choice variety: verbal confrontation, physical action (helping pick up papers), passive avoidance, and complicity are all represented as distinct playstyles in the climax.",
+    "Clear thematic throughline (belonging/authenticity) reinforced consistently across choices and dialogue, not just stated.",
+    "The three-branch outcome system (Crew Path/Jordan Path/Bridge Ending) is a smart lightweight structure for replayability without excessive scene bloat."
+  ],
+  "recommendations": [
+    "Add mid-episode consequence callbacks so early choices visibly shape later scene dialogue/reactions, not just trait totals.",
+    "Increase cost/tension in 'good' choices so empathy isn't always the free, obvious pick.",
+    "Expand scene-7 into branch-specific concrete endings rather than one generic wrap-up.",
+    "Consider a subtle diegetic trait-feedback moment early on to teach the system.",
+    "Add one more hidden/rare branch to reward experimentation and replay."
+  ],
+  "scores": {
+    "engagement": 8,
+    "choiceQuality": 7,
+    "pacing": 7,
+    "playerAgency": 7,
+    "replayability": 6,
+    "overall": 7
+  },
+  "metrics": {
+    "averageSceneLength": 90,
+    "choiceFrequency": 0.5,
+    "branchingFactor": 2.7,
+    "estimatedReplayValue": 6
+  },
+  "summary": {
+    "verdict": "A well-constructed, emotionally resonant episode with a strong central dilemma and satisfying climax, but choice consequences feel more cosmetic than structural in the middle stretch, and the 'right answer' is often too obvious to create genuine tension.",
+    "keyIssues": [
+      "Middle scenes funnel toward the same climax regardless of early choices",
+      "Empathy-coded choices lack real cost/trade-off",
+      "Resolution scene is underwritten relative to the climax's intensity"
+    ],
+    "topStrengths": [
+      "Strong emotional arc culminating in a genuinely tense public choice moment",
+      "Well-drawn characters that make choices feel personal, not abstract",
+      "Smart lightweight branch/outcome system for replay variety"
+    ],
+    "mustFix": [
+      "Add visible consequences from early choices carrying into later scenes",
+      "Give empathetic choices real social/narrative cost to increase dilemma tension",
+      "Flesh out branch-specific resolutions in scene-7"
+    ],
+    "niceToHave": [
+      "Add more hidden/rare branches",
+      "Add a diegetic trait-feedback tutorial moment",
+      "Insert a small action/sensory beat between early dialogue-heavy scenes"
+    ]
+  }
+}
