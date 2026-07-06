@@ -10,7 +10,33 @@ const fs = require('fs');
 
 // Import from built packages (resolve from script location)
 const packageRoot = path.resolve(__dirname, '..');
-const agentsPath = path.join(packageRoot, 'packages', 'agents', 'dist', 'index.js');
+
+// Try multiple paths for different environments (GitHub Codespaces vs local)
+let agentsModule;
+const possiblePaths = [
+  path.join(packageRoot, 'packages', 'agents', 'dist', 'index.js'),
+  path.join(packageRoot, '..', 'packages', 'agents', 'dist', 'index.js'),
+  require.resolve('@mirror/agents')
+];
+
+for (const tryPath of possiblePaths) {
+  try {
+    if (fs.existsSync(tryPath) || tryPath.startsWith('@mirror')) {
+      agentsModule = require(tryPath);
+      console.log(`✅ Loaded agents from: ${tryPath}\n`);
+      break;
+    }
+  } catch (err) {
+    // Try next path
+  }
+}
+
+if (!agentsModule) {
+  console.error('❌ Error: Could not load @mirror/agents package');
+  console.error('   Tried paths:');
+  possiblePaths.forEach(p => console.error(`   - ${p}`));
+  process.exit(1);
+}
 
 const { 
   StoryArchitectAgent,
@@ -20,7 +46,7 @@ const {
   QAReviewerAgent,
   ChildPsychologistAgent,
   createLLMGateway
-} = require(agentsPath);
+} = agentsModule;
 
 const { v4: uuidv4 } = require('uuid');
 
