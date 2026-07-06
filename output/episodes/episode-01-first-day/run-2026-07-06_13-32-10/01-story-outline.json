@@ -1,0 +1,656 @@
+{
+  "episodeOutline": {
+    "title": "First Bell",
+    "synopsis": "It's your first day at Ridgeview High, and every hallway, lunch table, and group project is a tiny referendum on who you're going to be here. When the school's quiet, overlooked artist Reyna becomes an easy target for the popular crowd, you'll have to decide whether fitting in is worth the cost of showing up for someone else — and for yourself.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1-arrival",
+        "title": "New Halls",
+        "location": "Ridgeview High - Front Entrance",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The player steps off the bus into a swirl of unfamiliar faces, lockers, and noise. A crumpled campus map in hand, they scan for room 114 while everyone else moves like they already know where they belong.",
+        "emotionalBeat": "Nervous anticipation - the blank page before the story begins",
+        "defaultNextScene": "scene-2-hallway-locker"
+      },
+      {
+        "id": "scene-2-hallway-locker",
+        "title": "The Locker Jam",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "marcus",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "The player's assigned locker sticks, then bursts open, spilling binders across the floor right as a cluster of students passes by. A few laugh. Marcus, clearly popular, watches with an unreadable smirk. Reyna, at the edge of the crowd, hesitates like she wants to help.",
+        "emotionalBeat": "Sudden, public vulnerability - the first test of self-image",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-3-confident",
+        "title": "Playing It Off",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "marcus"
+        ],
+        "duration": 1,
+        "description": "The joke lands better than expected. Marcus laughs for real this time and gives the player a nod of approval, already filing them into the 'cool enough' category. It feels good - and a little performative.",
+        "emotionalBeat": "Relief mixed with the first taste of a curated identity",
+        "defaultNextScene": "scene-4-cafeteria"
+      },
+      {
+        "id": "scene-3-shy",
+        "title": "A Quiet Hand",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "Face burning, the player scrambles to gather their things. Reyna crouches down without a word and helps stack the binders, offering a small, genuine smile before slipping away before anyone notices her kindness.",
+        "emotionalBeat": "Quiet, unexpected connection in an embarrassing moment",
+        "defaultNextScene": "scene-4-cafeteria"
+      },
+      {
+        "id": "scene-3-defensive",
+        "title": "Sharp Edges",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "marcus"
+        ],
+        "duration": 1,
+        "description": "The player snaps 'What's so funny?' at the onlookers. The hallway goes a little quieter than the player expected. Marcus raises an eyebrow, more curious than offended, but the moment leaves a prickly aftertaste.",
+        "emotionalBeat": "Defensive armor going up before anyone's even attacked",
+        "defaultNextScene": "scene-4-cafeteria"
+      },
+      {
+        "id": "scene-4-cafeteria",
+        "title": "The Cafeteria Map",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "marcus",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "Tray in hand, the player surveys the room: Marcus's table, loud and magnetic; Reyna, alone at a corner table sketching in a notebook; and open seats scattered elsewhere. Every table is a tiny decision about who they'll be known as.",
+        "emotionalBeat": "The unspoken social math of the first lunch period",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-5-popular-table",
+        "title": "Center of the Room",
+        "location": "Cafeteria - Marcus's Table",
+        "characters": [
+          "player",
+          "marcus"
+        ],
+        "duration": 1,
+        "description": "Marcus's table pulls the player in easily - jokes, gossip, an easy rhythm. It's fun, but the player notices how quickly the group decides who's 'in' and who isn't, including a passing joke at Reyna's expense.",
+        "emotionalBeat": "The seduction of easy belonging, with a cost hiding underneath",
+        "defaultNextScene": "scene-6-classroom"
+      },
+      {
+        "id": "scene-5-reyna-table",
+        "title": "Sketchbook Stories",
+        "location": "Cafeteria - Corner Table",
+        "characters": [
+          "player",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "Reyna is surprised but glad for the company. She shows the player pages of intricate drawings and admits, quietly, that she usually eats alone. It's a small, real moment amid the cafeteria noise.",
+        "emotionalBeat": "Genuine intimacy found in an overlooked corner",
+        "defaultNextScene": "scene-6-classroom"
+      },
+      {
+        "id": "scene-5-alone-table",
+        "title": "Watching From the Edge",
+        "location": "Cafeteria - Empty Table",
+        "characters": [
+          "player",
+          "marcus",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "The player sits apart, watching both worlds - Marcus's orbit and Reyna's solitude - without stepping into either. It's safe, but the isolation is its own kind of loud.",
+        "emotionalBeat": "Self-protective distance that still aches with loneliness",
+        "defaultNextScene": "scene-6-classroom"
+      },
+      {
+        "id": "scene-6-classroom",
+        "title": "Pick a Partner",
+        "location": "Room 114 - English Class",
+        "characters": [
+          "player",
+          "marcus",
+          "reyna",
+          "devon",
+          "ms-alvarez"
+        ],
+        "duration": 1,
+        "description": "Ms. Alvarez announces a paired project due Friday and lets students choose their own partners. Marcus waves the player over with a grin, Reyna glances over hopefully but says nothing, and quiet, sketchbook-carrying Devon sits ready to be picked by anyone.",
+        "emotionalBeat": "A choice that will define the rest of the week's dynamic",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-7-partner-marcus",
+        "title": "Cutting Corners",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "marcus"
+        ],
+        "duration": 1,
+        "description": "Marcus is charismatic but treats the project like an afterthought, more interested in talking about the weekend. He casually suggests they 'borrow' ideas from someone else's rough draft left on a nearby desk - Reyna's.",
+        "emotionalBeat": "Charm curdling into a small ethical shortcut",
+        "defaultNextScene": "scene-8-conflict"
+      },
+      {
+        "id": "scene-7-partner-reyna",
+        "title": "An Idea Worth Hearing",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "Reyna lights up when asked for her ideas, sketching a genuinely clever concept for the project. She's used to being ignored in group work, and the player's attention visibly means something to her.",
+        "emotionalBeat": "Trust building through simple, attentive collaboration",
+        "defaultNextScene": "scene-8-conflict"
+      },
+      {
+        "id": "scene-7-partner-devon",
+        "title": "Unexpected Partner",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "devon"
+        ],
+        "duration": 1,
+        "description": "Devon is awkward at first but turns out to have a sharp, dry sense of humor and genuine talent for storytelling. The project becomes surprisingly fun as they find an easy, low-pressure rhythm together.",
+        "emotionalBeat": "Comfort found in an unplanned, low-stakes friendship",
+        "defaultNextScene": "scene-8-conflict"
+      },
+      {
+        "id": "scene-8-conflict",
+        "title": "The Presentation",
+        "location": "Room 114 - Front of Class",
+        "characters": [
+          "player",
+          "marcus",
+          "reyna",
+          "devon",
+          "ms-alvarez"
+        ],
+        "duration": 2,
+        "description": "During presentations, Marcus's table loudly mocks Reyna's project idea when she presents it - or, if she's the player's partner, mocks 'their' shared idea - calling it 'weird' loud enough for the class to snicker. Reyna's face falls; Ms. Alvarez hasn't noticed yet. The room waits to see what happens next.",
+        "emotionalBeat": "The episode's emotional peak - public cruelty meeting a private choice",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-9-stood-up",
+        "title": "Speaking Up",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "marcus",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "The player calls out the mockery in front of everyone, calmly but firmly defending Reyna's work. The room goes quiet for a beat - then a few classmates nod along. Marcus backs off, mildly caught off guard. Reyna looks at the player like she can't quite believe someone did that.",
+        "emotionalBeat": "Costly courage rewarded with real connection",
+        "defaultNextScene": "scene-10-afterschool"
+      },
+      {
+        "id": "scene-9-stayed-quiet",
+        "title": "Looking Away",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "marcus",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "The player stays silent, throat tight, telling themself it's not their fight. Reyna sits back down, quieter than before. Marcus doesn't even notice the player's discomfort - he's already moved on to the next joke.",
+        "emotionalBeat": "The heavy, private guilt of a missed moment",
+        "defaultNextScene": "scene-10-afterschool"
+      },
+      {
+        "id": "scene-9-diplomatic",
+        "title": "Redirecting the Room",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "marcus",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "The player defuses the moment with a light, disarming comment that shifts the class's attention without directly confronting Marcus, then quietly compliments Reyna's idea afterward. It's subtler, but Reyna notices, and Marcus never quite realizes he lost that round.",
+        "emotionalBeat": "Quiet skill in protecting someone without a public showdown",
+        "defaultNextScene": "scene-10-afterschool"
+      },
+      {
+        "id": "scene-10-afterschool",
+        "title": "The Sign-Up Sheet",
+        "location": "Hallway - Activities Board",
+        "characters": [
+          "player",
+          "reyna",
+          "devon",
+          "marcus"
+        ],
+        "duration": 1,
+        "description": "After the final bell, a sign-up sheet for the fall talent show hangs on the activities board. The player's real passion - whatever it is - is one option among the 'safe,' popular acts Marcus's crowd is signing up for. Reyna lingers nearby, pen in hand, clearly deciding too.",
+        "emotionalBeat": "The quiet decision of who to be when the day is nearly over",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-11-authentic",
+        "title": "Signing as Yourself",
+        "location": "Hallway - Activities Board",
+        "characters": [
+          "player",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "The player signs up for the thing they actually love, not the impressive-sounding one. Reyna, seeing this, does the same for her art. It's a small, unglamorous act that feels enormous.",
+        "emotionalBeat": "Authenticity chosen even without a guaranteed reward",
+        "defaultNextScene": "scene-12-end-belonging"
+      },
+      {
+        "id": "scene-11-conform",
+        "title": "Signing for the Crowd",
+        "location": "Hallway - Activities Board",
+        "characters": [
+          "player",
+          "marcus"
+        ],
+        "duration": 1,
+        "description": "The player signs up for the 'cooler' activity Marcus's crowd is doing, telling themself it's just easier this way. Marcus claps them on the back, welcoming them further into the group. It feels like winning, mostly.",
+        "emotionalBeat": "A comfortable win that quietly costs something unnamed",
+        "defaultNextScene": "scene-12-end-popular"
+      },
+      {
+        "id": "scene-11-hold-back",
+        "title": "Walking Past",
+        "location": "Hallway - Activities Board",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The player reads the sheet twice, pen in hand, and then walks away without signing anything at all. Safer not to be seen trying. The hallway empties out around them.",
+        "emotionalBeat": "The quiet ache of choosing invisibility over risk",
+        "defaultNextScene": "scene-12-end-neutral"
+      },
+      {
+        "id": "scene-12-end-belonging",
+        "title": "Day One, Real Self",
+        "location": "Bus Stop",
+        "characters": [
+          "player",
+          "reyna"
+        ],
+        "duration": 1,
+        "description": "Waiting for the bus, the player and Reyna compare notes on the day, already planning to sit together tomorrow. It wasn't the easiest first day, but it felt like theirs.",
+        "emotionalBeat": "Belonging built on honesty, however small it started",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-12-end-popular",
+        "title": "Day One, Popular",
+        "location": "Bus Stop",
+        "characters": [
+          "player",
+          "marcus"
+        ],
+        "duration": 1,
+        "description": "Marcus texts the player a meme before they've even left the parking lot - the player is 'in.' It feels like a win, but alone at the bus stop, the player wonders how much of today was actually them.",
+        "emotionalBeat": "Success with a faint, unresolved hollowness",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-12-end-neutral",
+        "title": "Day One, Unseen",
+        "location": "Bus Stop",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The player heads home having survived the day without much notice either way - not embarrassed, not celebrated, just quietly present. There's relief in that, and also a small, nagging sense of what they didn't try.",
+        "emotionalBeat": "Safety purchased with missed opportunity",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2-hallway-locker",
+        "prompt": "Your locker just betrayed you in front of everyone. What do you do?",
+        "context": "Binders are scattered across the hallway floor. A few students laugh, Marcus is watching, and Reyna looks like she might step in.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Make a self-deprecating joke about it",
+            "nextScene": "scene-3-confident"
+          },
+          {
+            "id": "b",
+            "text": "Quietly gather your things and rush off",
+            "nextScene": "scene-3-shy"
+          },
+          {
+            "id": "c",
+            "text": "Snap 'What's so funny?' at the people laughing",
+            "nextScene": "scene-3-defensive"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "EMPATHY": 1
+          },
+          "c": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -2
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-4-cafeteria",
+        "prompt": "Tray in hand, where do you sit?",
+        "context": "Marcus's table is loud and welcoming; Reyna sits alone with her sketchbook; a few empty tables sit untouched in between.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Marcus and the popular crowd",
+            "nextScene": "scene-5-popular-table"
+          },
+          {
+            "id": "b",
+            "text": "Sit with Reyna at the corner table",
+            "nextScene": "scene-5-reyna-table"
+          },
+          {
+            "id": "c",
+            "text": "Sit alone and watch the room",
+            "nextScene": "scene-5-alone-table"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -1
+          },
+          "b": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "ADAPTABILITY": -1,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-6-classroom",
+        "prompt": "Ms. Alvarez says to pick a partner for the week's project. Who do you choose?",
+        "context": "Marcus is waving you over, Reyna glances over hopefully, and Devon sits quietly, ready to be picked by anyone.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Partner with Marcus",
+            "nextScene": "scene-7-partner-marcus"
+          },
+          {
+            "id": "b",
+            "text": "Partner with Reyna",
+            "nextScene": "scene-7-partner-reyna"
+          },
+          {
+            "id": "c",
+            "text": "Partner with Devon",
+            "nextScene": "scene-7-partner-devon"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -1
+          },
+          "b": {
+            "EMPATHY": 2
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-8-conflict",
+        "prompt": "Marcus's table just mocked the idea Reyna presented, loud enough for the whole class to hear. What do you do?",
+        "context": "Reyna's face has fallen. Ms. Alvarez hasn't stepped in yet. Everyone is watching to see what happens next.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speak up and defend Reyna in front of everyone",
+            "nextScene": "scene-9-stood-up"
+          },
+          {
+            "id": "b",
+            "text": "Stay quiet and let it pass",
+            "nextScene": "scene-9-stayed-quiet"
+          },
+          {
+            "id": "c",
+            "text": "Redirect the room with a light comment, then support her quietly after",
+            "nextScene": "scene-9-diplomatic"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "CONFIDENCE": -2,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "EMPATHY": 1,
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": 2
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-10-afterschool",
+        "prompt": "The talent show sign-up sheet is right there. What do you write down?",
+        "context": "One option is the thing you genuinely love. Another is the 'cooler' activity Marcus's crowd is choosing. You could also just walk away.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sign up for what you actually love",
+            "nextScene": "scene-11-authentic"
+          },
+          {
+            "id": "b",
+            "text": "Sign up for the popular activity instead",
+            "nextScene": "scene-11-conform"
+          },
+          {
+            "id": "c",
+            "text": "Don't sign up at all",
+            "nextScene": "scene-11-hold-back"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "ADAPTABILITY": 2,
+            "CONFIDENCE": -1
+          },
+          "c": {
+            "CONFIDENCE": -2
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-authentic-belonging",
+        "name": "The Authentic Path",
+        "triggeredBy": [
+          "choice-4:a",
+          "choice-5:a"
+        ],
+        "description": "The player consistently chooses courage over comfort - standing up for Reyna publicly and later signing up for something genuinely their own.",
+        "outcome": "Ends with a real, earned friendship and a sense of belonging rooted in honesty rather than popularity."
+      },
+      {
+        "id": "branch-social-climber",
+        "name": "The Popularity Path",
+        "triggeredBy": [
+          "choice-2:a",
+          "choice-3:a",
+          "choice-4:b",
+          "choice-5:b"
+        ],
+        "description": "The player prioritizes fitting in with Marcus's crowd at each turn, staying quiet during the conflict and choosing the 'cooler' option at the sign-up sheet.",
+        "outcome": "Ends popular and socially secure, but with a quiet, unresolved awareness of who got left behind - including a version of themself."
+      },
+      {
+        "id": "branch-quiet-bridge",
+        "name": "The Diplomatic Path",
+        "triggeredBy": [
+          "choice-1:b",
+          "choice-3:c",
+          "choice-4:c"
+        ],
+        "description": "The player takes the cautious, observant route - connecting quietly with Reyna or Devon and defusing conflict without direct confrontation.",
+        "outcome": "Ends in a stable, low-drama place - safe connections made, but with room left to grow into bolder self-expression."
+      }
+    ],
+    "emotionalArc": [
+      "Nervous anticipation on arrival",
+      "Sudden public vulnerability at the locker",
+      "Social calculation and curiosity at lunch",
+      "Growing investment through the shared project",
+      "Peak tension and moral choice during the mocking incident",
+      "Quiet resolution and self-definition at the sign-up sheet",
+      "Reflective close - relief, connection, or lingering ache depending on path"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from reactive first impressions toward an intentional choice about who they want to be, discovering that belonging built on authenticity feels different from belonging built on approval."
+      },
+      {
+        "character": "reyna",
+        "arc": "Depending on player choices, either finds a first real friend and gains the confidence to claim her own work, or remains quietly overlooked, seeding tension for future episodes."
+      },
+      {
+        "character": "marcus",
+        "arc": "Consistently charming and socially dominant; his easy charisma is shown to have a careless edge, setting up later episodes where his influence on the player's identity can be examined further."
+      },
+      {
+        "character": "devon",
+        "arc": "A low-stakes, high-reward friendship option who reveals hidden depth if chosen, establishing him as a potential recurring ally."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "hiddenIn": "How the player responds to embarrassment (locker), whether they speak up during the mocking incident, and whether they claim their own interests at the sign-up sheet."
+      },
+      {
+        "trait": "EMPATHY",
+        "hiddenIn": "Where the player chooses to sit at lunch, who they choose as a project partner, and how they respond when Reyna is publicly mocked."
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "hiddenIn": "How flexibly the player handles unexpected partners, social pressure, and diplomatic versus confrontational responses to conflict."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "characters": [
+          "player",
+          "reyna"
+        ],
+        "dynamic": "A slow-building connection that can deepen into genuine friendship or remain a missed opportunity, depending entirely on player choices."
+      },
+      {
+        "characters": [
+          "player",
+          "marcus"
+        ],
+        "dynamic": "An easy, magnetic social alliance that offers quick belonging but subtly tests the player's willingness to go along with unkindness."
+      },
+      {
+        "characters": [
+          "player",
+          "devon"
+        ],
+        "dynamic": "A low-pressure, discovery-based friendship available as a quieter alternative path."
+      }
+    ],
+    "replayHooks": [
+      "Three distinct lunch-table and partner choices lead to noticeably different relationship dynamics and dialogue.",
+      "The central conflict scene plays out differently depending on the player's project partner, changing exactly what's at stake.",
+      "Three distinct endings (authentic belonging, popular but hollow, safely unseen) invite players to ask 'what if I'd spoken up' or 'what if I'd sat somewhere else.'",
+      "Named branches (Authentic, Popularity, Diplomatic) give players a clear reason to replay and deliberately pursue a different persona."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Illustrate that confidence can be expressed authentically rather than performatively",
+      "Show empathy as an active choice made in small, everyday social moments",
+      "Demonstrate adaptability as flexibility without losing one's sense of self",
+      "Explore how first impressions and social belonging can conflict with authenticity"
+    ],
+    "conversationStarters": [
+      "Have you ever changed who you sat with at lunch because of what people might think?",
+      "What's a time you stayed quiet when you wished you'd spoken up - and how did it feel afterward?",
+      "Is it possible to be popular and still be yourself? What would that take?",
+      "Which ending in this story felt most true to how you'd actually act on a first day?"
+    ]
+  },
+  "designNotes": "The episode uses a diverge-converge-diverge structure: choices branch immediately after key social moments (locker, lunch, partnering, conflict) but funnel back into shared scaffolding scenes so the story stays tight at 10-15 minutes while still producing meaningfully different scene content at each branch point. The final choice (talent show sign-up) is the true fork that determines which of three distinct endings the player reaches, making it the emotional payoff of everything before it. Traits are never named on-screen; they're inferred entirely from behavioral choices in mundane, relatable school situations (lockers, lunch tables, group projects, sign-up sheets) so the educational scaffolding stays invisible.",
+  "uncertainties": [
+    "Whether three lunch-table/partner variants each is the right amount of branching for a 10-15 minute episode, or whether trimming to two options per choice point would tighten pacing without losing meaningful divergence.",
+    "The ending is currently determined almost entirely by the final choice (choice-5); earlier choices shape flavor and relationships but not which of the three endings is reached. This keeps the tree size manageable but may under-reward consistency across the whole episode - could be addressed with light scene-text variants acknowledging accumulated choices without adding new scene nodes.",
+    "Devon is introduced fairly late (scene-6) and has a smaller footprint than Marcus or Reyna; depending on studio feedback he could be introduced earlier (e.g., in the hallway scene) to give his path more emotional weight."
+  ],
+  "alternativesConsidered": [
+    "A two-branch version (only 'popular table' vs 'Reyna's table') was considered for simplicity, but the three-option version (adding the 'alone' choice) better captures adaptability as its own distinct trait rather than folding it into empathy.",
+    "Considered making the mocking incident scene branch by which partner the player chose (marcus/reyna/devon) rather than converging into one shared scene-8-conflict; kept as a single convergence point to control total scene count, but variant dialogue within scene-8 could reference the specific partner chosen.",
+    "Considered a fourth ending for 'diplomatic' sign-up behavior distinct from 'authentic' and 'conform,' but merged diplomatic tendencies into the existing three endings via trait scoring rather than a new scene branch, to keep the tree from growing beyond a comfortable 10-15 minute runtime."
+  ]
+}

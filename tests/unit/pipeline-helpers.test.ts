@@ -21,7 +21,8 @@ const {
   failingReviewers,
   collectRevisionFeedback,
   mergeSceneDialogue,
-  mergeChoiceDialogue
+  mergeChoiceDialogue,
+  mergeBranchDialogue
 } = require('../../scripts/lib/pipeline-helpers');
 
 // ---------- roster collection ----------
@@ -223,5 +224,31 @@ describe('mergeChoiceDialogue', () => {
 
   it('tolerates undefined inputs', () => {
     expect(mergeChoiceDialogue(undefined, undefined)).toEqual([]);
+  });
+});
+
+describe('mergeBranchDialogue', () => {
+  it('merges by (sceneId, branchId) with revision winning', () => {
+    const previous = [
+      { sceneId: 's9', branchId: 'authentic', lines: [{ id: 'old' }] },
+      { sceneId: 's9', branchId: 'popular', lines: [{ id: 'keep' }] }
+    ];
+    const revised = [{ sceneId: 's9', branchId: 'authentic', lines: [{ id: 'new' }] }];
+    const merged = mergeBranchDialogue(previous, revised);
+    expect(merged).toHaveLength(2);
+    expect(merged.find((d: any) => d.branchId === 'authentic').lines[0].id).toBe('new');
+    expect(merged.find((d: any) => d.branchId === 'popular').lines[0].id).toBe('keep');
+  });
+
+  it('treats the same branchId on different scenes as distinct', () => {
+    const merged = mergeBranchDialogue(
+      [{ sceneId: 's8', branchId: 'authentic', lines: [] }],
+      [{ sceneId: 's9', branchId: 'authentic', lines: [] }]
+    );
+    expect(merged).toHaveLength(2);
+  });
+
+  it('tolerates undefined inputs', () => {
+    expect(mergeBranchDialogue(undefined, undefined)).toEqual([]);
   });
 });

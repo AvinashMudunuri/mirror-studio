@@ -1,0 +1,51 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "SCHEMA",
+      "message": "Malformed dialogue line object: duplicate 'character' key, invalid 'id' value ('player' instead of a unique dialogue id), and an unexpected 'id2' field with null value. This will likely break JSON parsing/rendering of this line or cause it to silently fail to display.",
+      "location": "branchDialogue[3].lines[1] (scene-11a-ending-authentic, branchId: path-d-cost)",
+      "expectedValue": "{ \"id\": \"ba-d-2\", \"character\": \"player\", \"text\": \"Yeah. I know. That one's gonna bug me for a while.\", \"emotion\": \"honest, uncomfortable\" }",
+      "actualValue": "{ \"character\": \"player\", \"id2\": null, \"character\": \"player\", \"text\": \"...\", \"emotion\": \"...\" }",
+      "fix": "Remove the duplicate 'character' key and the extraneous 'id2' field. Assign a proper unique id following the established pattern (e.g., 'ba-d-2') consistent with sibling lines ba-d-1 and ba-d-3."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "estimatedPlayTime (13 minutes) seems low relative to the volume of dialogue across a full playthrough path (roughly 15 scenes with substantial dialogue per scene, plus branchDialogue and choiceDialogue insertions).",
+      "location": "estimatedPlayTime",
+      "suggestion": "Re-estimate play time factoring in average reading speed for all dialogue lines encountered on a typical path, including choiceDialogue and branchDialogue insertions."
+    },
+    {
+      "category": "STYLE",
+      "message": "NARRATOR and INTERNAL are used as 'character' values in dialogue but are not listed in the episode's top-level 'characters' array or the character roster.",
+      "location": "episode.characters / scenes[*].dialogue[*].character",
+      "suggestion": "Consider documenting NARRATOR and INTERNAL as recognized meta-narration speaker types in the schema/style guide so validators don't flag them as unresolved character references."
+    },
+    {
+      "category": "STYLE",
+      "message": "Scenes that end in a choice (scene-2, scene-4, scene-6, scene-8, scene-10) omit 'defaultNextScene', relying entirely on the associated choice object's option.nextScene values. This is consistent throughout, but worth confirming is intentional pipeline behavior rather than a missing field.",
+      "location": "scene-2-hallway-locker, scene-4-classroom, scene-6-group-project, scene-8-cafeteria, scene-10-reflection",
+      "suggestion": "Confirm the rendering pipeline treats missing defaultNextScene + present choices as valid (i.e., choice-driven transition), and document this convention."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Path D ('Fitting In at a Cost') outcome only maps to ending scene-11b-ending-adaptive, but a player could reach scene-7c-side-with-mia (choice-3c) then choose scene-11a or scene-11c as their final reflection, producing a Path D experience that isn't captured by any listed outcome combination.",
+      "location": "outcomes[3] (Path D)",
+      "suggestion": "Either broaden Path D's keyScenes to acknowledge multiple possible endings, or clarify that 'outcomes' are illustrative archetypes rather than exhaustive path definitions."
+    }
+  ],
+  "summary": {
+    "totalChecks": 7,
+    "passedChecks": 6,
+    "failedChecks": 1,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Add a lightweight JSON schema linter to the content pipeline to catch duplicate keys and malformed dialogue objects like the one found in branchDialogue before episodes reach QA.",
+    "Consider adding explicit 'endingId' or 'isEnding' flags on scene-11a/11b/11c rather than relying solely on defaultNextScene: 'END' string sentinel, to make ending detection more robust for tooling.",
+    "Given four distinct thematic outcomes but only 3 endings, consider either adding a fourth distinct ending scene for Path D or clarifying in documentation that outcomes are narrative summaries rather than 1:1 with endings."
+  ]
+}

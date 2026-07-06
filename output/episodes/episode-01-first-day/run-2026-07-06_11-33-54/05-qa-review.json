@@ -1,0 +1,51 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "branchDialogue entries define four distinct branchId variants per ending scene (branch-direct-approach, branch-quiet-observer, branch-bridge-builder, branch-fitting-in-cost), but nothing in the episode schema (choices, outcomes, scenes) specifies how a branchId is selected at runtime. There is no trait-threshold, path-history, or choice-tag field mapping player behavior to a branchId. As written, the rendering pipeline has no way to know which of the four dialogue blocks to play for scene-11a/11b/11c, making this entire content block effectively orphaned/unreachable.",
+      "location": "branchDialogue[*].branchId",
+      "expectedValue": "A selection mechanism (e.g., a 'condition' field referencing prior choice IDs or trait thresholds) tying each branchId to specific player history",
+      "actualValue": "branchId strings with no corresponding trigger definition anywhere in the episode data",
+      "fix": "Add a 'condition' or 'requiredChoices'/'traitThreshold' field to each branchDialogue entry (e.g., branch-direct-approach triggers when choice-1 option 'a' and choice-3 option 'a' were selected), or document the selection logic in the engine spec and reference it here."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "estimatedPlayTime (13) does not match the sum of scene 'duration' values along any single playthrough path (e.g., scene-1 through scene-11a totals 16 when summing duration fields).",
+      "location": "estimatedPlayTime",
+      "suggestion": "Either recalculate estimatedPlayTime from actual scene durations for a representative path, or clarify that 'duration' is not measured in the same unit as estimatedPlayTime (e.g., duration = relative weight, not minutes)."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "seasonId 'season-1' is used in the episode, but the world's 'seasons' field only lists a plain string 'Season 1: First Year' with no explicit id mapping to confirm 'season-1' is the correct identifier.",
+      "location": "episode.seasonId / world.seasons",
+      "suggestion": "Add explicit season id objects to the world schema (e.g., {id: 'season-1', name: 'Season 1: First Year'}) so episode.seasonId can be validated against a real identifier instead of an assumed convention."
+    },
+    {
+      "category": "STYLE",
+      "message": "NARRATOR and INTERNAL are used as 'character' values in dialogue but are not included in the episode's top-level 'characters' array or the character roster.",
+      "location": "scenes[*].dialogue[*].character ('NARRATOR', 'INTERNAL')",
+      "suggestion": "If NARRATOR/INTERNAL are intentional meta-speaker conventions (not full characters), document this convention explicitly in the schema/style guide so future QA passes don't flag it as a missing character reference."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Outcome 'Path A: The Direct Approach' lists scene-7a-defend-alex as a key scene, which is also listed under 'Path B: The Quiet Observer.' This overlap is narratively plausible (both paths can lead to defending Alex) but may confuse analytics/tagging if outcomes are meant to be mutually exclusive.",
+      "location": "outcomes[0].keyScenes / outcomes[1].keyScenes",
+      "suggestion": "Clarify in outcome descriptions that these paths are non-exclusive trait tendencies rather than strict mutually exclusive routes, or adjust keyScenes to be path-unique if exclusivity is intended."
+    }
+  ],
+  "summary": {
+    "totalChecks": 24,
+    "passedChecks": 20,
+    "failedChecks": 1,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Define a clear branch-selection mechanism (condition/trait-threshold field) for branchDialogue before this ships, since it currently represents a large amount of written content with no path to the player.",
+    "Consider adding a lightweight 'reputation' or 'pathTag' field to choices so branchDialogue and outcomes can programmatically reference player history rather than relying on narrative-only key scene lists.",
+    "Reconcile duration units with estimatedPlayTime so QA and production can trust runtime estimates for future episodes."
+  ]
+}

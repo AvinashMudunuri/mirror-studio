@@ -1,0 +1,96 @@
+{
+  "character": {
+    "id": "player",
+    "name": "Rowan Mercado",
+    "age": 12,
+    "pronouns": "she/her (default; designed to be flexible for player customization)",
+    "appearance": {
+      "brief": "Medium height, curly dark brown hair usually pulled into a messy bun with pencils stuck in it, wears mismatched thrifted clothes because she thinks 'matching is boring.' Has a gap between her front teeth she used to hate and is slowly starting to like.",
+      "distinctiveFeatures": [
+        "A friendship bracelet from her old best friend that she still wears, faded and fraying",
+        "Doodles on the side of her hand in blue pen when she's nervous",
+        "A laugh that's too loud for quiet rooms and she knows it"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "observant",
+        "quick-witted",
+        "secretly anxious",
+        "loyal",
+        "stubborn about fairness"
+      ],
+      "bigFiveProfile": {
+        "openness": 8,
+        "conscientiousness": 6,
+        "extraversion": 6,
+        "agreeableness": 7,
+        "neuroticism": 6
+      },
+      "mannerisms": [
+        "Taps out rhythms on her thigh when overwhelmed",
+        "Makes jokes to defuse tension, even when it's not the right moment",
+        "Rereads her class schedule like it'll change if she stares hard enough"
+      ],
+      "speechPatterns": [
+        "Uses 'okay but like' as a verbal bridge when pivoting topics",
+        "Slips into sarcasm when nervous",
+        "Talks fast when excited, trails off when unsure"
+      ],
+      "emotionalTendencies": "Rowan processes big feelings by cracking jokes first, feeling them later — usually alone, in a bathroom stall or during the walk home. She wants to seem unbothered, but she cares a LOT, which is exactly why she pretends not to."
+    },
+    "background": {
+      "family": "Parents split custody after a move for her mom's job; Rowan just relocated from her old city to live with her mom full-time, which means starting over at Ridgeview mid-year-ish (technically first day of the semester, but still — new school, no friends, no history). Her dad is a two-hour drive away, and she texts him more than she'd admit.",
+      "interests": [
+        "comic book drawing",
+        "true crime podcasts (probably too many for a 12-year-old)",
+        "collecting weird facts about animals",
+        "making playlists for imaginary situations"
+      ],
+      "strengths": [
+        "reads people fast",
+        "genuinely funny",
+        "sticks up for the underdog without overthinking it",
+        "adaptable — she's moved before"
+      ],
+      "struggles": [
+        "assumes she'll be forgotten/replaced",
+        "struggles to trust that people actually like her vs. tolerate her",
+        "conflict-avoidant about her OWN needs even while defending others"
+      ],
+      "secrets": [
+        "She practiced what she'd say if someone asked 'where are you from' about eleven times in the mirror this morning",
+        "She's terrified that being the funny new kid is the only thing making her interesting"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Make it through day one without embarrassing herself",
+        "Find at least one person to sit with at lunch",
+        "Figure out the 'rules' of this school fast"
+      ],
+      "unconscious": [
+        "Prove to herself that she's likable without having to perform",
+        "Find a place where she doesn't have to shrink OR perform to belong"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Casual middle-school vocabulary; occasional big words she picked up from podcasts, used half-ironically",
+      "sentenceComplexity": "Short, punchy sentences when nervous or joking; longer rambly ones when she's comfortable enough to overshare",
+      "emotionalExpressiveness": "Deflects with humor first, but capable of sudden honesty that surprises even her",
+      "examples": [
+        "Okay but like, if I trip in the hallway today, we're pretending it was intentional. New tradition. I'm starting it.",
+        "I've moved three times. You'd think I'd have a system by now. I do not have a system.",
+        "I'm not saying I researched this school's Instagram at 1am, I'm just saying I know what the mascot looks like and I have opinions."
+      ]
+    },
+    "storyRole": "Player-controlled protagonist navigating first-day social dynamics; her choices (who to sit with, how loud to be, whether to intervene when someone else is targeted) directly shape the episode's central question about fitting in vs. belonging.",
+    "arcPotential": [
+      "Episode 'First Bell': Establishes Rowan's core defense mechanism (humor-as-armor) and gives player first choice-points about authenticity vs. blending in",
+      "Future episode potential: Rowan confronts whether the 'new kid reinvention' she's been chasing is actually just another mask",
+      "Future episode potential: A moment where Rowan has to choose between the friend group that finally accepted her and doing right by someone new who's getting frozen out — mirroring her own first day"
+    ]
+  },
+  "designNotes": "Rowan is built to be a flexible player-avatar (name/pronouns can shift in implementation) while still having enough psychological specificity to feel like a real kid, not a blank slate. Her core wound — fear of being forgettable/replaceable after repeated moves — ties directly into the episode's belonging vs. fitting in theme: she's tempted to perform a version of herself she thinks will be liked fastest, which creates natural tension with the 'authenticity' theme. Her humor-as-defense mechanism gives writers a consistent voice to hang branching dialogue off of, while her secret fear of being 'just the funny new kid' gives room for vulnerable, quiet beats. The friendship bracelet and podcast/comic interests are small, specific anchors meant to make her feel lived-in rather than generic.",
+  "representationNotes": "Rowan is written as biracial (last name Mercado, implying Latine heritage on one side) without making that the focus of her arc — it's part of her texture, not her 'issue.' Pronouns are intentionally left adjustable to support studio flexibility around player customization, but her personality and voice remain consistent regardless. Care was taken to avoid the 'quirky new kid' trope becoming a personality-free vehicle for humor; her jokes are explicitly framed as a coping mechanism with a cost, not just comic relief, so players see the real kid underneath the deflection."
+}

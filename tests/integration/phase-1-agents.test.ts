@@ -115,9 +115,11 @@ describe('Phase 1 Agent Integration', () => {
       expect(dialogueWriter['config'].maxTokens).toBe(getAgentMaxTokens('DIALOGUE_WRITER'));
       expect(creativeDirector['config'].maxTokens).toBe(getAgentMaxTokens('CREATIVE_DIRECTOR'));
       
-      // Semantics: long-form generators (outlines, full episodes) get the large budget
-      expect(storyArchitect['config'].maxTokens).toBe(LLM_CONFIG.maxTokens.large);
-      expect(dialogueWriter['config'].maxTokens).toBe(LLM_CONFIG.maxTokens.large);
+      // Semantics: full-episode generators (outlines, all-scene dialogue) get
+      // the xlarge budget — live runs always truncated at large+headroom and
+      // paid for a wasted retry
+      expect(storyArchitect['config'].maxTokens).toBe(LLM_CONFIG.maxTokens.xlarge);
+      expect(dialogueWriter['config'].maxTokens).toBe(LLM_CONFIG.maxTokens.xlarge);
       expect(characterDesigner['config'].maxTokens).toBe(LLM_CONFIG.maxTokens.medium);
       expect(creativeDirector['config'].maxTokens).toBe(LLM_CONFIG.maxTokens.medium);
     });

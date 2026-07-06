@@ -5,9 +5,14 @@
 
 // LLM Provider Configuration
 export const LLM_CONFIG = {
-  // Default models for each provider
+  // Default models for each provider.
+  // Creation and review deliberately use DIFFERENT models: generation needs
+  // the strongest available model, while reviewers judge provided text and
+  // run fine on a cheaper one — reviews also carry the largest inputs
+  // (the whole episode), so this is where token cost concentrates.
   defaultModels: {
     anthropic: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5',
+    anthropicReview: process.env.ANTHROPIC_REVIEW_MODEL || 'claude-haiku-4-5-20251001',
     openai: process.env.OPENAI_MODEL || 'gpt-4-turbo-preview',
   },
   
@@ -35,16 +40,21 @@ export const LLM_CONFIG = {
     small: 2048,        // Simple responses
     medium: 4096,       // Standard tasks
     large: 8192,        // Complex generation (episodes, code)
+    // Full-episode generation (outline, all-scene dialogue). Live runs
+    // showed these ALWAYS truncating at large+headroom (16384) and paying
+    // for a wasted first attempt before succeeding at 32768 — so budget
+    // for the successful size up front.
+    xlarge: 24576,
   },
 } as const;
 
 // Agent-specific configurations
 export const AGENT_MODELS = {
-  // Content Creation Agents
+  // Content Creation Agents — strongest model, generous budgets
   STORY_ARCHITECT: {
     model: LLM_CONFIG.defaultModels.anthropic,
     temperature: LLM_CONFIG.temperatures.creative,
-    maxTokens: LLM_CONFIG.maxTokens.large,
+    maxTokens: LLM_CONFIG.maxTokens.xlarge, // full outlines truncated at 16k on every live run
   },
   
   CHARACTER_DESIGNER: {
@@ -56,11 +66,11 @@ export const AGENT_MODELS = {
   DIALOGUE_WRITER: {
     model: LLM_CONFIG.defaultModels.anthropic,
     temperature: LLM_CONFIG.temperatures.creative,
-    maxTokens: LLM_CONFIG.maxTokens.large,
+    maxTokens: LLM_CONFIG.maxTokens.xlarge, // all-scene dialogue truncated at 16k on every live run
   },
   
   CREATIVE_DIRECTOR: {
-    model: LLM_CONFIG.defaultModels.anthropic,
+    model: LLM_CONFIG.defaultModels.anthropicReview,
     temperature: LLM_CONFIG.temperatures.balanced,
     maxTokens: LLM_CONFIG.maxTokens.medium,
   },
@@ -78,27 +88,27 @@ export const AGENT_MODELS = {
     maxTokens: LLM_CONFIG.maxTokens.large,
   },
   
-  // Validation Agents
+  // Validation Agents — review model (cheaper); they judge provided text
   QA_REVIEWER: {
-    model: LLM_CONFIG.defaultModels.anthropic,
+    model: LLM_CONFIG.defaultModels.anthropicReview,
     temperature: 0.2, // Very low for deterministic validation
     maxTokens: LLM_CONFIG.maxTokens.medium,
   },
   
   CHILD_PSYCHOLOGIST: {
-    model: LLM_CONFIG.defaultModels.anthropic,
+    model: LLM_CONFIG.defaultModels.anthropicReview,
     temperature: 0.5, // Balanced - needs consistency but also nuanced judgment
     maxTokens: LLM_CONFIG.maxTokens.medium,
   },
   
   GAME_DESIGNER: {
-    model: LLM_CONFIG.defaultModels.anthropic,
+    model: LLM_CONFIG.defaultModels.anthropicReview,
     temperature: 0.6, // Balanced - needs consistency with creative insight
     maxTokens: LLM_CONFIG.maxTokens.medium,
   },
   
   ETHICS_REVIEWER: {
-    model: LLM_CONFIG.defaultModels.anthropic,
+    model: LLM_CONFIG.defaultModels.anthropicReview,
     temperature: 0.4, // Low-medium - needs consistency with nuanced ethical judgment
     maxTokens: LLM_CONFIG.maxTokens.medium,
   },

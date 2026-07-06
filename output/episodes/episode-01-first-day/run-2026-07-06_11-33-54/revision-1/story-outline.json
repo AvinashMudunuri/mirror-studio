@@ -1,0 +1,629 @@
+{
+  "episodeOutline": {
+    "title": "First Bell",
+    "synopsis": "On the first day at Ridgemont Middle School, the player must navigate a hallway of strangers, a classroom seating map that doubles as a social map, and a lunchroom moment of quiet cruelty. Every small choice — who to sit with, whether to speak up, where to eat lunch — shapes whether the player becomes known as confident, kind, adaptable, or all three. By day's end, the player must decide what kind of person they want to be known as at this school, not just today, but going forward.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1-arrival",
+        "title": "The Front Steps",
+        "location": "Ridgemont Middle School - Front Entrance",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The player stands outside a new school, schedule crumpled in hand, watching packs of students who already know each other flow past. The first bell hasn't rung yet, but the sorting has already begun.",
+        "emotionalBeat": "Anticipation and quiet nervousness",
+        "defaultNextScene": "scene-2-hallway-locker"
+      },
+      {
+        "id": "scene-2-hallway-locker",
+        "title": "Locker Row",
+        "location": "Ridgemont Middle School - Hallway",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 2,
+        "description": "Jordan, an easygoing eighth-grader assigned as the player's 'buddy,' waves them over to find their locker — which, of course, has a handle that sticks. Jordan demonstrates the jiggle-then-yank move like it's an ancient family recipe. Nearby, small clusters of students size up the new kid without hiding it.",
+        "emotionalBeat": "First real social test of the day"
+      },
+      {
+        "id": "scene-3a-confident-intro",
+        "title": "Breaking the Ice",
+        "location": "Ridgemont Middle School - Hallway",
+        "characters": [
+          "player",
+          "jordan",
+          "mia"
+        ],
+        "duration": 1,
+        "description": "The player introduces themselves openly. Jordan grins, impressed. Mia, passing by with her group, clocks the player with a flicker of curiosity — and something sharper underneath.",
+        "emotionalBeat": "A small win, but it draws attention",
+        "defaultNextScene": "scene-4-classroom"
+      },
+      {
+        "id": "scene-3b-cautious-observe",
+        "title": "Reading the Room",
+        "location": "Ridgemont Middle School - Hallway",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player hangs back, listening. Jordan quietly narrates who's who — including a warning about Mia's group and a nod toward Alex, who eats lunch alone most days.",
+        "emotionalBeat": "Safety in information, but distance from others",
+        "defaultNextScene": "scene-4-classroom"
+      },
+      {
+        "id": "scene-4-classroom",
+        "title": "Homeroom Seating",
+        "location": "Room 214",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 2,
+        "description": "There are two open seats: one at Mia's crowded, laughing table, and one beside Alex, who is quietly sketching alone by the window and doesn't look up.",
+        "emotionalBeat": "The map of the classroom becomes the map of the year"
+      },
+      {
+        "id": "scene-5a-sit-with-mia",
+        "title": "At Mia's Table",
+        "location": "Room 214",
+        "characters": [
+          "player",
+          "mia"
+        ],
+        "duration": 1,
+        "description": "Mia's group folds the player in fast, testing them with jokes and gossip. It feels good to be included — and a little bit like a test the player might fail.",
+        "emotionalBeat": "The warmth and pressure of instant popularity",
+        "defaultNextScene": "scene-6-group-project"
+      },
+      {
+        "id": "scene-5b-sit-with-alex",
+        "title": "By the Window",
+        "location": "Room 214",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Alex is startled someone chose to sit there. Slowly, hesitantly, they show the player a sketch — a small act of trust from someone used to being overlooked.",
+        "emotionalBeat": "A quiet, genuine connection forming",
+        "defaultNextScene": "scene-6-group-project"
+      },
+      {
+        "id": "scene-6-group-project",
+        "title": "The Group Assignment",
+        "location": "Room 214",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 2,
+        "description": "Ms. Patel assigns project groups, forcing Mia and Alex together with the player. When Alex nervously shares an idea, Mia laughs it off in front of everyone, and the room goes quiet, waiting to see what the player does.",
+        "emotionalBeat": "The episode's moral pressure point"
+      },
+      {
+        "id": "scene-7a-defend-alex",
+        "title": "Speaking Up",
+        "location": "Room 214",
+        "characters": [
+          "player",
+          "mia",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "The player defends Alex's idea directly. Alex looks stunned and grateful. Mia's smile tightens, but she backs off, recalculating who this new kid actually is.",
+        "emotionalBeat": "Courage that costs a little social capital",
+        "defaultNextScene": "scene-8-cafeteria"
+      },
+      {
+        "id": "scene-7b-diffuse-tension",
+        "title": "Changing the Subject",
+        "location": "Room 214",
+        "characters": [
+          "player",
+          "mia",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "The player cracks a joke and redirects the group toward the actual assignment. The tension breaks, but Alex's idea quietly gets dropped in the shuffle.",
+        "emotionalBeat": "Relief mixed with a nagging sense of something unfinished",
+        "defaultNextScene": "scene-8-cafeteria"
+      },
+      {
+        "id": "scene-7c-side-with-mia",
+        "title": "Going Along With It",
+        "location": "Room 214",
+        "characters": [
+          "player",
+          "mia",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "The player laughs along with Mia's group. Alex's face closes off, and they don't offer another idea for the rest of class. It's easy. It doesn't feel great.",
+        "emotionalBeat": "The discomfort of belonging bought at someone else's expense",
+        "defaultNextScene": "scene-8-cafeteria"
+      },
+      {
+        "id": "scene-8-cafeteria",
+        "title": "The Lunchroom Divide",
+        "location": "Ridgemont Middle School - Cafeteria",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 2,
+        "description": "Tray in hand, the player sees Mia's table waving them over on one side of the room, and Alex sitting alone again on the other. Jordan hovers, waiting to see where the player lands.",
+        "emotionalBeat": "The day's choices converge into one visible moment"
+      },
+      {
+        "id": "scene-9a-lunch-with-alex",
+        "title": "Choosing the Quiet Table",
+        "location": "Ridgemont Middle School - Cafeteria",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Alex relaxes for the first time all day, opening up about moving here two years ago and never quite finding a group. It's a small table, but it feels real.",
+        "emotionalBeat": "Genuine, unglamorous connection",
+        "defaultNextScene": "scene-10-reflection"
+      },
+      {
+        "id": "scene-9b-lunch-with-mia",
+        "title": "Choosing the Popular Table",
+        "location": "Ridgemont Middle School - Cafeteria",
+        "characters": [
+          "player",
+          "mia"
+        ],
+        "duration": 1,
+        "description": "Mia's table is loud, fun, and full of easy status. Late in the meal, Mia leans in and says, quieter than her usual register, 'Don't tell anyone, but today was actually a good day.' Then she catches the player glancing at Alex across the room, and looks away.",
+        "emotionalBeat": "The comfort of the in-crowd, tinged with a small guilt",
+        "defaultNextScene": "scene-10-reflection"
+      },
+      {
+        "id": "scene-9c-bridge-groups",
+        "title": "Pulling the Tables Together",
+        "location": "Ridgemont Middle School - Cafeteria",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player suggests dragging a chair from Alex's table over to Mia's — or vice versa. It's awkward for a second. Then Jordan laughs and makes it normal, and slowly, both groups start talking.",
+        "emotionalBeat": "A small, brave act of social architecture",
+        "defaultNextScene": "scene-10-reflection"
+      },
+      {
+        "id": "scene-10-reflection",
+        "title": "Walking Home",
+        "location": "Neighborhood Sidewalk",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 2,
+        "description": "Jordan walks partway home with the player. 'So — you ever get that locker handle figured out?' they ask, grinning, before turning more serious: 'So... how do you think today went?' The player has a moment to decide what story they're going to tell themselves about who they're becoming here.",
+        "emotionalBeat": "Reflection and quiet self-definition"
+      },
+      {
+        "id": "scene-11a-ending-authentic",
+        "title": "Same Person, New Building",
+        "location": "Neighborhood Sidewalk",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player decides that whatever happens tomorrow, they're not going to perform a different version of themselves for anyone's approval. Jordan nods, like that's the answer they were hoping to hear.",
+        "emotionalBeat": "Grounded self-assurance",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-11b-ending-adaptive",
+        "title": "Learning the Terrain",
+        "location": "Neighborhood Sidewalk",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player decides that surviving here means reading each room and adjusting — not lying, just being smart about which version of themselves to lead with. Jordan shrugs, half-agreeing, half-unsure.",
+        "emotionalBeat": "Pragmatic resolve with a hint of unresolved tension",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-11c-ending-bridge-builder",
+        "title": "The In-Between Kid",
+        "location": "Neighborhood Sidewalk",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player decides their place here might not be in any one group, but in connecting the ones that don't usually talk to each other. Jordan grins: 'That's a hard job. Good thing you're new — nobody's told you it's impossible yet.'",
+        "emotionalBeat": "Hopeful, forward-looking identity formation",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2-hallway-locker",
+        "prompt": "How do you handle the first few minutes in a hallway full of strangers?",
+        "context": "Jordan is friendly but the surrounding students are openly sizing up the new kid. There's no 'right' answer yet, just an instinct to follow.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Introduce yourself to a nearby group with a smile.",
+            "nextScene": "scene-3a-confident-intro"
+          },
+          {
+            "id": "b",
+            "text": "Hang back with Jordan and get a feel for who's who first.",
+            "nextScene": "scene-3b-cautious-observe"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "ADAPTABILITY": 2,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-4-classroom",
+        "prompt": "Where do you sit in homeroom?",
+        "context": "One open seat is at Mia's loud, popular table. The other is beside Alex, who's alone by the window and doesn't seem to expect company.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Take the seat at Mia's table.",
+            "nextScene": "scene-5a-sit-with-mia"
+          },
+          {
+            "id": "b",
+            "text": "Sit next to Alex by the window.",
+            "nextScene": "scene-5b-sit-with-alex"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "EMPATHY": 2
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-6-group-project",
+        "prompt": "Mia just mocked Alex's idea in front of the whole group. What do you do?",
+        "context": "The room is quiet, waiting. Alex has gone still. Mia is watching for how the new kid reacts.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speak up and defend Alex's idea directly.",
+            "nextScene": "scene-7a-defend-alex"
+          },
+          {
+            "id": "b",
+            "text": "Crack a joke and steer the group back to the assignment.",
+            "nextScene": "scene-7b-diffuse-tension"
+          },
+          {
+            "id": "c",
+            "text": "Laugh along with Mia to keep things easy.",
+            "nextScene": "scene-7c-side-with-mia"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1
+          },
+          "c": {
+            "CONFIDENCE": -1,
+            "EMPATHY": -2
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-8-cafeteria",
+        "prompt": "Where do you sit for lunch?",
+        "context": "Mia's table is waving the player over. Alex is sitting alone again on the other side of the room. Jordan is waiting to see what happens next.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Alex.",
+            "nextScene": "scene-9a-lunch-with-alex"
+          },
+          {
+            "id": "b",
+            "text": "Sit with Mia's group.",
+            "nextScene": "scene-9b-lunch-with-mia"
+          },
+          {
+            "id": "c",
+            "text": "Suggest pulling both tables together.",
+            "nextScene": "scene-9c-bridge-groups"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2
+          },
+          "b": {
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": -1
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "CONFIDENCE": 2,
+            "EMPATHY": 2
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-10-reflection",
+        "prompt": "Jordan asks how today went. What's the story you tell yourself about who you're becoming here?",
+        "context": "This isn't really a question about today. It's about tomorrow, and the day after that.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"I'm going to be myself, no matter who's watching.\"",
+            "nextScene": "scene-11a-ending-authentic"
+          },
+          {
+            "id": "b",
+            "text": "\"I'll figure out what each group needs from me and adapt.\"",
+            "nextScene": "scene-11b-ending-adaptive"
+          },
+          {
+            "id": "c",
+            "text": "\"Maybe my job here is bringing people together.\"",
+            "nextScene": "scene-11c-ending-bridge-builder"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "ADAPTABILITY": 2
+          },
+          "c": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "name": "Path A: The Direct Approach",
+        "description": "Player leads with bold confidence from the hallway onward, drawing early attention from Mia and setting up higher-stakes social friction later.",
+        "keyScenes": [
+          "scene-3a-confident-intro",
+          "scene-5a-sit-with-mia",
+          "scene-7a-defend-alex",
+          "scene-9b-lunch-with-mia"
+        ]
+      },
+      {
+        "name": "Path B: The Quiet Observer",
+        "description": "Player gathers information first, builds trust slowly with Alex, and tends to prioritize empathy over visibility.",
+        "keyScenes": [
+          "scene-3b-cautious-observe",
+          "scene-5b-sit-with-alex",
+          "scene-7a-defend-alex",
+          "scene-9a-lunch-with-alex"
+        ]
+      },
+      {
+        "name": "Path C: The Bridge Builder",
+        "description": "Regardless of early hallway choice, player consistently chooses integration over allegiance, culminating in physically merging the two social tables at lunch.",
+        "keyScenes": [
+          "scene-6-group-project",
+          "scene-9c-bridge-groups",
+          "scene-11c-ending-bridge-builder"
+        ]
+      },
+      {
+        "name": "Path D: Fitting In at a Cost",
+        "description": "Player prioritizes social safety over standing up for Alex, revealing a more self-protective, conflict-averse arc that still resolves without being punished narratively — just quietly noted.",
+        "keyScenes": [
+          "scene-7c-side-with-mia",
+          "scene-9b-lunch-with-mia",
+          "scene-11b-ending-adaptive"
+        ]
+      }
+    ],
+    "emotionalArc": [
+      {
+        "stage": "Setup",
+        "scenes": [
+          "scene-1-arrival",
+          "scene-2-hallway-locker"
+        ],
+        "beat": "Nervous anticipation before the social sorting begins"
+      },
+      {
+        "stage": "Rising Stakes",
+        "scenes": [
+          "scene-3a-confident-intro",
+          "scene-3b-cautious-observe",
+          "scene-4-classroom"
+        ],
+        "beat": "Early identity signals get noticed and start shaping expectations"
+      },
+      {
+        "stage": "Complication",
+        "scenes": [
+          "scene-5a-sit-with-mia",
+          "scene-5b-sit-with-alex",
+          "scene-6-group-project"
+        ],
+        "beat": "Growing tension between two social worlds"
+      },
+      {
+        "stage": "Crisis",
+        "scenes": [
+          "scene-7a-defend-alex",
+          "scene-7b-diffuse-tension",
+          "scene-7c-side-with-mia"
+        ],
+        "beat": "The moral pressure point of the whole episode"
+      },
+      {
+        "stage": "Convergence",
+        "scenes": [
+          "scene-8-cafeteria",
+          "scene-9a-lunch-with-alex",
+          "scene-9b-lunch-with-mia",
+          "scene-9c-bridge-groups"
+        ],
+        "beat": "Public, visible consequence of private choices"
+      },
+      {
+        "stage": "Resolution",
+        "scenes": [
+          "scene-10-reflection",
+          "scene-11a-ending-authentic",
+          "scene-11b-ending-adaptive",
+          "scene-11c-ending-bridge-builder"
+        ],
+        "beat": "Quiet self-definition and forward momentum"
+      }
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from an unknown quantity to someone whose values start to visibly shape how others see them, ending with a self-authored definition of who they want to be at this school."
+      },
+      {
+        "character": "jordan",
+        "arc": "Functions as a warm, low-stakes social mirror — never judgmental, but subtly reflecting back the player's choices, which is why they anchor the final reflection scene."
+      },
+      {
+        "character": "mia",
+        "arc": "Introduced as a gatekeeper figure who tests the player; depending on choices, ends the episode either wary, dismissive, or unexpectedly recalibrated toward respect."
+      },
+      {
+        "character": "alex",
+        "arc": "Begins closed-off and overlooked; depending on player choices, ends either still isolated, quietly seen, or actively integrated into a wider group for the first time."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "primarySources": [
+          "choice-1 option a",
+          "choice-3 option a",
+          "choice-4 option c",
+          "choice-5 option a"
+        ],
+        "description": "Rewarded for initiating contact, standing firm under social pressure, and proposing bold social moves rather than waiting for permission."
+      },
+      {
+        "trait": "EMPATHY",
+        "primarySources": [
+          "choice-2 option b",
+          "choice-3 option a",
+          "choice-4 option a",
+          "choice-5 option c"
+        ],
+        "description": "Rewarded for prioritizing Alex's experience, defending someone with less social power, and noticing who's being left out."
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "primarySources": [
+          "choice-1 option b",
+          "choice-3 option b",
+          "choice-4 option c",
+          "choice-5 option b"
+        ],
+        "description": "Rewarded for reading social situations accurately and adjusting approach, especially the integrative choices that require flexible thinking under pressure."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player-mia",
+        "dynamic": "Starts as a gatekeeping test of social worth; can evolve into grudging respect, quiet distance, or surprising alliance depending on how the player handles the group project conflict."
+      },
+      {
+        "pair": "player-alex",
+        "dynamic": "Starts as an overlooked, low-stakes side character; can become the emotional core of the episode if the player consistently chooses connection over status."
+      },
+      {
+        "pair": "player-jordan",
+        "dynamic": "Consistent, low-pressure friendship throughout that serves as the audience's emotional throughline and the vehicle for the final reflective choice."
+      },
+      {
+        "pair": "mia-alex",
+        "dynamic": "An existing, unspoken social hierarchy the player either reinforces, ignores, or actively disrupts."
+      }
+    ],
+    "replayHooks": [
+      "Three distinct final identities (Authentic, Adaptive, Bridge-Builder) encourage replay to see how each choice cluster leads somewhere different.",
+      "Mia's reaction to the player shifts subtly based on early hallway choice plus the group project moment, rewarding replay to see the 'respect' version of her versus the 'dismissive' version.",
+      "The bridge-building path (choice-3 or choice-4 leading to scene-9c) is easy to miss on a first playthrough focused on picking a 'side,' creating a natural 'wait, you could do that?' replay hook.",
+      "Alex's arc changes most dramatically between playthroughs — from remaining isolated to becoming meaningfully integrated — making a second playthrough emotionally distinct even with similar scene structure.",
+      "Players who chose Path D (siding with Mia) may want to replay specifically to see the 'what if I'd spoken up' version of scene-6 and scene-7.",
+      "The sticky locker handle callback in the reflection scene rewards attentive players who remember the small joke from scene 2, adding a light, personal texture to replay."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Model that confidence, empathy, and adaptability are not mutually exclusive and can be combined situationally.",
+      "Illustrate that small, low-visibility choices (who you sit with, what you say in a group) compound into social identity over time.",
+      "Normalize the discomfort of standing up for someone at a social cost, without punishing players narratively for choosing otherwise.",
+      "Show that 'fitting in' and 'being authentic' are not always in conflict, and that bridging groups is itself a valid, brave social strategy."
+    ],
+    "conversationStarters": [
+      "Did you sit with Alex or with Mia's group first, and why did that feel like the right call at the time?",
+      "When Mia mocked Alex's idea, what made you choose to speak up, joke it off, or go along with it?",
+      "Do you think Mia would react differently to the player depending on how the hallway introduction went?",
+      "Which ending felt most true to how you'd actually act on a first day at a new school?",
+      "What would it take for you to try the 'bridge builder' choice if you didn't pick it the first time?"
+    ]
+  },
+  "designNotes": "1) MUST-FIX world mismatch resolved: renamed all location fields and title references from 'Ridgemont High' to 'Ridgemont Middle School,' and changed Jordan's descriptor from 'junior' to 'eighth-grader' in scene-2 to match a contemporary middle school setting. No other grade-specific language existed elsewhere in the text, so no further sweeps were needed. 2) Added the optional continuity texture the director flagged: introduced a small 'sticky locker handle' beat in scene-2-hallway-locker (replacing the vague 'find their locker' beat with a specific, replayable bit of business), then paid it off with a one-line callback from Jordan at the top of scene-10-reflection ('you ever get that locker handle figured out?'). This is low-stakes texture, doesn't affect trait mapping or branching, and costs nothing structurally. 3) Also folded in the director's praised 'don't tell anyone today was a good day' Mia beat directly into scene-9b-lunch-with-mia's description, since it was referenced approvingly in feedback but wasn't actually present in the draft text — making Mia's texture explicit rather than implied. 4) All other structural elements (scene graph, choicePoints, nextScene/defaultNextScene wiring, trait mapping, branches) were left untouched since the director had no notes on structure itself and explicitly praised the pacing, restraint with Mia/Alex, and non-punitive handling of the 'side with Mia' path.",
+  "uncertainties": [
+    "The director's note referenced 'Jordan's earlier handle sticks prank' as if it already existed in the draft — it did not. I've interpreted this as a request to add a small, consistent locker-handle texture beat and its callback, but if there was a different specific gag intended (e.g., an actual prank Jordan pulls ON the player, rather than a shared quirky locker mechanism), this should be reconciled with the showrunner/world bible.",
+    "Confirmed Season 1 is middle school per the feedback's first option; if the showrunner instead intends to canonize high school for this season, the world bible (not just this episode) needs the update instead, and Jordan's 'eighth-grader' framing would need to revert.",
+    "No grade level is stated for the player character — left ambiguous (6th/7th grader) to keep the buddy-system dynamic with an older 8th-grade Jordan plausible; if the world bible specifies exact grades for protagonists, this may need a small adjustment to duration/dialogue but not structure."
+  ]
+}

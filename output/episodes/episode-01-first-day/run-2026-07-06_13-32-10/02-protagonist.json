@@ -1,0 +1,92 @@
+{
+  "character": {
+    "id": "player",
+    "name": "Jordan Diallo",
+    "age": 13,
+    "pronouns": "she/her",
+    "appearance": {
+      "brief": "Medium height, still growing into her limbs, with box braids she redid herself the night before (slightly uneven part in back that she's self-conscious about). Wears her older cousin's hand-me-down denim jacket covered in pins from her old school's clubs — pins she hasn't decided whether to take off yet.",
+      "distinctiveFeatures": [
+        "Chews on her sleeve cuff when nervous, has worn a small hole in it",
+        "Laughs with her whole face — eyes scrunch shut, snorts sometimes, then gets embarrassed about the snort"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "quick-witted",
+        "loyal once she trusts you",
+        "conflict-avoidant",
+        "secretly braver than she thinks"
+      ],
+      "bigFiveProfile": {
+        "openness": 7,
+        "conscientiousness": 6,
+        "extraversion": 6,
+        "agreeableness": 7,
+        "neuroticism": 7
+      },
+      "mannerisms": [
+        "Cracks a joke the second a silence feels awkward, even mid-tension",
+        "Physically angles her body toward the door in rooms she's unsure of, like she's ready to bail",
+        "Doodles tiny cartoon faces on her hand or notebook margin when overthinking"
+      ],
+      "speechPatterns": [
+        "Uses self-deprecating humor as a deflection ('cool, cool, love that for me')",
+        "Trails off mid-sentence when she catches herself being too honest, then deflects with a joke",
+        "Talks faster when nervous, slower and quieter when she means something"
+      ],
+      "emotionalTendencies": "Jordan processes fear through humor first, honesty second — she'll crack a joke before she'll admit she's scared. Underneath the deflection is a kid who feels everything intensely and worries constantly about being 'too much' or 'not enough' depending on the room. She recovers fast on the surface but replays social moments for hours after."
+    },
+    "background": {
+      "family": "Parents divorced last year; she moved with her mom (who's Ashkenazi Jewish, teaches nursing) from Columbus to be closer to her mom's new job, while her dad (Senegalese-American, an electrician) stayed behind. Jordan splits holidays and video-calls her dad most nights. She's the oldest of two — a little brother, Theo, age 8, who she's fiercely protective of.",
+      "interests": [
+        "Making stop-motion animation videos on her phone",
+        "Basketball (rec league, not great but loves it)",
+        "True crime podcasts she's definitely too young for, according to her mom"
+      ],
+      "strengths": [
+        "Reads social situations quickly, good at sensing when someone's uncomfortable",
+        "Genuinely funny — can defuse tension with a well-timed joke",
+        "Fiercely loyal to people she decides are 'hers'"
+      ],
+      "struggles": [
+        "Terrified of being the 'weird new kid' again — this is her third school in four years",
+        "Struggles to say what she actually feels when it's not funny or safe",
+        "Has a habit of going along with a group's mood even when it contradicts her own values, then feeling sick about it later"
+      ],
+      "secrets": [
+        "She cried in the bathroom during first period because she couldn't find her locker and nobody would make eye contact with her",
+        "She actually really admires quiet, artistic kids like Reyna because she used to be that kid before she learned to perform 'fun' as armor"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Make at least one real friend by the end of the week",
+        "Not get labeled as anything (weird, try-hard, mean) on day one"
+      ],
+      "unconscious": [
+        "Needs to feel like she can belong somewhere without erasing who she actually is",
+        "Needs proof that being kind doesn't automatically make her a target"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Casual middle-school vernacular, current-ish slang used naturally but not overdone — she's not trying to sound cool, she just talks like a kid who watches a lot of internet video.",
+      "sentenceComplexity": "Short, punchy sentences when nervous or joking; longer, more halting sentences when she's being sincere, often with self-interruptions.",
+      "emotionalExpressiveness": "Expressive but guarded — big reactions on the surface (laughing, jokes, exaggeration), real feelings usually leak out sideways rather than stated directly, especially early in the episode.",
+      "examples": [
+        "\"Okay, so, hot take: first days should be illegal. Like, constitutionally.\"",
+        "\"I'm not saying I cried in the bathroom. I'm saying the bathroom and I had a moment. There's a difference.\"",
+        "\"...I don't know. It just felt weird, watching everyone laugh and not saying anything. Like I was being quiet on purpose so nobody would look at me next.\"",
+        "\"Theo, I swear, if you tell Mom I called you for locker advice I will trade you for a golden retriever.\""
+      ]
+    },
+    "storyRole": "Player-character protagonist of 'First Bell.' Jordan is the audience surrogate navigating the social ecosystem of a new school in real time. Her defining choice — whether to stay quiet and blend in with the popular crowd, or step in when Reyna becomes a target — is the emotional spine of the episode, forcing the player to weigh belonging against integrity on day one.",
+    "arcPotential": [
+      "Episode 'First Bell': Jordan must decide whether protecting her fragile new social footing is worth staying silent while Reyna gets mocked — the choice defines whether she starts this school performing or being herself.",
+      "Later episode potential: Jordan and Reyna's friendship (or non-friendship, depending on player choice) becomes a throughline for exploring what real belonging costs versus what performed belonging costs.",
+      "Later episode potential: Jordan opens up about her parents' divorce and the pressure to be 'the fun one' for her little brother, revealing the root of her deflection habit."
+    ]
+  },
+  "designNotes": "Jordan is built to be a mirror for the player's own first-day anxiety without being a blank slate — she has specific, textured history (three schools in four years, a little brother she mothers, a joke-first defense mechanism) that makes her choices feel earned rather than arbitrary. Her humor is the key design lever: it's charming and likable (so players want to inhabit her), but it's also explicitly framed as a defense mechanism she has to recognize and choose to set down in order to do the brave thing. This keeps 'standing up for Reyna' from being a simple morality-meter choice — it costs Jordan something real (her hard-won sense of safety) rather than being free heroism. Her name and background were chosen to be distinct from Marcus, Reyna, Devon, and Ms. Alvarez both narratively and phonetically.",
+  "representationNotes": "Jordan is written as biracial (Senegalese-American and Ashkenazi Jewish) and from a recently divorced household — details that are present and specific but not the plot engine of the episode; her race and family situation shape her voice and context without being 'issues' the story is didactically about. Her anxiety and masking behavior are written with texture (nervous humor, replaying social moments, physical tells) rather than as a diagnosed condition or a 'lesson,' making her recognizable to a wide range of players regardless of whether they share her specific background. Care was taken to give her agency and interiority beyond her function as an audience-surrogate — she has her own wants, fears, and blind spots independent of the plot she's dropped into."
+}

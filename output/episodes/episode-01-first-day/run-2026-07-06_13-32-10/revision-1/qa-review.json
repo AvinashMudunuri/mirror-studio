@@ -1,0 +1,193 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-8-conflict has two transition mechanisms defined simultaneously, creating ambiguity about which path the engine should follow",
+      "location": "scenes[17].transition",
+      "expectedValue": "Either a 'default' transition with nextScene OR a 'choice' transition with choiceId, not both",
+      "actualValue": "Both defaultNextScene: null AND transition.type: 'choice' with choiceId: 'choice-4'",
+      "fix": "Remove the defaultNextScene field entirely (it's already null) and rely solely on the choice-based transition. The choice mechanism is the correct one here."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-8-conflict-cheated has two transition mechanisms defined simultaneously, creating engine ambiguity",
+      "location": "scenes[18].transition",
+      "expectedValue": "Either a 'default' transition with nextScene OR a 'choice' transition with choiceId, not both",
+      "actualValue": "Both defaultNextScene: null AND transition.type: 'choice' with choiceId: 'choice-4b-cheated'",
+      "fix": "Remove the defaultNextScene field (it's null) and rely solely on the choice-based transition."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Choice choice-4 references scene-8-conflict, but that scene has no dialogue option for the player to select choice-4. The choice is defined but unreachable from normal play.",
+      "location": "choices[4] (choice-4)",
+      "expectedValue": "A choice embedded in scene-8-conflict's dialogue or a clear prompt that triggers it",
+      "actualValue": "Choice exists but scene-8-conflict dialogue contains no player-selectable options that map to choice-4",
+      "fix": "Add a choiceDialogue entry for choice-4 that presents the three options (a, b, c) as explicit player dialogue choices, or embed the choice prompt into the scene's dialogue flow."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Choice choice-4b-cheated references scene-8-conflict-cheated, but that scene has no dialogue option for the player to select choice-4b-cheated. The choice is defined but unreachable.",
+      "location": "choices[5] (choice-4b-cheated)",
+      "expectedValue": "A choice embedded in scene-8-conflict-cheated's dialogue or a clear prompt that triggers it",
+      "actualValue": "Choice exists but scene-8-conflict-cheated dialogue contains no player-selectable options that map to choice-4b-cheated",
+      "fix": "Add a choiceDialogue entry for choice-4b-cheated that presents the three options (a, b, c) as explicit player dialogue choices."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'devon' appears in scene-6-classroom (characters array) but is never introduced or established in any prior scene. Player has no context for who Devon is.",
+      "location": "scenes[13].characters (scene-6-classroom)",
+      "expectedValue": "Devon should appear in at least one earlier scene (e.g., cafeteria, hallway) to establish his presence before the classroom choice",
+      "actualValue": "Devon first appears in scene-6-classroom without prior introduction",
+      "fix": "Add Devon to scene-4-cafeteria or scene-5-alone-table so the player has seen him before being asked to choose him as a partner. Alternatively, add a brief introduction line in scene-6-classroom dialogue."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-7-partner-marcus leads to choice-3b-cheat, but choice-3b-cheat is only reachable if the player chose Marcus as a partner in choice-3. If the player chose Reyna or Devon, they should not encounter this choice at all. The branching is correct, but the scene description doesn't clarify this is Marcus-only content.",
+      "location": "scenes[15] (scene-7-partner-marcus)",
+      "expectedValue": "Scene description should note this is only reachable via choice-3:a (Marcus partnership)",
+      "actualValue": "Description is generic and doesn't clarify the conditional path",
+      "fix": "Update scene-7-partner-marcus description to note: 'This scene only occurs if the player chose Marcus as a partner in the previous choice.' This is not a bug, but clarity helps QA."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Choice choice-4 (scene-8-conflict) has no choiceDialogue entry, so the player never sees the three options (a, b, c) as selectable dialogue. The choice prompt exists in the choice definition but is not presented to the player in the scene.",
+      "location": "choiceDialogue array (missing entry for choice-4)",
+      "expectedValue": "A choiceDialogue object with choiceId: 'choice-4' and options array containing dialogue for a, b, c",
+      "actualValue": "No entry found",
+      "fix": "Add a choiceDialogue entry for choice-4 with the three options presented as player dialogue choices."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Choice choice-4b-cheated (scene-8-conflict-cheated) has no choiceDialogue entry, so the player never sees the three options (a, b, c) as selectable dialogue.",
+      "location": "choiceDialogue array (missing entry for choice-4b-cheated)",
+      "expectedValue": "A choiceDialogue object with choiceId: 'choice-4b-cheated' and options array containing dialogue for a, b, c",
+      "actualValue": "No entry found",
+      "fix": "Add a choiceDialogue entry for choice-4b-cheated with the three options presented as player dialogue choices."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-2-hallway-locker has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-1'. This is correct per the data model (choice-based scenes should have null defaultNextScene), but the presence of both fields is redundant and could confuse the rendering pipeline.",
+      "location": "scenes[1] (scene-2-hallway-locker)",
+      "expectedValue": "Either remove defaultNextScene field entirely, or set it to null and rely on transition object only",
+      "actualValue": "Both defaultNextScene: null and transition object present",
+      "fix": "Remove the defaultNextScene field from this scene (and all choice-based scenes) to avoid redundancy. The transition object is the source of truth."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-4-cafeteria has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-2'. Same redundancy as scene-2-hallway-locker.",
+      "location": "scenes[5] (scene-4-cafeteria)",
+      "expectedValue": "Remove defaultNextScene field",
+      "actualValue": "Both defaultNextScene: null and transition object present",
+      "fix": "Remove the defaultNextScene field."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-6-classroom has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-3'. Same redundancy.",
+      "location": "scenes[13] (scene-6-classroom)",
+      "expectedValue": "Remove defaultNextScene field",
+      "actualValue": "Both defaultNextScene: null and transition object present",
+      "fix": "Remove the defaultNextScene field."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-8-conflict has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-4'. Same redundancy.",
+      "location": "scenes[17] (scene-8-conflict)",
+      "expectedValue": "Remove defaultNextScene field",
+      "actualValue": "Both defaultNextScene: null and transition object present",
+      "fix": "Remove the defaultNextScene field."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-8-conflict-cheated has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-4b-cheated'. Same redundancy.",
+      "location": "scenes[18] (scene-8-conflict-cheated)",
+      "expectedValue": "Remove defaultNextScene field",
+      "actualValue": "Both defaultNextScene: null and transition object present",
+      "fix": "Remove the defaultNextScene field."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-10-afterschool has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-5'. Same redundancy.",
+      "location": "scenes[27] (scene-10-afterschool)",
+      "expectedValue": "Remove defaultNextScene field",
+      "actualValue": "Both defaultNextScene: null and transition object present",
+      "fix": "Remove the defaultNextScene field."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Outcome branch-authentic-belonging is triggered by choice-5:a, but the branchDialogue entry for scene-12-end-belonging references branchId: 'branch-authentic-belonging'. However, the branchDialogue is keyed by sceneId, not by outcome. This creates ambiguity: which branch dialogue fires if the player reaches scene-12-end-belonging via a non-authentic path (e.g., choice-5:b or choice-5:c)?",
+      "location": "branchDialogue[0] (sceneId: scene-12-end-belonging, branchId: branch-authentic-belonging)",
+      "expectedValue": "Either all three ending scenes (scene-12-end-belonging, scene-12-end-popular, scene-12-end-neutral) should have branchDialogue entries, OR the branchDialogue should be keyed by outcome branch, not scene",
+      "actualValue": "Only scene-12-end-belonging has branchDialogue, and it's keyed to a specific branch",
+      "fix": "Clarify: if branchDialogue is meant to vary by outcome, add entries for branch-social-climber (scene-12-end-popular) and branch-quiet-bridge (scene-12-end-neutral). If branchDialogue is scene-specific, remove the branchId field and just use sceneId."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-5 leads to three different ending scenes (scene-11-authentic, scene-11-conform, scene-11-hold-back), each of which has defaultNextScene pointing to scene-12-end-belonging, scene-12-end-popular, or scene-12-end-neutral respectively. However, the outcomes array defines three branches (branch-authentic-belonging, branch-social-climber, branch-quiet-bridge) that are triggered by choice-5:a, choice-5:b, choice-5:c. The mapping is correct, but the branchDialogue only covers one branch (branch-authentic-belonging). This means the other two branches have no special dialogue defined.",
+      "location": "branchDialogue array (incomplete coverage)",
+      "expectedValue": "Either define branchDialogue for all three branches, or remove branchDialogue entirely and rely on scene-specific dialogue",
+      "actualValue": "Only branch-authentic-belonging has branchDialogue",
+      "fix": "Add branchDialogue entries for branch-social-climber and branch-quiet-bridge, or remove the branchId field from the existing branchDialogue entry and rely on scene-specific dialogue only."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice choice-3b-cheat is only reachable if the player chose Marcus as a partner (choice-3:a). If the player chose Reyna or Devon, they will never encounter this choice. This is intentional branching, but it's worth noting that ~66% of players will never see this ethical dilemma.",
+      "location": "choices[3] (choice-3b-cheat)",
+      "suggestion": "Consider whether the 'cheating' ethical test should be available to all partnership paths, not just Marcus. Alternatively, document this as intentional design (Marcus-specific temptation)."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene scene-8-conflict-cheated is only reachable if the player chose Marcus as a partner AND chose to cheat (choice-3b-cheat:a). This creates a very narrow path (~33% of Marcus-partnered players). Most players will never see this guilt-driven variant of the conflict scene.",
+      "location": "scenes[18] (scene-8-conflict-cheated)",
+      "suggestion": "Document this as intentional branching. Consider whether the 'caught cheating' scenario should be more discoverable, or if the narrow path is intentional to reward/punish specific player choices."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Devon is introduced in scene-6-classroom without prior appearance. While not a blocker, this means the player has no context for who Devon is before being asked to choose him as a partner. The choice prompt says 'Devon, a few seats over, sketchbook already out, doesn't look up — just sits there, ready to be picked by anyone,' which provides some context, but a prior scene appearance would strengthen his characterization.",
+      "location": "scenes[13] (scene-6-classroom)",
+      "suggestion": "Consider adding Devon to scene-4-cafeteria (sitting alone, sketching) or scene-5-alone-table (if the player chose to sit alone) to establish his presence earlier. This would make the choice to partner with him feel more earned."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has three distinct ending scenes (scene-12-end-belonging, scene-12-end-popular, scene-12-end-neutral) that are reached via choice-5. However, the emotional arc and dialogue in each ending is quite brief (4-5 dialogue lines each). Consider whether these endings feel sufficiently distinct and satisfying, or if they need expansion.",
+      "location": "scenes[29, 30, 31] (ending scenes)",
+      "suggestion": "Review the three endings for emotional resonance. Each should feel like a distinct conclusion to the player's journey, not just a brief reflection. Consider adding 1-2 more dialogue exchanges or internal monologue to each."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice choice-4 (the central moral choice of the episode) is presented as a prompt in the choice definition, but there is no choiceDialogue entry to present the three options (a, b, c) as selectable player dialogue. This means the player sees the prompt but not the options in a clear, clickable format.",
+      "location": "choices[4] (choice-4)",
+      "suggestion": "Add a choiceDialogue entry for choice-4 that presents the three options as player dialogue choices. This is critical for UX clarity."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode's estimated play time is 14 minutes, but the episode contains 31 scenes and 7 choices with significant branching. Depending on how long each scene takes to read/play, this estimate may be conservative. Consider whether 14 minutes is accurate for a full playthrough, or if it should be adjusted.",
+      "location": "estimatedPlayTime: 14",
+      "suggestion": "Validate the play time estimate by doing a timed playthrough of at least two distinct paths (e.g., authentic-belonging and social-climber). Adjust if necessary."
+    }
+  ],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 16,
+    "warningCount": 6
+  }
+}

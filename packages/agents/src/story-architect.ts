@@ -276,7 +276,15 @@ Return ONLY this JSON structure (wrapped in \`\`\`json code block):
         }
       }
     ],
-    "branches": [...],
+    "branches": [
+      {
+        "id": "branch-authentic",
+        "name": "The Authentic Path",
+        "triggeredBy": ["choice-1:a", "choice-3:b"],
+        "description": "...",
+        "outcome": "..."
+      }
+    ],
     "emotionalArc": [...],
     "characterArcs": [...],
     "traitMapping": [...],
@@ -296,6 +304,8 @@ TRANSITION RULES (MANDATORY — the episode is unplayable without them):
 - EVERY scene that has NO choice point must include "defaultNextScene" (a scene id or "END")
 - A scene that HAS a choice point transitions via its options, not defaultNextScene
 - Every scene must be reachable from the first scene; at least one path must reach "END"
+- EVERY branch must include "id" (kebab-case) and "triggeredBy" (the choice
+  option paths, "choiceId:optionId", that put the player on that branch)
 
 IMPORTANT REMINDERS:
 - Return ONLY valid JSON wrapped in \`\`\`json code block
@@ -354,7 +364,8 @@ object directly:
 TRANSITION RULES (MANDATORY — the episode is unplayable without them):
 - EVERY option in EVERY choicePoint must include "nextScene" (a scene id or "END")
 - EVERY scene that has NO choice point must include "defaultNextScene" (a scene id or "END")
-- Every scene must be reachable from the first scene; at least one path must reach "END"`;
+- Every scene must be reachable from the first scene; at least one path must reach "END"
+- EVERY branch must include "id" (kebab-case) and "triggeredBy" ("choiceId:optionId" paths)`;
     
     const response = await this.callLLM(
       this.systemPrompt,
@@ -617,6 +628,18 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
       errors.push('No path through the episode ever reaches "END" — the episode cannot terminate');
     }
     
+    // Branches need stable ids (branch-aware ending dialogue is keyed by
+    // them) and a triggeredBy list (the only machine-readable mapping from
+    // choice history to a branch).
+    for (const [i, branch] of (outline.branches || []).entries()) {
+      if (!branch.id) {
+        errors.push(`Branch ${i} ("${branch.name || 'unnamed'}") is missing "id"`);
+      }
+      if (!Array.isArray(branch.triggeredBy) || branch.triggeredBy.length === 0) {
+        errors.push(`Branch ${i} ("${branch.name || branch.id || 'unnamed'}") is missing "triggeredBy" (choice ids that select it)`);
+      }
+    }
+    
     return errors;
   }
   
@@ -632,6 +655,7 @@ RULES:
 - Every scene without a choice point needs "defaultNextScene": an existing scene id or "END"
 - Every scene must be reachable from the first scene
 - At least one path must reach "END"
+- Every branch needs "id" (kebab-case) and "triggeredBy" ("choiceId:optionId" paths)
 
 Keep the story content unchanged — ONLY fix the scene transitions and ids.
 Return the COMPLETE corrected JSON in the exact same structure, wrapped in a \`\`\`json code block.`;

@@ -1,0 +1,290 @@
+[
+  {
+    "character": {
+      "id": "ms-alvarez",
+      "name": "Sandra Alvarez",
+      "age": 34,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height, curvy build, dark curly hair usually pulled into a claw clip that's losing the battle by 3rd period. Wears the same five cardigans in rotation, always with sneakers because she refuses to stand in front of 28 kids in heels ever again.",
+        "distinctiveFeatures": [
+          "A chipped front tooth she never got fixed ('character,' she calls it)",
+          "Reading glasses she wears on a beaded chain and constantly loses on top of her own head",
+          "A rotating mug on her desk, gifted by past students — this year it says 'WORLD'S OKAYEST TEACHER'"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "warm but no-nonsense",
+          "quietly perceptive",
+          "dry sense of humor",
+          "protective of the overlooked kids",
+          "runs a little chaotic under the surface"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 7,
+          "extraversion": 6,
+          "agreeableness": 8,
+          "neuroticism": 5
+        },
+        "mannerisms": [
+          "Taps two fingers on the desk when she's about to redirect the class's energy",
+          "Does a slow scan of the room before speaking, like she's taking attendance of everyone's mood, not just their names",
+          "Laughs at her own bad jokes before anyone else does"
+        ],
+        "speechPatterns": [
+          "Uses 'folks' instead of 'guys' or 'class' half the time",
+          "Drops into a flatter, drier register for sarcasm that some kids take a beat to catch",
+          "Repeats a kid's name back warmly when they say something honest, like she's marking it down somewhere important"
+        ],
+        "emotionalTendencies": "Steady and unflappable on the surface — this is not her first first-day rodeo — but she has a soft spot for the kids trying to disappear into the wallpaper, and it shows in small ways: an extra beat of eye contact, a seat assignment that isn't random at all."
+      },
+      "background": {
+        "family": "Grew up two neighborhoods over from Ridgeview; her mom cleaned offices downtown and her dad drove a bus route that went right past the school. First in her family to go to college. No kids of her own yet, though she jokes she has 140 of them every September.",
+        "interests": [
+          "collects the mugs her students give her, even ugly ones",
+          "runs a very mediocre fantasy football team",
+          "obsessed with true crime podcasts she definitely shouldn't listen to on her commute"
+        ],
+        "strengths": [
+          "reads a room fast",
+          "remembers small details about kids that make them feel seen",
+          "de-escalates tension with humor instead of authority"
+        ],
+        "struggles": [
+          "burnout — this is her 9th year and some days it's harder to fake the enthusiasm",
+          "tends to take on more emotional labor for struggling students than the job requires, which her friends tell her isn't sustainable",
+          "impatient with performative politeness from admin, less patient with it than she used to be"
+        ],
+        "secrets": [
+          "She was the new kid at Ridgeview herself in 7th grade and bombed her own first-day introduction so badly she cried in the bathroom — it's part of why she pays close attention to how each kid handles that moment now",
+          "She's quietly building a case to admin that the school's 'friend groups by homeroom' tradition does more harm than good"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get every kid to say one true thing about themselves on day one, even a small one",
+          "Keep the classroom feeling safe enough that the quiet ones don't disappear for the whole year",
+          "Survive the first week with her coffee supply intact"
+        ],
+        "unconscious": [
+          "Give kids the first-day landing she didn't get",
+          "Prove to herself she still has it after a rough summer personally"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult but accessible — no jargon, talks to 12-year-olds like people, not like she's performing 'teacher voice.'",
+        "sentenceComplexity": "Short, warm, occasionally punchy for comic timing. Uses pauses well.",
+        "emotionalExpressiveness": "Warm and direct, dry humor as a delivery mechanism for care, rarely gushes but shows approval through small specific acknowledgments.",
+        "examples": [
+          "\"Alright, folks, eyes up here — well, most of you. Priya, sketchbook can survive thirty more seconds, I promise.\"",
+          "\"New kid privileges: you get one full week before I expect you to know where the bathroom is.\"",
+          "\"That's a real detail. I like real details. Sit down before I make you say more.\"",
+          "\"Partners aren't punishment, Jordan, despite your face right now.\""
+        ]
+      },
+      "storyRole": "The adult anchor of the episode's opening and structural engine of its central choice — she creates the spotlight moment that forces Rowan's first self-presentation decision, and later engineers the Rowan/Priya pairing that becomes the episode's emotional throughline. She's warm enough to feel safe, but not a fairy godmother — she has her own day to get through and can't fix everything for every kid.",
+      "arcPotential": [
+        "Future episode: Ms. Alvarez's proposal to change the homeroom/friend-group system hits admin resistance, and Rowan witnesses a teacher losing a fight she believes in",
+        "Future episode: a quieter beat where Rowan learns about Ms. Alvarez's own rough first day, recontextualizing why she pays such close attention to the new kids",
+        "Potential mentor-figure arc if Rowan's arc trends toward advocacy/fairness themes given her established trait of being 'stubborn about fairness'"
+      ]
+    },
+    "designNotes": "Ms. Alvarez needed to do real narrative work (the spotlight moment, the pairing decision) without feeling like a mechanism. I grounded her in a specific class/place history with Ridgeview itself — she's not a generic inspirational teacher, she's someone who bombed her own first day in this exact building and has spent years quietly re-litigating that afternoon through how she treats new kids. The mug collection and 'folks' habit are small textures meant to make her feel lived-in and slightly worn-down rather than a shiny mentor archetype. Giving her burnout and impatience with admin keeps her human — she loves the job most days but it's costing her something, which is true of a lot of real teachers and lets her feel authentic to a jaded 13-year-old reader who's suspicious of 'nice teacher' stereotypes.",
+    "representationNotes": "Written as a Latina teacher from the same working-class neighborhood as the school she now teaches in — a common and underrepresented reality (educators of color returning to under-resourced communities they grew up in) rather than a savior narrative; her motivation is personal and specific, not performative. Avoided making her solely defined by struggle — she has hobbies, a dry sense of humor, and interiority unrelated to being a teacher. Her advocacy for Priya and quiet kids is framed as an extension of her own memory, not a generic 'good teacher' trait, to avoid the flatness of a pure teaching-tool character."
+  },
+  {
+    "character": {
+      "id": "jordan",
+      "name": "Jordan Reyes",
+      "age": 12,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Tall for his age, still growing into his limbs, with the kind of easy posture that reads as confidence even when he's faking it. Wears his older cousin's hand-me-down sneakers like they're a status symbol — because to him, they are.",
+        "distinctiveFeatures": [
+          "A laugh that starts a half-second before anyone else's, like he's always first to decide something is funny",
+          "Chews on the drawstring of his hoodie when he thinks no one's watching",
+          "A faded friendship bracelet on his wrist he'd deny caring about if you asked"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "magnetic",
+          "insecure under the bravado",
+          "quick with a joke",
+          "conflict-avoidant about his own feelings",
+          "loyal to whoever's on top"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 4,
+          "extraversion": 9,
+          "agreeableness": 4,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Points finger-guns at people he's greeting, even teachers",
+          "Stands slightly in front of whoever he's talking to, like he's claiming the space",
+          "Gets noticeably quieter and fidgets when a joke lands wrong and nobody laughs"
+        ],
+        "speechPatterns": [
+          "Uses nicknames immediately, whether people like it or not ('Yo, new kid! Rowan-dawg!')",
+          "Punchlines delivered fast, almost rehearsed, like he's workshopped them before",
+          "Drops the performance voice entirely when he's caught off guard — gets flatter, younger-sounding"
+        ],
+        "emotionalTendencies": "Jordan runs on audience feedback. A room laughing with him feels like oxygen; a room going quiet around him feels like the floor dropping out. He doesn't process criticism well — it either bounces off in a joke or curdles into a sharper, meaner joke aimed elsewhere. He's not cruel by design; he's scared by design, and cruelty is just the fastest tool he's found for staying on top of a hierarchy he didn't build but is terrified of falling in."
+      },
+      "background": {
+        "family": "Middle kid of three. His older brother was the golden-boy athlete at Ridgeview two years ago and casts a long shadow; his younger sister gets doted on for being 'the sweet one.' Jordan's carved out 'the funny one, the popular one' as his lane because it's the only lane left that gets him noticed at home.",
+        "interests": [
+          "basketball (more for the social scene than the sport)",
+          "making TikToks with his friend group",
+          "actually really good at impressions — a legit talent buried under the mean-spirited use of it"
+        ],
+        "strengths": [
+          "genuinely charismatic — people want to be around him",
+          "quick thinking in social situations",
+          "fiercely loyal to the people he's decided are 'his'"
+        ],
+        "struggles": [
+          "can't sit with being unliked, even for a second",
+          "picks on others preemptively so it can't happen to him",
+          "academic stuff doesn't come easy and he covers by acting like he doesn't care"
+        ],
+        "secrets": [
+          "He actually thought Priya's sketchbook was really good before he mocked it — he flipped past a drawing of him that was unflatteringly accurate and it stung",
+          "He cried after his brother made varsity and their parents didn't come to Jordan's own game that same night — nobody knows this"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Be the kid everyone wants to sit with",
+          "Make people laugh, especially adults who might report back to his parents",
+          "Recruit the new kid to his table before anyone else does — it's a status win"
+        ],
+        "unconscious": [
+          "Be seen as more than 'the funny brother'",
+          "Avoid ever being the one who gets laughed at",
+          "Find out if people would like him without the performance"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual middle-school slang, current but not try-hard; leans on repeatable bits and callbacks",
+        "sentenceComplexity": "Short, punchy, built for delivery — like a kid who's already thinking about how a line will land",
+        "emotionalExpressiveness": "Loud and performative on the surface; genuine emotion leaks out in short, flat sentences when he's not performing",
+        "examples": [
+          "\"Bro got lost TWICE? Okay, I respect the commitment to the bit.\"",
+          "\"Nah nah nah, you gotta sit with us, it's basically the law now.\"",
+          "\"...what? It was just a joke, everybody thought it was funny.\" (quieter, defensive)",
+          "\"Wait, you're actually mad at me right now?\" (genuinely thrown, not performing)"
+        ]
+      },
+      "storyRole": "Jordan is the gravitational center of the episode's 'fitting in' path — the embodiment of belonging-that-costs-something. He's not a villain; he's a mirror for what Rowan could become if she optimizes for visibility over connection. His arc within the single day tracks from magnetic welcome, to casual cruelty, to a genuine crack in the performance when Rowan calls him out — giving players a glimpse that his behavior is armor, not identity.",
+      "arcPotential": [
+        "Later episode: Jordan's impressions/comedy talent gets legitimately spotlighted (talent show, video project) and he has to decide if he can be funny without a target",
+        "Later episode: Jordan's home life (brother comparison, parents missing his games) surfaces, recontextualizing his need for an audience",
+        "Later episode: A real friendship track with Rowan or even Priya, if Rowan's 'Speaking Up' choice in this episode plants a seed he can't quite shake"
+      ]
+    },
+    "designNotes": "Jordan needed to avoid being a cardboard 'popular bully' — the risk with a character who does something genuinely cruel (mocking Priya's sketchbook) is that he becomes a plot device to create the moral choice rather than a person. The fix was giving him a clear, sympathetic engine (sibling comparison, fear of being unliked) that explains the cruelty without excusing it, plus a secret (he actually respected Priya's art) that recontextualizes the cafeteria scene on a second read or replay. His speech pattern — performative loudness cracking into flat, younger-sounding lines under pressure — lets the 'Speaking Up' scene land as a real character beat: we see the kid under the performance for one unscripted second before the crowd (and his own fear) pulls him back to the bit. He's designed to be likable enough that sitting with him feels like a real temptation, not an obviously wrong choice — that's what makes Rowan's decision matter.",
+    "representationNotes": "Jordan is written as Latino (last name Reyes) without making his cultural background a plot point in this episode — it's part of who he is, not a lesson. Middle-child dynamics and the 'class clown as coping mechanism' pattern are common and real for this age group, particularly for boys who've learned that humor is a safer emotional currency than vulnerability. Care was taken not to code his meanness as 'boys will be boys' — Rowan's confrontation and the story's framing treat his behavior as a choice with real impact on Priya, while still leaving room for his humanity."
+  },
+  {
+    "character": {
+      "id": "priya",
+      "name": "Priya Chandran",
+      "age": 12,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height, dark hair usually in a low braid that's slightly undone by 3rd period, wears the same three hoodies in rotation (one has a tiny embroidered patch she sewed on herself). Carries a beat-up spiral sketchbook everywhere, corners soft from handling.",
+        "distinctiveFeatures": [
+          "Ink smudges on the side of her right hand, always",
+          "Wears headphones around her neck even when nothing's playing — it's a signal, not always a device",
+          "A thin scar above one eyebrow from a bike accident at 9, which she'll tell you about if you actually ask"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "quietly funny",
+          "fiercely private",
+          "observant",
+          "stubborn in her own quiet way",
+          "generous once trust is earned"
+        ],
+        "bigFiveProfile": {
+          "openness": 9,
+          "conscientiousness": 6,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 7
+        },
+        "mannerisms": [
+          "Taps her pen against her teeth when thinking, unconsciously",
+          "Closes her sketchbook fully — not just flips it shut — the second she feels exposed",
+          "Makes brief, dry one-liners under her breath that people miss because they're not expecting her to be funny",
+          "Goes very still and flat-voiced when hurt, rather than crying or arguing — reads as 'cold' to people who don't know her"
+        ],
+        "speechPatterns": [
+          "Short, clipped answers to strangers; long, tangent-heavy explanations once comfortable ('okay so this one's not a dragon, dragons are overdone, this is a — okay it doesn't have a name yet')",
+          "Uses precise, specific vocabulary about her art ('the linework's off' not 'it looks bad')",
+          "Deflects compliments with self-deprecating humor",
+          "Goes quiet — not sulky-quiet, just absent — when she's protecting herself"
+        ],
+        "emotionalTendencies": "Priya feels things intensely but has learned that showing it costs her, so she's built a very convincing 'unbothered' face. It's not that she doesn't care what people think — it's that she's decided caring out loud is a losing move. The mask cracks in small, specific ways: a joke that lands too well, a genuine laugh she didn't mean to let out, the sketchbook opening for someone she didn't expect to trust."
+      },
+      "background": {
+        "family": "Middle child of three, parents run a small pharmacy together and are stretched thin — loving but distracted, prone to translating her art as 'a nice hobby' rather than anything serious. Her older sister is the 'good at everything' one; Priya's stopped competing for that slot and carved out her own weird corner instead. Nobody in her house has really seen the sketchbook cover to cover.",
+        "interests": [
+          "Inventing creatures with elaborate fake taxonomies (habitats, diets, the whole bit)",
+          "Horror movies she's definitely too young to watch",
+          "Thrifting art supplies",
+          "A webcomic she reads obsessively but has never told anyone about"
+        ],
+        "strengths": [
+          "Genuinely gifted illustrator with a distinct style",
+          "Sharp, dry wit once she trusts someone",
+          "Doesn't perform for approval — what you get is real",
+          "Loyal in a low-key, showing-up way rather than a loud way"
+        ],
+        "struggles": [
+          "Convinced that being 'too much' about her interests is why she doesn't have close friends",
+          "Struggles to advocate for her own ideas in group settings, defaults to going along with louder personalities",
+          "Learned to expect disappointment first, which makes her slow to let people in even when they're being kind"
+        ],
+        "secrets": [
+          "She used to have a best friend at her old school who ditched her for a more popular group — Ridgeview is a fresh start she's terrified of ruining",
+          "She's been quietly building a whole illustrated world in her sketchbook for two years and has never shown a single page to a teacher or considered it could be 'real' work"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the day without being noticed in the wrong way",
+          "Keep her sketchbook private and safe"
+        ],
+        "unconscious": [
+          "Wants someone to want her company for real, not out of pity or convenience",
+          "Wants permission to take her own creativity seriously"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Precise and a little advanced when talking about her art or interests; simple and guarded in small talk. She code-switches between 'careful stranger voice' and 'unfiltered real voice.'",
+        "sentenceComplexity": "Short and clipped under guard; runs into longer, tangent-y sentences when excited about something she loves.",
+        "emotionalExpressiveness": "Restrained on the surface, intense underneath. Rarely raises her voice. Her hurt shows as withdrawal, not tears or yelling.",
+        "examples": [
+          "\"It's not a dragon. Dragons are lazy worldbuilding. This is a Kessu — they live in flooded cities and only come out at low tide.\"",
+          "\"You don't have to sit here. I'm not, like, a charity case.\"",
+          "\"...Yeah. Okay. Yeah, I'd like that.\" (small, real smile, the first one all day)"
+        ]
+      },
+      "storyRole": "Priya is the emotional stakes of the episode's central moral question. She's not a lesson-object about 'being kind to the quiet kid' — she's a specific, guarded person who's testing, in real time, whether this new school is going to be another place she has to shrink in. The player's choices don't just affect a plot outcome; they determine whether Priya opens up a part of herself she's kept hidden for two years, or closes it back down and files Ridgeview under 'same as everywhere else.'",
+      "arcPotential": [
+        "Future episode: Priya works up the courage to submit her sketchbook world to a school art show or literary magazine, and has to face the fear of being seen fully",
+        "Future episode: The friendship with Rowan gets tested when Priya has to choose between loyalty to her and a chance to be embraced by a 'cooler' crowd herself",
+        "Future episode: Backstory episode exploring the friendship that fell apart at her old school, and what it taught her (wrongly) about protecting herself"
+      ]
+    },
+    "designNotes": "Priya is built to resist the 'quiet artsy girl who just needs a friend' trope by giving her real teeth: dry humor, stubbornness about her own taste, a slightly prickly self-protective instinct that isn't just shyness — it's a learned strategy from getting burned before. Her arc across the episode isn't 'sad kid gets rescued,' it's 'guarded kid decides, in small increments, whether this new place is safe enough to risk being herself in.' The sketchbook is the object that carries all her stakes — opening it, closing it, offering her real idea vs. the safe idea — so every scene has a physical, visible marker of her emotional state without needing exposition. Her humor is important: it's there so players (and the protagonist) can be surprised by her, not just feel sorry for her.",
+    "representationNotes": "Priya is written as a South Asian American middle schooler whose family background (parents running a small business, practical about 'hobby vs. career' framing of art) is present but not the point of her story — it informs her context without reducing her to it. Care was taken to avoid the 'sad immigrant kid' or 'model minority overachiever' tropes; instead she's someone whose specific personality (funny, particular, a little prickly) exists independent of any single identity marker. Her introversion is portrayed as a genuine personality trait with its own richness, not a problem to be fixed by the extroverted protagonist — the goal is mutual respect and being met on her own terms, not 'rescuing' her out of her quietness."
+  }
+]

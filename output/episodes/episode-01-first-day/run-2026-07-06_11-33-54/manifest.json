@@ -1,0 +1,109 @@
+{
+  "episode": {
+    "number": 1,
+    "title": "First Bell",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "9cd9cada-e036-43b6-bc74-b62682dffaaa",
+    "threadId": "358941c2-603b-460f-8cd0-0680631d7e56",
+    "startedAt": "2026-07-06T11:33:54.313Z",
+    "completedAt": "2026-07-06T12:01:10.334Z",
+    "totalSeconds": 1636,
+    "model": "claude-sonnet-5"
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Wren Castillo",
+      "role": "Player character / protagonist of 'First Bell' — the lens through which the player experiences Ridgemont's social ecosystem for the first time. Wren's choices (who she sits with, whether she speaks up during the lunchroom cruelty moment, how she introduces herself) directly shape both the narrative reputation system and her own internal arc about authenticity vs. self-protection.",
+      "active": true
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Oduya",
+      "role": "Jordan functions as the player's social translator for Ridgemont — a warm, plugged-in guide whose easy charm masks his own unresolved discomfort with staying neutral. He gives the player information and cover, but never pushes them toward courage; the player's choices ultimately reveal whether they'll do what Jordan hasn't quite managed to do himself. His arc is entirely reactive to the player, making him a mirror for whichever identity — confident, kind, adaptable, or a blend — the player is building.",
+      "active": true
+    },
+    {
+      "id": "mia",
+      "name": "Mia Delgado",
+      "role": "Mia is the gravitational center of Ridgemont's social ecosystem on day one — the test the player has to decide how to pass. She's not a villain; she's a kid who learned that being first to laugh means you're never the one being laughed at. Her arc across the episode is entirely about recalibration: every choice the player makes either confirms her worldview (kindness is weakness, popularity is safety) or cracks it slightly open.",
+      "active": true
+    },
+    {
+      "id": "alex",
+      "name": "Alex Nakamura",
+      "role": "Alex is the emotional stakes of 'First Bell' made human — not a symbol of kindness to be rescued, but a specific kid testing, without meaning to, whether this new person is someone worth trusting again. His reactions across the episode (the sketchbook, the group project, the lunchroom) form a slow-building trust arc that runs parallel to and independent of the player's reputation system — Alex isn't grading the player's 'kindness score,' he's just a person deciding, moment by moment, whether it's safe to be visible again.",
+      "active": true
+    }
+  ],
+  "finalStatus": "APPROVED",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "PASS",
+    "childPsychologist": "APPROVED",
+    "gameDesigner": "GOOD",
+    "ethicsReviewer": "GOOD"
+  },
+  "revisions": [
+    {
+      "iteration": 1,
+      "failingBefore": [
+        "creativeDirector",
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 8,
+      "dialogueFeedbackCount": 3,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    },
+    {
+      "iteration": 2,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "dialogue-revision"
+      ],
+      "storyFeedbackCount": 0,
+      "dialogueFeedbackCount": 1,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "PASS",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    }
+  ],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "06-psych-review.json",
+    "07-game-review.json",
+    "08-ethics-review.json",
+    "revision-1/feedback.json",
+    "revision-1/story-outline.json",
+    "revision-1/dialogue.json",
+    "revision-1/creative-review.json",
+    "revision-1/qa-review.json",
+    "revision-2/feedback.json",
+    "revision-2/dialogue.json",
+    "revision-2/qa-review.json",
+    "manifest.json"
+  ]
+}

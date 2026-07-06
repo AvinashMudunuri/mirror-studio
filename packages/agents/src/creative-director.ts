@@ -133,6 +133,27 @@ REVIEW CRITERIA:
 - Does this add to the world or feel disconnected?
 - Is this creatively brave or safe?
 
+DECISION RUBRIC (apply strictly — your decision gates an automated pipeline):
+- APPROVED: The episode meets the creative standards. Approval does NOT mean
+  perfection — you may (and should) still include polish suggestions in
+  specificFeedback. If your remaining notes are refinements a good editor
+  would make rather than problems that would hurt the audience experience,
+  the decision is APPROVED.
+- NEEDS_REVISION: There is at least one specific, material deficiency that
+  would noticeably harm the audience experience (confusing structure,
+  inauthentic voice throughout, unearned emotional beats, choices that
+  don't matter, tonal breaks). Every such deficiency MUST appear in
+  specificFeedback as a concrete, actionable item. Never withhold approval
+  on the strength of vague unease or perfectionism.
+- REJECTED: Fundamentally broken or unsalvageable — wrong premise for the
+  world, unsafe framing, or a story that cannot be fixed by revision.
+
+Consistency check before you answer: if your creativeNotes praise the work
+and your feedback items are enhancements ("give this beat one more line",
+"consider adding texture") rather than defects, the decision MUST be
+APPROVED. A NEEDS_REVISION decision whose feedback is all optional polish is
+a calibration error.
+
 OUTPUT FORMAT:
 Respond with a JSON object containing:
 {
@@ -154,7 +175,8 @@ Respond with a JSON object containing:
   "revisionPriority": "LOW" | "MEDIUM" | "HIGH"
 }
 
-Be honest. Be specific. Push for excellence.`;
+Be honest. Be specific. Push for excellence — but remember that "excellent
+with polish notes" is APPROVED, not NEEDS_REVISION.`;
   }
   
   protected async execute(input: CreativeDirectorInput): Promise<CreativeDirectorOutput> {

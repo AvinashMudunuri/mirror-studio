@@ -1,0 +1,91 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-8-conflict has two transition mechanisms defined simultaneously, creating ambiguity about which path the engine should follow — Suggested fix: Remove the defaultNextScene field entirely (it's already null) and rely solely on the choice-based transition. The choice mechanism is the correct one here. (location: scenes[17].transition)",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-8-conflict-cheated has two transition mechanisms defined simultaneously, creating engine ambiguity — Suggested fix: Remove the defaultNextScene field (it's null) and rely solely on the choice-based transition. (location: scenes[18].transition)",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Character 'devon' appears in scene-6-classroom (characters array) but is never introduced or established in any prior scene. Player has no context for who Devon is. — Suggested fix: Add Devon to scene-4-cafeteria or scene-5-alone-table so the player has seen him before being asked to choose him as a partner. Alternatively, add a brief introduction line in scene-6-classroom dialogue. (location: scenes[13].characters (scene-6-classroom))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-7-partner-marcus leads to choice-3b-cheat, but choice-3b-cheat is only reachable if the player chose Marcus as a partner in choice-3. If the player chose Reyna or Devon, they should not encounter this choice at all. The branching is correct, but the scene description doesn't clarify this is Marcus-only content. — Suggested fix: Update scene-7-partner-marcus description to note: 'This scene only occurs if the player chose Marcus as a partner in the previous choice.' This is not a bug, but clarity helps QA. (location: scenes[15] (scene-7-partner-marcus))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-4-cafeteria has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-2'. Same redundancy as scene-2-hallway-locker. — Suggested fix: Remove the defaultNextScene field. (location: scenes[5] (scene-4-cafeteria))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-6-classroom has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-3'. Same redundancy. — Suggested fix: Remove the defaultNextScene field. (location: scenes[13] (scene-6-classroom))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-8-conflict has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-4'. Same redundancy. — Suggested fix: Remove the defaultNextScene field. (location: scenes[17] (scene-8-conflict))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-8-conflict-cheated has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-4b-cheated'. Same redundancy. — Suggested fix: Remove the defaultNextScene field. (location: scenes[18] (scene-8-conflict-cheated))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-10-afterschool has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-5'. Same redundancy. — Suggested fix: Remove the defaultNextScene field. (location: scenes[27] (scene-10-afterschool))",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice choice-4 references scene-8-conflict, but that scene has no dialogue option for the player to select choice-4. The choice is defined but unreachable from normal play. — Suggested fix: Add a choiceDialogue entry for choice-4 that presents the three options (a, b, c) as explicit player dialogue choices, or embed the choice prompt into the scene's dialogue flow. (location: choices[4] (choice-4))",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice choice-4b-cheated references scene-8-conflict-cheated, but that scene has no dialogue option for the player to select choice-4b-cheated. The choice is defined but unreachable. — Suggested fix: Add a choiceDialogue entry for choice-4b-cheated that presents the three options (a, b, c) as explicit player dialogue choices. (location: choices[5] (choice-4b-cheated))",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice choice-4 (scene-8-conflict) has no choiceDialogue entry, so the player never sees the three options (a, b, c) as selectable dialogue. The choice prompt exists in the choice definition but is not presented to the player in the scene. — Suggested fix: Add a choiceDialogue entry for choice-4 with the three options presented as player dialogue choices. (location: choiceDialogue array (missing entry for choice-4))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice choice-4b-cheated (scene-8-conflict-cheated) has no choiceDialogue entry, so the player never sees the three options (a, b, c) as selectable dialogue. — Suggested fix: Add a choiceDialogue entry for choice-4b-cheated with the three options presented as player dialogue choices. (location: choiceDialogue array (missing entry for choice-4b-cheated))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-2-hallway-locker has defaultNextScene: null but also defines transition.type: 'choice' with choiceId: 'choice-1'. This is correct per the data model (choice-based scenes should have null defaultNextScene), but the presence of both fields is redundant and could confuse the rendering pipeline. — Suggested fix: Remove the defaultNextScene field from this scene (and all choice-based scenes) to avoid redundancy. The transition object is the source of truth. (location: scenes[1] (scene-2-hallway-locker))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome branch-authentic-belonging is triggered by choice-5:a, but the branchDialogue entry for scene-12-end-belonging references branchId: 'branch-authentic-belonging'. However, the branchDialogue is keyed by sceneId, not by outcome. This creates ambiguity: which branch dialogue fires if the player reaches scene-12-end-belonging via a non-authentic path (e.g., choice-5:b or choice-5:c)? — Suggested fix: Clarify: if branchDialogue is meant to vary by outcome, add entries for branch-social-climber (scene-12-end-popular) and branch-quiet-bridge (scene-12-end-neutral). If branchDialogue is scene-specific, remove the branchId field and just use sceneId. (location: branchDialogue[0] (sceneId: scene-12-end-belonging, branchId: branch-authentic-belonging))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice choice-5 leads to three different ending scenes (scene-11-authentic, scene-11-conform, scene-11-hold-back), each of which has defaultNextScene pointing to scene-12-end-belonging, scene-12-end-popular, or scene-12-end-neutral respectively. However, the outcomes array defines three branches (branch-authentic-belonging, branch-social-climber, branch-quiet-bridge) that are triggered by choice-5:a, choice-5:b, choice-5:c. The mapping is correct, but the branchDialogue only covers one branch (branch-authentic-belonging). This means the other two branches have no special dialogue defined. — Suggested fix: Add branchDialogue entries for branch-social-climber and branch-quiet-bridge, or remove the branchId field from the existing branchDialogue entry and rely on scene-specific dialogue only. (location: branchDialogue array (incomplete coverage))",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

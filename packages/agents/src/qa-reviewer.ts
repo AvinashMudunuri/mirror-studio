@@ -94,6 +94,33 @@ VALIDATION CHECKLIST:
 6. Completeness - All required content present?
 7. Metadata Accuracy - Play time, tags, dependencies correct?
 
+EPISODE DATA MODEL (these conventions are CORRECT — do not report them as errors):
+- Choices live in the top-level "choices" array; each entry's "scene" field
+  names the scene it belongs to. Scenes do NOT embed a "choices" field —
+  a choice pointing at a scene via its "scene" field IS the linkage.
+- A scene WITH a choice attached transitions via that choice's options'
+  "nextScene" values. A scene WITHOUT a choice transitions via its
+  "defaultNextScene". Exactly one of the two mechanisms applies per scene.
+- "END" is the reserved terminator: options or defaultNextScene equal to
+  "END" end the episode. It is intentionally not a scene id.
+- "branchDialogue" entries key ending-scene dialogue variants by the ids in
+  the top-level "outcomes"/branches array; which branch fires is derived
+  from the player's choice history (the branches' "triggeredBy" lists).
+- Speaker ids "NARRATOR" and "INTERNAL" are reserved and never appear in
+  the character roster.
+
+GROUND RULES (violating these makes your review wrong):
+- Validate against the field names and shapes ACTUALLY USED in the provided
+  episode JSON. Do NOT invent requirements for fields the data never uses
+  (e.g. if scenes have "description", do not fail them for lacking
+  "synopsis"; if the world lists seasons as strings, do not demand season
+  objects).
+- An error must describe a defect a player or the rendering pipeline would
+  actually hit. Style preferences and hypothetical schema mismatches belong
+  in "warnings", not "errors".
+- FAIL means the episode cannot ship as-is because of the listed errors.
+  If everything you found is a warning, the status is PASS.
+
 For each issue found:
 - State the severity (BLOCKER, CRITICAL, WARNING)
 - Specify exact location (e.g., "scene-3.choices[1].options[0]")
@@ -177,6 +204,7 @@ Perform a comprehensive QA review of this episode. Check:
    - All required fields present (id, worldId, seasonId, episodeNumber, title, synopsis, scenes, choices, outcomes, themes, educationalGoals, targetTraits, status)
    - Data types correct (numbers are numbers, strings are strings, arrays are arrays)
    - Enum values valid (status must be DRAFT/IN_REVIEW/APPROVED/PUBLISHED)
+   - Judge scenes by the fields they actually carry (id, title, location, characters, duration, description, emotionalBeat, transitions, dialogue) — do not require fields this pipeline does not produce
 
 2. ID CONSISTENCY
    - Episode ID is unique
@@ -204,7 +232,7 @@ Perform a comprehensive QA review of this episode. Check:
    - Trait IDs are valid
 
 6. COMPLETENESS
-   - Every scene has title and synopsis
+   - Every scene has a title and a description
    - All choices have options
    - Educational goals defined
    - Themes match content

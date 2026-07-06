@@ -1,0 +1,67 @@
+{
+  "failing": [
+    "creativeDirector",
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "World mismatch: the world description states 'contemporary middle school setting' but this episode is set at 'Ridgemont High' with Jordan as 'a junior.' This needs to be resolved — either rename to a middle school (e.g., 'Ridgemont Middle') and adjust grade references, or confirm with the showrunner that Season 1 is intentionally high school and update the world bible. This is the one must-fix item.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The convergence structure (hallway -> classroom -> group project -> lunch -> reflection) is well-paced and each choice compounds logically into the next — no notes on structure itself.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Consider a one-line callback in the reflection scene acknowledging Jordan's earlier 'handle sticks' prank — small continuity texture, not required.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Alex is drawn with real specificity (the sketchbook, the two-years-and-still-no-table detail) rather than as a generic 'sad kid' — this is a good example of the world's authenticity theme.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Mia toes the line between 'mean girl' cliché and a more textured character (the unguarded 'don't tell anyone today was a good day' line in 9b) — good work resisting the flat antagonist trap.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Jordan is consistent and charming throughout without stealing focus from the player's choices — good use of a low-stakes secondary character as an emotional barometer.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The lunchroom cruelty beat (scene-6/7) is handled with restraint — Mia's mockery is 'quiet cruelty' as promised in the synopsis, not cartoonish villainy, which fits the theme of belonging without moralizing.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Good instinct not to narratively punish the 'side with Mia' path — it stays uncomfortable (7c) rather than melodramatic, which respects the audience's intelligence.",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Player VO like 'Great plan, Wren. Really airtight' and 'Cool. Love it here already' land as authentically teenage — dry, deflective, self-aware. No notes.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Alex's 'Apparently you need to talk to people. Rude, honestly' is a great character-voice moment — dry humor emerging from someone established as withdrawn feels earned rather than tonally inconsistent.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "branchDialogue entries define four distinct branchId variants per ending scene (branch-direct-approach, branch-quiet-observer, branch-bridge-builder, branch-fitting-in-cost), but nothing in the episode schema (choices, outcomes, scenes) specifies how a branchId is selected at runtime. There is no trait-threshold, path-history, or choice-tag field mapping player behavior to a branchId. As written, the rendering pipeline has no way to know which of the four dialogue blocks to play for scene-11a/11b/11c, making this entire content block effectively orphaned/unreachable. — Suggested fix: Add a 'condition' or 'requiredChoices'/'traitThreshold' field to each branchDialogue entry (e.g., branch-direct-approach triggers when choice-1 option 'a' and choice-3 option 'a' were selected), or document the selection logic in the engine spec and reference it here. (location: branchDialogue[*].branchId)",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

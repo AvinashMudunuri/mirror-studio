@@ -1,0 +1,60 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "branchDialogue entries (branch-genuine, branch-popularity, branch-selfprotective) are attached to each of the three ending scenes (scene-ending-belonging, scene-ending-popularity, scene-ending-lonely), but there is no field anywhere in the schema (on scenes, choices, or outcomes) that specifies which branchId should be selected at runtime. Nothing links a branchId to a prior choice, trait total, or visited-scene history. The rendering pipeline has no deterministic way to know which of the three branch dialogue sets to play when a player reaches, e.g., scene-ending-belonging.",
+      "location": "branchDialogue[*].branchId",
+      "expectedValue": "A selection rule, e.g. scene.branchTrigger or choice.setsBranch = 'branch-genuine', or an explicit mapping from outcome path to branchId",
+      "actualValue": "branchId values exist with no defined trigger/selection mechanism",
+      "fix": "Add an explicit trigger field (e.g., on each ending scene: 'branchSelector': based on which path/outcome the player took, or a mapping keyed to trait totals) so the correct branchDialogue block can be resolved deterministically."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "ID_INTEGRITY",
+      "message": "Dialogue line ID 'ep-1' inside scene-ending-popularity duplicates the top-level episode ID 'ep-1'. If dialogue IDs and top-level entity IDs share a namespace (common in flat content databases/analytics logging), this collision could cause lookup errors or overwrite the episode record.",
+      "location": "scenes[scene-ending-popularity].dialogue[0].id",
+      "expectedValue": "A unique dialogue ID, e.g. 'eppop-1' (consistent with other scenes' naming convention like 'eb-1', 'el-1')",
+      "actualValue": "\"id\": \"ep-1\" (same as episode.id)",
+      "fix": "Rename dialogue IDs in scene-ending-popularity to a scene-specific prefix (e.g., 'eppop-1', 'eppop-2', 'eppop-3', 'eppop-4') to avoid collision with the episode ID and be consistent with sibling ending scenes."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "estimatedPlayTime is 13 minutes, but the episode contains 26 scenes with substantial dialogue per scene plus 6 branching choice points. This seems significantly underestimated for the actual reading/interaction time.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Recalculate based on average reading speed and scene count; likely closer to 20-25 minutes for this volume of content."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Theme 'First Impressions' is listed in episode.themes but does not appear in the world's themes list (Belonging, Authenticity, Friendship, Identity). Not a hard error, but worth aligning terminology.",
+      "location": "themes",
+      "suggestion": "Either add 'First Impressions' to the world's theme taxonomy, or map it to an existing world theme like 'Identity'."
+    },
+    {
+      "category": "STYLE",
+      "message": "NARRATOR and INTERNAL are used as 'character' values in dialogue but are not listed in episode.characters or the character roster. This is likely an intentional convention (voice-over/internal monologue tags) but is undocumented in the schema.",
+      "location": "scenes[*].dialogue[*].character",
+      "suggestion": "Document NARRATOR/INTERNAL as reserved pseudo-character IDs in the schema/style guide so future QA passes don't flag them as unresolved character references."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The three ending scenes' branchDialogue sets have very similar emotional beats/lines across branches (e.g., scene-ending-lonely's three branches are all short internal regret lines), somewhat diluting the sense that the player's specific path mattered.",
+      "location": "branchDialogue[sceneId=scene-ending-lonely]",
+      "suggestion": "Consider differentiating branch lines further to reflect the specific choices made (lunch, project, hallway) rather than generic regret."
+    }
+  ],
+  "summary": {
+    "totalChecks": 45,
+    "passedChecks": 42,
+    "failedChecks": 2,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Add an explicit branch-selection mechanism (e.g., a 'dominantTrait' or 'pathId' computed from choices, referenced by branchDialogue entries) before this ships, since without it the three branch variants per ending are unreachable/ambiguous to the renderer.",
+    "Run an ID-collision linter across ALL id fields (episode, scenes, choices, options, dialogue, branchDialogue) in one flat namespace to catch cases like the 'ep-1' duplicate.",
+    "Consider bumping estimatedPlayTime metadata to better reflect actual scene/dialogue volume."
+  ]
+}

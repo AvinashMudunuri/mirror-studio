@@ -1,0 +1,382 @@
+[
+  {
+    "character": {
+      "id": "jordan",
+      "name": "Jordan Alvarez-Reyes",
+      "age": 13,
+      "pronouns": "they/them",
+      "appearance": {
+        "brief": "Medium height, a little slouchy in the shoulders like they're used to taking up less space than they need. Dark, curly hair usually pushed back with whatever's on hand — a pencil, sometimes an actual chopstick. Paint and ink stains on fingers that never fully wash out.",
+        "distinctiveFeatures": [
+          "Oversized hoodie with a hand-drawn patch sewn crookedly onto one sleeve — a small three-eyed creature Jordan calls 'Gary'",
+          "A sketchbook that's basically an extension of their arm, held closed with a rubber band that's snapped and been replaced at least four times",
+          "Chipped black nail polish, redone about once a month, always slightly different on each hand"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "quietly imaginative",
+          "watchful",
+          "self-deprecating",
+          "fiercely loyal once trust is given",
+          "braver than they think they are"
+        ],
+        "bigFiveProfile": {
+          "openness": 9,
+          "conscientiousness": 6,
+          "extraversion": 3,
+          "agreeableness": 7,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Doodles in the margin of whatever paper is nearest when nervous — even homework, even napkins",
+          "Half-wears headphones (one ear in, one out) as a social force field they can drop in an instant",
+          "Picks at the rubber band on their sketchbook when waiting for someone's reaction to their work"
+        ],
+        "speechPatterns": [
+          "Undercuts genuine statements with a joke right after, like they're taking it back just in case: 'It's probably dumb but— anyway, forget it.'",
+          "Gets fluent and fast when talking about their creatures/art, losing the hedging entirely",
+          "Asks questions sideways instead of directly ('You're not... weirded out or whatever?') rather than asking for reassurance outright"
+        ],
+        "emotionalTendencies": "Jordan runs quiet and internal, storing most of their feelings in sketchbook pages instead of saying them out loud. They've gotten good at reading a room fast — a survival skill, not a superpower — and they brace for rejection so automatically that genuine acceptance can catch them completely off guard, sometimes to the point of visible confusion ('wait, you actually mean that?')."
+      },
+      "background": {
+        "family": "Raised by a single dad who works long shifts as a hospital orderly; a much older half-sister in college who Jordan texts more than talks to. Money's tight some months, and Jordan's learned not to ask for art supplies unless it's a birthday.",
+        "interests": [
+          "drawing original creatures/monsters — has an entire invented ecosystem in their sketchbook",
+          "horror movies, the cheesier the better",
+          "collecting weird facts about deep-sea animals",
+          "lo-fi and video game soundtracks"
+        ],
+        "strengths": [
+          "genuinely original creative vision",
+          "empathy — notices who's struggling before anyone else does",
+          "quiet courage under pressure, even if it doesn't look like courage"
+        ],
+        "struggles": [
+          "convinced their art (and by extension, themselves) is 'too much' or 'too weird' for people to actually like",
+          "got badly burned last year when a former friend group mocked their sketchbook in front of others — hasn't fully trusted a group since",
+          "avoids conflict directly, which sometimes means staying silent when they should speak up for themselves"
+        ],
+        "secrets": [
+          "The 'too weird for people here' question at lunch isn't really about art — it's Jordan testing whether Sam will be the next person to laugh, before letting themselves hope otherwise",
+          "Still has the sketchbook page from last year where the old friend group wrote mean comments in the margins — hasn't torn it out, doesn't know why"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "get through the group project without being the 'weird kid' who tanks everyone's grade",
+          "find at least one person who doesn't flinch at the sketchbook"
+        ],
+        "unconscious": [
+          "needs proof that being fully themselves won't always end in getting hurt",
+          "wants to belong on their own terms, not by shrinking down to fit"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Middle-school casual with pockets of surprising precision when talking about art or animals — Jordan knows specific vocabulary for things they love (anatomy, art terms, deep-sea trivia) even if their everyday speech is loose and hedgy.",
+        "sentenceComplexity": "Short, trailing sentences when nervous; longer, tumbling run-ons when excited about something they love.",
+        "emotionalExpressiveness": "Indirect by default — deflects with humor or self-deprecation — but capable of sudden, unguarded honesty when it matters most, especially with someone who's earned trust.",
+        "examples": [
+          "\"It's fine, it's whatever — I mean, three-eyed swamp goats aren't for everyone. That's a normal thing to say about your own art. Totally normal.\"",
+          "\"Okay but did you know anglerfish males basically just... fuse into the female permanently? Like that's just his whole life now. I think about that a lot, honestly.\"",
+          "\"You didn't have to say anything back there. But you did. So — yeah. Thanks. That's, um. That's a big deal, actually.\""
+        ]
+      },
+      "storyRole": "Jordan is the quiet counterweight to Maya's social gravity — not a rival for Sam's loyalty, but a mirror for the version of Sam who's afraid to take up space. Jordan's arc across the day (guarded → hopeful → cautiously open → visibly lighter) tracks almost exactly onto whether Sam chooses authenticity, making Jordan the emotional barometer for the player's core choice.",
+      "arcPotential": [
+        "Later episode: Jordan finally shows their sketchbook to the whole class or an art teacher, with Sam's support as the thing that tips them into doing it",
+        "Later episode: The old friend group (the ones who mocked the sketchbook) resurfaces, testing whether Jordan's new confidence holds under old pressure",
+        "Later episode: Jordan and Sam collaborate on an actual project — comic, game, art installation — built from Jordan's invented creature world, becoming a visible symbol of the friendship's payoff"
+      ]
+    },
+    "designNotes": "Jordan is built to be the emotional thermometer of 'First Bell' — their openness or guardedness in each scene should visibly shift based on the player's choices, giving immediate, legible feedback without ever feeling like a scoreboard. I deliberately gave Jordan a defense mechanism (self-deprecating humor as pre-emptive rejection) that's different from Sam's (guardedness/armor), so their dynamic isn't 'two guarded kids' but two different flavors of self-protection that can either reinforce each other's isolation or crack each other open. The sketchbook is the literal, physical object carrying Jordan's vulnerability — it's not subtle, but at 11-14 that's appropriate; kids this age respond to concrete symbols. I avoided making Jordan purely a 'lesson' about acceptance by giving them specific, weird, non-thematic interests (anglerfish, cheesy horror movies) and a messy family/money reality that has nothing to do with the 'moral' of the episode — they have a life outside of being Sam's test case.",
+    "representationNotes": "Jordan is written as non-binary (they/them) without the story making that identity the point of conflict in this episode — it's simply a fact about who they are, same as being biracial (implied by the hyphenated last name) or being an artist. The 'weirdness' Jordan fears being judged for is explicitly about their art and interests, not a stand-in or metaphor for their gender identity, to avoid collapsing queerness into 'otherness' as a trope. Class difference (tight money, secondhand art supplies) is present but not played for pity — it shows up in small, specific texture rather than as a plot point. Writers should let Jordan be genuinely funny and a little weird on their own terms, not just 'sad kid who needs saving' — their strength (original creative vision, empathy, quiet courage) should be as visible as their wounds."
+  },
+  {
+    "character": {
+      "id": "maya",
+      "name": "Maya Chen-DeLacruz",
+      "age": 13,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height, quick posture like she's always mid-motion. Box braids usually pulled into a high half-up style with a claw clip she's had since sixth grade. Wears whatever's trending but makes it look like her own idea — oversized cardigans over graphic tees, mismatched stack of thin rings.",
+        "distinctiveFeatures": [
+          "A chipped front tooth she never bothered to fix, shows when she really laughs",
+          "Chews on the end of her pen cap when she's actually nervous (rare, and she hides it)",
+          "Laughs first, loudest, then checks who else laughed"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "magnetic",
+          "quick-witted",
+          "conflict-averse under the confidence",
+          "genuinely curious about people",
+          "loyal to her crew even when they're wrong"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 6,
+          "extraversion": 9,
+          "agreeableness": 6,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Touches your arm when she talks to you like you're already friends",
+          "Scans a room in about two seconds flat — reading who's up, who's down, who needs managing",
+          "Laughs a half-beat before deciding if something's actually funny, testing the room",
+          "Straightens things without noticing — trays, papers, the vibe"
+        ],
+        "speechPatterns": [
+          "Assigns nicknames almost immediately ('new kid,' 'Sam-I-Am' if she likes you)",
+          "Talks in quick bursts, interrupts herself, rarely finishes a sentence before starting the next thought",
+          "Uses 'obviously' and 'literally' as filler when she's steering a conversation",
+          "Goes quieter and more careful right before she says something she actually means"
+        ],
+        "emotionalTendencies": "Maya runs hot and fast on the surface — delighted, dramatic, decisive — but she's spent two years learning to read a room before she reads herself. She'll laugh along with something before she's sure she agrees with it, then spend the rest of the day quietly annoyed at herself for it."
+      },
+      "background": {
+        "family": "Middle kid of three. Older sister is a Crestwood legend (student body president, valedictorian track); little brother is loud and adored. Maya's parents run a small tax-prep business out of their living room half the year — chaotic, warm, always slightly behind on everything. Maya's the one who keeps the house socially organized, which is basically her job at school too.",
+        "interests": [
+          "Organizing things — group chats, seating charts, the entire eighth grade's social calendar",
+          "K-dramas and reality TV she'll defend to the death",
+          "Actually really good at math, tells almost no one because it's 'not her brand'"
+        ],
+        "strengths": [
+          "Reads people fast and accurately",
+          "Makes new kids feel seen within thirty seconds",
+          "Genuinely wants her friend group to be a soft place to land — for most people"
+        ],
+        "struggles": [
+          "Confuses being needed with being liked",
+          "Doesn't know how to disagree with Casey without risking her whole social ecosystem",
+          "Terrified of becoming 'that girl who used to be nice'"
+        ],
+        "secrets": [
+          "In fifth grade, she was the new kid once, sat alone for two weeks, and nobody noticed. She built her whole lunch-table radar system so it would never happen to anyone else on her watch — but she's never told anyone that's why she does it.",
+          "She thinks Casey's jokes have gotten meaner over the year and doesn't know how to say so without losing her."
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Keep her group fun, tight, and running smoothly",
+          "Make Sam feel welcomed and impressed enough to want in",
+          "Stay the person everyone assumes has it together"
+        ],
+        "unconscious": [
+          "To matter to people for something realer than being useful or entertaining",
+          "To prove that popularity and kindness aren't mutually exclusive, even when the evidence keeps complicating that"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual, current, confident — the vocabulary of someone who talks a lot and knows it works for her.",
+        "sentenceComplexity": "Fast, run-on, energetic; sentences trail into new sentences. Slows and simplifies when she's being sincere.",
+        "emotionalExpressiveness": "Big and immediate on the surface; guarded about anything that would make her look like she's trying too hard to be good.",
+        "examples": [
+          "\"Okay, locker two-fourteen? That thing's been cursed since like sixth grade, don't even stress, everyone eats it there at least once.\"",
+          "\"Find us at lunch, new kid — I'll save you a seat before someone weird takes it.\"",
+          "\"...it's just easier this way, okay? Nobody's gonna, like, die over a group project.\"",
+          "\"Hey. That was — that was actually kind of cool, what you did back there. I don't know. Respect.\""
+        ]
+      },
+      "storyRole": "Maya is the gravitational center of the 'fitting in' path — not a villain, but a mirror for what Sam could become if she optimizes for belonging over honesty. Maya's own quiet compromises (letting Casey's jokes slide, defaulting to 'easier') give Sam's choices real stakes: siding with Maya's crowd isn't choosing 'bad,' it's choosing comfortable, and Maya herself is proof of what that comfort slowly costs.",
+      "arcPotential": [
+        "First Bell: Maya offers effortless belonging, then is quietly tested by Sam's choices — her respect for a 'small stand' hints she wants better from her own group than she's been asking for.",
+        "Future episode potential: Maya could be the one to initiate real change — inviting Jordan in without being pushed, or finally naming what's off about Casey's humor — if an earlier player earned her trust enough to plant that seed.",
+        "Longer arc: Maya confronting the gap between 'the girl who makes sure no one sits alone' and the reality that her own table has quietly become a place where someone like Jordan wouldn't feel safe sitting."
+      ]
+    },
+    "designNotes": "The temptation with a 'popular girl' character is to make her either a cartoon mean girl or a saint in disguise. Maya is neither — she's a competent, anxious middle-schooler who has built a genuinely useful social skill (radar for who needs a landing spot) out of an old wound, and now has to live with the fact that maintaining her group's cohesion sometimes means tolerating things she doesn't love. Her warmth toward Sam is 100% real; so is her failure to fully protect Jordan. Both are true at once. The chipped tooth and pen-chewing are small physical tells that she's not as smooth as she plays — details a careful player might notice before the plot confirms them. Her arc is designed to reward players who are kind to her without being deceived by her: she's not a prize to win, she's a person mid-compromise, and the story lets her be genuinely moved by Sam's integrity without redeeming her instantly or vilifying her for the Casey moment.",
+    "representationNotes": "Maya is written to avoid the 'mean popular girl' and 'vapid queen bee' tropes common in this genre — her social intelligence is framed as a real skill, not just vanity, and her flaws come from fear (of losing footing, of conflict) rather than cruelty. Her mixed heritage (implied by her hyphenated name) is present in background texture (family business, sibling dynamics) without being reduced to a single 'cultural lesson' moment — she's allowed to just be a specific, messy kid whose ethnicity is one thread among many, not her defining trait. Her hidden aptitude in math and reluctance to show it can open a natural, low-preach avenue for discussing gendered expectations around being 'effortless' versus visibly smart, useful for later episodes without needing to be foregrounded here."
+  },
+  {
+    "character": {
+      "id": "casey",
+      "name": "Casey Doyle",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Medium height, restless energy, always mid-fidget — tapping a pencil, bouncing a knee, adjusting the strings on his hoodie. Wears the same three basketball jerseys in rotation and has a haircut that looks like he did it himself with clippers (he did).",
+        "distinctiveFeatures": [
+          "Chipped front tooth from a skateboard incident he's turned into eleven different origin stories",
+          "Draws tiny cartoon faces in the margins of every worksheet",
+          "Laughs before the joke's even finished landing"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "quick with a joke",
+          "attention-hungry",
+          "conflict-avoidant through deflection",
+          "secretly anxious about being 'the dumb one'",
+          "loyal to whoever's currently laughing at his jokes"
+        ],
+        "bigFiveProfile": {
+          "openness": 5,
+          "conscientiousness": 3,
+          "extraversion": 9,
+          "agreeableness": 5,
+          "neuroticism": 7
+        },
+        "mannerisms": [
+          "Does a finger-gun click when he thinks he's landed a good line",
+          "Looks around the table after every joke to gauge the room before committing to it",
+          "Picks at the corner of his worksheet/paper when a teacher calls on him"
+        ],
+        "speechPatterns": [
+          "Fast, run-on delivery when performing for a group",
+          "Drops into one-word mumbles when talking one-on-one and not performing",
+          "Overuses 'no cap' and 'bro' as filler while building up to a punchline",
+          "Deflects any serious question with a joke first, answer second (if at all)"
+        ],
+        "emotionalTendencies": "Casey's whole personality is built around never letting a room go quiet on his watch — silence feels like danger to him, like it's the moment everyone notices he's not as put-together as he seems. He reads the room constantly, adjusting his jokes to whoever has the most social power at the table. Underneath the constant performance is a kid who's scared he's the 'less impressive' one in every comparison that matters to him."
+      },
+      "background": {
+        "family": "Middle kid of three. Older sister Priya is a straight-A, National Merit-track sophomore at the high school everyone already talks about; younger brother is the 'cute one' who gets away with everything. Casey's parents mean well but compare constantly ('Priya had this same project — ask her for her notes'). Nobody's cruel about it, it's just background noise Casey's absorbed his whole life.",
+        "interests": [
+          "Basketball (JV hopeful, practices constantly, isn't actually that good yet)",
+          "Making stupid short videos with his phone",
+          "Copying his sister's old notes when nobody's looking — not because he's lazy, but because trying and failing publicly feels worse than not trying at all"
+        ],
+        "strengths": [
+          "Can read a room's mood in about four seconds",
+          "Genuinely funny — not just loud-funny, actually quick",
+          "Fiercely protective of people he's decided are 'his,' even if he shows it badly"
+        ],
+        "struggles": [
+          "Reading and writing take him longer than he'll ever admit; he's never been evaluated for it, just quietly decided he's 'not a school person'",
+          "Terrified of looking stupid in front of people he wants to like him",
+          "Uses humor as a shield so often he's forgotten how to talk without it"
+        ],
+        "secrets": [
+          "He's never actually finished a group project on his own — always finds an angle to shortcut it, and has gotten away with it so long he doesn't know how not to",
+          "He genuinely likes Jordan's art and has looked at Jordan's sketchbook doodles left out in class more than once — he'd never say so out loud"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Stay the funniest, most liked person at whatever table he's sitting at",
+          "Get through the group project without anyone finding out he can't really carry his weight on it"
+        ],
+        "unconscious": [
+          "Be seen as impressive by somebody — anybody — without having to actually risk failing in front of them",
+          "Have one relationship where he doesn't have to perform to be liked"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Middle school casual, current slang used slightly try-hard (an adult wrote it, but a 13-year-old who watches too much TikTok would actually talk like this)",
+        "sentenceComplexity": "Short bursts, punchlines land on short sentences; rambles when nervous, goes quiet and clipped when caught off guard by a real question",
+        "emotionalExpressiveness": "Loud and performative on the surface, genuinely hard to read underneath — his real feelings show up sideways, in defensiveness or overcompensating jokes, rather than directly",
+        "examples": [
+          "\"Okay but why's the new kid giving 'main character energy' already, we just met her.\"",
+          "\"Relax, it's not stealing, it's *research.* My sister already did the hard part, we're just — vibing off her genius.\"",
+          "\"...I mean, Jordan's not *weird* weird. I just. Gotta say something or it gets quiet, you know?\""
+        ]
+      },
+      "storyRole": "Casey is the social pressure test disguised as comic relief — the friend whose jokes are the currency Maya's table runs on, and whose targeting of Jordan forces Sam to decide, in real time, whether staying likable is worth staying silent. In 'Cutting Corners,' Casey is revealed not as lazy but as scared — the corner-cutting is armor against a very specific, very personal fear of being caught not-good-enough, which gives Sam (and the player) a harder choice than 'defy the cheater': do you call out someone whose bad choice you suddenly understand?",
+      "arcPotential": [
+        "Later episode: Casey gets paired directly with Jordan on something and has to sit in the discomfort of being funny without an audience to perform for",
+        "Later episode: Casey's shortcut catches up to him (a teacher or Priya finds out) and Sam gets to choose whether to be the person who piles on or the person who's actually in his corner",
+        "Long-term arc: Casey slowly tests out being 'unfunny' on purpose around one person he trusts, and it terrifies him more than any joke ever has"
+      ]
+    },
+    "designNotes": "Casey is built to be the easiest character to misjudge as a one-note bully-lite, so I front-loaded a very specific, very ordinary wound (middle-kid syndrome, undiagnosed learning struggle, a straight-A sibling looming over every school task) that reframes both the cafeteria cruelty and the copying plan as fear-driven rather than malice-driven, without excusing the harm. The joke about Jordan isn't random meanness — it's Casey performing status for the table because silence feels riskier to him than cruelty. That's the contradiction: a genuinely funny, sometimes protective kid who will throw someone else under the bus the second he feels unsteady, and doesn't fully register he's doing it. His arc potential hinges on someone showing him that being liked and being honest aren't mutually exclusive, which he's never actually tested.",
+    "representationNotes": "Avoided coding Casey's academic struggles as a 'lazy troublemaker' trope — his corner-cutting is rooted in an unaddressed, unlabeled learning difficulty and a very common middle-child dynamic, which are realistic, non-stigmatizing explanations without turning him into an After-School-Special case study. Kept his humor genuinely funny rather than just mean, so kids who recognize themselves in the 'class clown who's actually anxious' archetype feel seen rather than villainized. Deliberately did not resolve or diagnose his learning struggle within this episode — it's seeded as a real thread, not a plot device to be fixed in one scene."
+  },
+  {
+    "character": {
+      "id": "ms_rivera",
+      "name": "Ms. Adriana Rivera",
+      "age": 34,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Compact and energetic, with the kind of posture that makes a classroom feel smaller and safer at the same time. Dresses practically — cardigans with pockets she actually uses, sneakers under work slacks because she's on her feet all day.",
+        "distinctiveFeatures": [
+          "A chipped front tooth she never bothered to fix, visible when she laughs for real (not the polite teacher-laugh)",
+          "Reading glasses pushed up into curly hair, constantly 'lost' and on her head",
+          "A rotating cast of novelty pens students give her as gifts, which she uses conspicuously to make kids feel seen"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "sharp",
+          "warm but no-nonsense",
+          "quietly exhausted",
+          "fair almost to a fault",
+          "protective of the kids who don't protect themselves"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 8,
+          "extraversion": 6,
+          "agreeableness": 6,
+          "neuroticism": 5
+        },
+        "mannerisms": [
+          "Taps two fingers on the desk when she's deciding whether to intervene or let kids work it out themselves",
+          "Uses a kid's full first name when she's serious, nickname when she's not",
+          "Crosses her arms and leans on the whiteboard ledge when listening to a pitch — looks skeptical even when she's actually intrigued, because she's doing math about logistics in her head"
+        ],
+        "speechPatterns": [
+          "Direct, clipped sentences when managing the room ('Two minutes. Wrap it up.')",
+          "Dry, deadpan humor she deploys to defuse tension without embarrassing anyone",
+          "Asks questions instead of giving answers when she wants a kid to think it through themselves"
+        ],
+        "emotionalTendencies": "Runs on a practiced calm that's 80% real and 20% professional muscle memory. She likes her students — genuinely — but has learned to keep a half-step of distance so she can still be the adult in the room when it matters. Her skepticism is often mistaken for disapproval when it's actually risk-calculation: she's seen ambitious ideas crash and burn, and she's trying to protect kids from public failure, not squash their spark."
+      },
+      "background": {
+        "family": "Oldest of four, first in her family to finish college; sends money home most months. No kids of her own yet, though her students would be shocked to hear she has a whole life outside the building — she coaches a rec basketball league on weekends and is terrible at karaoke.",
+        "interests": [
+          "basketball",
+          "true crime podcasts she pretends not to listen to during grading",
+          "collecting terrible classroom motivational posters as a joke",
+          "actually good sci-fi novels she'll recommend if you catch her in the right mood"
+        ],
+        "strengths": [
+          "reads a room fast",
+          "genuinely believes every kid is redeemable, including the ones who test that theory daily",
+          "won't let a kid get steamrolled in her classroom, even quietly"
+        ],
+        "struggles": [
+          "stretched thin across too many preps and too many kids who need more than she has hours for",
+          "sometimes defaults to 'keep it simple, keep it safe' advice because she's tired, not because she doesn't believe in bigger swings",
+          "struggles to unlearn the instinct to protect kids from failure instead of letting them risk it"
+        ],
+        "secrets": [
+          "She almost didn't come back to teaching this year after a rough spring — a student she couldn't reach transferred out mid-year, and it still eats at her whether she failed him",
+          "She keeps a mental list of the 'watch this one' kids, and Jordan and Sam both quietly made the list on day one"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "get through the group project unit without a group blowing up or a kid getting sidelined",
+          "keep the room fair — give every idea genuine consideration, not just the polished ones"
+        ],
+        "unconscious": [
+          "prove to herself she can still see kids clearly and help them, after feeling like she missed one",
+          "wants, more than she'd admit, for a kid to prove her caution wrong"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult, clear, no jargon — talks to 13-year-olds like they're capable of understanding real reasoning, not baby talk.",
+        "sentenceComplexity": "Short and functional when managing the class; longer and more considered when she's actually engaging with an idea one-on-one.",
+        "emotionalExpressiveness": "Controlled but not cold. Dry humor is her main emotional release valve. Rarely raises her voice — gets quieter and more precise when she's actually serious.",
+        "examples": [
+          "\"Alright, people, find your groups before I start assigning them, and trust me, you don't want that.\"",
+          "\"Jordan, that's... a lot of moving parts for two days. Convince me it's not a lot of moving parts for two days.\"",
+          "\"I didn't say no. I said it's ambitious. Those aren't the same word, but I get why you'd hear it that way.\"",
+          "\"You've got until Thursday and a room full of people who'll help you if you let them. That's more than most ideas get.\""
+        ]
+      },
+      "storyRole": "The adult stakes-anchor of 'First Bell' — Ms. Rivera's skepticism toward Jordan's idea is the pressure test for Sam's choice to speak up or stay quiet. She's not an obstacle to defeat; she's a fair but realistic gatekeeper whose doubt is earned by experience, which means winning her over (or failing to) actually means something. She also quietly clocks the social dynamics of the room without ever making it a lecture.",
+      "arcPotential": [
+        "Episode 'First Bell': Establishes her as fair-but-skeptical; if Sam backs Jordan, Rivera's follow-up question shifts from doubt to genuine engagement, signaling she can be won over by conviction, not just confidence.",
+        "Future episode potential: A scene where Rivera reveals (in passing, not a speech) why ambitious ideas make her nervous — tied to the student she couldn't reach — giving her skepticism a human root without turning it into a therapy session.",
+        "Longer arc: Rivera as the adult who eventually trusts Sam enough to give her real responsibility (mentoring a struggling classmate, leading a project), paying off the 'watch this one' secret."
+      ]
+    },
+    "designNotes": "Ms. Rivera needed to avoid the two lazy teacher-character traps: the saintly mentor who exists to dispense wisdom, and the obstacle-adult who exists to be proven wrong. Instead she's built as a competent, tired, caring professional whose skepticism in 'The Bold Idea' comes from real experience and risk-awareness, not small-mindedness — which makes the scene's stakes about Jordan and Sam's courage, not about defeating a gatekeeper. Her private guilt over a student she couldn't reach gives her invisible depth that colors her caution without ever needing to be explained on-page — it just makes her scrutiny of Jordan's pitch feel lived-in rather than generic. The chipped tooth, novelty pens, and dry humor are small specific details meant to make her feel like a real teacher a middle schooler would actually remember years later.",
+    "representationNotes": "Written as a Latina teacher without leaning on either the 'strict disciplinarian' or 'endlessly nurturing mother figure' stereotypes often assigned to Latina educators in media — she's allowed competence, humor, fatigue, and imperfection. Her family background (first-gen, sending money home) is present as texture, not a Very Special explanation of her character, and is never explicitly discussed with students — it's for the writers' room to keep her grounded, not for exposition."
+  }
+]

@@ -1,0 +1,390 @@
+[
+  {
+    "character": {
+      "id": "marcus",
+      "name": "Marcus Webb",
+      "age": 14,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Tall for eighth grade, still growing into his shoulders. Wears his older brother's hand-me-down varsity jacket even though he's not on any team yet, like he's borrowing a reputation along with the sleeves.",
+        "distinctiveFeatures": [
+          "a chipped front tooth from a bike accident he's turned into three different, increasingly heroic stories",
+          "always has a phone in hand but rarely actually looking at it - more like a prop",
+          "laughs with his whole body, head tipped back, which makes it feel real even when it isn't"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "charismatic",
+          "status-anxious",
+          "quick to laugh",
+          "conflict-averse in his own way",
+          "surprisingly non-malicious"
+        ],
+        "bigFiveProfile": {
+          "openness": 5,
+          "conscientiousness": 3,
+          "extraversion": 9,
+          "agreeableness": 5,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "points finger guns at people he's 'approving' of entering his circle",
+          "taps a rhythm on lockers/desks when he's bored, which is often",
+          "does a little chin-lift nod that somehow functions as social currency in the hallway"
+        ],
+        "speechPatterns": [
+          "uses 'bro' and 'no cap' as punctuation rather than meaning",
+          "narrates situations like a hype-man commentator ('OH- and she's DOWN')",
+          "deflects anything real with a joke within about two seconds",
+          "goes quieter and more clipped when actually called out - loses the performance voice"
+        ],
+        "emotionalTendencies": "Marcus performs ease constantly, because ease is the whole brand. He genuinely enjoys making people laugh and does feel real warmth toward people he's 'let in' - his approval isn't fake, exactly, it's just cheap, handed out to maintain his own position at the top of the food chain. Underneath, he's terrified of becoming irrelevant, a fear he's never once said out loud to anyone."
+      },
+      "background": {
+        "family": "Middle child of three brothers, all of whom went to Ridgeview. The oldest was a football captain, the middle one still gets talked about for a legendary prank in 2019. Marcus inherited a reputation before he'd done anything to earn it, and has spent two years feeling like he's cosplaying as the family's next big thing.",
+        "interests": [
+          "basketball (bench player, hates that he's a bench player)",
+          "meme curation - genuinely has a good eye for what will land",
+          "actually really into cooking with his abuela on weekends, tells nobody at school"
+        ],
+        "strengths": [
+          "natural social read of a room",
+          "genuinely funny, not just loud",
+          "capable of real loyalty to people once the audience is gone"
+        ],
+        "struggles": [
+          "grades sliding because effort isn't 'cool'",
+          "constant low-grade anxiety about maintaining his social rank",
+          "doesn't know how to back down from a bit once the group is watching, even when part of him doesn't want to keep going"
+        ],
+        "secrets": [
+          "he actually thought Reyna's project idea was kind of cool before his table started laughing and he panicked and joined in",
+          "he's failing to get playing time on JV and hasn't told his brothers"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "stay on top of the social hierarchy his brothers built for him",
+          "keep the table laughing",
+          "recruit 'cool enough' new kids like Jordan to expand his orbit"
+        ],
+        "unconscious": [
+          "prove he's not the disappointing middle brother",
+          "be liked for something that's actually his, not inherited"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Contemporary teen slang used fluently and a little performatively - like he's aware slang is currency and he's flush with it.",
+        "sentenceComplexity": "Short, punchy, built for an audience even in one-on-one conversation. Sentences trail into laughter or a nod rather than finishing cleanly.",
+        "emotionalExpressiveness": "Loud and easy on the surface; goes clipped, short, and oddly still when something lands too close to real.",
+        "examples": [
+          "\"Bro. BRO. Your whole binder just did a base jump. That's - okay that's actually kind of iconic, ngl.\"",
+          "\"Nah you're good, you're good - that was funny. You're funny. Sit with us.\"",
+          "\"...what? It's not that deep, it's a project, man, chill.\"",
+          "\"(quieter) ...whatever. It's whatever.\""
+        ]
+      },
+      "storyRole": "Marcus is the gravitational center of the episode's 'easy belonging' path - the social gatekeeper whose approval is the tempting, cheap shortcut to feeling like you've already won on day one. He's not a villain; he's a kid performing a role he half-inherited and is quietly scared of losing, which makes his cruelty toward Reyna reflexive and social rather than personal - and makes him capable, in small moments, of being caught off guard by someone with the nerve to just... not play along.",
+      "arcPotential": [
+        "Later episode: Marcus's grades catch up with him and his brothers find out about the bench-warming, cracking the facade Jordan first saw",
+        "Later episode: A moment where Marcus, without an audience, quietly compliments someone he mocked publicly - revealing the gap between his real opinions and his performed ones",
+        "Later episode: If Jordan pushes back early and often, Marcus could become an ally who's still figuring out how to be liked for something real"
+      ]
+    },
+    "designNotes": "Marcus is designed to be genuinely magnetic rather than a cardboard bully - the episode only works if the 'easy path' is actually tempting, not obviously wrong. His core wound (inherited reputation he doesn't feel he's earned) explains his behavior without excusing it: he polices the social hierarchy because he's afraid of falling out of it himself. Giving him real specificity - the jacket, the cooking secret, the bench-warming shame - makes him someone players might recognize from their own hallways rather than a stock antagonist. His reaction to being called out ('mildly caught off guard,' the voice going quiet) is intentional: he's not fully aware of the harm he causes until someone names it, which keeps the door open for growth in later episodes and makes 'Speaking Up' land as genuinely disarming rather than a shouting match.",
+    "representationNotes": "Marcus's family background (mixed-heritage implied through the abuela detail, three brothers with an athletic legacy) is left lightly sketched rather than exoticized - the detail exists to humanize him, not to explain him. Care was taken to avoid the 'jock bully' cliché by giving him anxiety and a hidden domestic softness (cooking with his abuela) that doesn't get performed for peers - a common, real pattern in early-teen social identity where kids compartmentalize 'home self' and 'school self.' His arc keeps room for redemption without requiring Reyna or Jordan to do emotional labor to get him there."
+  },
+  {
+    "character": {
+      "id": "reyna",
+      "name": "Reyna Castillo",
+      "age": 13,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Small and unhurried-looking, like she's trying to take up less room than she actually does. Dark hair usually in a messy braid she redoes between classes out of habit, not vanity. Wears the same faded green army-surplus jacket most days over whatever's clean, with ink stains on the cuff from where she rests her drawing hand.",
+        "distinctiveFeatures": [
+          "A sketchbook covered in stickers and doodles, always within reach, held like it's part of her body",
+          "Chipped black nail polish she reapplies herself, badly, on purpose",
+          "A habit of drawing on her own arm in blue pen when she's bored or nervous"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "quietly observant",
+          "dry-humored",
+          "self-effacing",
+          "fiercely private",
+          "loyal in small, deliberate ways"
+        ],
+        "bigFiveProfile": {
+          "openness": 9,
+          "conscientiousness": 7,
+          "extraversion": 3,
+          "agreeableness": 7,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Angles her body slightly away from people even when she's talking to them, like she's leaving herself an exit",
+          "Taps her pen against her sketchbook in a specific rhythm when she's thinking hard",
+          "Ducks her head and half-smiles instead of laughing out loud, even at things she finds genuinely hilarious",
+          "Closes her sketchbook fast, almost defensively, if someone looks at it without asking first"
+        ],
+        "speechPatterns": [
+          "Talks in short, precise sentences until she trusts you, then gets unexpectedly rambly and specific",
+          "Undercuts her own ideas before anyone else can ('It's kind of dumb, but—')",
+          "Dry, deadpan humor that lands quietly and that she doesn't repeat if it doesn't get a reaction",
+          "Uses very exact, sometimes oddly formal vocabulary when talking about things she actually cares about (art, animals, monsters)"
+        ],
+        "emotionalTendencies": "Reyna feels things intensely but has trained herself to keep her face and voice level in public — it's a survival skill, not a personality trait. She reads rooms constantly and accurately, which makes her a sharp judge of other people's motives but a harsh judge of her own worth. When someone treats her with real, unearned kindness, it visibly throws her off balance — she doesn't quite know what to do with being seen."
+      },
+      "background": {
+        "family": "Lives with her dad, who works night shifts at a hospital as an orderly, and her seven-year-old brother, whom she gets off the bus and watches most afternoons until their dad wakes up. Her mom isn't in the picture in a way Reyna doesn't explain and gets visibly closed-off about if pushed. Money is tight but stable; nobody in the family talks about feelings much, they just show up for each other in practical ways — dad leaves notes on the fridge, she leaves extra snacks for her brother.",
+        "interests": [
+          "An ongoing personal comic/invented world in her sketchbook — a sprawling story about monster-hunters that's been running for two years",
+          "Collecting weird, specific animal facts (she will tell you, unprompted, that octopuses have blue blood)",
+          "Horror movies that are more weird than scary — she likes the ones with good creature design",
+          "Drawing people's hands specifically, because she thinks they're more honest than faces"
+        ],
+        "strengths": [
+          "Reads people and situations with real accuracy",
+          "Deeply creative, with a fully realized internal world she rarely shows anyone",
+          "Steady and responsible — good in a crisis, especially small domestic ones",
+          "Quietly, consistently kind in ways she doesn't advertise or expect credit for"
+        ],
+        "struggles": [
+          "Has internalized that being noticed usually leads to being mocked, so she's gotten very good at disappearing",
+          "Struggles to advocate for herself even when she'll fiercely defend an idea or a person she cares about",
+          "Eats lunch alone most days and has told herself this is fine so many times she almost believes it",
+          "Carries more responsibility at home than most 13-year-olds and doesn't know how to talk about that without it sounding like a complaint"
+        ],
+        "secrets": [
+          "She used to have a best friend at her old school who ditched her for a 'cooler' group in sixth grade — she's never told anyone how much that still sits with her",
+          "She's actually really funny and does killer, dead-on impressions of teachers, but has only ever done them for her little brother",
+          "She's been quietly hoping someone would ask about her sketchbook for months, even while telling herself she doesn't care"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the school day without being noticed or laughed at",
+          "Finish her comic series, mostly for herself",
+          "Keep things stable and calm for her brother"
+        ],
+        "unconscious": [
+          "To be truly seen by someone and have it not go badly",
+          "To believe her voice and work have value even when no one's watching",
+          "To trust that letting someone in won't end the way it did before"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Age-appropriate but noticeably more precise and specific than her peers when discussing things she's passionate about — she'll use a real term (like 'thumbnail sketch' or 'proportions') instead of a vague one. Casual and clipped otherwise.",
+        "sentenceComplexity": "Short and guarded by default; longer, run-on, and enthusiastic when she forgets to hold back — usually mid-sentence about her art or an animal fact, before catching herself and downplaying it.",
+        "emotionalExpressiveness": "Mostly restrained and flat-affect in public as a protective habit; genuine warmth and dry wit surface quickly once she feels safe, often surprising both her and the listener.",
+        "examples": [
+          "\"You don't have to help. I mean — you can if you want. I just usually just... do this part alone.\"",
+          "\"It's fine. I eat lunch here most days. It's actually better, nobody bothers you and you can hear yourself think.\"",
+          "\"Okay, don't laugh, but I've been working on this since sixth grade, and it has, like, an actual plot now, which is either really cool or a cry for help.\"",
+          "\"You didn't have to do that. Back there. I'm just saying — you didn't have to.\""
+        ]
+      },
+      "storyRole": "Reyna is the emotional stakes of 'First Bell' made human — the quiet test of whether Jordan will choose easy belonging or real integrity. She's not a symbol of victimhood; she's a specific, funny, guarded kid who has learned to expect very little from new people and is quietly, carefully hopeful that Jordan might be different.",
+      "arcPotential": [
+        "Later episode: Reyna signs up for the talent show and has to decide whether to show her comic publicly for the first time, with Jordan as her one real support",
+        "Later episode: Reyna's old friendship history resurfaces (the friend who left her behind transfers to Ridgeview), testing whether she's learned to trust differently",
+        "Later episode: Reyna gets the chance to be the one who notices a new kid being frozen out, and has to decide whether to pay forward what Jordan did for her"
+      ]
+    },
+    "designNotes": "Reyna is built to resist the 'sad quiet artist' trope by giving her a full interior life that's the opposite of quiet — an ongoing comic universe, a dry sense of humor, sharp social intelligence — all of which she deliberately hides. Her guardedness is framed as a learned, specific response to a past betrayal and present home responsibilities, not an innate personality trait, so her opening up over the episode reads as earned rather than convenient. The contradiction at her center (perceptive and funny in private, flat and invisible in public) gives actors/writers room to surprise players in later episodes. Her home life adds texture without becoming a redemption-through-tragedy narrative — her family is loving and functional, just stretched thin, which keeps her struggles grounded and relatable rather than melodramatic.",
+    "representationNotes": "Reyna is written as Latina (surname Castillo) in a way that's present in her home life and rhythms without being the sole point of her character or reduced to signifiers. Her single-parent household and caregiving responsibilities reflect a common, often under-shown reality for many middle schoolers without framing it as deprivation or a 'issue' to be solved. Care was taken to avoid the 'quiet girl who just needs a friend to fix her' trope — Reyna has agency, humor, and a rich inner world independent of whether Jordan chooses to engage with her, and her arc is about being seen, not about being rescued."
+  },
+  {
+    "character": {
+      "id": "devon",
+      "name": "Devon Park",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Average height, a little slouchy, like he's trying to take up less space than he actually does. Wears the same three hoodies in rotation, sleeves pushed up to his elbows because he's always mid-sketch.",
+        "distinctiveFeatures": [
+          "Ink stains on the side of his right hand that never fully wash off",
+          "A sketchbook held together with duct tape and stickers, never more than an arm's length away",
+          "Wears mismatched socks on purpose, calls it 'a system,' won't elaborate"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "deadpan",
+          "observant",
+          "stubborn about his own ideas",
+          "quietly funny",
+          "conflict-avoidant until he isn't"
+        ],
+        "bigFiveProfile": {
+          "openness": 9,
+          "conscientiousness": 5,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Doodles in the margins of everything, including tests he should be focusing on",
+          "Answers questions a beat late because he's still finishing a thought (or a drawing)",
+          "Taps his pencil against his knuckles when he's about to say something he thinks is funny, like he's testing it first"
+        ],
+        "speechPatterns": [
+          "Short sentences, dry delivery, lets jokes land without laughing at them himself",
+          "Occasionally slips into very specific, weirdly passionate detail when talking about story/art stuff",
+          "Deflects compliments with a joke almost automatically"
+        ],
+        "emotionalTendencies": "Devon reads as flat or checked-out to people who don't know him, but he's actually cataloguing everything — who's kind, who's cruel, who's performing. He doesn't show hurt easily; it shows up as him going quieter and smaller, not as visible upset. When something matters enough, though, his stubbornness overrides his self-protection instinct, and he'll say the blunt thing everyone else is avoiding."
+      },
+      "background": {
+        "family": "Middle child of three. Older sister is pre-med track and 'the impressive one'; younger brother is loud and easy in a way Devon has never been. Parents are supportive but pragmatic — his dad keeps gently asking if he's 'thought about graphic design, like, for a job' whenever Devon shows him a drawing, which lands as more dismissive than it's meant to.",
+        "interests": [
+          "Making an ongoing comic he won't show almost anyone",
+          "Worldbuilding — maps, fake languages, character bios for stories only he knows",
+          "Horror movies he's definitely too young to be watching"
+        ],
+        "strengths": [
+          "Genuinely gifted storyteller and visual thinker",
+          "Notices things about people others miss",
+          "Doesn't chase approval, which makes him hard to manipulate socially"
+        ],
+        "struggles": [
+          "Has quietly decided it's easier to be picked last than to be rejected after trying",
+          "Struggles to advocate for himself in groups, though he'll advocate fiercely for an idea",
+          "Some anxiety around being 'seen' — being noticed feels like a risk, not a reward"
+        ],
+        "secrets": [
+          "He's been drawing an entire comic series based on kids at his old school, thinly disguised as monsters and heroes — Reyna would probably recognize herself in one of the 'good' characters if she ever saw it",
+          "He applied to a summer art program and didn't tell his parents in case he doesn't get in"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the group project without having to talk to too many people",
+          "Keep his sketchbook out of anyone's hands who'd make fun of it"
+        ],
+        "unconscious": [
+          "Wants someone to actually ask him about his ideas instead of assuming he's just 'the quiet art kid'",
+          "Needs proof that being himself, unfiltered, won't cost him the few connections he has"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Everyday middle-school vocabulary with sudden bursts of specific, nerdy precision when he's talking about something he loves (comic panel structure, monster anatomy, plot twists).",
+        "sentenceComplexity": "Mostly short, clipped sentences. Gets longer and more animated, almost run-on, when he forgets to be self-conscious.",
+        "emotionalExpressiveness": "Indirect by default — humor and understatement instead of stating feelings. Sincerity, when it slips out, is brief and almost embarrassed, like he said too much.",
+        "examples": [
+          "\"I mean, I could draw it. I'm not saying it'd be good. I'm saying it would exist, which is a low bar, but it's a bar.\"",
+          "\"Oh, you actually want to hear the whole backstory? Okay. Buckle up. This is going to take way longer than the assignment requires.\"",
+          "\"People laugh at stuff they don't get all the time. Doesn't make it not good. Just makes them... not it, I guess.\""
+        ]
+      },
+      "storyRole": "Devon is the low-stakes, unexpected friendship of the episode — proof that not every relationship at a new school has to be a performance or a test. He gives Jordan (and the player) a version of belonging that doesn't cost anything, which makes the contrast with Marcus's crowd sharper: Devon never asks Jordan to be anyone but herself, and that ease is quietly radical. He also models a version of self-protection through invisibility that mirrors what Reyna does more visibly — giving the player a second, gentler lens on the same fear.",
+      "arcPotential": [
+        "Episode 'First Bell': Devon becomes Jordan's project partner, offering an easy, judgment-free rhythm that stands in contrast to the social calculus everywhere else in the day.",
+        "Future episode: Devon could work up the nerve to show his comic to someone (maybe Jordan, maybe Reyna) for the first time, testing whether being truly seen is survivable.",
+        "Future episode: The summer art program acceptance letter arrives — a chance to explore Devon's fear of being 'the impressive one' and what he wants versus what feels safe."
+      ]
+    },
+    "designNotes": "Devon is built to resist becoming 'the quiet artsy sidekick' cliché by giving him agency, humor, and a specific inner life that doesn't revolve around the player. His defense mechanism (self-deprecating humor, preemptive invisibility) mirrors Reyna's guardedness but comes from a different source — not being targeted, but never being noticed at all, which is its own quiet erasure. The contradiction that makes him feel real: he's stubborn and opinionated about his creative work even though he's avoidant about almost everything else socially. His humor is dry rather than performative, which differentiates his voice sharply from Marcus (extraverted, socially fluent) and Reyna (guarded, precise). He's designed to be low-stakes and warm in this episode specifically so his scenes offer emotional relief from the tension of the Marcus/Reyna conflict, while still having enough depth (the hidden comic, the unspoken summer program application) to justify future episodes centered on him.",
+    "representationNotes": "Devon is a Korean American middle child navigating quiet family pressure around 'practical' futures versus creative passion — a common, specific tension in many immigrant and first-gen households, portrayed here without making it his defining trait or a lesson about culture. His social withdrawal isn't coded as a diagnosis (autism, anxiety disorder, etc.) but is left recognizable to kids who see themselves in it without being reduced to a label; writers should keep this ambiguity intentional and avoid 'explaining' Devon with a clinical framework. Care should be taken that Devon's humor never veers into being the 'comic relief' who only exists to lighten other characters' scenes — his jokes should reveal his own perspective and pain as often as they deflect it."
+  },
+  {
+    "character": {
+      "id": "ms-alvarez",
+      "name": "Ms. Sofia Alvarez",
+      "age": 29,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Petite, quick-moving, dresses like she's ready to sit on a desk or crouch next to someone's chair at a moment's notice — cardigans over graphic tees, sneakers, hoop earrings she fidgets with when thinking.",
+        "distinctiveFeatures": [
+          "Perpetual travel mug of coffee she reheats in the staff lounge microwave three times a day and never finishes",
+          "A rotating rubber-band bracelet collection former students gave her that she wears like a status board",
+          "Writes on the whiteboard in switching colors of dry-erase marker with zero apparent system"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "warm but overextended",
+          "quick with a joke to defuse tension",
+          "genuinely loves teaching",
+          "conflict-avoidant under pressure",
+          "self-critical after the fact"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 7,
+          "extraversion": 7,
+          "agreeableness": 8,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Claps twice and says 'okay, okay, okay' to settle a room instead of raising her voice",
+          "Crouches to eye-level when talking to a student one-on-one, even briefly",
+          "Taps a pen against her clipboard when she's mentally triaging fifteen things at once",
+          "Laughs at her own bad jokes before anyone else does"
+        ],
+        "speechPatterns": [
+          "Drops into Spanish for a phrase or two when she's exasperated or affectionate ('Ay, mijo, focus')",
+          "Uses first-and-last names when she means business: 'Marcus Webb.'",
+          "Says 'love that for you' with a straight face, unclear if sincere or teasing",
+          "Ends instructions with 'yeah? Good. Go.'"
+        ],
+        "emotionalTendencies": "Runs hot and fast — she's present, funny, and genuinely engaged with kids, but she's also managing 34 personalities in one class period and it shows. She misses things not from indifference but from sheer bandwidth; when she catches herself missing something, she doesn't hide the correction, she owns it out loud, which some kids respect and some find embarrassing."
+      },
+      "background": {
+        "family": "Grew up two neighborhoods over from Ridgeview; her mom still lives there. First in her family to finish college. Alvarez picked this school on purpose because she remembers what it felt like to be the new kid nobody clocked.",
+        "interests": [
+          "Runs the after-school lit magazine on a shoestring budget",
+          "Obsessive about true crime podcasts, mentions them unprompted",
+          "Collects postcards from students who move away and mail her one"
+        ],
+        "strengths": [
+          "Builds real rapport fast",
+          "Notices patterns over weeks even when she misses moments in the day",
+          "Good at making a room feel less like a room"
+        ],
+        "struggles": [
+          "Third year teaching and already feels the burnout creeping in that ate two colleagues who quit last spring",
+          "Overcommits to being 'the fun teacher' and sometimes lets that cost her the follow-through on discipline",
+          "Genuinely doesn't always see the social currents in her own classroom until they surface loudly"
+        ],
+        "secrets": [
+          "She still feels like she's improvising every single day and is terrified someone will notice",
+          "She remembers being the Reyna in her own seventh grade class and has never told anyone that's why she teaches"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the first week without a discipline referral",
+          "Make the paired project feel like a low-stakes way for new students to connect",
+          "Keep the energy in her classroom high enough that kids want to be there"
+        ],
+        "unconscious": [
+          "To prove to herself she's actually reaching kids and not just performing 'engaging teacher'",
+          "To be the adult she needed at this age, even when she's stretched too thin to fully deliver on it"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult-casual, teacher-inflected — uses classroom shorthand ('turn and talk,' 'eyes up here') mixed with genuine humor and occasional slang she's clearly absorbed from students and deploys slightly wrong on purpose.",
+        "sentenceComplexity": "Short, directive sentences for classroom management; longer, warmer sentences when talking to a student individually.",
+        "emotionalExpressiveness": "Expressive and quick — laughs easily, gets audibly frustrated, but rarely goes cold or sarcastic-cruel. When she messes up, she says so plainly rather than deflecting.",
+        "examples": [
+          "\"Okay, okay, okay — partners, not permanent marriages, people. You can survive four days.\"",
+          "\"Reyna, that's — wait, say that part again, I want the whole class to hear it.\"",
+          "\"Marcus Webb. Eyes on me. We'll talk after.\" (said too late, and she knows it)",
+          "\"Ay, I missed that — my bad. Let's back up.\""
+        ]
+      },
+      "storyRole": "The well-meaning adult authority whose distraction — not malice — creates the vacuum where the episode's central choice has to happen. Her lateness in noticing Reyna's public humiliation isn't a plot contrivance; it's who she is under real classroom conditions, and it puts the moral weight of the moment squarely on Jordan rather than letting an adult solve it.",
+      "arcPotential": [
+        "Episode 'First Bell': Sets up the partner choice with genuine warmth, then is a beat too slow to catch the cruelty at the presentation — her eventual response (whether she catches it herself, or reacts after Jordan/Reyna's own action) can validate or undercut the player's choice",
+        "Future episode: Could become a recurring confidant for Reyna or Jordan once she's shown she notices patterns over time, even if she misses individual moments — a realistic adult ally who isn't a fix-it fairy",
+        "Future episode: A moment where a student calls her out for missing something could push her toward being more present rather than just funny — her own small arc of growth"
+      ]
+    },
+    "designNotes": "Ms. Alvarez is designed to resist the two lazy defaults for teacher characters: the saintly adult who swoops in and solves everything, and the oblivious/incompetent adult who's just there for the kids to work around. Instead she's a specific, tired, funny, caring young teacher who is genuinely good at her job in ways that matter (rapport, humor, long-term pattern recognition) and genuinely falls short in the moment that matters most in this episode (real-time social cruelty happening in front of her). That gap is the point: it's what forces the choice onto Jordan instead of an adult. Giving her a hidden personal history (she was a Reyna once) adds irony and potential pathos without being spelled out on-page — it's there for writers to use in subtext or a future callback, not for exposition dumps.",
+    "representationNotes": "Sofia Alvarez is written as a young Latina teacher from the same community as her students — a deliberate choice to avoid the 'inspirational outsider savior teacher' trope; she teaches here because it's home, not because she's slumming it for a redemption arc. Her code-switching is naturalistic and not played for comic relief or 'flavor' — it's how bilingual educators actually talk when tired or affectionate. Her burnout and self-doubt are included to portray teaching honestly rather than mythologize it, which matters for a middle-school audience that deserves to see adults as real, limited people too, not just plot furniture that dispenses lessons."
+  }
+]

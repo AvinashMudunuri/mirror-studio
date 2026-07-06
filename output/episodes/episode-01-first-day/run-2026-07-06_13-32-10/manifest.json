@@ -1,0 +1,138 @@
+{
+  "episode": {
+    "number": 1,
+    "title": "First Bell",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "873aff65-bbe7-4851-aa40-6a069724f643",
+    "threadId": "d3f25908-202c-4540-9097-1e07303c958d",
+    "startedAt": "2026-07-06T13:32:10.599Z",
+    "completedAt": "2026-07-06T13:59:18.123Z",
+    "totalSeconds": 1627.5,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [
+      "childPsychologist",
+      "gameDesigner",
+      "ethicsReviewer"
+    ],
+    "usage": {
+      "calls": 15,
+      "inputTokens": 191154,
+      "outputTokens": 172122,
+      "totalTokens": 363276,
+      "budget": 400000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 11,
+          "inputTokens": 70559,
+          "outputTokens": 156226
+        },
+        "claude-haiku-4-5-20251001": {
+          "calls": 4,
+          "inputTokens": 120595,
+          "outputTokens": 15896
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Jordan Diallo",
+      "role": "Player-character protagonist of 'First Bell.' Jordan is the audience surrogate navigating the social ecosystem of a new school in real time. Her defining choice — whether to stay quiet and blend in with the popular crowd, or step in when Reyna becomes a target — is the emotional spine of the episode, forcing the player to weigh belonging against integrity on day one.",
+      "active": true
+    },
+    {
+      "id": "marcus",
+      "name": "Marcus Webb",
+      "role": "Marcus is the gravitational center of the episode's 'easy belonging' path - the social gatekeeper whose approval is the tempting, cheap shortcut to feeling like you've already won on day one. He's not a villain; he's a kid performing a role he half-inherited and is quietly scared of losing, which makes his cruelty toward Reyna reflexive and social rather than personal - and makes him capable, in small moments, of being caught off guard by someone with the nerve to just... not play along.",
+      "active": true
+    },
+    {
+      "id": "reyna",
+      "name": "Reyna Castillo",
+      "role": "Reyna is the emotional stakes of 'First Bell' made human — the quiet test of whether Jordan will choose easy belonging or real integrity. She's not a symbol of victimhood; she's a specific, funny, guarded kid who has learned to expect very little from new people and is quietly, carefully hopeful that Jordan might be different.",
+      "active": true
+    },
+    {
+      "id": "devon",
+      "name": "Devon Park",
+      "role": "Devon is the low-stakes, unexpected friendship of the episode — proof that not every relationship at a new school has to be a performance or a test. He gives Jordan (and the player) a version of belonging that doesn't cost anything, which makes the contrast with Marcus's crowd sharper: Devon never asks Jordan to be anyone but herself, and that ease is quietly radical. He also models a version of self-protection through invisibility that mirrors what Reyna does more visibly — giving the player a second, gentler lens on the same fear.",
+      "active": true
+    },
+    {
+      "id": "ms-alvarez",
+      "name": "Ms. Sofia Alvarez",
+      "role": "The well-meaning adult authority whose distraction — not malice — creates the vacuum where the episode's central choice has to happen. Her lateness in noticing Reyna's public humiliation isn't a plot contrivance; it's who she is under real classroom conditions, and it puts the moral weight of the moment squarely on Jordan rather than letting an adult solve it.",
+      "active": true
+    }
+  ],
+  "finalStatus": "NEEDS_HUMAN_REVIEW",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "FAIL",
+    "childPsychologist": "SKIPPED",
+    "gameDesigner": "SKIPPED",
+    "ethicsReviewer": "SKIPPED"
+  },
+  "revisions": [
+    {
+      "iteration": 1,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 2,
+      "dialogueFeedbackCount": 7,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "SKIPPED",
+        "gameDesigner": "SKIPPED",
+        "ethicsReviewer": "SKIPPED"
+      }
+    },
+    {
+      "iteration": 2,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 9,
+      "dialogueFeedbackCount": 7,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "SKIPPED",
+        "gameDesigner": "SKIPPED",
+        "ethicsReviewer": "SKIPPED"
+      }
+    }
+  ],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "revision-1/feedback.json",
+    "revision-1/story-outline.json",
+    "revision-1/dialogue.json",
+    "revision-1/qa-review.json",
+    "revision-2/feedback.json",
+    "revision-2/story-outline.json",
+    "revision-2/dialogue.json",
+    "revision-2/qa-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}

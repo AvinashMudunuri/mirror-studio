@@ -1,0 +1,15 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Priya's surname is stated incorrectly in scene text, contradicting the character bible where she is named 'Priya Chandran'. — Suggested fix: Update the description text to 'Priya Chandran' or remove the surname reference entirely to avoid contradiction. (location: scenes[1] (scene-homeroom).description)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": []
+  }
+}

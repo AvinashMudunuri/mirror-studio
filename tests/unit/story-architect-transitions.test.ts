@@ -115,6 +115,24 @@ describe('validateTransitions', () => {
     outline.scenes = [];
     expect(validate(outline)).toEqual(['Episode has no scenes']);
   });
+
+  it('rejects branches without id or triggeredBy (branch dialogue is keyed by them)', () => {
+    const outline = validOutline();
+    (outline as any).branches = [
+      { name: 'The Authentic Path', description: '...' }
+    ];
+    const errors = validate(outline);
+    expect(errors.some(e => e.includes('missing "id"'))).toBe(true);
+    expect(errors.some(e => e.includes('missing "triggeredBy"'))).toBe(true);
+  });
+
+  it('accepts branches with id and triggeredBy', () => {
+    const outline = validOutline();
+    (outline as any).branches = [
+      { id: 'branch-authentic', name: 'Authentic', triggeredBy: ['choice-1:a'], description: '...', outcome: '...' }
+    ];
+    expect(validate(outline)).toEqual([]);
+  });
 });
 
 // ---------- self-repair flow ----------

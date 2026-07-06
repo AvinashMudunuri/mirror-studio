@@ -23,8 +23,10 @@ const {
   failingReviewers,
   collectRevisionFeedback,
   mergeSceneDialogue,
-  mergeChoiceDialogue
+  mergeChoiceDialogue,
+  mergeBranchDialogue
 } = require('./lib/pipeline-helpers');
+const { compileScreenplay } = require('./lib/compile-screenplay');
 
 // Import from built packages (resolve from script location)
 const packageRoot = path.resolve(__dirname, '..');
@@ -109,6 +111,29 @@ const TEST_WORLD = {
 
 /** How many revise → re-review rounds to attempt before accepting the result. */
 const MAX_REVISION_ITERATIONS = 2;
+
+/**
+ * Hard token budget for the whole run (input + output, all calls).
+ * When exhausted, the pipeline stops instead of spending further and the
+ * manifest records BUDGET_EXCEEDED. Override with MAX_RUN_TOKENS; set to
+ * 0 to disable the bound. Default sized from live runs: a full run with
+ * 2 revision iterations used roughly 400-600k tokens.
+ */
+const MAX_RUN_TOKENS = process.env.MAX_RUN_TOKENS !== undefined
+  ? parseInt(process.env.MAX_RUN_TOKENS, 10)
+  : 800000;
+
+/**
+ * Reviewers to skip, comma-separated manifest keys
+ * (e.g. SKIP_REVIEWERS=childPsychologist,gameDesigner,ethicsReviewer for
+ * cheap dev runs — those three have passed every live run so far).
+ * Skipped reviewers are recorded as SKIPPED in the manifest and never
+ * gate the revision loop.
+ */
+const SKIP_REVIEWERS = (process.env.SKIP_REVIEWERS || '')
+  .split(',')
+  .map(s => s.trim())
+  .filter(Boolean);
 
 // ============================================================================
 // Output Location
@@ -265,10 +290,25 @@ function buildEpisodeForReview(outline, dialogueResult, roster) {
   // Reviewers evaluate what they are given — an empty scenes/choices array
   // makes QA fail the episode and turns safety reviews into synopsis-only
   // guesses.
-  const scenesWithDialogue = (outline.scenes || []).map(scene => ({
-    ...scene,
-    dialogue: dialogueResult.dialogue?.find(d => d.sceneId === scene.id)?.lines || []
-  }));
+  //
+  // Each scene also gets an explicit derived "transition" object. The
+  // choice→scene linkage only lives on the choice side (choice.scene), and
+  // the review model repeatedly misread scenes with a choice attached as
+  // dead ends ("defaultNextScene: null but no choice attached").
+  const choicesByScene = new Map(
+    (outline.choicePoints || []).map(cp => [cp.scene, cp])
+  );
+  const scenesWithDialogue = (outline.scenes || []).map(scene => {
+    const choice = choicesByScene.get(scene.id);
+    const transition = choice
+      ? { type: 'choice', choiceId: choice.id, nextScenes: (choice.options || []).map(o => o.nextScene) }
+      : { type: 'default', nextScene: scene.defaultNextScene };
+    return {
+      ...scene,
+      transition,
+      dialogue: dialogueResult.dialogue?.find(d => d.sceneId === scene.id)?.lines || []
+    };
+  });
 
   return {
     id: `ep-${EPISODE_BRIEF.episodeNumber}`,
@@ -280,6 +320,7 @@ function buildEpisodeForReview(outline, dialogueResult, roster) {
     scenes: scenesWithDialogue,
     choices: outline.choicePoints || [],
     choiceDialogue: dialogueResult.choiceDialogue || [],
+    branchDialogue: dialogueResult.branchDialogue || [],
     outcomes: outline.branches || [],
     emotionalArc: outline.emotionalArc || [],
     themes: outline.themes,
@@ -376,9 +417,38 @@ async function runReviewers(keys, episode, roster, filenameFor) {
 function verdicts(reviews) {
   const out = {};
   for (const [key, reviewer] of Object.entries(REVIEWERS)) {
-    if (reviews[key] !== undefined) out[key] = reviewer.verdict(reviews[key]);
+    if (SKIP_REVIEWERS.includes(key)) out[key] = 'SKIPPED';
+    else if (reviews[key] !== undefined) out[key] = reviewer.verdict(reviews[key]);
   }
   return out;
+}
+
+/** Reviewer keys that actually run this pipeline (honors SKIP_REVIEWERS). */
+function enabledReviewerKeys() {
+  return Object.keys(REVIEWERS).filter(key => !SKIP_REVIEWERS.includes(key));
+}
+
+function usageSummary(llm) {
+  const u = llm.getUsageStats();
+  return {
+    calls: u.calls,
+    inputTokens: u.inputTokens,
+    outputTokens: u.outputTokens,
+    totalTokens: u.totalTokens,
+    budget: MAX_RUN_TOKENS > 0 ? MAX_RUN_TOKENS : null,
+    byModel: u.byModel
+  };
+}
+
+function printUsage(llm) {
+  const u = llm.getUsageStats();
+  console.log(`   🔢 Token usage: ${u.totalTokens.toLocaleString()} total (${u.inputTokens.toLocaleString()} in / ${u.outputTokens.toLocaleString()} out, ${u.calls} calls)`);
+  for (const [model, m] of Object.entries(u.byModel)) {
+    console.log(`      ${model}: ${m.calls} calls, ${(m.inputTokens + m.outputTokens).toLocaleString()} tokens`);
+  }
+  if (MAX_RUN_TOKENS > 0) {
+    console.log(`      Budget: ${((u.totalTokens / MAX_RUN_TOKENS) * 100).toFixed(1)}% of ${MAX_RUN_TOKENS.toLocaleString()} used`);
+  }
 }
 
 // ============================================================================
@@ -415,9 +485,15 @@ async function main() {
 
   const llm = createLLMGateway({
     anthropicApiKey: apiKey,
-    defaultProvider: 'claude'
+    defaultProvider: 'claude',
+    maxTotalTokens: MAX_RUN_TOKENS > 0 ? MAX_RUN_TOKENS : undefined
   });
-  console.log('✅ LLM Gateway ready\n');
+  console.log('✅ LLM Gateway ready');
+  console.log(`   Token budget: ${MAX_RUN_TOKENS > 0 ? MAX_RUN_TOKENS.toLocaleString() + ' tokens (MAX_RUN_TOKENS)' : 'unlimited'}`);
+  if (SKIP_REVIEWERS.length > 0) {
+    console.log(`   Skipping reviewers: ${SKIP_REVIEWERS.join(', ')} (SKIP_REVIEWERS)`);
+  }
+  console.log('');
 
   // Step 1: Initialize Agents
   console.log('🤖 Step 1: Initializing Agents\n');
@@ -517,7 +593,7 @@ async function main() {
 
     let episodeForReview = buildEpisodeForReview(outline, dialogueResult, cast);
     let reviews = await runReviewers(
-      Object.keys(REVIEWERS),
+      enabledReviewerKeys(),
       episodeForReview,
       cast,
       key => INITIAL_REVIEW_FILES[key]
@@ -595,7 +671,8 @@ async function main() {
         dialogueResult = {
           ...dialogueResult,
           dialogue: mergeSceneDialogue(dialogueResult.dialogue, revisedDialogue.dialogue),
-          choiceDialogue: mergeChoiceDialogue(dialogueResult.choiceDialogue, revisedDialogue.choiceDialogue)
+          choiceDialogue: mergeChoiceDialogue(dialogueResult.choiceDialogue, revisedDialogue.choiceDialogue),
+          branchDialogue: mergeBranchDialogue(dialogueResult.branchDialogue, revisedDialogue.branchDialogue)
         };
         actions.push('dialogue-revision');
         console.log(`   ✅ Dialogue revised (${((Date.now() - reviseStart) / 1000).toFixed(1)}s)\n`);
@@ -643,7 +720,10 @@ async function main() {
         startedAt: RUN_STARTED_AT.toISOString(),
         completedAt: new Date().toISOString(),
         totalSeconds: parseFloat(totalDuration),
-        model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5'
+        model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5',
+        reviewModel: process.env.ANTHROPIC_REVIEW_MODEL || 'claude-haiku-4-5-20251001',
+        skippedReviewers: SKIP_REVIEWERS,
+        usage: usageSummary(llm)
       },
       roster: roster.map(c => ({
         id: c.id,
@@ -654,9 +734,16 @@ async function main() {
       finalStatus,
       verdicts: verdicts(reviews),
       revisions: revisionHistory,
-      files: savedFiles.concat('manifest.json')
+      files: savedFiles.concat(['manifest.json', 'episode-script.md'])
     };
     saveToFile('manifest.json', manifest);
+
+    // Bind the script: one human-readable screenplay of the final content.
+    // Stamped FINAL — LOCKED only when the board approved it.
+    const screenplay = compileScreenplay({ outline, cast, dialogueResult, manifest });
+    const screenplayPath = path.join(OUTPUT_DIR, 'episode-script.md');
+    fs.writeFileSync(screenplayPath, screenplay, 'utf-8');
+    console.log(`   📜 Bound script: ${path.join(OUTPUT_DIR_RELATIVE, 'episode-script.md')} (${finalStatus === 'APPROVED' ? 'FINAL — LOCKED' : 'DRAFT'})\n`);
 
     console.log('═══════════════════════════════════════════════════════════\n');
     console.log('✨ FULL EPISODE PIPELINE COMPLETE!\n');
@@ -667,10 +754,32 @@ async function main() {
     if (stillFailing.length > 0) {
       console.log(`   ⚠️ Still failing after revisions: ${stillFailing.join(', ')} — human review needed`);
     }
-    console.log(`   ⏱️ Total: ${totalDuration}s (${(totalDuration / 60).toFixed(1)} minutes)\n`);
+    console.log(`   ⏱️ Total: ${totalDuration}s (${(totalDuration / 60).toFixed(1)} minutes)`);
+    printUsage(llm);
+    console.log('');
   } catch (error) {
     console.error('\n❌ Error during episode creation:\n');
-    if (error.message?.includes('401')) {
+    if (error.name === 'TokenBudgetExceededError') {
+      console.error(`   ${error.message}\n`);
+      // Preserve what the run produced so the spend isn't wasted.
+      saveToFile('manifest.json', {
+        episode: { number: EPISODE_BRIEF.episodeNumber, world: TEST_WORLD.id },
+        run: {
+          workflowId,
+          threadId,
+          startedAt: RUN_STARTED_AT.toISOString(),
+          abortedAt: new Date().toISOString(),
+          model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5',
+          reviewModel: process.env.ANTHROPIC_REVIEW_MODEL || 'claude-haiku-4-5-20251001',
+          skippedReviewers: SKIP_REVIEWERS,
+          usage: usageSummary(llm)
+        },
+        finalStatus: 'BUDGET_EXCEEDED',
+        revisions: revisionHistory,
+        files: savedFiles.concat('manifest.json')
+      });
+      printUsage(llm);
+    } else if (error.message?.includes('401')) {
       console.error('   Invalid API key. Please check your ANTHROPIC_API_KEY.\n');
     } else if (error.message?.includes('429')) {
       console.error('   Rate limit exceeded. Please wait a moment and try again.\n');

@@ -1,0 +1,81 @@
+{
+  "status": "APPROVED",
+  "concerns": [
+    {
+      "severity": "MINOR",
+      "category": "AGE_INAPPROPRIATE",
+      "issue": "Target audience listed as 11-14 but system context mentions 13-17; content itself skews appropriately toward the 11-14/middle school range (character ages are 12), so this is just a labeling inconsistency to confirm, not a content issue.",
+      "location": "Metadata: targetAge [11,14] vs. task framing 13-17",
+      "recommendation": "Confirm intended age band across systems; content as written is well-suited to 11-14 (middle school) and early teens.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "MENTAL_HEALTH",
+      "issue": "The 'self-protective/lonely' ending is emotionally honest but ends on a fairly deflating note ('Nobody waves goodbye') without an explicit in-fiction nudge toward help-seeking or self-compassion.",
+      "location": "scene-ending-lonely",
+      "recommendation": "Consider adding a subtle internal line offering self-compassion or forward-looking agency (e.g., 'Tomorrow's a new rep. I get another try.') so the isolated path doesn't feel like a dead end, since this is an episodic/branching format learners may replay.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "RELATIONSHIPS",
+      "issue": "Jordan's mockery of Priya's sketchbook is realistic bullying-adjacent behavior; some players may find the public humiliation moment mildly distressing if they've experienced similar situations.",
+      "location": "scene-hallway-mockery",
+      "recommendation": "Add a brief trigger warning before this scene/episode start, noting mild social mockery/embarrassment themes.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "EDUCATIONAL",
+      "issue": "No adult intervention or modeling of how a teacher/counselor might help in the hallway mockery moment - it's left entirely to peer resolution.",
+      "location": "scene-hallway-mockery / scene-defend-priya",
+      "recommendation": "This is largely fine since peer-led courage is the intended lesson, but could optionally include a coda showing that trusted adults (like Ms. Alvarez) are a resource for bigger situations, reinforcing help-seeking as a norm alongside personal courage.",
+      "mustFix": false
+    }
+  ],
+  "recommendations": [
+    "Consider adding a short pre-episode content note flagging mild social exclusion/mockery themes for sensitive players.",
+    "In the lonely-ending branch, add one more beat of hope/self-compassion to avoid the ending feeling purely punitive.",
+    "Optionally reinforce that seeking help from trusted adults is another valid tool alongside personal courage, expanding the 'support systems' lesson.",
+    "Great use of branching outcomes - continue this structure in future episodes to reinforce that identity is built through repeated choices, not one moment."
+  ],
+  "triggerWarnings": [
+    {
+      "category": "BULLYING",
+      "description": "A character's private sketchbook is read aloud mockingly in front of peers, causing embarrassment.",
+      "severity": "MILD",
+      "location": "scene-hallway-mockery"
+    },
+    {
+      "category": "SELF_ESTEEM",
+      "description": "Themes of social anxiety, fear of judgment, and the emotional cost of trying to fit in or stand out.",
+      "severity": "MILD",
+      "location": "Throughout episode, especially scene-arrival, scene-homeroom, scene-lunch-hall"
+    }
+  ],
+  "scores": {
+    "ageAppropriateness": 9,
+    "emotionalSafety": 9,
+    "educationalValue": 10,
+    "mentalHealthRep": 8,
+    "overall": 9
+  },
+  "summary": {
+    "strengths": [
+      "Excellent, developmentally on-target portrayal of first-day social anxiety without being condescending",
+      "Multiple valid expressions of confidence (loud, quiet, humorous) explicitly avoid a 'correct' way to be, directly supporting SEL goals",
+      "The hallway mockery scene is the emotional core and handles social risk/empathy with nuance - no graphic harm, just realistic social stakes",
+      "Branching structure meaningfully ties small choices to identity formation rather than a single 'grand gesture,' reinforcing the stated educational goal",
+      "Characters are well-rounded and avoid stereotypes (Jordan is insecure under bravado, not a flat bully; Priya is guarded but not fragile)",
+      "Dialogue is age-appropriate, funny, and emotionally intelligent without being preachy",
+      "All three endings (belonging, popularity, loneliness) are psychologically honest, showing consequences without melodrama"
+    ],
+    "improvements": [
+      "Consider a brief content note for the mockery/embarrassment scene",
+      "Add a touch more hope/agency to the lonely-path ending",
+      "Optionally reinforce adult/counselor support as a resource alongside peer courage"
+    ],
+    "readyForAudience": true
+  }
+}

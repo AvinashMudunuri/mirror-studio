@@ -1,0 +1,111 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "PACING",
+      "issue": "Choices cluster early then go silent for a long stretch (choice-3 at scene-6 to choice-4 at scene-8 is fine, but scene-9x to scene-10 to ending is a long linear tail with no choices in the last ~4 minutes of playtime)",
+      "location": "scene-9a/9b/9c through scene-11",
+      "impact": "Back third of the episode feels like the player is watching an epilogue rather than playing, deflating momentum right before the emotional payoff",
+      "fix": "Add a small reactive beat or micro-choice in the walking-home scene (e.g., a text from Alex or Mia the player can respond to) before the final identity choice",
+      "priority": 6
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Choice-3 option C ('side with Mia') is framed as clearly the 'bad' choice with heavy narrative punishment (Alex goes flat, narrator states 'It very clearly is not fine')",
+      "location": "scene-7c-side-with-mia",
+      "impact": "Undercuts the stated design goal of not punishing players narratively for choosing differently; makes the choice feel like a trap rather than genuine trade-off, discouraging experimentation on replay",
+      "fix": "Soften the narrator's editorializing; let Alex's reaction speak for itself without the narrator explicitly telling the player how to feel about their choice",
+      "priority": 7
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "Opening scene is entirely internal monologue/narration with no player choice for over a minute of playtime",
+      "location": "scene-1-arrival, scene-2-hallway-locker",
+      "impact": "Slight delay before player agency kicks in; risk of passive start for an interactive product",
+      "fix": "Consider a tiny cosmetic first choice (e.g., how Wren reacts to being watched) to establish agency within the first 30 seconds",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPLAYABILITY",
+      "issue": "Choice-1 (confident vs. cautious hallway intro) has minimal downstream narrative impact — both paths funnel into the same scene-4 with only trait deltas differing",
+      "location": "scene-2-hallway-locker branch",
+      "impact": "First choice feels lower-stakes than later ones, slightly undercutting the promise of 'every small choice matters'",
+      "fix": "Give the hallway choice a small callback later (e.g., Mia references whether player was the one who introduced themselves boldly) — this is partially done via branchDialogue but could be more prominent in-scene, not just in optional endings",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "No explicit tutorial for trait system (CONFIDENCE/EMPATHY/ADAPTABILITY) within the episode text itself — reliant on external UI",
+      "location": "throughout",
+      "impact": "New players may not understand why choices matter mechanically until they check a stats screen, reducing felt weight of decisions in the moment",
+      "fix": "Consider a subtle in-fiction acknowledgment (Jordan or internal monologue hinting 'that felt like a confident move') without breaking immersion — already partially present via INTERNAL lines, could be tuned to reinforce trait feedback",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scene-9c (bridge-groups) resolves very quickly and smoothly compared to the risk it represents — Mia's pushback is a single line before total acceptance",
+      "location": "scene-9c-bridge-groups",
+      "impact": "The most interesting/branch-defining choice gets the least narrative weight and tension payoff, making the 'best' path feel narratively cheap",
+      "fix": "Add a beat of visible awkwardness or a small setback before the group warms up, to make the bridge-builder path feel earned rather than instantly rewarded",
+      "priority": 5
+    }
+  ],
+  "strengths": [
+    "Excellent choice variety: binary, ternary, and identity-reflection choices all present within a short episode",
+    "Strong three-act structure (setup/complication/crisis/convergence/resolution) that's easy to follow while playing",
+    "The group-project cruelty moment (choice-3) is a genuinely well-designed moral pressure point with three distinct, characterful responses",
+    "Branching is meaningfully divergent — scenes 5a/5b, 7a/7b/7c, 9a/9b/9c, and 11a/11b/11c create real content forks, not just flavor text",
+    "branchDialogue system elegantly reincorporates earlier choices into the ending scenes, rewarding consistency without requiring separate full endings",
+    "Trait mapping is well-tuned to choice content — no arbitrary trait assignment, each option's traits match its narrative logic",
+    "Good replay incentive via clearly distinct 'Path A/B/C/D' outcomes documented, encouraging players to try different approaches"
+  ],
+  "recommendations": [
+    "Add one more small choice or interactive beat in the final third to prevent it from feeling like a cutscene",
+    "Rebalance scene-7c so choosing to go along with Mia doesn't read as an obviously 'punished' choice",
+    "Give scene-9c a touch more friction so the ideal/bridge-building path isn't the easiest emotionally as well as mechanically",
+    "Consider light foreshadowing or an easter egg for players who pick all-empathy or all-confidence paths (e.g., a unique Jordan line) to reward specific build consistency",
+    "Add minor callback dialogue referencing the hallway choice more directly in scene-4 or scene-6, not just in end-branch dialogue"
+  ],
+  "scores": {
+    "engagement": 8,
+    "choiceQuality": 8,
+    "pacing": 7,
+    "playerAgency": 8,
+    "replayability": 8,
+    "overall": 8
+  },
+  "metrics": {
+    "averageSceneLength": 41,
+    "choiceFrequency": 0.38,
+    "branchingFactor": 2.4,
+    "estimatedReplayValue": 8
+  },
+  "summary": {
+    "verdict": "A well-crafted, emotionally resonant episode with strong choice architecture and a clear moral centerpiece; minor pacing and balance issues in the back half and around the 'punished' choice keep it from being best-in-class.",
+    "keyIssues": [
+      "Choice-free tail section reduces agency in the final act",
+      "Scene-7c reads as narratively punished despite design intent of neutrality",
+      "Bridge-building path resolves too easily given its narrative importance"
+    ],
+    "topStrengths": [
+      "Genuinely meaningful moral choice at the group-project crisis point",
+      "Strong branch divergence across seating, lunch, and ending choices",
+      "Smart reincorporation of earlier choices via branchDialogue system"
+    ],
+    "mustFix": [
+      "Add agency/choice moment to the final act before the ending selection",
+      "Soften narrative judgment on the 'side with Mia' choice to match stated design philosophy"
+    ],
+    "niceToHave": [
+      "Small callback to hallway choice earlier in the episode",
+      "More friction in the bridge-building resolution",
+      "Unique flavor rewards for consistent trait builds across a full playthrough"
+    ]
+  }
+}

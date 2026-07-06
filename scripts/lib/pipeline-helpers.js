@@ -161,6 +161,14 @@ function mergeChoiceDialogue(previous, revised) {
   return [...byChoiceId.values()];
 }
 
+/** Same merge for branchDialogue entries, keyed by (sceneId, branchId). */
+function mergeBranchDialogue(previous, revised) {
+  const key = d => `${d.sceneId}::${d.branchId}`;
+  const byKey = new Map((previous || []).map(d => [key(d), d]));
+  for (const d of revised || []) byKey.set(key(d), d);
+  return [...byKey.values()];
+}
+
 module.exports = {
   RESERVED_SPEAKER_IDS,
   collectSupportingCharacterIds,
@@ -170,5 +178,6 @@ module.exports = {
   failingReviewers,
   collectRevisionFeedback,
   mergeSceneDialogue,
-  mergeChoiceDialogue
+  mergeChoiceDialogue,
+  mergeBranchDialogue
 };
