@@ -47,7 +47,9 @@ CEO Agent    Creative Agents   Review Agents
 
 ### Technology Stack
 
-**Orchestration**: LangGraph with state persistence
+**Orchestration**: custom sequential orchestrator script with run-folder
+state persistence (`scripts/create-real-episode.js`; see ADR 001 — LangGraph
+was the original plan here but was never adopted, ADR 002)
 **AI Models**: 
 - Primary: Claude Sonnet 4.5 (strategic/creative agents)
 - Secondary: GPT-5.4 (specialist agents)
@@ -2949,7 +2951,8 @@ Additionally, the handbook includes:
 With this handbook as foundation, implementation proceeds in clear phases:
 
 ### Phase 1: Infrastructure (Week 1-2)
-- LangGraph orchestration system
+- Orchestration system (planned as LangGraph; shipped as the custom
+  sequential orchestrator — ADR 001/002)
 - Message bus (Redis Streams)
 - State management (PostgreSQL)
 - Agent framework
