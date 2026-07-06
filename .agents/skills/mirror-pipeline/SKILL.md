@@ -27,10 +27,26 @@ npm run persist:run [run-folder]    # upsert run into Postgres — zero tokens, 
 npm run dev -w @mirror/admin        # dashboard over run folders at localhost:3300
 ```
 
-Env knobs: `MAX_RUN_TOKENS` (0 = unlimited), `SKIP_REVIEWERS`
+Env knobs: `EPISODE_NUMBER` (default 1; selects which brief in
+`EPISODE_BRIEFS` to generate — `2` generates the season's episode 2),
+`MAX_RUN_TOKENS` (0 = unlimited), `SKIP_REVIEWERS`
 (comma-separated manifest keys), `ANTHROPIC_MODEL` (creation),
 `ANTHROPIC_REVIEW_MODEL` (reviewers, default haiku), `<AGENT>_MODEL` /
 `<AGENT>_MAX_TOKENS` per-agent overrides, `DATABASE_URL` (Postgres opt-in).
+
+## Cross-run continuity (episode 2+)
+
+`scripts/lib/load-previous-episodes.js` loads the APPROVED episodes before
+`EPISODE_NUMBER` in the world — from Postgres (`episodes` table) when
+`DATABASE_URL` is set, else the newest APPROVED run folder per episode
+number under `output/episodes/` — and feeds them into the Story
+Architect's `brief.previousEpisodes`. This is the only cross-run memory
+consumer today: NPC ids and the protagonist are still regenerated fresh
+each run even when the outline references a "returning" character (see
+`docs/OPEN-QUESTIONS.md` item 2). To generate episode 2 against a real
+episode 1: `npm run persist:run <episode-1-run-folder>` (or just have
+`DATABASE_URL` set during the episode 1 run), then
+`EPISODE_NUMBER=2 DATABASE_URL=... npm run real:episode:dev`.
 
 ## Cost expectations (from live runs)
 

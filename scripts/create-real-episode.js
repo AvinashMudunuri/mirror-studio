@@ -28,6 +28,7 @@ const {
 } = require('./lib/pipeline-helpers');
 const { compileScreenplay } = require('./lib/compile-screenplay');
 const { buildEpisodeRow, persistEpisode } = require('./lib/persist-episode');
+const { loadPreviousEpisodes } = require('./lib/load-previous-episodes');
 
 // Import from built packages (resolve from script location)
 const packageRoot = path.resolve(__dirname, '..');
@@ -88,16 +89,44 @@ const { v4: uuidv4 } = require('uuid');
 // Configuration
 // ============================================================================
 
-const EPISODE_BRIEF = {
-  world: 'New School',
-  worldId: 'NEW_SCHOOL',
-  season: 'Season 1: First Year',
-  episodeNumber: 1,
-  title: 'First Day',
-  themes: ['Belonging', 'Authenticity', 'First Impressions'],
-  targetTraits: ['CONFIDENCE', 'EMPATHY', 'ADAPTABILITY'],
-  synopsis: 'Alex starts their first day at a new middle school after moving to a new city. They must navigate unfamiliar hallways, make new friends, and decide how much of their true self to show.'
+/**
+ * One brief per episode number. `EPISODE_NUMBER` (env, default 1) selects
+ * which one this run generates — this is what makes "episode 2" possible.
+ * Continuity with earlier episodes is NOT hardcoded here: it comes from
+ * `loadPreviousEpisodes()` reading whatever actually got APPROVED for
+ * earlier episode numbers (Postgres or committed run folders), so these
+ * briefs only need to set up the NEW episode's premise.
+ */
+const EPISODE_BRIEFS = {
+  1: {
+    world: 'New School',
+    worldId: 'NEW_SCHOOL',
+    season: 'Season 1: First Year',
+    episodeNumber: 1,
+    title: 'First Day',
+    themes: ['Belonging', 'Authenticity', 'First Impressions'],
+    targetTraits: ['CONFIDENCE', 'EMPATHY', 'ADAPTABILITY'],
+    synopsis: 'Alex starts their first day at a new middle school after moving to a new city. They must navigate unfamiliar hallways, make new friends, and decide how much of their true self to show.'
+  },
+  2: {
+    world: 'New School',
+    worldId: 'NEW_SCHOOL',
+    season: 'Season 1: First Year',
+    episodeNumber: 2,
+    title: 'The Group Project',
+    themes: ['Peer Pressure', 'Honesty', 'Teamwork'],
+    targetTraits: ['INTEGRITY', 'COMMUNICATION', 'JUDGMENT'],
+    synopsis: 'A few weeks into the new school, the protagonist is placed in a group project with classmates from different friend circles. When a groupmate pushes to cut corners so the group finishes early, the protagonist has to decide whether to speak up, go along, or find another way — continuing to figure out who they want to be now that the nerves of the first day have worn off.'
+  }
 };
+
+const EPISODE_NUMBER = parseInt(process.env.EPISODE_NUMBER || '1', 10);
+const EPISODE_BRIEF = EPISODE_BRIEFS[EPISODE_NUMBER];
+if (!EPISODE_BRIEF) {
+  console.error(`❌ Error: no episode brief defined for EPISODE_NUMBER=${EPISODE_NUMBER}.`);
+  console.error(`   Defined episode numbers: ${Object.keys(EPISODE_BRIEFS).join(', ')}\n`);
+  process.exit(1);
+}
 
 const TEST_WORLD = {
   id: 'NEW_SCHOOL',
@@ -563,6 +592,17 @@ async function main() {
     console.log('📖 Step 2: Story Architect - Creating Episode Outline\n');
     console.log(`   Episode: "${EPISODE_BRIEF.title}"`);
     console.log(`   Synopsis: ${EPISODE_BRIEF.synopsis}\n`);
+
+    const { episodes: previousEpisodes, source: previousEpisodesSource } = await loadPreviousEpisodes({
+      databaseUrl: DATABASE_URL,
+      worldId: TEST_WORLD.id,
+      beforeEpisodeNumber: EPISODE_BRIEF.episodeNumber,
+      episodesRoot: path.join(__dirname, '..', 'output', 'episodes')
+    });
+    if (previousEpisodes.length > 0) {
+      console.log(`   📚 Continuity: ${previousEpisodes.length} previous episode(s) loaded from ${previousEpisodesSource} — ${previousEpisodes.map(e => `"${e.title}"`).join(', ')}\n`);
+    }
+
     console.log('   🔄 Calling Claude API to generate story structure...\n');
 
     const storyStart = Date.now();
@@ -574,7 +614,8 @@ async function main() {
         episodeNumber: EPISODE_BRIEF.episodeNumber,
         themes: EPISODE_BRIEF.themes,
         targetTraits: EPISODE_BRIEF.targetTraits,
-        characters: []
+        characters: [],
+        previousEpisodes
       }
     });
     let outline = storyResult.episodeOutline;
@@ -763,6 +804,8 @@ async function main() {
         model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5',
         reviewModel: process.env.ANTHROPIC_REVIEW_MODEL || 'claude-haiku-4-5-20251001',
         skippedReviewers: SKIP_REVIEWERS,
+        previousEpisodes: previousEpisodes.map(e => ({ id: e.id, title: e.title })),
+        previousEpisodesSource: previousEpisodes.length > 0 ? previousEpisodesSource : null,
         usage: usageSummary(llm)
       },
       roster: roster.map(c => ({
