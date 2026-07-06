@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene IDs use simple slugs instead of UUIDs",
+      "location": "scenes[*].id",
+      "suggestion": "Use UUIDs in production episodes to match EpisodeSchema"
+    }
+  ],
+  "summary": {
+    "totalChecks": 24,
+    "passedChecks": 24,
+    "failedChecks": 0,
+    "warningCount": 1
+  },
+  "recommendations": [
+    "Add explicit outcome states for both lunch-table branches"
+  ]
+}
