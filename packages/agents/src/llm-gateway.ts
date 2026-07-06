@@ -26,6 +26,38 @@ export interface LLMConfig {
   defaultModel?: string;
   defaultTemperature?: number;
   defaultMaxTokens?: number;
+  /**
+   * Hard cap on total tokens (input + output) consumed through this
+   * gateway instance. When the budget is exhausted the NEXT call throws
+   * TokenBudgetExceededError instead of hitting the API, so a runaway
+   * pipeline stops spending. Undefined = unlimited.
+   */
+  maxTotalTokens?: number;
+}
+
+export interface LLMUsageStats {
+  calls: number;
+  inputTokens: number;
+  outputTokens: number;
+  totalTokens: number;
+  /** Per-model breakdown, since creation and review use different models. */
+  byModel: Record<string, { calls: number; inputTokens: number; outputTokens: number }>;
+}
+
+/** Thrown before an API call would exceed the configured token budget. */
+export class TokenBudgetExceededError extends Error {
+  readonly usage: LLMUsageStats;
+  readonly budget: number;
+
+  constructor(usage: LLMUsageStats, budget: number) {
+    super(
+      `LLM token budget exhausted: ${usage.totalTokens} of ${budget} tokens ` +
+      `used over ${usage.calls} calls. Raise maxTotalTokens (MAX_RUN_TOKENS) or split the work.`
+    );
+    this.name = 'TokenBudgetExceededError';
+    this.usage = usage;
+    this.budget = budget;
+  }
 }
 
 export interface LLMCallOptions {
@@ -85,6 +117,13 @@ export class LLMGateway {
     defaultTemperature: number;
     defaultMaxTokens: number;
   };
+  private usage: LLMUsageStats = {
+    calls: 0,
+    inputTokens: 0,
+    outputTokens: 0,
+    totalTokens: 0,
+    byModel: {}
+  };
   
   constructor(config: LLMConfig) {
     this.config = {
@@ -120,13 +159,46 @@ export class LLMGateway {
     userPrompt: string,
     options: LLMCallOptions = {}
   ): Promise<LLMResponse> {
+    this.assertWithinBudget();
+    
     const provider = options.provider || this.config.defaultProvider;
     
+    // Usage is recorded per API attempt inside the provider methods, so
+    // retried (truncated/thinking-only) attempts count against the budget.
     if (provider === 'claude') {
       return await this.callClaude(userPrompt, options);
-    } else {
-      return await this.callGPT(userPrompt, options);
     }
+    return await this.callGPT(userPrompt, options);
+  }
+  
+  /** Cumulative token usage across all calls through this gateway. */
+  getUsageStats(): LLMUsageStats {
+    return {
+      ...this.usage,
+      byModel: Object.fromEntries(
+        Object.entries(this.usage.byModel).map(([k, v]) => [k, { ...v }])
+      )
+    };
+  }
+  
+  private assertWithinBudget(): void {
+    const budget = this.config.maxTotalTokens;
+    if (budget !== undefined && this.usage.totalTokens >= budget) {
+      throw new TokenBudgetExceededError(this.getUsageStats(), budget);
+    }
+  }
+  
+  private recordUsage(model: string, inputTokens: number, outputTokens: number): void {
+    this.usage.calls += 1;
+    this.usage.inputTokens += inputTokens;
+    this.usage.outputTokens += outputTokens;
+    this.usage.totalTokens += inputTokens + outputTokens;
+    
+    const entry = this.usage.byModel[model] ||
+      (this.usage.byModel[model] = { calls: 0, inputTokens: 0, outputTokens: 0 });
+    entry.calls += 1;
+    entry.inputTokens += inputTokens;
+    entry.outputTokens += outputTokens;
   }
 
   /**
@@ -174,6 +246,9 @@ export class LLMGateway {
     let lastResponse: Anthropic.Message | undefined;
     
     for (let attempt = 1; attempt <= MAX_CLAUDE_ATTEMPTS; attempt++) {
+      // The first attempt was budget-checked in call(); retries burn extra
+      // tokens, so re-check before each one.
+      if (attempt > 1) this.assertWithinBudget();
       console.log(
         `[LLM] Calling Claude (${model}) with ${userPrompt.length} chars` +
         (isModern ? ` (attempt ${attempt}, max_tokens=${maxTokens}, effort=${effort})` : '')
@@ -204,6 +279,7 @@ export class LLMGateway {
 
       const response: Anthropic.Message = await this.anthropic.messages.create(requestParams);
       lastResponse = response;
+      this.recordUsage(model, response.usage.input_tokens, response.usage.output_tokens);
 
       // Claude 5+ with adaptive thinking returns thinking blocks + text blocks
       console.log(`[LLM] Response contains ${response.content.length} content blocks:`);
@@ -359,6 +435,7 @@ export class LLMGateway {
 
     const choice = response.choices[0];
     const content = choice.message.content || '';
+    this.recordUsage(model, response.usage?.prompt_tokens || 0, response.usage?.completion_tokens || 0);
 
     return {
       content,
