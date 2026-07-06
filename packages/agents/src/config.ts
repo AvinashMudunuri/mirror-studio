@@ -91,6 +91,12 @@ export const AGENT_MODELS = {
     maxTokens: LLM_CONFIG.maxTokens.medium,
   },
   
+  GAME_DESIGNER: {
+    model: LLM_CONFIG.defaultModels.anthropic,
+    temperature: 0.6, // Balanced - needs consistency with creative insight
+    maxTokens: LLM_CONFIG.maxTokens.medium,
+  },
+  
   ETHICS_REVIEWER: {
     model: LLM_CONFIG.defaultModels.anthropic,
     temperature: 0.4, // Low-medium - needs consistency with nuanced ethical judgment

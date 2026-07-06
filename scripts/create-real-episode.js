@@ -56,6 +56,7 @@ const {
   CreativeDirectorAgent,
   QAReviewerAgent,
   ChildPsychologistAgent,
+  GameDesignerAgent,
   EthicsReviewerAgent,
   createLLMGateway
 } = agentsModule;
@@ -154,6 +155,7 @@ async function main() {
   const creativeDirector = new CreativeDirectorAgent();
   const qaReviewer = new QAReviewerAgent();
   const childPsychologist = new ChildPsychologistAgent();
+  const gameDesigner = new GameDesignerAgent();
   const ethicsReviewer = new EthicsReviewerAgent();
   
   await Promise.all([
@@ -199,6 +201,13 @@ async function main() {
       memory: mockMemory, 
       llm 
     }),
+    gameDesigner.initialize({ 
+      workflowId, 
+      threadId, 
+      messageBus: mockMessageBus, 
+      memory: mockMemory, 
+      llm 
+    }),
     ethicsReviewer.initialize({ 
       workflowId, 
       threadId, 
@@ -214,6 +223,7 @@ async function main() {
   console.log('✅ Creative Director (Aria) ready');
   console.log('✅ QA Reviewer (Alex) ready');
   console.log('✅ Child Psychologist (Dr. Sam) ready');
+  console.log('✅ Game Designer (Jordan) ready');
   console.log('✅ Ethics Reviewer (Riley) ready\n');
   
   console.log('═══════════════════════════════════════════════════════════\n');
@@ -457,8 +467,58 @@ async function main() {
     saveToFile('06-psych-review.json', psychResult);
     console.log('   💾 Saved: output/real-episode/06-psych-review.json\n');
     
-    // Step 7: Ethics Reviewer - Ethics & Representation Review
-    console.log('⚖️  Step 7: Ethics Reviewer - Ethics & Representation Review\n');
+    // Step 7: Game Designer - Gameplay & Engagement Review
+    console.log('🎮 Step 7: Game Designer - Gameplay & Engagement Review\n');
+    console.log('   🔄 Calling Claude API for gameplay review...\n');
+    console.log('   ⏳ This may take 20-30 seconds...\n');
+    
+    const gameStartTime = Date.now();
+    
+    const gameResult = await gameDesigner.process({
+      type: 'REVIEW_EPISODE',
+      episodeReview: {
+        episode: episodeForReview,
+        characters: [protagonistResult.character],
+        world: TEST_WORLD
+      }
+    });
+    
+    const gameDuration = ((Date.now() - gameStartTime) / 1000).toFixed(1);
+    
+    console.log(`✅ Gameplay review complete! (${gameDuration}s)`);
+    console.log(`   Status: ${gameResult.status}`);
+    console.log(`   Issues: ${gameResult.issues?.length || 0} gameplay issues`);
+    console.log(`   Engagement Score: ${gameResult.scores?.engagement || 'N/A'}/10`);
+    console.log(`   Choice Quality: ${gameResult.scores?.choiceQuality || 'N/A'}/10`);
+    console.log(`   Overall: ${gameResult.scores?.overall || 'N/A'}/10\n`);
+    
+    if (gameResult.issues && gameResult.issues.length > 0) {
+      console.log('   🎯 Key Issues:');
+      gameResult.issues.slice(0, 3).forEach(issue => {
+        console.log(`      • [${issue.severity}] ${issue.issue}`);
+        console.log(`        Category: ${issue.category}`);
+        console.log(`        Fix: ${issue.fix}`);
+      });
+      if (gameResult.issues.length > 3) {
+        console.log(`      ... and ${gameResult.issues.length - 3} more\n`);
+      } else {
+        console.log('');
+      }
+    }
+    
+    if (gameResult.strengths && gameResult.strengths.length > 0) {
+      console.log('   💪 Strengths:');
+      gameResult.strengths.slice(0, 3).forEach(strength => {
+        console.log(`      • ${strength}`);
+      });
+      console.log('');
+    }
+    
+    saveToFile('07-game-review.json', gameResult);
+    console.log('   💾 Saved: output/real-episode/07-game-review.json\n');
+    
+    // Step 8: Ethics Reviewer - Ethics & Representation Review
+    console.log('⚖️  Step 8: Ethics Reviewer - Ethics & Representation Review\n');
     console.log('   🔄 Calling Claude API for ethics review...\n');
     console.log('   ⏳ This may take 20-30 seconds...\n');
     
@@ -521,8 +581,8 @@ async function main() {
       console.log('');
     }
     
-    saveToFile('07-ethics-review.json', ethicsResult);
-    console.log('   💾 Saved: output/real-episode/07-ethics-review.json\n');
+    saveToFile('08-ethics-review.json', ethicsResult);
+    console.log('   💾 Saved: output/real-episode/08-ethics-review.json\n');
     
     // Final Summary
     const totalDuration = ((Date.now() - startTime) / 1000).toFixed(1);
@@ -536,7 +596,8 @@ async function main() {
     console.log('   4. Creative Review (Creative Director → Claude)');
     console.log('   5. QA Review (QA Reviewer → Claude)');
     console.log('   6. Psychological Safety Review (Child Psychologist → Claude)');
-    console.log('   7. Ethics Review (Ethics Reviewer → Claude)\n');
+    console.log('   7. Gameplay Review (Game Designer → Claude)');
+    console.log('   8. Ethics Review (Ethics Reviewer → Claude)\n');
     console.log(`   📁 Location: ${OUTPUT_DIR}\n`);
     console.log('⏱️  Total Time:\n');
     console.log(`   Story: ${duration}s`);
@@ -545,6 +606,7 @@ async function main() {
     console.log(`   Review: ${reviewDuration}s`);
     console.log(`   QA: ${qaDuration}s`);
     console.log(`   Psych: ${psychDuration}s`);
+    console.log(`   Game: ${gameDuration}s`);
     console.log(`   Ethics: ${ethicsDuration}s`);
     console.log(`   Total: ${totalDuration}s (${(totalDuration / 60).toFixed(1)} minutes)\n`);
     console.log('🎯 Full AI Studio Pipeline:\n');
@@ -554,9 +616,10 @@ async function main() {
     console.log('   ✅ Quality assured by Creative Director');
     console.log('   ✅ Technical validation by QA Reviewer');
     console.log('   ✅ Psychological safety validated by Child Psychologist');
+    console.log('   ✅ Gameplay & engagement validated by Game Designer');
     console.log('   ✅ Ethics & representation validated by Ethics Reviewer\n');
     console.log('═══════════════════════════════════════════════════════════\n');
-    console.log('🎉 Success! Phase 1 + Phase 2 ethics validation working!\n');
+    console.log('🎉 Success! ALL Phase 2 validation agents complete!\n');
     
   } catch (error) {
     console.error('\n❌ Error during episode creation:\n');

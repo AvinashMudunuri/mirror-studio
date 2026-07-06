@@ -14,6 +14,7 @@ export * from './creative-director';
 // Validation Agents
 export * from './qa-reviewer';
 export * from './child-psychologist';
+export * from './game-designer';
 export * from './ethics-reviewer';
 
 // Types
