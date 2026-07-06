@@ -47,9 +47,44 @@ Fixed on the way in (both verified against a live Postgres 16 + pgvector):
   2000 dims) — removed; sequential scan until volumes demand halfvec or
   1536-dim embeddings.
 
-Still open: nothing *reads* agent memory across runs yet (previous-episode
-context for the Story Architect is the obvious first consumer); semantic
-search needs `OPENAI_API_KEY` for embeddings and is untested live.
+**Cross-run continuity — DONE (2026-07-06).** `scripts/lib/load-previous-episodes.js`
+reads the APPROVED episodes preceding a target episode number (Postgres
+`episodes` table when `DATABASE_URL` is set, else the newest APPROVED run
+folder per episode number) and feeds them into the Story Architect's
+`brief.previousEpisodes`. `EPISODE_NUMBER` (env, default 1) selects which
+brief `scripts/create-real-episode.js` generates — `EPISODE_NUMBER=2` is
+now wired to a real "episode 2" brief. Live-verified twice against episode
+1's persisted Postgres row, both times producing
+`manifest.run.previousEpisodes: [{id: "ep-1", title: "First Bell"}]` /
+`source: postgres`:
+- `EPISODE_NUMBER=2 DATABASE_URL=... npm run real:episode:dev` (3
+  reviewers skipped) — APPROVED "Group Work" after 2 revision iterations;
+  synopsis references the returning "Jordan" character from episode 1.
+- `EPISODE_NUMBER=2 DATABASE_URL=... npm run real:episode` (**full
+  board, all 5 reviewers**) — APPROVED "Cracks in the Terrarium" on the
+  first pass, 0 revisions:
+  `{creativeDirector: APPROVED, qaReviewer: PASS, childPsychologist:
+  APPROVED, gameDesigner: GOOD, ethicsReviewer: GOOD}`. This is the run
+  to treat as prod-ready evidence — `real:episode:dev`'s skipped
+  reviewers (Child Psychologist, Ethics Reviewer) are exactly the ones
+  most relevant to this episode's "cut corners for the group / honesty"
+  premise, so the dev-mode run alone doesn't clear it for production.
+
+Still open:
+- **Protagonist continuity.** Each run still calls Character Designer for
+  a brand-new protagonist regardless of `previousEpisodes` — episode 2's
+  protagonist is a different person (name, look, everything) from episode
+  1's, even though the outline treats it as the same ongoing story. Fixing
+  this needs the Character Designer (or the orchestrator) to accept an
+  existing protagonist profile instead of always generating one; NPC ids
+  the outline reuses (e.g. "jordan") already get regenerated per-run
+  rather than reusing the prior profile, for the same reason.
+- Creative Director's `EpisodeReview.previousEpisodes` (`EpisodeReference[]`)
+  and QA Reviewer's `episodeReview.previousEpisodes` are still always
+  passed `[]` in `create-real-episode.js` — the loader now produces data
+  in the right shape for the Creative Director's continuity/tone checks,
+  it just isn't wired to that call site yet.
+- Semantic search needs `OPENAI_API_KEY` for embeddings and is untested live.
 
 ## 3. Message bus (decided: out of runtime — ADR 001)
 

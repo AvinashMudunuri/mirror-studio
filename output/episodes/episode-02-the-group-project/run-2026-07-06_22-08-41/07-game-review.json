@@ -1,0 +1,160 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "ENGAGEMENT",
+      "issue": "Opening scene (Team Assignment) is exposition-heavy and lacks immediate hook or player agency",
+      "location": "Scene 1 (1 minute)",
+      "impact": "Players are passive observers of team dynamics rather than active participants. The scene establishes context but doesn't create urgency or curiosity that pulls players forward. No choice or decision for the player to make.",
+      "fix": "Give the player an immediate micro-choice in Scene 1: How do they introduce themselves to the team? (confident, helpful, observant, quiet) This establishes player agency from the start and creates a small hook. Alternatively, have Ms. Alvarez ask the player directly about their approach to the project, making them active rather than observant.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "PACING",
+      "issue": "Long gap between first major choice (Scene 2) and second major choice (Scene 4), with little tension escalation in between",
+      "location": "Scenes 2-4 (3.5 minutes total)",
+      "impact": "Scene 3a and 3b both feel like brief resolution scenes rather than building tension. The player makes a choice about the shortcut, then immediately sees the consequence (finished project), then the incident happens. The pacing feels rushed and doesn't let the emotional weight of the shortcut decision sink in.",
+      "fix": "Add a small tension-building scene between the shortcut decision and the incident. Example: A moment where Ms. Alvarez mentions she'll be asking detailed questions during Q&A, or Jordan casually mentions his sister got an A on this exact project. This creates dread and makes the incident feel like a consequence of the choice, not a random accident.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICE_QUALITY",
+      "issue": "Choice 2 (the blame incident) has unequal option weights—one choice (a) is clearly 'right,' making it feel like a morality test rather than a genuine dilemma",
+      "location": "Scene 4, Choice 2",
+      "impact": "Players who want to play 'good' will choose A immediately. Players who want to explore other options may feel like they're being punished for not picking the 'correct' moral choice. The choice lacks interesting trade-offs—there's no real benefit to staying silent or backing Jordan, just social comfort.",
+      "fix": "Reframe the choice to highlight genuine trade-offs: (a) Speak up now, but Jordan will definitely be angry and the team dynamic breaks; (b) Stay silent, but you'll have to live with guilt and Maya will lose trust in you; (c) Back Jordan, and he'll owe you a favor / be your ally, but you'll know it's false. Make each path have real costs AND benefits.",
+      "priority": 9
+    },
+    {
+      "severity": "MAJOR",
+      "category": "PLAYER_AGENCY",
+      "issue": "Scene 10 (Reflection) is a single choice with no branching—it's a final 'pick your moral stance' moment rather than a gameplay decision with consequences",
+      "location": "Scene 10, Choice 5",
+      "impact": "This choice comes after all the major gameplay is done. It's a reflection on what already happened, not a decision that shapes the story. Players may feel like they're just picking a personality trait rather than making a meaningful choice. All three options lead to 'END,' suggesting no real branching.",
+      "fix": "Either (1) Remove this as a choice and make it a branching dialogue based on previous choices (different reflections for different paths), or (2) Give this choice real weight by having it trigger different epilogue scenes or affect how characters respond in a future episode. Make the reflection feel like a decision, not a survey.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPLAYABILITY",
+      "issue": "Four of five major choices collapse into only three distinct paths (outcomes), reducing branching variety",
+      "location": "Overall choice structure",
+      "impact": "The episode has 5 choices but only 3-4 meaningfully different endings. Many choice combinations lead to the same outcome. Players won't feel rewarded for replaying with different strategies because the paths aren't as varied as the choice count suggests.",
+      "fix": "Map out the choice combinations more explicitly. Currently: Choice 1 (shortcut yes/no) + Choice 3 (tell teacher/mediate/avoid) creates the main branches. But Choice 2 and Choice 4 feel like they're just reinforcing those branches rather than creating new ones. Consider either (a) reducing to 3-4 major choices that create more distinct paths, or (b) making Choice 2 and 4 more consequential to create genuinely new branches.",
+      "priority": 7
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scene 6 (Before Friday) is a setup scene with no action or resolution—it's all exposition of Jordan's pressure",
+      "location": "Scene 6 (1 minute)",
+      "impact": "The scene feels like a filler transition. It doesn't advance the story meaningfully; it just restates the conflict the player already knows about. The emotional beat ('weight of a decision') is stated but not shown.",
+      "fix": "Either cut this scene and move the Choice 3 prompt into Scene 5, or add a small moment of agency—have the player witness something that changes their thinking (e.g., see Maya crying alone, or overhear Jordan bragging about getting away with it). Make the scene do work.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "The terrarium breaking feels somewhat arbitrary—it's a random accident, not a consequence of the team's earlier choices",
+      "location": "Scene 4 (The Crack)",
+      "impact": "The incident that escalates the conflict is external (Jordan's clumsiness) rather than organic to the situation. It doesn't feel like the shortcut decision led to the crisis; it feels like the crisis happened to them. This weakens the sense that choices matter.",
+      "fix": "Make the incident more directly connected to the shortcut. Example: The terrarium breaks because it was built poorly (sister's old materials), or because the team is rushing to finish relabeling it before Ms. Alvarez walks by. This makes the incident feel like a consequence of the choice, not random bad luck.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "CHOICE_QUALITY",
+      "issue": "Choice 1 (shortcut) lacks a clear downside to the 'right' choice—pushing back feels virtuous but not costly",
+      "location": "Scene 2, Choice 1",
+      "impact": "Players who choose to do the work honestly don't experience real friction. The dialogue shows Jordan sulking, but there's no scene showing the actual time pressure or stress of doing it right. The choice lacks dramatic tension.",
+      "fix": "In Scene 3b, show the team actually struggling—Maya stressed about research, Deshawn frustrated with measurements, Jordan actively resisting. Show that doing it right IS harder. This makes the choice feel like a real trade-off, not just 'be good and everything works out.'",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scene 5 (post-incident dialogue) has three very similar variants (5a, 5b, 5c) that all feel like minor variations on the same scene",
+      "location": "Scenes 5a, 5b, 5c (each ~1.5 minutes)",
+      "impact": "While the scenes have different emotional beats, they're structurally very similar: player responds to the incident, then transitions to aftermath. The variety feels thin. Players might not feel like their choice in Scene 4 created genuinely different experiences.",
+      "fix": "Make Scene 5b and 5c more distinct in structure and location. 5b is already in the cafeteria (good), but 5c should have more consequence—show Jordan actively celebrating/relieved, not just brief dialogue. Show the social cost of each choice more vividly.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "No explicit tutorial for the choice system or trait mechanics—players might not understand what their choices are optimizing for",
+      "location": "Episode start",
+      "impact": "Players see trait mappings in the backend but not in-game. They might make choices without understanding that they're building toward INTEGRITY, COMMUNICATION, and JUDGMENT. This is fine for a mature audience, but for ages 11-14, some guidance might help engagement.",
+      "fix": "Optional: Add a brief, natural moment where a character (Deshawn?) mentions something like, 'You're the kind of person who actually thinks about this stuff, huh?' This normalizes the idea that choices reflect values without being preachy.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Excellent character writing—Jordan, Maya, and Deshawn feel distinct and authentic. Their dialogue is natural and reveals personality efficiently.",
+    "Strong thematic coherence—the episode consistently explores peer pressure, honesty, and judgment without being preachy. The themes emerge from situation, not dialogue.",
+    "Deshawn as a narrative device is brilliant—his silence and observation create tension and make players aware they're being watched/judged, which is realistic for middle school.",
+    "Multiple valid paths—the three main outcomes (honest, mediator, avoidant) feel genuinely different and have real consequences for future episodes.",
+    "Emotional beats are well-placed—the quiet moments (Maya's guilt, Jordan's embarrassment, Deshawn's sideways glances) land harder than shouting.",
+    "Ms. Alvarez is a compelling authority figure—she's fair but not soft, which makes players trust her and respect her judgment rather than fear her.",
+    "The final reflection scene (Scene 10) is a strong ending—it forces players to articulate their values without being didactic."
+  ],
+  "recommendations": [
+    "Restructure the opening: Give players a choice in Scene 1 to establish agency immediately. The team assignment feels like exposition; make it interactive.",
+    "Add tension escalation between the shortcut choice and the incident: Insert a scene where the stakes of the shortcut become clearer (Ms. Alvarez mentions detailed Q&A, or a close call with discovery).",
+    "Reframe Choice 2 to have genuine trade-offs: Make speaking up, staying silent, and backing Jordan each have real costs and benefits. Avoid the 'one right answer' feel.",
+    "Strengthen the terrarium incident: Connect it more directly to the shortcut decision. Make it feel like a consequence, not random bad luck.",
+    "Expand Scene 3b to show real struggle: If players choose to do the work honestly, show them actually stressed and struggling. This validates the choice as a trade-off.",
+    "Make Scene 5 variants more structurally distinct: Vary location, emotional intensity, and social consequences more dramatically to show the weight of the choice.",
+    "Reconsider Choice 5: Either remove it as a choice and make it branching dialogue based on prior choices, or give it real consequences for future episodes.",
+    "Clarify branching: Map out which choice combinations lead to which outcomes. Consider consolidating to 3-4 major choices that create more distinct paths, or making existing choices more consequential.",
+    "Add a subtle tutorial moment: Have a character naturally mention that choices reflect values, so players understand they're building traits."
+  ],
+  "scores": {
+    "engagement": 7,
+    "choiceQuality": 6,
+    "pacing": 6,
+    "playerAgency": 6,
+    "replayability": 6,
+    "overall": 6
+  },
+  "metrics": {
+    "averageSceneLength": 67,
+    "choiceFrequency": 0.38,
+    "branchingFactor": 2.4,
+    "estimatedReplayValue": 6
+  },
+  "summary": {
+    "verdict": "CRACKS IN THE TERRARIUM is a well-written episode with authentic characters and strong thematic depth, but it falls short of excellent gameplay due to uneven choice design, pacing issues, and limited branching variety. The core story is compelling, but the interactive structure needs refinement to make players feel like their choices genuinely shape the experience. With targeted fixes to choice framing, pacing, and branching clarity, this could easily move to 8+.",
+    "keyIssues": [
+      "Opening scene is passive exposition, not interactive setup",
+      "Choice 2 (the blame) feels like a morality test with one 'right' answer, not a genuine dilemma",
+      "Pacing gap between shortcut choice and incident—tension doesn't escalate naturally",
+      "Choice 5 (reflection) has no real branching or consequences",
+      "Only 3 distinct paths despite 5 major choices—branching variety is lower than it appears"
+    ],
+    "topStrengths": [
+      "Character writing is excellent—each character has distinct voice and motivation",
+      "Deshawn's observant silence creates realistic social tension",
+      "Multiple valid paths with real consequences for character relationships",
+      "Thematic coherence without preachiness—peer pressure, honesty, judgment emerge naturally",
+      "Ms. Alvarez is a compelling, fair authority figure",
+      "Emotional beats land hard—quiet moments are more powerful than dramatic ones"
+    ],
+    "mustFix": [
+      "Reframe Choice 2 to have genuine trade-offs (not one 'right' answer)",
+      "Add tension escalation between shortcut choice and incident",
+      "Give players agency in opening scene (remove pure exposition)",
+      "Make Choice 5 either branching dialogue or consequential for future episodes"
+    ],
+    "niceToHave": [
+      "Strengthen Scene 3b to show real struggle with the honest path",
+      "Make Scene 5 variants more structurally distinct",
+      "Connect terrarium incident more directly to shortcut decision",
+      "Add subtle tutorial moment about trait building",
+      "Clarify and optimize branching structure (consolidate or make more distinct)"
+    ]
+  }
+}

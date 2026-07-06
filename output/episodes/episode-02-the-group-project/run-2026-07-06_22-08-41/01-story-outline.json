@@ -1,0 +1,552 @@
+{
+  "episodeOutline": {
+    "title": "Cracks in the Terrarium",
+    "synopsis": "Assigned to a science project team with the magnetic but corner-cutting Jordan, anxious overachiever Maya, and watchful Deshawn, the player must navigate a shortcut that isn't theirs to take, a broken terrarium and a false accusation, and the mounting pressure to keep the peace instead of telling the truth. By presentation day, the player discovers that being liked and being trusted aren't always the same thing.",
+    "themes": [
+      "Peer Pressure",
+      "Honesty",
+      "Teamwork"
+    ],
+    "targetTraits": [
+      "INTEGRITY",
+      "COMMUNICATION",
+      "JUDGMENT"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "Team Assignment",
+        "location": "Ms. Alvarez's Science Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn",
+          "ms-alvarez"
+        ],
+        "duration": 1,
+        "description": "Ms. Alvarez posts the ecosystem terrarium project on the board: due Friday, graded on both the model and a live Q&A. The player is grouped with Jordan (confident, already texting under the desk), Maya (already writing a to-do list), and Deshawn (leaning back, watching everyone size each other up).",
+        "emotionalBeat": "Anticipation and mild social tension - who will lead this team?",
+        "defaultNextScene": "scene-2"
+      },
+      {
+        "id": "scene-2",
+        "title": "The Shortcut",
+        "location": "Library Workroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn"
+        ],
+        "duration": 1.5,
+        "description": "During the first work session, Jordan pulls out a nearly-finished terrarium model - 'borrowed' from his older sister's project last year. 'We just tweak the labels and we're done by Tuesday. Nobody's gonna check.' Maya freezes. Deshawn says nothing, watching the player.",
+        "emotionalBeat": "The first real test - convenience versus conscience.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-3a-shortcut",
+        "title": "Easy Wins",
+        "location": "Library Workroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn"
+        ],
+        "duration": 1,
+        "description": "The team finishes 'their' terrarium in record time. Jordan is thrilled, high-fiving everyone. Maya keeps her eyes down, relabeling plant species in handwriting that isn't hers. The model looks perfect - a little too perfect.",
+        "emotionalBeat": "Relief laced with quiet guilt.",
+        "defaultNextScene": "scene-4-incident"
+      },
+      {
+        "id": "scene-3b-honest",
+        "title": "Doing It Right",
+        "location": "Library Workroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn"
+        ],
+        "duration": 1,
+        "description": "The player pushes back, and the team splits real tasks - Maya researches, Deshawn builds, Jordan sulks but grudgingly labels jars. It's slower and messier, but it's actually theirs. Jordan mutters that the player is 'making this harder than it needs to be.'",
+        "emotionalBeat": "Friction that comes from doing the right thing the hard way.",
+        "defaultNextScene": "scene-4-incident"
+      },
+      {
+        "id": "scene-4-incident",
+        "title": "The Crack",
+        "location": "Library Workroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn",
+          "ms-alvarez"
+        ],
+        "duration": 1.5,
+        "description": "Jordan, showing off the terrarium to a passing friend, knocks it off the table. The glass cracks and a plant spills. Ms. Alvarez rushes over just as Jordan blurts, 'Maya was holding it, she dropped it!' Maya's mouth opens but nothing comes out.",
+        "emotionalBeat": "Sudden crisis - the moment truth and silence collide.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-5a-spoke-up",
+        "title": "Setting the Record Straight",
+        "location": "Library Workroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn",
+          "ms-alvarez"
+        ],
+        "duration": 1.5,
+        "description": "The player corrects Jordan on the spot, in front of Ms. Alvarez. Jordan's face goes red. Ms. Alvarez says nothing accusatory, just quietly notes what happened and moves on. Maya exhales like she'd been holding her breath for an hour.",
+        "emotionalBeat": "Vindication, but also new tension with Jordan.",
+        "defaultNextScene": "scene-6-aftermath"
+      },
+      {
+        "id": "scene-5b-silent",
+        "title": "The Quiet Word",
+        "location": "Cafeteria (later that day)",
+        "characters": [
+          "player",
+          "maya"
+        ],
+        "duration": 1.5,
+        "description": "The player didn't correct Jordan in the moment, but finds Maya at lunch. She admits she's afraid of what happens socially if she crosses Jordan. 'You didn't say anything either,' she says - not with anger, just tired honesty.",
+        "emotionalBeat": "Uncomfortable self-recognition; a private reckoning.",
+        "defaultNextScene": "scene-6-aftermath"
+      },
+      {
+        "id": "scene-5c-backed-jordan",
+        "title": "Going Along With It",
+        "location": "Library Workroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "ms-alvarez"
+        ],
+        "duration": 1.5,
+        "description": "The player nods along with Jordan's version. Maya gets a quiet warning from Ms. Alvarez about being careful with materials. Later, Maya won't quite meet the player's eyes in the hallway.",
+        "emotionalBeat": "The cost of comfort - trust quietly damaged.",
+        "defaultNextScene": "scene-6-aftermath"
+      },
+      {
+        "id": "scene-6-aftermath",
+        "title": "Before Friday",
+        "location": "Hallway by the Lockers",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn"
+        ],
+        "duration": 1,
+        "description": "With presentation day looming, the unresolved mess - the copied model, the blame, or both - hangs over the team. Jordan corners the player: 'Let's just keep this simple and get through Friday, okay?' Deshawn watches to see what the player will actually do.",
+        "emotionalBeat": "The weight of a decision that will define the rest of the week.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-7a-truth",
+        "title": "Telling Ms. Alvarez",
+        "location": "Ms. Alvarez's Classroom (after school)",
+        "characters": [
+          "player",
+          "ms-alvarez",
+          "jordan",
+          "maya"
+        ],
+        "duration": 1.5,
+        "description": "The player lays out the full truth - the borrowed model, the blame, all of it. Ms. Alvarez is stern but fair: the team gets an extension to rebuild honestly, and Jordan is held accountable one-on-one. Maya looks at the player like something has shifted.",
+        "emotionalBeat": "Fear giving way to relief and earned respect.",
+        "defaultNextScene": "scene-8-presentation"
+      },
+      {
+        "id": "scene-7b-privately",
+        "title": "The Team Talks It Out",
+        "location": "Library Workroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn"
+        ],
+        "duration": 1.5,
+        "description": "Instead of going to the teacher, the player mediates a hard conversation with the team. Jordan resists, then reluctantly agrees to redo the parts that weren't real and to apologize to Maya. It's not perfect, but it's honest progress, made on their own terms.",
+        "emotionalBeat": "Tense but hopeful - trust rebuilt without an authority figure.",
+        "defaultNextScene": "scene-8-presentation"
+      },
+      {
+        "id": "scene-7c-avoid",
+        "title": "Letting It Ride",
+        "location": "Hallway by the Lockers",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player decides it's easier to just get through the presentation and deal with it later - if ever. Jordan grins, relieved, and claps the player on the shoulder like they're on the same team now. Somewhere down the hall, Maya doesn't look relieved at all.",
+        "emotionalBeat": "Uneasy calm - a problem deferred, not solved.",
+        "defaultNextScene": "scene-8-presentation"
+      },
+      {
+        "id": "scene-8-presentation",
+        "title": "Presentation Day",
+        "location": "Science Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn",
+          "ms-alvarez"
+        ],
+        "duration": 1.5,
+        "description": "The team presents the terrarium to the class. During Q&A, Ms. Alvarez asks a pointed question about the research process - one that could expose the shortcut, or simply invite the player to describe how the team actually worked together.",
+        "emotionalBeat": "Public pressure - the truth has an audience now.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-9a-owned-it",
+        "title": "Owning the Process",
+        "location": "Science Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn",
+          "ms-alvarez"
+        ],
+        "duration": 1,
+        "description": "The player answers honestly, crediting Maya's research and naming what the team actually struggled with. It's not a flawless presentation, but it's real, and Ms. Alvarez nods approvingly. Maya beams for the first time all week.",
+        "emotionalBeat": "Quiet pride - integrity paying off in front of everyone.",
+        "defaultNextScene": "scene-10-reflection"
+      },
+      {
+        "id": "scene-9b-deflected",
+        "title": "Letting Jordan Talk",
+        "location": "Science Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "deshawn",
+          "ms-alvarez"
+        ],
+        "duration": 1,
+        "description": "The player lets Jordan smooth-talk his way through the question. It works - mostly. But Deshawn's sideways glance makes clear he noticed the player staying quiet, again, when it mattered.",
+        "emotionalBeat": "Relief tangled with lingering guilt.",
+        "defaultNextScene": "scene-10-reflection"
+      },
+      {
+        "id": "scene-10-reflection",
+        "title": "Walking Home",
+        "location": "Front Steps of Ridgemont Middle School",
+        "characters": [
+          "player",
+          "deshawn"
+        ],
+        "duration": 1.5,
+        "description": "Deshawn falls into step with the player after school. He doesn't lecture - he just asks, plainly, what the player actually thinks about how the week went. It's the kind of question that expects a real answer.",
+        "emotionalBeat": "Reflective calm - a chance to name what kind of teammate the player wants to be.",
+        "defaultNextScene": null
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2",
+        "prompt": "Jordan wants to use his sister's old terrarium instead of building one from scratch. What do you do?",
+        "context": "The team is behind before they've even started, and Jordan is already treating the shortcut as decided.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Go along with it - it'll save everyone time and stress.",
+            "nextScene": "scene-3a-shortcut"
+          },
+          {
+            "id": "b",
+            "text": "Push back and suggest the team split up the real work instead.",
+            "nextScene": "scene-3b-honest"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": -2,
+            "JUDGMENT": -1
+          },
+          "b": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-4-incident",
+        "prompt": "Jordan just blamed Maya for breaking the terrarium in front of the teacher. What do you do?",
+        "context": "Ms. Alvarez is waiting for an explanation, and Maya looks too stunned to defend herself.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Correct Jordan immediately, in front of the teacher.",
+            "nextScene": "scene-5a-spoke-up"
+          },
+          {
+            "id": "b",
+            "text": "Stay quiet for now, but talk to Maya privately later.",
+            "nextScene": "scene-5b-silent"
+          },
+          {
+            "id": "c",
+            "text": "Back up Jordan's version to avoid a scene.",
+            "nextScene": "scene-5c-backed-jordan"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": 0,
+            "JUDGMENT": 1
+          },
+          "c": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-6-aftermath",
+        "prompt": "Jordan wants everyone to just get through Friday without making things complicated. How do you handle it?",
+        "context": "There's still unfinished business - the copied model, the blame, or both - and presentation day is close.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tell Ms. Alvarez the full truth before the presentation.",
+            "nextScene": "scene-7a-truth"
+          },
+          {
+            "id": "b",
+            "text": "Handle it within the team - talk it out with Jordan and Maya directly.",
+            "nextScene": "scene-7b-privately"
+          },
+          {
+            "id": "c",
+            "text": "Let it go for now and focus on getting through Friday.",
+            "nextScene": "scene-7c-avoid"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "JUDGMENT": 2,
+            "COMMUNICATION": 1
+          },
+          "c": {
+            "INTEGRITY": -1,
+            "JUDGMENT": -2
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-8-presentation",
+        "prompt": "Ms. Alvarez asks the team to describe how they actually worked together on the project. What do you say?",
+        "context": "This is the moment where the truth about the team's process either comes out or gets smoothed over.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Answer honestly, crediting the real work and real struggles.",
+            "nextScene": "scene-9a-owned-it"
+          },
+          {
+            "id": "b",
+            "text": "Let Jordan handle the answer and stay out of it.",
+            "nextScene": "scene-9b-deflected"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "INTEGRITY": -1,
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-10-reflection",
+        "prompt": "Deshawn asks what you actually think about how this week went. What do you tell him?",
+        "context": "There's no teacher, no audience - just an honest question from someone who noticed everything.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Say that doing the right thing was hard, but you're glad you did.",
+            "nextScene": "END"
+          },
+          {
+            "id": "b",
+            "text": "Admit you're still figuring out how to handle pressure like that.",
+            "nextScene": "END"
+          },
+          {
+            "id": "c",
+            "text": "Shrug it off - it wasn't that big a deal.",
+            "nextScene": "END"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2
+          },
+          "b": {
+            "JUDGMENT": 1,
+            "COMMUNICATION": 1
+          },
+          "c": {
+            "INTEGRITY": -1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-honest-path",
+        "name": "The Honest Path",
+        "triggeredBy": [
+          "choice-1:b",
+          "choice-3:a"
+        ],
+        "description": "The player refuses the shortcut from the start and later chooses full transparency with the teacher, even at social cost.",
+        "outcome": "The team rebuilds an honest project under real deadline pressure. Jordan is embarrassed but held accountable; Maya's trust in the player deepens significantly; the player earns quiet respect from Ms. Alvarez and Deshawn."
+      },
+      {
+        "id": "branch-peer-pressure-path",
+        "name": "The Path of Least Resistance",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-2:c"
+        ],
+        "description": "The player takes the easy shortcut and then backs Jordan's false blame to avoid conflict.",
+        "outcome": "The project succeeds on the surface, but Maya feels betrayed and distances herself. Jordan treats the player as an ally, but Deshawn grows visibly wary - setting up tension for future episodes."
+      },
+      {
+        "id": "branch-quiet-mediator-path",
+        "name": "The Mediator's Path",
+        "triggeredBy": [
+          "choice-2:b",
+          "choice-3:b"
+        ],
+        "description": "The player avoids public confrontation but works privately to correct the situation and repair the team's dynamic.",
+        "outcome": "The player becomes known as someone who handles things fairly without needing drama, earning Maya's trust and Jordan's grudging respect, though the resolution takes real emotional labor."
+      },
+      {
+        "id": "branch-avoidant-path",
+        "name": "The Path of Avoidance",
+        "triggeredBy": [
+          "choice-3:c",
+          "choice-4:b"
+        ],
+        "description": "The player repeatedly chooses to sidestep the conflict rather than resolve it, even during the final presentation.",
+        "outcome": "The presentation succeeds on the surface, but nothing is actually resolved. Guilt lingers, Maya remains hurt, and Deshawn quietly notes the pattern - a loose thread the story can pull on later."
+      }
+    ],
+    "emotionalArc": [
+      "Setup: fresh team, social sizing-up, low stakes",
+      "First pressure: a shortcut disguised as a favor",
+      "Escalation: a broken object and a false accusation raise the stakes publicly",
+      "Private reckoning: the cost of silence becomes personal, not abstract",
+      "Decision point: choosing truth, mediation, or avoidance before public exposure",
+      "Public test: the truth (or its absence) plays out in front of an audience",
+      "Resolution: quiet, honest reflection on what kind of teammate the player wants to be"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from a passive team member absorbing pressure to someone who actively decides what honesty and loyalty mean in practice, not just in theory."
+      },
+      {
+        "character": "jordan",
+        "arc": "Starts as the confident corner-cutter; depending on player choices, either faces real accountability and grows slightly humbler, or gets away with it and becomes more entrenched in shortcuts."
+      },
+      {
+        "character": "maya",
+        "arc": "Begins anxious and easily overlooked; her arc closes either with restored trust and confidence, or with quiet withdrawal, depending on whether the player defends her."
+      },
+      {
+        "character": "deshawn",
+        "arc": "The steady observer throughout - his shifting warmth or wariness toward the player is a silent scoreboard for the whole episode."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "INTEGRITY",
+        "hiddenThrough": "Choices about the copied terrarium, the false blame, and the presentation Q&A - never labeled as 'honesty tests,' always framed as practical team decisions."
+      },
+      {
+        "trait": "COMMUNICATION",
+        "hiddenThrough": "Whether and how the player speaks up in the moment versus privately, and how they represent the team's real process to the teacher."
+      },
+      {
+        "trait": "JUDGMENT",
+        "hiddenThrough": "Timing decisions - when to escalate to an adult, when to handle things peer-to-peer, and when to let something go - without ever presenting a 'correct' answer explicitly."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player-jordan",
+        "dynamic": "A push-pull between social ease and growing awareness that charisma isn't the same as trustworthiness."
+      },
+      {
+        "pair": "player-maya",
+        "dynamic": "Trust that is either built or eroded based on whether the player defends her when it costs something."
+      },
+      {
+        "pair": "player-deshawn",
+        "dynamic": "A quiet, low-stakes friendship that steadily shifts based on consistent small choices rather than one big moment."
+      }
+    ],
+    "replayHooks": [
+      "What happens if you refuse Jordan's shortcut AND still stay silent during the blame moment? Does honesty in one area cover for silence in another?",
+      "Can you fix things by talking to the team privately instead of going to the teacher - and does that actually hold up under pressure?",
+      "What does Deshawn say at the end if you took the path of least resistance the whole episode?",
+      "Does backing Jordan early change how the presentation Q&A moment feels later?"
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Model that integrity often means short-term discomfort for long-term trust, without ever using the word 'integrity' in dialogue",
+      "Show that communication isn't just speaking up loudly in the moment - timing and follow-through matter too",
+      "Illustrate judgment as weighing competing loyalties (teammate vs. truth, peace vs. fairness) rather than picking an obviously 'right' answer",
+      "Demonstrate that peer pressure often arrives disguised as convenience or loyalty, not overt bullying"
+    ],
+    "conversationStarters": [
+      "Have you ever felt pressured to go along with something you knew wasn't quite right? What made it hard to speak up?",
+      "Is it ever okay to stay quiet in the moment and deal with something later? When does that help versus hurt?",
+      "How do you decide whether to handle a problem yourself or bring in an adult?",
+      "What do you think makes someone a trustworthy teammate, even when things go wrong?"
+    ]
+  },
+  "designNotes": "The episode deliberately routes all major branches through the same physical incident (the broken terrarium) so that divergent early choices (the shortcut) collide with a shared crisis point, letting player agency compound rather than fork into unrelated stories. Trait pressure is applied through situational stakes (a friend's reputation, a teacher's trust, a team's deadline) rather than moralized dialogue, keeping the educational scaffolding invisible. Deshawn functions as a low-key 'mirror' character whose shifting warmth gives players an intuitive, non-verbal signal of how their choices are landing, which supports replay motivation without a visible score.",
+  "uncertainties": [
+    "Whether three simultaneous target traits (INTEGRITY, COMMUNICATION, JUDGMENT) risk diluting the clarity of any single trait's signal for the player - may need playtesting to see if trait deltas feel legible in choice text.",
+    "The 'backed-jordan' branch is intentionally the darkest outcome; need to confirm tone stays age-appropriate (social guilt, not shame-spiraling) for a middle-school audience.",
+    "Whether 15 scenes is slightly dense for a 12-13 minute target if voice-acted or animated - may need trimming of scene-6 or merging 7a/7b/7c framing if runtime overshoots in production."
+  ],
+  "alternativesConsidered": [
+    "Considered making the 'incident' a cheating-on-a-quiz scenario instead of a broken physical object, but the terrarium gives a more visual, replayable crisis moment and ties integrity to teamwork more naturally than individual test-taking.",
+    "Considered a fourth teammate to increase social complexity, but three teammates plus the player kept the choice architecture legible within the time budget.",
+    "Considered letting the player choose their team at the start (as a callback to Episode 1's social mapping), but fixed team assignment better simulates real school pressure where you don't get to choose who you're accountable to."
+  ]
+}

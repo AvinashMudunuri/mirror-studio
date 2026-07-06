@@ -1,0 +1,97 @@
+{
+  "character": {
+    "id": "player",
+    "name": "Ellis Park",
+    "age": 12,
+    "pronouns": "she/her",
+    "appearance": {
+      "brief": "Medium height, always half-in-half-out of a hoodie zipper, dark hair usually in a messy braid she redoes about six times a day. Wears mismatched shoelaces on purpose 'because it's a system, not an accident.'",
+      "distinctiveFeatures": [
+        "A friendship-bracelet collection stacked up one wrist from her old school, none from this one yet",
+        "Chews the end of her pen cap when she's nervous, has ruined at least four pens this semester",
+        "A small, faded ink doodle on the back of her hand she redraws most mornings — a tiny compass"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "eager to belong",
+        "quietly observant",
+        "conflict-avoidant",
+        "loyal to a fault",
+        "secretly stubborn about fairness"
+      ],
+      "bigFiveProfile": {
+        "openness": 7,
+        "conscientiousness": 6,
+        "extraversion": 6,
+        "agreeableness": 8,
+        "neuroticism": 6
+      },
+      "mannerisms": [
+        "Nods along in conversations even when she disagrees, catches herself doing it and looks annoyed at herself",
+        "Straightens supplies/materials on a table without realizing she's doing it — a control habit",
+        "Laughs a beat too late at jokes she didn't fully find funny, just to keep things smooth"
+      ],
+      "speechPatterns": [
+        "Starts sentences with 'Okay but—' when she's working up courage to disagree",
+        "Downplays her own opinions with qualifiers: 'I mean, it's probably nothing, but—'",
+        "Gets more direct and clipped when she's actually upset, dropping the qualifiers entirely"
+      ],
+      "emotionalTendencies": "Ellis reads a room before she reads herself. She's tuned to other people's moods like a radio dial, which makes her a good friend but a bad self-advocate. When she's anxious, she gets *more* agreeable, not less — she'll smile and nod her way through discomfort until it becomes unbearable, and then it comes out sideways, in a snap or a blurted truth she didn't plan to say."
+    },
+    "background": {
+      "family": "Middle of three kids; her older brother was 'the smart one' and her younger sister is 'the funny one' at their old school, so Ellis has spent years quietly figuring out what she is. Parents are supportive but stretched thin — dad picks up night shifts, mom is finishing a nursing certification, so Ellis has learned to handle a lot of her own problems without adding to the pile at home.",
+      "interests": [
+        "collecting weird facts about ecosystems (which is why she signed up eagerly for the terrarium project)",
+        "making friendship bracelets and giving them away before she's even close with someone",
+        "true crime podcasts she's not supposed to listen to yet",
+        "doodling maps of places that don't exist"
+      ],
+      "strengths": [
+        "genuinely curious and a fast learner",
+        "good at reading people's emotional temperature",
+        "loyal — once she's your friend, she'll defend you hard",
+        "notices details other people miss"
+      ],
+      "struggles": [
+        "conflates being liked with being safe",
+        "avoids confrontation until it explodes out of her at the worst moment",
+        "still doesn't have a 'real' friend group at New School three months in, which she feels ashamed about",
+        "struggles to tell the difference between keeping the peace and lying by omission"
+      ],
+      "secrets": [
+        "She already suspects Jordan broke the terrarium latch rushing the setup, but she doesn't say anything because Jordan was the first person at New School who made her feel cool by association",
+        "She still texts her old best friend every night and hasn't told her new group that, worried it makes her seem like she doesn't want to be here"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Make real friends at New School before the year is 'too far gone' to start over",
+        "Get a good grade on the terrarium project without any drama",
+        "Be seen as easy to work with, not difficult"
+      ],
+      "unconscious": [
+        "Prove to herself she can build a place to belong without losing herself to do it",
+        "Learn that being trusted is more valuable — and harder-won — than being universally liked"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Casual middle-school vernacular, mixes in genuinely nerdy vocabulary when talking about ecosystems/science because it's her real interest — she code-switches between 'trying to sound normal' and 'accidentally infodumping.'",
+      "sentenceComplexity": "Short, hedging sentences when anxious or smoothing things over; longer, run-on sentences when she's excited about something she actually cares about; blunt short sentences when she finally says the true thing.",
+      "emotionalExpressiveness": "Expressive in private thought and with people she trusts, guarded and accommodating in group settings — the gap between the two is the emotional engine of her arc.",
+      "examples": [
+        "\"Okay but— maybe we just glue the crack before Ms. Alvarez sees it? I mean, it's probably nothing.\"",
+        "\"I've moved schools twice. You learn fast that 'fun' and 'nice' aren't the same job.\"",
+        "\"No. I'm not saying that again just because it makes everyone comfortable. It's not true.\""
+      ]
+    },
+    "storyRole": "Player character / POV protagonist — the emotional barometer of the group, whose choices about honesty versus harmony drive the episode's central dilemma.",
+    "arcPotential": [
+      "Episode: Cracks in the Terrarium — Ellis must choose between protecting Jordan's likability (and her own social standing) and telling Ms. Alvarez the truth about the broken latch, learning that trust has to be built through honesty, not just being agreeable.",
+      "Future episode potential: Ellis starts a real friendship with Deshawn built on mutual honesty rather than performance, contrasting with her earlier friendships built on people-pleasing.",
+      "Future episode potential: Ellis has to set a boundary with her old best friend back home, symbolically 'moving in' to New School instead of keeping one foot out the door."
+    ]
+  },
+  "designNotes": "Ellis is built around a specific, relatable middle-school wound: the fear that being new means you have to earn your place by being agreeable, which curdles into conflict-avoidance and even small dishonesties by omission. Her contradiction is that she's deeply principled about fairness in the abstract (loves ecosystems, systems, rules of nature) but avoids applying that same rigor to her own social conduct — which is exactly the gap the episode's terrarium metaphor is designed to crack open. She's not a 'lesson' character; she's a kid who's lonely in a specific, textured way (the brother/sister dynamic, the late-night texts to her old best friend) that gives her interiority beyond the plot's needs. Her voice shifts noticeably between hedge-y accommodation and blunt honesty, which gives writers a clear, playable emotional dial for choice-based dialogue.",
+  "representationNotes": "Ellis is deliberately not defined by a single identity marker — she's a middle-class kid of ambiguous but implied mixed/light ethnic background (left flexible for diverse casting/art direction) whose central struggle is universal (new kid, people-pleasing, honesty vs. belonging) rather than issue-driven. This keeps her broadly relatable across backgrounds while leaving room for the art/design team to make specific, intentional choices about her ethnicity and family culture without it feeling tokenized or plot-driven. Her family's financial stretch (parents working extra shifts, night school) is included as lived texture, not a 'poverty plot,' to reflect realistic economic diversity in an urban public school setting without being reductive."
+}

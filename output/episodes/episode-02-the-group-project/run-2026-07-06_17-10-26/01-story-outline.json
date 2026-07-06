@@ -1,0 +1,616 @@
+{
+  "episodeOutline": {
+    "title": "Group Work",
+    "synopsis": "Three days, one history fair project, and a group that doesn't quite fit together yet. When teammate Jordan starts cutting corners and quiet, meticulous Maya starts disappearing into the background, the player has to decide — again and again, in small moments — what honesty actually costs, and whether it's worth paying.",
+    "themes": [
+      "Peer Pressure",
+      "Honesty",
+      "Teamwork"
+    ],
+    "targetTraits": [
+      "INTEGRITY",
+      "COMMUNICATION",
+      "JUDGMENT"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1-team-assignment",
+        "title": "The Draw",
+        "location": "Ms. Patel's History Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "casey",
+          "ms-patel"
+        ],
+        "duration": 1,
+        "description": "Ms. Patel announces trios for the Ridgemont History Fair project. The player lands with Jordan — confident, magnetic, always first to talk — and Maya, quiet and precise, already flipping through color-coded notecards. Casey, grouped elsewhere, shoots a small 'good luck' look across the room.",
+        "emotionalBeat": "Nervous anticipation about new social territory",
+        "defaultNextScene": "scene-2-first-meeting"
+      },
+      {
+        "id": "scene-2-first-meeting",
+        "title": "Whose Idea Is It Anyway",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "jordan",
+          "maya"
+        ],
+        "duration": 2,
+        "description": "Jordan pitches a flashy presentation concept before anyone else can speak, waving off Maya's careful suggestion about primary sources without really hearing it. Maya goes quiet, pulling her folder tighter against her chest.",
+        "emotionalBeat": "Discomfort at witnessing a small dismissal",
+        "choicePointId": "choice-1"
+      },
+      {
+        "id": "scene-3-crunch-time",
+        "title": "The Shortcut",
+        "location": "Jordan's Kitchen Table",
+        "characters": [
+          "player",
+          "jordan",
+          "maya"
+        ],
+        "duration": 2,
+        "description": "Two days from deadline, the group is behind. Jordan pulls up a slick project template — 'my brother's old one, basically, don't worry about it' — and suggests they just adapt it wholesale to save time.",
+        "emotionalBeat": "The pull of an easy way out",
+        "choicePointId": "choice-2"
+      },
+      {
+        "id": "scene-4a-honest-path",
+        "title": "Starting Over, For Real",
+        "location": "Jordan's Kitchen Table",
+        "characters": [
+          "player",
+          "jordan",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "They scrap the shortcut and divide the actual work. It's a late, tired night of typing and highlighting, but Maya starts talking — really talking — about her research, and Jordan, grudgingly, starts listening.",
+        "emotionalBeat": "Earned camaraderie",
+        "defaultNextScene": "scene-5-maya-confides"
+      },
+      {
+        "id": "scene-4b-shortcut-path",
+        "title": "Fast and Easy",
+        "location": "Jordan's Kitchen Table",
+        "characters": [
+          "player",
+          "jordan",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "They adapt the template, swapping in a few of their own facts. It looks good, fast. Maya goes quiet, typing without looking up. Jordan high-fives the player like the hard part is already over.",
+        "emotionalBeat": "Uneasy relief masking guilt",
+        "defaultNextScene": "scene-5-maya-confides"
+      },
+      {
+        "id": "scene-4c-uneasy-compromise",
+        "title": "The Middle Ground",
+        "location": "Jordan's Kitchen Table",
+        "characters": [
+          "player",
+          "jordan",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "They use the template loosely, but source-check every claim and cite where ideas actually came from. It's slower and messier, and Jordan keeps sighing about wasted time, but the project starts to feel like theirs.",
+        "emotionalBeat": "Fragile middle ground",
+        "defaultNextScene": "scene-5-maya-confides"
+      },
+      {
+        "id": "scene-5-maya-confides",
+        "title": "Just So Someone Knows",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "maya"
+        ],
+        "duration": 2,
+        "description": "While Jordan's at the printer, Maya admits — quietly, not looking for a fight — that she's done most of the research and organizing herself, and isn't sure her name will even be on the final slide.",
+        "emotionalBeat": "Vulnerability, a trust test",
+        "choicePointId": "choice-3"
+      },
+      {
+        "id": "scene-6a-team-recommits",
+        "title": "Fixing the Slide",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player raises Maya's contribution with Jordan directly. After some defensiveness, the group rewrites the credits slide together. Not perfect, but fairer.",
+        "emotionalBeat": "Repair through communication",
+        "defaultNextScene": "scene-7-presentation-day"
+      },
+      {
+        "id": "scene-6b-doubt-lingers",
+        "title": "It'll Work Out",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "The player reassures Maya things will be fine, but doesn't raise it with Jordan. Maya nods, unconvinced, and goes back to formatting slides that might not have her name on them.",
+        "emotionalBeat": "Avoidance dressed as kindness",
+        "defaultNextScene": "scene-7-presentation-day"
+      },
+      {
+        "id": "scene-6c-early-honesty",
+        "title": "Before It Goes Wrong",
+        "location": "Ms. Patel's Classroom, After School",
+        "characters": [
+          "player",
+          "ms-patel"
+        ],
+        "duration": 1,
+        "description": "Before presentation day, the player asks to speak with Ms. Patel privately — about the shortcut, the credit question, all of it. She listens carefully, more curious than angry.",
+        "emotionalBeat": "The relief and risk of getting ahead of the truth",
+        "defaultNextScene": "scene-10-teacher-conversation"
+      },
+      {
+        "id": "scene-7-presentation-day",
+        "title": "Center Stage",
+        "location": "Classroom, In Front of Class",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "ms-patel",
+          "casey"
+        ],
+        "duration": 2,
+        "description": "Jordan smoothly narrates the whole project as 'my idea, my research,' barely glancing at Maya's slides. From the back row, Casey catches the player's eye.",
+        "emotionalBeat": "The moment of truth, live and public",
+        "choicePointId": "choice-4"
+      },
+      {
+        "id": "scene-8a-credit-corrected",
+        "title": "Setting the Record Straight",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "ms-patel"
+        ],
+        "duration": 1,
+        "description": "Jordan catches himself — or is caught — and actually credits Maya's research aloud. Maya's shoulders drop with relief.",
+        "emotionalBeat": "Quiet vindication",
+        "defaultNextScene": "scene-10-teacher-conversation"
+      },
+      {
+        "id": "scene-8b-credit-stolen",
+        "title": "The Bow",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "maya",
+          "ms-patel"
+        ],
+        "duration": 1,
+        "description": "The presentation ends in applause, and Jordan takes a small bow. Maya says nothing, but she doesn't meet anyone's eyes on the way back to her seat.",
+        "emotionalBeat": "Swallowed injustice",
+        "defaultNextScene": "scene-10-teacher-conversation"
+      },
+      {
+        "id": "scene-10-teacher-conversation",
+        "title": "How Did It Really Go?",
+        "location": "Ms. Patel's Classroom, After the Bell",
+        "characters": [
+          "player",
+          "ms-patel"
+        ],
+        "duration": 2,
+        "description": "Ms. Patel asks the player, alone, how the project really went — who did what, whether everyone's contributions were represented honestly. A simple question with no easy answer.",
+        "emotionalBeat": "The reckoning",
+        "choicePointId": "choice-5"
+      },
+      {
+        "id": "scene-11-integrity-ending",
+        "title": "Clean, If Uncomfortable",
+        "location": "Ms. Patel's Classroom",
+        "characters": [
+          "player",
+          "ms-patel"
+        ],
+        "duration": 1,
+        "description": "The player lays it out plainly — the shortcut, the credit issue, all of it. Ms. Patel nods slowly, says she appreciates the honesty, and mentions she'll grade 'with full information.'",
+        "emotionalBeat": "Uncomfortable but clean",
+        "defaultNextScene": "scene-12-epilogue"
+      },
+      {
+        "id": "scene-11-compromise-ending",
+        "title": "Some Rough Patches",
+        "location": "Ms. Patel's Classroom",
+        "characters": [
+          "player",
+          "ms-patel"
+        ],
+        "duration": 1,
+        "description": "The player shades the truth just enough to protect the group without lying outright. Ms. Patel seems to sense there's more, but doesn't push.",
+        "emotionalBeat": "Uneasy middle ground",
+        "defaultNextScene": "scene-12-epilogue"
+      },
+      {
+        "id": "scene-11-complicit-ending",
+        "title": "Everyone Contributed Equally",
+        "location": "Ms. Patel's Classroom",
+        "characters": [
+          "player",
+          "ms-patel"
+        ],
+        "duration": 1,
+        "description": "The player insists everything went smoothly. Ms. Patel says 'good to hear' — but the words sit heavy in the player's chest all the way to lunch.",
+        "emotionalBeat": "Guilt disguised as relief",
+        "defaultNextScene": "scene-12-epilogue"
+      },
+      {
+        "id": "scene-12-epilogue",
+        "title": "What Casey Asks",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "casey"
+        ],
+        "duration": 1,
+        "description": "At lunch, Casey asks how the project really went. The answer the player gives — and how it feels to give it — says more about who they're becoming at Ridgemont than any grade will.",
+        "emotionalBeat": "Reflection and identity settling into place",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2-first-meeting",
+        "prompt": "Jordan just talked over Maya's idea without really hearing it. What do you do?",
+        "context": "It's the first meeting. Nobody has established roles yet, and the group dynamic is still up for grabs.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"Wait, I think Maya was onto something — let's actually hear it.\"",
+            "nextScene": "scene-3-crunch-time"
+          },
+          {
+            "id": "b",
+            "text": "Say nothing and let the moment pass.",
+            "nextScene": "scene-3-crunch-time"
+          },
+          {
+            "id": "c",
+            "text": "Redirect gently: \"What if we combined both ideas?\"",
+            "nextScene": "scene-3-crunch-time"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -1
+          },
+          "c": {
+            "JUDGMENT": 2,
+            "COMMUNICATION": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-3-crunch-time",
+        "prompt": "Jordan wants to adapt his brother's old project template wholesale to save time. What's your call?",
+        "context": "The deadline is real. So is the shortcut Jordan is offering, and the group is exhausted enough to take it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"No — let's just do the real work. I'll help.\"",
+            "nextScene": "scene-4a-honest-path"
+          },
+          {
+            "id": "b",
+            "text": "\"Fine, just this once. It's not a big deal.\"",
+            "nextScene": "scene-4b-shortcut-path"
+          },
+          {
+            "id": "c",
+            "text": "\"Let's use it as a structure, but cite everything properly.\"",
+            "nextScene": "scene-4c-uneasy-compromise"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": -2
+          },
+          "c": {
+            "JUDGMENT": 2,
+            "INTEGRITY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-5-maya-confides",
+        "prompt": "Maya just admitted she's carried most of the work and isn't sure she'll get credit. How do you respond?",
+        "context": "Jordan isn't in the room. This is a private, unguarded moment — nothing said here has an audience, but it still matters.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"That's not okay. Let's fix it with Jordan, together.\"",
+            "nextScene": "scene-6a-team-recommits"
+          },
+          {
+            "id": "b",
+            "text": "\"I'm sure it'll work out — try not to worry.\"",
+            "nextScene": "scene-6b-doubt-lingers"
+          },
+          {
+            "id": "c",
+            "text": "\"I think we should talk to Ms. Patel about how this project actually came together.\"",
+            "nextScene": "scene-6c-early-honesty"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "JUDGMENT": -1,
+            "INTEGRITY": -1
+          },
+          "c": {
+            "JUDGMENT": 2,
+            "COMMUNICATION": 1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-7-presentation-day",
+        "prompt": "Jordan is presenting the whole project as his own, live, in front of the class. Do you say something?",
+        "context": "Everyone is watching. Maya is sitting right there, saying nothing. Ms. Patel is taking notes.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speak up now: \"Actually, Maya did most of this research.\"",
+            "nextScene": "scene-8a-credit-corrected"
+          },
+          {
+            "id": "b",
+            "text": "Stay quiet and let the presentation finish.",
+            "nextScene": "scene-8b-credit-stolen"
+          },
+          {
+            "id": "c",
+            "text": "Catch Jordan's eye and quietly gesture him toward crediting Maya himself.",
+            "nextScene": "scene-8a-credit-corrected"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -2
+          },
+          "c": {
+            "JUDGMENT": 2,
+            "COMMUNICATION": 1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-10-teacher-conversation",
+        "prompt": "Ms. Patel asks, plainly, how the project really went. What do you tell her?",
+        "context": "This is the last checkpoint. Whatever's been left unsaid all week comes due here.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tell her everything, including the shortcut and the credit issue.",
+            "nextScene": "scene-11-integrity-ending"
+          },
+          {
+            "id": "b",
+            "text": "Mention 'some rough patches' without naming names.",
+            "nextScene": "scene-11-compromise-ending"
+          },
+          {
+            "id": "c",
+            "text": "\"It went great, everyone contributed equally.\"",
+            "nextScene": "scene-11-complicit-ending"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 3,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "JUDGMENT": 1,
+            "INTEGRITY": -1
+          },
+          "c": {
+            "INTEGRITY": -3,
+            "JUDGMENT": -2
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-integrity-champion",
+        "name": "The Integrity Path",
+        "triggeredBy": [
+          "choice-2:a",
+          "choice-3:a",
+          "choice-5:a"
+        ],
+        "description": "The player consistently chooses honesty over comfort — refusing the shortcut, defending Maya, and telling Ms. Patel the full truth.",
+        "outcome": "Maya's trust in the player deepens significantly; Jordan is uncomfortable but ultimately more honest going forward. The grade may take a hit, but the player's reputation for trustworthiness solidifies."
+      },
+      {
+        "id": "branch-quiet-diplomat",
+        "name": "The Diplomat's Path",
+        "triggeredBy": [
+          "choice-1:c",
+          "choice-2:c",
+          "choice-4:c"
+        ],
+        "description": "The player never makes a scene, but consistently steers the group toward fairness through private, low-key interventions.",
+        "outcome": "The group ends up in a genuinely better place without any public confrontation. Jordan respects the player without ever quite realizing he was managed."
+      },
+      {
+        "id": "branch-conflict-avoider",
+        "name": "The Conflict-Avoidant Path",
+        "triggeredBy": [
+          "choice-1:b",
+          "choice-3:b",
+          "choice-5:b"
+        ],
+        "description": "The player consistently avoids friction, prioritizing comfort over honesty at each turn.",
+        "outcome": "Maya's trust erodes quietly; nothing catastrophic happens, but the player is left with a nagging sense of having let something slide that mattered."
+      },
+      {
+        "id": "branch-complicit",
+        "name": "The Complicit Path",
+        "triggeredBy": [
+          "choice-2:b",
+          "choice-4:b",
+          "choice-5:c"
+        ],
+        "description": "The player goes along with the shortcut, stays silent when Jordan takes credit, and lies to the teacher to smooth it over.",
+        "outcome": "The project succeeds on paper, but Maya is visibly hurt and distant afterward. The player carries a private discomfort that seeds future tension with both Maya and their own self-image."
+      },
+      {
+        "id": "branch-early-truth-teller",
+        "name": "The Early Honesty Path",
+        "triggeredBy": [
+          "choice-3:c"
+        ],
+        "description": "The player brings the issue to Ms. Patel before the presentation even happens, skipping the public confrontation entirely.",
+        "outcome": "A structurally different back half of the episode — presentation day plays out without the credit drama, replaced by a tense, mature conversation with the teacher earlier than expected."
+      }
+    ],
+    "emotionalArc": [
+      "Anticipation - new group, unknown dynamics",
+      "Discomfort - witnessing a small unfairness",
+      "Temptation - the pull of an easy shortcut under time pressure",
+      "Vulnerability - Maya's private admission builds intimacy and stakes",
+      "Public reckoning - the credit issue plays out in front of others",
+      "Confession or evasion - the private conversation with an authority figure",
+      "Reflection - naming, out loud to a friend, who you chose to be"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from passive observer to active participant in the group's ethics, discovering that integrity is rarely one big decision but a string of small ones."
+      },
+      {
+        "character": "maya",
+        "arc": "Begins withdrawn and unseen; depending on player choices, either opens up and is validated, or continues to shrink and disengage — a visible barometer of the player's choices."
+      },
+      {
+        "character": "jordan",
+        "arc": "Starts confident and corner-cutting; can end the episode either genuinely humbled and more collaborative, or unchanged and rewarded for taking credit, depending on whether he's ever challenged."
+      },
+      {
+        "character": "casey",
+        "arc": "Continues as the player's touchstone friendship from Episode 1, appearing briefly to anchor the episode's events to the player's evolving reputation and self-concept."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "INTEGRITY",
+        "primaryChoices": [
+          "choice-2",
+          "choice-3",
+          "choice-5"
+        ],
+        "description": "Measured through decisions about the shortcut, defending Maya's credit privately, and final honesty with the teacher."
+      },
+      {
+        "trait": "COMMUNICATION",
+        "primaryChoices": [
+          "choice-1",
+          "choice-4"
+        ],
+        "description": "Measured through whether and how the player speaks up in the moment — publicly, privately, or not at all."
+      },
+      {
+        "trait": "JUDGMENT",
+        "primaryChoices": [
+          "choice-1",
+          "choice-2",
+          "choice-3",
+          "choice-4"
+        ],
+        "description": "Measured through the player's read on timing, tone, and whether a diplomatic or direct approach serves the situation best."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player-maya",
+        "dynamic": "A trust relationship built through small moments of being seen or overlooked; highly sensitive to early choices and central to the episode's emotional stakes."
+      },
+      {
+        "pair": "player-jordan",
+        "dynamic": "A tension between social ease and ethical friction; Jordan is not a villain, just someone used to things going his way, and can be moved by direct but respectful pushback."
+      },
+      {
+        "pair": "player-casey",
+        "dynamic": "A continuity friendship from Episode 1 that provides a low-stakes mirror for reflection, especially in the epilogue."
+      },
+      {
+        "pair": "player-ms-patel",
+        "dynamic": "An emerging relationship with authority and institutional trust, tested directly in the final choice."
+      }
+    ],
+    "replayHooks": [
+      "Three structurally distinct endings (integrity, compromise, complicit) with different final teacher exchanges and epilogue tones",
+      "An entirely different back-half structure available via the early-honesty branch, which skips the public presentation confrontation",
+      "Maya's arc — supported vs. sidelined — visibly changes her dialogue and body language across replays",
+      "Jordan's redemption or lack thereof depends on whether he's ever challenged, inviting players to test 'what if I said something earlier'",
+      "The final Casey conversation reflects back the player's cumulative choices, making players want to see how the conversation changes with a different path"
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Model that integrity is built through small, repeated choices rather than single dramatic moments",
+      "Show that speaking up for someone else is a form of both communication and courage",
+      "Illustrate the difference between avoiding conflict and choosing peace thoughtfully",
+      "Demonstrate that honesty with authority figures can be uncomfortable but ultimately relationship-building",
+      "Highlight teamwork as requiring equitable credit, not just divided labor"
+    ],
+    "conversationStarters": [
+      "Have you ever been in a group where one person did more work than they got credit for? What did you do?",
+      "Is it ever okay to stay quiet about something unfair to keep the peace? When does that stop being okay?",
+      "What's the difference between protecting a friend and covering for them?",
+      "How did it feel when Maya confided in you privately versus when the issue came up publicly?",
+      "If you played again and made different choices, how do you think Jordan or Maya would have reacted differently?"
+    ]
+  },
+  "designNotes": "This episode intentionally avoids a single binary 'cheat or don't cheat' moment, instead spreading the ethical weight across five smaller decisions so that integrity reads as a pattern of behavior rather than a single test. Maya functions as the emotional throughline and the most sensitive indicator of player choices, while Jordan is written sympathetically — confident and corner-cutting rather than malicious — so that confronting him carries real social risk rather than being an easy villain takedown. The early-honesty branch (choice-3:c) is a deliberate structural fork that rewards players who value proactive transparency with a genuinely different episode shape, which should help sell the replay value. Convergence points (scene-3, scene-5, scene-7, scene-10) keep the episode producible at reasonable scope while still preserving three distinct final endings.",
+  "uncertainties": [
+    "Whether converging choice-1's three options into the same next scene sufficiently honors 'meaningful divergence,' or whether it reads as a low-stakes choice; may need scene-3 dialogue to subtly reflect earlier tone even though the scene ID is shared.",
+    "Whether 13 minutes is achievable given five choice points plus an epilogue, or whether one branch (likely the presentation-day sequence) should be trimmed for pacing.",
+    "Whether Jordan needs a redemptive beat even in the 'complicit' branch to avoid feeling like a flat antagonist by the end of the episode.",
+    "Whether Ms. Patel's presence should be foreshadowed more in Episode 1 to make the final trust-based choice feel earned rather than sudden."
+  ],
+  "alternativesConsidered": [
+    "A fully binary honest/dishonest structure with only two endings — rejected as too reductive for a nuanced peer-pressure theme.",
+    "Having the teacher intervene proactively upon suspicion of the shortcut — rejected because it removes player agency and shifts the moral weight away from the player's choices.",
+    "Fully separate scene content for every combination of choice-1 and later choices — rejected for production scope; convergence points were used instead to keep the episode playable within 10-15 minutes.",
+    "Making Jordan a straightforward antagonist who never listens — rejected in favor of a more realistic, persuadable character to keep the 'confront or not' choice genuinely uncertain."
+  ]
+}

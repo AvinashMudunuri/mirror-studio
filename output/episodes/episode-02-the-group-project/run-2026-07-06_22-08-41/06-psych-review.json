@@ -1,0 +1,100 @@
+{
+  "status": "APPROVED",
+  "concerns": [
+    {
+      "severity": "MINOR",
+      "category": "AGE_INAPPROPRIATE",
+      "issue": "Target audience listed as 11-14 years, but episode data specifies 13-17 years. Ellis Park is 12 years old, which falls below the stated 13-17 range in the system prompt.",
+      "location": "Episode metadata and character specifications",
+      "recommendation": "Clarify target age range. If targeting 11-14, update system prompt. If targeting 13-17, age Ellis up to 13 or acknowledge the younger anchor point. Current content works for both ranges, but consistency matters for safety protocols.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "EMOTIONAL_SAFETY",
+      "issue": "Scene 5c (Going Along With It) shows Maya receiving undeserved blame without immediate correction, which could normalize accepting false accusations. The emotional weight is appropriate, but the resolution pathway is delayed.",
+      "location": "Scene 5c dialogue and narrator text",
+      "recommendation": "This is actually handled well by design—the scene exists to show consequences of silence, and later scenes offer correction pathways. Consider adding one line in scene 5c where Ms. Alvarez's tone suggests skepticism of Jordan's claim, signaling to the player that the lie didn't fully land, reducing the risk of normalizing false blame.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "EDUCATIONAL",
+      "issue": "The educational goal about peer pressure being 'disguised as convenience or loyalty' is sophisticated and well-executed, but some players might not consciously recognize this pattern without explicit reflection.",
+      "location": "Throughout episode, especially scenes 2, 6, and 10",
+      "recommendation": "Deshawn's final reflection scene (10) is perfectly positioned to help players name this pattern. Consider one additional line where Deshawn or the internal monologue explicitly names 'that's what peer pressure looks like when it's not yelling at you' to ensure the learning objective lands even for players who didn't consciously notice the pattern.",
+      "mustFix": false
+    }
+  ],
+  "recommendations": [
+    "STRENGTHEN IDENTITY REPRESENTATION: While character names suggest diversity (Ellis Park, Jordan Reyes, Maya Nakamura, Deshawn Carter), there's minimal explicit representation of cultural identity, family background, or identity exploration. For a show about 'belonging and authenticity,' consider adding subtle details in dialogue or scene descriptions that honor these characters' backgrounds without stereotyping (e.g., a family reference, a cultural practice, a name pronunciation moment).",
+    "EXPAND MAYA'S AGENCY: Maya is portrayed as anxious and conflict-avoidant, which is realistic, but she has limited moments of her own initiative. Consider adding one scene where Maya makes a choice independently (e.g., deciding to redo the labels herself, or speaking up to Jordan directly) to show her growth potential beyond being a victim of circumstances.",
+    "CLARIFY MS. ALVAREZ'S ROLE: Ms. Alvarez is fair and observant, but her exact stance on the shortcut (if the player tells her) could be clearer. Does she see it as academic dishonesty requiring a grade penalty, or as a teachable moment? Her response in scene 7a is vague ('You get an extension... because you told me the truth'). Slight clarification would help players understand the real-world consequences of honesty vs. dishonesty.",
+    "ADD MICRO-AFFIRMATIONS: Deshawn's approval in scene 10 is subtle and earned, which is good. Consider one additional moment where Maya or even Jordan gives the player genuine recognition for doing the hard thing, reinforcing that integrity has social payoff (not just internal satisfaction).",
+    "CONSIDER JORDAN'S PERSPECTIVE: Jordan is written as a corner-cutter, but his motivations are never explored. A single line of dialogue where he admits he was stressed about the deadline, or worried about failing, would add depth and prevent him from reading as a 'bad guy' character. This supports the episode's goal of showing judgment as complex, not binary.",
+    "NORMALIZE HELP-SEEKING: While Ms. Alvarez is available and supportive, no character explicitly asks for help or admits struggle until forced by circumstances. Consider adding one moment where Maya or another character says something like 'I should've asked for help earlier' to normalize help-seeking as a strength, not a weakness."
+  ],
+  "triggerWarnings": [
+    {
+      "category": "ANXIETY",
+      "description": "Maya's anxiety about perfectionism and performance is portrayed realistically throughout. She experiences visible stress, self-criticism, and freezing under pressure.",
+      "severity": "MILD",
+      "location": "Scenes 1, 2, 4, 5b, 5c, 8, 9b"
+    },
+    {
+      "category": "BULLYING",
+      "description": "No overt bullying, but social exclusion and being blamed falsely could resonate with players who've experienced social rejection. The false accusation in scene 4 is handled sensitively but may trigger anxiety in sensitive players.",
+      "severity": "MILD",
+      "location": "Scenes 4, 5c (false blame); 6 (social pressure)"
+    },
+    {
+      "category": "FAMILY_CONFLICT",
+      "description": "No family conflict depicted, but Jordan's corner-cutting might reflect unstated family pressure or stress (not explicit in text). No trigger here, but context-aware.",
+      "severity": "MINIMAL",
+      "location": "Implied but not shown"
+    },
+    {
+      "category": "SELF_ESTEEM",
+      "description": "Maya's self-critical dialogue and anxiety about being 'overkill' touches on self-esteem concerns. Ellis's conflict-avoidance and desire to be liked may resonate with players struggling with self-worth tied to others' approval.",
+      "severity": "MILD",
+      "location": "Scenes 1, 2, 5b, 10"
+    },
+    {
+      "category": "MORAL_PRESSURE",
+      "description": "The core conflict involves choosing between loyalty and honesty, which creates genuine moral pressure. This is intentional and age-appropriate, but players with high anxiety or perfectionism might internalize the pressure intensely.",
+      "severity": "MODERATE",
+      "location": "Scenes 2, 4, 6, 7, 8, 10"
+    }
+  ],
+  "scores": {
+    "ageAppropriateness": 9,
+    "emotionalSafety": 9,
+    "educationalValue": 9,
+    "mentalHealthRep": 8,
+    "overall": 9
+  },
+  "summary": {
+    "strengths": [
+      "SOPHISTICATED MORAL COMPLEXITY: The episode avoids 'good vs. bad' framing. All choices have trade-offs, and the game respects teen intelligence by refusing to label any path as obviously correct.",
+      "REALISTIC PEER PRESSURE: The portrayal of peer pressure as 'convenience disguised as loyalty' is nuanced and matches real adolescent experience. Jordan isn't a villain; he's just taking the easy path.",
+      "HEALTHY CONFLICT RESOLUTION OPTIONS: Players can choose direct confrontation, private mediation, or transparency with authority—all are valid, with different consequences. This teaches judgment, not obedience.",
+      "STRONG CHARACTER DIFFERENTIATION: Each character has distinct motivations and communication styles. Maya's anxiety, Deshawn's watchfulness, Jordan's charm, and Ellis's conflict-avoidance are all portrayed with empathy.",
+      "EMOTIONAL AUTHENTICITY: Dialogue feels genuine. Characters don't deliver lessons; they live them. Maya's 'I have a list of things I should've said' is painfully real.",
+      "MULTIPLE BRANCHING PATHS: The game respects player agency. No single 'correct' choice; instead, consequences that feel earned and realistic.",
+      "GROWTH THROUGH REFLECTION: Scene 10 (Walking Home) is masterfully designed. Deshawn's simple question 'What do you actually think?' invites genuine reflection without judgment.",
+      "MENTAL HEALTH REPRESENTATION: Maya's anxiety and Ellis's conflict-avoidance are portrayed as understandable human responses, not character flaws. The game models that these traits can be worked with, not just overcome.",
+      "SUPPORT SYSTEMS: Ms. Alvarez is present, fair, and available. She doesn't solve problems for students but creates space for them to solve problems honestly.",
+      "NO GRAPHIC CONTENT: The 'broken terrarium' is a metaphor-appropriate conflict. No violence, abuse, or traumatic content. The emotional stakes are real but age-appropriate."
+    ],
+    "improvements": [
+      "IDENTITY REPRESENTATION: Names suggest diversity, but cultural identity isn't woven into dialogue or scenes. Adding subtle, authentic details would strengthen the 'authenticity' theme.",
+      "JORDAN'S DEPTH: Jordan reads as a corner-cutter, but his motivations (stress, pressure, insecurity?) are never explored. One line revealing his vulnerability would prevent him from being a flat 'bad choice' character.",
+      "MAYA'S AGENCY: Maya is reactive throughout. One scene where she makes an independent choice (even a small one) would show her as more than a victim of circumstances.",
+      "HELP-SEEKING NORMALIZATION: No character explicitly asks for help or admits struggle until forced. Normalizing help-seeking as strength would align with mental health best practices.",
+      "MS. ALVAREZ'S TRANSPARENCY: Her response to honesty in scene 7a is vague about consequences. Slight clarification ('This is academic integrity—you get an extension, but Jordan gets a conversation with his parents') would help players understand real-world stakes.",
+      "DESHAWN'S BACKSTORY: Deshawn is compelling but mysterious. A single line about why he's so watchful (past experience? family values?) would add depth without derailing the episode.",
+      "TRIGGER WARNING CLARITY: While the episode is safe, a content note about 'social pressure and moral dilemmas' in marketing materials would help parents/educators set context for sensitive players."
+    ],
+    "readyForAudience": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-choice linkage uses both 'choicePointId' field in scenes and 'scene' field in choices array. Both mechanisms are present and consistent, but this dual-reference pattern could be simplified for maintainability.",
+      "location": "scenes[*].choicePointId vs choices[*].scene",
+      "suggestion": "Consider standardizing on a single linkage mechanism (either scene→choice via choicePointId, or choice→scene via scene field) to reduce redundancy and potential for drift. Current implementation is correct but adds cognitive load."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Branch resolution logic relies on 'closest-match' semantics for partial choice matches (e.g., branch-quiet-diplomat can match even if choice-3 diverges). This is documented in the outcomes array but not formalized in a resolution algorithm.",
+      "location": "outcomes[*].matchNote",
+      "suggestion": "Document the exact matching algorithm (e.g., 'if 3 of 4 primary choices match, use closest-match; if 2 of 4, use fallback') in a separate 'branchResolutionRules' field at the episode level, or in rendering pipeline documentation. Current design is sound but implicit."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice-3 option 'c' structurally reroutes the episode (skips choice-4 and choice-5 entirely), creating a deterministic sub-path. This is intentional and well-documented, but the scene graph is complex enough that a visual diagram or explicit 'routingMap' would help future maintainers.",
+      "location": "choice-3, outcomes[branch-early-truth-teller]",
+      "suggestion": "Add a 'routingMap' or 'sceneGraph' field at the episode level showing which choices lead to which scene sequences, especially for deterministic reroutes like choice-3:c → scene-6c → scene-7-presentation-day-eh → scene-9-hallway-relief-eh → scene-10-followup-eh."
+    },
+    {
+      "category": "STYLE",
+      "message": "Five distinct outcome branches (integrity-champion, quiet-diplomat, conflict-avoider, complicit, early-truth-teller) create a rich branching structure, but the epilogue scene (scene-12) uses branchDialogue to flavor the same scene rather than routing to different scenes. This is correct but means the 'ending' is always the same location, just with different dialogue.",
+      "location": "scene-12-epilogue, branchDialogue",
+      "suggestion": "This is a valid design choice (same scene, different flavors). If future episodes want more structurally distinct endings, consider routing to different epilogue scenes instead. Current approach is efficient and appropriate for this episode's scope."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "Episode contains 12 scenes, 5 choices, 5 outcomes, and 6 character profiles. This is a well-scoped, manageable complexity. No performance concerns.",
+      "location": "episode-level metrics",
+      "suggestion": "No action needed. Episode is appropriately sized for a 14-minute play time."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Character 'player' (Nico Salgado) has extensive background including a secret ('he got moved to this school mid-year after a blowup where he stayed silent while a friend took the blame'). This secret is thematically perfect for the episode but is never explicitly surfaced in dialogue or internal monologue.",
+      "location": "characters[player].background.secrets",
+      "suggestion": "Consider adding an INTERNAL dialogue line in scene-5 or scene-6 that hints at Nico's past without naming it, to deepen the emotional resonance of his choice to speak up. Example: 'I've been the quiet kid before. Turns out it doesn't actually fix anything.' (This line actually exists in scene-11-integrity-ending, so the connection is there, but earlier foreshadowing would strengthen it.)"
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Casey Nakamura-Díaz has a secret ('Last year, Casey was the 'Maya' in a group project — did all the work, got quietly written out') that mirrors Maya's current situation. This is thematically rich but never explicitly revealed in the episode.",
+      "location": "characters[casey].background.secrets",
+      "suggestion": "Consider a future episode or a deeper scene in this one where Casey hints at their own experience, giving Nico (and the player) a reason to trust Casey's observations about Maya. Current design leaves this as subtext, which is valid but could be made more explicit."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Ms. Patel's secret ('In eighth grade she told a teacher the truth about a group project and got branded a snitch for a year') directly informs her 'curious, not furious' approach, but this is never revealed to the player in the episode.",
+      "location": "characters[ms-patel].background.secrets",
+      "suggestion": "This is intentional design — Ms. Patel's past is subtext that explains her behavior without needing to be stated. No change needed, but future episodes could reveal this to deepen the relationship."
+    }
+  ],
+  "summary": {
+    "totalChecks": 47,
+    "passedChecks": 47,
+    "failedChecks": 0,
+    "warningCount": 7
+  },
+  "recommendations": [
+    "EPISODE IS SHIP-READY. All schema, logic, and consistency checks pass. The episode is thematically coherent, mechanically sound, and educationally aligned.",
+    "Consider adding a 'routingMap' field to future episodes with complex choice-driven reroutes (like choice-3:c here) to aid maintainability.",
+    "The five-branch outcome structure is excellent. Document the 'closest-match' resolution algorithm formally if it will be reused across episodes.",
+    "Character secrets (Nico's past, Casey's past, Ms. Patel's past) are thematically perfect and create rich subtext. Consider whether future episodes should surface these explicitly or keep them as subtext — either approach works, but consistency across the season will matter.",
+    "The 'early honesty' path (choice-3:c) is a strong design pattern: rewarding proactive integrity with a structurally different (shorter, less fraught) back half. This could become a signature mechanic of the season.",
+    "Dialogue is naturalistic and age-appropriate throughout. Character voices are distinct and consistent.",
+    "Educational goals (model integrity as small repeated choices, show speaking up as courage, illustrate difference between avoiding conflict and choosing peace) are all clearly served by the episode structure."
+  ]
+}
