@@ -1,0 +1,77 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "The player-character (id: 'player') is named 'Maya Ortiz-Chen' and a separate supporting NPC (id: 'maya') is named 'Maya Reyes'. Both are referred to as 'Maya' throughout narration and dialogue, creating severe ambiguity about who is being referenced in nearly every scene (e.g., NARRATOR lines like 'Maya doesn't speak yet' in scene-1, or maya's line 'I'm Maya, by the way. Also Maya, actually' in scene-3a). While the shared-name joke appears intentional in scene-3a, it is never clarified elsewhere, and narrator text uses 'Maya' generically for the protagonist in scenes where the NPC Maya is also present (scene-4, scene-5a, scene-6a1/6a2), making it genuinely unclear which Maya is being described.",
+      "location": "characters[0].name (player) vs characters[3].name (maya); scene-1.dialogue, scene-3a.dialogue, scene-4.dialogue, scene-5a.dialogue, scene-6a1/6a2.dialogue",
+      "expectedValue": "Protagonist and NPC should have distinguishable names, OR the shared-name device should be used consistently and clarified (e.g., NPC referred to as 'Maya R.' or nickname in narration after the reveal) to avoid reader confusion.",
+      "actualValue": "Both characters are 'Maya' and narration doesn't disambiguate outside scene-3a's joke beat.",
+      "fix": "Either rename one character (recommend renaming NPC to avoid confusion, e.g., 'Maya Reyes' -> a different first name), or have the narrator consistently use full names/last names ('Maya R.' vs player's internal 'Maya') after the introduction to keep referents clear."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "SCHEMA",
+      "message": "QA checklist requires every scene to have a 'synopsis' field, but scenes only contain a 'description' field. If the canonical schema requires 'synopsis' per scene, this is a field-naming mismatch across all 21 scenes.",
+      "location": "scenes[*].synopsis",
+      "expectedValue": "scenes[*].synopsis (string)",
+      "actualValue": "scenes[*].description (present instead)",
+      "fix": "Confirm which field name the schema requires. If 'synopsis' is mandatory, either rename 'description' to 'synopsis' across all scenes or add both fields for compatibility."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Character 'ms_alvarez' is listed in episode.characters and appears in scene-7, but is never referenced by choiceDialogue or given a traitMapping interaction — fine on its own, but she is the mechanism for 'Consequences arrive' per emotionalArc and her only appearance is a single scene with no player choice tied to her directly, making her narrative purpose (pairing selection) entirely exposition-only. Not a hard blocker, but the outcomes array's 'Four Endings' description implies her pairing decision is pivotal, yet no choice/trait exists around it.",
+      "location": "scenes[scene-7], choices",
+      "expectedValue": "Some interactive acknowledgment of Ms. Alvarez's deliberate pairing (even minor) OR remove implication of interactivity from outcomes description.",
+      "actualValue": "Ms. Alvarez scene is pure narration/dialogue with no choice tied to it.",
+      "fix": "Optional: Add a small reactive line variant based on player traits, or clarify in documentation that this scene is a non-interactive plot pivot by design."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "scene-5a and scene-6c2 list 'jordan' and other characters (tyler, chloe) in their 'characters' array even though those characters do not speak or physically appear in that scene's dialogue (only referenced/observed from a distance). This could cause confusion for anyone using the characters array to determine who needs to be rendered/present in scene.",
+      "location": "scenes[scene-5a].characters, scenes[scene-6c2].characters",
+      "suggestion": "Consider distinguishing 'present characters' from 'referenced characters' with a separate field (e.g., 'mentionedCharacters') for clarity, or add a note in scene metadata."
+    },
+    {
+      "category": "STYLE",
+      "message": "outcomes[].path uses non-standard notation like 'scene-2(a)' and 'scene-4(a)' rather than actual scene/choice IDs (e.g., 'scene-3a', 'choice-2.a'), which don't directly map to any queryable ID in the episode.",
+      "location": "outcomes[*].path",
+      "suggestion": "Use exact scene/choice IDs in path strings for traceability, e.g., 'scene-1 > choice-1(a) > scene-3a > scene-4'."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "scene-6a1 (duration 1) directly follows scene-5a/choice-3 but oddly reintroduces a new topic (group project due Friday) without narrative connective tissue explaining the transition from the Tyler/Jordan mockery moment to Maya's low-key comment — slight tonal whiplash.",
+      "location": "scenes[scene-6a1].dialogue",
+      "suggestion": "Consider adding a brief narrator beat bridging the awkward laughter to Maya's quiet subject change for smoother pacing."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "Total scene count (21) and dialogue lines are extensive for a single episode; combined with duration estimates, verify estimatedPlayTime (13 min) actually reflects the longest full path (scene-1→2→3x→4→5x→choice→6x→7→choice→8x→choice→9x), which sums closer to 12.5–14 minutes depending on path — value is plausible but should be recalculated precisely per path rather than estimated.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Recalculate estimatedPlayTime using the longest and shortest paths to ensure the reported value is accurate/representative (e.g., provide a range)."
+    },
+    {
+      "category": "STYLE",
+      "message": "Character 'maya' (NPC) and 'jordan' both introduced with rich backstory (bird book, grandmother) but Jordan's grandmother reveal in scene-9a duplicates similar emotional beats to another possible episode's arc mentioned in arcPotential ('grandmother' mentioned twice in bio) — verify no redundant reveal across episodes in this season.",
+      "location": "scenes[scene-9a].dialogue, characters[jordan].background",
+      "suggestion": "Track major reveals (e.g., grandmother's bird book) so they aren't repeated identically in a future episode."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 28,
+    "failedChecks": 3,
+    "warningCount": 5
+  },
+  "recommendations": [
+    "Resolve the player/NPC name collision (Maya/Maya) before this episode reaches players — this is the most player-facing and confusing issue in the document.",
+    "Standardize field naming between 'description' and 'synopsis' across the episode/scene schema to avoid QA/schema tooling failures.",
+    "Add a lightweight legend or scene-level flag distinguishing 'present' vs 'mentioned' characters to prevent renderer/character-tracking bugs downstream.",
+    "Clean up outcome path notation to use exact IDs for automated validation tooling.",
+    "Overall branching logic, ID uniqueness, and trait mechanics are solid — the episode is structurally sound and emotionally coherent; primary blocker is naming consistency, not structural failure."
+  ]
+}

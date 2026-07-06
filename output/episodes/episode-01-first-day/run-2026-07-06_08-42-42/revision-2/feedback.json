@@ -1,0 +1,97 @@
+{
+  "failing": [
+    "creativeDirector",
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The four lunch arcs (Priya/Solo/Ally) all funnel into the exact same scene-7 regardless of what happened, and scene-7's dialogue barely acknowledges which path got you there. Ms. Alvarez's 'almost like I thought about it' line implies she's read the room, but the scene doesn't flex based on whether the player just abandoned Jordan or bonded with her — that's a missed opportunity for the convergence point to feel like it's carrying weight from the choices, not just resetting to neutral.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The 'Small Stand' branch (scene-6a2) resolves too cleanly — Tyler backs off with zero real friction, Chloe recalculates instantly, Priya nods approvingly. For a story about the actual social cost of standing up to a group, this needs one moment where it doesn't fully land, or where the win costs something, or it risks being a wish-fulfillment fantasy rather than a felt truth. Compare to scene-6a1, which has real texture (the hollow victory, Priya's silence) — 6a2 needs an equivalent shadow.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The Jordan-abandoned arc (scene-6c2) is strong and quietly devastating, but it's never revisited before the semester project forces them together — there's no scene where the player has to reckon with having ditched Jordan at lunch before they're stuck as partners. That reckoning is implied but never dramatized, which softens the consequence.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Jordan is the strongest-written character here — consistent, specific, never a prop. Keep her.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Priya risks being a 'perfect moral compass' character rather than a teenager. She never has a flaw, a bad day, or a moment of her own uncertainty — she exists to approve or withdraw approval from the player. Give her one moment of self-interest or contradiction so she reads as a person rather than a rubric.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Tyler is drawn as 'loud but harmless' by narrative fiat (Priya literally says so), which lets him off the hook a little easily for a joke that's genuinely unkind. If the theme is that small cruelties compound, Tyler being narratively pre-forgiven undercuts that. Consider letting his 'harmlessness' be something the player has to decide about, not something they're told.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Ms. Alvarez is fun but is doing a LOT of winking-at-camera dialogue ('almost like I thought about it') for a two-scene character. It's charming once; twice risks cutesy.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The tonal balance between comedy and quiet emotional weight is one of this episode's real strengths — the humor never undercuts the vulnerability (see 6c1's 'Both things can be true, I've found').",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The ending variants (9a-9d) correctly resist a mandatory happy ending, which is brave and correct for the theme — 9d in particular ('I wonder what it was') is a genuinely mature, bittersweet note for this age group and shouldn't be softened.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Some of the 'Priya's-eyebrow-raised watching' staging (scene-3a, scene-4) is doing a lot of 'audience surrogate approves of you' work. Be careful the episode doesn't quietly teach that the point of kindness is to be noticed and rewarded by a cool older girl, rather than being its own reward. The priya-fade/priya-respect coda scenes risk reinforcing 'be good and the popular girl will like you' as the takeaway rather than 'you'll know yourself better.'",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Jordan is listed in scene-5a's characters array despite being explicitly described as sitting alone 'across the room' — not physically present at the table with the player, Priya, Tyler, and Chloe. — Suggested fix: Remove 'jordan' from scene-5a.characters, or add a note/field distinguishing 'present' vs 'referenced' characters if the schema needs to track off-screen mentions. (location: scene-5a.characters)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The 'Okay so' verbal tic is used by the player character in nearly every single scene and choice option (at least 15+ instances). It started as a nice authentic filler but by scene-8/9 it reads as a writer's tic rather than a character's — vary it or retire it for stretches so it doesn't flatten Maya's voice into a catchphrase.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Jordan's stammering deadpan ('It's a field guide. There's a difference.') is excellent and consistent — this is how the tic should work: specific to character, not universal filler.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Some INTERNAL lines are doing thematic summary rather than actual thought — 's6a1-7: That landed weird. Why did that land so weird. I won. Didn't I win?' is good, but 's3b-6: Okay. That's a skill. I need that skill' and similar lines occasionally over-explain the emotional beat the scene just showed us. Trust the visual beat more.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Tyler's 'fresh meat' line and 'migrate' pun are appropriately try-hard teenage-boy humor — authentic. Good work there.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Duplicate/orphaned character: there are two distinct 'Maya' characters — the player character (id: 'player', name: 'Maya Ortiz-Chen') and a separate unused character (id: 'maya', name: 'Maya Reyes'). The 'maya' character is listed in episode.characters but never appears in any scene's characters array or dialogue. Its personality/background/voiceGuidelines text is also near-verbatim duplicated from Priya's character sheet (warm/socially fluent/conflict-avoidant, 'okay so', 'taps table twice', etc.), strongly suggesting Priya's profile was copy-pasted from a leftover 'maya' draft that was never deleted. — Suggested fix: Delete the orphaned 'maya' character record from the character roster and episode.characters array. If it was meant to become Priya, confirm Priya's sheet is intentional and remove the stale duplicate. (location: episode.characters[3] ('maya'); characters[3] object)",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Multiple dialogue entries have an empty string for 'text' with no spoken line, relying solely on emotion/action metadata. If the schema requires non-empty dialogue text, these will fail validation, and even if allowed, they read as incomplete content for a text-driven episode player. — Suggested fix: Add minimal text (even a nonverbal transliteration like '(laughs)') or restructure schema to explicitly support text-less reaction beats. (location: scene-6a1.dialogue[1] (s6a1-2), scene-6a1.dialogue[3] (s6a1-4), scene-6c2.dialogue[2] (s6c2-3), choiceDialogue[choice-1].responseDialogue.a[1] (c1a-2), choiceDialogue[choice-3].responseDialogue.a[0] (c3a-1), choiceDialogue[choice-3].responseDialogue.b[1] (c3b-2), choiceDialogue[choice-3].responseDialogue.b[2] (c3b-3), choiceDialogue[choice-7].responseDialogue.a[0] (c7a-1))",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "failing": [
+    "creativeDirector",
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The name collision between player and NPC Maya (scenes 3a, 4, 5c, and referenced again in scene-7's pairing) is a real continuity problem, not just a joke — fix by renaming the NPC or giving the player a different default name in this world.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The 'Popular Table' branch (Maya-NPC storyline) simply evaporates after scene-6a — there's no acknowledgment in scene-7 or beyond of what happened with that friendship, even though the whole episode is otherwise obsessive about consequences carrying forward. If Jordan's arc gets four converging endings, Maya's storyline deserves at least a single line of closure or callback.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Structurally the six-scene convergence into the shared project-partner spine is well designed and mirrors the emotionalArc excellently — pacing from anxious arrival to vulnerable disclosure lands.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Consider letting at least one choice have a visible school-wide consequence beyond the immediate scene — right now every choice pays off socially/emotionally but never structurally (e.g., seating never affects who else notices you later).",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Jordan is the standout — the shield-of-a-book detail, the 'emergency-bathroom-route memorized' line, and the grandmother's bird book reveal are specific, unforced, and true to a socially anxious transfer student. This character earns the episode's climax.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Tyler and Chloe are functional but thin — Tyler's 'Tour costs five bucks' and 'Bet the book doesn't even talk back' land as generic bully-lite dialogue. Chloe's recurring 'half-second late laugh' beat, however, is a genuinely sharp piece of characterization — she's clearly performing loyalty she doesn't fully feel. Lean harder into Chloe as the more interesting character of the two; Tyler needs one more specific, non-generic line to avoid feeling like a stock antagonist.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Maya (NPC) has a strong, warm introduction (scene-3a) but disappears from meaningful narrative function after the lunch choice — she deserves at least a closing beat if the player chose her table.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The tonal balance between cafeteria-social-comedy and quiet vulnerability is well calibrated — the episode never tips into after-school-special territory even in its most earnest beat (scene-9a).",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The emotionalArc document is honored almost beat-for-beat in the actual scene writing, which is a good sign of intentional design rather than improvisation.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The 'birds feel like the closest thing I've got' reveal is earned specifically because it's understated and not over-explained — protect that restraint in future episodes; don't let Jordan over-narrate the metaphor.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "QA checklist requires every scene to have a 'synopsis' field, but scenes only contain a 'description' field. If the canonical schema requires 'synopsis' per scene, this is a field-naming mismatch across all 21 scenes. — Suggested fix: Confirm which field name the schema requires. If 'synopsis' is mandatory, either rename 'description' to 'synopsis' across all scenes or add both fields for compatibility. (location: scenes[*].synopsis)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "The internal monologue voice is excellent throughout — self-corrections, hedges, and parentheticals ('Nobody's looking at you. Probably.') feel authentically 12-14-year-old without being cutesy.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Ms. Alvarez's 'Yes, I know exactly what I'm doing' has real teacher-authority voice — one of the strongest adult-character lines in the episode.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "Jordan's dry deflections ('The full-body deer-in-headlights thing? Yeah, kind of a giveaway') read as genuinely funny and specific rather than writer's-room-quippy.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "CREATIVE_DIRECTOR",
+        "message": "A few Tyler lines ('Whatever, it's not that deep') repeat almost verbatim in two different branches (choice-3 response and scene-6a2) — vary the phrasing so repeat playthroughs don't feel like reused stock dialogue.",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "The player-character (id: 'player') is named 'Maya Ortiz-Chen' and a separate supporting NPC (id: 'maya') is named 'Maya Reyes'. Both are referred to as 'Maya' throughout narration and dialogue, creating severe ambiguity about who is being referenced in nearly every scene (e.g., NARRATOR lines like 'Maya doesn't speak yet' in scene-1, or maya's line 'I'm Maya, by the way. Also Maya, actually' in scene-3a). While the shared-name joke appears intentional in scene-3a, it is never clarified elsewhere, and narrator text uses 'Maya' generically for the protagonist in scenes where the NPC Maya is also present (scene-4, scene-5a, scene-6a1/6a2), making it genuinely unclear which Maya is being described. — Suggested fix: Either rename one character (recommend renaming NPC to avoid confusion, e.g., 'Maya Reyes' -> a different first name), or have the narrator consistently use full names/last names ('Maya R.' vs player's internal 'Maya') after the introduction to keep referents clear. (location: characters[0].name (player) vs characters[3].name (maya); scene-1.dialogue, scene-3a.dialogue, scene-4.dialogue, scene-5a.dialogue, scene-6a1/6a2.dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Character 'ms_alvarez' is listed in episode.characters and appears in scene-7, but is never referenced by choiceDialogue or given a traitMapping interaction — fine on its own, but she is the mechanism for 'Consequences arrive' per emotionalArc and her only appearance is a single scene with no player choice tied to her directly, making her narrative purpose (pairing selection) entirely exposition-only. Not a hard blocker, but the outcomes array's 'Four Endings' description implies her pairing decision is pivotal, yet no choice/trait exists around it. — Suggested fix: Optional: Add a small reactive line variant based on player traits, or clarify in documentation that this scene is a non-interactive plot pivot by design. (location: scenes[scene-7], choices)",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

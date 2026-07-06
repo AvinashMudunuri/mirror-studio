@@ -1,0 +1,61 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Episode/character roster includes a character 'maya' (Maya Reyes, age 13) that is never referenced in any scene, dialogue, or choice. This character's name directly collides with the player character's first name (Maya Ortiz-Chen), and her bio/voice examples are near-duplicates of the 'priya' character's storyRole and dialogue ('Okay so — bold move, introducing yourself like that on day one. I respect it.' appears verbatim in both). This strongly suggests a copy-paste/data management error where 'priya' was cloned from an unused 'maya' template, or the wrong character file was left in the roster.",
+      "location": "characters[3] (id: 'maya') / episode.characters array",
+      "expectedValue": "Either remove the unused 'maya' character entirely, or rename her to avoid collision with the player's first name, and ensure she isn't a duplicate of 'priya'.",
+      "actualValue": "Unused character 'maya' present, name-colliding with protagonist, content-duplicating 'priya'",
+      "fix": "Delete the orphaned 'maya' character record from the character roster and episode.characters array, or clarify her distinct narrative purpose and rename to prevent confusion with the protagonist Maya Ortiz-Chen."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Episode top-level 'characters' array declares 'maya' as a character in this episode, but she does not appear in any scene's 'characters' list or any dialogue line. This is an orphaned reference that will confuse asset loading (voice/art) for a character who never appears.",
+      "location": "episode.characters",
+      "expectedValue": "['player','tyler','chloe','jordan','ms_alvarez','priya']",
+      "actualValue": "['player','tyler','chloe','maya','jordan','ms_alvarez','priya']",
+      "fix": "Remove 'maya' from the episode.characters array since she has no in-episode presence."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Several dialogue lines have empty 'text' fields and rely solely on 'action'/'emotion' to convey the beat (e.g., s2-4, s4-4, s5a-10, s6a1-3, s6a1-4, s6c2b is fine but check s3a etc.). While intentional as non-verbal beats, empty text strings may break rendering/localization pipelines or VO systems that expect non-empty dialogue text.",
+      "location": "scene-2.dialogue[s2-4], scene-4.dialogue[s4-4], scene-5a.dialogue[s5a-10], scene-6a1.dialogue[s6a1-3, s6a1-4]",
+      "suggestion": "Either add a minimal placeholder text (e.g., '(laughs)') or introduce a schema-supported 'silent'/'actionOnly' flag so empty text is explicitly valid rather than implicit."
+    },
+    {
+      "category": "STYLE",
+      "message": "The character 'priya' and the unused character 'maya' (Maya Reyes) share nearly identical storyRole descriptions, personality summaries, and even example dialogue lines verbatim ('Okay so — bold move, introducing yourself like that on day one. I respect it.'). This looks like a leftover duplicate file rather than intentional design.",
+      "location": "characters[3] ('maya') vs characters[6] ('priya')",
+      "suggestion": "Audit character bibles for duplication; consolidate or clearly differentiate before this reaches later episodes referencing either character."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "estimatedPlayTime (14 minutes) is a flat episode-level estimate but scene durations sum differently depending on path taken (e.g., shortest path through scene-6a2/priya-respect branch sums to ~13.5, other paths may sum higher/lower). No documented method for how estimatedPlayTime was derived from variable branch lengths.",
+      "location": "episode.estimatedPlayTime",
+      "suggestion": "Document whether estimatedPlayTime represents average, shortest, or longest path, or compute per-path estimates for QA/localization purposes."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "targetTraits all list changeAmount: 1, which appears to represent an average/typical net effect, but actual traitMapping swings in choices range from -2 to +2. There's no explicit statement clarifying that targetTraits is a nominal design target rather than a hard cap.",
+      "location": "episode.targetTraits",
+      "suggestion": "Add a note or field clarifying that targetTraits represents intended net trait movement across the episode, distinct from per-choice trait deltas, to avoid confusion during trait-balancing QA passes."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 30,
+    "failedChecks": 2,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Remove or rename the orphaned 'maya' character to eliminate collision with the protagonist's first name and avoid confusion in future episodes or localization/VO pipelines.",
+    "Run a full duplicate-content scan across all character bibles in the project — the 'maya'/'priya' overlap suggests this may recur elsewhere.",
+    "Consider adding a lightweight schema field (e.g., isSilent: true) for dialogue entries with no spoken text, to make non-verbal beats explicit rather than implicit via empty strings.",
+    "Branching structure, ID uniqueness, and choice/outcome resolution are otherwise clean and well-constructed — all paths converge properly at scene-7 variants and terminate correctly at END nodes across all four final outcomes."
+  ]
+}

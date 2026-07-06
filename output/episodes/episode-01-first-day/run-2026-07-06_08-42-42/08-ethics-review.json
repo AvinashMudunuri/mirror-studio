@@ -1,0 +1,104 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Jordan Kessler's characterization (guarded, isolated, book-shield, bathroom-crying backstory, sits alone reading) reads as a fairly standard 'introverted outsider' archetype without any concrete identity markers given in the text — but paired with the mocking ('talking to their book,' 'bet the book doesn't talk back'), it risks being read as coded neurodivergent-bullying material without ever naming or handling that possibility with care.",
+      "location": "Scenes 3b, 5a, 5b, 5c, 9a-9d",
+      "harmPotential": "If players/reviewers read Jordan as coded autistic/socially anxious, the episode never explicitly validates that identity or provides a moment of authentic self-naming — leaving it as subtext that could feel like a stereotype (awkward, friendless, hyper-articulate-when-safe) rather than authentic representation.",
+      "recommendation": "Either lean into and explicitly, respectfully name Jordan's social anxiety/neurodivergence as an authentic character trait with agency, or keep it deliberately unspecified but ensure Jordan gets moments of clear strength/competence unrelated to being 'saved' by the player (the birds/grandmother scene helps — expand on this kind of agency elsewhere)."
+    },
+    {
+      "severity": "MINOR",
+      "category": "HARMFUL_TROPE",
+      "issue": "Slight 'savior narrative' shape: the player's choices largely determine whether Jordan is rescued from isolation/mockery, with Jordan's own agency mostly reactive (relief, gratitude, opening up only when prompted).",
+      "location": "Scenes 6b1, 6c1, 9a, 9c",
+      "harmPotential": "Could reinforce a subtle pattern where the outsider is a passive object of another (more socially capable) character's kindness, rather than an equal contributor to the friendship.",
+      "recommendation": "Give Jordan at least one beat where they initiate connection or offer something the player needs (e.g., insight, humor, help) unprompted, reinforcing mutuality rather than one-directional rescue. The birds/grandmother scene is a good start — consider adding a moment where Jordan actively helps the player with something outside the project."
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Tyler's mocking behavior ('bet the book doesn't talk back,' 'name tag' comment) is called out only conditionally (via player choice) and otherwise goes unaddressed by adults or narrative consequence beyond Maya's quiet disapproval.",
+      "location": "Scenes 2, 5a",
+      "harmPotential": "Teen players who don't choose the 'confront' branch may see bullying-adjacent behavior go entirely without any narrative consequence, which could underplay the seriousness of mocking a peer.",
+      "recommendation": "Consider adding a small consistent consequence for Tyler regardless of player choice (e.g., a later beat where Tyler's behavior is addressed by Ms. Alvarez or another peer), so the lesson isn't solely dependent on the player's action."
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Chloe is characterized primarily through 'laughs a half-second late' / 'glances at Tyler first' — she is fairly one-note (follower archetype) and doesn't get her own arc or resolution.",
+      "location": "Scenes 2, 5a",
+      "harmPotential": "Low harm, but represents a missed opportunity — she could reinforce the 'silent bystander' pattern without ever being shown an alternative path, which is a subtle miss for the emotional intelligence goals of the episode.",
+      "recommendation": "In a future episode, give Chloe a moment of individual agency/growth; not required to fix in this episode but worth flagging for the season arc."
+    },
+    {
+      "severity": "MINOR",
+      "category": "BIAS",
+      "issue": "Two characters are both named 'Maya' (Maya Ortiz-Chen, popular senior, and the player's own name is Maya Reyes based on character list) which could create confusing identity conflation, though intentional as a narrative device ('Also Maya, actually').",
+      "location": "Scene 3a, character list",
+      "harmPotential": "Low harm potential, mostly a clarity issue, though worth noting the player-character shares first name with a socially dominant popular character — unintentional messaging that could imply the 'real'/legitimized version of the name belongs to the more socially confident girl.",
+      "recommendation": "This is a charming narrative device but ensure it's used deliberately and not confusingly; consider a small beat that reaffirms the player's own identity isn't overshadowed by the more socially fluent Maya."
+    }
+  ],
+  "strengths": [
+    "Excellent modeling of empathy vs. social comfort trade-offs (choice-3, choice-5) — consequences are emotionally honest, not punitive or preachy.",
+    "Jordan's characterization avoids being purely tragic — dry humor, specific interests (birds/grandmother), and moments of genuine wit are present.",
+    "Multiple valid paths to positive outcomes normalize different social styles (confident vs. observant) without ranking one as objectively 'better.'",
+    "Consequences for choices feel proportionate — no choice is 'punished' harshly, and even less-empathetic choices lead to realistic, non-catastrophic outcomes (missed connection, not disaster).",
+    "Ms. Alvarez models fair, intentional adult authority without being heavy-handed or preachy.",
+    "No romantic/adult-power-dynamic content; age-appropriate emotional stakes throughout.",
+    "Internal monologue authentically captures anxious teen interiority without mocking or minimizing it.",
+    "Diversity of surnames (Ortiz-Chen, Park, Brennan, Kessler, Alvarez) suggests a naturally diverse setting without tokenizing any single character as 'the diverse one.'"
+  ],
+  "recommendations": [
+    "Add a small unprompted moment of Jordan's agency/initiative to balance the savior-narrative shape.",
+    "Consider a consistent narrative consequence for Tyler's mocking behavior independent of player choice.",
+    "Clarify/soften the double-'Maya' naming device so it doesn't unintentionally centralize the popular character's identity over the player's.",
+    "In future episodes, develop Chloe beyond 'follower' status to avoid an unaddressed bystander stereotype."
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 7,
+    "tropes": 7,
+    "ethicalModeling": 9,
+    "culturalSensitivity": 8,
+    "overall": 8
+  },
+  "flaggedContent": [
+    {
+      "type": "NARRATIVE",
+      "location": "Scene 5a, line 10",
+      "content": "\"Bet the book doesn't even talk back. Bet that's a plus, honestly.\"",
+      "concern": "Mocks a socially isolated peer in a way that could read as mocking neurodivergent/introverted traits; needs consistent narrative accountability.",
+      "suggestion": "Add follow-up consequence beat regardless of branch chosen, showing this behavior isn't cost-free."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Scenes 3b, 5b, 5c",
+      "content": "Jordan characterized as guarded, book-shield, friendless outsider",
+      "concern": "Risk of reductive 'lonely quiet kid' archetype without explicit agency-driving moments",
+      "suggestion": "Give Jordan a proactive contribution to the friendship/plot, not just reactive relief/gratitude."
+    }
+  ],
+  "summary": {
+    "verdict": "This episode is a strong, emotionally intelligent piece of interactive fiction that handles peer pressure, empathy, and belonging with nuance appropriate for the target age group. Ethical decision modeling is a clear strength — consequences are proportionate and non-preachy, and multiple valid social paths are offered without moralizing. The main areas for improvement involve giving the socially isolated character (Jordan) more independent agency to avoid a subtle 'savior narrative' shape, and ensuring bullying behavior (Tyler) has some consistent consequence regardless of player choice. No critical issues were found; this is publishable with minor recommended revisions.",
+    "criticalIssues": [],
+    "majorConcerns": [
+      "Jordan's characterization could read as a reductive 'lonely outsider' archetype without more explicit agency/initiative moments."
+    ],
+    "minorNotes": [
+      "Tyler's bullying behavior should have consistent consequences regardless of player choice.",
+      "Chloe remains a one-note bystander character; consider development in future episodes.",
+      "Double-'Maya' naming device is charming but should be handled carefully to avoid overshadowing player identity."
+    ],
+    "strengths": [
+      "Strong, honest treatment of empathy-vs-comfort choices",
+      "Proportionate, non-punitive consequences across all branches",
+      "Age-appropriate emotional stakes with no harmful power dynamics",
+      "Naturally diverse cast without tokenization"
+    ],
+    "readyForPublication": true
+  }
+}
