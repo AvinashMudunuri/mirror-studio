@@ -17,6 +17,9 @@ import type {
 
 // ==================== Input/Output Schemas ====================
 
+/** Pseudo scene id marking the end of an episode. */
+export const EPISODE_END = 'END';
+
 export interface Scene {
   id: string;
   title: string;
@@ -25,12 +28,20 @@ export interface Scene {
   duration: number; // minutes
   description: string;
   emotionalBeat: string;
+  /**
+   * Scene played after this one when the scene has no choice point.
+   * Use EPISODE_END ('END') for the final scene. Scenes WITH a choice
+   * point transition via their options' nextScene instead.
+   */
+  defaultNextScene?: string;
 }
 
 export interface StoryChoiceOption {
   id: string;
   text: string;
   consequence?: string;
+  /** Scene this option transitions to: a valid scene id, or 'END'. */
+  nextScene: string;
 }
 
 export interface ChoicePoint {
@@ -176,6 +187,16 @@ STRUCTURE REQUIREMENTS:
 - Maps to 3-5 traits naturally
 - Creates conversation opportunities
 
+PLAYABILITY REQUIREMENTS (the episode must be machine-executable):
+- Every choice option MUST declare "nextScene": the id of the scene it
+  transitions to, or "END" if it ends the episode.
+- Every scene WITHOUT a choice point MUST declare "defaultNextScene"
+  (a scene id, or "END" for a final scene).
+- Every scene must be reachable from the first scene by some choice path.
+- At least one path must reach "END" — no infinite loops, no dead ends.
+- Use consistent snake_case or kebab-case ids everywhere; refer to the
+  protagonist as "player" in scene character lists.
+
 PROCESS:
 1. What's the core conflict?
 2. Why does it matter emotionally?
@@ -235,7 +256,8 @@ Return ONLY this JSON structure (wrapped in \`\`\`json code block):
         "characters": [...],
         "duration": 2,
         "description": "...",
-        "emotionalBeat": "..."
+        "emotionalBeat": "...",
+        "defaultNextScene": "scene-2"
       }
     ],
     "choicePoints": [
@@ -245,8 +267,8 @@ Return ONLY this JSON structure (wrapped in \`\`\`json code block):
         "prompt": "...",
         "context": "...",
         "options": [
-          { "id": "a", "text": "..." },
-          { "id": "b", "text": "..." }
+          { "id": "a", "text": "...", "nextScene": "scene-3a" },
+          { "id": "b", "text": "...", "nextScene": "scene-3b" }
         ],
         "traitMapping": {
           "a": { "EMPATHY": 2, "CONFIDENCE": 1 },
@@ -269,6 +291,12 @@ Return ONLY this JSON structure (wrapped in \`\`\`json code block):
   "alternativesConsidered": [...]
 }
 
+TRANSITION RULES (MANDATORY — the episode is unplayable without them):
+- EVERY option in EVERY choicePoint must include "nextScene" (a scene id or "END")
+- EVERY scene that has NO choice point must include "defaultNextScene" (a scene id or "END")
+- A scene that HAS a choice point transitions via its options, not defaultNextScene
+- Every scene must be reachable from the first scene; at least one path must reach "END"
+
 IMPORTANT REMINDERS:
 - Return ONLY valid JSON wrapped in \`\`\`json code block
 - NO trailing commas in arrays or objects
@@ -282,8 +310,10 @@ IMPORTANT REMINDERS:
       prompt
     );
     
-    // Parse LLM response
-    const result = this.parseOutlineFromResponse(response);
+    // Parse LLM response and ensure the scene graph is playable
+    const result = await this.ensurePlayableOutline(
+      this.parseOutlineFromResponse(response)
+    );
     
     // Store in memory
     await this.remember('episode-outline', {
@@ -319,7 +349,9 @@ FORMAT YOUR RESPONSE AS JSON (same structure as before).`;
       prompt
     );
     
-    const result = this.parseOutlineFromResponse(response);
+    const result = await this.ensurePlayableOutline(
+      this.parseOutlineFromResponse(response)
+    );
     
     // Store revision
     await this.remember('episode-revision', {
@@ -452,22 +484,155 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
   
   // ==================== Validation ====================
   
+  /**
+   * Ensure the outline forms a playable scene graph. On structural failure,
+   * give the model ONE chance to repair its own structure, then fail loudly.
+   */
+  private async ensurePlayableOutline(result: StoryArchitectOutput): Promise<StoryArchitectOutput> {
+    let structuralErrors = this.validateTransitions(result.episodeOutline);
+    
+    if (structuralErrors.length > 0) {
+      console.warn(`[River] Outline has ${structuralErrors.length} structural issue(s); requesting self-repair...`);
+      structuralErrors.forEach(e => console.warn(`[River]   - ${e}`));
+      
+      const repairResponse = await this.callLLM(
+        this.systemPrompt,
+        this.buildStructuralRepairPrompt(result, structuralErrors)
+      );
+      result = this.parseOutlineFromResponse(repairResponse);
+      
+      structuralErrors = this.validateTransitions(result.episodeOutline);
+      if (structuralErrors.length > 0) {
+        throw new Error(
+          `Episode outline is structurally unplayable after self-repair:\n- ${structuralErrors.join('\n- ')}`
+        );
+      }
+      console.log('[River] Self-repair successful — scene graph is now valid');
+    }
+    
+    this.validateOutline(result.episodeOutline);
+    return result;
+  }
+  
+  /**
+   * Validate that the outline forms a playable scene graph:
+   * - Every choice option declares nextScene (existing scene or END)
+   * - Every scene without a choice point declares defaultNextScene
+   * - Every scene is reachable from the opening scene
+   * - At least one path terminates (reaches END)
+   * 
+   * Returns a list of human-readable errors (empty = valid).
+   */
+  private validateTransitions(outline: EpisodeOutline): string[] {
+    const errors: string[] = [];
+    const scenes = outline.scenes || [];
+    const choicePoints = outline.choicePoints || [];
+    
+    if (scenes.length === 0) {
+      return ['Episode has no scenes'];
+    }
+    
+    const sceneIds = new Set(scenes.map(s => s.id));
+    const scenesWithChoices = new Set<string>();
+    
+    for (const cp of choicePoints) {
+      if (!sceneIds.has(cp.scene)) {
+        errors.push(`Choice point "${cp.id}" is attached to unknown scene "${cp.scene}"`);
+        continue;
+      }
+      scenesWithChoices.add(cp.scene);
+      
+      for (const opt of cp.options || []) {
+        if (!opt.nextScene) {
+          errors.push(`Option "${opt.id}" of choice "${cp.id}" is missing "nextScene"`);
+        } else if (opt.nextScene !== EPISODE_END && !sceneIds.has(opt.nextScene)) {
+          errors.push(`Option "${opt.id}" of choice "${cp.id}" points to unknown scene "${opt.nextScene}"`);
+        }
+      }
+    }
+    
+    for (const scene of scenes) {
+      if (scenesWithChoices.has(scene.id)) continue;
+      
+      if (!scene.defaultNextScene) {
+        errors.push(`Scene "${scene.id}" has no choice point and no "defaultNextScene" — it is a dead end`);
+      } else if (scene.defaultNextScene !== EPISODE_END && !sceneIds.has(scene.defaultNextScene)) {
+        errors.push(`Scene "${scene.id}" has "defaultNextScene" pointing to unknown scene "${scene.defaultNextScene}"`);
+      }
+    }
+    
+    // Reachability walk from the opening scene
+    const reachable = new Set<string>();
+    let reachesEnd = false;
+    const queue = [scenes[0].id];
+    
+    while (queue.length > 0) {
+      const id = queue.pop()!;
+      if (id === EPISODE_END) {
+        reachesEnd = true;
+        continue;
+      }
+      if (reachable.has(id) || !sceneIds.has(id)) continue;
+      reachable.add(id);
+      
+      if (scenesWithChoices.has(id)) {
+        for (const cp of choicePoints.filter(c => c.scene === id)) {
+          for (const opt of cp.options || []) {
+            if (opt.nextScene) queue.push(opt.nextScene);
+          }
+        }
+      } else {
+        const scene = scenes.find(s => s.id === id);
+        if (scene?.defaultNextScene) queue.push(scene.defaultNextScene);
+      }
+    }
+    
+    for (const scene of scenes) {
+      if (!reachable.has(scene.id)) {
+        errors.push(`Scene "${scene.id}" is unreachable from the opening scene "${scenes[0].id}"`);
+      }
+    }
+    
+    if (!reachesEnd) {
+      errors.push('No path through the episode ever reaches "END" — the episode cannot terminate');
+    }
+    
+    return errors;
+  }
+  
+  private buildStructuralRepairPrompt(draft: StoryArchitectOutput, errors: string[]): string {
+    return `YOUR PREVIOUS EPISODE OUTLINE:
+${JSON.stringify(draft, null, 2)}
+
+The outline above is structurally UNPLAYABLE. Fix these problems:
+${errors.map(e => `- ${e}`).join('\n')}
+
+RULES:
+- Every option in every choicePoint needs "nextScene": an existing scene id or "END"
+- Every scene without a choice point needs "defaultNextScene": an existing scene id or "END"
+- Every scene must be reachable from the first scene
+- At least one path must reach "END"
+
+Keep the story content unchanged — ONLY fix the scene transitions and ids.
+Return the COMPLETE corrected JSON in the exact same structure, wrapped in a \`\`\`json code block.`;
+  }
+  
   private validateOutline(outline: EpisodeOutline): void {
-    // Check requirements
+    // Soft design guidelines — warn only, never block
     if (outline.estimatedPlayTime < 10 || outline.estimatedPlayTime > 15) {
       console.warn(`[River] Warning: Play time ${outline.estimatedPlayTime} outside 10-15 min range`);
     }
     
-    if (outline.choicePoints.length < 5) {
-      console.warn(`[River] Warning: Only ${outline.choicePoints.length} choice points (min 5 recommended)`);
+    if ((outline.choicePoints?.length ?? 0) < 5) {
+      console.warn(`[River] Warning: Only ${outline.choicePoints?.length ?? 0} choice points (min 5 recommended)`);
     }
     
-    if (outline.branches.length < 2) {
-      console.warn(`[River] Warning: Only ${outline.branches.length} branches (min 2 required)`);
+    if ((outline.branches?.length ?? 0) < 2) {
+      console.warn(`[River] Warning: Only ${outline.branches?.length ?? 0} branches (min 2 required)`);
     }
     
-    if (outline.targetTraits.length < 3 || outline.targetTraits.length > 5) {
-      console.warn(`[River] Warning: ${outline.targetTraits.length} target traits (3-5 recommended)`);
+    if ((outline.targetTraits?.length ?? 0) < 3 || (outline.targetTraits?.length ?? 0) > 5) {
+      console.warn(`[River] Warning: ${outline.targetTraits?.length ?? 0} target traits (3-5 recommended)`);
     }
   }
 }

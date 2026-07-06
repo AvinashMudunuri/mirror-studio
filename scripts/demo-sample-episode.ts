@@ -75,7 +75,8 @@ const MOCK_STORY_OUTLINE = {
         characters: ['alex'],
         duration: 2,
         description: 'Alex arrives at the school, feeling nervous',
-        emotionalBeat: 'Anxiety and hope'
+        emotionalBeat: 'Anxiety and hope',
+        defaultNextScene: 'scene-2'
       },
       {
         id: 'scene-2',
@@ -102,8 +103,8 @@ const MOCK_STORY_OUTLINE = {
         scene: 'scene-2',
         prompt: 'Jordan offers to help you find your class. How do you respond?',
         options: [
-          { id: 'opt-1a', text: 'Accept gratefully' },
-          { id: 'opt-1b', text: 'Politely decline, try alone' }
+          { id: 'opt-1a', text: 'Accept gratefully', nextScene: 'scene-3' },
+          { id: 'opt-1b', text: 'Politely decline, try alone', nextScene: 'scene-3' }
         ]
       },
       {
@@ -111,8 +112,8 @@ const MOCK_STORY_OUTLINE = {
         scene: 'scene-3',
         prompt: 'Where do you sit at lunch?',
         options: [
-          { id: 'opt-2a', text: 'With Jordan at their table' },
-          { id: 'opt-2b', text: 'Alone to observe' }
+          { id: 'opt-2a', text: 'With Jordan at their table', nextScene: 'END' },
+          { id: 'opt-2b', text: 'Alone to observe', nextScene: 'END' }
         ]
       }
     ],
