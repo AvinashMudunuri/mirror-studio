@@ -67,8 +67,6 @@ const { v4: uuidv4 } = require('uuid');
 // Configuration
 // ============================================================================
 
-const OUTPUT_DIR = path.join(__dirname, '../output/real-episode');
-
 const EPISODE_BRIEF = {
   world: 'New School',
   worldId: 'NEW_SCHOOL',
@@ -90,6 +88,22 @@ const TEST_WORLD = {
   targetAge: [11, 14],
   seasons: ['Season 1: First Year']
 };
+
+// ============================================================================
+// Output Location
+// ============================================================================
+// Each run writes to its own folder so runs never overwrite each other:
+//   output/episodes/episode-01-first-day/run-2026-07-06_06-03-45/*.json
+
+function slugify(text) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+const RUN_STARTED_AT = new Date();
+const runStamp = RUN_STARTED_AT.toISOString().slice(0, 19).replace('T', '_').replace(/:/g, '-');
+const episodeFolder = `episode-${String(EPISODE_BRIEF.episodeNumber).padStart(2, '0')}-${slugify(EPISODE_BRIEF.title)}`;
+const OUTPUT_DIR = path.join(__dirname, '..', 'output', 'episodes', episodeFolder, `run-${runStamp}`);
+const OUTPUT_DIR_RELATIVE = path.relative(path.join(__dirname, '..'), OUTPUT_DIR);
 
 // ============================================================================
 // Mock Infrastructure (No Docker Required)
@@ -131,6 +145,7 @@ async function main() {
   console.log('✅ Claude API key found');
   console.log(`   Key: ${apiKey.substring(0, 10)}...${apiKey.slice(-4)}\n`);
   console.log('⚡ Running in SIMPLIFIED mode (no Docker required)\n');
+  console.log(`📁 Output folder for this run:\n   ${OUTPUT_DIR_RELATIVE}\n`);
   console.log('═══════════════════════════════════════════════════════════\n');
   
   // Initialize LLM Gateway
@@ -260,7 +275,6 @@ async function main() {
     console.log(`   Estimated Play Time: ${storyResult.episodeOutline.estimatedPlayTime || 'N/A'} minutes\n`);
     
     saveToFile('01-story-outline.json', storyResult);
-    console.log('   💾 Saved: output/real-episode/01-story-outline.json\n');
     
     // Step 3: Character Designer - Create Protagonist
     console.log('👥 Step 3: Character Designer - Creating Protagonist\n');
@@ -297,7 +311,6 @@ async function main() {
     console.log(`   Role: ${protagonistResult.character?.storyRole}\n`);
     
     saveToFile('02-protagonist.json', protagonistResult);
-    console.log('   💾 Saved: output/real-episode/02-protagonist.json\n');
     
     // Step 4: Dialogue Writer - Write Scene Dialogue
     console.log('💬 Step 4: Dialogue Writer - Creating Scene Dialogue\n');
@@ -325,7 +338,6 @@ async function main() {
     console.log(`   Voice notes: ${dialogueResult.voiceNotes?.substring(0, 100) || 'N/A'}...\n`);
     
     saveToFile('03-dialogue.json', dialogueResult);
-    console.log('   💾 Saved: output/real-episode/03-dialogue.json\n');
     
     // Step 5: Creative Director - Review Episode
     console.log('✨ Step 5: Creative Director - Final Review\n');
@@ -384,7 +396,6 @@ async function main() {
     console.log(`   Character Feedback: ${reviewResult.specificFeedback?.characters?.length || 0} items\n`);
     
     saveToFile('04-creative-review.json', reviewResult);
-    console.log('   💾 Saved: output/real-episode/04-creative-review.json\n');
     
     // Step 6: QA Reviewer - Technical Quality Check
     console.log('🔍 Step 6: QA Reviewer - Technical Quality Check\n');
@@ -428,7 +439,6 @@ async function main() {
     }
     
     saveToFile('05-qa-review.json', qaResult);
-    console.log('   💾 Saved: output/real-episode/05-qa-review.json\n');
     
     // Step 7: Child Psychologist - Psychological Safety Review
     console.log('👨‍⚕️ Step 7: Child Psychologist - Psychological Safety Review\n');
@@ -478,7 +488,6 @@ async function main() {
     }
     
     saveToFile('06-psych-review.json', psychResult);
-    console.log('   💾 Saved: output/real-episode/06-psych-review.json\n');
     
     // Step 7: Game Designer - Gameplay & Engagement Review
     console.log('🎮 Step 7: Game Designer - Gameplay & Engagement Review\n');
@@ -528,7 +537,6 @@ async function main() {
     }
     
     saveToFile('07-game-review.json', gameResult);
-    console.log('   💾 Saved: output/real-episode/07-game-review.json\n');
     
     // Step 8: Ethics Reviewer - Ethics & Representation Review
     console.log('⚖️  Step 8: Ethics Reviewer - Ethics & Representation Review\n');
@@ -595,10 +603,43 @@ async function main() {
     }
     
     saveToFile('08-ethics-review.json', ethicsResult);
-    console.log('   💾 Saved: output/real-episode/08-ethics-review.json\n');
     
-    // Final Summary
+    // Run manifest: what was generated, by which config, with what verdicts
     const totalDuration = ((Date.now() - startTime) / 1000).toFixed(1);
+    
+    const manifest = {
+      episode: {
+        number: EPISODE_BRIEF.episodeNumber,
+        title: storyResult.episodeOutline.title,
+        world: TEST_WORLD.id
+      },
+      run: {
+        workflowId,
+        threadId,
+        startedAt: RUN_STARTED_AT.toISOString(),
+        completedAt: new Date().toISOString(),
+        totalSeconds: parseFloat(totalDuration),
+        model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5'
+      },
+      verdicts: {
+        creativeDirector: reviewResult.decision,
+        qaReviewer: qaResult.status,
+        childPsychologist: psychResult.status,
+        gameDesigner: gameResult.status,
+        ethicsReviewer: ethicsResult.status
+      },
+      files: [
+        '01-story-outline.json',
+        '02-protagonist.json',
+        '03-dialogue.json',
+        '04-creative-review.json',
+        '05-qa-review.json',
+        '06-psych-review.json',
+        '07-game-review.json',
+        '08-ethics-review.json'
+      ]
+    };
+    saveToFile('manifest.json', manifest);
     
     console.log('═══════════════════════════════════════════════════════════\n');
     console.log('✨ FULL EPISODE PIPELINE COMPLETE!\n');
@@ -610,8 +651,9 @@ async function main() {
     console.log('   5. QA Review (QA Reviewer → Claude)');
     console.log('   6. Psychological Safety Review (Child Psychologist → Claude)');
     console.log('   7. Gameplay Review (Game Designer → Claude)');
-    console.log('   8. Ethics Review (Ethics Reviewer → Claude)\n');
-    console.log(`   📁 Location: ${OUTPUT_DIR}\n`);
+    console.log('   8. Ethics Review (Ethics Reviewer → Claude)');
+    console.log('   9. Run Manifest (metadata + reviewer verdicts)\n');
+    console.log(`   📁 Location: ${OUTPUT_DIR_RELATIVE}\n`);
     console.log('⏱️  Total Time:\n');
     console.log(`   Story: ${duration}s`);
     console.log(`   Character: ${charDuration}s`);
@@ -660,6 +702,7 @@ function saveToFile(filename, data) {
   
   const filepath = path.join(OUTPUT_DIR, filename);
   fs.writeFileSync(filepath, JSON.stringify(data, null, 2), 'utf-8');
+  console.log(`   💾 Saved: ${path.join(OUTPUT_DIR_RELATIVE, filename)}\n`);
 }
 
 // ============================================================================
