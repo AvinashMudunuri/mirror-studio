@@ -94,6 +94,21 @@ VALIDATION CHECKLIST:
 6. Completeness - All required content present?
 7. Metadata Accuracy - Play time, tags, dependencies correct?
 
+EPISODE DATA MODEL (these conventions are CORRECT — do not report them as errors):
+- Choices live in the top-level "choices" array; each entry's "scene" field
+  names the scene it belongs to. Scenes do NOT embed a "choices" field —
+  a choice pointing at a scene via its "scene" field IS the linkage.
+- A scene WITH a choice attached transitions via that choice's options'
+  "nextScene" values. A scene WITHOUT a choice transitions via its
+  "defaultNextScene". Exactly one of the two mechanisms applies per scene.
+- "END" is the reserved terminator: options or defaultNextScene equal to
+  "END" end the episode. It is intentionally not a scene id.
+- "branchDialogue" entries key ending-scene dialogue variants by the ids in
+  the top-level "outcomes"/branches array; which branch fires is derived
+  from the player's choice history (the branches' "triggeredBy" lists).
+- Speaker ids "NARRATOR" and "INTERNAL" are reserved and never appear in
+  the character roster.
+
 GROUND RULES (violating these makes your review wrong):
 - Validate against the field names and shapes ACTUALLY USED in the provided
   episode JSON. Do NOT invent requirements for fields the data never uses
