@@ -45,3 +45,44 @@ whether new features should be built on messages or on orchestration.
 Until one of those is real, building on the bus adds failure modes
 (delivery, ordering, timeouts, lost messages) without buying anything the
 orchestrator does not already do.
+
+## What re-enabling requires (the price tag)
+
+Reviewed 2026-07-06 against `packages/message-bus/src/index.ts`. Passing a
+bus into `agent.initialize()` is one field, but making the bus the actual
+coordination mechanism requires closing these gaps first, roughly in order:
+
+1. **Request/reply correlation (the foundation).** `BaseAgent.request()`
+   returns a message *id*, not a way to await the answer. Nothing lets a
+   sender block on, time out on, or receive the `RESPONSE` that a recipient
+   emits via `respond()`. The pipeline is inherently request/response, so
+   without a correlation layer (match `replyTo`, timeouts, error
+   propagation) the bus cannot express what the pipeline does. Everything
+   else sits on this.
+2. **An orchestrator agent.** The revision loop, feedback routing, roster
+   management, budget enforcement, and artifact saving live in
+   `scripts/create-real-episode.js` as one state machine. Message-driven
+   coordination means rebuilding that control flow as an agent that owns
+   the state — a pipeline rewrite, not a wiring change.
+3. **Bus hardening.** Known defects in the current implementation:
+   - Multi-recipient messages break: `publish()` keys the stream off
+     `message.to as AgentId`, but `to` may be an `AgentId[]` — the stream
+     name becomes the array's string form.
+   - No poison-message handling: a handler error never advances
+     `lastProcessedId`, so a failing message retries forever; there is no
+     dead-letter queue.
+   - Polling loop (100 ms) instead of Redis consumer groups
+     (`XREADGROUP`). Consequence: the multi-process scenario — the main
+     reason to want a bus — is unsafe, because processes would race on the
+     shared `mirror:agent:<id>:last_message_id` key.
+   - `broadcast()` hardcodes a stale agent roster (`TECH_LEAD`,
+     `BACKEND_DEVELOPER` do not exist in the current agent set).
+   - `getThread()` is a stub returning `[]`; the "PostgreSQL archive"
+     fallback in `getMessage()` is not implemented.
+4. **Re-verification.** Every live-debugged failure mode of the current
+   pipeline (response envelopes, SDK timeouts, token budgets, revision
+   bounds) must be re-proven in an async context, where a lost or
+   re-delivered message replaces a stack trace.
+
+The current payoff for that work is zero while all agents share one
+process; the orchestrator already provides everything the bus would.
