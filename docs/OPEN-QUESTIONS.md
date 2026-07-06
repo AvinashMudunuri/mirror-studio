@@ -18,20 +18,17 @@ progress, review dashboard, episode viewer, agent config presets), a rich
 content editor, and an analytics dashboard. None of it exists — the
 `apps/*` workspace glob matches nothing.
 
-The data layer is now in place for the cheapest first step: per-run folders
-with `manifest.json` (verdicts, revision history, token usage, final
-status) and `episode-script.md` (the bound script). Sensible build order:
+Build order and status:
 
-1. **Read-only dashboard** (`apps/admin`): run list with verdict badges and
-   token cost, bound-script viewer, manifest drill-down. No DB required.
+1. **Read-only dashboard** (`apps/admin`) — DONE 2026-07-06. Next.js app on
+   port 3300 reading `output/episodes/`: run list with status/verdict
+   badges, token cost and revision count; run detail with roster, revision
+   history, rendered bound script; raw artifact viewer. Legacy runs render
+   as LEGACY, crashed runs as INCOMPLETE.
 2. **Generate from the UI**: episode-brief form spawning the pipeline
    script, console streamed via SSE, budget/reviewer-skip controls.
 3. **Editing + review workflow**: rich editors, re-run specific agents,
-   versioning — depends on Postgres persistence (item 2 below).
-
-Open question: is step 1 worth doing before Postgres persistence, given it
-would read the filesystem it already has? (Recommendation: yes — it makes
-runs reviewable by humans without reading JSON, today.)
+   versioning — backed by the Postgres layer (item 2 below).
 
 ## 2. Postgres persistence — DECIDED & WIRED (2026-07-06)
 
