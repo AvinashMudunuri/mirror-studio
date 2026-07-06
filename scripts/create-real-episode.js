@@ -19,6 +19,7 @@ const fs = require('fs');
 const {
   collectSupportingCharacterIds,
   describeAppearances,
+  activeRoster,
   failingReviewers,
   collectRevisionFeedback,
   mergeSceneDialogue,
@@ -176,17 +177,28 @@ function worldBrief() {
 }
 
 async function generateProtagonist(outline) {
+  // NPC ids come from the outline (e.g. "maya", "jordan"). A protagonist
+  // whose first name matches one of them reads as the same person to
+  // reviewers — QA flagged exactly this collision on a live run.
+  const npcIds = collectSupportingCharacterIds(outline);
+  const requirements = [
+    `This character is the player character of the episode "${outline.title}": ${outline.synopsis}`,
+    'Relatable to 11-14 year olds (CRITICAL)',
+    'Navigating a new school environment (HIGH)',
+    `Their arc must support the episode themes: ${outline.themes.join(', ')}`
+  ];
+  if (npcIds.length > 0) {
+    requirements.push(
+      `Their first name must NOT resemble any of these existing supporting-character ids: ${npcIds.join(', ')}`
+    );
+  }
+
   const result = await agents.characterDesigner.process({
     type: 'NEW_CHARACTER',
     newCharacter: {
       world: worldBrief(),
       role: 'PROTAGONIST',
-      requirements: [
-        `This character is the player character of the episode "${outline.title}": ${outline.synopsis}`,
-        'Relatable to 11-14 year olds (CRITICAL)',
-        'Navigating a new school environment (HIGH)',
-        `Their arc must support the episode themes: ${outline.themes.join(', ')}`
-      ],
+      requirements,
       relationshipContext: []
     }
   });
@@ -476,9 +488,13 @@ async function main() {
     // Step 4: Character Designer - Supporting Cast (NPC roster)
     console.log('👥 Step 4: Character Designer - Creating Supporting Cast\n');
 
+    // `roster` is every character generated during the run; `cast` is the
+    // subset the CURRENT outline references (revisions can write characters
+    // out of the story — declaring them anyway makes QA flag phantoms).
     let roster = [protagonistResult.character];
     const supportingResults = await generateMissingSupportingCharacters(outline, roster);
     roster = roster.concat(supportingResults.map(r => r.character));
+    let cast = activeRoster(outline, roster);
 
     console.log(`✅ Roster complete: ${roster.map(c => `${c.name} [${c.id}]`).join(', ')}\n`);
     saveToFile('02-supporting-characters.json', supportingResults);
@@ -488,7 +504,7 @@ async function main() {
     console.log('   🔄 Calling Claude API to write dialogue...\n');
 
     const dialogueStart = Date.now();
-    let dialogueResult = await writeFullDialogue(outline, roster);
+    let dialogueResult = await writeFullDialogue(outline, cast);
 
     console.log(`✅ Dialogue created! (${((Date.now() - dialogueStart) / 1000).toFixed(1)}s)`);
     console.log(`   Scenes with dialogue: ${dialogueResult.dialogue?.length || 0}`);
@@ -499,11 +515,11 @@ async function main() {
     // Step 6: Full review board
     console.log('🔎 Step 6: Review Board (5 reviewers)\n');
 
-    let episodeForReview = buildEpisodeForReview(outline, dialogueResult, roster);
+    let episodeForReview = buildEpisodeForReview(outline, dialogueResult, cast);
     let reviews = await runReviewers(
       Object.keys(REVIEWERS),
       episodeForReview,
-      roster,
+      cast,
       key => INITIAL_REVIEW_FILES[key]
     );
 
@@ -549,17 +565,19 @@ async function main() {
         console.log(`   ✅ Outline revised (${((Date.now() - revisionStart) / 1000).toFixed(1)}s)\n`);
         saveToFile(`${prefix}story-outline.json`, revisedStory);
 
-        // The revised outline may reference new characters.
+        // The revised outline may reference new characters — and may have
+        // written previously generated ones out of the story.
         const newSupporting = await generateMissingSupportingCharacters(outline, roster);
         if (newSupporting.length > 0) {
           roster = roster.concat(newSupporting.map(r => r.character));
           actions.push('roster-extension');
           saveToFile(`${prefix}supporting-characters.json`, newSupporting);
         }
+        cast = activeRoster(outline, roster);
 
         console.log('   💬 Dialogue Writer rewriting dialogue for revised outline...\n');
         const rewriteStart = Date.now();
-        dialogueResult = await writeFullDialogue(outline, roster);
+        dialogueResult = await writeFullDialogue(outline, cast);
         actions.push('dialogue-rewrite');
         console.log(`   ✅ Dialogue rewritten (${((Date.now() - rewriteStart) / 1000).toFixed(1)}s)\n`);
         saveToFile(`${prefix}dialogue.json`, dialogueResult);
@@ -591,8 +609,8 @@ async function main() {
 
       // Re-review with only the reviewers that were failing.
       console.log(`   🔎 Re-running ${failing.length} failing reviewer(s)...\n`);
-      episodeForReview = buildEpisodeForReview(outline, dialogueResult, roster);
-      const newReviews = await runReviewers(failing, episodeForReview, roster, key => `${prefix}${REVIEW_FILES[key]}`);
+      episodeForReview = buildEpisodeForReview(outline, dialogueResult, cast);
+      const newReviews = await runReviewers(failing, episodeForReview, cast, key => `${prefix}${REVIEW_FILES[key]}`);
       reviews = { ...reviews, ...newReviews };
 
       revisionHistory.push({
@@ -627,7 +645,12 @@ async function main() {
         totalSeconds: parseFloat(totalDuration),
         model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5'
       },
-      roster: roster.map(c => ({ id: c.id, name: c.name, role: c.storyRole })),
+      roster: roster.map(c => ({
+        id: c.id,
+        name: c.name,
+        role: c.storyRole,
+        active: cast.some(a => a.id === c.id)
+      })),
       finalStatus,
       verdicts: verdicts(reviews),
       revisions: revisionHistory,

@@ -17,6 +17,7 @@ import { describe, it, expect } from '@jest/globals';
 const {
   collectSupportingCharacterIds,
   describeAppearances,
+  activeRoster,
   failingReviewers,
   collectRevisionFeedback,
   mergeSceneDialogue,
@@ -62,6 +63,25 @@ describe('describeAppearances', () => {
     expect(appearances).toHaveLength(1);
     expect(appearances[0]).toContain('Hallway');
     expect(appearances[0]).toContain('relief');
+  });
+});
+
+describe('activeRoster', () => {
+  const roster = [
+    { id: 'player', name: 'P' },
+    { id: 'mia', name: 'Mia' },
+    { id: 'maya', name: 'Maya' }
+  ];
+
+  it('drops characters the outline no longer references', () => {
+    // Revision wrote "maya" out of the story: she must not stay declared.
+    const outline = outlineWith([{ characters: ['player', 'mia'] }]);
+    expect(activeRoster(outline, roster).map((c: any) => c.id)).toEqual(['player', 'mia']);
+  });
+
+  it('always keeps the protagonist', () => {
+    const outline = outlineWith([{ characters: ['mia'] }]);
+    expect(activeRoster(outline, roster).map((c: any) => c.id)).toEqual(['player', 'mia']);
   });
 });
 

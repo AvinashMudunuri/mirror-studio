@@ -134,6 +134,17 @@ function collectRevisionFeedback(reviews) {
 }
 
 /**
+ * Restrict the roster to characters the outline still references
+ * (plus the protagonist). Revisions can write characters out of the
+ * story; keeping them in the declared roster makes QA flag phantom
+ * characters that never appear in any scene.
+ */
+function activeRoster(outline, roster) {
+  const referenced = new Set(collectSupportingCharacterIds(outline));
+  return roster.filter(c => c.id === 'player' || referenced.has(c.id));
+}
+
+/**
  * Merge revised scene dialogue over the previous set by sceneId,
  * so a revision that only returns changed scenes never loses the rest.
  */
@@ -154,6 +165,7 @@ module.exports = {
   RESERVED_SPEAKER_IDS,
   collectSupportingCharacterIds,
   describeAppearances,
+  activeRoster,
   REVIEWER_PASSES,
   failingReviewers,
   collectRevisionFeedback,
