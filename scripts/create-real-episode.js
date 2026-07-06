@@ -27,6 +27,7 @@ const {
   mergeBranchDialogue
 } = require('./lib/pipeline-helpers');
 const { compileScreenplay } = require('./lib/compile-screenplay');
+const { buildEpisodeRow, persistEpisode } = require('./lib/persist-episode');
 
 // Import from built packages (resolve from script location)
 const packageRoot = path.resolve(__dirname, '..');
@@ -162,11 +163,17 @@ function saveToFile(filename, data) {
 }
 
 // ============================================================================
-// Mock Infrastructure (No Docker Required)
+// Infrastructure
 // ============================================================================
 // No message bus: this pipeline orchestrates agents by direct calls
-// (docs/decisions/001-message-bus-out-of-runtime.md). Memory is mocked
-// until Postgres persistence lands.
+// (docs/decisions/001-message-bus-out-of-runtime.md).
+//
+// Memory/persistence: when DATABASE_URL is set, agent memory goes to
+// Postgres and the finished episode is upserted into the episodes table.
+// Without it, memory is a no-op mock and the filesystem run folder is the
+// only output. Either way the run folder stays the source of truth.
+
+const DATABASE_URL = process.env.DATABASE_URL;
 
 const mockMemory = {
   store: async () => {},
@@ -174,6 +181,38 @@ const mockMemory = {
   search: async () => [],
   disconnect: async () => {}
 };
+
+/**
+ * Memory must never kill a run: generation is the product, memory is
+ * infrastructure. A mid-run DB hiccup degrades to warnings.
+ */
+function resilientMemory(memory) {
+  const guard = (name, fallback) => async (...args) => {
+    try {
+      return await memory[name](...args);
+    } catch (error) {
+      console.warn(`   ⚠️ memory.${name} failed (continuing without): ${error.message}`);
+      return fallback;
+    }
+  };
+  return {
+    store: guard('store', undefined),
+    retrieve: guard('retrieve', null),
+    search: guard('search', [])
+  };
+}
+
+function createRunMemory() {
+  if (!DATABASE_URL) return { memory: mockMemory, label: 'mock (set DATABASE_URL for Postgres)' };
+  try {
+    const { createMemorySystem } = require('@mirror/memory');
+    const memorySystem = createMemorySystem({ databaseUrl: DATABASE_URL });
+    return { memory: resilientMemory(memorySystem), label: 'Postgres', close: () => memorySystem.close() };
+  } catch (error) {
+    console.warn(`   ⚠️ Could not initialize Postgres memory (${error.message}); using mock`);
+    return { memory: mockMemory, label: 'mock (Postgres init failed)' };
+  }
+}
 
 // ============================================================================
 // Agents (initialized in main)
@@ -490,6 +529,10 @@ async function main() {
   if (SKIP_REVIEWERS.length > 0) {
     console.log(`   Skipping reviewers: ${SKIP_REVIEWERS.join(', ')} (SKIP_REVIEWERS)`);
   }
+
+  const runMemory = createRunMemory();
+  console.log(`   Agent memory: ${runMemory.label}`);
+  console.log(`   Episode persistence: ${DATABASE_URL ? 'Postgres (episodes table)' : 'filesystem only'}`);
   console.log('');
 
   // Step 1: Initialize Agents
@@ -497,7 +540,7 @@ async function main() {
 
   await Promise.all(
     Object.values(agents).map(agent =>
-      agent.initialize({ workflowId, threadId, memory: mockMemory, llm })
+      agent.initialize({ workflowId, threadId, memory: runMemory.memory, llm })
     )
   );
 
@@ -741,6 +784,28 @@ async function main() {
     const screenplayPath = path.join(OUTPUT_DIR, 'episode-script.md');
     fs.writeFileSync(screenplayPath, screenplay, 'utf-8');
     console.log(`   📜 Bound script: ${path.join(OUTPUT_DIR_RELATIVE, 'episode-script.md')} (${finalStatus === 'APPROVED' ? 'FINAL — LOCKED' : 'DRAFT'})\n`);
+
+    // Persist the episode to Postgres (best effort — the run folder is the
+    // source of truth, and scripts/persist-run.js can backfill later, so a
+    // DB failure at the very end must not fail a completed run).
+    if (DATABASE_URL) {
+      try {
+        const { Pool } = require('pg');
+        const pool = new Pool({ connectionString: DATABASE_URL });
+        try {
+          const row = buildEpisodeRow({ outline, cast, dialogueResult, manifest, runFolder: OUTPUT_DIR_RELATIVE });
+          const persisted = await persistEpisode(pool, row);
+          console.log(`   💾 Persisted to Postgres: episode ${persisted.episodeId} (status ${persisted.status})\n`);
+        } finally {
+          await pool.end();
+        }
+      } catch (error) {
+        console.warn(`   ⚠️ Postgres persistence failed (run folder is intact; backfill with "npm run persist:run"): ${error.message}\n`);
+      }
+    }
+    if (runMemory.close) {
+      await runMemory.close().catch(() => {});
+    }
 
     console.log('═══════════════════════════════════════════════════════════\n');
     console.log('✨ FULL EPISODE PIPELINE COMPLETE!\n');
