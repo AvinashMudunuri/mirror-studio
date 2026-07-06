@@ -217,16 +217,18 @@ Remember: You're evaluating GAMEPLAY and FUN FACTOR, not just story quality. A w
   ): Promise<GameDesignerOutput> {
     const { episode, characters, world } = review;
     
+    // Scripts may pass partially-assembled episodes; the full JSON below is
+    // the real review payload, so missing summary fields must not crash.
     const prompt = `REVIEW EPISODE FOR GAMEPLAY AND ENGAGEMENT:
 
 EPISODE:
 Title: ${episode.title}
 Synopsis: ${episode.synopsis}
-Themes: ${episode.themes.join(', ')}
-Target Traits: ${episode.targetTraits.join(', ')}
-Estimated Play Time: ${episode.estimatedPlayTime} minutes
-Scenes: ${episode.scenes.length}
-Characters: ${episode.characters.length}
+Themes: ${episode.themes?.join(', ') || 'Not specified'}
+Target Traits: ${(episode.targetTraits as unknown[])?.map(t => typeof t === 'string' ? t : JSON.stringify(t)).join(', ') || 'Not specified'}
+Estimated Play Time: ${episode.estimatedPlayTime ?? 'Not specified'} minutes
+Scenes: ${episode.scenes?.length ?? 0}
+Characters: ${episode.characters?.length ?? 0}
 
 Full Episode Data: ${JSON.stringify(episode, null, 2)}
 

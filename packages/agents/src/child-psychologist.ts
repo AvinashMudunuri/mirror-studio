@@ -215,7 +215,7 @@ TARGET AUDIENCE: ${world.targetAge?.[0] || 13}-${world.targetAge?.[1] || 17} yea
 EPISODE:
 Title: ${episode.title}
 Synopsis: ${episode.synopsis}
-Themes: ${episode.themes.join(', ')}
+Themes: ${episode.themes?.join(', ') || 'Not specified'}
 Educational Goals: ${Array.isArray(educationalGoals) ? educationalGoals.join(', ') : 'Not specified'}
 Full Episode Data: ${JSON.stringify(episode, null, 2)}
 

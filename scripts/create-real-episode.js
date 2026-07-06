@@ -334,7 +334,15 @@ async function main() {
     
     const reviewStartTime = Date.now();
     
-    // Build a minimal Episode object for review
+    // Build the Episode object for review from the ACTUAL generated content.
+    // Reviewers evaluate what they are given — an empty scenes/choices array
+    // makes QA fail the episode and turns safety reviews into synopsis-only
+    // guesses.
+    const scenesWithDialogue = (storyResult.episodeOutline.scenes || []).map(scene => ({
+      ...scene,
+      dialogue: dialogueResult.dialogue?.find(d => d.sceneId === scene.id)?.lines || []
+    }));
+    
     const episodeForReview = {
       id: `ep-${EPISODE_BRIEF.episodeNumber}`,
       worldId: TEST_WORLD.id,
@@ -342,12 +350,17 @@ async function main() {
       episodeNumber: EPISODE_BRIEF.episodeNumber,
       title: storyResult.episodeOutline.title,
       synopsis: storyResult.episodeOutline.synopsis,
-      scenes: [], // Simplified for now
-      choices: [],
-      outcomes: [],
+      scenes: scenesWithDialogue,
+      choices: storyResult.episodeOutline.choicePoints || [],
+      choiceDialogue: dialogueResult.choiceDialogue || [],
+      outcomes: storyResult.episodeOutline.branches || [],
+      emotionalArc: storyResult.episodeOutline.emotionalArc || [],
       themes: storyResult.episodeOutline.themes,
       educationalGoals: storyResult.episodeOutline.educationalGoals || [],
       targetTraits: storyResult.episodeOutline.targetTraits.map(t => ({ traitId: t, changeAmount: 1 })),
+      targetAge: TEST_WORLD.targetAge,
+      characters: [protagonistResult.character.id],
+      estimatedPlayTime: storyResult.episodeOutline.estimatedPlayTime,
       status: 'DRAFT',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()

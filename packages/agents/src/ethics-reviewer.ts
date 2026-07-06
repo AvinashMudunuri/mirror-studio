@@ -257,13 +257,17 @@ Remember: Your role is to ensure content is SAFE, INCLUSIVE, and RESPECTFUL whil
   ): Promise<EthicsReviewerOutput> {
     const { episode, characters, world } = review;
     
+    // Scripts may pass partially-assembled episodes; fall back to the world's
+    // target age and tolerate missing summary fields (full JSON is below).
+    const targetAge = episode.targetAge || world.targetAge;
+    
     const prompt = `REVIEW EPISODE FOR ETHICAL CONTENT, BIAS, AND REPRESENTATION:
 
 EPISODE:
 Title: ${episode.title}
 Synopsis: ${episode.synopsis}
-Themes: ${episode.themes.join(', ')}
-Target Age: ${episode.targetAge[0]}-${episode.targetAge[1]}
+Themes: ${episode.themes?.join(', ') || 'Not specified'}
+Target Age: ${targetAge ? `${targetAge[0]}-${targetAge[1]}` : 'Not specified'}
 
 Full Episode Data: ${JSON.stringify(episode, null, 2)}
 
