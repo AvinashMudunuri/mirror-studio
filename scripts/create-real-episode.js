@@ -15,18 +15,25 @@ const packageRoot = path.resolve(__dirname, '..');
 let agentsModule;
 const possiblePaths = [
   path.join(packageRoot, 'packages', 'agents', 'dist', 'index.js'),
-  path.join(packageRoot, '..', 'packages', 'agents', 'dist', 'index.js'),
-  require.resolve('@mirror/agents')
+  path.join(packageRoot, '..', 'packages', 'agents', 'dist', 'index.js')
 ];
+
+// Try require.resolve as last resort
+try {
+  possiblePaths.push(require.resolve('@mirror/agents'));
+} catch (e) {
+  // @mirror/agents not in node_modules, skip
+}
 
 for (const tryPath of possiblePaths) {
   try {
-    if (fs.existsSync(tryPath) || tryPath.startsWith('@mirror')) {
+    if (fs.existsSync(tryPath)) {
       agentsModule = require(tryPath);
       console.log(`✅ Loaded agents from: ${tryPath}\n`);
       break;
     }
   } catch (err) {
+    console.error(`   Failed to load ${tryPath}: ${err.message}`);
     // Try next path
   }
 }
@@ -34,7 +41,11 @@ for (const tryPath of possiblePaths) {
 if (!agentsModule) {
   console.error('❌ Error: Could not load @mirror/agents package');
   console.error('   Tried paths:');
-  possiblePaths.forEach(p => console.error(`   - ${p}`));
+  possiblePaths.forEach(p => {
+    const exists = fs.existsSync(p);
+    console.error(`   - ${p} ${exists ? '(exists)' : '(not found)'}`);
+  });
+  console.error('\n💡 Tip: Run "npm run build" first to compile TypeScript files.\n');
   process.exit(1);
 }
 
