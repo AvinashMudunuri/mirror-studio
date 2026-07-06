@@ -289,10 +289,25 @@ function buildEpisodeForReview(outline, dialogueResult, roster) {
   // Reviewers evaluate what they are given — an empty scenes/choices array
   // makes QA fail the episode and turns safety reviews into synopsis-only
   // guesses.
-  const scenesWithDialogue = (outline.scenes || []).map(scene => ({
-    ...scene,
-    dialogue: dialogueResult.dialogue?.find(d => d.sceneId === scene.id)?.lines || []
-  }));
+  //
+  // Each scene also gets an explicit derived "transition" object. The
+  // choice→scene linkage only lives on the choice side (choice.scene), and
+  // the review model repeatedly misread scenes with a choice attached as
+  // dead ends ("defaultNextScene: null but no choice attached").
+  const choicesByScene = new Map(
+    (outline.choicePoints || []).map(cp => [cp.scene, cp])
+  );
+  const scenesWithDialogue = (outline.scenes || []).map(scene => {
+    const choice = choicesByScene.get(scene.id);
+    const transition = choice
+      ? { type: 'choice', choiceId: choice.id, nextScenes: (choice.options || []).map(o => o.nextScene) }
+      : { type: 'default', nextScene: scene.defaultNextScene };
+    return {
+      ...scene,
+      transition,
+      dialogue: dialogueResult.dialogue?.find(d => d.sceneId === scene.id)?.lines || []
+    };
+  });
 
   return {
     id: `ep-${EPISODE_BRIEF.episodeNumber}`,
