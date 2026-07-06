@@ -1,0 +1,1730 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1-arrival",
+      "lines": [
+        {
+          "id": "s1-1",
+          "character": "NARRATOR",
+          "text": "The bus doors hiss open and spit you out into a river of people who all, somehow, already know where they're going."
+        },
+        {
+          "id": "s1-2",
+          "character": "INTERNAL",
+          "text": "Okay. Room 114. Room 114 is a place that exists. Findable. Probably."
+        },
+        {
+          "id": "s1-3",
+          "character": "NARRATOR",
+          "text": "You unfold the campus map. It's already soft at the creases from being refolded on the bus four times."
+        },
+        {
+          "id": "s1-4",
+          "character": "INTERNAL",
+          "text": "Cool, cool, love that for me. A map with no you-are-here dot."
+        },
+        {
+          "id": "s1-5",
+          "character": "player",
+          "text": "...Great. Everyone else got the good map.",
+          "emotion": "muttering",
+          "action": "glances around at the crowd"
+        },
+        {
+          "id": "s1-6",
+          "character": "NARRATOR",
+          "text": "A torn bell schedule flutters against the wall. First bell in six minutes."
+        },
+        {
+          "id": "s1-7",
+          "character": "INTERNAL",
+          "text": "Six minutes to figure out who I'm going to be here. No pressure."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2-hallway-locker",
+      "lines": [
+        {
+          "id": "s2-1",
+          "character": "NARRATOR",
+          "text": "Locker 114 sticks like it's been rusted shut since before you were born."
+        },
+        {
+          "id": "s2-2",
+          "character": "player",
+          "text": "Come on. Come ON—",
+          "emotion": "straining",
+          "action": "yanks the handle"
+        },
+        {
+          "id": "s2-3",
+          "character": "NARRATOR",
+          "text": "It gives all at once, door swinging wide, binders detonating across the tile in a paper avalanche."
+        },
+        {
+          "id": "s2-4",
+          "character": "marcus",
+          "text": "OH— and she's DOWN! Day one, folks, we already got a casualty!",
+          "emotion": "delighted",
+          "action": "already mid-laugh with his friends"
+        },
+        {
+          "id": "s2-5",
+          "character": "NARRATOR",
+          "text": "A few kids nearby laugh — not cruel exactly, just loud, the way hallways are loud about everything."
+        },
+        {
+          "id": "s2-6",
+          "character": "reyna",
+          "text": "...you okay?",
+          "emotion": "quiet",
+          "action": "half-steps forward from the edge of the crowd"
+        },
+        {
+          "id": "s2-7",
+          "character": "NARRATOR",
+          "text": "She stops herself before she gets close enough for anyone to notice she offered."
+        },
+        {
+          "id": "s2-8",
+          "character": "INTERNAL",
+          "text": "Everyone's looking. Pick something. Say something. Do something."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3-confident",
+      "lines": [
+        {
+          "id": "s3c-1",
+          "character": "NARRATOR",
+          "text": "Marcus tilts his head, reassessing you in real time."
+        },
+        {
+          "id": "s3c-2",
+          "character": "marcus",
+          "text": "Nah, you're good, you're good — that was funny. You're funny.",
+          "emotion": "impressed"
+        },
+        {
+          "id": "s3c-3",
+          "character": "player",
+          "text": "I have my moments. Mostly involving public humiliation, but hey. Moments."
+        },
+        {
+          "id": "s3c-4",
+          "character": "marcus",
+          "text": "Sit with us at lunch. I'm calling it. You're in.",
+          "action": "gives a chin-lift nod"
+        },
+        {
+          "id": "s3c-5",
+          "character": "INTERNAL",
+          "text": "That's a whole social tier unlocked in under ninety seconds. Weird flex, but okay."
+        },
+        {
+          "id": "s3c-6",
+          "character": "NARRATOR",
+          "text": "He's already turning back to his friends, finger-gunning at you like he's stamping an entry pass."
+        },
+        {
+          "id": "s3c-7",
+          "character": "player",
+          "text": "...cool, cool. Love that for me.",
+          "emotion": "quiet, to no one"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3-shy",
+      "lines": [
+        {
+          "id": "s3s-1",
+          "character": "NARRATOR",
+          "text": "Reyna crouches without a word, gathering the scattered binders into a neat stack, like she's done this before — for someone, if not for you."
+        },
+        {
+          "id": "s3s-2",
+          "character": "player",
+          "text": "You don't have to—",
+          "emotion": "still red-faced"
+        },
+        {
+          "id": "s3s-3",
+          "character": "reyna",
+          "text": "I know.",
+          "action": "doesn't look up, keeps stacking"
+        },
+        {
+          "id": "s3s-4",
+          "character": "reyna",
+          "text": "Locker's cursed. Ask anyone who's had it before you.",
+          "emotion": "small almost-smile",
+          "action": "hands the last folder back"
+        },
+        {
+          "id": "s3s-5",
+          "character": "player",
+          "text": "...Thanks. Seriously."
+        },
+        {
+          "id": "s3s-6",
+          "character": "NARRATOR",
+          "text": "Reyna ducks her head — somewhere between a smile and an exit — and slips back into the crowd before you can say anything else."
+        },
+        {
+          "id": "s3s-7",
+          "character": "INTERNAL",
+          "text": "She was gone before I even got her name. Great start, me."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3-defensive",
+      "lines": [
+        {
+          "id": "s3d-1",
+          "character": "NARRATOR",
+          "text": "The words come out before you can stop them."
+        },
+        {
+          "id": "s3d-2",
+          "character": "player",
+          "text": "What's so funny?",
+          "emotion": "sharp"
+        },
+        {
+          "id": "s3d-3",
+          "character": "NARRATOR",
+          "text": "The hallway doesn't go silent, exactly — it just dips. Enough that you notice."
+        },
+        {
+          "id": "s3d-4",
+          "character": "marcus",
+          "text": "...whoa. Nobody said anything, man.",
+          "emotion": "eyebrow up, more curious than mad"
+        },
+        {
+          "id": "s3d-5",
+          "character": "NARRATOR",
+          "text": "A couple of kids exchange a look and keep walking, already bored, already elsewhere."
+        },
+        {
+          "id": "s3d-6",
+          "character": "marcus",
+          "text": "Relax. It's a hallway, not a courtroom.",
+          "emotion": "half a laugh"
+        },
+        {
+          "id": "s3d-7",
+          "character": "INTERNAL",
+          "text": "Great. First day, and I'm already the girl who yells at lockers."
+        },
+        {
+          "id": "s3d-8",
+          "character": "player",
+          "text": "...whatever.",
+          "emotion": "quiet"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4-cafeteria",
+      "lines": [
+        {
+          "id": "s4-1",
+          "character": "NARRATOR",
+          "text": "The cafeteria hits you like a wall of noise and fluorescent light."
+        },
+        {
+          "id": "s4-2",
+          "character": "NARRATOR",
+          "text": "Marcus's table is loud, magnetic, laughing at something before it's even finished being said."
+        },
+        {
+          "id": "s4-3",
+          "character": "NARRATOR",
+          "text": "In the far corner, Reyna sits alone, pencil moving fast across a sketchbook, headphones half-on like a shield."
+        },
+        {
+          "id": "s4-4",
+          "character": "NARRATOR",
+          "text": "Everywhere else — just open seats. Nobody's decision but yours."
+        },
+        {
+          "id": "s4-5",
+          "character": "INTERNAL",
+          "text": "Okay. Tray's getting heavy. Pick a table, pick a life, apparently."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-popular-table",
+      "lines": [
+        {
+          "id": "s5p-1",
+          "character": "marcus",
+          "text": "Okay, ranking the cafeteria pizza. Go. I need consensus before I commit."
+        },
+        {
+          "id": "s5p-2",
+          "character": "NARRATOR",
+          "text": "Voices overlap — jokes, gossip, someone's story about a coach getting hit with a soccer ball, all folding over each other in easy rhythm."
+        },
+        {
+          "id": "s5p-3",
+          "character": "player",
+          "text": "Objectively a crime against bread. But I'll allow it."
+        },
+        {
+          "id": "s5p-4",
+          "character": "marcus",
+          "text": "See, this is why you're in.",
+          "emotion": "laughing"
+        },
+        {
+          "id": "s5p-5",
+          "character": "NARRATOR",
+          "text": "Someone at the table nods toward the corner. 'Is that girl still drawing her weird monster stuff? Every single day.'"
+        },
+        {
+          "id": "s5p-6",
+          "character": "marcus",
+          "text": "Reyna? Yeah, she's like a professional hermit. It's kind of her whole thing.",
+          "emotion": "easy, not quite unkind"
+        },
+        {
+          "id": "s5p-7",
+          "character": "NARRATOR",
+          "text": "The table laughs. It's quick, it's small, it's gone in two seconds — and somehow that's what makes it land."
+        },
+        {
+          "id": "s5p-8",
+          "character": "INTERNAL",
+          "text": "It's just a joke. It's not that deep. ...Is it?"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-reyna-table",
+      "lines": [
+        {
+          "id": "s5r-1",
+          "character": "NARRATOR",
+          "text": "Reyna looks up like she's bracing for the seat to be a joke."
+        },
+        {
+          "id": "s5r-2",
+          "character": "reyna",
+          "text": "...oh. Hey.",
+          "emotion": "surprised"
+        },
+        {
+          "id": "s5r-3",
+          "character": "player",
+          "text": "Mind if I sit? Everywhere else looked like it required a tribunal."
+        },
+        {
+          "id": "s5r-4",
+          "character": "reyna",
+          "text": "It's fine. I eat here most days. Nobody bothers you, you can actually hear yourself think.",
+          "emotion": "small almost-smile"
+        },
+        {
+          "id": "s5r-5",
+          "character": "NARRATOR",
+          "text": "She hesitates, then slides the sketchbook a few inches — not quite offering it, not quite hiding it either."
+        },
+        {
+          "id": "s5r-6",
+          "character": "reyna",
+          "text": "Okay, don't laugh, but I've been working on this since sixth grade. It's got, like, an actual plot now. Which is either really cool or a cry for help."
+        },
+        {
+          "id": "s5r-7",
+          "character": "player",
+          "text": "Can I see?"
+        },
+        {
+          "id": "s5r-8",
+          "character": "reyna",
+          "text": "...Yeah. Okay. Yeah.",
+          "action": "turns the notebook around"
+        },
+        {
+          "id": "s5r-9",
+          "character": "NARRATOR",
+          "text": "The drawings are dense, careful, strange in a good way — creatures with too many eyes and very specific expressions."
+        },
+        {
+          "id": "s5r-10",
+          "character": "player",
+          "text": "This is really good, Reyna."
+        },
+        {
+          "id": "s5r-11",
+          "character": "reyna",
+          "text": "It's kind of dumb, but— thanks.",
+          "emotion": "ducking her head, pleased despite herself"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-alone-table",
+      "lines": [
+        {
+          "id": "s5a-1",
+          "character": "NARRATOR",
+          "text": "You sit where nobody has to notice you, which is exactly the point."
+        },
+        {
+          "id": "s5a-2",
+          "character": "NARRATOR",
+          "text": "From here you can see both worlds — Marcus's table erupting into laughter about something you'll never know the context for, and Reyna, alone, pencil never stopping."
+        },
+        {
+          "id": "s5a-3",
+          "character": "INTERNAL",
+          "text": "Nobody's looking at me over here. That's the whole appeal."
+        },
+        {
+          "id": "s5a-4",
+          "character": "INTERNAL",
+          "text": "...It's just really loud, being invisible."
+        },
+        {
+          "id": "s5a-5",
+          "character": "NARRATOR",
+          "text": "The bell for next period feels far away. You eat. You watch. Nobody watches back."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-classroom",
+      "lines": [
+        {
+          "id": "s6-1",
+          "character": "ms-alvarez",
+          "text": "Okay, okay, okay — settle down, we've got a partner project, due Friday. Partners, not permanent marriages, people. You can survive four days.",
+          "action": "claps twice"
+        },
+        {
+          "id": "s6-2",
+          "character": "NARRATOR",
+          "text": "A ripple of movement — chairs scraping, friend groups already locking in."
+        },
+        {
+          "id": "s6-3",
+          "character": "marcus",
+          "text": "Yo — c'mon, partner up, I got you.",
+          "action": "waves you over, grinning"
+        },
+        {
+          "id": "s6-4",
+          "character": "NARRATOR",
+          "text": "Reyna glances over from her desk, quick, hopeful, and says nothing at all."
+        },
+        {
+          "id": "s6-5",
+          "character": "NARRATOR",
+          "text": "Devon, a few seats over, sketchbook already out, doesn't look up — just sits there, ready to be picked, like he's used to waiting."
+        },
+        {
+          "id": "s6-6",
+          "character": "ms-alvarez",
+          "text": "Pick fast, people, or I'm assigning by birthday month, and nobody wants that chaos."
+        },
+        {
+          "id": "s6-7",
+          "character": "INTERNAL",
+          "text": "Three options. Three whole different weeks."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-partner-marcus",
+      "lines": [
+        {
+          "id": "s7m-1",
+          "character": "NARRATOR",
+          "text": "Marcus spins his chair around backwards and drops into it like the project's already handled."
+        },
+        {
+          "id": "s7m-2",
+          "character": "marcus",
+          "text": "So, weekend. You doing anything? There's this thing at Kayla's—"
+        },
+        {
+          "id": "s7m-3",
+          "character": "player",
+          "text": "...We do have a project."
+        },
+        {
+          "id": "s7m-4",
+          "character": "marcus",
+          "text": "Right, right, the project. Yeah.",
+          "action": "beat"
+        },
+        {
+          "id": "s7m-5",
+          "character": "marcus",
+          "text": "Okay, so — hear me out—"
+        },
+        {
+          "id": "s7m-6",
+          "character": "NARRATOR",
+          "text": "He nods toward a desk a few rows over, where Reyna's rough draft sits open and unattended while she's up sharpening a pencil."
+        },
+        {
+          "id": "s7m-7",
+          "character": "marcus",
+          "text": "She's not even using it right now. Thirty seconds. Nobody has to know."
+        },
+        {
+          "id": "s7m-8",
+          "character": "INTERNAL",
+          "text": "That's not actually a small thing he just said."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7b-cheated",
+      "lines": [
+        {
+          "id": "s7bc-1",
+          "character": "NARRATOR",
+          "text": "Her handwriting is small, careful, precise — even her notes look like they were made by someone who cares."
+        },
+        {
+          "id": "s7bc-2",
+          "character": "NARRATOR",
+          "text": "A few lines practically write themselves into your outline before you can think too hard about it."
+        },
+        {
+          "id": "s7bc-3",
+          "character": "marcus",
+          "text": "Yeah, that's good, put that in, whatever works.",
+          "action": "not even looking over"
+        },
+        {
+          "id": "s7bc-4",
+          "character": "INTERNAL",
+          "text": "It's fast. It's easy. It's also — something."
+        },
+        {
+          "id": "s7bc-5",
+          "character": "player",
+          "text": "...yeah. Whatever works.",
+          "emotion": "quiet, mostly to herself"
+        },
+        {
+          "id": "s7bc-6",
+          "character": "NARRATOR",
+          "text": "The knot in your stomach doesn't leave when you close the notebook."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7b-original",
+      "lines": [
+        {
+          "id": "s7bo-1",
+          "character": "player",
+          "text": "We're not using her stuff. Let's just — come up with something."
+        },
+        {
+          "id": "s7bo-2",
+          "character": "marcus",
+          "text": "Fine. Your funeral.",
+          "emotion": "already bored, already scrolling his phone"
+        },
+        {
+          "id": "s7bo-3",
+          "character": "player",
+          "text": "Come on. You must have some idea. Anything."
+        },
+        {
+          "id": "s7bo-4",
+          "character": "marcus",
+          "text": "...okay, what if the whole thing's set up like a hallway. Like, the story happens between classes. That's kind of funny, right?",
+          "action": "actually thinking, surprised at himself"
+        },
+        {
+          "id": "s7bo-5",
+          "character": "player",
+          "text": "...Actually? That's not bad."
+        },
+        {
+          "id": "s7bo-6",
+          "character": "marcus",
+          "text": "I have ideas sometimes. It's rare. Treasure it."
+        },
+        {
+          "id": "s7bo-7",
+          "character": "NARRATOR",
+          "text": "It's thin. It's a little rushed. But it's actually yours."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7b-warned",
+      "lines": [
+        {
+          "id": "s7bw-1",
+          "character": "NARRATOR",
+          "text": "You catch Reyna near the door before the bell, voice low."
+        },
+        {
+          "id": "s7bw-2",
+          "character": "player",
+          "text": "Hey — just so you know, Marcus looked through your draft earlier. I didn't take anything, but... just be ready. Maybe."
+        },
+        {
+          "id": "s7bw-3",
+          "character": "NARRATOR",
+          "text": "Reyna goes still for a second, jaw tight."
+        },
+        {
+          "id": "s7bw-4",
+          "character": "reyna",
+          "text": "...right. Okay.",
+          "action": "beat"
+        },
+        {
+          "id": "s7bw-5",
+          "character": "reyna",
+          "text": "Thanks for telling me."
+        },
+        {
+          "id": "s7bw-6",
+          "character": "NARRATOR",
+          "text": "She tucks the notebook closer to her chest, like she's already recalculating."
+        },
+        {
+          "id": "s7bw-7",
+          "character": "reyna",
+          "text": "I'll have something ready. Don't worry about it."
+        },
+        {
+          "id": "s7bw-8",
+          "character": "INTERNAL",
+          "text": "I don't know if that helps her. But it felt like the least I could do."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-partner-reyna",
+      "lines": [
+        {
+          "id": "s7r-1",
+          "character": "reyna",
+          "text": "...you want to hear my ideas? Like, actual ideas?",
+          "emotion": "surprised"
+        },
+        {
+          "id": "s7r-2",
+          "character": "player",
+          "text": "That's usually how projects work, yeah."
+        },
+        {
+          "id": "s7r-3",
+          "character": "NARRATOR",
+          "text": "She hesitates, then flips her notebook open, angling it so you can actually see."
+        },
+        {
+          "id": "s7r-4",
+          "character": "reyna",
+          "text": "Okay, it's kind of dumb, but — what if we did it like a field guide? Like a monster field guide, except the monsters are just... normal school stuff. First days. Locker jams. That kind of thing."
+        },
+        {
+          "id": "s7r-5",
+          "character": "player",
+          "text": "Wait, that's actually really good."
+        },
+        {
+          "id": "s7r-6",
+          "character": "reyna",
+          "text": "Yeah?",
+          "emotion": "ducking her head, pleased"
+        },
+        {
+          "id": "s7r-7",
+          "character": "reyna",
+          "text": "Because then each 'monster' can be, like, a different anxiety, and we draw it—",
+          "action": "taps pen against sketchbook, thinking fast"
+        },
+        {
+          "id": "s7r-8",
+          "character": "NARRATOR",
+          "text": "She's talking faster now, the careful sentences dropping away, replaced by something rambly and real."
+        },
+        {
+          "id": "s7r-9",
+          "character": "INTERNAL",
+          "text": "I don't think people ask her for the whole idea very often."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-partner-devon",
+      "lines": [
+        {
+          "id": "s7d-1",
+          "character": "devon",
+          "text": "So. Full disclosure. I already have, like, four ideas, and one of them involves a sentient locker. I'm not saying it's good. I'm saying it exists.",
+          "action": "pencil moving, not looking up"
+        },
+        {
+          "id": "s7d-2",
+          "character": "player",
+          "text": "...Okay, I need to hear about the sentient locker."
+        },
+        {
+          "id": "s7d-3",
+          "character": "devon",
+          "text": "It eats binders. That's the whole plot. It's a metaphor. For, uh, school.",
+          "action": "taps pencil against his knuckles, testing the joke"
+        },
+        {
+          "id": "s7d-4",
+          "character": "player",
+          "text": "That's either genius or deeply concerning."
+        },
+        {
+          "id": "s7d-5",
+          "character": "devon",
+          "text": "Why not both.",
+          "emotion": "deadpan"
+        },
+        {
+          "id": "s7d-6",
+          "character": "NARRATOR",
+          "text": "He almost smiles — doesn't quite — and keeps sketching, the idea already taking shape on the page."
+        },
+        {
+          "id": "s7d-7",
+          "character": "player",
+          "text": "Okay. I'm in. Let's build the locker monster."
+        },
+        {
+          "id": "s7d-8",
+          "character": "devon",
+          "text": "Knew you had taste."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8-conflict",
+      "lines": [
+        {
+          "id": "s8-1",
+          "character": "NARRATOR",
+          "text": "Reyna stands at the front, notebook trembling slightly in her hands, presenting the field-guide idea to the class."
+        },
+        {
+          "id": "s8-2",
+          "character": "reyna",
+          "text": "...so each entry catalogs a specific first-day anxiety, presented as a fictional creature—",
+          "emotion": "careful, precise"
+        },
+        {
+          "id": "s8-3",
+          "character": "marcus",
+          "text": "...it's just weird, though? Like, monsters? For an English project?",
+          "emotion": "calling out, loud"
+        },
+        {
+          "id": "s8-4",
+          "character": "NARRATOR",
+          "text": "A ripple of laughter moves through that side of the room."
+        },
+        {
+          "id": "s8-5",
+          "character": "NARRATOR",
+          "text": "Reyna's face goes still in a way that's worse than flinching."
+        },
+        {
+          "id": "s8-6",
+          "character": "ms-alvarez",
+          "text": "Okay, continue, Reyna—",
+          "action": "still shuffling papers, hasn't caught it"
+        },
+        {
+          "id": "s8-7",
+          "character": "NARRATOR",
+          "text": "The room waits. Reyna doesn't move. Somebody has to."
+        },
+        {
+          "id": "s8-8",
+          "character": "INTERNAL",
+          "text": "Say something. Say something now."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8-conflict-cheated",
+      "lines": [
+        {
+          "id": "s8c-1",
+          "character": "NARRATOR",
+          "text": "Marcus presents your 'shared' idea first, breezing through it, casual, half-checked out."
+        },
+        {
+          "id": "s8c-2",
+          "character": "marcus",
+          "text": "...yeah, so it's kind of a field guide thing, monsters, whatever, it's got some solid lines in it—"
+        },
+        {
+          "id": "s8c-3",
+          "character": "NARRATOR",
+          "text": "Then Reyna gets up. And her project is the same idea. The same lines, even."
+        },
+        {
+          "id": "s8c-4",
+          "character": "reyna",
+          "text": "...wait.",
+          "emotion": "confused, slowing down"
+        },
+        {
+          "id": "s8c-5",
+          "character": "NARRATOR",
+          "text": "She looks up, scanning the room, landing on you."
+        },
+        {
+          "id": "s8c-6",
+          "character": "ms-alvarez",
+          "text": "...huh. Okay, let's — hold on a second.",
+          "emotion": "frowning slightly"
+        },
+        {
+          "id": "s8c-7",
+          "character": "reyna",
+          "text": "...that's my line. That's — that's literally my line.",
+          "emotion": "quiet, still processing"
+        },
+        {
+          "id": "s8c-8",
+          "character": "INTERNAL",
+          "text": "There it is. The thing you knew was coming."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9-stood-up",
+      "lines": [
+        {
+          "id": "s9su-1",
+          "character": "player",
+          "text": "It's not weird. It's actually really smart — way smarter than most of what's in this room, honestly.",
+          "emotion": "clear, steady"
+        },
+        {
+          "id": "s9su-2",
+          "character": "NARRATOR",
+          "text": "The room goes quiet for exactly one beat too long."
+        },
+        {
+          "id": "s9su-3",
+          "character": "NARRATOR",
+          "text": "Then a couple of kids actually nod, murmuring agreement, and the moment tips."
+        },
+        {
+          "id": "s9su-4",
+          "character": "marcus",
+          "text": "...I mean, I didn't say it was bad, I just said—",
+          "emotion": "caught off guard, half-laughing it off"
+        },
+        {
+          "id": "s9su-5",
+          "character": "player",
+          "text": "You said it loud enough for the whole room, though."
+        },
+        {
+          "id": "s9su-6",
+          "character": "NARRATOR",
+          "text": "Marcus doesn't have a comeback for that. He shrugs instead, looking almost impressed despite himself."
+        },
+        {
+          "id": "s9su-7",
+          "character": "reyna",
+          "text": "...you didn't have to do that. Back there.",
+          "emotion": "quiet, later, just to you"
+        },
+        {
+          "id": "s9su-8",
+          "character": "player",
+          "text": "I know."
+        },
+        {
+          "id": "s9su-9",
+          "character": "reyna",
+          "text": "I'm just saying. You didn't have to."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9-stayed-quiet",
+      "lines": [
+        {
+          "id": "s9sq-1",
+          "character": "NARRATOR",
+          "text": "Your throat goes tight. The words are right there. They don't come out."
+        },
+        {
+          "id": "s9sq-2",
+          "character": "NARRATOR",
+          "text": "Reyna sits back down, smaller than she was a minute ago, notebook pulled tight against her chest."
+        },
+        {
+          "id": "s9sq-3",
+          "character": "marcus",
+          "text": "Okay, wait, whose turn is it—",
+          "emotion": "already onto something else, laughing with his table"
+        },
+        {
+          "id": "s9sq-4",
+          "character": "INTERNAL",
+          "text": "It's not my fight. It's not my fight. It's not—"
+        },
+        {
+          "id": "s9sq-5",
+          "character": "NARRATOR",
+          "text": "Ms. Alvarez calls the next group up. Class moves on like nothing happened."
+        },
+        {
+          "id": "s9sq-6",
+          "character": "INTERNAL",
+          "text": "Nobody noticed I didn't say anything. That doesn't make it feel any better."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9-diplomatic",
+      "lines": [
+        {
+          "id": "s9d-1",
+          "character": "player",
+          "text": "Okay, but has anyone here actually fought a hallway monster before eight a.m.? Because I have, and it was way scarier than this project.",
+          "emotion": "light, easy"
+        },
+        {
+          "id": "s9d-2",
+          "character": "NARRATOR",
+          "text": "A few laughs — different laughs this time, the kind that break tension instead of building it."
+        },
+        {
+          "id": "s9d-3",
+          "character": "NARRATOR",
+          "text": "The class's attention slides sideways, off Reyna, onto you, just long enough for her to sit back down without an audience."
+        },
+        {
+          "id": "s9d-4",
+          "character": "marcus",
+          "text": "...yeah, okay, fair.",
+          "emotion": "blinking, already forgetting he started it"
+        },
+        {
+          "id": "s9d-5",
+          "character": "NARRATOR",
+          "text": "Later, passing her desk, you lean down, quiet."
+        },
+        {
+          "id": "s9d-6",
+          "character": "player",
+          "text": "For what it's worth — I thought it was really good."
+        },
+        {
+          "id": "s9d-7",
+          "character": "reyna",
+          "text": "...thanks.",
+          "emotion": "surprised, small"
+        },
+        {
+          "id": "s9d-8",
+          "character": "NARRATOR",
+          "text": "Marcus never quite clocks that he lost that round. Reyna does."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9-confessed",
+      "lines": [
+        {
+          "id": "s9cf-1",
+          "character": "NARRATOR",
+          "text": "You start to explain, and the excuse dies somewhere in your throat."
+        },
+        {
+          "id": "s9cf-2",
+          "character": "player",
+          "text": "...Actually — can I just say something?",
+          "action": "beat"
+        },
+        {
+          "id": "s9cf-3",
+          "character": "player",
+          "text": "The best lines in ours were hers. I used her notes without asking. That's on me."
+        },
+        {
+          "id": "s9cf-4",
+          "character": "marcus",
+          "text": "...whatever. It's not a big deal.",
+          "emotion": "quieter now, losing the performance voice",
+          "action": "goes red, muttering"
+        },
+        {
+          "id": "s9cf-5",
+          "character": "reyna",
+          "text": "...oh.",
+          "emotion": "quiet, the sentence still landing"
+        },
+        {
+          "id": "s9cf-6",
+          "character": "NARRATOR",
+          "text": "A few classmates murmur — not mocking, this time. Something closer to respect."
+        },
+        {
+          "id": "s9cf-7",
+          "character": "ms-alvarez",
+          "text": "Okay — let's talk about that after class, yeah? Good. Moving on."
+        },
+        {
+          "id": "s9cf-8",
+          "character": "INTERNAL",
+          "text": "That felt awful. It also felt like the only thing to do."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9-silent-cheat",
+      "lines": [
+        {
+          "id": "s9sc-1",
+          "character": "NARRATOR",
+          "text": "You say nothing. Marcus recovers first."
+        },
+        {
+          "id": "s9sc-2",
+          "character": "marcus",
+          "text": "I mean — great minds, right? Weird coincidence.",
+          "emotion": "loose laugh"
+        },
+        {
+          "id": "s9sc-3",
+          "character": "NARRATOR",
+          "text": "A few kids laugh along. It smooths right over, the way these things do when nobody pushes back."
+        },
+        {
+          "id": "s9sc-4",
+          "character": "NARRATOR",
+          "text": "Reyna doesn't argue. She just sits down and doesn't look up again."
+        },
+        {
+          "id": "s9sc-5",
+          "character": "INTERNAL",
+          "text": "The bell rings eventually. The guilt doesn't."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9-quiet-credit",
+      "lines": [
+        {
+          "id": "s9qc-1",
+          "character": "NARRATOR",
+          "text": "After the bell, you catch Ms. Alvarez before she erases the board."
+        },
+        {
+          "id": "s9qc-2",
+          "character": "player",
+          "text": "Hey — um, that idea Marcus and I presented? It was actually Reyna's, mostly. I just wanted you to know.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s9qc-3",
+          "character": "ms-alvarez",
+          "text": "...Thank you for telling me. That took something.",
+          "action": "studies you a second, nodding slowly"
+        },
+        {
+          "id": "s9qc-4",
+          "character": "NARRATOR",
+          "text": "The next day, she makes a point of holding up Reyna's original draft in front of the class, praising it specifically."
+        },
+        {
+          "id": "s9qc-5",
+          "character": "NARRATOR",
+          "text": "Reyna never quite finds out why. But she sits a little straighter after that."
+        },
+        {
+          "id": "s9qc-6",
+          "character": "INTERNAL",
+          "text": "Not everything gets fixed out loud. Some things just get fixed."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10-afterschool",
+      "lines": [
+        {
+          "id": "s10-1",
+          "character": "NARRATOR",
+          "text": "The sign-up sheet for the fall talent show hangs crooked on the activities board, half the lines already filled with familiar names."
+        },
+        {
+          "id": "s10-2",
+          "character": "NARRATOR",
+          "text": "Marcus's crowd has claimed most of the top slots — dance crew, 'best group video,' the safe, loud stuff."
+        },
+        {
+          "id": "s10-3",
+          "character": "NARRATOR",
+          "text": "Reyna lingers a few feet away, pen uncapped, not quite committing to the page."
+        },
+        {
+          "id": "s10-4",
+          "character": "reyna",
+          "text": "...it's dumb. Nobody signs up for art displays.",
+          "emotion": "more to herself than you"
+        },
+        {
+          "id": "s10-5",
+          "character": "player",
+          "text": "Somebody's gotta be first."
+        },
+        {
+          "id": "s10-6",
+          "character": "reyna",
+          "text": "...yeah. Maybe.",
+          "emotion": "small, testing",
+          "action": "glances at you"
+        },
+        {
+          "id": "s10-7",
+          "character": "NARRATOR",
+          "text": "She looks back at the sheet. So do you."
+        },
+        {
+          "id": "s10-8",
+          "character": "INTERNAL",
+          "text": "One line. My name. My actual thing, not the impressive-sounding version."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-authentic",
+      "lines": [
+        {
+          "id": "s11a-1",
+          "character": "NARRATOR",
+          "text": "You write it down before you can talk yourself out of it — the thing you actually love, not the one that sounds good out loud."
+        },
+        {
+          "id": "s11a-2",
+          "character": "NARRATOR",
+          "text": "Reyna watches you do it. Then, slower, she picks up the pen."
+        },
+        {
+          "id": "s11a-3",
+          "character": "reyna",
+          "text": "...okay.",
+          "emotion": "quiet, almost to herself"
+        },
+        {
+          "id": "s11a-4",
+          "character": "NARRATOR",
+          "text": "She signs her name under Art Showcase in small, careful letters, like she's trying not to take up too much space even on paper."
+        },
+        {
+          "id": "s11a-5",
+          "character": "player",
+          "text": "That's not dumb, by the way. For the record."
+        },
+        {
+          "id": "s11a-6",
+          "character": "reyna",
+          "text": "...yeah, well. Neither's yours.",
+          "emotion": "ducking her head, the almost-laugh"
+        },
+        {
+          "id": "s11a-7",
+          "character": "NARRATOR",
+          "text": "Neither of you says anything else. You don't have to."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-conform",
+      "lines": [
+        {
+          "id": "s11c-1",
+          "character": "NARRATOR",
+          "text": "You look at your real answer for a second — then write down the thing Marcus's crowd already claimed instead."
+        },
+        {
+          "id": "s11c-2",
+          "character": "marcus",
+          "text": "There she is. Knew you'd come around.",
+          "action": "claps you on the back, grinning"
+        },
+        {
+          "id": "s11c-3",
+          "character": "player",
+          "text": "...Yeah. Should be fun."
+        },
+        {
+          "id": "s11c-4",
+          "character": "NARRATOR",
+          "text": "It feels like winning. Mostly."
+        },
+        {
+          "id": "s11c-5",
+          "character": "INTERNAL",
+          "text": "Mostly."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-hold-back",
+      "lines": [
+        {
+          "id": "s11h-1",
+          "character": "NARRATOR",
+          "text": "You read the sheet twice. Your pen hovers over an empty line."
+        },
+        {
+          "id": "s11h-2",
+          "character": "INTERNAL",
+          "text": "If I don't sign anything, nobody has to see me try. Nobody has to see me fail, either."
+        },
+        {
+          "id": "s11h-3",
+          "character": "NARRATOR",
+          "text": "You cap the pen and walk away, the sheet still blank where your name could've gone."
+        },
+        {
+          "id": "s11h-4",
+          "character": "NARRATOR",
+          "text": "The hallway empties out slow around you, lockers clicking shut one by one."
+        },
+        {
+          "id": "s11h-5",
+          "character": "INTERNAL",
+          "text": "Safer. Definitely safer."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-12-end-belonging",
+      "lines": [
+        {
+          "id": "s12b-1",
+          "character": "NARRATOR",
+          "text": "The bus stop is nearly empty, late afternoon light stretched thin across the sidewalk."
+        },
+        {
+          "id": "s12b-2",
+          "character": "reyna",
+          "text": "...so. Same bus tomorrow?"
+        },
+        {
+          "id": "s12b-3",
+          "character": "player",
+          "text": "Same bus tomorrow."
+        },
+        {
+          "id": "s12b-4",
+          "character": "reyna",
+          "text": "Cool. I mean — okay. Good.",
+          "emotion": "small, real smile"
+        },
+        {
+          "id": "s12b-5",
+          "character": "NARRATOR",
+          "text": "It wasn't the easiest first day. It still felt, somehow, like the beginning of something actually yours."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-12-end-popular",
+      "lines": [
+        {
+          "id": "s12p-1",
+          "character": "NARRATOR",
+          "text": "Your phone buzzes before you're even off school property."
+        },
+        {
+          "id": "s12p-2",
+          "character": "NARRATOR",
+          "text": "A meme from Marcus. Then another."
+        },
+        {
+          "id": "s12p-3",
+          "character": "player",
+          "text": "...heh.",
+          "emotion": "small laugh, alone at the bus stop"
+        },
+        {
+          "id": "s12p-4",
+          "character": "NARRATOR",
+          "text": "The bus stop is empty. The laugh doesn't quite fill it."
+        },
+        {
+          "id": "s12p-5",
+          "character": "INTERNAL",
+          "text": "Today went well. I think. Mostly."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-12-end-neutral",
+      "lines": [
+        {
+          "id": "s12n-1",
+          "character": "NARRATOR",
+          "text": "The bus pulls up right on time. Nobody saves you a seat, but nobody's saving one against you, either."
+        },
+        {
+          "id": "s12n-2",
+          "character": "INTERNAL",
+          "text": "Survived. Technically."
+        },
+        {
+          "id": "s12n-3",
+          "character": "NARRATOR",
+          "text": "You slide into a window seat and watch Ridgeview shrink behind the glass."
+        },
+        {
+          "id": "s12n-4",
+          "character": "INTERNAL",
+          "text": "Nobody laughed at me today. Nobody really saw me either."
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Well, that happened. Ten out of ten locker, would not recommend."
+        },
+        {
+          "id": "b",
+          "text": "Just grab everything and go. Fast."
+        },
+        {
+          "id": "c",
+          "text": "What's so funny?"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r1a-1",
+            "character": "marcus",
+            "text": "Wait— okay, that was actually kind of funny.",
+            "emotion": "surprised laugh"
+          },
+          {
+            "id": "r1a-2",
+            "character": "player",
+            "text": "I contain multitudes. Mostly folders, apparently.",
+            "action": "still crouched"
+          }
+        ],
+        "b": [
+          {
+            "id": "r1b-1",
+            "character": "NARRATOR",
+            "text": "You duck down, stacking papers as fast as your hands will move, eyes on the floor."
+          },
+          {
+            "id": "r1b-2",
+            "character": "reyna",
+            "text": "Here—",
+            "emotion": "quiet",
+            "action": "crouches beside you"
+          }
+        ],
+        "c": [
+          {
+            "id": "r1c-1",
+            "character": "NARRATOR",
+            "text": "The words come out sharper than you meant them to."
+          },
+          {
+            "id": "r1c-2",
+            "character": "marcus",
+            "text": "...whoa. Okay. Didn't say anything, did I?",
+            "emotion": "more curious than annoyed"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sit with Marcus. Worse decisions have been made."
+        },
+        {
+          "id": "b",
+          "text": "Head for the corner table. Quieter's fine."
+        },
+        {
+          "id": "c",
+          "text": "Just find an empty table. Watch first."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r2a-1",
+            "character": "marcus",
+            "text": "There she is! Come on, sit, sit—",
+            "emotion": "loud, waving you over"
+          }
+        ],
+        "b": [
+          {
+            "id": "r2b-1",
+            "character": "reyna",
+            "text": "...oh. Hey.",
+            "emotion": "surprised",
+            "action": "glances up"
+          },
+          {
+            "id": "r2b-2",
+            "character": "reyna",
+            "text": "You can sit. If you want."
+          }
+        ],
+        "c": [
+          {
+            "id": "r2c-1",
+            "character": "NARRATOR",
+            "text": "You pick a table with nobody at it and put your tray down like it's a decision that doesn't count."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "Partner with Marcus."
+        },
+        {
+          "id": "b",
+          "text": "Partner with Reyna."
+        },
+        {
+          "id": "c",
+          "text": "Partner with Devon."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r3a-1",
+            "character": "marcus",
+            "text": "That's what I'm talking about. We're gonna be done in like ten minutes, easy."
+          }
+        ],
+        "b": [
+          {
+            "id": "r3b-1",
+            "character": "reyna",
+            "text": "...oh. Okay. Yeah, that works.",
+            "emotion": "surprised, quiet"
+          }
+        ],
+        "c": [
+          {
+            "id": "r3c-1",
+            "character": "devon",
+            "text": "...huh. Okay. Cool. I mean — cool.",
+            "action": "beat, still not looking up"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3b-cheat",
+      "options": [
+        {
+          "id": "a",
+          "text": "Grab it. Quick, before she's back."
+        },
+        {
+          "id": "b",
+          "text": "No. We're doing our own thing."
+        },
+        {
+          "id": "c",
+          "text": "Skim it fast — and tell her later."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r3ca-1",
+            "character": "marcus",
+            "text": "See, this is why I picked you.",
+            "emotion": "grinning"
+          }
+        ],
+        "b": [
+          {
+            "id": "r3cb-1",
+            "character": "marcus",
+            "text": "...Fine. Your funeral.",
+            "emotion": "shrug"
+          }
+        ],
+        "c": [
+          {
+            "id": "r3cc-1",
+            "character": "NARRATOR",
+            "text": "You flip through her notes fast, quiet, heart going a little too hard for something you're telling yourself is fine."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "It's not weird. It's good — say it."
+        },
+        {
+          "id": "b",
+          "text": "Say nothing. Let it pass."
+        },
+        {
+          "id": "c",
+          "text": "Crack a joke to change the subject, then tell her later."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r4a-1",
+            "character": "NARRATOR",
+            "text": "The room holds its breath for a second, waiting to see if you mean it."
+          }
+        ],
+        "b": [
+          {
+            "id": "r4b-1",
+            "character": "NARRATOR",
+            "text": "The silence stretches a beat too long before class just... moves on."
+          }
+        ],
+        "c": [
+          {
+            "id": "r4c-1",
+            "character": "NARRATOR",
+            "text": "You feel the room's attention shift, just slightly, off Reyna and onto you."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4b-cheated",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tell the class the idea was hers."
+        },
+        {
+          "id": "b",
+          "text": "Stay quiet. Let Marcus handle it."
+        },
+        {
+          "id": "c",
+          "text": "Say nothing now — tell Ms. Alvarez after class."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r4ba-1",
+            "character": "NARRATOR",
+            "text": "The sentence is out before you can second-guess it. There's no taking it back now."
+          }
+        ],
+        "b": [
+          {
+            "id": "r4bb-1",
+            "character": "marcus",
+            "text": "I mean — great minds, right? Weird coincidence.",
+            "emotion": "recovering fast"
+          }
+        ],
+        "c": [
+          {
+            "id": "r4bc-1",
+            "character": "NARRATOR",
+            "text": "You let the moment pass in the room — but you're already rehearsing what you'll say after the bell."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sign up for the thing I actually love."
+        },
+        {
+          "id": "b",
+          "text": "Sign up for what Marcus's crowd is doing."
+        },
+        {
+          "id": "c",
+          "text": "Don't sign anything. Just walk."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r5a-1",
+            "character": "NARRATOR",
+            "text": "The pen feels heavier than it should for something this small."
+          }
+        ],
+        "b": [
+          {
+            "id": "r5b-1",
+            "character": "NARRATOR",
+            "text": "It's the easier name to write. That's kind of the whole problem."
+          }
+        ],
+        "c": [
+          {
+            "id": "r5c-1",
+            "character": "NARRATOR",
+            "text": "You keep walking. The sheet stays exactly the same behind you."
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-12-end-belonging",
+      "branchId": "branch-authentic-belonging",
+      "lines": [
+        {
+          "id": "bd-ab-1",
+          "character": "reyna",
+          "text": "You know, when you sat down at my table today, I figured it was, like, a one-time thing. Pity lunch."
+        },
+        {
+          "id": "bd-ab-2",
+          "character": "player",
+          "text": "Wasn't pity. Bad food's a great equalizer, though."
+        },
+        {
+          "id": "bd-ab-3",
+          "character": "reyna",
+          "text": "...I still can't believe you actually put your name on that sheet. In pen. No takebacks.",
+          "emotion": "ducking her head"
+        },
+        {
+          "id": "bd-ab-4",
+          "character": "player",
+          "text": "Yeah, well. You did too."
+        },
+        {
+          "id": "bd-ab-5",
+          "character": "reyna",
+          "text": "Guess we're both stuck now."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-12-end-popular",
+      "branchId": "branch-social-climber",
+      "lines": [
+        {
+          "id": "bd-sc-1",
+          "character": "marcus",
+          "text": "yo you're officially in the group chat. welcome to the inner circle lol",
+          "emotion": "text bubble"
+        },
+        {
+          "id": "bd-sc-2",
+          "character": "INTERNAL",
+          "text": "Inner circle. Day one. That's supposed to feel like winning."
+        },
+        {
+          "id": "bd-sc-3",
+          "character": "INTERNAL",
+          "text": "I keep thinking about the corner table. The one I didn't sit at."
+        },
+        {
+          "id": "bd-sc-4",
+          "character": "INTERNAL",
+          "text": "...Whatever. Tomorrow's a whole different bus."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-12-end-neutral",
+      "branchId": "branch-quiet-bridge",
+      "lines": [
+        {
+          "id": "bd-qb-1",
+          "character": "INTERNAL",
+          "text": "The sign-up sheet's probably still hanging there. Blank where my name could've gone."
+        },
+        {
+          "id": "bd-qb-2",
+          "character": "INTERNAL",
+          "text": "I keep telling myself there's always tomorrow. I don't fully believe it yet."
+        },
+        {
+          "id": "bd-qb-3",
+          "character": "INTERNAL",
+          "text": "Still — nobody laughed. Nobody pointed. That has to count for something. Doesn't it?"
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Jordan (player) deflects hard with humor when nervous, and her internal lines run faster/more clipped in tense moments, slower and plainer when she means something ('I know.' / 'Same bus tomorrow.'). Marcus's dialogue is almost entirely performance ('bro,' hype-man cadence, finger-guns) until called out directly, at which point his lines shrink to short, deflated fragments ('...whatever. It's not a big deal.') — that collapse IS his honesty. Reyna starts clipped and exit-oriented ('I know.' / short sentences) and only opens into rambly, specific enthusiasm once she trusts the player (the field-guide pitch), which should read as a small trust event, not just character quirk. Devon's humor lands because he never laughs at his own jokes — the deadpan is the joke. Ms. Alvarez's warmth and overextension show in her multitasking speech (claps, 'okay okay okay,' pen-tapping while triaging) and in the fact she almost misses the cruelty in scene-8 — that's a deliberate flaw, not just background color.",
+  "alternativeLines": [
+    {
+      "lineId": "s2-6",
+      "alternatives": [
+        "...need a hand?",
+        "That locker's the worst one. For what it's worth."
+      ],
+      "reasoning": "Keeps Reyna's hesitant, minimal-words instinct while offering slightly different levels of warmth depending on desired subtlety."
+    },
+    {
+      "lineId": "s9su-1",
+      "alternatives": [
+        "It's not weird. It's better than half the stuff people actually clapped for.",
+        "Maybe try actually listening before you laugh next time."
+      ],
+      "reasoning": "First alternative is a bit softer/less confrontational if a gentler 'stood up' tone is preferred; second is sharper if the scene should feel more pointed."
+    },
+    {
+      "lineId": "s11c-3",
+      "alternatives": [
+        "...Yeah. Guess so.",
+        "Cool. Yeah. Whatever's easiest."
+      ],
+      "reasoning": "The line needs to sound like resignation dressed as ease — these alternatives lean more openly hollow if the branch should read less ambiguous."
+    }
+  ]
+}

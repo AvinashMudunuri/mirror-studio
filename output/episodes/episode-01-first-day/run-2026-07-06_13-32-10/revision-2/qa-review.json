@@ -1,0 +1,147 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-8-conflict-cheated is unreachable. It is defined as a defaultNextScene in scene-7-partner-marcus, but scene-7-partner-marcus has a choice transition (choice-3b-cheat) that routes to three different scenes. A scene cannot have both a choice-based transition AND a defaultNextScene — only one mechanism applies.",
+      "location": "scenes[11].transition vs scenes[11].defaultNextScene",
+      "expectedValue": "Either a choice transition OR a defaultNextScene, not both",
+      "actualValue": "Both present: transition.type='choice' AND defaultNextScene='scene-8-conflict-cheated'",
+      "fix": "Remove the defaultNextScene field from scene-7-partner-marcus. The choice-3b-cheat options already route to scene-7b-cheated, scene-7b-original, and scene-7b-warned. Those three scenes should then route to scene-8-conflict-cheated or scene-8-conflict as appropriate."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Choice choice-3b-cheat references scene-7-partner-marcus as its scene, but choice-3b-cheat is only reachable if the player chose Marcus as a partner (choice-3:a). However, the episode structure allows the player to choose Reyna (choice-3:b) or Devon (choice-3:c) as partners, which lead to scene-7-partner-reyna and scene-7-partner-devon respectively. Those scenes do not have a choice-3b-cheat choice attached, so the cheating dilemma is only available on one branch. This is intentional design, but the consequence is that scene-8-conflict-cheated is only reachable via the Marcus path. Verify this is intentional.",
+      "location": "choices[3] (choice-3b-cheat) and scene-7-partner-marcus",
+      "expectedValue": "Confirm whether the cheating scenario should only be available if partnered with Marcus, or if it should be available on other paths too",
+      "actualValue": "Cheating choice only attached to Marcus partner path",
+      "fix": "This is likely intentional (cheating is Marcus's suggestion), but document it. If cheating should be available on other paths, add choice-3b-cheat to scene-7-partner-reyna and scene-7-partner-devon with context-appropriate prompts."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Scene scene-8-conflict has dialogue from Reyna presenting her project, but the scene description says 'Marcus's table loudly mocks Reyna's project idea when she presents it — or, if she's the player's partner, mocks 'their' shared idea.' This suggests the scene should branch based on whether Reyna is the player's partner or not. However, scene-8-conflict has no choice attached to it; it routes via defaultNextScene to choice-4. The dialogue always shows Reyna presenting solo, never a joint presentation. If the player partnered with Reyna, the presentation should show their joint work, not just hers.",
+      "location": "scenes[15] (scene-8-conflict) description and dialogue",
+      "expectedValue": "Either: (a) scene-8-conflict branches into two variants (one for Reyna solo, one for joint), or (b) the description is rewritten to match the dialogue (Reyna always presents solo)",
+      "actualValue": "Description implies branching; dialogue shows only Reyna solo; no branching mechanism present",
+      "fix": "Simplest fix: Rewrite the scene description to remove the 'or, if she's the player's partner' clause and clarify that Reyna presents her own project. If you want to show joint presentations, create scene-8-conflict-joint and route scene-7-partner-reyna to it instead of scene-8-conflict."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-8-conflict-cheated is defined but has no incoming path from any scene. It is referenced in the transition of scene-7-partner-marcus as a defaultNextScene, but scene-7-partner-marcus has a choice transition (choice-3b-cheat) that overrides the defaultNextScene. The three options of choice-3b-cheat route to scene-7b-cheated, scene-7b-original, and scene-7b-warned. None of those three scenes have a defaultNextScene pointing to scene-8-conflict-cheated. Therefore, scene-8-conflict-cheated is orphaned and unreachable.",
+      "location": "scenes[16] (scene-8-conflict-cheated) and scenes[11] (scene-7-partner-marcus)",
+      "expectedValue": "scene-8-conflict-cheated should be reachable from at least one of: scene-7b-cheated, scene-7b-original, or scene-7b-warned",
+      "actualValue": "No incoming path; orphaned",
+      "fix": "Set scene-7b-cheated.defaultNextScene = 'scene-8-conflict-cheated'. This makes sense narratively: if the player cheats, the next scene is the conflict where the cheating is discovered. scene-7b-original and scene-7b-warned should route to scene-8-conflict (the non-cheating version)."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Choice choice-4 (scene-8-conflict) has three options leading to scene-9-stood-up, scene-9-stayed-quiet, and scene-9-diplomatic. However, choice-4b-cheated (scene-8-conflict-cheated) has three different options leading to scene-9-confessed, scene-9-silent-cheat, and scene-9-quiet-credit. These are two separate choice trees for what should be the same narrative moment (the presentation conflict), but they branch differently depending on whether cheating occurred. This is narratively coherent but creates a complex branching structure. Verify that all six ending scenes (scene-9-*) are reachable and lead to valid outcomes.",
+      "location": "choices[4] and choices[5]",
+      "expectedValue": "All six scene-9-* variants should be reachable and should route to scene-10-afterschool",
+      "actualValue": "Two separate choice trees with different options",
+      "fix": "Verify all six scene-9-* variants have defaultNextScene = 'scene-10-afterschool'. They do (checked below), so this is a warning, not an error. Document the branching structure clearly."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-7-partner-marcus has a transition with type='choice' and choiceId='choice-3b-cheat', but the nextScenes array lists three scenes: ['scene-7b-cheated', 'scene-7b-original', 'scene-7b-warned']. However, the transition object should not have a nextScenes array — that's a schema mismatch. The choice options themselves define the nextScene for each option. The transition.nextScenes field is not used in the data model; it's redundant and confusing.",
+      "location": "scenes[11].transition.nextScenes",
+      "expectedValue": "Transition object should only have type and choiceId; nextScenes should not be present",
+      "actualValue": "transition.nextScenes = ['scene-7b-cheated', 'scene-7b-original', 'scene-7b-warned']",
+      "fix": "Remove the nextScenes array from the transition object. The choice options already define the routing."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-6-classroom has a transition with type='choice' and choiceId='choice-3', and also lists nextScenes: ['scene-7-partner-marcus', 'scene-7-partner-reyna', 'scene-7-partner-devon']. Like the previous error, transition.nextScenes should not be present — the choice options define the routing.",
+      "location": "scenes[13].transition.nextScenes",
+      "expectedValue": "Transition object should only have type and choiceId; nextScenes should not be present",
+      "actualValue": "transition.nextScenes = ['scene-7-partner-marcus', 'scene-7-partner-reyna', 'scene-7-partner-devon']",
+      "fix": "Remove the nextScenes array from the transition object."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-4-cafeteria has a transition with type='choice' and choiceId='choice-2', and also lists nextScenes: ['scene-5-popular-table', 'scene-5-reyna-table', 'scene-5-alone-table']. Like the previous errors, transition.nextScenes should not be present.",
+      "location": "scenes[9].transition.nextScenes",
+      "expectedValue": "Transition object should only have type and choiceId; nextScenes should not be present",
+      "actualValue": "transition.nextScenes = ['scene-5-popular-table', 'scene-5-reyna-table', 'scene-5-alone-table']",
+      "fix": "Remove the nextScenes array from the transition object."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-2-hallway-locker has a transition with type='choice' and choiceId='choice-1', and also lists nextScenes: ['scene-3-confident', 'scene-3-shy', 'scene-3-defensive']. Like the previous errors, transition.nextScenes should not be present.",
+      "location": "scenes[1].transition.nextScenes",
+      "expectedValue": "Transition object should only have type and choiceId; nextScenes should not be present",
+      "actualValue": "transition.nextScenes = ['scene-3-confident', 'scene-3-shy', 'scene-3-defensive']",
+      "fix": "Remove the nextScenes array from the transition object."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-8-conflict has a transition with type='choice' and choiceId='choice-4', and also lists nextScenes: ['scene-9-stood-up', 'scene-9-stayed-quiet', 'scene-9-diplomatic']. Like the previous errors, transition.nextScenes should not be present.",
+      "location": "scenes[15].transition.nextScenes",
+      "expectedValue": "Transition object should only have type and choiceId; nextScenes should not be present",
+      "actualValue": "transition.nextScenes = ['scene-9-stood-up', 'scene-9-stayed-quiet', 'scene-9-diplomatic']",
+      "fix": "Remove the nextScenes array from the transition object."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-8-conflict-cheated has a transition with type='choice' and choiceId='choice-4b-cheated', and also lists nextScenes: ['scene-9-confessed', 'scene-9-silent-cheat', 'scene-9-quiet-credit']. Like the previous errors, transition.nextScenes should not be present.",
+      "location": "scenes[16].transition.nextScenes",
+      "expectedValue": "Transition object should only have type and choiceId; nextScenes should not be present",
+      "actualValue": "transition.nextScenes = ['scene-9-confessed', 'scene-9-silent-cheat', 'scene-9-quiet-credit']",
+      "fix": "Remove the nextScenes array from the transition object."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-10-afterschool has a transition with type='choice' and choiceId='choice-5', and also lists nextScenes: ['scene-11-authentic', 'scene-11-conform', 'scene-11-hold-back']. Like the previous errors, transition.nextScenes should not be present.",
+      "location": "scenes[26].transition.nextScenes",
+      "expectedValue": "Transition object should only have type and choiceId; nextScenes should not be present",
+      "actualValue": "transition.nextScenes = ['scene-11-authentic', 'scene-11-conform', 'scene-11-hold-back']",
+      "fix": "Remove the nextScenes array from the transition object."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The outcomes array references branches triggered by choice options, but the triggeredBy format is inconsistent with how the episode actually branches. For example, outcome 'branch-authentic-belonging' has triggeredBy: ['choice-5:a'], which means 'if the player chose option a of choice-5.' However, the episode has multiple choice points before choice-5 (choice-1, choice-2, choice-3, choice-3b-cheat, choice-4, choice-4b-cheated). The outcome should reflect the full path to reach scene-11-authentic, not just the final choice. Alternatively, if outcomes are only meant to track the final choice, document that clearly.",
+      "location": "outcomes[0].triggeredBy",
+      "expectedValue": "Either: (a) triggeredBy should list the full path of choices, or (b) outcomes should only track the final branching point (choice-5)",
+      "actualValue": "triggeredBy lists only choice-5:a, ignoring earlier choices",
+      "fix": "Clarify the outcomes model. If outcomes are meant to represent 'ending states' (which they appear to be), then triggeredBy should only reference the final choice (choice-5) and the three outcomes represent the three ending states. This is actually correct as-is, but it should be documented that outcomes don't track the full path, only the final branching point."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "The branchDialogue array has three entries, one for each outcome (branch-authentic-belonging, branch-social-climber, branch-quiet-bridge). However, branchDialogue entries are keyed by sceneId, not branchId. The three entries reference scene-12-end-belonging, scene-12-end-popular, and scene-12-end-neutral respectively. This is correct — each ending scene has variant dialogue. However, the branchDialogue entries have a 'branchId' field that doesn't match the outcomes' 'id' field exactly. For example, outcome id is 'branch-authentic-belonging' but branchDialogue branchId is 'branch-authentic-belonging' — they match. Verify all three match.",
+      "location": "branchDialogue[0].branchId vs outcomes[0].id",
+      "expectedValue": "branchDialogue.branchId should match outcomes.id for the corresponding outcome",
+      "actualValue": "branchDialogue[0].branchId = 'branch-authentic-belonging', outcomes[0].id = 'branch-authentic-belonging' ✓; branchDialogue[1].branchId = 'branch-social-climber', outcomes[1].id = 'branch-social-climber' ✓; branchDialogue[2].branchId = 'branch-quiet-bridge', outcomes[2].id = 'branch-quiet-bridge' ✓",
+      "fix": "No fix needed; all three match. This is a note that the structure is correct."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-7b-warned has a character list that includes 'reyna' but the scene description says 'the player pulls Reyna aside and tells her, quietly, that Marcus took a look at her draft.' The scene should also include 'player' in the characters array, but it does not.",
+      "location": "scenes[20].characters",
+      "expectedValue": "['player', 'reyna']",
+      "actualValue": "['player', 'reyna']",
+      "fix": "Actually, checking the data again: scenes[20].characters = ['player', 'reyna']. This is correct. No fix needed."
+    }
+  ],
+  "warnings": [],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 15,
+    "warningCount": 0
+  }
+}

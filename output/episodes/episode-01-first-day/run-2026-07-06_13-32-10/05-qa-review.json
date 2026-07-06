@@ -1,0 +1,93 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-8-conflict has no valid exit path for all player choices. The scene transitions via choice-4, but choice-4 only has 3 options (a, b, c) leading to scenes 9-stood-up, 9-stayed-quiet, and 9-diplomatic. However, the scene's dialogue structure suggests the player must make a choice in response to Marcus's mockery, but there is no mechanism for the player to actually input that choice within the scene itself — the choice is presented as a narrative fork, not as an interactive prompt the player can select from.",
+      "location": "scene-8-conflict.transition + choice-4",
+      "expectedValue": "Scene should either embed choice-4 as an interactive prompt with clear selectable options, or the transition should clarify how the player's internal decision becomes a selectable action.",
+      "actualValue": "Scene describes the moment and waits for a choice, but the choice mechanism is not embedded in the scene dialogue or explicitly triggered.",
+      "fix": "Add a dialogue entry or narrative beat in scene-8-conflict that explicitly presents choice-4's options as selectable actions (e.g., 'What do you do?' with the three options as interactive buttons). Alternatively, clarify in the transition that choice-4 is triggered by the player's next action after the scene ends."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'devon' is referenced in scene-6-classroom (Ms. Alvarez's dialogue mentions 'Devon' and the scene description includes him), but 'devon' does not appear in the scene's 'characters' array. The array lists ['player', 'marcus', 'reyna', 'devon', 'ms-alvarez'], but Devon is only present in the scene if the player chooses to partner with him (choice-3:c leads to scene-7-partner-devon). In scene-6-classroom, Devon should only be present if the narrative has already established him as an option, which it hasn't — he appears without introduction.",
+      "location": "scene-6-classroom.characters vs. scene-6-classroom.dialogue",
+      "expectedValue": "Either (a) Devon should not be in the characters array if he's not actively present in the scene's dialogue, or (b) the scene should include dialogue that introduces Devon before he's referenced in the choice prompt.",
+      "actualValue": "Devon is listed in characters and referenced in dialogue/choice context, but has no prior introduction in the episode.",
+      "fix": "Remove 'devon' from scene-6-classroom.characters array, since he's not actively present in the scene's dialogue. The choice prompt can still reference him as an option without him being a 'character' in the scene. Alternatively, add a brief narrative beat introducing Devon earlier (e.g., in scene-4-cafeteria or scene-5-alone-table) so his presence in scene-6 is earned."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome 'branch-quiet-bridge' is triggered by choice-1:b, choice-3:c, and choice-4:c, but the branchDialogue entries for this outcome are only defined for scene-12-end-belonging (branchId 'branch-quiet-bridge'). However, if the player takes choice-1:b (shy response at locker), they proceed to scene-3-shy, then scene-4-cafeteria, then choice-2. If they choose choice-2:c (sit alone), they go to scene-5-alone-table, then scene-6-classroom, then choice-3. If they choose choice-3:c (partner with Devon), they go to scene-7-partner-devon, then scene-8-conflict, then choice-4. If they choose choice-4:c (diplomatic redirect), they go to scene-9-diplomatic, then scene-10-afterschool, then choice-5. Only if they then choose choice-5:a (sign authentic) do they reach scene-12-end-belonging. But the triggeredBy array for 'branch-quiet-bridge' lists choice-1:b, choice-3:c, and choice-4:c as if those choices alone trigger the branch — they don't. The branch is only triggered if ALL three are chosen in sequence, which the triggeredBy structure doesn't capture.",
+      "location": "outcomes[2].triggeredBy vs. branchDialogue entries",
+      "expectedValue": "triggeredBy should list the complete choice path (e.g., ['choice-1:b AND choice-3:c AND choice-4:c']) or the branchDialogue should be keyed to the final choice that determines the branch (choice-5:a in this case).",
+      "actualValue": "triggeredBy lists individual choices as if each one independently triggers the branch, but the branch is only reached if all three are made in sequence.",
+      "fix": "Clarify the branch logic: either (a) update triggeredBy to reflect the full path required to reach this branch, or (b) move the branch determination to the final choice (choice-5) and update triggeredBy to reference only choice-5:a. The current structure is ambiguous about how branches are actually determined."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome 'branch-social-climber' is triggered by choice-2:a, choice-3:a, choice-4:b, and choice-5:b, but these choices do not form a coherent path. A player could choose choice-2:a (sit with Marcus), then choice-3:b (partner with Reyna), then choice-4:a (defend Reyna), then choice-5:b (sign popular) — this path includes choice-2:a and choice-5:b (both in triggeredBy) but also includes choice-3:b and choice-4:a (not in triggeredBy). The triggeredBy array doesn't specify whether ALL four choices must be made, or ANY of them, or some combination. This makes it impossible to know which player paths actually trigger this branch.",
+      "location": "outcomes[1].triggeredBy",
+      "expectedValue": "triggeredBy should clearly specify the logical relationship: e.g., 'all of these choices must be made' or 'any two of these choices' or 'this specific sequence.' Alternatively, the branch should be determined by a single final choice (e.g., choice-5) that captures the player's overall trajectory.",
+      "actualValue": "triggeredBy lists four choices without clarifying the logical operator (AND vs. OR vs. sequence).",
+      "fix": "Redefine branch logic to be determined by the final choice (choice-5), which best captures the player's overall identity trajectory. Update triggeredBy for each branch to reference only choice-5 options: branch-authentic-belonging triggered by choice-5:a, branch-social-climber triggered by choice-5:b, branch-quiet-bridge triggered by choice-5:c. This is clearer and more maintainable."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-3-shy has a character 'reyna' in its characters array and dialogue, but the player only reaches this scene if they choose choice-1:b (quietly gather things and rush off). In that choice's responseDialogue, Reyna does help the player, but the scene-3-shy description says 'Reyna crouches down without a word and helps stack the binders' — implying she's present. However, there's no prior scene or dialogue that establishes Reyna's presence at the player's locker. In scene-2-hallway-locker, Reyna is described as 'at the edge of the crowd, hesitates like she wants to help,' but she doesn't speak or act until the player's choice is made. The choice-1 responseDialogue for option 'b' shows Reyna helping, but this happens inside the choice response, not in the subsequent scene. This creates ambiguity: is Reyna's help part of the choice response, or does it continue into scene-3-shy?",
+      "location": "choice-1.responseDialogue.b vs. scene-3-shy.dialogue",
+      "expectedValue": "Either (a) Reyna's help should be fully resolved in the choice-1 responseDialogue, and scene-3-shy should not include her, or (b) the choice response should transition directly to scene-3-shy with Reyna already present and helping, making the scene a continuation of the choice moment.",
+      "actualValue": "Reyna's help is shown in both the choice response and the scene, creating redundancy and unclear sequencing.",
+      "fix": "Consolidate: move all of Reyna's interaction into scene-3-shy, and simplify the choice-1 responseDialogue.b to just show the player's internal reaction. Scene-3-shy becomes the full scene where Reyna helps, and the transition is clear."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "The episode has 5 choices, but choice-5 (the talent show sign-up) is the only choice that determines which ending scene the player reaches (scene-12-end-belonging, scene-12-end-popular, or scene-12-end-neutral). However, the earlier choices (choice-1 through choice-4) do not directly affect which ending the player reaches — they all lead to scene-10-afterschool, which then leads to choice-5. This means the player's choices in scenes 1-8 do not mechanically affect the ending, only their choice at the sign-up sheet does. While this may be intentional (the ending reflects the player's final self-definition), it makes the earlier choices feel less consequential. The branchDialogue entries suggest that earlier choices should matter (e.g., 'branch-authentic-belonging' is triggered by choice-4:a and choice-5:a), but the scene transitions don't enforce this — a player could choose choice-4:b (stay quiet) and still reach scene-12-end-belonging if they choose choice-5:a.",
+      "location": "scenes 3-11 transitions + outcomes.triggeredBy",
+      "expectedValue": "Either (a) earlier choices should directly affect which ending scene is reached (e.g., choice-4:a leads to a different scene-10 variant), or (b) the branchDialogue should be keyed only to choice-5, which is the actual determinant of the ending.",
+      "actualValue": "Choices 1-4 do not mechanically affect the ending; only choice-5 does. But branchDialogue suggests earlier choices matter.",
+      "fix": "Simplify the branch logic: remove choice-1, choice-3, and choice-4 from the triggeredBy arrays. Keep only choice-5 as the branch determinant. Update branchDialogue to reflect that the ending is determined solely by the player's final choice at the sign-up sheet. Alternatively, if earlier choices should matter, restructure the scene transitions so that choice-4 leads to different scene-10 variants (e.g., scene-10-afterschool-authentic, scene-10-afterschool-quiet, scene-10-afterschool-popular) that then lead to choice-5, ensuring earlier choices have mechanical weight."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Scene scene-7-partner-marcus describes Marcus suggesting the player 'borrow' ideas from Reyna's rough draft, which is unethical. However, the scene's defaultNextScene is 'scene-8-conflict,' which is the presentation scene. There is no scene where the player actually decides whether to follow Marcus's suggestion or not. The scene ends with Marcus saying 'It's not that deep, it's a project, man, chill,' but the player's response to this ethical dilemma is never captured. This means the player's choice to cheat (or not) is not mechanically represented — it just happens off-screen. This is a significant narrative moment that should be a choice, not an assumption.",
+      "location": "scene-7-partner-marcus.defaultNextScene + scene-8-conflict",
+      "expectedValue": "Scene-7-partner-marcus should either (a) include a choice that asks the player whether to use Reyna's ideas or not, or (b) should transition to a new scene (scene-7b-marcus-decision or similar) where the player makes this choice before reaching scene-8-conflict.",
+      "actualValue": "The scene describes the temptation but doesn't give the player a choice; it just transitions to the presentation scene, leaving the player's decision undefined.",
+      "fix": "Add a choice at the end of scene-7-partner-marcus (or create a new scene after it) that asks the player whether to use Reyna's ideas, cheat, or come up with something original. This choice should affect the dialogue in scene-8-conflict (e.g., if the player cheated, the presentation might go differently, or Ms. Alvarez might notice). This makes the ethical dilemma mechanically real."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-8-conflict is described as the presentation scene where Reyna (or the player, if partnered with her) presents the project and Marcus's table mocks it. However, the scene's dialogue only shows Reyna presenting. If the player partnered with Marcus (choice-3:a), the player is part of Marcus's table and should be present during the mocking — but the scene doesn't differentiate between a player who is in Marcus's group vs. a player who is not. The scene should have variant dialogue depending on the player's earlier choice (choice-3), but it doesn't. This means the player's experience of the mocking moment is the same regardless of whether they're sitting with Marcus or not, which breaks narrative coherence.",
+      "location": "scene-8-conflict.dialogue vs. choice-3 outcomes",
+      "expectedValue": "Scene-8-conflict should have conditional dialogue that changes based on the player's partner choice (choice-3). If the player partnered with Marcus, they should be part of the mocking group, and the scene should show their internal conflict about whether to join in or not. If the player partnered with Reyna or Devon, they should be defending their own project or watching from outside.",
+      "actualValue": "Scene-8-conflict shows only Reyna presenting and Marcus's table mocking, with no variation based on the player's earlier choice.",
+      "fix": "Create variant dialogue for scene-8-conflict based on choice-3 outcome. Alternatively, restructure so that scene-8-conflict is preceded by a choice that asks the player how to respond to the mocking (which is what choice-4 does), but make it clear that the player's position in the room (with Marcus, with Reyna, or elsewhere) affects their available options."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "The episode's trait mapping in choices is incomplete and inconsistent. Choice-1 has traitMapping defined, but choice-2 has traitMapping, choice-3 has traitMapping, choice-4 has traitMapping, and choice-5 has traitMapping. However, the choiceDialogue entries (which show the player's actual dialogue response to each choice) do not have trait mappings — they're just dialogue. This creates ambiguity: when the player selects an option, do they get the trait changes from the choice's traitMapping, or from the choiceDialogue's responseDialogue? The two structures seem to be doing the same thing (mapping player choices to outcomes) but in different ways. Additionally, the targetTraits array at the episode level lists CONFIDENCE, EMPATHY, and ADAPTABILITY as the traits affected, but the traitMapping in choices uses these same IDs — so it's unclear whether the targetTraits array is meant to be a summary or a constraint.",
+      "location": "choices[*].traitMapping vs. choiceDialogue[*].responseDialogue vs. targetTraits",
+      "expectedValue": "Either (a) use only the choice.traitMapping structure to map player choices to trait changes, and remove the choiceDialogue structure, or (b) clarify that choiceDialogue is for narrative flavor and traitMapping is for mechanical trait changes. The two should not be doing the same job.",
+      "actualValue": "Both choices and choiceDialogue seem to represent the player's choice, creating redundancy and ambiguity.",
+      "fix": "Consolidate: keep the choices[*].traitMapping structure as the source of truth for trait changes. Remove the choiceDialogue structure entirely, or repurpose it as optional narrative flavor that doesn't duplicate the choice mechanics. Clarify in the episode schema which structure is authoritative."
+    }
+  ],
+  "warnings": [],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 9,
+    "warningCount": 0
+  }
+}
