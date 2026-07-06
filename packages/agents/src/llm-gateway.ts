@@ -10,10 +10,13 @@ import { LLM_CONFIG } from './config';
  * - GPT (OpenAI) - Secondary/fallback
  * 
  * Features:
- * - Automatic retry with exponential backoff
- * - Rate limiting
- * - Cost tracking
- * - Response caching
+ * - Adaptive-thinking token headroom for Claude 5+ (max_tokens caps
+ *   thinking + response text combined, so the requested budget is
+ *   reserved for the response and headroom is added for thinking)
+ * - Automatic retry with a larger budget / lower effort when a response
+ *   is thinking-only or truncated (stop_reason: max_tokens)
+ * 
+ * Not yet implemented: rate limiting, cost tracking, response caching.
  */
 
 export interface LLMConfig {
@@ -45,6 +48,24 @@ export interface LLMResponse {
   };
   stopReason: string;
 }
+
+/**
+ * Extra max_tokens reserved for adaptive thinking on Claude 5+ models.
+ * max_tokens is a hard cap on thinking + response text combined, so the
+ * agent's configured budget (intended for the response) needs headroom on
+ * top, scaled by how much the model is expected to think at each effort.
+ */
+const THINKING_HEADROOM: Record<'low' | 'medium' | 'high', number> = {
+  low: 2048,
+  medium: 4096,
+  high: 8192
+};
+
+/** Cost guard. Claude Sonnet 5 supports up to 128k output tokens. */
+const MAX_TOTAL_OUTPUT_TOKENS = 32768;
+
+/** Attempts per Claude call: initial + budget doubling + effort drop. */
+const MAX_CLAUDE_ATTEMPTS = 3;
 
 export class LLMGateway {
   private anthropic?: Anthropic;
@@ -100,6 +121,17 @@ export class LLMGateway {
 
   /**
    * Call Claude (Anthropic)
+   * 
+   * For Claude 5+ (adaptive thinking), max_tokens caps thinking + response
+   * text COMBINED. A tight budget can be consumed entirely by thinking,
+   * yielding a thinking-only response with no text block and
+   * stop_reason: 'max_tokens'. To handle this:
+   * 
+   * 1. Headroom for thinking (scaled by effort) is added on top of the
+   *    caller's requested response budget.
+   * 2. If the response is still thinking-only or truncated, retry with a
+   *    doubled budget, then with effort lowered one level (less thinking).
+   * 3. If no attempt produces text, throw instead of returning ''.
    */
   private async callClaude(
     userPrompt: string,
@@ -110,14 +142,17 @@ export class LLMGateway {
     }
 
     const model = options.model || this.config.defaultModel;
-    const maxTokens = options.maxTokens || this.config.defaultMaxTokens;
+    const requestedTokens = options.maxTokens || this.config.defaultMaxTokens;
     
     // Claude 5+ models use 'effort' instead of 'temperature'
     // Map temperature to effort: low temp = low effort, high temp = high effort
     const temperature = options.temperature ?? this.config.defaultTemperature;
-    const effort = this.mapTemperatureToEffort(temperature);
-
-    console.log(`[LLM] Calling Claude (${model}) with ${userPrompt.length} chars`);
+    const isModern = this.isClaudeFiveOrNewer(model);
+    
+    let effort = this.mapTemperatureToEffort(temperature);
+    let maxTokens = isModern
+      ? Math.min(requestedTokens + THINKING_HEADROOM[effort], MAX_TOTAL_OUTPUT_TOKENS)
+      : requestedTokens;
 
     const messages: Anthropic.MessageParam[] = [
       {
@@ -126,63 +161,98 @@ export class LLMGateway {
       }
     ];
 
-    // Build request params based on model version
-    const requestParams: any = {
-      model,
-      max_tokens: maxTokens,
-      messages,
-      system: options.systemPrompt,
-      stop_sequences: options.stopSequences
-    };
+    let lastResponse: Anthropic.Message | undefined;
     
-    // Claude 5+ (and Opus 4.6+) use adaptive thinking + output_config.effort.
-    // `effort` is NOT a top-level param — it's nested under output_config,
-    // and requires thinking: { type: 'adaptive' } alongside it.
-    if (this.isClaudeFiveOrNewer(model)) {
-      requestParams.thinking = { type: 'adaptive' };
-      // Only set output_config if effort is not 'high' (high is default)
-      // This keeps prompt caching more stable
-      if (effort !== 'high') {
-        requestParams.output_config = { effort };
-      }
-    } else {
-      requestParams.temperature = temperature;
-    }
+    for (let attempt = 1; attempt <= MAX_CLAUDE_ATTEMPTS; attempt++) {
+      console.log(
+        `[LLM] Calling Claude (${model}) with ${userPrompt.length} chars` +
+        (isModern ? ` (attempt ${attempt}, max_tokens=${maxTokens}, effort=${effort})` : '')
+      );
 
-    const response = await this.anthropic.messages.create(requestParams);
-
-    // Claude 5+ with adaptive thinking returns thinking blocks + text blocks
-    // Log what we got back
-    console.log(`[LLM] Response contains ${response.content.length} content blocks:`);
-    response.content.forEach((block, i) => {
-      console.log(`[LLM]   Block ${i}: type=${block.type}, length=${block.type === 'text' ? block.text.length : 'N/A'}`);
-    });
-    
-    // Find the text block (don't assume content[0] is text)
-    const textBlock = response.content.find(b => b.type === 'text');
-    
-    if (!textBlock) {
-      console.warn('[LLM] No text block found in response, only thinking blocks');
-      console.warn('[LLM] Response content:', JSON.stringify(response.content.map(b => ({ type: b.type, preview: b.type === 'text' ? b.text.substring(0, 100) : 'thinking' })), null, 2));
-      
-      // If there's only thinking, return empty (caller should handle this)
-      return {
-        content: '',
+      // Build request params based on model version
+      const requestParams: any = {
         model,
-        provider: 'claude',
-        usage: {
-          inputTokens: response.usage.input_tokens,
-          outputTokens: response.usage.output_tokens,
-          totalTokens: response.usage.input_tokens + response.usage.output_tokens
-        },
-        stopReason: response.stop_reason || 'end_turn'
+        max_tokens: maxTokens,
+        messages,
+        system: options.systemPrompt,
+        stop_sequences: options.stopSequences
       };
+      
+      // Claude 5+ (and Opus 4.6+) use adaptive thinking + output_config.effort.
+      // `effort` is NOT a top-level param — it's nested under output_config,
+      // and requires thinking: { type: 'adaptive' } alongside it.
+      if (isModern) {
+        requestParams.thinking = { type: 'adaptive' };
+        // Only set output_config if effort is not 'high' (high is default)
+        // This keeps prompt caching more stable
+        if (effort !== 'high') {
+          requestParams.output_config = { effort };
+        }
+      } else {
+        requestParams.temperature = temperature;
+      }
+
+      const response: Anthropic.Message = await this.anthropic.messages.create(requestParams);
+      lastResponse = response;
+
+      // Claude 5+ with adaptive thinking returns thinking blocks + text blocks
+      console.log(`[LLM] Response contains ${response.content.length} content blocks:`);
+      response.content.forEach((block, i) => {
+        console.log(`[LLM]   Block ${i}: type=${block.type}, length=${block.type === 'text' ? block.text.length : 'N/A'}`);
+      });
+      
+      // Find the text block (don't assume content[0] is text)
+      const textBlock = response.content.find(b => b.type === 'text');
+      const text = textBlock?.type === 'text' ? textBlock.text : '';
+      const truncated = response.stop_reason === 'max_tokens';
+      
+      if (text && !truncated) {
+        console.log(`[LLM] Extracted text block with ${text.length} characters`);
+        return this.toClaudeResponse(text, model, response);
+      }
+      
+      // Thinking-only or truncated response — adjust and retry.
+      console.warn(
+        `[LLM] ${text ? 'Truncated' : 'Thinking-only'} response ` +
+        `(stop_reason=${response.stop_reason}, output_tokens=${response.usage.output_tokens})`
+      );
+      
+      if (!isModern) {
+        // Older models don't think; truncated text is the best we can do.
+        break;
+      }
+      
+      if (attempt === 1 && maxTokens < MAX_TOTAL_OUTPUT_TOKENS) {
+        maxTokens = Math.min(maxTokens * 2, MAX_TOTAL_OUTPUT_TOKENS);
+        console.warn(`[LLM] Retrying with larger budget: max_tokens=${maxTokens}`);
+      } else if (effort !== 'low') {
+        effort = effort === 'high' ? 'medium' : 'low';
+        console.warn(`[LLM] Retrying with reduced thinking: effort=${effort}`);
+      } else {
+        break;
+      }
     }
     
-    const text = textBlock.type === 'text' ? textBlock.text : '';
+    // Retries exhausted. Truncated text is still returned (callers'
+    // JSON repair may salvage it); a thinking-only result is an error.
+    const finalTextBlock = lastResponse?.content.find(b => b.type === 'text');
+    const finalText = finalTextBlock?.type === 'text' ? finalTextBlock.text : '';
     
-    console.log(`[LLM] Extracted text block with ${text.length} characters`);
-
+    if (finalText) {
+      console.warn(`[LLM] Returning truncated text (${finalText.length} chars) after ${MAX_CLAUDE_ATTEMPTS} attempts`);
+      return this.toClaudeResponse(finalText, model, lastResponse!);
+    }
+    
+    throw new Error(
+      `[LLM] Claude (${model}) returned no text after ${MAX_CLAUDE_ATTEMPTS} attempts — ` +
+      `the token budget was consumed by adaptive thinking ` +
+      `(last stop_reason=${lastResponse?.stop_reason}, ` +
+      `output_tokens=${lastResponse?.usage.output_tokens}). ` +
+      `Increase the agent's max tokens (e.g. DIALOGUE_WRITER_MAX_TOKENS) or lower its temperature/effort.`
+    );
+  }
+  
+  private toClaudeResponse(text: string, model: string, response: Anthropic.Message): LLMResponse {
     return {
       content: text,
       model,
