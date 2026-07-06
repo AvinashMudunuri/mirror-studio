@@ -10,7 +10,11 @@ import {
   StoryArchitectAgent,
   CharacterDesignerAgent,
   DialogueWriterAgent,
-  CreativeDirectorAgent
+  CreativeDirectorAgent,
+  LLM_CONFIG,
+  getAgentModel,
+  getAgentTemperature,
+  getAgentMaxTokens
 } from '@mirror/agents';
 
 describe('Phase 1 Agent Integration', () => {
@@ -22,8 +26,8 @@ describe('Phase 1 Agent Integration', () => {
       expect(agent['config'].id).toBe('STORY_ARCHITECT');
       expect(agent['config'].name).toBe('River');
       expect(agent['config'].role).toBe('Lead Story Designer');
-      expect(agent['config'].model).toBe('claude-sonnet-4.5');
-      expect(agent['config'].temperature).toBe(0.5);
+      expect(agent['config'].model).toBe(getAgentModel('STORY_ARCHITECT'));
+      expect(agent['config'].temperature).toBe(getAgentTemperature('STORY_ARCHITECT'));
     });
     
     it('should create Character Designer agent instance', () => {
@@ -33,8 +37,8 @@ describe('Phase 1 Agent Integration', () => {
       expect(agent['config'].id).toBe('CHARACTER_DESIGNER');
       expect(agent['config'].name).toBe('Kai');
       expect(agent['config'].role).toBe('Character Psychology and Development Specialist');
-      expect(agent['config'].model).toBe('claude-sonnet-4.5');
-      expect(agent['config'].temperature).toBe(0.6);
+      expect(agent['config'].model).toBe(getAgentModel('CHARACTER_DESIGNER'));
+      expect(agent['config'].temperature).toBe(getAgentTemperature('CHARACTER_DESIGNER'));
     });
     
     it('should create Dialogue Writer agent instance', () => {
@@ -44,8 +48,8 @@ describe('Phase 1 Agent Integration', () => {
       expect(agent['config'].id).toBe('DIALOGUE_WRITER');
       expect(agent['config'].name).toBe('Echo');
       expect(agent['config'].role).toBe('Dialogue and Voice Specialist');
-      expect(agent['config'].model).toBe('claude-sonnet-4.5');
-      expect(agent['config'].temperature).toBe(0.7);
+      expect(agent['config'].model).toBe(getAgentModel('DIALOGUE_WRITER'));
+      expect(agent['config'].temperature).toBe(getAgentTemperature('DIALOGUE_WRITER'));
     });
     
     it('should create Creative Director agent instance', () => {
@@ -55,23 +59,28 @@ describe('Phase 1 Agent Integration', () => {
       expect(agent['config'].id).toBe('CREATIVE_DIRECTOR');
       expect(agent['config'].name).toBe('Aria');
       expect(agent['config'].role).toBe('Creative Vision Keeper');
-      expect(agent['config'].model).toBe('claude-sonnet-4.5');
-      expect(agent['config'].temperature).toBe(0.6);
+      expect(agent['config'].model).toBe(getAgentModel('CREATIVE_DIRECTOR'));
+      expect(agent['config'].temperature).toBe(getAgentTemperature('CREATIVE_DIRECTOR'));
     });
   });
   
   describe('Agent Configuration', () => {
-    it('should have correct LLM model configurations', () => {
+    it('should use the centrally configured LLM model', () => {
       const storyArchitect = new StoryArchitectAgent();
       const characterDesigner = new CharacterDesignerAgent();
       const dialogueWriter = new DialogueWriterAgent();
       const creativeDirector = new CreativeDirectorAgent();
       
-      // All should use Claude Sonnet 4.5
-      expect(storyArchitect['config'].model).toBe('claude-sonnet-4.5');
-      expect(characterDesigner['config'].model).toBe('claude-sonnet-4.5');
-      expect(dialogueWriter['config'].model).toBe('claude-sonnet-4.5');
-      expect(creativeDirector['config'].model).toBe('claude-sonnet-4.5');
+      // All Phase 1 agents use the Anthropic default (overridable per agent via env)
+      expect(storyArchitect['config'].model).toBe(getAgentModel('STORY_ARCHITECT'));
+      expect(characterDesigner['config'].model).toBe(getAgentModel('CHARACTER_DESIGNER'));
+      expect(dialogueWriter['config'].model).toBe(getAgentModel('DIALOGUE_WRITER'));
+      expect(creativeDirector['config'].model).toBe(getAgentModel('CREATIVE_DIRECTOR'));
+      
+      // Without env overrides, the default is the central Anthropic model
+      if (!process.env.ANTHROPIC_MODEL) {
+        expect(storyArchitect['config'].model).toBe(LLM_CONFIG.defaultModels.anthropic);
+      }
     });
     
     it('should have appropriate temperature settings', () => {
@@ -80,17 +89,18 @@ describe('Phase 1 Agent Integration', () => {
       const dialogueWriter = new DialogueWriterAgent();
       const creativeDirector = new CreativeDirectorAgent();
       
-      // Story Architect: Lower temperature for structured planning
-      expect(storyArchitect['config'].temperature).toBe(0.5);
+      // Wiring: each agent reads its temperature from the central config
+      expect(storyArchitect['config'].temperature).toBe(getAgentTemperature('STORY_ARCHITECT'));
+      expect(characterDesigner['config'].temperature).toBe(getAgentTemperature('CHARACTER_DESIGNER'));
+      expect(dialogueWriter['config'].temperature).toBe(getAgentTemperature('DIALOGUE_WRITER'));
+      expect(creativeDirector['config'].temperature).toBe(getAgentTemperature('CREATIVE_DIRECTOR'));
       
-      // Character Designer: Medium-high for creativity with consistency
-      expect(characterDesigner['config'].temperature).toBe(0.6);
-      
-      // Dialogue Writer: Highest for natural, varied dialogue
-      expect(dialogueWriter['config'].temperature).toBe(0.7);
-      
-      // Creative Director: Medium-high for balanced creativity
-      expect(creativeDirector['config'].temperature).toBe(0.6);
+      // Semantics: creative agents run hotter than balanced review agents
+      expect(storyArchitect['config'].temperature).toBe(LLM_CONFIG.temperatures.creative);
+      expect(dialogueWriter['config'].temperature).toBe(LLM_CONFIG.temperatures.creative);
+      expect(characterDesigner['config'].temperature).toBe(LLM_CONFIG.temperatures.balanced);
+      expect(creativeDirector['config'].temperature).toBe(LLM_CONFIG.temperatures.balanced);
+      expect(LLM_CONFIG.temperatures.creative).toBeGreaterThan(LLM_CONFIG.temperatures.balanced);
     });
     
     it('should have appropriate token limits', () => {
@@ -99,17 +109,17 @@ describe('Phase 1 Agent Integration', () => {
       const dialogueWriter = new DialogueWriterAgent();
       const creativeDirector = new CreativeDirectorAgent();
       
-      // Story Architect: Large context for complex outlines
-      expect(storyArchitect['config'].maxTokens).toBe(8192);
+      // Wiring: each agent reads its token limit from the central config
+      expect(storyArchitect['config'].maxTokens).toBe(getAgentMaxTokens('STORY_ARCHITECT'));
+      expect(characterDesigner['config'].maxTokens).toBe(getAgentMaxTokens('CHARACTER_DESIGNER'));
+      expect(dialogueWriter['config'].maxTokens).toBe(getAgentMaxTokens('DIALOGUE_WRITER'));
+      expect(creativeDirector['config'].maxTokens).toBe(getAgentMaxTokens('CREATIVE_DIRECTOR'));
       
-      // Character Designer: Medium context for profiles
-      expect(characterDesigner['config'].maxTokens).toBe(6144);
-      
-      // Dialogue Writer: Large context for full episodes
-      expect(dialogueWriter['config'].maxTokens).toBe(8192);
-      
-      // Creative Director: Medium context for reviews
-      expect(creativeDirector['config'].maxTokens).toBe(6144);
+      // Semantics: long-form generators (outlines, full episodes) get the large budget
+      expect(storyArchitect['config'].maxTokens).toBe(LLM_CONFIG.maxTokens.large);
+      expect(dialogueWriter['config'].maxTokens).toBe(LLM_CONFIG.maxTokens.large);
+      expect(characterDesigner['config'].maxTokens).toBe(LLM_CONFIG.maxTokens.medium);
+      expect(creativeDirector['config'].maxTokens).toBe(LLM_CONFIG.maxTokens.medium);
     });
   });
   
