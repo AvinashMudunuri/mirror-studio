@@ -1,0 +1,81 @@
+{
+  "status": "NEEDS_REVISION",
+  "concerns": [
+    {
+      "severity": "MODERATE",
+      "category": "EDUCATIONAL",
+      "issue": "The episode's scenes, choices, and outcomes arrays are empty. Only synopsis, themes, and educational goals are provided. A full psychological safety review cannot be completed without actual dialogue, choice text, and consequence framing, since tone, phrasing, and social dynamics (e.g., how the 'popular group' invitation is portrayed, how the awkward student is characterized) are where most risk or benefit actually lives.",
+      "location": "scenes/choices/outcomes fields (all empty)",
+      "recommendation": "Submit full scene and choice content for review before final approval. This assessment should be treated as preliminary/conditional pending that content.",
+      "mustFix": true
+    },
+    {
+      "severity": "MINOR",
+      "category": "AGE_INAPPROPRIATE",
+      "issue": "Target audience is listed as 11-14, but featured character Maya is 15 (more aligned with early high school). Slight mismatch between protagonist age and target reader age could affect relatability, especially for the younger end (11).",
+      "location": "Character profile (Maya, 15) vs. target audience (11-14)",
+      "recommendation": "Confirm player-character age aligns with 6th-8th grade experience (roughly 11-13), or adjust Maya's age/grade to match middle school setting more precisely.",
+      "mustFix": false
+    },
+    {
+      "severity": "MODERATE",
+      "category": "MENTAL_HEALTH",
+      "issue": "The premise of choosing between a 'genuine connection with an awkward new student' and 'the school's most magnetic social circle' risks reinforcing a false binary (popular = shallow, awkward = authentic) if not written carefully. This is a common trope that can either teach nuance or accidentally stigmatize social status-seeking or peer groups as inherently toxic.",
+      "location": "Synopsis / core premise",
+      "recommendation": "Ensure the 'popular' group isn't written as one-dimensionally cruel or superficial, and the 'awkward' student isn't a flat trope either. Educational goal #3 (holding multiple relationships) suggests the writers intend nuance — make sure scenes actually deliver a non-binary resolution where the player isn't forced to pick one group and vilify the other.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "RELATIONSHIPS",
+      "issue": "No information yet on how peer pressure or social exclusion might be depicted; without seeing dialogue, there's a risk that exclusionary behavior (e.g., mocking the awkward student, gatekeeping the social circle) could be portrayed vividly enough to feel realistic but without adequate narrative pushback or adult/peer support modeling.",
+      "location": "Anticipated scene content (not yet provided)",
+      "recommendation": "When scenes are written, ensure any exclusionary or unkind behavior from peers is contextualized, not glamorized, and that the protagonist has visible internal reasoning or support resources (friend, mentor, self-reflection) rather than navigating alone.",
+      "mustFix": false
+    }
+  ],
+  "recommendations": [
+    "Provide full scene/dialogue/choice content for a complete safety and tone review.",
+    "Write the 'popular' clique with at least one redeeming or humanizing trait to avoid stereotyping.",
+    "Give the awkward new student agency and depth beyond being a 'test' for the protagonist's empathy — they should feel like a full character, not a prop.",
+    "Include at least one choice path where the player can make a mistake (e.g., briefly siding with exclusion) and see a realistic, non-catastrophic consequence with a chance to repair it — this reinforces goal #4 (first impressions are choices, not fixed fates).",
+    "Consider having a trusted adult or sibling figure available as a subtle resource, even if not central, to normalize support-seeking without making the episode adult-directed.",
+    "Use Maya's established humor-as-deflection trait purposefully — if she uses jokes to avoid vulnerability, give at least one scene where this is gently named or contrasted with authentic connection, tying into the 'authenticity' theme."
+  ],
+  "triggerWarnings": [
+    {
+      "category": "SELF_ESTEEM",
+      "description": "Likely themes of social anxiety, fear of judgment, and first-day insecurity around fitting in.",
+      "severity": "MILD",
+      "location": "Throughout, implied by synopsis"
+    },
+    {
+      "category": "BULLYING",
+      "description": "Potential mild social exclusion or clique gatekeeping dynamics, depending on scene writing (not yet confirmed).",
+      "severity": "MILD",
+      "location": "Anticipated in social circle / lunch table scenes"
+    }
+  ],
+  "scores": {
+    "ageAppropriateness": 7,
+    "emotionalSafety": 7,
+    "educationalValue": 8,
+    "mentalHealthRep": 6,
+    "overall": 6
+  },
+  "summary": {
+    "strengths": [
+      "Strong, developmentally relevant premise centered on real middle-school social dynamics (first impressions, cliques, belonging)",
+      "Educational goals are well-articulated and psychologically sound (confidence + kindness, empathy as social risk, authentic adaptability)",
+      "Themes of belonging and authenticity are highly appropriate and valuable for the 11-14 age range",
+      "Premise sets up nuanced, non-punitive framing: 'first impressions are choices, not fixed fates' is a genuinely healthy, growth-oriented message"
+    ],
+    "improvements": [
+      "Need actual scene/choice content to properly evaluate emotional safety and relationship modeling",
+      "Avoid falling into a simplistic 'popular kids bad, awkward kid good' binary",
+      "Ensure protagonist has some form of support or self-reflection rather than navigating social risk entirely solo",
+      "Clarify protagonist/character age alignment with target audience"
+    ],
+    "readyForAudience": false
+  }
+}

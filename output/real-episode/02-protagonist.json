@@ -1,0 +1,98 @@
+{
+  "character": {
+    "id": "protag-riley-okonkwo-abara-001",
+    "name": "Riley Okonkwo-Abara",
+    "age": 15,
+    "pronouns": "she/her",
+    "appearance": {
+      "brief": "Medium-brown skin, box braids she re-does herself (usually a little uneven at the part), stocky build from years of competitive swimming she quit, wears her older brother's oversized hoodies even though she has her own clothes that fit.",
+      "distinctiveFeatures": [
+        "Chews on pen caps until they're destroyed — has a drawer full of ruined pens she can't throw away",
+        "A thin scar above her left eyebrow from a pool-deck fall at age 10, which she covers with braids when she's feeling self-conscious",
+        "Draws small spirals on her hands and arms in ballpoint pen when anxious"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "fiercely loyal",
+        "control-seeking",
+        "secretly soft",
+        "quick-witted",
+        "avoidant under pressure"
+      ],
+      "bigFiveProfile": {
+        "openness": 6,
+        "conscientiousness": 8,
+        "extraversion": 5,
+        "agreeableness": 6,
+        "neuroticism": 7
+      },
+      "mannerisms": [
+        "Makes lists on her phone for everything, including feelings she doesn't want to deal with ('Things To Think About Later' — the list never gets opened)",
+        "Laughs a beat too loud right after saying something vulnerable, like she's trying to take it back",
+        "Physically steps in front of friends when conflict starts, even strangers' conflicts"
+      ],
+      "speechPatterns": [
+        "Deflects with sarcasm before answering a real question honestly",
+        "Uses precise, almost clinical language when discussing emotions ('that's a stress response,' 'I'm dysregulated') — armor of knowledge",
+        "Drops into blunt one-liners that land harder because she's usually deflecting"
+      ],
+      "emotionalTendencies": "Riley over-functions for everyone around her and under-functions for herself. She reads a room in about four seconds and adjusts to be whatever's needed — the peacekeeper, the planner, the ride home. She rarely lets herself be the one who needs something, and when she finally does feel something big, it tends to come out sideways: irritability, over-control, or sudden withdrawal rather than tears or direct asks for help."
+    },
+    "background": {
+      "family": "Nigerian-American dad (works nights as an ER nurse, exhausted but present), white mom who left when Riley was 11 and now lives two states away with a new family — contact is inconsistent, a few texts a month, a birthday call. Older brother Femi (19) dropped out of community college and moved back home 'temporarily' eight months ago; Riley has quietly taken over a lot of household logistics her dad used to handle.",
+      "interests": [
+        "Competitive swimming (quit last year, won't fully explain why, still swims alone at 6am sometimes)",
+        "True crime podcasts — she likes the ones where they solve it, hates the unsolved ones",
+        "Fixing things: bikes, broken zippers, other people's problems",
+        "A group chat with three friends that she basically runs like a small business"
+      ],
+      "strengths": [
+        "Genuinely excellent in a crisis — calm, decisive, resourceful",
+        "Notices when other people are struggling before anyone else does",
+        "Dry humor that diffuses tension in a room"
+      ],
+      "struggles": [
+        "Cannot ask for help without turning it into a joke or a logistics problem",
+        "Quietly convinced that her worth is tied to being useful/needed",
+        "Panic attacks she calls 'glitches' and hides by leaving rooms calmly instead of visibly falling apart"
+      ],
+      "secrets": [
+        "She quit swimming the week her mom left, not because of 'burnout' like she tells people — swimming was the last thing her mom used to come watch",
+        "She's been covering small amounts of Femi's financial mess (borrowed lunch money, a 'loan' from her babysitting savings) and hasn't told her dad",
+        "She has a note in her phone titled 'reasons to stay' that she started after a bad night in ninth grade and adds to occasionally, but has never told anyone it exists"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Keep the household running smoothly so her dad doesn't have to worry",
+        "Get Femi back on track without anyone finding out how bad it's gotten",
+        "Maintain her reputation as 'the reliable one' among friends"
+      ],
+      "unconscious": [
+        "To be chosen and stayed-for without having to earn it through usefulness",
+        "To have permission to fall apart without losing people's respect or love",
+        "To grieve her mother's leaving without it meaning she's 'too much' or the reason for it"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Sharp, contemporary teen vernacular mixed with oddly clinical/textbook phrasing when discussing feelings — she's absorbed therapy-speak from a school counselor and uses it like a shield, not real self-awareness.",
+      "sentenceComplexity": "Short, punchy sentences during conflict; longer, rambling sentences when she's stalling or nervous; goes quiet and monosyllabic when something actually hits close to home.",
+      "emotionalExpressiveness": "Expressive and quick with humor and anger; heavily guarded with sadness, fear, or need. Cries alone, never in front of people, and will physically leave a room before letting anyone see it happen.",
+      "examples": [
+        "Example line 1: \"I'm not stressed, I'm just experiencing a normal physiological reaction to an abnormal amount of responsibility. Anyway, did you eat lunch or are you also malfunctioning.\"",
+        "Example line 2: \"You don't have to fix it. You just have to not leave in the middle of it, okay? That's — that's literally all I'm asking.\"",
+        "Example line 3: \"I'm fine. I have a system. I always have a system.\" (beat) \"The system is falling apart a little bit, but it's still a system.\""
+      ]
+    },
+    "storyRole": "Protagonist whose external arc (holding her family together, managing friend group dynamics, deciding whether to return to swimming) masks an internal arc about learning she's allowed to need people — that being loved isn't conditional on being endlessly capable. She's the emotional engine of the story: her competence pulls other characters in, but her inability to be vulnerable creates the central tension in nearly every relationship she has.",
+    "arcPotential": [
+      "Episode 2: Femi's situation comes to a head (a call from a collections agency, a missed shift) and Riley has to decide whether to keep covering for him or tell their dad — forces her first real crack in the 'I handle everything' persona.",
+      "Episode 5: A friend confronts her about always deflecting with jokes when things get real, threatening to pull back from the friendship unless Riley lets someone in for once.",
+      "Episode 8: She's invited to watch a friend's swim meet, unexpectedly triggering the grief around her mom; possible first time she lets someone see her actually cry.",
+      "Season finale: Riley finally opens the 'reasons to stay' note to someone, or gets back in the pool — either as a quiet act of choosing herself, tying competence and vulnerability together instead of treating them as opposites."
+    ]
+  },
+  "designNotes": "Riley is built around a common but under-dramatized teen archetype: the 'together' kid who is quietly drowning under the weight of being needed. Her competence isn't a flaw to be corrected but a genuine strength complicated by an unhealthy root (fear that being needed is the only way to be loved). The clinical-language-as-armor choice makes her feel like a real modern teenager who's absorbed therapy culture without necessarily doing the deeper work yet, which avoids the 'perfectly self-aware TV therapy kid' trap. Her humor is a load-bearing wall, not comic relief — it's doing real psychological work, which should make her funny AND heartbreaking in the same scene. The swimming/mom connection gives a concrete, specific object (not abstract 'sadness') for the audience to track across episodes.",
+  "representationNotes": "Riley is mixed-race (Nigerian-American and white), which is reflected in small specific details (braid maintenance, name structure) rather than treated as a plot point or 'issue episode' — her racial identity exists alongside her story, not as the story. Her home situation (absent parent, financially precarious sibling, overworked remaining parent) reflects real, non-stereotyped family complexity without being a 'poverty narrative' or an 'absent Black father' cliché — her dad is present, working, loving, and imperfect due to circumstance, not character flaw. Her mental health struggles (panic attacks, control issues, difficulty asking for help) are written to be recognizable to teens without being pathologized or resolved too neatly — no single conversation 'fixes' her, matching how these patterns actually shift slowly through repeated relational experience."
+}

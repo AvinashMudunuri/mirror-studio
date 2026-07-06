@@ -221,16 +221,16 @@ Remember: You're evaluating GAMEPLAY and FUN FACTOR, not just story quality. A w
 EPISODE:
 Title: ${episode.title}
 Synopsis: ${episode.synopsis}
-Themes: ${episode.themes.join(', ')}
-Target Traits: ${episode.targetTraits.join(', ')}
-Estimated Play Time: ${episode.estimatedPlayTime} minutes
-Scenes: ${episode.scenes.length}
-Characters: ${episode.characters.length}
+Themes: ${episode.themes?.join(', ') || 'None specified'}
+Target Traits: ${episode.targetTraits?.join(', ') || 'None specified'}
+Estimated Play Time: ${episode.estimatedPlayTime || 'N/A'} minutes
+Scenes: ${episode.scenes?.length || 0}
+Characters: ${episode.characters?.length || 0}
 
 Full Episode Data: ${JSON.stringify(episode, null, 2)}
 
 CHARACTERS:
-${characters.map(c => `- ${c.name}: ${c.personality.coreTraits.join(', ')}`).join('\n')}
+${characters?.length > 0 ? characters.map(c => `- ${c.name}: ${c.personality.coreTraits.join(', ')}`).join('\n') : 'No characters provided'}
 
 WORLD:
 ${world.description}
