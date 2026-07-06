@@ -10,7 +10,44 @@ const fs = require('fs');
 
 // Import from built packages (resolve from script location)
 const packageRoot = path.resolve(__dirname, '..');
-const agentsPath = path.join(packageRoot, 'packages', 'agents', 'dist', 'index.js');
+
+// Try multiple paths for different environments (GitHub Codespaces vs local)
+let agentsModule;
+const possiblePaths = [
+  path.join(packageRoot, 'packages', 'agents', 'dist', 'index.js'),
+  path.join(packageRoot, '..', 'packages', 'agents', 'dist', 'index.js')
+];
+
+// Try require.resolve as last resort
+try {
+  possiblePaths.push(require.resolve('@mirror/agents'));
+} catch (e) {
+  // @mirror/agents not in node_modules, skip
+}
+
+for (const tryPath of possiblePaths) {
+  try {
+    if (fs.existsSync(tryPath)) {
+      agentsModule = require(tryPath);
+      console.log(`✅ Loaded agents from: ${tryPath}\n`);
+      break;
+    }
+  } catch (err) {
+    console.error(`   Failed to load ${tryPath}: ${err.message}`);
+    // Try next path
+  }
+}
+
+if (!agentsModule) {
+  console.error('❌ Error: Could not load @mirror/agents package');
+  console.error('   Tried paths:');
+  possiblePaths.forEach(p => {
+    const exists = fs.existsSync(p);
+    console.error(`   - ${p} ${exists ? '(exists)' : '(not found)'}`);
+  });
+  console.error('\n💡 Tip: Run "npm run build" first to compile TypeScript files.\n');
+  process.exit(1);
+}
 
 const { 
   StoryArchitectAgent,
@@ -18,8 +55,9 @@ const {
   DialogueWriterAgent,
   CreativeDirectorAgent,
   QAReviewerAgent,
+  ChildPsychologistAgent,
   createLLMGateway
-} = require(agentsPath);
+} = agentsModule;
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -114,6 +152,7 @@ async function main() {
   const dialogueWriter = new DialogueWriterAgent();
   const creativeDirector = new CreativeDirectorAgent();
   const qaReviewer = new QAReviewerAgent();
+  const childPsychologist = new ChildPsychologistAgent();
   
   await Promise.all([
     storyArchitect.initialize({ 
@@ -150,6 +189,13 @@ async function main() {
       messageBus: mockMessageBus, 
       memory: mockMemory, 
       llm 
+    }),
+    childPsychologist.initialize({ 
+      workflowId, 
+      threadId, 
+      messageBus: mockMessageBus, 
+      memory: mockMemory, 
+      llm 
     })
   ]);
   
@@ -157,7 +203,8 @@ async function main() {
   console.log('✅ Character Designer (Kai) ready');
   console.log('✅ Dialogue Writer (Echo) ready');
   console.log('✅ Creative Director (Aria) ready');
-  console.log('✅ QA Reviewer (Alex) ready\n');
+  console.log('✅ QA Reviewer (Alex) ready');
+  console.log('✅ Child Psychologist (Dr. Sam) ready\n');
   
   console.log('═══════════════════════════════════════════════════════════\n');
   
@@ -350,6 +397,56 @@ async function main() {
     saveToFile('05-qa-review.json', qaResult);
     console.log('   💾 Saved: output/real-episode/05-qa-review.json\n');
     
+    // Step 7: Child Psychologist - Psychological Safety Review
+    console.log('👨‍⚕️ Step 7: Child Psychologist - Psychological Safety Review\n');
+    console.log('   🔄 Calling Claude API for psychological safety review...\n');
+    console.log('   ⏳ This may take 20-30 seconds...\n');
+    
+    const psychStartTime = Date.now();
+    
+    const psychResult = await childPsychologist.process({
+      type: 'REVIEW_EPISODE',
+      episodeReview: {
+        episode: episodeForReview,
+        characters: [protagonistResult.character],
+        world: TEST_WORLD
+      }
+    });
+    
+    const psychDuration = ((Date.now() - psychStartTime) / 1000).toFixed(1);
+    
+    console.log(`✅ Psychological safety review complete! (${psychDuration}s)`);
+    console.log(`   Status: ${psychResult.status}`);
+    console.log(`   Concerns: ${psychResult.concerns?.length || 0} issues`);
+    console.log(`   Trigger Warnings: ${psychResult.triggerWarnings?.length || 0}`);
+    console.log(`   Overall Score: ${psychResult.scores?.overall || 'N/A'}/10`);
+    console.log(`   Ready for Audience: ${psychResult.summary?.readyForAudience ? 'Yes' : 'No'}\n`);
+    
+    if (psychResult.concerns && psychResult.concerns.length > 0) {
+      console.log('   ⚠️  Concerns:');
+      psychResult.concerns.slice(0, 3).forEach(concern => {
+        console.log(`      • [${concern.severity}] ${concern.issue}`);
+        console.log(`        Category: ${concern.category}`);
+        console.log(`        Recommendation: ${concern.recommendation}`);
+      });
+      if (psychResult.concerns.length > 3) {
+        console.log(`      ... and ${psychResult.concerns.length - 3} more\n`);
+      } else {
+        console.log('');
+      }
+    }
+    
+    if (psychResult.triggerWarnings && psychResult.triggerWarnings.length > 0) {
+      console.log('   ⚠️  Trigger Warnings:');
+      psychResult.triggerWarnings.forEach(tw => {
+        console.log(`      • [${tw.severity}] ${tw.category}: ${tw.description}`);
+      });
+      console.log('');
+    }
+    
+    saveToFile('06-psych-review.json', psychResult);
+    console.log('   💾 Saved: output/real-episode/06-psych-review.json\n');
+    
     // Final Summary
     const totalDuration = ((Date.now() - startTime) / 1000).toFixed(1);
     
@@ -360,7 +457,8 @@ async function main() {
     console.log('   2. Protagonist Profile (Character Designer → Claude)');
     console.log('   3. Scene Dialogue (Dialogue Writer → Claude)');
     console.log('   4. Creative Review (Creative Director → Claude)');
-    console.log('   5. QA Review (QA Reviewer → Claude)\n');
+    console.log('   5. QA Review (QA Reviewer → Claude)');
+    console.log('   6. Psychological Safety Review (Child Psychologist → Claude)\n');
     console.log(`   📁 Location: ${OUTPUT_DIR}\n`);
     console.log('⏱️  Total Time:\n');
     console.log(`   Story: ${duration}s`);
@@ -368,15 +466,17 @@ async function main() {
     console.log(`   Dialogue: ${dialogueDuration}s`);
     console.log(`   Review: ${reviewDuration}s`);
     console.log(`   QA: ${qaDuration}s`);
+    console.log(`   Psych: ${psychDuration}s`);
     console.log(`   Total: ${totalDuration}s (${(totalDuration / 60).toFixed(1)} minutes)\n`);
     console.log('🎯 Full AI Studio Pipeline:\n');
     console.log('   ✅ Story structure designed');
     console.log('   ✅ Characters created with depth');
     console.log('   ✅ Authentic dialogue written');
     console.log('   ✅ Quality assured by Creative Director');
-    console.log('   ✅ Technical validation by QA Reviewer\n');
+    console.log('   ✅ Technical validation by QA Reviewer');
+    console.log('   ✅ Psychological safety validated by Child Psychologist\n');
     console.log('═══════════════════════════════════════════════════════════\n');
-    console.log('🎉 Success! Phase 1 + QA Reviewer pipeline complete!\n');
+    console.log('🎉 Success! Phase 1 + Phase 2 validation agents working!\n');
     
   } catch (error) {
     console.error('\n❌ Error during episode creation:\n');
