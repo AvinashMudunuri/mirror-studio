@@ -1,0 +1,394 @@
+[
+  {
+    "character": {
+      "id": "jordan",
+      "name": "Jordan Reyes",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Tall for his age, still growing into his own limbs, with an easy slouch that reads as confidence even when he's uncomfortable. Wears whatever's trending that week — right now it's a rotation of three basketball jerseys and a single pair of scuffed white sneakers he's weirdly protective of.",
+        "distinctiveFeatures": [
+          "A gap-toothed grin he leads with in almost every interaction",
+          "Constantly fidgets with his phone even when it's face-down — taps it like a nervous tell",
+          "A fading friendship bracelet on his wrist he'd never admit means something to him"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "magnetic",
+          "conflict-averse under a confident mask",
+          "quick-witted",
+          "corner-cutting",
+          "loyal in his own messy way"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 3,
+          "extraversion": 9,
+          "agreeableness": 5,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Leans back in his chair like he owns the room, even when he's scrambling internally",
+          "Deflects with a joke half a second before an uncomfortable silence lands",
+          "Points finger-guns at people when he's trying to smooth things over",
+          "Goes very still and quiet for a beat right before he says something he knows is wrong — like he's deciding whether to be brave or easy"
+        ],
+        "speechPatterns": [
+          "Uses 'nobody's gonna check' / 'it's not that deep' as verbal tics when minimizing risk",
+          "Calls people 'bro' or by nicknames he invents on the spot — a way of making people like him fast",
+          "Talks fast and confident until he's cornered, then gets short and defensive",
+          "Rarely apologizes directly — reframes it as 'my bad, anyway—' and moves on before anyone can sit in it"
+        ],
+        "emotionalTendencies": "Jordan performs ease. He's the kid who makes a room laugh, who gets picked first, who never seems to sweat — because underneath it, he's terrified of being seen as anything less than effortless. His confidence is real but it's also armor. When he cuts corners, it's rarely pure laziness; it's fear dressed as swagger. When cornered, his first instinct is to protect the version of himself people like, even at someone else's expense — and he hates himself a little for it after, though he'd never say so."
+      },
+      "background": {
+        "family": "Middle child of three, sandwiched between an older sister who's a straight-A high schooler and a younger brother who gets away with everything because he's 'the baby.' Jordan's parents work long shifts and measure report cards like scoreboards. He's absorbed, without anyone meaning to teach him, that being impressive is safer than being honest.",
+        "interests": [
+          "basketball (JV hopeful)",
+          "editing highlight reels of himself and friends",
+          "collecting sneakers he can't really afford",
+          "being the center of attention in group chats"
+        ],
+        "strengths": [
+          "genuinely charismatic — people want to be around him",
+          "quick problem-solver under pressure",
+          "can defuse tension in a room with a joke",
+          "fiercely protective of friends when he's not the one at risk"
+        ],
+        "struggles": [
+          "chronic procrastination masked as 'confidence'",
+          "deep fear of being seen as not good enough, especially next to his sister",
+          "difficulty owning mistakes without immediately spinning them",
+          "conflates being liked with being okay"
+        ],
+        "secrets": [
+          "He borrowed his sister's old terrarium project because he genuinely believes he can't do it well enough himself, not just because he's lazy",
+          "He knows blaming Maya was wrong the second it left his mouth — he replays it that night and feels sick, but doesn't know how to walk it back without looking weak",
+          "He's scared his parents will compare this grade to his sister's old project if they ever find out it wasn't his"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get a good grade with minimum exposure to failure",
+          "Stay the well-liked, easygoing one in the group",
+          "Avoid his parents finding out he cut a corner"
+        ],
+        "unconscious": [
+          "To feel like he's enough without having to prove it from scratch every time",
+          "To be forgiven before he has to fully admit fault",
+          "To matter as much as his sister does in his parents' eyes"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual middle-school slang, current and a little performative — he talks like he's aware people are listening, even one-on-one.",
+        "sentenceComplexity": "Short, punchy sentences when confident; fragmented and evasive when caught out.",
+        "emotionalExpressiveness": "High energy on the surface, guarded underneath. Rarely states feelings directly — expresses them through jokes, deflection, or sudden defensiveness.",
+        "examples": [
+          "\"Relax, it's not that deep. We tweak some labels, we're geniuses by Tuesday.\"",
+          "\"Maya was holding it — she dropped it!\" (blurted, immediate, almost before he's thought it through)",
+          "\"Man, why are you making this harder than it's gotta be?\"",
+          "\"...Yeah. Okay. My bad. I'll — yeah. I'll fix it with her.\" (quieter, no jokes, when actually cornered into honesty)"
+        ]
+      },
+      "storyRole": "The catalyst and pressure test of the episode — Jordan is the reason the ethical dilemma exists at all, and his shifting reactions to the player's choices (compliance vs. pushback vs. honesty) reveal whether Ellis is actually capable of prioritizing trust over being liked. He's not a villain; he's a mirror for what happens when charm is used to avoid accountability.",
+      "arcPotential": [
+        "Episode 'Cracks in the Terrarium': Jordan's arc moves from corner-cutting and scapegoating toward (if the player pushes for honesty) a grudging, real apology to Maya — his first onscreen moment of being uncool but true.",
+        "Future episode potential: A storyline where Jordan's home pressure (comparison to his sister) surfaces directly, giving context to why being 'effortlessly good' matters so much to him — and what happens when he lets that mask crack in front of people he actually trusts.",
+        "Longer arc: Jordan slowly learning that the friends who like him for the performance aren't the same as friends who'd trust him with the truth — mirroring the episode's central theme back onto his own life."
+      ]
+    },
+    "designNotes": "Jordan is designed to be genuinely likable on first contact — the goal is for players to want to protect his ego, which is exactly the trap the episode is testing. His corner-cutting isn't cartoonish laziness; it's rooted in a real, relatable middle-school fear of not being naturally good enough, dressed up as swagger. Giving him a moment of visible guilt (replaying the blame that night, the quiet non-joke apology) keeps him human rather than a plot obstacle. His defense mechanism — humor and fast talk to avoid sitting in discomfort — is consistent across every scene, escalating into panic (the blame) and then, if the player earns it, cracking into real vulnerability.",
+    "representationNotes": "Jordan avoids the 'charismatic troublemaker' stereotype tipping into caricature by grounding his behavior in specific, ordinary family pressure (sibling comparison, working parents) rather than vague 'bad kid' tropes. Care was taken to make his eventual accountability feel earned rather than a simple morality-tale reversal — he doesn't become a different person by Friday, he just makes one honest choice under pressure, which is more realistic for an 11-14 audience and leaves room for him to be flawed again in future episodes."
+  },
+  {
+    "character": {
+      "id": "maya",
+      "name": "Maya Nakamura",
+      "age": 12,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Small and quick-moving, with dark hair usually in a tight braid she re-does when she's nervous. Wears the same lucky cardigan (mint green, slightly too big) on test days and project deadlines.",
+        "distinctiveFeatures": [
+          "Chews the end of her pen cap until it's flattened",
+          "Carries a color-coded planner she treats like scripture",
+          "Has a habit of mouthing numbers or lists silently under her breath"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "anxious overachiever",
+          "conflict-avoidant to a fault",
+          "secretly perceptive",
+          "fiercely responsible",
+          "self-critical"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 9,
+          "extraversion": 4,
+          "agreeableness": 8,
+          "neuroticism": 8
+        },
+        "mannerisms": [
+          "Re-checks her own work even after it's turned in, just to 'make sure'",
+          "Apologizes reflexively, even when she hasn't done anything wrong",
+          "Goes very still and quiet right before she's about to cry, like she's trying to physically hold it in",
+          "Taps her pencil in sets of three when she's calculating a risk in her head"
+        ],
+        "speechPatterns": [
+          "Talks fast when anxious, slows to almost a whisper when admitting something true",
+          "Uses precise, slightly formal vocabulary for a 12-year-old ('I calculated that we'd need—') as a control mechanism",
+          "Trails off mid-sentence when she's about to say something she thinks will cause conflict",
+          "Uses humor self-deprecatingly to defuse tension ('Cool, cool, I'll just have a small breakdown about it later')"
+        ],
+        "emotionalTendencies": "Maya's default state is quiet vigilance — she's constantly scanning for what could go wrong and pre-emptively managing it. She over-functions to compensate for feeling like she has no control over how others perceive her. When she's cornered into a lie or a silence she didn't choose, she doesn't explode — she goes internal, replaying it obsessively, until it leaks out sideways as exhaustion or unexpected bluntness."
+      },
+      "background": {
+        "family": "Oldest of three kids in a household where her parents both work long, unpredictable hours (mom's a nurse, dad manages a restaurant). Maya's been the 'responsible one' since she was seven, which she's proud of and quietly exhausted by. Nobody tells her she's allowed to mess up — she's decided that for herself.",
+        "interests": [
+          "making elaborate to-do lists and color-coded schedules",
+          "true crime podcasts, ironically, given how conflict-averse she is",
+          "baking (the one place she lets things be imperfect and still edible)",
+          "keeping a running list of 'grudges' she never actually acts on"
+        ],
+        "strengths": [
+          "meticulous researcher",
+          "genuinely kind and notices when others are struggling",
+          "capable of real moral clarity once she feels safe enough to voice it"
+        ],
+        "struggles": [
+          "conflating being liked with being safe",
+          "physical anxiety symptoms (stomachaches, can't sleep) before anything high-stakes",
+          "difficulty advocating for herself even when she's clearly right"
+        ],
+        "secrets": [
+          "She almost told Ms. Alvarez about the copied terrarium before Ellis did anything — she chickened out in the hallway and has been sick about it since",
+          "She keeps a private list in her planner titled 'Things I Should Have Said' that's three pages long"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "get a good grade without anyone being mad at her",
+          "avoid being blamed for anything, ever",
+          "keep the group functioning so nothing blows up"
+        ],
+        "unconscious": [
+          "to be believed and defended without having to ask for it",
+          "to learn that her worth isn't contingent on being useful or agreeable",
+          "to trust that telling the truth won't cost her the group"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Slightly advanced for her age in structured/academic contexts (she over-prepares her words like she over-prepares everything), but reverts to simple, halting phrasing when she's emotionally exposed.",
+        "sentenceComplexity": "Long, list-like sentences when explaining plans or research; short, fragmented ones when scared or being honest about feelings.",
+        "emotionalExpressiveness": "Guarded and controlled on the surface, but leaks through in physical tells (voice pitch rising, going quiet, refusing eye contact) before she ever says how she feels outright.",
+        "examples": [
+          "\"I already made a labeling schedule so we're not all fighting over the sharpies Thursday. Is that— is that weird? I can throw it out.\"",
+          "\"You didn't say anything either.\" (quiet, not accusing — just tired, like she's been carrying the sentence around all day)",
+          "\"I had it in my hands for like two seconds, I swear, I didn't even— I don't even know what happened, I just froze.\"",
+          "\"I have a list. Of things I should've said. It's getting really long, Ellis.\""
+        ]
+      },
+      "storyRole": "Maya is the emotional stakes made visible — the person who actually gets hurt when Ellis chooses comfort over truth. She's not a passive victim; she's a mirror of Ellis's own conflict-avoidance taken to its logical extreme, which is exactly why her arc lands so hard. Her trust (or lack of it) in Ellis by episode's end is the real scoreboard, more than any grade on the terrarium.",
+      "arcPotential": [
+        "Later episode: Maya is put in a leadership role and has to practice tolerating conflict instead of pre-managing it — testing whether Ellis's example actually changed her.",
+        "Later episode: Maya's list of 'Things I Should Have Said' becomes a plot device when she finally reads one aloud, to someone who isn't Ellis.",
+        "Potential arc: Maya learns to separate being helpful from being safe — that people can still like her even when she disappoints them."
+      ]
+    },
+    "designNotes": "Maya is built to avoid the 'anxious sidekick' trap by giving her sharp internal logic — she's not nervous because she's weak, she's nervous because she's run the cost-benefit analysis of speaking up a hundred times and the math never worked out in her favor before. Her overachieving is a coping mechanism, not a personality quirk: if she controls everything controllable, maybe nothing uncontrollable (like being blamed, like being disliked) can touch her. The contradiction that makes her feel real: she's the most quietly moral person on the team, and also the most complicit, because morality without safety doesn't translate into action for her yet. Her arc isn't 'learn to be brave' in one episode — it's planting the seed that being defended by someone else (Ellis) might teach her she's allowed to defend herself later. The 'Things I Should Have Said' list is a small, specific, painfully relatable detail meant to make 11-14 year olds go 'oh, I have one of those too, just not on paper.'",
+    "representationNotes": "Maya's characterization deliberately avoids the 'anxious Asian overachiever' stereotype by rooting her perfectionism in concrete family context (eldest-daughter responsibility, working-class household dynamics) rather than vague cultural shorthand, and by giving her interior life, humor, and moral agency that exceed the 'stressed studious kid' function. Care should be taken in future episodes to let her be genuinely funny, messy, or wrong sometimes — not just a barometer for the protagonist's growth. She should get her own wants that don't route through her anxiety."
+  },
+  {
+    "character": {
+      "id": "deshawn",
+      "name": "Deshawn Carter",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Tall for his age and a little self-conscious about it, with close-cropped hair and a habit of wearing his dad's old varsity jacket even though it's a size too big. Moves unhurried, like he's got nowhere he needs to rush to.",
+        "distinctiveFeatures": [
+          "Wire-frame glasses he pushes up when he's thinking hard",
+          "A chipped front tooth from a bike accident he'll only explain if you ask twice",
+          "Draws small doodles in the margins of his notebook — mostly birds"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "watchful",
+          "dry-humored",
+          "quietly principled",
+          "slow to trust",
+          "unexpectedly loyal once he does"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 7,
+          "extraversion": 3,
+          "agreeableness": 5,
+          "neuroticism": 4
+        },
+        "mannerisms": [
+          "Leans back in his chair with arms crossed when sizing up a situation",
+          "Taps a pencil against his knuckles instead of speaking right away",
+          "Goes very still and quiet right before he says something that matters"
+        ],
+        "speechPatterns": [
+          "Short, plain sentences — doesn't pad his words",
+          "Asks blunt questions instead of offering opinions ('What are you gonna do about it?')",
+          "Dry, deadpan humor that lands sideways rather than punching down",
+          "Rarely raises his voice; when he does, people notice"
+        ],
+        "emotionalTendencies": "Deshawn processes everything before he shows anything. He's not cold — he feels things plenty — but he learned early that jumping in fast doesn't fix much, so he watches until he's sure. When he finally speaks up, it carries weight because he doesn't waste words on things that don't matter to him."
+      },
+      "background": {
+        "family": "Raised primarily by his older sister, Tanya (24), while their mom works night shifts as a hospital tech. Tanya's strict about homework and even stricter about 'not being a snitch OR a doormat' — a line Deshawn's heard a hundred times and clearly absorbed.",
+        "interests": [
+          "Birdwatching (inherited from his late grandfather)",
+          "Building model kits — planes, mostly",
+          "Basketball, though he says he's 'aggressively mediocre' at it"
+        ],
+        "strengths": [
+          "Genuinely skilled at hands-on building — steady hands, patient troubleshooting",
+          "Reads people accurately and quickly",
+          "Doesn't cave to social pressure the way some kids do"
+        ],
+        "struggles": [
+          "Struggles to speak up first — waits for someone else to take the risk, then decides whether to back them",
+          "Has been burned before by a friend who lied and made Deshawn look complicit; he's guarded because of it",
+          "Sometimes lets his watchfulness tip into passivity — he'll clock injustice and still say nothing until it's almost too late"
+        ],
+        "secrets": [
+          "Last year at his old school, he stayed silent while a friend got blamed for something he didn't do — and by the time Deshawn worked up the nerve to say something, the friendship was already wrecked. He never told anyone that's why he watches so closely now.",
+          "He actually likes Jordan, in a low-key way — finds him funny — which is part of why it stings to watch him cut corners."
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the group project without getting dragged into drama that isn't his",
+          "Build a terrarium model that actually holds together (he takes the craftsmanship seriously)"
+        ],
+        "unconscious": [
+          "Wants proof that speaking up for someone actually works out before he risks it himself again",
+          "Craves a teammate/friend who'll do the right thing without being cornered into it"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Plain, concrete, middle-school natural — no big words for their own sake, but sharper vocabulary when he's making a point.",
+        "sentenceComplexity": "Short and declarative. Rarely rambles. Questions are usually one line, direct.",
+        "emotionalExpressiveness": "Understated. Feelings show through timing and silence more than volume. When he does express something directly, it's meant to land.",
+        "examples": [
+          "\"I'm not saying anything. I'm just saying I'm watching.\"",
+          "\"Nah, I'll build it. Somebody's gotta make sure it doesn't fall apart — literally.\"",
+          "\"You corrected him back there. That was you, right? Not just... reflex?\"",
+          "\"I've seen this movie before. Usually somebody gets thrown under the bus by the end of the week.\"",
+          "\"So what do you actually think? Not what you think you're supposed to think.\""
+        ]
+      },
+      "storyRole": "Deshawn is the episode's quiet witness and moral gauge — he rarely intervenes directly, but his attentiveness makes the player's choices feel observed and consequential. He's not there to lecture Ellis; he's there because he's been burned by silence before, and he's watching to see whether Ellis is someone who'll actually break the pattern. His final scene reframes the whole episode as a question, not a verdict.",
+      "arcPotential": [
+        "Future episode: Deshawn faces a version of his own past mistake in real time — someone else gets blamed unfairly in front of him — and the player gets to see whether his own growth (or lack of it) mirrors what he asked of Ellis.",
+        "Future episode: Deshawn and Ellis's tentative friendship deepens through a shared project where Deshawn has to be the one to speak up first, testing whether he's actually internalized his own advice.",
+        "Longer arc: Deshawn slowly opens up about the old-school friendship that fell apart, giving weight to why he holds back — and giving the player a chance to be the first person he really trusts with it."
+      ]
+    },
+    "designNotes": "Deshawn is designed to avoid the 'wise silent observer' trope by giving him a concrete, personal wound behind his watchfulness — he's not naturally sage, he's guarded because trusting people burned him before. His dry humor and specific interests (birdwatching, model kits) keep him from reading as a plot device or a walking conscience. Crucially, he never tells Ellis what to do; he only asks questions, which keeps the moral weight on the player's choices rather than outsourcing it to a mouthpiece character. His closing scene is deliberately open-ended rather than a lecture, matching his character.",
+    "representationNotes": "Deshawn is a Black middle schooler raised in a working-class, sibling-led household — a family structure that's common but underrepresented without being played for tragedy or 'very special episode' framing. His interests (birdwatching, model kits) are chosen specifically to avoid stereotype-driven characterization, giving him texture outside of any 'tough' or 'streetwise' shorthand. His restraint and quietness are framed as a defense mechanism rooted in a specific past hurt, not as an inherent personality type assigned to his identity."
+  },
+  {
+    "character": {
+      "id": "ms-alvarez",
+      "name": "Renata Alvarez",
+      "age": 34,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Petite, quick-moving woman with dark curly hair usually pulled into a messy bun stuck through with a pencil. Wears cardigans over graphic tees (usually science puns or old band shirts) and has a rotating collection of novelty earrings — today, tiny plastic terrariums.",
+        "distinctiveFeatures": [
+          "ink-stained fingers from grading with actual pens, not just a laptop",
+          "a chipped front tooth she never bothered fixing",
+          "keeps a small jar of classroom 'confiscated item amnesty' on her desk that's actually just candy she hands back out"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "fair but not soft",
+          "dry-humored",
+          "quietly attentive",
+          "unshakeable under pressure",
+          "believes kids rise to expectations you set"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 9,
+          "extraversion": 6,
+          "agreeableness": 6,
+          "neuroticism": 3
+        },
+        "mannerisms": [
+          "taps her pen twice on the desk before asking a question she already knows the answer to",
+          "crouches to eye level with students instead of looming when talking seriously",
+          "pushes her glasses up with her wrist when her hands are dirty from lab prep"
+        ],
+        "speechPatterns": [
+          "uses precise, calm phrasing even when addressing a mess — 'Let's establish what actually happened' instead of 'who did this'",
+          "dry one-liners dropped flat, no laugh track",
+          "asks questions rather than making accusations: 'Walk me through it' is a favorite"
+        ],
+        "emotionalTendencies": "Steady and even-keeled on the surface, but not cold — she cares visibly, just doesn't perform it. Gets quietly fierce when she senses a student being scapegoated, though she never yells; her disappointment lands harder than anger would. Has a soft spot for the anxious overachievers because she used to be one."
+      },
+      "background": {
+        "family": "Single mom to a six-year-old; her own mother was a teacher too, and Renata swore she'd never become one — did anyway. Talks about her kid sometimes ('My daughter asked me why plants don't scream when you cut them, so that's my week') to remind students she's a whole person.",
+        "interests": [
+          "marine biology (her actual specialty; teaches general science because the district needed her)",
+          "terrible puns she puts on the whiteboard weekly",
+          "trail running",
+          "true crime podcasts, ironically, given how much she believes in due process"
+        ],
+        "strengths": [
+          "reads a room fast",
+          "doesn't need a confession to know something's off, but waits for one anyway",
+          "genuinely good at making kids feel capable, not just corrected"
+        ],
+        "struggles": [
+          "can come across as unbothered/distant to kids who want more overt warmth",
+          "sometimes waits too long for students to self-correct, letting small dishonesties fester a class period longer than she should",
+          "burned out by a system that grades her on test scores more than the character-building she actually cares about"
+        ],
+        "secrets": [
+          "she clocked the terrarium story didn't add up almost immediately — Maya's the type who reports a spill before it happens, not after — but she wanted to see who'd speak up unprompted",
+          "keeps a mental list of which students she can trust to self-correct and which need a nudge; it's not fair, but it's real"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "get her students to actually understand ecosystems, not just build a diorama",
+          "hold kids accountable in a way that teaches instead of punishes",
+          "keep the classroom a place where telling the truth doesn't feel like a trap"
+        ],
+        "unconscious": [
+          "prove that a classroom can run on trust instead of fear, unlike some of her own school experiences",
+          "be the adult who noticed, when she suspects a lot of adults in these kids' lives don't"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult, precise, but never condescending — she talks to 12-year-olds like they're capable of nuance, not like they're suspects or babies.",
+        "sentenceComplexity": "Short, declarative when she means business; longer and more exploratory when she's teaching or drawing a student out.",
+        "emotionalExpressiveness": "Restrained but not withholding — shows care through attention and follow-up questions rather than big emotional displays. A raised eyebrow does more work than a raised voice.",
+        "examples": [
+          "\"Glass breaks. That's not the interesting part. The interesting part is what everybody said happened next.\"",
+          "\"I'm not asking you to snitch. I'm asking you to tell me what you saw. There's a difference, and you know it.\"",
+          "\"You get an extension. Not because you didn't mess up — you did — but because you told me the truth about it, and that's worth something in this room.\""
+        ]
+      },
+      "storyRole": "The adult constant against which the player's honesty is measured — not a mouthpiece for the lesson, but a person whose quiet, unflinching fairness makes the stakes of Ellis's choices real. She never forces a confession; she creates room for one, and it's up to Ellis whether to fill it.",
+      "arcPotential": [
+        "A later episode where a student tests whether Ms. Alvarez's fairness has limits — what happens when the truth implicates someone she clearly likes",
+        "A subplot where her own burnout/frustration with the school system briefly shows through, humanizing the 'unshakeable teacher' image",
+        "A callback episode where Deshawn or Maya, now trusting her more, comes to her proactively instead of being caught in a crisis"
+      ]
+    },
+    "designNotes": "Ms. Alvarez needed to avoid the two easy traps for teacher characters: the all-knowing wise mentor who exists purely to deliver the moral, and the oblivious authority figure who's easily fooled. Instead she's built as someone who suspects the truth almost immediately (kids underestimate how much teachers pick up on) but deliberately creates space for students to self-correct rather than extracting a confession — this makes her fairness feel earned rather than magical, and it raises the stakes of Ellis's choice because Ellis isn't fooling anyone but herself by staying quiet. Her dry humor and specific personal details (the daughter, the marine biology background she doesn't get to use) exist so she reads as a full adult with her own life, not a delivery system for classroom justice. The 'mental list of who needs a nudge' secret adds a layer of moral complexity — she's fair, but not infinitely patient or perfectly equitable, which keeps her human.",
+    "representationNotes": "Renata Alvarez is written as a Latina science teacher without making her ethnicity the point of her characterization — her surname, first-generation-adjacent family background, and interest in marine biology are part of her texture, not a lesson. Single motherhood is included to normalize non-traditional family structures for adult characters without turning it into a subplot. Careful attention was paid to avoid the 'teacher as savior' trope; her power in the story is restraint and structure-building, not swooping in to fix things for the kids, which respects the middle schoolers' own agency as the actual protagonists of their moral growth."
+  }
+]

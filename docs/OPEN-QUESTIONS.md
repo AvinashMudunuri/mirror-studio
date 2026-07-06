@@ -53,11 +53,22 @@ reads the APPROVED episodes preceding a target episode number (Postgres
 folder per episode number) and feeds them into the Story Architect's
 `brief.previousEpisodes`. `EPISODE_NUMBER` (env, default 1) selects which
 brief `scripts/create-real-episode.js` generates — `EPISODE_NUMBER=2` is
-now wired to a real "episode 2" brief. Live-verified: `EPISODE_NUMBER=2
-DATABASE_URL=... npm run real:episode:dev` against episode 1's persisted
-row produced `manifest.run.previousEpisodes: [{id: "ep-1", title: "First
-Bell"}]`, `source: postgres`, and an APPROVED "Group Work" outline whose
-synopsis references the returning "Jordan" character from episode 1.
+now wired to a real "episode 2" brief. Live-verified twice against episode
+1's persisted Postgres row, both times producing
+`manifest.run.previousEpisodes: [{id: "ep-1", title: "First Bell"}]` /
+`source: postgres`:
+- `EPISODE_NUMBER=2 DATABASE_URL=... npm run real:episode:dev` (3
+  reviewers skipped) — APPROVED "Group Work" after 2 revision iterations;
+  synopsis references the returning "Jordan" character from episode 1.
+- `EPISODE_NUMBER=2 DATABASE_URL=... npm run real:episode` (**full
+  board, all 5 reviewers**) — APPROVED "Cracks in the Terrarium" on the
+  first pass, 0 revisions:
+  `{creativeDirector: APPROVED, qaReviewer: PASS, childPsychologist:
+  APPROVED, gameDesigner: GOOD, ethicsReviewer: GOOD}`. This is the run
+  to treat as prod-ready evidence — `real:episode:dev`'s skipped
+  reviewers (Child Psychologist, Ethics Reviewer) are exactly the ones
+  most relevant to this episode's "cut corners for the group / honesty"
+  premise, so the dev-mode run alone doesn't clear it for production.
 
 Still open:
 - **Protagonist continuity.** Each run still calls Character Designer for

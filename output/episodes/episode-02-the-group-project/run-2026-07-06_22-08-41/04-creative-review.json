@@ -1,0 +1,94 @@
+{
+  "decision": "APPROVED",
+  "creativeNotes": "This is genuinely strong work. 'Cracks in the Terrarium' builds a morally textured story that respects its audience's intelligence—it doesn't lecture about honesty, it *dramatizes* the actual cost and friction of choosing it. The episode's real achievement is that every path feels plausible and consequential. A player who takes the shortcut doesn't feel like they've failed a morality quiz; they feel the specific weight of Maya's hurt and Deshawn's quiet judgment, which is far more powerful.\n\nThe character work is the backbone here. Jordan isn't a villain—he's magnetic and convenient, which is exactly why he's dangerous. Maya's anxiety isn't a quirk; it's the thing that makes her vulnerable to being scapegoated. Deshawn's silence is active, not passive—he's watching to see who the player actually is. And the player's own indecision across the choice points feels earned, not like the game is punishing them for being human.\n\nDialogue lands consistently. 'It's just labels' as a refrain is particularly sharp—it's how rationalization actually sounds. The banter between Jordan and Deshawn has real history. Ms. Alvarez's pen-tapping and measured responses create authority without coldness. Maya's self-interrupting speech patterns (\"I already made a rough materials list. Just in case. It's probably overkill—\") are specific and real.\n\nThe emotional arc doesn't manipulate—it earns every beat. The terrarium breaking isn't a cheap plot device; it's the moment when convenience collides with consequence, and the player has to choose. The reflection scene with Deshawn at the end is particularly good: it doesn't resolve the player's internal conflict, it *deepens* it by asking them to name what they actually think when no one's watching.\n\nThis episode knows what it's doing thematically without ever becoming preachy. It trusts teenagers to understand that being liked and being trusted aren't the same thing because it *shows* that through Maya's face, Deshawn's glance, and the specific texture of each choice path.",
+  "specificFeedback": {
+    "story": [
+      "Scene 2 ('The Shortcut') is the narrative hinge, and it's perfectly calibrated. Jordan's 'It's just labels' is the rationalization that will echo through the whole episode. One small note: Deshawn's silence in this scene is powerful, but consider one line of internal monologue from the player after he says nothing—something like 'His quiet feels louder than words' or similar. It would help the player recognize they're being *watched* as much as tested.",
+      "The terrarium breaking (Scene 4) works as a catalyst because it's not the player's fault—it forces them to respond to someone else's crisis. This is structurally sound. The only thing to watch: make sure in implementation that Ms. Alvarez's arrival feels immediate enough that the player doesn't have time to rehearse a lie. The panic in Jordan's quick blame is key.",
+      "The branching at Scene 6 ('Before Friday') is where the episode's strength really shows. Each path forward (truth to teacher, team mediation, avoidance) is distinct and has real consequences. The outcomes document clearly maps how each path shapes future episodes. This is excellent design.",
+      "One structural observation: the final choice (Scene 10, Deshawn's question) doesn't have a 'next scene' that varies—all three options lead to END. This is intentional and right. The episode trusts that the player's answer to Deshawn's question *is* the resolution, not a setup for more scenes. That's narratively mature."
+    ],
+    "character": [
+      "Jordan is the episode's secret weapon. He's not a caricature of peer pressure—he's someone who genuinely believes shortcuts aren't that deep, who's charming enough that people want to believe him, and who panics when caught. His finger-guns and 'Captain' are small character details that make him feel like a real 12-year-old trying to manage social ease. His arc across the branches is also well-designed: in some paths he's embarrassed but learns; in others he remains oblivious. Both feel true.",
+      "Maya's anxiety is the thing most at risk of becoming a type rather than a character. Right now it works because her anxiety has *texture*—she's not just nervous, she's someone who makes lists, who double-checks, who can't quite say no to people she respects. Her silence when blamed is devastating because we know she *has* words; she just freezes. This is good. Keep that specificity.",
+      "Deshawn is used sparingly and brilliantly. His 'goes very still, watching the player instead of Jordan' (Scene 2) is a masterclass in showing judgment without dialogue. His presence in Scene 10 is the emotional anchor of the whole episode—he's the character who sees clearly and doesn't look away. The only thing: make sure his final monologue variations (in branchDialogue) maintain his dry, precise voice. He should never sound like he's *teaching* a lesson, even when he's pointing out what happened.",
+      "Ms. Alvarez is perfectly calibrated as an authority figure who isn't punitive but also isn't a pushover. Her pen-tapping is a great tic that signals she's thinking, not dismissing. One note: in Scene 7a, her line 'I'm not asking you to snitch. I'm asking you to tell me what you saw' is excellent—it makes the moral distinction clear without sounding like a PSA. Keep that tone throughout her dialogue.",
+      "The player character (Ellis) is deliberately left somewhat open, which is right for a choice-based game, but her internal monologue in Scene 2 ('It's just labels. That's what he keeps saying. Like saying it enough times makes it true.') shows she's *thinking* about the rationalization, not just passively accepting it. This is good—it means her choices feel like they come from somewhere, not from the game forcing her hand."
+    ],
+    "dialogue": [
+      "Overall dialogue authenticity is strong. The banter between Jordan and Deshawn in Scene 1 ('That was ONE time— / That was actually pretty bad') sounds like real kids who have history. The rhythm is right.",
+      "Maya's speech patterns are distinctive and earned. She interrupts herself, qualifies, second-guesses: 'I already made a rough materials list. Just in case. It's probably overkill—' This is how anxious people actually talk. Maintain this specificity across all her scenes.",
+      "Jordan's dialogue works because it's *persuasive* rather than obviously wrong. 'It's not that deep, Maya' is the kind of thing that actually makes people doubt themselves. His 'Captain' and 'finger-guns' are small but they establish him as someone who uses charm to deflect. Good.",
+      "One small note on Scene 5b (the private conversation with Maya): The line 'I have a list. Of things I should've said. It's getting really long, Ellis.' is excellent—it's funny and sad at once, which is exactly the tone that lands with this age group. Keep looking for those moments where humor and hurt coexist.",
+      "Ms. Alvarez's dialogue is spare and effective. 'Glass breaks. That's not the interesting part' is the kind of line that makes a teacher feel real—she's not shocked by the accident, she's interested in the *response*. Her pen-tapping is a nice touch to avoid dialogue-only characterization.",
+      "Deshawn's minimal dialogue is a strength. 'Huh' and 'That was you, right? Not just reflex' and 'Mm' are all doing heavy lifting because he's been established as someone who watches. Don't over-explain him.",
+      "Minor note: In Scene 3a, Jordan's 'SEE? Genius squad' feels slightly too energetic for someone who's just cut corners. Consider: 'Yeah, told you. Easy.' Something that shows he's pleased but also already moving on. The current version is fine, but slightly more casual would underscore that he genuinely doesn't think it's a big deal."
+    ],
+    "tone": [
+      "The episode maintains a consistent tone of realistic social pressure without melodrama. It's not dark or heavy, but it's not light either—it's the actual weight of peer dynamics at this age. This is exactly right for the target audience.",
+      "The emotional beats don't spike artificially. When the terrarium breaks, it's shocking but not catastrophic in tone. When Maya is blamed, the scene stays grounded rather than becoming a moral showdown. This restraint is a strength.",
+      "There's a dry humor throughout (Deshawn's 'That was actually pretty bad,' the egg drop callback) that prevents the episode from becoming preachy. Teenagers will respond to that tone—it respects their ability to see the absurdity of the situation without having it pointed out.",
+      "One tonal consideration for implementation: In Scene 5a ('Setting the Record Straight'), make sure the player's correction of Jordan doesn't feel triumphant or vindicated. It should feel slightly scary and necessary, not cathartic. The dialogue ('I don't know. Maybe both.') suggests this, but in performance, keep it grounded.",
+      "The reflection scene (Scene 10) is the tonal anchor. Deshawn's questions are genuinely open—he's not fishing for a specific answer. This makes the space feel safe for honest reflection rather than judgment. That tone is crucial to land."
+    ]
+  },
+  "inspirationReferences": [
+    {
+      "type": "TV",
+      "title": "Friday Night Lights (particularly the high school seasons)",
+      "reasoning": "The way peer pressure arrives wrapped in loyalty and convenience rather than overt bullying. Characters making choices that feel real because they're caught between competing goods (friendship, honesty, social ease), not between obvious right and wrong."
+    },
+    {
+      "type": "BOOK",
+      "title": "The Outsiders by S.E. Hinton",
+      "reasoning": "The episode shares Hinton's understanding that teenagers are trying to figure out who they are in the context of group loyalty. The terrarium project is a smaller-scale version of the same dilemma—do you stay with your people or do you tell the truth?"
+    },
+    {
+      "type": "TV",
+      "title": "Atypical (particularly Sam's friendships in early seasons)",
+      "reasoning": "The way the show depicts social anxiety and the specific texture of how anxious people navigate group dynamics. Maya's character has that same quality of being smart and careful but vulnerable to being overlooked."
+    },
+    {
+      "type": "GAME",
+      "title": "Life is Strange: True Colors",
+      "reasoning": "The way the game uses choice branching to show that different paths have real consequences without any path being 'the right one.' The reflection moments where characters process what happened, rather than the game telling them what it meant."
+    },
+    {
+      "type": "OTHER",
+      "title": "The podcast 'Stuff You Should Know' episodes on social psychology",
+      "reasoning": "The episode's understanding of how peer pressure actually works—not through overt coercion but through the human desire to be liked and to avoid friction. Jordan isn't threatening anyone; he's just making things easier, which is why it's seductive."
+    }
+  ],
+  "revisionPriority": "LOW",
+  "detailedNotes": {
+    "whatWorks": [
+      "The core moral dilemma is genuinely complex. There is no 'right' choice that doesn't cost something. A player who chooses the shortcut isn't stupid; they're human. A player who chooses honesty isn't heroic; they're brave and uncomfortable. This maturity is rare in games for this age group.",
+      "The branching is purposeful. Each path forward (truth to teacher, team mediation, avoidance) leads to distinct outcomes that will have ripple effects in future episodes. The outcomes document shows this has been thought through.",
+      "Character consistency is strong across all scenes. Jordan doesn't suddenly become sympathetic or villainous; he stays magnetic and corner-cutting. Maya doesn't suddenly become confident; she stays anxious but capable. Deshawn doesn't explain himself; he just watches and lets the player figure it out.",
+      "The dialogue avoids the two biggest pitfalls of writing for this age: it doesn't sound like adults writing what they think kids say, and it doesn't sound like the writer is trying to be cool. It sounds like actual 12-14 year-olds having actual conversations.",
+      "The emotional arc respects the player's intelligence. It doesn't tell them that honesty is good; it shows them what honesty costs and what it gains. It doesn't tell them peer pressure is bad; it shows them how it arrives disguised as friendship.",
+      "Deshawn's character is a particular strength. He's the moral witness of the episode without ever being preachy. His presence and his silence do more work than dialogue could."
+    ],
+    "whatNeedsPolish": [
+      "Scene 2: Consider adding one line of player internal monologue after Deshawn goes silent. Something that signals to the player that they're being *watched*, not just present. This would make the choice feel more weighted.",
+      "Scene 3a: Jordan's 'SEE? Genius squad' could be slightly more casual ('Yeah, told you. Easy.') to underscore that he genuinely doesn't think it's a big deal. Current version is fine, but the adjustment would deepen the characterization.",
+      "Scene 5a: In implementation, make sure the player's correction of Jordan doesn't feel triumphant. The dialogue suggests restraint, but the performance needs to match—it should feel necessary and scary, not cathartic.",
+      "Scene 5b: The line 'I have a list. Of things I should've said. It's getting really long, Ellis' is excellent. Look for more moments like this where humor and hurt coexist—this is the tone that lands with teenagers.",
+      "Scene 7a: The distinction Ms. Alvarez makes ('I'm not asking you to snitch. I'm asking you to tell me what you saw.') is excellent. Make sure this tone is maintained throughout her dialogue—she's fair, not punitive.",
+      "Scene 10: Deshawn's final questions should feel genuinely open, not like he's fishing for a specific answer. The space needs to feel safe for honest reflection. This is more about performance than dialogue, but it's crucial."
+    ],
+    "implementationConsiderations": [
+      "The terrarium breaking needs to happen *fast* enough that the player doesn't have time to rehearse a lie. Ms. Alvarez's arrival should feel immediate.",
+      "In the choice-response dialogue, make sure the player's internal reactions match the choice they're making. If they choose to back Jordan up, there should be a flicker of guilt in their internal monologue. If they choose to speak up, there should be fear.",
+      "The branch dialogue variations (honest path, peer pressure path, mediator path, avoidant path) are well-written, but in implementation, make sure each variation feels like a continuation of the player's actual journey, not a branching lecture about what they did.",
+      "The final reflection scene with Deshawn works because it doesn't resolve the player's internal conflict—it deepens it. In performance, make sure Deshawn's responses validate the player's honesty without rewarding them. He should sound like someone who's seen what they did, not someone who's grading them.",
+      "Consider how the player's trait changes will be communicated. The episode targets INTEGRITY, COMMUNICATION, and JUDGMENT. Make sure the player feels these shifts through character reactions (Maya's trust, Deshawn's respect, Jordan's distance) rather than through explicit feedback."
+    ],
+    "strengthsForFutureEpisodes": [
+      "The relationships established here have real texture for future episodes. Maya now either trusts the player or doesn't, based on their choices. Jordan either respects the player or resents them. Deshawn has formed an opinion. These aren't reset—they carry forward.",
+      "The outcomes document clearly maps how each path sets up different dynamics. An episode that follows this one can immediately reference the terrarium incident and how the player handled it. This creates continuity.",
+      "The episode establishes that the player is someone who makes choices under pressure, and those choices have social consequences. Future episodes can build on this—the player's reputation at school will be shaped by what they did here.",
+      "Deshawn's role as the moral witness is particularly valuable for future episodes. He's established as someone who sees clearly and doesn't look away. He can be a grounding presence in more chaotic episodes."
+    ]
+  }
+}

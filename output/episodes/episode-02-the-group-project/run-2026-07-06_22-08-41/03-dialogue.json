@@ -1,0 +1,1226 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1",
+      "lines": [
+        {
+          "id": "s1-01",
+          "character": "NARRATOR",
+          "text": "Ms. Alvarez taps the board twice before turning around. THE ECOSYSTEM TERRARIUM PROJECT — DUE FRIDAY, underlined twice, MODEL + LIVE Q&A beneath it."
+        },
+        {
+          "id": "s1-02",
+          "character": "ms-alvarez",
+          "text": "Groups are on the board. You'll build a self-sustaining terrarium, and Friday, you defend it — live, in front of me and each other. No scripts.",
+          "action": "taps pen twice on the desk"
+        },
+        {
+          "id": "s1-03",
+          "character": "jordan",
+          "text": "Called it. At least it's not the volcano group. So over volcanoes.",
+          "action": "thumb moving under the desk, half-watching his phone"
+        },
+        {
+          "id": "s1-04",
+          "character": "maya",
+          "text": "I already made a rough materials list. Just in case. It's probably overkill—",
+          "action": "crosses something out immediately",
+          "emotion": "anxious"
+        },
+        {
+          "id": "s1-05",
+          "character": "deshawn",
+          "text": "We haven't even picked seats yet.",
+          "action": "leans back, arms crossed, watching everyone size each other up",
+          "emotion": "dry"
+        },
+        {
+          "id": "s1-06",
+          "character": "player",
+          "text": "Okay but— should we figure out who's doing what first? Or...",
+          "action": "trails off, glancing around the table"
+        },
+        {
+          "id": "s1-07",
+          "character": "jordan",
+          "text": "Relax, new girl. I got a system.",
+          "action": "finger-guns"
+        },
+        {
+          "id": "s1-08",
+          "character": "deshawn",
+          "text": "That's what he said before the egg drop."
+        },
+        {
+          "id": "s1-09",
+          "character": "jordan",
+          "text": "That was ONE time—"
+        },
+        {
+          "id": "s1-10",
+          "character": "maya",
+          "text": "Sorry— sorry, no, that was actually pretty bad.",
+          "action": "stifles a laugh"
+        },
+        {
+          "id": "s1-11",
+          "character": "ms-alvarez",
+          "text": "Four days. Use them well.",
+          "action": "passing by, doesn't slow down"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2",
+      "lines": [
+        {
+          "id": "s2-01",
+          "character": "jordan",
+          "text": "Okay, so, don't freak out—",
+          "action": "slides a nearly-finished terrarium onto the table like a magic trick"
+        },
+        {
+          "id": "s2-02",
+          "character": "maya",
+          "text": "That's never a good start—",
+          "emotion": "already tensing up"
+        },
+        {
+          "id": "s2-03",
+          "character": "jordan",
+          "text": "It's my sister's. From last year. Same unit and everything. We tweak the labels, repot one plant so it looks fresh, we're done by Tuesday. Nobody's gonna check."
+        },
+        {
+          "id": "s2-04",
+          "character": "deshawn",
+          "text": "",
+          "action": "goes very still, watching the player instead of Jordan"
+        },
+        {
+          "id": "s2-05",
+          "character": "maya",
+          "text": "That's not our research though. If she asks about soil pH, or the— we didn't calculate any of that.",
+          "emotion": "quiet, precise"
+        },
+        {
+          "id": "s2-06",
+          "character": "jordan",
+          "text": "Nobody asks that stuff. She asks like three questions tops. It's not that deep, Maya."
+        },
+        {
+          "id": "s2-07",
+          "character": "maya",
+          "text": "I guess I just... I don't know.",
+          "action": "trails off"
+        },
+        {
+          "id": "s2-08",
+          "character": "deshawn",
+          "text": "So what are we doing.",
+          "action": "taps pencil against his knuckles, eyes still on the player"
+        },
+        {
+          "id": "s2-09",
+          "character": "jordan",
+          "text": "C'mon. It's just labels.",
+          "action": "leans back, easy grin, eyes flicking to the player"
+        },
+        {
+          "id": "s2-10",
+          "character": "INTERNAL",
+          "text": "It's just labels. That's what he keeps saying. Like saying it enough times makes it true."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3a-shortcut",
+      "lines": [
+        {
+          "id": "s3a-01",
+          "character": "jordan",
+          "text": "SEE? Genius squad.",
+          "action": "hand up for a high-five",
+          "emotion": "thrilled"
+        },
+        {
+          "id": "s3a-02",
+          "character": "maya",
+          "text": "This says Chlorophytum comosum but I think— I think that's not actually the plant in slot three. Should I—",
+          "action": "relabeling in handwriting that isn't hers, eyes down"
+        },
+        {
+          "id": "s3a-03",
+          "character": "jordan",
+          "text": "Maya. Nobody's gonna check."
+        },
+        {
+          "id": "s3a-04",
+          "character": "maya",
+          "text": "Right. Okay.",
+          "action": "keeps writing",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s3a-05",
+          "character": "deshawn",
+          "text": "That was fast.",
+          "action": "watching the player, flat"
+        },
+        {
+          "id": "s3a-06",
+          "character": "player",
+          "text": "Yeah. Faster than I thought."
+        },
+        {
+          "id": "s3a-07",
+          "character": "deshawn",
+          "text": "Mm.",
+          "action": "doesn't elaborate"
+        },
+        {
+          "id": "s3a-08",
+          "character": "NARRATOR",
+          "text": "The terrarium sits on the table, glass gleaming, looking almost too perfect for four kids who did almost nothing."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3b-honest",
+      "lines": [
+        {
+          "id": "s3b-01",
+          "character": "player",
+          "text": "Okay but— what if we just... actually did it? Split it up for real."
+        },
+        {
+          "id": "s3b-02",
+          "character": "jordan",
+          "text": "Man, why are you making this harder than it's gotta be?",
+          "action": "leans back, unimpressed"
+        },
+        {
+          "id": "s3b-03",
+          "character": "player",
+          "text": "Because it's not our project if it's not our terrarium.",
+          "emotion": "clipped, dropping the qualifiers"
+        },
+        {
+          "id": "s3b-04",
+          "character": "maya",
+          "text": "I can do the research part. I already have three sources bookmarked, actually, I just didn't want to—",
+          "action": "stops herself, quick relief in her voice"
+        },
+        {
+          "id": "s3b-05",
+          "character": "deshawn",
+          "text": "I'll build it. Somebody's gotta make sure it doesn't fall apart. Literally.",
+          "action": "uncrosses his arms"
+        },
+        {
+          "id": "s3b-06",
+          "character": "jordan",
+          "text": "Fine. FINE. I'll do labels. But when this takes till Thursday night, I'm saying I told you so.",
+          "action": "grabs a marker, sighing"
+        },
+        {
+          "id": "s3b-07",
+          "character": "player",
+          "text": "Deal."
+        },
+        {
+          "id": "s3b-08",
+          "character": "NARRATOR",
+          "text": "It's slower. Messier. Maya double-checks her sources three times. Deshawn measures the glass twice before cutting anything. But by the end of the session, the terrarium between them is actually, entirely theirs."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4-incident",
+      "lines": [
+        {
+          "id": "s4-01",
+          "character": "NARRATOR",
+          "text": "A friend of Jordan's passes the workroom table, and Jordan can't resist showing off."
+        },
+        {
+          "id": "s4-02",
+          "character": "jordan",
+          "text": "Yeah, ecosystem's basically self-sustaining, we barely had to do anyth—",
+          "action": "holding the terrarium up, gesturing"
+        },
+        {
+          "id": "s4-03",
+          "character": "NARRATOR",
+          "text": "His elbow catches the edge of the table. The terrarium tips, hits the floor. Glass cracks. Dirt and a small fern spill across the tile."
+        },
+        {
+          "id": "s4-04",
+          "character": "maya",
+          "text": "Oh no— oh no oh no—",
+          "action": "hands flying to her mouth"
+        },
+        {
+          "id": "s4-05",
+          "character": "ms-alvarez",
+          "text": "Okay. Nobody move, there's glass. What happened?",
+          "action": "crouches immediately to assess"
+        },
+        {
+          "id": "s4-06",
+          "character": "jordan",
+          "text": "Maya was holding it — she dropped it!",
+          "action": "blurted, almost before he's thought it through"
+        },
+        {
+          "id": "s4-07",
+          "character": "maya",
+          "text": "",
+          "action": "mouth opens, nothing comes out"
+        },
+        {
+          "id": "s4-08",
+          "character": "deshawn",
+          "text": "",
+          "action": "goes very still, eyes on the player"
+        },
+        {
+          "id": "s4-09",
+          "character": "ms-alvarez",
+          "text": "Walk me through it. Slowly.",
+          "action": "pen tap, calm, looking between them"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5a-spoke-up",
+      "lines": [
+        {
+          "id": "s5a-01",
+          "character": "jordan",
+          "text": "I— that's not— okay, my bad, I panicked, whatever—",
+          "emotion": "face going red"
+        },
+        {
+          "id": "s5a-02",
+          "character": "ms-alvarez",
+          "text": "Glass breaks. That's not the interesting part.",
+          "action": "taps pen twice, unbothered"
+        },
+        {
+          "id": "s5a-03",
+          "character": "ms-alvarez",
+          "text": "The interesting part is what everybody said happened next.",
+          "action": "looks at Jordan, then Maya"
+        },
+        {
+          "id": "s5a-04",
+          "character": "ms-alvarez",
+          "text": "You okay?"
+        },
+        {
+          "id": "s5a-05",
+          "character": "maya",
+          "text": "Yeah. Yeah, I'm okay.",
+          "action": "exhales like she's been holding her breath an hour"
+        },
+        {
+          "id": "s5a-06",
+          "character": "ms-alvarez",
+          "text": "Deshawn, get the dustpan from the supply closet. Rest of you, give me a second with this table."
+        },
+        {
+          "id": "s5a-07",
+          "character": "deshawn",
+          "text": "That was you, right? Not just reflex.",
+          "action": "quiet aside to the player, getting up"
+        },
+        {
+          "id": "s5a-08",
+          "character": "player",
+          "text": "I don't know. Maybe both.",
+          "emotion": "small, honest"
+        },
+        {
+          "id": "s5a-09",
+          "character": "NARRATOR",
+          "text": "Jordan doesn't look at anyone the rest of the period."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5b-silent",
+      "lines": [
+        {
+          "id": "s5b-01",
+          "character": "NARRATOR",
+          "text": "Ellis finds Maya alone at the end of a lunch table, picking at food she isn't eating."
+        },
+        {
+          "id": "s5b-02",
+          "character": "player",
+          "text": "Hey. Can I sit?"
+        },
+        {
+          "id": "s5b-03",
+          "character": "maya",
+          "text": "Free country.",
+          "action": "shrugs, not looking up"
+        },
+        {
+          "id": "s5b-04",
+          "character": "player",
+          "text": "Maya, I— I should've said something back there. When Jordan—"
+        },
+        {
+          "id": "s5b-05",
+          "character": "maya",
+          "text": "You didn't say anything either.",
+          "emotion": "quiet, not accusing — just tired"
+        },
+        {
+          "id": "s5b-06",
+          "character": "player",
+          "text": "...Yeah. I know.",
+          "action": "silence first"
+        },
+        {
+          "id": "s5b-07",
+          "character": "maya",
+          "text": "It's fine. I mean it's not — it's not fine, but. I get it. Nobody wants to be the one who makes it weird.",
+          "action": "taps pencil in sets of three without noticing"
+        },
+        {
+          "id": "s5b-08",
+          "character": "player",
+          "text": "That's not— I wasn't trying to protect him. I just froze."
+        },
+        {
+          "id": "s5b-09",
+          "character": "maya",
+          "text": "I had it in my hands for like two seconds, I swear, I don't even know what happened, I just froze too. So. We're both frozen people, I guess.",
+          "action": "almost laughs"
+        },
+        {
+          "id": "s5b-10",
+          "character": "player",
+          "text": "I'm really sorry."
+        },
+        {
+          "id": "s5b-11",
+          "character": "maya",
+          "text": "I have a list. Of things I should've said. It's getting really long, Ellis.",
+          "emotion": "quiet, honest"
+        },
+        {
+          "id": "s5b-12",
+          "character": "player",
+          "text": "Yeah. Mine too, probably."
+        },
+        {
+          "id": "s5b-13",
+          "character": "maya",
+          "text": "You could still say something. Before Friday, I mean.",
+          "action": "finally looks up, ghost of a smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5c-backed-jordan",
+      "lines": [
+        {
+          "id": "s5c-01",
+          "character": "player",
+          "text": "Yeah— yeah, that's, that's what happened.",
+          "action": "nodding along, the habit"
+        },
+        {
+          "id": "s5c-02",
+          "character": "ms-alvarez",
+          "text": "Maya. You need to be more careful with shared materials. Are we clear?",
+          "emotion": "calm but firm"
+        },
+        {
+          "id": "s5c-03",
+          "character": "maya",
+          "text": "...Yes, Ms. Alvarez. Sorry.",
+          "action": "barely audible"
+        },
+        {
+          "id": "s5c-04",
+          "character": "ms-alvarez",
+          "text": "Let's get this cleaned up.",
+          "action": "pen tap, already moving on"
+        },
+        {
+          "id": "s5c-05",
+          "character": "jordan",
+          "text": "Appreciate you. Seriously.",
+          "action": "finger-guns at the player once Alvarez's back is turned, relieved"
+        },
+        {
+          "id": "s5c-06",
+          "character": "deshawn",
+          "text": "Huh.",
+          "emotion": "flat, watching"
+        },
+        {
+          "id": "s5c-07",
+          "character": "NARRATOR",
+          "text": "Later, in the hallway, Maya passes by and doesn't quite meet Ellis's eyes. It's a small thing. It doesn't feel small."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-aftermath",
+      "lines": [
+        {
+          "id": "s6-01",
+          "character": "NARRATOR",
+          "text": "Jordan catches up to Ellis at the lockers, easy smile back in place, like nothing happened."
+        },
+        {
+          "id": "s6-02",
+          "character": "jordan",
+          "text": "Hey — hey, so. Let's just keep this simple, get through Friday, yeah? No need to make it a whole thing, Captain."
+        },
+        {
+          "id": "s6-03",
+          "character": "deshawn",
+          "text": "",
+          "action": "leans against the lockers a few feet away, arms crossed, watching"
+        },
+        {
+          "id": "s6-04",
+          "character": "player",
+          "text": "Okay but— what exactly are we keeping simple."
+        },
+        {
+          "id": "s6-05",
+          "character": "jordan",
+          "text": "You know. All of it. The terrarium, the— whatever happened with Maya. It's not that deep. We present, we're done, everybody moves on.",
+          "emotion": "too casual"
+        },
+        {
+          "id": "s6-06",
+          "character": "deshawn",
+          "text": "Moves on to what.",
+          "emotion": "blunt"
+        },
+        {
+          "id": "s6-07",
+          "character": "jordan",
+          "text": "Man, why do you always— I'm just saying. It's Thursday. Presentation's tomorrow. Can we not.",
+          "emotion": "short, defensive"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7a-truth",
+      "lines": [
+        {
+          "id": "s7a-01",
+          "character": "NARRATOR",
+          "text": "Ellis finds Ms. Alvarez still grading at her desk after the last bell."
+        },
+        {
+          "id": "s7a-02",
+          "character": "player",
+          "text": "Ms. Alvarez? Can I talk to you about the terrarium project. Actually."
+        },
+        {
+          "id": "s7a-03",
+          "character": "ms-alvarez",
+          "text": "I'm listening.",
+          "action": "sets down her pen, taps it twice"
+        },
+        {
+          "id": "s7a-04",
+          "character": "player",
+          "text": "It's about... what really happened. With the terrarium and Maya and—",
+          "action": "trails off, loses her nerve for a second"
+        },
+        {
+          "id": "s7a-05",
+          "character": "ms-alvarez",
+          "text": "I'm not asking you to snitch. I'm asking you to tell me what you saw. There's a difference, and you know it."
+        },
+        {
+          "id": "s7a-06",
+          "character": "player",
+          "text": "The terrarium isn't ours. Jordan borrowed it from his sister's old project, we just relabeled it. And when it broke — Jordan said Maya dropped it, but he did. His elbow hit it.",
+          "emotion": "steadier now"
+        },
+        {
+          "id": "s7a-07",
+          "character": "ms-alvarez",
+          "text": "Thank you for telling me. That took something, coming in here."
+        },
+        {
+          "id": "s7a-08",
+          "character": "player",
+          "text": "I should've said it sooner."
+        },
+        {
+          "id": "s7a-09",
+          "character": "ms-alvarez",
+          "text": "You said it before Friday. That's what matters right now.",
+          "action": "standing"
+        },
+        {
+          "id": "s7a-10",
+          "character": "ms-alvarez",
+          "text": "You get an extension. Not because the mess goes away — it happened — but because you told me the truth about it, and that's worth something in this room. I'll talk to Jordan myself."
+        },
+        {
+          "id": "s7a-11",
+          "character": "NARRATOR",
+          "text": "Jordan is called in. He doesn't look at Ellis on his way past. Maya, waiting by the door, catches Ellis's eye instead — something in her face has shifted."
+        },
+        {
+          "id": "s7a-12",
+          "character": "maya",
+          "text": "You actually did it.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s7a-13",
+          "character": "player",
+          "text": "Yeah."
+        },
+        {
+          "id": "s7a-14",
+          "character": "maya",
+          "text": "Okay. Okay, good. I'll redo the labels tonight. For real this time.",
+          "emotion": "small, real"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7b-privately",
+      "lines": [
+        {
+          "id": "s7b-01",
+          "character": "player",
+          "text": "Okay but— can we just. Talk. For real, before tomorrow."
+        },
+        {
+          "id": "s7b-02",
+          "character": "jordan",
+          "text": "Talk about what.",
+          "action": "leans back, wary"
+        },
+        {
+          "id": "s7b-03",
+          "character": "player",
+          "text": "About the terrarium not being ours. About what you said about Maya."
+        },
+        {
+          "id": "s7b-04",
+          "character": "jordan",
+          "text": "...It's fine, it's handled—",
+          "action": "goes very still, deciding whether to be brave or easy"
+        },
+        {
+          "id": "s7b-05",
+          "character": "deshawn",
+          "text": "It's not handled. It's just quiet.",
+          "emotion": "flat"
+        },
+        {
+          "id": "s7b-06",
+          "character": "maya",
+          "text": "You said I dropped it. In front of Ms. Alvarez. I didn't say anything because I didn't know what to—",
+          "emotion": "quiet, pushing through"
+        },
+        {
+          "id": "s7b-07",
+          "character": "jordan",
+          "text": "...Yeah. Okay. My bad. I'll— yeah. I'll fix it with her.",
+          "emotion": "quieter, no jokes"
+        },
+        {
+          "id": "s7b-08",
+          "character": "player",
+          "text": "And the labels. We should redo the ones that aren't real. Tonight, if we have to."
+        },
+        {
+          "id": "s7b-09",
+          "character": "jordan",
+          "text": "Fine. FINE! We'll redo it. Can everybody stop looking at me like that.",
+          "action": "sighs"
+        },
+        {
+          "id": "s7b-10",
+          "character": "deshawn",
+          "text": "Nobody's looking at you like anything.",
+          "emotion": "dry"
+        },
+        {
+          "id": "s7b-11",
+          "character": "jordan",
+          "text": "Everybody's looking at me like that.",
+          "action": "mutters"
+        },
+        {
+          "id": "s7b-12",
+          "character": "maya",
+          "text": "Thank you. For saying it.",
+          "action": "almost smiling despite herself"
+        },
+        {
+          "id": "s7b-13",
+          "character": "NARRATOR",
+          "text": "It's not fixed all at once. But for the first time all week, it feels like they're actually building the same thing."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7c-avoid",
+      "lines": [
+        {
+          "id": "s7c-01",
+          "character": "player",
+          "text": "Yeah, okay. Let's just get through tomorrow.",
+          "action": "shrugs"
+        },
+        {
+          "id": "s7c-02",
+          "character": "jordan",
+          "text": "See, that's what I'm talking about. Knew you'd get it.",
+          "action": "grins, claps the player on the shoulder, relieved"
+        },
+        {
+          "id": "s7c-03",
+          "character": "NARRATOR",
+          "text": "Down the hall, Maya closes her locker a little too hard. She doesn't look over."
+        },
+        {
+          "id": "s7c-04",
+          "character": "deshawn",
+          "text": "Huh.",
+          "action": "passing by, doesn't stop, keeps walking"
+        },
+        {
+          "id": "s7c-05",
+          "character": "INTERNAL",
+          "text": "It's just one presentation. It'll be fine."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8-presentation",
+      "lines": [
+        {
+          "id": "s8-01",
+          "character": "NARRATOR",
+          "text": "The terrarium sits on the table in front of the class. Ms. Alvarez watches the Q&A with her usual unreadable calm."
+        },
+        {
+          "id": "s8-02",
+          "character": "ms-alvarez",
+          "text": "Good model. Now — walk me through the actual process. Who did what, and what was hardest about it?"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9a-owned-it",
+      "lines": [
+        {
+          "id": "s9a-01",
+          "character": "player",
+          "text": "Maya did most of the research — the pH balance, the plant compatibility, all of it. Honestly the hardest part was just... trusting the process instead of rushing it."
+        },
+        {
+          "id": "s9a-02",
+          "character": "maya",
+          "text": "I— yeah. I mean, there were a few nights of a lot of double-checking. But it was worth it.",
+          "emotion": "surprised, then quietly glowing"
+        },
+        {
+          "id": "s9a-03",
+          "character": "deshawn",
+          "text": "I built the frame. Twice. First one wasn't level.",
+          "action": "small nod, arms crossed"
+        },
+        {
+          "id": "s9a-04",
+          "character": "jordan",
+          "text": "...And I did labels. Eventually.",
+          "emotion": "grudging"
+        },
+        {
+          "id": "s9a-05",
+          "character": "ms-alvarez",
+          "text": "Sounds like a real project.",
+          "action": "small, dry almost-smile, moves to the next group"
+        },
+        {
+          "id": "s9a-06",
+          "character": "maya",
+          "text": "Thank you. For that.",
+          "action": "beaming, quiet, just to the player"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9b-deflected",
+      "lines": [
+        {
+          "id": "s9b-01",
+          "character": "jordan",
+          "text": "Yeah, so we split it up pretty evenly, everybody pulled their weight, it was basically a team effort start to finish—",
+          "emotion": "smooth, confident"
+        },
+        {
+          "id": "s9b-02",
+          "character": "ms-alvarez",
+          "text": "Anything to add?",
+          "action": "looking at the player"
+        },
+        {
+          "id": "s9b-03",
+          "character": "player",
+          "text": "No, that's— that's about right.",
+          "action": "small beat first"
+        },
+        {
+          "id": "s9b-04",
+          "character": "ms-alvarez",
+          "text": "Alright. Thank you.",
+          "action": "pen tap, moves on, nothing more"
+        },
+        {
+          "id": "s9b-05",
+          "character": "deshawn",
+          "text": "",
+          "action": "sideways glance at the player, says nothing — it lands anyway"
+        },
+        {
+          "id": "s9b-06",
+          "character": "NARRATOR",
+          "text": "Jordan grins like they stuck the landing. Ellis isn't so sure."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10-reflection",
+      "lines": [
+        {
+          "id": "s10-01",
+          "character": "NARRATOR",
+          "text": "The front steps of Ridgemont are mostly empty by the time Ellis heads out. Deshawn falls into step beside her without asking."
+        },
+        {
+          "id": "s10-02",
+          "character": "deshawn",
+          "text": "So what do you actually think? Not what you think you're supposed to think.",
+          "action": "hands in pockets, looking straight ahead"
+        },
+        {
+          "id": "s10-03",
+          "character": "deshawn",
+          "text": "Take your time. I'm not going anywhere.",
+          "action": "taps a pencil against his knuckles when she doesn't answer right away"
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fine, let's just use it. It'll save us so much time."
+        },
+        {
+          "id": "b",
+          "text": "Wait— what if we actually built our own? Split up the real work?"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c1-a-1",
+            "character": "jordan",
+            "text": "That's what I'm talking about.",
+            "action": "finger-guns"
+          },
+          {
+            "id": "c1-a-2",
+            "character": "maya",
+            "text": "",
+            "action": "doesn't argue, just picks up a marker, eyes down"
+          }
+        ],
+        "b": [
+          {
+            "id": "c1-b-1",
+            "character": "jordan",
+            "text": "...Wait, for real?",
+            "action": "short laugh, not really a laugh"
+          },
+          {
+            "id": "c1-b-2",
+            "character": "deshawn",
+            "text": "Took you long enough.",
+            "emotion": "dry, almost approving"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "That's not what happened. Jordan, you were holding it."
+        },
+        {
+          "id": "b",
+          "text": "(Stay quiet for now — find Maya later, privately.)"
+        },
+        {
+          "id": "c",
+          "text": "Yeah— that's what happened, Ms. Alvarez."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2-a-1",
+            "character": "player",
+            "text": "That's not what happened. Jordan, you were holding it — your elbow hit it.",
+            "emotion": "clipped, direct"
+          }
+        ],
+        "b": [
+          {
+            "id": "c2-b-1",
+            "character": "INTERNAL",
+            "text": "Not here. Not like this."
+          },
+          {
+            "id": "c2-b-2",
+            "character": "player",
+            "text": "",
+            "action": "glances at Maya, says nothing yet"
+          }
+        ],
+        "c": [
+          {
+            "id": "c2-c-1",
+            "character": "player",
+            "text": "Yeah— that's what happened.",
+            "action": "nodding along, the habit"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "I need to tell Ms. Alvarez what actually happened."
+        },
+        {
+          "id": "b",
+          "text": "Let's just talk about this. All of us. Right now."
+        },
+        {
+          "id": "c",
+          "text": "Yeah. Let's just get through tomorrow."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3-a-1",
+            "character": "player",
+            "text": "I need to tell Ms. Alvarez what actually happened. Before tomorrow."
+          },
+          {
+            "id": "c3-a-2",
+            "character": "jordan",
+            "text": "Wait— hold on—",
+            "emotion": "alarmed"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3-b-1",
+            "character": "player",
+            "text": "No. We're going to fix this ourselves. Tonight."
+          },
+          {
+            "id": "c3-b-2",
+            "character": "jordan",
+            "text": "...Fine. Fine, whatever, let's just—",
+            "emotion": "wary"
+          }
+        ],
+        "c": [
+          {
+            "id": "c3-c-1",
+            "character": "player",
+            "text": "Yeah. Let's just get through tomorrow."
+          },
+          {
+            "id": "c3-c-2",
+            "character": "jordan",
+            "text": "Now you're talking.",
+            "emotion": "relieved"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Actually, I want to say something about that."
+        },
+        {
+          "id": "b",
+          "text": "(Let Jordan handle the answer — stay quiet.)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4-a-1",
+            "character": "player",
+            "text": "Actually — I want to say something about that.",
+            "emotion": "steady"
+          }
+        ],
+        "b": [
+          {
+            "id": "c4-b-1",
+            "character": "player",
+            "text": "",
+            "action": "stays quiet, lets Jordan take it"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "Doing the right thing was hard. But I'm glad I did it."
+        },
+        {
+          "id": "b",
+          "text": "Honestly? I'm still figuring out how to handle stuff like that."
+        },
+        {
+          "id": "c",
+          "text": "It wasn't that big a deal, really."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c5-a-1",
+            "character": "player",
+            "text": "It was hard. Doing the right thing, I mean. But I'm glad I did it."
+          },
+          {
+            "id": "c5-a-2",
+            "character": "deshawn",
+            "text": "Yeah. Noticed that.",
+            "action": "almost a smile",
+            "emotion": "quiet approval"
+          }
+        ],
+        "b": [
+          {
+            "id": "c5-b-1",
+            "character": "player",
+            "text": "Honestly? I'm still figuring out how to handle stuff like that."
+          },
+          {
+            "id": "c5-b-2",
+            "character": "deshawn",
+            "text": "Fair. Most people never even get that far."
+          }
+        ],
+        "c": [
+          {
+            "id": "c5-c-1",
+            "character": "player",
+            "text": "It wasn't that big a deal, really.",
+            "emotion": "shrugging it off"
+          },
+          {
+            "id": "c5-c-2",
+            "character": "deshawn",
+            "text": "Mm. Okay.",
+            "action": "sideways look, doesn't buy it",
+            "emotion": "flat"
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-10-reflection",
+      "branchId": "branch-honest-path",
+      "lines": [
+        {
+          "id": "b-honest-1",
+          "character": "deshawn",
+          "text": "You told Alvarez straight up, before you had to. That's not nothing, Ellis. Maya knows it too."
+        },
+        {
+          "id": "b-honest-2",
+          "character": "player",
+          "text": "Felt like the floor was gonna open up the whole walk to her desk."
+        },
+        {
+          "id": "b-honest-3",
+          "character": "deshawn",
+          "text": "Yeah. That's usually how it feels right before it's the right call.",
+          "emotion": "dry, but sincere"
+        },
+        {
+          "id": "b-honest-4",
+          "character": "player",
+          "text": "Jordan still isn't really talking to me."
+        },
+        {
+          "id": "b-honest-5",
+          "character": "deshawn",
+          "text": "He will. Or he won't. Either way, you didn't need him to like you to do it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10-reflection",
+      "branchId": "branch-peer-pressure-path",
+      "lines": [
+        {
+          "id": "b-pressure-1",
+          "character": "deshawn",
+          "text": "You backed him up. Twice.",
+          "emotion": "flatter than usual"
+        },
+        {
+          "id": "b-pressure-2",
+          "character": "player",
+          "text": "...I know.",
+          "action": "quiet"
+        },
+        {
+          "id": "b-pressure-3",
+          "character": "deshawn",
+          "text": "Maya noticed both times. So did I."
+        },
+        {
+          "id": "b-pressure-4",
+          "character": "player",
+          "text": "It wasn't that deep, Deshawn—",
+          "emotion": "defensive"
+        },
+        {
+          "id": "b-pressure-5",
+          "character": "deshawn",
+          "text": "...You sound like Jordan now.",
+          "emotion": "not a compliment"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10-reflection",
+      "branchId": "branch-quiet-mediator-path",
+      "lines": [
+        {
+          "id": "b-mediator-1",
+          "character": "deshawn",
+          "text": "You didn't go to Alvarez. You just... made everybody actually talk. That's harder than it looks."
+        },
+        {
+          "id": "b-mediator-2",
+          "character": "player",
+          "text": "Felt like it took forever. And Jordan sulked the whole time."
+        },
+        {
+          "id": "b-mediator-3",
+          "character": "deshawn",
+          "text": "Maya's talking to you again like normal. That's not an accident."
+        },
+        {
+          "id": "b-mediator-4",
+          "character": "player",
+          "text": "",
+          "action": "small smile, doesn't say anything for a second"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10-reflection",
+      "branchId": "branch-avoidant-path",
+      "lines": [
+        {
+          "id": "b-avoid-1",
+          "character": "deshawn",
+          "text": "You let it ride. All week."
+        },
+        {
+          "id": "b-avoid-2",
+          "character": "player",
+          "text": "I know.",
+          "action": "quiet"
+        },
+        {
+          "id": "b-avoid-3",
+          "character": "deshawn",
+          "text": "Maya still won't look at Jordan straight. You notice that?"
+        },
+        {
+          "id": "b-avoid-4",
+          "character": "player",
+          "text": "...Yeah.",
+          "action": "silence first"
+        },
+        {
+          "id": "b-avoid-5",
+          "character": "deshawn",
+          "text": "Just checking you're not gonna pretend you didn't."
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Ellis (player): her 'Okay but—' opener is a courage-gathering ritual, not confidence — use it when she's about to disagree, then let her drop it entirely in high-stakes moments (scene-5a, scene-7a) to signal she's stopped hedging. Her nodding-along habit should appear as an action tag right before choices where she's tempted to go along with the group, so the player *feels* the pull toward conflict-avoidance in the staging, not just the text. Jordan: fast and charming until cornered — his lines should get shorter and lose punctuation/jokes the moment he's actually held accountable (scene-7b, scene-5a). Never let him say a full 'I'm sorry' — always the sideways 'my bad, anyway—' reframe. Maya: precise vocabulary is armor; let it crack into short, plain sentences exactly when she's most hurt ('You didn't say anything either.') — the formality should vanish in her rawest lines. Deshawn: economy of language is the point — every line should be able to be read in under two seconds. His silence (empty text, action-only lines) should carry as much weight as his dialogue. Ms. Alvarez never raises her voice or accuses; she reflects questions back ('Walk me through it') and rewards honesty explicitly rather than punishing dishonesty implicitly.",
+  "alternativeLines": [
+    {
+      "lineId": "s4-06",
+      "alternatives": [
+        "It wasn't me — Maya had it!",
+        "Maya's the one who was holding it!"
+      ],
+      "reasoning": "Keeping the exact profile quote ('Maya was holding it — she dropped it!') preserves the blurted, panicked cadence specified in character voice examples; alternates offered in case pacing needs a shorter beat."
+    },
+    {
+      "lineId": "s5b-05",
+      "alternatives": [
+        "You didn't say it either. Just so you know.",
+        "Neither did you, though."
+      ],
+      "reasoning": "Original line matches the profile's exact quiet, tired, non-accusing tone; alternates are slightly more clipped if a harsher read is wanted in performance."
+    },
+    {
+      "lineId": "s6-02",
+      "alternatives": [
+        "Let's just keep this simple, get through Friday, yeah?",
+        "Hey — can we just, like, not make this a whole thing before Friday?"
+      ],
+      "reasoning": "Removing the invented nickname 'Captain' softens the line if it reads as too jokey for the tension of the scene."
+    }
+  ]
+}

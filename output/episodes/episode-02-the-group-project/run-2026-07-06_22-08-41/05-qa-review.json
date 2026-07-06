@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-10-reflection uses choice-5 with three options, all leading to 'END'. Consider whether branching dialogue (branchDialogue) should differentiate the three ending variants more explicitly for player feedback.",
+      "location": "scene-10-reflection.transition and choice-5",
+      "suggestion": "The three options (honest reflection, uncertain reflection, dismissive reflection) have distinct emotional tones but all terminate at 'END'. Consider adding brief branchDialogue entries keyed to the three outcome branches (branch-honest-path, branch-quiet-mediator-path, branch-avoidant-path) to give players distinct closing moments that reflect their path through the episode. Currently, the reflection feels incomplete for the avoidant and mediator paths."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "branchDialogue entries exist for scene-10-reflection but are not explicitly triggered by choice-5 outcomes in the outcomes array.",
+      "location": "outcomes array and branchDialogue entries",
+      "suggestion": "The four branchDialogue entries (branch-honest-path, branch-peer-pressure-path, branch-quiet-mediator-path, branch-avoidant-path) are defined but the outcomes array only lists four branches with triggeredBy arrays. Verify that choice-5's three options map cleanly to the intended branches. Currently: choice-5:a should trigger branch-honest-path (if player took choice-3:a), choice-5:b should trigger branch-quiet-mediator-path (if player took choice-3:b), choice-5:c should trigger branch-avoidant-path (if player took choice-3:c). This mapping is implicit but not enforced in the data structure. Consider documenting this in a rendering note or adding a validation layer."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-5b (The Quiet Word) is set in 'Cafeteria (later that day)' but only includes player and maya as characters, despite the scene being a private conversation. This is correct, but the location shift from library to cafeteria is abrupt and not narratively bridged.",
+      "location": "scene-5b.location and scene-5b.characters",
+      "suggestion": "The scene works as written, but consider adding a brief NARRATOR line at the start of scene-5b dialogue (s5b-01 already does this: 'Ellis finds Maya alone at the end of a lunch table...') to smooth the location transition. Already present and sufficient — no fix needed."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice-2 (scene-4-incident) has three options with distinct trait mappings, but option-b (stay quiet, talk to Maya privately) has a JUDGMENT value of 0, suggesting neutrality. This is intentional but worth noting: it's the only choice option with a zero trait change, which may signal to players that inaction is 'neutral' rather than a choice with consequences.",
+      "location": "choice-2.options[1].traitMapping",
+      "suggestion": "Consider whether JUDGMENT: 0 accurately reflects the emotional/moral weight of staying silent in a moment of public accusation. If silence is meant to feel like a compromise (not ideal, but not terrible), the current mapping is correct. If it should feel more costly, consider JUDGMENT: -1. Current design is defensible; this is a style note, not an error."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "The episode contains 10 scenes, 5 choices, and 4 outcome branches, resulting in multiple valid paths through the narrative. The branching is well-structured, but players taking the 'avoidant' path (choice-1:a → choice-2:c → choice-3:c → choice-4:b → choice-5:c) will experience a notably shorter emotional arc than players taking the 'honest' path (choice-1:b → choice-3:a → choice-4:a → choice-5:a). This is intentional (the avoidant path is meant to feel hollow), but worth flagging for QA testing.",
+      "location": "overall branching structure",
+      "suggestion": "Ensure playtesting covers the avoidant path fully to confirm the emotional hollowness lands as intended rather than feeling like incomplete content. The path is valid and reaches END, but the player experience differs significantly."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-9b (Letting Jordan Talk) includes a dialogue line for deshawn (s9b-05) with no text, only an action: 'sideways glance at the player, says nothing — it lands anyway'. This is narratively effective but may cause rendering issues if the system expects all dialogue entries to have a 'text' field.",
+      "location": "scene-9b.dialogue[4] (s9b-05)",
+      "suggestion": "Verify that the rendering pipeline handles empty 'text' fields gracefully. If not, consider adding a placeholder like 'text': \"\" or moving the action to a NARRATOR line instead. Current design is intentional and works in the provided JSON, but test rendering to confirm."
+    },
+    {
+      "category": "STYLE",
+      "message": "The episode uses 'Ellis' as the player character's name in narrative text (NARRATOR and INTERNAL dialogue), but the character roster lists the player as 'Ellis Park'. This is correct and consistent, but worth confirming that the rendering system will substitute the player's chosen name if they customize it, or if 'Ellis' is a fixed name for this episode.",
+      "location": "dialogue entries using 'Ellis' (e.g., s5b-01, s7a-01, s9b-06)",
+      "suggestion": "If the player character's name is customizable in the game engine, ensure that all NARRATOR/INTERNAL references to 'Ellis' are replaced with the player's chosen name at render time. If 'Ellis Park' is a fixed identity for this episode, no change needed. Current design assumes fixed name."
+    }
+  ],
+  "summary": {
+    "totalChecks": 42,
+    "passedChecks": 42,
+    "failedChecks": 0,
+    "warningCount": 6
+  },
+  "recommendations": [
+    "TESTING PRIORITY: Playtest the 'avoidant path' (choice-1:a → choice-2:c → choice-3:c → choice-4:b → choice-5:c) to confirm the emotional arc feels intentionally hollow rather than incomplete. This path should land as a cautionary tale, not a bug.",
+    "RENDERING VALIDATION: Test scene-9b dialogue rendering with the empty 'text' field in s9b-05 to ensure the action-only line displays correctly. If the system requires a text field, add 'text': \"\" or convert to a NARRATOR line.",
+    "BRANCHING DIALOGUE MAPPING: Document the relationship between choice-5 options and the four outcome branches (branch-honest-path, branch-peer-pressure-path, branch-quiet-mediator-path, branch-avoidant-path) in a rendering guide. The mapping is correct but implicit; explicit documentation will prevent future confusion.",
+    "PLAYER NAME SUBSTITUTION: Confirm that the rendering pipeline will replace 'Ellis' in NARRATOR and INTERNAL dialogue with the player's chosen name if customization is enabled. If 'Ellis Park' is a fixed identity, document this clearly.",
+    "TRAIT TRACKING: Verify that the trait system correctly accumulates changes across multiple choices. A player taking the honest path should end with INTEGRITY +5, COMMUNICATION +3, JUDGMENT +2 (across all five choices). Test that the final trait state is calculated correctly.",
+    "SCENE REACHABILITY: Confirm that all 10 scenes are reachable via at least one valid choice path. Spot-check: scene-3a-shortcut and scene-3b-honest are mutually exclusive (good); scene-5a-spoke-up, scene-5b-silent, and scene-5c-backed-jordan are mutually exclusive (good); all paths converge at scene-6-aftermath (good). No orphaned scenes detected.",
+    "EDUCATIONAL GOALS ALIGNMENT: The episode's educational goals emphasize that 'integrity often means short-term discomfort for long-term trust' without using the word 'integrity.' Verify that the dialogue and outcomes reinforce this message across all paths, especially the avoidant path where the player *doesn't* experience this lesson. The design is sound; this is a confirmation check.",
+    "CHARACTER VOICE CONSISTENCY: The character roster includes detailed voice guidelines for Ellis, Jordan, Maya, and Deshawn. Spot-check dialogue against these guidelines — Ellis should use 'Okay but—' qualifiers (present in s1-06, s3b-01, s6-04), Jordan should use 'nobody's gonna check' and finger-guns (present in s2-03, s2-09, s5c-05), Maya should apologize reflexively (present in s5c-03), Deshawn should be dry and watchful (present throughout). All consistent."
+  ]
+}

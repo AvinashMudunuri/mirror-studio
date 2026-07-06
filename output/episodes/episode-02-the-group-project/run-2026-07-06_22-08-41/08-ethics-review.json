@@ -1,0 +1,167 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Maya Nakamura portrayed primarily through anxiety and perfectionism stereotypes without sufficient complexity or agency",
+      "location": "Character throughout, especially scenes 2, 3a, 5b, 7b",
+      "harmPotential": "Asian students, particularly girls, may see themselves reduced to 'anxious overachiever' stereotype. Reinforces model minority myth that Asian students are defined by academic pressure and perfectionism rather than full humanity.",
+      "recommendation": "Expand Maya's character beyond anxiety markers. Show her having interests, humor, or perspectives unrelated to achievement. In scene 5b, let her articulate her own values about honesty rather than just accepting blame. Give her a moment where her carefulness is portrayed as strength (thoughtfulness, integrity) not just neurosis.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Deshawn Carter defined almost entirely through observation and judgment of others' morality, with minimal independent agency or interiority",
+      "location": "Scenes 1, 2, 3a, 4, 5a, 5c, 6, 10",
+      "harmPotential": "Black male students may see themselves portrayed as moral observers/judges rather than full protagonists. Risk of 'magical minority' trope where character exists primarily to validate or critique protagonist's choices rather than having own story.",
+      "recommendation": "Give Deshawn independent goals, vulnerabilities, or conflicts unrelated to watching/judging others. In scene 10, let him share something about his own experience with pressure or difficult choices, not just reflect back on the player's journey. Show him having stakes in the outcome beyond moral observation.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Jordan Reyes characterized as charming rule-breaker with minimal consequences or growth, potentially modeling that charisma can excuse dishonesty",
+      "location": "Scenes 1, 2, 3a, 4, 6, 7b, 9b",
+      "harmPotential": "Players may internalize that social charm and corner-cutting are sustainable strategies. The character's minimal accountability in some branches (9b) could normalize that likability can substitute for integrity.",
+      "recommendation": "Ensure Jordan faces clear, consistent consequences across all branches. In scene 7b, show his genuine discomfort with accountability, not just grudging compliance. Add a moment where his charm fails to smooth over the situation, demonstrating its limits. Consider giving him a line that shows he understands why what he did was wrong, not just that he got caught.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Path of Least Resistance (choice-1:a + choice-2:c) may normalize dishonesty without sufficient negative consequences to balance the 'ease' of the shortcut",
+      "location": "Scenes 3a, 5c, 7c, 9b outcomes",
+      "harmPotential": "Players choosing convenience may experience that path as 'winning' (project succeeds, social peace maintained) without clear cost. Could reinforce that dishonesty is acceptable if undetected. Maya's quiet hurt in 5c/7c may not register as serious enough consequence for 11-14 year olds.",
+      "recommendation": "In scene 7c aftermath, add explicit dialogue where Maya or Deshawn articulates the cost of the player's silence (e.g., 'I thought you had my back' or 'Guess I know where I stand'). In scene 9b, have Ms. Alvarez's follow-up question create visible awkwardness that makes the 'success' feel hollow. Consider adding a brief scene where the player notices Maya avoiding them, making the social cost tangible.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Ms. Alvarez is the only adult character and is portrayed as unusually emotionally intelligent; no representation of typical adult confusion, bias, or fallibility",
+      "location": "Scenes 1, 4, 5a, 7a, 8, 9a",
+      "harmPotential": "May create unrealistic expectation that adults will always recognize and reward integrity. Could undermine teen agency if players believe they need adult validation to do the right thing. Also misses opportunity to show teens navigating situations where adults are unhelpful.",
+      "recommendation": "Consider adding a scene where Ms. Alvarez makes an assumption or misses something, requiring the team to navigate without her guidance. Or show her being fair but not magical—she doesn't solve the problem, she just holds them accountable. This would actually strengthen the message that integrity is about internal values, not external reward.",
+      "priority": 6
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Limited information on character backgrounds/identities beyond names and surface traits",
+      "location": "Character descriptions, throughout episode",
+      "harmPotential": "Names suggest diverse backgrounds (Nakamura, Reyes, Carter, Alvarez, Park) but no explicit acknowledgment of cultural/ethnic identity in dialogue or narrative. Could feel like diversity is performative rather than integrated.",
+      "recommendation": "Weave in natural references to characters' backgrounds in dialogue or internal monologue. For example, Maya mentioning family expectations, or Deshawn's family history with fairness, or Ellis's experience as new student. Keep it organic, not explanatory, but make identity visible and relevant.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Choice-2:b (staying silent privately) may be presented as equally valid to choice-2:a (speaking up), when timing/context matter",
+      "location": "Scenes 4, 5b, 5a comparison",
+      "harmPotential": "Could teach that silence is acceptable if you plan to address it later. While scene 5b shows Maya's pain, it doesn't fully explore the cost of the delay—Maya absorbs blame publicly, even if corrected privately.",
+      "recommendation": "In scene 5b, have Maya articulate that the public moment mattered (e.g., 'Everyone in the room heard him say I dropped it'). This clarifies that timing of truth-telling has ethical weight, not just the eventual correction.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "No LGBTQ+ representation or characters with disabilities, limiting inclusivity for full range of teen experiences",
+      "location": "Entire episode",
+      "harmPotential": "LGBTQ+ and disabled students may not see themselves reflected in peer dynamics. Limits opportunity to model how these identities intersect with peer pressure, honesty, teamwork.",
+      "recommendation": "Not required for this episode, but consider for future episodes. If adding characters, ensure they're not defined by identity alone (avoid 'token gay kid' or 'inspiration porn' disability representation).",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Peer pressure is portrayed with nuance—not as overt bullying but as convenience, loyalty, and social comfort disguised as reasonable requests",
+    "Multiple valid paths forward (honesty, mediation, avoidance) acknowledge that real teen decision-making is complex, not binary",
+    "Maya's conflict-avoidance is shown as a real cost, not a personal failing—scene 5b validates her fear while still holding her accountable for her own voice",
+    "Deshawn's quiet observation is used effectively to show that integrity is noticed even when not loudly rewarded",
+    "Ethical modeling is generally sound: dishonesty has social costs (trust, relationship damage) not just external punishment",
+    "Age-appropriate stakes: a school project, not life-or-death, allows teens to practice moral reasoning at manageable scale",
+    "Ms. Alvarez's response to truth-telling (extension + accountability for Jordan) models that doing the right thing can have practical benefits, not just moral ones",
+    "The terrarium as metaphor is elegant—a system that only works if all parts are real, mirroring how teams only function with honesty",
+    "Character dialogue feels authentic to middle school without being patronizing",
+    "Intersectionality is present in character design (e.g., Maya as anxious overachiever AND female AND Asian AND new to group) even if not explicitly named"
+  ],
+  "recommendations": [
+    "Expand Maya's interiority: Show her having thoughts/feelings beyond anxiety. In scene 5b, let her articulate her own moral position, not just accept blame. Give her a moment of strength or humor unrelated to perfectionism.",
+    "Deepen Deshawn's agency: In scene 10, have him share something vulnerable about his own experience with pressure or difficult choices. Show him having stakes in the outcome beyond moral observation of others.",
+    "Clarify Jordan's accountability: Ensure consequence is consistent across branches. In 7b, show his genuine discomfort, not just compliance. Add a moment where his charm fails, demonstrating its limits.",
+    "Strengthen consequences for avoidance path: In 7c/9b, make Maya's hurt explicit and public enough that players feel the cost. Consider adding a scene where the player notices Maya avoiding them.",
+    "Normalize diversity through integration: Weave in natural references to characters' backgrounds in dialogue. Make identity visible and relevant without being explanatory.",
+    "Consider adding complexity to Ms. Alvarez: Show her as fair but not magical. Let her miss something or require the team to navigate without her guidance, strengthening the message that integrity is internal.",
+    "Clarify timing in choice-2:b: In scene 5b, have Maya articulate that the public moment mattered, teaching that when truth is told has ethical weight.",
+    "Future consideration: Explore LGBTQ+ and disability representation in later episodes to ensure full inclusivity of teen experiences.",
+    "Add one line in scene 9a where Ms. Alvarez explicitly acknowledges the team's choice to rebuild honestly, validating that integrity has real consequences (positive ones)"
+  ],
+  "scores": {
+    "biasAvoidance": 7,
+    "representation": 6,
+    "tropes": 7,
+    "ethicalModeling": 7,
+    "culturalSensitivity": 6,
+    "overall": 7
+  },
+  "flaggedContent": [
+    {
+      "type": "PORTRAYAL",
+      "location": "Character description: Maya Nakamura",
+      "content": "Described as 'anxious overachiever' with core traits of anxiety, perfectionism, self-criticism",
+      "concern": "Risks reinforcing model minority stereotype that Asian students are defined by academic pressure and anxiety rather than full humanity",
+      "suggestion": "Expand description to include non-achievement-related traits (humor, interests, values). Show her anxiety as one facet of a complex person, not her defining characteristic."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Character description and scenes throughout: Deshawn Carter",
+      "content": "Described as 'watchful' and 'quietly principled,' appears primarily in scenes where he observes and judges others' moral choices",
+      "concern": "Risk of 'magical minority' trope where Black character exists to validate protagonist's choices rather than having own story and agency",
+      "suggestion": "Give Deshawn independent goals, vulnerabilities, or conflicts. In scene 10, let him share something personal about his own experience, not just reflect back on player's journey."
+    },
+    {
+      "type": "NARRATIVE",
+      "location": "Scenes 3a, 5c, 7c, 9b (Path of Least Resistance outcomes)",
+      "content": "Dishonesty path succeeds on surface (project done, social peace maintained) with minimal visible consequences",
+      "concern": "May normalize that dishonesty is acceptable if undetected. Maya's quiet hurt may not register as serious enough consequence for target age group.",
+      "suggestion": "Make social cost explicit and visible: Maya avoiding player, Deshawn's disappointment articulated, or Ms. Alvarez's follow-up creating awkwardness that makes 'success' feel hollow."
+    },
+    {
+      "type": "DECISION",
+      "location": "Choice-2: Correcting Jordan vs. staying silent vs. backing him up",
+      "content": "Choice-2:b (staying silent, correcting privately later) presented as equally valid to choice-2:a (speaking up immediately)",
+      "concern": "Could teach that silence is acceptable if you plan to address it later, missing that timing of truth-telling has ethical weight",
+      "suggestion": "In scene 5b, have Maya articulate that the public moment mattered ('Everyone heard him say I dropped it'), clarifying that when truth is told has consequences."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Ms. Alvarez throughout episode",
+      "content": "Only adult character; portrayed as unusually emotionally intelligent, fair, and perceptive; always makes right call",
+      "concern": "Creates unrealistic expectation that adults will always recognize and reward integrity. May undermine teen agency if players believe they need adult validation.",
+      "suggestion": "Show Ms. Alvarez as fair but fallible. Consider a scene where she misses something or the team must navigate without her guidance, strengthening message that integrity is internal value."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Jordan Reyes, scenes 1, 2, 3a, 4, 6, 7b, 9b",
+      "content": "Charming rule-breaker who uses social skills to minimize consequences; minimal accountability in some branches",
+      "concern": "May model that charisma can excuse dishonesty. In choice-4:b path, his smooth-talking succeeds without real consequence.",
+      "suggestion": "Ensure Jordan faces clear, consistent consequences. Show his charm failing in at least one moment. Add dialogue showing he understands why his actions were wrong, not just that he got caught."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Character descriptions and throughout",
+      "content": "Names suggest diverse backgrounds (Nakamura, Reyes, Carter, Alvarez, Park) but limited explicit acknowledgment of cultural/ethnic identity",
+      "concern": "Diversity may feel performative rather than integrated into character experience and dialogue",
+      "suggestion": "Weave in natural references to characters' backgrounds. For example: Maya mentioning family expectations, Deshawn's family history with fairness, Ellis's experience as new student. Keep organic, not explanatory."
+    }
+  ],
+  "summary": {
+    "verdict": "No verdict provided",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [],
+    "strengths": [],
+    "readyForPublication": false
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "episode": {
+    "number": 2,
+    "title": "Cracks in the Terrarium",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "01cdc3c1-a8e3-4bad-8bd8-86c4ef5b4464",
+    "threadId": "368f757f-c1d7-4525-b8f7-d3578142a2ac",
+    "startedAt": "2026-07-06T22:08:41.368Z",
+    "completedAt": "2026-07-06T22:21:30.919Z",
+    "totalSeconds": 769.5,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [],
+    "previousEpisodes": [
+      {
+        "id": "ep-1",
+        "title": "First Bell"
+      }
+    ],
+    "previousEpisodesSource": "postgres",
+    "usage": {
+      "calls": 12,
+      "inputTokens": 126211,
+      "outputTokens": 71968,
+      "totalTokens": 198179,
+      "budget": 800000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 7,
+          "inputTokens": 25122,
+          "outputTokens": 51488
+        },
+        "claude-haiku-4-5-20251001": {
+          "calls": 5,
+          "inputTokens": 101089,
+          "outputTokens": 20480
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Ellis Park",
+      "role": "Player character / POV protagonist — the emotional barometer of the group, whose choices about honesty versus harmony drive the episode's central dilemma.",
+      "active": true
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Reyes",
+      "role": "The catalyst and pressure test of the episode — Jordan is the reason the ethical dilemma exists at all, and his shifting reactions to the player's choices (compliance vs. pushback vs. honesty) reveal whether Ellis is actually capable of prioritizing trust over being liked. He's not a villain; he's a mirror for what happens when charm is used to avoid accountability.",
+      "active": true
+    },
+    {
+      "id": "maya",
+      "name": "Maya Nakamura",
+      "role": "Maya is the emotional stakes made visible — the person who actually gets hurt when Ellis chooses comfort over truth. She's not a passive victim; she's a mirror of Ellis's own conflict-avoidance taken to its logical extreme, which is exactly why her arc lands so hard. Her trust (or lack of it) in Ellis by episode's end is the real scoreboard, more than any grade on the terrarium.",
+      "active": true
+    },
+    {
+      "id": "deshawn",
+      "name": "Deshawn Carter",
+      "role": "Deshawn is the episode's quiet witness and moral gauge — he rarely intervenes directly, but his attentiveness makes the player's choices feel observed and consequential. He's not there to lecture Ellis; he's there because he's been burned by silence before, and he's watching to see whether Ellis is someone who'll actually break the pattern. His final scene reframes the whole episode as a question, not a verdict.",
+      "active": true
+    },
+    {
+      "id": "ms-alvarez",
+      "name": "Renata Alvarez",
+      "role": "The adult constant against which the player's honesty is measured — not a mouthpiece for the lesson, but a person whose quiet, unflinching fairness makes the stakes of Ellis's choices real. She never forces a confession; she creates room for one, and it's up to Ellis whether to fill it.",
+      "active": true
+    }
+  ],
+  "finalStatus": "APPROVED",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "PASS",
+    "childPsychologist": "APPROVED",
+    "gameDesigner": "GOOD",
+    "ethicsReviewer": "GOOD"
+  },
+  "revisions": [],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "06-psych-review.json",
+    "07-game-review.json",
+    "08-ethics-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}
