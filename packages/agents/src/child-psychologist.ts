@@ -1,7 +1,7 @@
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
-import { ReviewParseError, requireEnum, requireScore } from './errors';
-import { jsonrepair } from 'jsonrepair';
+import { requireEnum, requireScore } from './errors';
+import { parseReviewJson } from './json-parsing';
 import type { Episode, Character, World } from '@mirror/schemas';
 
 // ============================================================================
@@ -347,55 +347,9 @@ Return assessment in JSON format.`;
   // ==================== Helper Methods ====================
   
   private parseReview(content: string): ChildPsychologistOutput {
-    // Log response for debugging
-    console.log('[Child Psychologist] Response length:', content.length);
-    console.log('[Child Psychologist] Response preview:', content.substring(0, 500));
-    
-    // Extract JSON
-    const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
-    
-    if (!jsonMatch) {
-      console.error('[Child Psychologist] No JSON found in response');
-      console.error('Full response:', content);
-      
-      // Fail loudly: a fabricated safety review is worse than no review.
-      throw new ReviewParseError(
-        this.config.id,
-        'No JSON found in LLM review response',
-        content
-      );
-    }
-    
-    let jsonString = jsonMatch[1];
-    
-    // Clean and repair JSON
-    jsonString = jsonString.replace(/,(\s*[}\]])/g, '$1');
-    jsonString = jsonString.replace(/\/\/[^\n]*/g, '');
-    jsonString = jsonString.replace(/\/\*[\s\S]*?\*\//g, '');
-    jsonString = jsonString.trim();
-    
-    try {
-      console.log('[Child Psychologist] Attempting to repair JSON...');
-      jsonString = jsonrepair(jsonString);
-      console.log('[Child Psychologist] JSON repair successful');
-    } catch (repairError) {
-      console.warn('[Child Psychologist] JSON repair failed:', repairError);
-    }
-    
-    let parsed: any;
-    try {
-      parsed = JSON.parse(jsonString);
-    } catch (error) {
-      console.error('[Child Psychologist] Failed to parse JSON:', error);
-      console.error('JSON string:', jsonString.substring(0, 1000));
-      
-      throw new ReviewParseError(
-        this.config.id,
-        `LLM review response is not valid JSON: ${error}`,
-        content
-      );
-    }
-    
+    // Fail loudly on parse failure: a fabricated safety review is worse
+    // than no review.
+    const parsed = parseReviewJson<any>(this.config.id, content);
     const normalized = this.normalizeOutput(parsed, content);
     console.log('[Child Psychologist] Successfully parsed review:', normalized.status);
     return normalized;
