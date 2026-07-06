@@ -1,0 +1,50 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "REPLAYABILITY",
+      "issue": "Both choice points funnel into only two branches",
+      "location": "choicePoints",
+      "impact": "Second playthrough may feel similar",
+      "fix": "Add a mixed path (accept help, then sit alone) with its own outcome",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Choices map to real social dilemmas players recognize",
+    "Emotional stakes are clear before each decision"
+  ],
+  "recommendations": [
+    "Surface a subtle trait hint after each choice to reward reflection"
+  ],
+  "scores": {
+    "engagement": 7,
+    "choiceQuality": 8,
+    "pacing": 8,
+    "playerAgency": 7,
+    "replayability": 6,
+    "overall": 7
+  },
+  "metrics": {
+    "averageSceneLength": 3,
+    "choiceFrequency": 0.67,
+    "branchingFactor": 2,
+    "estimatedReplayValue": 6
+  },
+  "summary": {
+    "verdict": "Solid opening episode with meaningful but limited branching",
+    "keyIssues": [
+      "Limited branch variety"
+    ],
+    "topStrengths": [
+      "Relatable choices",
+      "Clear emotional stakes"
+    ],
+    "mustFix": [],
+    "niceToHave": [
+      "Third mixed-path branch",
+      "Post-choice trait hints"
+    ]
+  }
+}

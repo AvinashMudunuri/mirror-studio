@@ -1,0 +1,33 @@
+{
+  "status": "APPROVED",
+  "concerns": [],
+  "recommendations": [
+    "Keep the cafeteria scene anxiety at current intensity; do not escalate",
+    "Reinforce that declining help (opt-1b) is also a valid, respected choice"
+  ],
+  "triggerWarnings": [
+    {
+      "category": "ANXIETY",
+      "description": "First-day-of-school social anxiety",
+      "severity": "MILD",
+      "location": "scene-1, scene-3"
+    }
+  ],
+  "scores": {
+    "ageAppropriateness": 9,
+    "emotionalSafety": 9,
+    "educationalValue": 8,
+    "mentalHealthRep": 8,
+    "overall": 9
+  },
+  "summary": {
+    "strengths": [
+      "Normalizes first-day nervousness without pathologizing it",
+      "Models asking for help as a strength, not a weakness"
+    ],
+    "improvements": [
+      "Consider a brief self-regulation beat (deep breath) players can mirror"
+    ],
+    "readyForAudience": true
+  }
+}

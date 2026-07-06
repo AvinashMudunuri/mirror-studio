@@ -12,7 +12,13 @@ module.exports = {
     '^.+\\.tsx?$': ['ts-jest', {
       tsconfig: {
         esModuleInterop: true,
-        allowSyntheticDefaultImports: true
+        allowSyntheticDefaultImports: true,
+        // Mirror moduleNameMapper so ts-jest type-checking resolves
+        // workspace packages from source without requiring a build.
+        baseUrl: '.',
+        paths: {
+          '@mirror/*': ['packages/*/src']
+        }
       }
     }]
   },

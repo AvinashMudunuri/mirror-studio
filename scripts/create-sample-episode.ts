@@ -252,6 +252,12 @@ async function main() {
   console.log('🎨 Step 6: Creative Director - Reviewing Episode\n');
   console.log('   ⏳ Evaluating creative quality...\n');
   
+  // Review the ACTUAL generated content: outline scenes merged with dialogue.
+  const scenesWithDialogue = (storyResult.episodeOutline.scenes || []).map((scene: any) => ({
+    ...scene,
+    dialogue: dialogueResult.dialogue?.find((d: any) => d.sceneId === scene.id)?.lines || []
+  }));
+  
   const mockEpisode = {
     id: uuidv4(),
     worldId: EPISODE_BRIEF.worldId,
@@ -262,7 +268,9 @@ async function main() {
     themes: EPISODE_BRIEF.themes,
     targetTraits: EPISODE_BRIEF.targetTraits,
     targetAge: [11, 14] as [number, number],
-    scenes: [],
+    scenes: scenesWithDialogue,
+    choices: storyResult.episodeOutline.choicePoints || [],
+    outcomes: storyResult.episodeOutline.branches || [],
     characters: characters.map(c => c.id),
     estimatedPlayTime: storyResult.episodeOutline.estimatedPlayTime,
     metadata: {

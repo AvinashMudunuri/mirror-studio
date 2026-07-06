@@ -1,5 +1,6 @@
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
+import { ReviewParseError, requireEnum } from './errors';
 import { jsonrepair } from 'jsonrepair';
 import type { Episode, Character, World } from '@mirror/schemas';
 
@@ -306,24 +307,13 @@ Return results in JSON format.`;
       console.error('[QA Reviewer] No JSON found in response');
       console.error('Full response:', content);
       
-      // Return a default FAIL response
-      return {
-        status: 'FAIL',
-        errors: [{
-          severity: 'BLOCKER',
-          category: 'COMPLETENESS',
-          message: 'QA Reviewer could not parse response',
-          location: 'response',
-          fix: 'Check QA Reviewer logs'
-        }],
-        warnings: [],
-        summary: {
-          totalChecks: 0,
-          passedChecks: 0,
-          failedChecks: 1,
-          warningCount: 0
-        }
-      };
+      // Fail loudly: a fabricated QA result (even a FAIL) is indistinguishable
+      // from a real review downstream. Callers must handle the system error.
+      throw new ReviewParseError(
+        this.config.id,
+        'No JSON found in LLM review response',
+        content
+      );
     }
     
     let jsonString = jsonMatch[1];
@@ -342,55 +332,43 @@ Return results in JSON format.`;
       console.warn('[QA Reviewer] JSON repair failed:', repairError);
     }
     
+    let parsed: any;
     try {
-      const parsed = JSON.parse(jsonString);
-      
-      // Validate structure
-      if (!parsed.status) {
-        parsed.status = parsed.errors?.length > 0 ? 'FAIL' : 'PASS';
-      }
-      
-      if (!parsed.errors) {
-        parsed.errors = [];
-      }
-      
-      if (!parsed.warnings) {
-        parsed.warnings = [];
-      }
-      
-      if (!parsed.summary) {
-        parsed.summary = {
-          totalChecks: 0,
-          passedChecks: 0,
-          failedChecks: parsed.errors.length,
-          warningCount: parsed.warnings.length
-        };
-      }
-      
-      console.log('[QA Reviewer] Successfully parsed review:', parsed.status);
-      return parsed as QAReviewerOutput;
+      parsed = JSON.parse(jsonString);
     } catch (error) {
       console.error('[QA Reviewer] Failed to parse JSON:', error);
       console.error('JSON string:', jsonString.substring(0, 1000));
       
-      // Return a default FAIL response
-      return {
-        status: 'FAIL',
-        errors: [{
-          severity: 'BLOCKER',
-          category: 'COMPLETENESS',
-          message: `QA Reviewer JSON parsing failed: ${error}`,
-          location: 'response',
-          fix: 'Check QA Reviewer logs'
-        }],
-        warnings: [],
-        summary: {
-          totalChecks: 0,
-          passedChecks: 0,
-          failedChecks: 1,
-          warningCount: 0
-        }
+      throw new ReviewParseError(
+        this.config.id,
+        `LLM review response is not valid JSON: ${error}`,
+        content
+      );
+    }
+    
+    // The PASS/FAIL verdict must come from the LLM. Inferring PASS from a
+    // missing status would let a malformed review approve an episode.
+    parsed.status = requireEnum(this.config.id, content, 'status', parsed.status,
+      ['PASS', 'FAIL'] as const);
+    
+    if (!parsed.errors) {
+      parsed.errors = [];
+    }
+    
+    if (!parsed.warnings) {
+      parsed.warnings = [];
+    }
+    
+    if (!parsed.summary) {
+      parsed.summary = {
+        totalChecks: 0,
+        passedChecks: 0,
+        failedChecks: parsed.errors.length,
+        warningCount: parsed.warnings.length
       };
     }
+    
+    console.log('[QA Reviewer] Successfully parsed review:', parsed.status);
+    return parsed as QAReviewerOutput;
   }
 }

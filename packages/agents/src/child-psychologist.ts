@@ -1,5 +1,6 @@
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
+import { ReviewParseError, requireEnum, requireScore } from './errors';
 import { jsonrepair } from 'jsonrepair';
 import type { Episode, Character, World } from '@mirror/schemas';
 
@@ -214,7 +215,7 @@ TARGET AUDIENCE: ${world.targetAge?.[0] || 13}-${world.targetAge?.[1] || 17} yea
 EPISODE:
 Title: ${episode.title}
 Synopsis: ${episode.synopsis}
-Themes: ${episode.themes.join(', ')}
+Themes: ${episode.themes?.join(', ') || 'Not specified'}
 Educational Goals: ${Array.isArray(educationalGoals) ? educationalGoals.join(', ') : 'Not specified'}
 Full Episode Data: ${JSON.stringify(episode, null, 2)}
 
@@ -357,8 +358,12 @@ Return assessment in JSON format.`;
       console.error('[Child Psychologist] No JSON found in response');
       console.error('Full response:', content);
       
-      // Return a default NEEDS_REVISION response
-      return this.getDefaultResponse('Could not parse review response');
+      // Fail loudly: a fabricated safety review is worse than no review.
+      throw new ReviewParseError(
+        this.config.id,
+        'No JSON found in LLM review response',
+        content
+      );
     }
     
     let jsonString = jsonMatch[1];
@@ -377,68 +382,46 @@ Return assessment in JSON format.`;
       console.warn('[Child Psychologist] JSON repair failed:', repairError);
     }
     
+    let parsed: any;
     try {
-      const parsed = JSON.parse(jsonString);
-      
-      // Validate and normalize structure
-      const normalized = this.normalizeOutput(parsed);
-      
-      console.log('[Child Psychologist] Successfully parsed review:', normalized.status);
-      return normalized;
+      parsed = JSON.parse(jsonString);
     } catch (error) {
       console.error('[Child Psychologist] Failed to parse JSON:', error);
       console.error('JSON string:', jsonString.substring(0, 1000));
       
-      return this.getDefaultResponse(`JSON parsing failed: ${error}`);
+      throw new ReviewParseError(
+        this.config.id,
+        `LLM review response is not valid JSON: ${error}`,
+        content
+      );
     }
+    
+    const normalized = this.normalizeOutput(parsed, content);
+    console.log('[Child Psychologist] Successfully parsed review:', normalized.status);
+    return normalized;
   }
   
-  private normalizeOutput(parsed: any): ChildPsychologistOutput {
-    // Ensure all required fields exist with defaults
+  private normalizeOutput(parsed: any, rawResponse: string): ChildPsychologistOutput {
+    // Verdict and scores must come from the LLM; fabricating them would let
+    // a broken review pass as a real safety assessment. Lists may default to
+    // empty (an approved episode can legitimately have no concerns).
     return {
-      status: parsed.status || 'NEEDS_REVISION',
+      status: requireEnum(this.config.id, rawResponse, 'status', parsed.status,
+        ['APPROVED', 'NEEDS_REVISION', 'REJECTED'] as const),
       concerns: parsed.concerns || [],
       recommendations: parsed.recommendations || [],
       triggerWarnings: parsed.triggerWarnings || [],
       scores: {
-        ageAppropriateness: parsed.scores?.ageAppropriateness || 5,
-        emotionalSafety: parsed.scores?.emotionalSafety || 5,
-        educationalValue: parsed.scores?.educationalValue || 5,
-        mentalHealthRep: parsed.scores?.mentalHealthRep || 5,
-        overall: parsed.scores?.overall || 5
+        ageAppropriateness: requireScore(this.config.id, rawResponse, 'scores.ageAppropriateness', parsed.scores?.ageAppropriateness),
+        emotionalSafety: requireScore(this.config.id, rawResponse, 'scores.emotionalSafety', parsed.scores?.emotionalSafety),
+        educationalValue: requireScore(this.config.id, rawResponse, 'scores.educationalValue', parsed.scores?.educationalValue),
+        mentalHealthRep: requireScore(this.config.id, rawResponse, 'scores.mentalHealthRep', parsed.scores?.mentalHealthRep),
+        overall: requireScore(this.config.id, rawResponse, 'scores.overall', parsed.scores?.overall)
       },
       summary: {
         strengths: parsed.summary?.strengths || [],
         improvements: parsed.summary?.improvements || [],
         readyForAudience: parsed.summary?.readyForAudience ?? false
-      }
-    };
-  }
-  
-  private getDefaultResponse(reason: string): ChildPsychologistOutput {
-    return {
-      status: 'NEEDS_REVISION',
-      concerns: [{
-        severity: 'MODERATE',
-        category: 'EDUCATIONAL',
-        issue: `Review could not be completed: ${reason}`,
-        location: 'general',
-        recommendation: 'Manual review required',
-        mustFix: false
-      }],
-      recommendations: ['Manual psychological review recommended'],
-      triggerWarnings: [],
-      scores: {
-        ageAppropriateness: 5,
-        emotionalSafety: 5,
-        educationalValue: 5,
-        mentalHealthRep: 5,
-        overall: 5
-      },
-      summary: {
-        strengths: [],
-        improvements: ['Automated review incomplete - manual review needed'],
-        readyForAudience: false
       }
     };
   }

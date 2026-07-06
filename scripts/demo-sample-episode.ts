@@ -1,17 +1,31 @@
 /**
  * Sample Episode Creation - Demo Mode
  * 
- * Demonstrates the full Phase 1 content-creation pipeline with mock data.
- * This version runs without requiring infrastructure or API keys.
+ * Demonstrates the complete 8-agent pipeline with mock data:
+ * content creation (Story Architect, Character Designer, Dialogue Writer,
+ * Creative Director) followed by validation (QA Reviewer, Child Psychologist,
+ * Game Designer, Ethics Reviewer).
  * 
- * For the real version with LLM calls, use: npm run sample:episode
+ * This version runs without requiring infrastructure or API keys.
+ * All outputs are hardcoded mock data, NOT real agent/LLM results.
+ * 
+ * For the real version with LLM calls, use: npm run real:episode
  */
 
 import { 
   StoryArchitectAgent,
   CharacterDesignerAgent,
   DialogueWriterAgent,
-  CreativeDirectorAgent
+  CreativeDirectorAgent,
+  QAReviewerAgent,
+  ChildPsychologistAgent,
+  GameDesignerAgent,
+  EthicsReviewerAgent,
+  type CreativeDirectorOutput,
+  type QAReviewerOutput,
+  type ChildPsychologistOutput,
+  type GameDesignerOutput,
+  type EthicsReviewerOutput
 } from '@mirror/agents';
 import type { World } from '@mirror/schemas';
 import * as fs from 'fs';
@@ -308,7 +322,7 @@ const MOCK_DIALOGUE = {
   voiceNotes: 'Dialogue maintains authentic 11-14 year old voice with appropriate nervousness and warmth'
 };
 
-const MOCK_CREATIVE_REVIEW = {
+const MOCK_CREATIVE_REVIEW: CreativeDirectorOutput = {
   decision: 'APPROVED',
   creativeNotes: 'Strong first episode that captures the universal first-day anxiety while remaining hopeful. The choices feel natural and the emotional beats are earned.',
   specificFeedback: {
@@ -336,6 +350,128 @@ const MOCK_CREATIVE_REVIEW = {
   revisionPriority: 'LOW'
 };
 
+const MOCK_QA_REVIEW: QAReviewerOutput = {
+  status: 'PASS',
+  errors: [],
+  warnings: [
+    {
+      category: 'BEST_PRACTICE',
+      message: 'Scene IDs use simple slugs instead of UUIDs',
+      location: 'scenes[*].id',
+      suggestion: 'Use UUIDs in production episodes to match EpisodeSchema'
+    }
+  ],
+  summary: {
+    totalChecks: 24,
+    passedChecks: 24,
+    failedChecks: 0,
+    warningCount: 1
+  },
+  recommendations: ['Add explicit outcome states for both lunch-table branches']
+};
+
+const MOCK_PSYCHOLOGIST_REVIEW: ChildPsychologistOutput = {
+  status: 'APPROVED',
+  concerns: [],
+  recommendations: [
+    'Keep the cafeteria scene anxiety at current intensity; do not escalate',
+    'Reinforce that declining help (opt-1b) is also a valid, respected choice'
+  ],
+  triggerWarnings: [
+    {
+      category: 'ANXIETY',
+      description: 'First-day-of-school social anxiety',
+      severity: 'MILD',
+      location: 'scene-1, scene-3'
+    }
+  ],
+  scores: {
+    ageAppropriateness: 9,
+    emotionalSafety: 9,
+    educationalValue: 8,
+    mentalHealthRep: 8,
+    overall: 9
+  },
+  summary: {
+    strengths: [
+      'Normalizes first-day nervousness without pathologizing it',
+      'Models asking for help as a strength, not a weakness'
+    ],
+    improvements: ['Consider a brief self-regulation beat (deep breath) players can mirror'],
+    readyForAudience: true
+  }
+};
+
+const MOCK_GAME_DESIGN_REVIEW: GameDesignerOutput = {
+  status: 'GOOD',
+  issues: [
+    {
+      severity: 'MINOR',
+      category: 'REPLAYABILITY',
+      issue: 'Both choice points funnel into only two branches',
+      location: 'choicePoints',
+      impact: 'Second playthrough may feel similar',
+      fix: 'Add a mixed path (accept help, then sit alone) with its own outcome',
+      priority: 3
+    }
+  ],
+  strengths: [
+    'Choices map to real social dilemmas players recognize',
+    'Emotional stakes are clear before each decision'
+  ],
+  recommendations: ['Surface a subtle trait hint after each choice to reward reflection'],
+  scores: {
+    engagement: 7,
+    choiceQuality: 8,
+    pacing: 8,
+    playerAgency: 7,
+    replayability: 6,
+    overall: 7
+  },
+  metrics: {
+    averageSceneLength: 3,
+    choiceFrequency: 0.67,
+    branchingFactor: 2,
+    estimatedReplayValue: 6
+  },
+  summary: {
+    verdict: 'Solid opening episode with meaningful but limited branching',
+    keyIssues: ['Limited branch variety'],
+    topStrengths: ['Relatable choices', 'Clear emotional stakes'],
+    mustFix: [],
+    niceToHave: ['Third mixed-path branch', 'Post-choice trait hints']
+  }
+};
+
+const MOCK_ETHICS_REVIEW: EthicsReviewerOutput = {
+  status: 'GOOD',
+  issues: [],
+  strengths: [
+    'Nonbinary protagonist portrayed without tokenism',
+    'Asian-American characters have distinct personalities, not interchangeable roles'
+  ],
+  recommendations: [
+    'As the season grows, vary which characters offer help so kindness is not tied to one demographic'
+  ],
+  scores: {
+    biasAvoidance: 9,
+    representation: 8,
+    tropes: 9,
+    ethicalModeling: 8,
+    culturalSensitivity: 8,
+    overall: 8
+  },
+  flaggedContent: [],
+  summary: {
+    verdict: 'Inclusive, respectful portrayal appropriate for publication',
+    criticalIssues: [],
+    majorConcerns: [],
+    minorNotes: ['Monitor helper-role distribution across future episodes'],
+    strengths: ['Natural pronoun usage', 'Diverse cast without stereotyping'],
+    readyForPublication: true
+  }
+};
+
 // ============================================================================
 // Demo Workflow
 // ============================================================================
@@ -344,37 +480,30 @@ async function main() {
   console.log('🎬 SAMPLE EPISODE CREATION - DEMO MODE\n');
   console.log('═══════════════════════════════════════════════════════════\n');
   console.log('⚡ Running in DEMO mode (no API calls or infrastructure required)\n');
-  console.log('   This demonstrates the workflow with mock data.');
-  console.log('   For real LLM-powered creation, use: npm run sample:episode\n');
+  console.log('   This demonstrates the full 8-agent workflow with mock data.');
+  console.log('   For real LLM-powered creation, use: npm run real:episode\n');
   console.log('═══════════════════════════════════════════════════════════\n');
   
   // Step 1: Initialize Agents (Show configuration)
   console.log('🤖 Step 1: Agent Configuration\n');
   
-  const storyArchitect = new StoryArchitectAgent();
-  const characterDesigner = new CharacterDesignerAgent();
-  const dialogueWriter = new DialogueWriterAgent();
-  const creativeDirector = new CreativeDirectorAgent();
+  const agents = [
+    { label: 'Story Architect', agent: new StoryArchitectAgent() },
+    { label: 'Character Designer', agent: new CharacterDesignerAgent() },
+    { label: 'Dialogue Writer', agent: new DialogueWriterAgent() },
+    { label: 'Creative Director', agent: new CreativeDirectorAgent() },
+    { label: 'QA Reviewer', agent: new QAReviewerAgent() },
+    { label: 'Child Psychologist', agent: new ChildPsychologistAgent() },
+    { label: 'Game Designer', agent: new GameDesignerAgent() },
+    { label: 'Ethics Reviewer', agent: new EthicsReviewerAgent() }
+  ];
   
-  console.log('✅ Story Architect (River)');
-  console.log(`   Role: ${storyArchitect['config'].role}`);
-  console.log(`   Model: ${storyArchitect['config'].model}`);
-  console.log(`   Temperature: ${storyArchitect['config'].temperature}\n`);
-  
-  console.log('✅ Character Designer (Kai)');
-  console.log(`   Role: ${characterDesigner['config'].role}`);
-  console.log(`   Model: ${characterDesigner['config'].model}`);
-  console.log(`   Temperature: ${characterDesigner['config'].temperature}\n`);
-  
-  console.log('✅ Dialogue Writer (Echo)');
-  console.log(`   Role: ${dialogueWriter['config'].role}`);
-  console.log(`   Model: ${dialogueWriter['config'].model}`);
-  console.log(`   Temperature: ${dialogueWriter['config'].temperature}\n`);
-  
-  console.log('✅ Creative Director (Aria)');
-  console.log(`   Role: ${creativeDirector['config'].role}`);
-  console.log(`   Model: ${creativeDirector['config'].model}`);
-  console.log(`   Temperature: ${creativeDirector['config'].temperature}\n`);
+  for (const { label, agent } of agents) {
+    console.log(`✅ ${label} (${agent['config'].name})`);
+    console.log(`   Role: ${agent['config'].role}`);
+    console.log(`   Model: ${agent['config'].model}`);
+    console.log(`   Temperature: ${agent['config'].temperature}\n`);
+  }
   
   console.log('═══════════════════════════════════════════════════════════\n');
   
@@ -461,6 +590,64 @@ async function main() {
   saveToFile('05-creative-review.json', reviewResult);
   console.log('   💾 Saved: output/demo-episode/05-creative-review.json\n');
   
+  // Step 7: QA Reviewer
+  console.log('🔍 Step 7: QA Reviewer - Technical Quality Check\n');
+  console.log('   📝 Validating schema, IDs, branching logic, and completeness...\n');
+  
+  const qaResult = MOCK_QA_REVIEW;
+  
+  console.log('✅ QA review complete!');
+  console.log(`   Status: ${qaResult.status}`);
+  console.log(`   Checks: ${qaResult.summary.passedChecks}/${qaResult.summary.totalChecks} passed`);
+  console.log(`   Errors: ${qaResult.errors.length} | Warnings: ${qaResult.warnings.length}\n`);
+  
+  saveToFile('06-qa-review.json', qaResult);
+  console.log('   💾 Saved: output/demo-episode/06-qa-review.json\n');
+  
+  // Step 8: Child Psychologist
+  console.log('🧠 Step 8: Child Psychologist - Psychological Safety Review\n');
+  console.log('   📝 Evaluating age-appropriateness and emotional safety...\n');
+  
+  const psychResult = MOCK_PSYCHOLOGIST_REVIEW;
+  
+  console.log('✅ Psychological safety review complete!');
+  console.log(`   Status: ${psychResult.status}`);
+  console.log(`   Emotional Safety: ${psychResult.scores.emotionalSafety}/10 | Overall: ${psychResult.scores.overall}/10`);
+  console.log(`   Concerns: ${psychResult.concerns.length} | Trigger Warnings: ${psychResult.triggerWarnings.length}`);
+  console.log(`   Ready for Audience: ${psychResult.summary.readyForAudience ? 'Yes' : 'No'}\n`);
+  
+  saveToFile('07-psychologist-review.json', psychResult);
+  console.log('   💾 Saved: output/demo-episode/07-psychologist-review.json\n');
+  
+  // Step 9: Game Designer
+  console.log('🎮 Step 9: Game Designer - Gameplay & Engagement Review\n');
+  console.log('   📝 Evaluating choices, pacing, agency, and replayability...\n');
+  
+  const gameplayResult = MOCK_GAME_DESIGN_REVIEW;
+  
+  console.log('✅ Gameplay review complete!');
+  console.log(`   Status: ${gameplayResult.status}`);
+  console.log(`   Engagement: ${gameplayResult.scores.engagement}/10 | Overall: ${gameplayResult.scores.overall}/10`);
+  console.log(`   Verdict: ${gameplayResult.summary.verdict}\n`);
+  
+  saveToFile('08-game-design-review.json', gameplayResult);
+  console.log('   💾 Saved: output/demo-episode/08-game-design-review.json\n');
+  
+  // Step 10: Ethics Reviewer
+  console.log('⚖️  Step 10: Ethics Reviewer - Ethics & Representation Review\n');
+  console.log('   📝 Checking bias, representation, tropes, and cultural sensitivity...\n');
+  
+  const ethicsResult = MOCK_ETHICS_REVIEW;
+  
+  console.log('✅ Ethics review complete!');
+  console.log(`   Status: ${ethicsResult.status}`);
+  console.log(`   Representation: ${ethicsResult.scores.representation}/10 | Overall: ${ethicsResult.scores.overall}/10`);
+  console.log(`   Issues: ${ethicsResult.issues.length} | Flagged Content: ${ethicsResult.flaggedContent.length}`);
+  console.log(`   Ready for Publication: ${ethicsResult.summary.readyForPublication ? 'Yes' : 'No'}\n`);
+  
+  saveToFile('09-ethics-review.json', ethicsResult);
+  console.log('   💾 Saved: output/demo-episode/09-ethics-review.json\n');
+  
   // Final Summary
   console.log('═══════════════════════════════════════════════════════════\n');
   console.log('✨ DEMO EPISODE CREATION COMPLETE!\n');
@@ -469,16 +656,22 @@ async function main() {
   console.log('   2. Protagonist Profile (Character Designer)');
   console.log('   3. Supporting Character Profile (Character Designer)');
   console.log('   4. Complete Dialogue (Dialogue Writer)');
-  console.log('   5. Creative Review (Creative Director)\n');
+  console.log('   5. Creative Review (Creative Director)');
+  console.log('   6. QA Review (QA Reviewer)');
+  console.log('   7. Psychological Safety Review (Child Psychologist)');
+  console.log('   8. Gameplay Review (Game Designer)');
+  console.log('   9. Ethics Review (Ethics Reviewer)\n');
   console.log(`   📁 Location: ${OUTPUT_DIR}\n`);
-  console.log('🔗 Content Pipeline Verified:\n');
-  console.log('   Story Architect → Character Designer → Dialogue Writer → Creative Director ✅\n');
+  console.log('🔗 Full 8-Agent Pipeline Demonstrated:\n');
+  console.log('   Story Architect → Character Designer → Dialogue Writer → Creative Director');
+  console.log('   → QA Reviewer → Child Psychologist → Game Designer → Ethics Reviewer ✅\n');
   console.log('═══════════════════════════════════════════════════════════\n');
+  console.log('⚠️  Reminder: all outputs above are MOCK data (no LLM calls).\n');
   console.log('💡 Next Steps:\n');
   console.log('   • Review generated files in output/demo-episode/');
-  console.log('   • Run with real LLMs: npm run sample:episode');
+  console.log('   • Run with real LLMs: npm run real:episode');
   console.log('   • Start Docker infrastructure for full integration\n');
-  console.log('🎉 All Phase 1 agents demonstrated successfully!\n');
+  console.log('🎉 All 8 agents demonstrated successfully!\n');
 }
 
 // ============================================================================
