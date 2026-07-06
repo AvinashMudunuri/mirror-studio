@@ -1,0 +1,737 @@
+{
+  "episodeOutline": {
+    "title": "First Bell",
+    "synopsis": "It's the player's first day at Crestwood Academy after a mid-year move. Over one school day — hallway collision, lunchroom crossroads, and a group project gone sideways — the player decides who to trust, who to become, and whether fitting in is worth the cost of being real. Small choices about where to sit and what to say snowball into a defining moment: standing up, blending in, or playing it safe.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene_arrival",
+        "title": "New Halls",
+        "location": "Crestwood Academy - Front Steps",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The player stands outside an unfamiliar school, schedule crumpled in hand, watching cliques of students who already know each other flow past like they've done this a thousand times.",
+        "emotionalBeat": "Nervous anticipation - the ache of being the unknown quantity",
+        "defaultNextScene": "scene_hallway"
+      },
+      {
+        "id": "scene_hallway",
+        "title": "Locker 214",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "jordan",
+          "maya"
+        ],
+        "duration": 2,
+        "description": "Fumbling with an unfamiliar locker combo, the player's books scatter across the floor right as two very different groups pass: Maya's confident crew and Jordan, quietly sketching against the wall. Everyone notices.",
+        "emotionalBeat": "Exposure - the first-day spotlight nobody wants",
+        "choicePointId": "choice-1"
+      },
+      {
+        "id": "scene_maya_intro",
+        "title": "Maya's Radar",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "Maya, effortlessly popular and quick with a grin, sizes the player up approvingly and invites them to 'find us at lunch, new kid' before breezing off with her group.",
+        "emotionalBeat": "Flattered but uncertain - is this acceptance or an audition?",
+        "defaultNextScene": "scene_cafeteria"
+      },
+      {
+        "id": "scene_jordan_intro",
+        "title": "Jordan's Sketchbook",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Jordan helps gather the scattered books, quietly complimenting the player's playlist visible on their phone. There's an easy, low-pressure warmth in the brief exchange.",
+        "emotionalBeat": "Quiet relief - a small, genuine connection",
+        "defaultNextScene": "scene_cafeteria"
+      },
+      {
+        "id": "scene_solo_intro",
+        "title": "Picking Up the Pieces",
+        "location": "Main Hallway",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "No one stops to help. The player gathers their things alone, painfully aware of eyes that may or may not actually be watching.",
+        "emotionalBeat": "Isolation - the loneliest kind of ordinary moment",
+        "defaultNextScene": "scene_cafeteria"
+      },
+      {
+        "id": "scene_cafeteria",
+        "title": "The Room Full of Tables",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Tray in hand, the player scans a cafeteria that already feels coded into territories. Maya waves from a loud, laughing table. Jordan sits alone near the window, headphones half-on. There's also an empty seat by nobody at all.",
+        "emotionalBeat": "The weight of a single decision that feels bigger than lunch",
+        "choicePointId": "choice-2"
+      },
+      {
+        "id": "scene_lunch_popular",
+        "title": "Sitting With Maya",
+        "location": "Cafeteria - Popular Table",
+        "characters": [
+          "player",
+          "maya",
+          "casey"
+        ],
+        "duration": 2,
+        "description": "The table is warm and welcoming until Casey spots Jordan across the room and starts cracking jokes about 'the weird art kid.' Maya half-laughs, watching to see how the player reacts.",
+        "emotionalBeat": "Belonging curdling into a test of character",
+        "choicePointId": "choice-3"
+      },
+      {
+        "id": "scene_lunch_jordan",
+        "title": "Sitting With Jordan",
+        "location": "Cafeteria - Window Table",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 2,
+        "description": "Jordan shows the player a sketchbook full of strange, striking creatures, then goes quiet. 'Be honest - is this stuff too weird for people here?' The question feels bigger than art.",
+        "emotionalBeat": "Vulnerability offered - will it be honored?",
+        "choicePointId": "choice-3b"
+      },
+      {
+        "id": "scene_lunch_alone",
+        "title": "The Empty Seat",
+        "location": "Cafeteria - Corner Table",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 2,
+        "description": "Sitting apart to catch a breath, the player notices Maya waving them over on one side and Jordan giving a small, hopeful nod on the other. Neither pushes, but the choice won't wait forever.",
+        "emotionalBeat": "A quiet crossroads disguised as a nothing-moment",
+        "choicePointId": "choice-3c"
+      },
+      {
+        "id": "scene_afternoon_popular",
+        "title": "Fitting the Mold",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "The rest of lunch goes smoothly. Maya's crew is fun, fast-talking, and a little exhausting to keep up with - but the player is officially 'in.'",
+        "emotionalBeat": "Comfortable but slightly hollow acceptance",
+        "defaultNextScene": "scene_group_project"
+      },
+      {
+        "id": "scene_afternoon_defend",
+        "title": "A Small Stand",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Word travels fast that the new kid didn't pile on. Maya seems to respect it more than expected; Jordan gives a small, grateful nod from down the hall.",
+        "emotionalBeat": "Quiet pride - integrity noticed without needing applause",
+        "defaultNextScene": "scene_group_project"
+      },
+      {
+        "id": "scene_afternoon_silent",
+        "title": "The Unsaid Thing",
+        "location": "Hallway",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The moment passes without incident, but it sits uneasily. The player can't quite shake the feeling of a chance missed.",
+        "emotionalBeat": "Low-grade regret disguised as relief",
+        "defaultNextScene": "scene_group_project"
+      },
+      {
+        "id": "scene_afternoon_bond",
+        "title": "Common Ground",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Whatever was said at lunch, it landed. Jordan seems lighter, more open, already talking about after-school plans like the player is a given part of them now.",
+        "emotionalBeat": "The warmth of an unforced friendship taking root",
+        "defaultNextScene": "scene_group_project"
+      },
+      {
+        "id": "scene_group_project",
+        "title": "Pairs and Problems",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "maya",
+          "jordan",
+          "ms_rivera"
+        ],
+        "duration": 2,
+        "description": "Ms. Rivera announces a group project due in two days. The room reorganizes along the day's social lines - and the player has to decide how to approach it: play it safe with the popular crowd's efficient-but-shallow plan, dive into Jordan's ambitious creative idea, or try to bridge both groups together.",
+        "emotionalBeat": "The day's choices crystallizing into a real decision with stakes",
+        "choicePointId": "choice-4"
+      },
+      {
+        "id": "scene_climax_popular",
+        "title": "Cutting Corners",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "maya",
+          "casey"
+        ],
+        "duration": 2,
+        "description": "The 'easy' plan turns out to mean Casey wants to copy last year's project from an older sibling. Maya shrugs - 'it's just easier this way.' Everyone's looking at the new kid to see if they'll go along.",
+        "emotionalBeat": "The cost of belonging finally comes due",
+        "choicePointId": "choice-5a"
+      },
+      {
+        "id": "scene_climax_authentic",
+        "title": "The Bold Idea",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "ms_rivera"
+        ],
+        "duration": 2,
+        "description": "Jordan's project idea is strange and ambitious - and Ms. Rivera looks skeptical when it's pitched. Jordan glances at the player, needing an ally in front of the class.",
+        "emotionalBeat": "A friend's courage hanging on the player's response",
+        "choicePointId": "choice-5b"
+      },
+      {
+        "id": "scene_climax_bridge",
+        "title": "Two Tables, One Project",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "maya",
+          "jordan",
+          "casey"
+        ],
+        "duration": 2,
+        "description": "Merging the groups sounded good in theory. Now Maya's crew and Jordan clash over direction, voices rising, both sides looking to the player to pick a side - or find a third way.",
+        "emotionalBeat": "The messy, real work of building bridges",
+        "choicePointId": "choice-5c"
+      },
+      {
+        "id": "scene_ending_grow",
+        "title": "Becoming Someone",
+        "location": "Crestwood Academy - Front Steps",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Walking out at the end of the day, the player feels different - not because everyone likes them, but because they know a little more clearly who they are. Maya gives a respectful nod; Jordan falls into step beside them, already planning tomorrow.",
+        "emotionalBeat": "Earned confidence - authenticity that didn't cost belonging",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene_ending_conform",
+        "title": "Fitting In",
+        "location": "Crestwood Academy - Front Steps",
+        "characters": [
+          "player",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "The player leaves surrounded by Maya's group, laughing along, officially part of the crowd. It feels like winning. It also feels like something quiet was left behind in that classroom.",
+        "emotionalBeat": "Bittersweet success - belonging without full honesty",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene_ending_safe",
+        "title": "Staying Small",
+        "location": "Crestwood Academy - Front Steps",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "Nothing went wrong today. Nothing went particularly right either. The player walks home wondering what might have happened if they'd spoken up just a little louder.",
+        "emotionalBeat": "The quiet ache of a chance not fully taken",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene_hallway",
+        "prompt": "Your books are scattered across the floor and people are watching. What do you do?",
+        "context": "First impressions are forming in real time, and everyone reacts differently to being caught off guard.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Laugh it off with a joke and gather your things like it's no big deal.",
+            "nextScene": "scene_maya_intro"
+          },
+          {
+            "id": "b",
+            "text": "Freeze up, mumble an apology, and scramble to clean up alone.",
+            "nextScene": "scene_solo_intro"
+          },
+          {
+            "id": "c",
+            "text": "Focus on the kid who stopped to help, and thank them sincerely.",
+            "nextScene": "scene_jordan_intro"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "CONFIDENCE": -1
+          },
+          "c": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene_cafeteria",
+        "prompt": "Tray in hand, where do you sit?",
+        "context": "Maya's table is loud and welcoming. Jordan sits alone by the window. There's also an empty seat where no one will bother you.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Maya's group.",
+            "nextScene": "scene_lunch_popular"
+          },
+          {
+            "id": "b",
+            "text": "Sit with Jordan.",
+            "nextScene": "scene_lunch_jordan"
+          },
+          {
+            "id": "c",
+            "text": "Sit alone and take stock of the room first.",
+            "nextScene": "scene_lunch_alone"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "ADAPTABILITY": 1,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "EMPATHY": 2
+          },
+          "c": {
+            "CONFIDENCE": -1,
+            "ADAPTABILITY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene_lunch_popular",
+        "prompt": "Casey starts mocking Jordan across the room, and Maya's watching to see how you'll react.",
+        "context": "The easy path is to laugh along. The harder path might cost you standing at this table.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Laugh along - it's just a joke.",
+            "nextScene": "scene_afternoon_popular"
+          },
+          {
+            "id": "b",
+            "text": "Gently redirect the conversation and stick up for Jordan.",
+            "nextScene": "scene_afternoon_defend"
+          },
+          {
+            "id": "c",
+            "text": "Stay quiet and just eat your lunch.",
+            "nextScene": "scene_afternoon_silent"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": -2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "c": {
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3b",
+        "scene": "scene_lunch_jordan",
+        "prompt": "Jordan asks if their sketchbook art is 'too weird' for this school - and actually wants your honest answer.",
+        "context": "This is a small trust test disguised as a casual question.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Give real, specific, encouraging feedback.",
+            "nextScene": "scene_afternoon_defend"
+          },
+          {
+            "id": "b",
+            "text": "Give a quick empty compliment to keep things easy.",
+            "nextScene": "scene_afternoon_silent"
+          },
+          {
+            "id": "c",
+            "text": "Admit you're nervous about fitting in too, and bond over it.",
+            "nextScene": "scene_afternoon_bond"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2
+          },
+          "b": {
+            "ADAPTABILITY": -1,
+            "EMPATHY": -1
+          },
+          "c": {
+            "EMPATHY": 1,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3c",
+        "scene": "scene_lunch_alone",
+        "prompt": "Maya's waving you over on one side. Jordan's giving a hopeful nod on the other. Or you could just stay put.",
+        "context": "No one is pressuring you, which somehow makes the decision feel heavier.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Join Maya's table.",
+            "nextScene": "scene_afternoon_popular"
+          },
+          {
+            "id": "b",
+            "text": "Join Jordan's table.",
+            "nextScene": "scene_afternoon_bond"
+          },
+          {
+            "id": "c",
+            "text": "Stay where you are and finish your lunch alone.",
+            "nextScene": "scene_afternoon_silent"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "ADAPTABILITY": 1,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "EMPATHY": 2
+          },
+          "c": {
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene_group_project",
+        "prompt": "Ms. Rivera assigns a group project. How do you approach it?",
+        "context": "The class is splitting along today's social lines. Your approach here will define what kind of first year this becomes.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Go with the popular crowd's fast, low-effort plan.",
+            "nextScene": "scene_climax_popular"
+          },
+          {
+            "id": "b",
+            "text": "Team up with Jordan on their ambitious, creative idea.",
+            "nextScene": "scene_climax_authentic"
+          },
+          {
+            "id": "c",
+            "text": "Suggest merging both groups to work together.",
+            "nextScene": "scene_climax_bridge"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "CONFIDENCE": 1,
+            "EMPATHY": 1
+          },
+          "c": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 2
+          }
+        }
+      },
+      {
+        "id": "choice-5a",
+        "scene": "scene_climax_popular",
+        "prompt": "Casey wants to copy an old project instead of doing the work. Maya's fine with it. Are you?",
+        "context": "This is the moment the day's easy choices catch up with you.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Go along with it - it's easier this way.",
+            "nextScene": "scene_ending_conform"
+          },
+          {
+            "id": "b",
+            "text": "Speak up for doing it honestly, even if it costs you the group's approval.",
+            "nextScene": "scene_ending_grow"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": -1,
+            "EMPATHY": -1
+          },
+          "b": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-5b",
+        "scene": "scene_climax_authentic",
+        "prompt": "The teacher looks skeptical of Jordan's bold idea, and Jordan needs someone to back them up.",
+        "context": "This is the moment courage either shows up or doesn't.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Back Jordan's idea confidently in front of the class.",
+            "nextScene": "scene_ending_grow"
+          },
+          {
+            "id": "b",
+            "text": "Suggest toning the idea down to something safer.",
+            "nextScene": "scene_ending_safe"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "ADAPTABILITY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-5c",
+        "scene": "scene_climax_bridge",
+        "prompt": "The two groups are clashing and looking to you to resolve it.",
+        "context": "Bridging divides is harder than choosing a side - and more meaningful when it works.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mediate with empathy and find a real compromise.",
+            "nextScene": "scene_ending_grow"
+          },
+          {
+            "id": "b",
+            "text": "Avoid the conflict and let Ms. Rivera decide for everyone.",
+            "nextScene": "scene_ending_safe"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "ADAPTABILITY": -1,
+            "CONFIDENCE": -1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-authentic-growth",
+        "name": "The Authentic Path",
+        "triggeredBy": [
+          "choice-1:c",
+          "choice-2:b",
+          "choice-3b:a",
+          "choice-4:b",
+          "choice-5b:a"
+        ],
+        "description": "The player consistently chooses honesty and connection over approval - befriending Jordan, defending them, and eventually standing up for integrity in the group project.",
+        "outcome": "Ends at scene_ending_grow: the player leaves the day with genuine friendship and a clearer sense of self, having earned belonging without sacrificing authenticity."
+      },
+      {
+        "id": "branch-fit-in",
+        "name": "The Fit-In Path",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-2:a",
+          "choice-3:a",
+          "choice-4:a",
+          "choice-5a:a"
+        ],
+        "description": "The player prioritizes social acceptance with Maya's group at each turn, laughing along even when it costs Jordan, culminating in going along with cutting corners on the project.",
+        "outcome": "Ends at scene_ending_conform: the player is popular but privately aware of compromises made along the way."
+      },
+      {
+        "id": "branch-cautious-safe",
+        "name": "The Safe Path",
+        "triggeredBy": [
+          "choice-1:b",
+          "choice-2:c",
+          "choice-3:c",
+          "choice-3b:b",
+          "choice-5b:b",
+          "choice-5c:b"
+        ],
+        "description": "The player hedges at every turn - staying quiet, avoiding risk, and choosing the safer option even when it means missed connection or missed courage.",
+        "outcome": "Ends at scene_ending_safe: the day passes without incident, but the player is left wondering what they held back."
+      },
+      {
+        "id": "branch-bridge-builder",
+        "name": "The Bridge-Builder Path",
+        "triggeredBy": [
+          "choice-2:c",
+          "choice-3c:a",
+          "choice-4:c",
+          "choice-5c:a"
+        ],
+        "description": "The player refuses to fully commit to either social group, instead trying to connect both worlds - a riskier, more effortful route that pays off if empathy is chosen at the climax.",
+        "outcome": "Can end at scene_ending_grow if mediation succeeds, or scene_ending_safe if the player backs off from the harder work of reconciliation."
+      }
+    ],
+    "emotionalArc": [
+      "Nervous anticipation on arrival",
+      "Sudden exposure and vulnerability in the hallway",
+      "Cautious hope through first connections",
+      "Social pressure testing values at lunch",
+      "Quiet consequence in the afternoon (pride, regret, or warmth)",
+      "Stakes crystallizing in the group project",
+      "A defining moment of courage, conformity, or caution",
+      "Reflective resolution walking home"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from anxious newcomer to someone who has made a defining choice about who they want to be - whether that choice is growth, conformity, or caution."
+      },
+      {
+        "character": "maya",
+        "arc": "Initially reads as a gatekeeper of popularity, but reveals subtle respect for authenticity depending on player choices - she is testing, not just judging."
+      },
+      {
+        "character": "jordan",
+        "arc": "Starts guarded and quietly observant, and either opens up into genuine friendship or remains a missed connection, depending on how they're treated."
+      },
+      {
+        "character": "casey",
+        "arc": "Functions as social pressure incarnate - a fixed obstacle whose teasing forces the player's values into the open."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "hiddenIn": "How the player handles embarrassment, speaks up under social pressure, and backs a friend's idea publicly."
+      },
+      {
+        "trait": "EMPATHY",
+        "hiddenIn": "Whether the player notices and responds to Jordan's vulnerability, and whether they defend someone being mocked."
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "hiddenIn": "How the player navigates competing social groups, especially the bridge-building choices in the cafeteria and group project."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "characters": [
+          "player",
+          "maya"
+        ],
+        "dynamic": "A test of whether belonging requires performance - Maya is warmer to authenticity than she initially appears."
+      },
+      {
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "dynamic": "A slow-building trust that rewards honesty and small kindnesses over performative praise."
+      },
+      {
+        "characters": [
+          "player",
+          "casey"
+        ],
+        "dynamic": "A source of social friction that forces values into visible action rather than private opinion."
+      }
+    ],
+    "replayHooks": [
+      "Players who chose the popular path will wonder what Jordan's storyline and sketchbook reveal looks like.",
+      "The three distinct climax scenes (cutting corners, backing a bold idea, mediating conflict) are only seen individually per playthrough, inviting replay to see all three.",
+      "The bridge-builder path is the hardest to fully succeed at, encouraging replay to find the empathy-driven resolution.",
+      "Small dialogue differences in the afternoon scenes hint at consequences players may not have realized existed."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Model that confidence includes the willingness to speak up even when it risks social standing",
+      "Illustrate empathy as noticing and responding to others' vulnerability, not just avoiding meanness",
+      "Show adaptability as flexibly navigating different social groups without losing one's core values",
+      "Demonstrate that authentic belonging is possible without full conformity"
+    ],
+    "conversationStarters": [
+      "Have you ever had to choose between fitting in and being honest? What did you do?",
+      "What do you think Maya was really testing for when she watched how you reacted to Casey?",
+      "Was it harder to stand up for Jordan or to admit your own nervousness? Why?",
+      "Do you think 'staying safe' is ever the right choice? When?",
+      "If you replayed this day, what would you do differently?"
+    ]
+  },
+  "designNotes": "The episode is built on a three-act cafeteria/hallway/classroom structure that hides trait mapping inside ordinary teenage stakes (where to sit, what to say about a friend's art, whether to speak up in a group project) rather than any overt 'lesson' framing. The three converging afternoon scenes and four converging endings keep the branching manageable while still producing genuinely different emotional experiences. Maya and Casey represent two faces of social pressure (aspirational vs. corrosive), while Jordan represents the quieter reward of authenticity, giving players a clear emotional compass without being preachy about it.",
+  "uncertainties": [
+    "Whether three lunch-table options (Maya/Jordan/alone) create too many parallel branches for a 12-15 minute runtime without feeling repetitive on replay - may need to trim scene_lunch_alone's content in production.",
+    "The bridge-builder path (choice-4:c) is narratively richer but mechanically funnels into the same two endings as other paths; it may need a unique variant ending in a future revision to fully reward that choice.",
+    "Casey is currently a fairly flat antagonist role; depending on season-long character arcs, Casey may need more dimensionality to avoid feeling like a pure obstacle."
+  ],
+  "alternativesConsidered": [
+    "Considered a single linear lunch scene with only one social choice instead of three parallel intro/lunch paths, but this reduced meaningful divergence and made replay less interesting.",
+    "Considered a fourth ending exclusively for the bridge-builder path, but merged it into scene_ending_grow to keep the ending count manageable while preserving thematic payoff for empathy-driven choices.",
+    "Considered making Maya a straightforward 'mean girl' antagonist, but chose to give her a redemptive read (respecting integrity) to avoid a simplistic popular-vs-outsider morality tale."
+  ]
+}

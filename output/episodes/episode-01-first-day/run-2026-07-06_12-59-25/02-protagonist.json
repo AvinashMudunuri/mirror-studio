@@ -1,0 +1,95 @@
+{
+  "character": {
+    "id": "player",
+    "name": "Sam Okafor",
+    "age": 13,
+    "pronouns": "she/her",
+    "appearance": {
+      "brief": "Medium height, brown skin, tight coily hair usually in a half-up puff she fidgets with when nervous. Wears her older cousin's oversized denim jacket almost every day — it still smells like his cologne and she won't admit that's why she wears it.",
+      "distinctiveFeatures": [
+        "A chipped front tooth from a bike accident at age 9, which she covers with her hand when she laughs too hard",
+        "Mismatched shoelaces (one purple, one black) — not a fashion statement, she just lost one and refuses to buy new laces on principle"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "observant",
+        "quick-witted",
+        "guarded",
+        "loyal once earned",
+        "secretly hopeful"
+      ],
+      "bigFiveProfile": {
+        "openness": 7,
+        "conscientiousness": 6,
+        "extraversion": 5,
+        "agreeableness": 6,
+        "neuroticism": 7
+      },
+      "mannerisms": [
+        "Taps out rhythms on her thigh when thinking or stressed (she used to play drums at her old school)",
+        "Makes a joke right before something emotionally honest, like clearing her throat before the real sentence"
+      ],
+      "speechPatterns": [
+        "Uses dry, deadpan humor to deflect ('Cool, cool, love that for me' when something bad happens)",
+        "Trails off mid-sentence when she's about to say something vulnerable, then changes the subject",
+        "Occasionally slips into old-school slang from her last city, then self-corrects when she notices people staring"
+      ],
+      "emotionalTendencies": "Sam processes big feelings by cataloging details — she'll notice the exact color of the lunchroom tile before she lets herself feel scared. She internalizes rejection fast and assumes the worst about her own worth, but she externalizes confidence, which makes her seem tougher than she feels. She cries alone, never in front of people, and considers that a point of pride rather than a wound."
+    },
+    "background": {
+      "family": "Only child, raised primarily by her mom after her parents' divorce two years ago. Moved from Detroit to this new city for her mom's job — the third move in four years. Her dad calls on Sundays but the calls are getting shorter. Her cousin Malik, back in Detroit, was her best friend and the person who taught her drums; she FaceTimes him more than anyone at her new school.",
+      "interests": [
+        "drumming (self-taught, plays on buckets/desks when she doesn't have a kit)",
+        "true crime podcasts",
+        "sneaker customization/drawing on her shoes",
+        "making playlists for specific moods and people"
+      ],
+      "strengths": [
+        "reads social situations fast",
+        "fiercely defends people she cares about",
+        "genuinely funny when she lets her guard down",
+        "adaptable — she's done 'new kid' before and has survival skills"
+      ],
+      "struggles": [
+        "assumes people will leave before they do, so she sometimes leaves first",
+        "struggles to ask for help or admit she's scared",
+        "perfectionist about seeming 'fine,' which isolates her further"
+      ],
+      "secrets": [
+        "She still has Malik's number saved as 'Home' in her phone",
+        "She practiced what to say if someone asked to sit with her at lunch — for three days before school even started"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Get through the first day without embarrassing herself",
+        "Figure out who's actually safe to sit with",
+        "Not let anyone see her cry on day one"
+      ],
+      "unconscious": [
+        "Wants proof that she's worth staying friends with, not just worth being nice to until the next move",
+        "Needs to believe she can be known — really known — without being abandoned"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Casual middle-school vernacular mixed with sharp, sometimes older-sounding observations — she's a kid who's had to grow up a little fast, and it shows in flashes.",
+      "sentenceComplexity": "Short, punchy sentences when joking or deflecting; longer, run-on sentences when she's nervous and overexplaining; single fragments when something actually hits hard.",
+      "emotionalExpressiveness": "Guarded on the surface, leaking honesty through humor and small physical tells (thigh-tapping, tooth-covering). She rarely says 'I'm scared' — she says something adjacent to it and hopes you catch the real meaning.",
+      "examples": [
+        "\"New school, new me, right? Except it's the same me, just with worse shoelaces.\"",
+        "\"I've done this four times. You'd think I'd be good at it by now. I am not good at it.\"",
+        "\"...No, it's fine. It's whatever. Can we talk about something that isn't my entire personality falling apart in real time?\"",
+        "\"I'm not saying I'll cry if you're nice to me. I'm just saying don't be nice to me right now.\""
+      ]
+    },
+    "storyRole": "Player-character protagonist of 'First Bell' — the lens through which the player experiences a first day at Crestwood Academy. Sam's guardedness and hope-under-armor make her choices (who to sit with, what to say, whether to speak up in the group project) feel weighty rather than trivial, because for her, every small social decision is really a referendum on whether she's allowed to belong anywhere again.",
+    "arcPotential": [
+      "Episode 'First Bell': Sam decides whether to attach to the first person who's nice to her (safety), risk honesty with someone who seems different from her old friends (authenticity), or hang back and observe all day (self-protection) — setting the emotional template for how she'll approach the rest of the year.",
+      "Later episode potential: Sam finally invites someone from Crestwood to hear her play drums — the first time she's shown anyone at the new school the 'Detroit version' of herself — testing whether being fully known here is actually survivable.",
+      "Later episode potential: A conflict where Malik visits or calls with news he's found new friends back home, forcing Sam to confront that 'home' isn't a fixed place anymore, and that she has to choose to build one here."
+    ]
+  },
+  "designNotes": "Sam is built around a central contradiction: she performs toughness to protect a very tender, very hopeful core. This makes her ideal as a player-character because her external choices (where to sit, what to say) are legible and dramatizable, while her internal stakes (fear of being left, desperate hope to be truly known) map directly onto the episode's themes of belonging and authenticity. I deliberately gave her a defense mechanism — humor-as-deflection — that's common and recognizable to the 11-14 audience without being a 'lesson' about coping mechanisms; it's just how she talks. Her backstory (multiple moves, parents' divorce, distant cousin) creates real stakes for a 'first day' story without being melodramatic — divorce and moving are extremely common experiences in this age group. Small physical specifics (mismatched laces, chipped tooth, the cousin's jacket) exist to make her feel like an actual kid a player has met, not an archetype. The name Sam Okafor was chosen partly for its gender-neutral first name (broadening player identification) and to avoid resemblance to the excluded ids.",
+  "representationNotes": "Sam is a Black girl from Detroit whose family has experienced economic and geographic instability (three moves in four years) tied to her mother's job — this is grounded in reality without being reduced to a 'struggle narrative'; her race and background inform her voice and specific cultural texture (slang, family dynamics) but her core conflict — fear of not belonging, longing to be truly known — is universal and central to the episode themes, not a 'special issue' the story is about. Care was taken to avoid stereotyping: she's not defined by hardship alone; she's funny, nerdy about true crime, musically talented, and prideful in ways real kids are. Her parents' divorce and long-distance dad relationship are handled as normal, common experiences rather than tragic backstory, to reflect how a large percentage of this age group actually lives."
+}

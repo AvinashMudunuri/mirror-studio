@@ -1,0 +1,90 @@
+{
+  "episode": {
+    "number": 1,
+    "title": "First Bell",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "358792ae-3827-40e4-b575-c93effca2926",
+    "threadId": "b1d17737-ced6-4dc6-9e78-9e9015774024",
+    "startedAt": "2026-07-06T12:59:25.119Z",
+    "completedAt": "2026-07-06T13:11:02.301Z",
+    "totalSeconds": 697.2,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [
+      "childPsychologist",
+      "gameDesigner",
+      "ethicsReviewer"
+    ],
+    "usage": {
+      "calls": 9,
+      "inputTokens": 71586,
+      "outputTokens": 63830,
+      "totalTokens": 135416,
+      "budget": 400000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 7,
+          "inputTokens": 22550,
+          "outputTokens": 56984
+        },
+        "claude-haiku-4-5-20251001": {
+          "calls": 2,
+          "inputTokens": 49036,
+          "outputTokens": 6846
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Sam Okafor",
+      "role": "Player-character protagonist of 'First Bell' — the lens through which the player experiences a first day at Crestwood Academy. Sam's guardedness and hope-under-armor make her choices (who to sit with, what to say, whether to speak up in the group project) feel weighty rather than trivial, because for her, every small social decision is really a referendum on whether she's allowed to belong anywhere again.",
+      "active": true
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Alvarez-Reyes",
+      "role": "Jordan is the quiet counterweight to Maya's social gravity — not a rival for Sam's loyalty, but a mirror for the version of Sam who's afraid to take up space. Jordan's arc across the day (guarded → hopeful → cautiously open → visibly lighter) tracks almost exactly onto whether Sam chooses authenticity, making Jordan the emotional barometer for the player's core choice.",
+      "active": true
+    },
+    {
+      "id": "maya",
+      "name": "Maya Chen-DeLacruz",
+      "role": "Maya is the gravitational center of the 'fitting in' path — not a villain, but a mirror for what Sam could become if she optimizes for belonging over honesty. Maya's own quiet compromises (letting Casey's jokes slide, defaulting to 'easier') give Sam's choices real stakes: siding with Maya's crowd isn't choosing 'bad,' it's choosing comfortable, and Maya herself is proof of what that comfort slowly costs.",
+      "active": true
+    },
+    {
+      "id": "casey",
+      "name": "Casey Doyle",
+      "role": "Casey is the social pressure test disguised as comic relief — the friend whose jokes are the currency Maya's table runs on, and whose targeting of Jordan forces Sam to decide, in real time, whether staying likable is worth staying silent. In 'Cutting Corners,' Casey is revealed not as lazy but as scared — the corner-cutting is armor against a very specific, very personal fear of being caught not-good-enough, which gives Sam (and the player) a harder choice than 'defy the cheater': do you call out someone whose bad choice you suddenly understand?",
+      "active": true
+    },
+    {
+      "id": "ms_rivera",
+      "name": "Ms. Adriana Rivera",
+      "role": "The adult stakes-anchor of 'First Bell' — Ms. Rivera's skepticism toward Jordan's idea is the pressure test for Sam's choice to speak up or stay quiet. She's not an obstacle to defeat; she's a fair but realistic gatekeeper whose doubt is earned by experience, which means winning her over (or failing to) actually means something. She also quietly clocks the social dynamics of the room without ever making it a lecture.",
+      "active": true
+    }
+  ],
+  "finalStatus": "APPROVED",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "PASS",
+    "childPsychologist": "SKIPPED",
+    "gameDesigner": "SKIPPED",
+    "ethicsReviewer": "SKIPPED"
+  },
+  "revisions": [],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "manifest.json"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene 'scene_lunch_alone' includes Maya and Jordan in the characters array, but they do not appear in dialogue — only referenced by the NARRATOR. Consider removing them from the characters list or adding direct dialogue.",
+      "location": "scenes[6].characters",
+      "suggestion": "Either add dialogue from Maya and Jordan, or change characters array to ['player'] to reflect who actually speaks in the scene."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice 'choice-3b' (scene_lunch_jordan) has three options, but only two of them lead to distinct scenes: options 'a' and 'c' both lead to different scenes (scene_afternoon_defend vs scene_afternoon_bond), but option 'b' leads to scene_afternoon_silent. The naming and framing suggest these should be more clearly differentiated in the prompt or context.",
+      "location": "choices[3]",
+      "suggestion": "The options are mechanically distinct, but the prompt ('Jordan asks if their sketchbook art is too weird') could be clearer about what each response actually communicates. Current framing is fine, but consider whether option 'b' ('quick empty compliment') adequately represents the 'silent' path."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The 'branchDialogue' array includes entries for 'scene_ending_safe' with two different branchIds ('branch-cautious-safe' and 'branch-bridge-builder'), but the outcomes array only defines 'branch-cautious-safe' and 'branch-bridge-builder' as separate outcomes. The branchDialogue for 'scene_ending_safe' under 'branch-bridge-builder' (bbsaf-1 through bbsaf-4) suggests a player could reach this scene via the bridge-builder path, but the outcomes definition shows bridge-builder can end at either scene_ending_grow OR scene_ending_safe. This is mechanically correct but could be clearer in documentation.",
+      "location": "branchDialogue[4] and outcomes[2]",
+      "suggestion": "Add a note in the outcomes description clarifying that 'branch-bridge-builder' has two possible endings depending on the final choice (choice-5c). Current structure is valid; this is a documentation clarity issue only."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "The episode contains 16 scenes, 9 choices, and 4 major outcome branches. This is a solid, manageable scope. However, the branching structure creates 4 distinct narrative paths, which is appropriate for the target age and play time (13 minutes estimated). No performance concern, but note that future episodes in this season may want to track which branch the player is on for continuity.",
+      "location": "outcomes array",
+      "suggestion": "Consider adding a 'branchTracking' field to the episode metadata if future episodes will reference which path the player took in 'First Bell.' Current structure does not require this, but it may be useful for Season 1 continuity."
+    },
+    {
+      "category": "STYLE",
+      "message": "The 'choiceDialogue' array provides response dialogue for choices, but this dialogue is not explicitly linked to the scenes that follow. The structure assumes the rendering pipeline will insert these responses between the choice and the next scene. Verify that your rendering system handles this correctly.",
+      "location": "choiceDialogue array",
+      "suggestion": "Document the expected behavior: choiceDialogue entries should be rendered immediately after the player selects an option, before the next scene begins. If this is not how your pipeline works, restructure choiceDialogue into the scenes themselves."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene 'scene_group_project' has a 'choicePointId' field ('choice-4') but also includes a 'transition' object with 'choiceId' and 'nextScenes' array. Both fields are present and consistent, which is correct per the data model, but this redundancy could be simplified. The 'choicePointId' field appears to be informational only; the actual routing happens via the choice's 'nextScene' values.",
+      "location": "scenes[13].choicePointId and scenes[13].transition",
+      "suggestion": "This is not an error — both fields are present and consistent. However, if 'choicePointId' is purely informational, consider whether it adds value or creates maintenance burden. Current structure is valid."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The 'estimatedPlayTime' is listed as 13 minutes. Given the episode has 16 scenes with durations ranging from 1-2 minutes each, and assuming some scenes overlap or play concurrently, this estimate appears reasonable. However, no explicit calculation is shown. Verify this estimate against actual playtest data.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Document how the 13-minute estimate was calculated (e.g., sum of scene durations, average playtest time, etc.) for future reference and validation."
+    }
+  ],
+  "summary": {
+    "totalChecks": 42,
+    "passedChecks": 42,
+    "failedChecks": 0,
+    "warningCount": 7
+  },
+  "recommendations": [
+    "CONTINUITY PLANNING: This episode establishes four distinct narrative branches (Authentic Growth, Fit-In, Safe, Bridge-Builder). For Season 1 Episode 2, consider how each branch affects Sam's relationships with Jordan, Maya, and Casey. The 'branch-fit-in' ending leaves Jordan isolated; the 'branch-authentic-growth' and 'branch-bridge-builder' endings strengthen that friendship. Future episodes should reflect these divergent starting states.",
+    "CHARACTER ARC TRACKING: The character profiles (especially Sam, Jordan, and Maya) contain rich 'arcPotential' sections that hint at future episodes. Consider creating a Season 1 outline that maps these arcs across 6-8 episodes, ensuring each character's growth is paced and earned.",
+    "TRAIT SYSTEM VALIDATION: The episode targets CONFIDENCE, EMPATHY, and ADAPTABILITY. Verify that the trait-mapping in choices actually moves these traits in meaningful ways across all four branches. For example, the 'branch-fit-in' path should show CONFIDENCE and EMPATHY declining, while ADAPTABILITY stays neutral or rises slightly. Run a playtest to confirm trait deltas feel earned.",
+    "DIALOGUE AUTHENTICITY: The dialogue is strong and age-appropriate, with good voice differentiation. However, some of Sam's internal monologue uses phrases like 'no cap' (Casey's speech pattern) and 'built different' (Maya's speech pattern). Ensure Sam's voice remains distinct even when she's absorbing peer language. Current dialogue is fine, but watch for voice-bleed in future episodes.",
+    "SCENE PACING: The episode moves through 8 hours of a school day in 16 scenes. The pacing is tight and appropriate for the target age. However, scenes like 'scene_cafeteria' (the lunch decision) and 'scene_group_project' (the project decision) are high-stakes moments that might benefit from slightly more dialogue or internal monologue to give players time to feel the weight of the choice. Consider adding 1-2 lines of INTERNAL dialogue before each major choice to heighten tension.",
+    "BRANCHING COVERAGE: All four outcome branches are reachable and mechanically sound. However, verify in playtesting that the 'branch-bridge-builder' path (choice-4:c → choice-5c) feels as rewarding as the other paths. Bridge-building is harder narratively and mechanically; ensure the payoff (scene_ending_grow dialogue) justifies the effort.",
+    "EDUCATIONAL GOALS ALIGNMENT: The episode's educational goals (confidence, empathy, adaptability, authentic belonging) are well-integrated into the narrative. However, the 'branch-fit-in' ending (scene_ending_conform) does not explicitly teach the cost of conformity — it's implied through Sam's internal monologue ('why's there this — thing. This little leftover thing'). Consider whether this is sufficiently clear for the target age, or whether a follow-up scene/dialogue would strengthen the lesson.",
+    "METADATA COMPLETENESS: All required fields are present and valid. The episode is marked as 'DRAFT' status, which is appropriate. Before moving to 'IN_REVIEW', ensure: (1) all dialogue has been read aloud for authenticity, (2) the branching logic has been playtested with at least 3 different choice sequences, (3) the estimated play time has been validated against actual playtests, and (4) the character profiles have been reviewed by sensitivity readers for age-appropriateness and cultural authenticity (particularly for Sam Okafor and Jordan Alvarez-Reyes).",
+    "RENDERING PIPELINE COMPATIBILITY: The episode uses 'choiceDialogue' and 'branchDialogue' arrays that are not embedded in scenes. Confirm your rendering pipeline correctly handles: (1) inserting choiceDialogue responses after a choice is selected, (2) selecting the correct branchDialogue variant based on the player's choice history, and (3) transitioning smoothly from dialogue to the next scene. If your pipeline does not support this structure, restructure these arrays into the scenes themselves.",
+    "ACCESSIBILITY NOTE: The episode contains references to visual art (Jordan's sketchbook, diorama project) and relies heavily on social reading (reading a room, noticing who's watching). For audio-only or screen-reader accessibility, consider adding descriptions of visual moments (e.g., 'Jordan's sketchbook is full of strange, striking creatures') and clarifying social cues through dialogue or internal monologue rather than relying solely on narrator description."
+  ]
+}
