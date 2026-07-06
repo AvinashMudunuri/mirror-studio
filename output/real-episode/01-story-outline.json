@@ -1,0 +1,402 @@
+{
+  "episodeOutline": {
+    "title": "Table for One",
+    "synopsis": "It's your first day at Brightwater High, and every hallway, glance, and lunch table feels like a test. When you witness a classmate being quietly excluded, you have to decide what kind of person you're going to be here — the one who fits in, or the one who's real. Small choices about where to sit and who to stand up for ripple into who you become by the final bell.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "New Halls",
+        "location": "Brightwater High - Main Hallway",
+        "characters": [
+          "PLAYER"
+        ],
+        "duration": 1.5,
+        "description": "Player navigates a chaotic hallway on the first day, locker combination not working, schedule crumpled, everyone else already seems to know where they belong. Small ambient choices (not major branch points) let the player express nervous energy through action.",
+        "emotionalBeat": "Disorientation and vulnerability - the universal 'new kid' feeling."
+      },
+      {
+        "id": "scene-2",
+        "title": "The Cafeteria Map",
+        "location": "Cafeteria",
+        "characters": [
+          "PLAYER",
+          "MAYA",
+          "JORDAN"
+        ],
+        "duration": 2,
+        "description": "Player enters the cafeteria holding a tray. Maya, effortlessly confident, waves from a bustling table. Jordan sits alone at the end of a long table, sketching in a notebook, clearly used to being overlooked. The player must decide where to sit - this is the episode's first major fork.",
+        "emotionalBeat": "The anxiety of first-impression stakes - who will I be seen as?"
+      },
+      {
+        "id": "scene-3",
+        "title": "Partner Assignment",
+        "location": "Classroom - Ms. Rivera's Room",
+        "characters": [
+          "PLAYER",
+          "MAYA",
+          "JORDAN",
+          "TYLER",
+          "MS_RIVERA"
+        ],
+        "duration": 2,
+        "description": "Ms. Rivera announces a paired project. Depending on lunch choice, the player has different relationships already forming. Tyler, loud and status-conscious, jockeys to be near Maya. The player can request a partner or accept what's assigned.",
+        "emotionalBeat": "Social maneuvering - the quiet game of alliances forming in real time."
+      },
+      {
+        "id": "scene-4",
+        "title": "The Joke",
+        "location": "Classroom - Project Workshop Corner",
+        "characters": [
+          "PLAYER",
+          "JORDAN",
+          "TYLER",
+          "MAYA"
+        ],
+        "duration": 2.5,
+        "description": "Working on the project, Jordan shares a genuinely creative idea. Tyler mocks it in front of the group, and a few kids laugh. Jordan shrinks. This is the moral center of the episode - a public choice with social risk.",
+        "emotionalBeat": "Moral tension - the cost of doing the right thing in front of an audience."
+      },
+      {
+        "id": "scene-5",
+        "title": "After the Bell",
+        "location": "Courtyard Bench",
+        "characters": [
+          "PLAYER",
+          "JORDAN"
+        ],
+        "duration": 2,
+        "description": "If the player has any connection with Jordan, this quiet scene deepens it - Jordan opens up about moving schools three times and never quite landing anywhere. If the player has ignored Jordan, this scene instead shows Jordan alone, and the player can choose to approach or walk past.",
+        "emotionalBeat": "Vulnerability offered - a genuine human moment beneath the social noise."
+      },
+      {
+        "id": "scene-6",
+        "title": "The Invitation",
+        "location": "Hallway near Lockers",
+        "characters": [
+          "PLAYER",
+          "MAYA",
+          "JORDAN"
+        ],
+        "duration": 1.5,
+        "description": "Maya invites the player to an exclusive after-school hangout with her group - but Jordan is pointedly not invited. The player must decide how to respond, right in front of both of them.",
+        "emotionalBeat": "The crossroads - belonging offered at a price."
+      },
+      {
+        "id": "scene-7",
+        "title": "Tomorrow's Table",
+        "location": "Player's Bedroom / Hallway Flash-forward",
+        "characters": [
+          "PLAYER"
+        ],
+        "duration": 1,
+        "description": "A short reflective epilogue - the player imagines walking into the cafeteria tomorrow and chooses, one more time, who to sit with. This choice locks in the emotional resolution and previews the season's social landscape.",
+        "emotionalBeat": "Quiet resolve - the exhale after a long first day, and the first real choice about identity."
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2",
+        "prompt": "Where do you sit?",
+        "context": "Maya's table is loud, warm, and clearly the center of gravity in the room. Jordan sits alone, doodling, not looking up. You have about three seconds before it gets weird.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Walk right up to Maya's table like you belong there."
+          },
+          {
+            "id": "b",
+            "text": "Sit across from Jordan - better one conversation than none."
+          },
+          {
+            "id": "c",
+            "text": "Hover by the tray return and see who waves you over."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "EMPATHY": 2
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-3",
+        "prompt": "Ms. Rivera asks if anyone wants to choose their own partner before she assigns randomly.",
+        "context": "Maya is already looking your way, half-smiling. Jordan hasn't looked up from their notebook. Tyler is loudly lobbying to partner with Maya.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Raise your hand and ask to partner with Jordan."
+          },
+          {
+            "id": "b",
+            "text": "Stay quiet and let Ms. Rivera assign partners."
+          },
+          {
+            "id": "c",
+            "text": "Ask to join Maya's group since you already know her."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 2
+          },
+          "c": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-4",
+        "prompt": "Tyler mocks Jordan's idea in front of the group and a few kids snicker.",
+        "context": "Jordan's face goes red. Everyone's eyes are on the table now, including yours. Whatever you do next, people will remember it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speak up - tell Tyler the idea is actually good."
+          },
+          {
+            "id": "b",
+            "text": "Laugh along so you don't stick out."
+          },
+          {
+            "id": "c",
+            "text": "Change the subject and steer the group back to work."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 2
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "EMPATHY": -2
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-5",
+        "prompt": "Jordan admits they've moved schools three times and never really found their place.",
+        "context": "It's quiet. No audience, no social risk - just the two of you and whatever you choose to do with what Jordan just handed you.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Share that you've felt like an outsider too."
+          },
+          {
+            "id": "b",
+            "text": "Reassure them quickly, then change the subject."
+          },
+          {
+            "id": "c",
+            "text": "Just sit with it and let Jordan keep talking."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 1,
+            "EMPATHY": -1
+          },
+          "c": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-6",
+        "prompt": "Maya invites you to hang out with her group after school - Jordan is standing right there, clearly not invited.",
+        "context": "This is the kind of invitation that decides seating charts for the rest of the year. Jordan is pretending to look at their phone.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Accept the invite - this is your shot at fitting in."
+          },
+          {
+            "id": "b",
+            "text": "Ask if Jordan can come too."
+          },
+          {
+            "id": "c",
+            "text": "Politely decline - you already have plans with Jordan."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -2
+          },
+          "b": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1,
+            "CONFIDENCE": 1
+          },
+          "c": {
+            "EMPATHY": 2,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-6",
+        "scene": "scene-7",
+        "prompt": "Tomorrow, where will you sit?",
+        "context": "The first day is over. Nobody's watching now - just you, deciding what you actually want the rest of this year to look like.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit wherever felt most like yourself today."
+          },
+          {
+            "id": "b",
+            "text": "Sit wherever gets you the most social traction."
+          },
+          {
+            "id": "c",
+            "text": "Float between groups and keep your options open."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 1
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "ADAPTABILITY": -1
+          },
+          "c": {
+            "ADAPTABILITY": 2
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "name": "Authentic Connector",
+        "trigger": "Majority empathy-positive choices (choice-1b, choice-2a, choice-3a/c, choice-4a/c, choice-5b/c)",
+        "description": "The player builds a real, if slower-forming, friendship with Jordan. Maya remains a cordial but distant acquaintance. Tyler becomes a mild recurring antagonist. Ends with quiet confidence in an unglamorous but genuine first day."
+      },
+      {
+        "name": "Status Seeker",
+        "trigger": "Majority confidence-heavy, empathy-negative choices (choice-1a, choice-2c, choice-3b, choice-5a, choice-6b)",
+        "description": "The player is folded into Maya's group quickly and enjoys visible social wins, but Jordan quietly withdraws, and Tyler treats the player as an ally. Ends with a hollow, unsettled version of 'success.'"
+      },
+      {
+        "name": "Adaptive Drifter",
+        "trigger": "Majority adaptability-heavy, low-commitment choices (choice-1c, choice-2b, choice-3c, choice-4b, choice-6c)",
+        "description": "The player stays likable and non-committal across groups, avoiding conflict but also avoiding real connection. Both Maya and Jordan see the player as friendly but unknowable. Sets up a season-long question of what the player actually stands for."
+      }
+    ],
+    "emotionalArc": [
+      {
+        "beat": "Disorientation",
+        "scene": "scene-1",
+        "description": "The universal ache of not knowing where you fit yet."
+      },
+      {
+        "beat": "Anticipation",
+        "scene": "scene-2",
+        "description": "The held breath before a defining first choice."
+      },
+      {
+        "beat": "Maneuvering",
+        "scene": "scene-3",
+        "description": "Realizing alliances are already forming, whether you engage or not."
+      },
+      {
+        "beat": "Moral tension",
+        "scene": "scene-4",
+        "description": "The gap between the easy thing and the right thing, in public."
+      },
+      {
+        "beat": "Vulnerability",
+        "scene": "scene-5",
+        "description": "A private moment that reveals what the day's choices actually cost or built."
+      },
+      {
+        "beat": "Crossroads",
+        "scene": "scene-6",
+        "description": "Belonging explicitly offered at the price of someone else."
+      },
+      {
+        "beat": "Resolve",
+        "scene": "scene-7",
+        "description": "A quiet, private reckoning with who you're choosing to be."
+      }
+    ],
+    "characterArcs": [
+      {
+        "character": "PLAYER",
+        "arc": "Moves from anxious uncertainty toward a self-defined sense of belonging - or a socially validated but hollow one, depending on choices."
+      },
+      {
+        "character": "JORDAN",
+        "arc": "Begins guarded and resigned to invisibility; if supported, opens up and becomes a genuine ally; if ignored, recedes further into isolation, foreshadowing later-season stakes."
+      },
+      {
+        "character": "MAYA",
+        "arc": "Presented as effortlessly confident, but subtle cues (a flicker of relief when the player picks her table, a glance at Jordan she can't quite explain) hint she's performing belonging too - a thread for future episodes."
+      },
+      {
+        "character": "TYLER",
+        "arc": "Static within this episode - a pressure-test character whose mockery reveals what the player values under social risk. His arc pays off in later episodes."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "hiddenIn": "Choices about approaching people, speaking up in front of a group, and defining identity independent of social reward."
+      },
+      {
+        "trait": "EMPATHY",
+        "hiddenIn": "Choices about noticing and responding to Jordan's isolation, defending someone at personal cost, and how the player handles Jordan's vulnerable disclosure."
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "hiddenIn": "Choices about navigating ambiguous social situations, de-escalating conflict, and staying flexible across competing social invitations."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "Player & Jordan",
+        "dynamic": "Starts as a passive, easily-missed connection; deepens into genuine friendship or quietly dissolves, depending on early attentiveness."
+      }
+    ]
+  }
+}

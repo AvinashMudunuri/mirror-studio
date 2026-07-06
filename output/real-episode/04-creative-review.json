@@ -1,0 +1,44 @@
+{
+  "decision": "NEEDS_REVISION",
+  "creativeNotes": "There's a solid premise buried here — the collision between an authentic connection and a magnetic social invitation is a classic setup for a reason, and it maps well onto the season's educational goals. But right now this is a skeleton, not an episode. There are no scenes, no dialogue, no named characters, no actual choice architecture. I can't evaluate whether the emotional beats are earned because none exist yet on the page. What I can evaluate is the premise and structural intent, and on that level it's promising but dangerously generic. 'New kid at school torn between the popular table and the quirky outsider' is one of the most well-worn tracks in middle-grade/YA fiction — that's not disqualifying, but it means the execution has to bring something specific: a distinct voice, a specific school culture, textured secondary characters, and dialogue that doesn't sound like it was written by an adult's idea of what 13-year-olds say. Right now none of that specificity exists. I need named characters, a real hallway, a real cafeteria table with real social dynamics, and dialogue drafts before I can sign off.",
+  "specificFeedback": {
+    "story": [
+      "No scenes are drafted — I need the actual beat-by-beat structure: first bell, first hallway encounter, first class, lunch table decision point, and the closing choice moment.",
+      "The 'invitation into the magnetic social circle' needs a concrete inciting moment — who invites the player, why, and what's the specific cost of accepting vs. declining? Right now it's abstract.",
+      "Consider giving the awkward new student a name and a specific, non-cliché awkwardness — not just 'nervous new kid' but something textured (obsessive about a niche hobby, blunt to the point of social miscalibration, etc.) so the connection feels earned rather than assigned.",
+      "The ending shouldn't just be 'you chose a table.' Give us a beat afterward — a text, a look across the cafeteria, a small consequence — that shows belonging is provisional and built over time, per the theme."
+    ],
+    "character": [
+      "No characters are named or characterized yet. The 'popular table' crowd needs at least one person who complicates the stereotype — not just gatekeepers, but someone with actual interiority we glimpse even briefly.",
+      "The awkward new student shouldn't be a device for the player's growth — they need their own want and stakes independent of whether the player befriends them.",
+      "Player-protagonist's own internal first-day anxiety needs a specific texture — what does THIS kid fear specifically (being invisible? being mislabeled? repeating an old mistake from their last school?) rather than generic first-day nerves."
+    ],
+    "dialogue": [
+      "No dialogue drafted yet — flag for next pass: avoid TV-writer-room slang that dates fast ('bet,' 'no cap' overuse). Aim for rhythm and character-specific speech patterns over trying to sound 'current.'",
+      "Give the popular-table leader a line that reveals unexpected depth or unexpected coldness — avoid one-dimensional 'mean girl/guy' shorthand.",
+      "The awkward student's dialogue should reveal charm through specificity, not through clumsiness alone — clumsy-but-lovable is a trope; give them something they're unexpectedly great at or confident about."
+    ],
+    "tone": [
+      "Synopsis leans into 'test' framing for every space (hallway, seat, lunch table) — good tension, but be careful this doesn't tip into anxiety-porn. Middle schoolers navigating real fear should also get moments of levity, absurdity, joy.",
+      "Make sure the 'choice-driven belonging' theme doesn't moralize — avoid making the popular kids purely a cautionary tale and the outsider purely a moral lesson. Real social dynamics are messier."
+    ]
+  },
+  "inspirationReferences": [
+    {
+      "type": "FILM",
+      "title": "Eighth Grade",
+      "reasoning": "Nails the specific texture of early-teen social anxiety without condescension — useful model for authentic discomfort rather than generic 'first day nerves.'"
+    },
+    {
+      "type": "BOOK",
+      "title": "The Thing About Jellyfish by Ali Benjamin",
+      "reasoning": "Handles a socially awkward middle-school character with real interiority and specificity rather than trope-driven quirkiness."
+    },
+    {
+      "type": "TV",
+      "title": "Diary of a Future President",
+      "reasoning": "Balances multiple friend groups and social dynamics at a middle school with warmth and specificity, avoiding cliché popular-kid archetypes."
+    }
+  ],
+  "revisionPriority": "HIGH"
+}

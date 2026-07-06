@@ -1,0 +1,246 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1",
+      "lines": [
+        {
+          "id": "s1-l1",
+          "character": "narrator",
+          "text": "",
+          "action": "The hallway is loud with a school's worth of inside jokes you don't get yet. A girl peels off from a cluster by the lockers and angles toward you, unhurried, like she's got all day."
+        },
+        {
+          "id": "s1-l2",
+          "character": "maya",
+          "text": "Okay, new-kid energy is unmistakable. You've got the 'is this even the right building' face.",
+          "emotion": "amused",
+          "action": "leans against the lockers, arms loosely crossed"
+        },
+        {
+          "id": "s1-l3",
+          "character": "maya",
+          "text": "I'm Maya. Chen — there's apparently four Mayas in this grade now, it's a whole thing, don't ask.",
+          "emotion": "wry"
+        },
+        {
+          "id": "s1-l4",
+          "character": "maya",
+          "text": "New kid, huh? Let's see what you've got.",
+          "emotion": "appraising",
+          "action": "tilts her head, small challenging smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2",
+      "lines": [
+        {
+          "id": "s2-l1",
+          "character": "ms_alvarez",
+          "text": "Morning — find a seat, we're starting in two minutes.",
+          "action": "doesn't look up from her desk, already grading something"
+        },
+        {
+          "id": "s2-l2",
+          "character": "maya",
+          "text": "Hey — over here, plenty of room.",
+          "emotion": "friendly",
+          "action": "waves from the back row without really looking up from her phone"
+        },
+        {
+          "id": "s2-l3",
+          "character": "jordan",
+          "text": "...hi.",
+          "emotion": "guarded",
+          "action": "barely glances up from a sketchbook, pencil still moving"
+        },
+        {
+          "id": "s2-l4",
+          "character": "narrator",
+          "text": "",
+          "action": "Two open seats. One in the back, orbiting Maya's group. One by the window, next to Jordan, who's clearly stopped expecting anyone to take it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3",
+      "lines": [
+        {
+          "id": "s3-l1",
+          "character": "ms_alvarez",
+          "text": "Time for partners — semester project, no do-overs, so let's let fate decide.",
+          "action": "shakes a jar of folded slips"
+        },
+        {
+          "id": "s3-l2",
+          "character": "ms_alvarez",
+          "text": "...and Jordan Reyes, you're with our newest Hawk."
+        },
+        {
+          "id": "s3-l3",
+          "character": "jordan",
+          "text": "Oh. Okay. Cool. I mean — that's cool.",
+          "emotion": "surprised, trying not to show how surprised",
+          "action": "sits up a little straighter"
+        },
+        {
+          "id": "s3-l4",
+          "character": "tyler",
+          "text": "Careful, that kid's project ideas are weird. You sure you want to actually try?",
+          "emotion": "smirking",
+          "action": "leans over from the next desk, just loud enough for Jordan to hear too"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4",
+      "lines": [
+        {
+          "id": "s4-l1",
+          "character": "tyler",
+          "text": "Oh my— what IS that. Reyes, did your lunch just declare war on the room?",
+          "emotion": "performing for an audience",
+          "action": "leans back dramatically, fanning the air"
+        },
+        {
+          "id": "s4-l2",
+          "character": "narrator",
+          "text": "",
+          "action": "A couple of kids at the table laugh. Not everyone. Enough."
+        },
+        {
+          "id": "s4-l3",
+          "character": "jordan",
+          "text": "...it's, um. It's my grandmother's. It's just—",
+          "emotion": "mortified",
+          "action": "fork frozen halfway to his mouth, ears going red"
+        },
+        {
+          "id": "s4-l4",
+          "character": "tyler",
+          "text": "It's just WHAT, man, it smells like a chemistry experiment—",
+          "emotion": "gleeful"
+        },
+        {
+          "id": "s4-l5",
+          "character": "narrator",
+          "text": "",
+          "action": "The laughter swells. Maya's not laughing. She's looking at you. So is everyone else, without quite admitting it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5",
+      "lines": [
+        {
+          "id": "s5-l1",
+          "character": "maya",
+          "text": "Hey — so, some of us do courtyard lunch tomorrow. Real food, less Tyler being Tyler. You in?",
+          "emotion": "casual, but watching for the answer",
+          "action": "catches up with you in the hallway after the bell"
+        },
+        {
+          "id": "s5-l2",
+          "character": "jordan",
+          "text": "...there's, um. Robotics club. After school today. It's not — you don't have to. I just thought I'd mention it. In case.",
+          "emotion": "bracing for no",
+          "action": "hovers a few feet away, notebook hugged to his chest"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6",
+      "lines": [
+        {
+          "id": "s6-l1",
+          "character": "narrator",
+          "text": "",
+          "action": "The courtyard's gone gold and quiet, the day emptying out of it. Ms. Alvarez finds you before you find the door."
+        },
+        {
+          "id": "s6-l2",
+          "character": "ms_alvarez",
+          "text": "So — how was your first day, really?",
+          "emotion": "genuinely asking, not performing concern",
+          "action": "sits on the edge of the bench, doesn't crowd you"
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oh, I've got plenty. You just haven't seen it yet."
+        },
+        {
+          "id": "b",
+          "text": "Honestly? Terrified. Ten out of ten, would not recommend."
+        },
+        {
+          "id": "c",
+          "text": "*give a short, guarded nod and keep walking*"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "resp-a-1",
+            "character": "maya",
+            "text": "Oh, we've got a live one.",
+            "emotion": "delighted, slightly surprised",
+            "action": "grins, pushes off the lockers"
+          },
+          {
+            "id": "resp-a-2",
+            "character": "maya",
+            "text": "I like it. Don't let it go to your head, though. Not on day one.",
+            "emotion": "teasing"
+          }
+        ],
+        "b": [
+          {
+            "id": "resp-b-1",
+            "character": "maya",
+            "text": "Honestly? Everybody's terrified first day. They're just better liars about it.",
+            "emotion": "softer than before",
+            "action": "corner of her mouth twitches, almost a real smile"
+          },
+          {
+            "id": "resp-b-2",
+            "character": "maya",
+            "text": "You get points for skipping the lying part.",
+            "emotion": "approving"
+          }
+        ],
+        "c": [
+          {
+            "id": "resp-c-1",
+            "character": "maya",
+            "text": "Tough crowd. Okay. Suit yourself.",
+            "emotion": "eyebrow raised, unbothered on the surface",
+            "action": "watches you go a beat longer than she needs to"
+          },
+          {
+            "id": "resp-c-2",
+            "character": "maya",
+            "text": "...See you around, new kid.",
+            "emotion": "quieter, almost to herself"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "*head for the seat near Maya's group*"
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Dialogue generated successfully."
+}

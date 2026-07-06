@@ -233,7 +233,7 @@ Characters: ${episode.characters?.length ?? 0}
 Full Episode Data: ${JSON.stringify(episode, null, 2)}
 
 CHARACTERS:
-${characters.map(c => `- ${c.name}: ${c.personality.coreTraits.join(', ')}`).join('\n')}
+${characters?.length > 0 ? characters.map(c => `- ${c.name}: ${c.personality.coreTraits.join(', ')}`).join('\n') : 'No characters provided'}
 
 WORLD:
 ${world.description}

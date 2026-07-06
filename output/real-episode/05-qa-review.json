@@ -1,0 +1,91 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "COMPLETENESS",
+      "message": "Episode contains no scenes. This is a stub with no actual playable content.",
+      "location": "episode.scenes",
+      "expectedValue": "Array of at least 1+ scene objects with id, title, synopsis, content, character references, and choice links",
+      "actualValue": "[]",
+      "fix": "Author the scene content for this episode before it can proceed past DRAFT status."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "COMPLETENESS",
+      "message": "Episode contains no choices, meaning no branching logic exists.",
+      "location": "episode.choices",
+      "expectedValue": "Array of choice objects tied to scenes, each with options",
+      "actualValue": "[]",
+      "fix": "Add choice structures corresponding to the synopsis's described decision points (e.g., new student vs. popular clique)."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "COMPLETENESS",
+      "message": "Episode contains no outcomes, so trait changes and narrative consequences cannot be validated or applied.",
+      "location": "episode.outcomes",
+      "expectedValue": "Array of outcome objects referencing choices and applying targetTraits changes",
+      "actualValue": "[]",
+      "fix": "Define outcomes for each choice, including trait deltas and narrative text."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Cannot verify branching logic, reachability, or dead ends because scenes/choices/outcomes are empty.",
+      "location": "episode.scenes / episode.choices / episode.outcomes",
+      "expectedValue": "A traceable path from scene 1 through choices to outcomes and an ending state",
+      "actualValue": "No content to trace",
+      "fix": "Populate content, then re-submit for branching logic validation."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Only one character (Maya, the protagonist) is provided, but the synopsis references 'an awkward new student' and 'the school's most magnetic social circle' — these characters do not exist in the CHARACTERS IN EPISODE list.",
+      "location": "characters[]",
+      "expectedValue": "Character objects for the awkward new student and members of the social circle referenced in synopsis",
+      "actualValue": "Only protagonist-maya-osei-park-001 present",
+      "fix": "Add character definitions for all named/implied characters referenced in the synopsis before scene authoring, so scene dialogue can correctly reference valid character IDs."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Target traits (CONFIDENCE, EMPATHY, ADAPTABILITY) cannot be verified as actually impacted anywhere, since there are no choices/outcomes.",
+      "location": "episode.targetTraits",
+      "expectedValue": "Each targetTrait should map to at least one choice/outcome trait change",
+      "actualValue": "No choices/outcomes exist to reference these traits",
+      "fix": "Once choices/outcomes are authored, ensure each targetTrait is exercised at least once with a reasonable changeAmount (-3 to 3)."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Episode themes ('Belonging', 'Authenticity', 'First Impressions') partially diverge from world themes ('Belonging', 'Authenticity', 'Friendship', 'Identity'); 'First Impressions' is not a world-level theme.",
+      "location": "episode.themes",
+      "suggestion": "Confirm this is intentional sub-theming, or align more closely with world-level themes for consistency across the season."
+    },
+    {
+      "category": "STYLE",
+      "message": "createdAt and updatedAt are identical, which is expected for a new draft but should be tracked/updated as work progresses.",
+      "location": "episode.createdAt / episode.updatedAt",
+      "suggestion": "Ensure updatedAt is bumped on every subsequent edit pass."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Status is DRAFT, which is appropriate given the missing scenes/choices/outcomes, but flagging to ensure this episode is not accidentally promoted to IN_REVIEW or APPROVED before content is added.",
+      "location": "episode.status",
+      "suggestion": "Add a pipeline gate preventing status transitions when scenes/choices/outcomes arrays are empty."
+    }
+  ],
+  "summary": {
+    "totalChecks": 25,
+    "passedChecks": 10,
+    "failedChecks": 6,
+    "warningCount": 3
+  },
+  "recommendations": [
+    "This episode is currently a metadata/premise shell only — no actual playable content exists. Treat this submission as a planning document, not a review-ready build.",
+    "Before next review pass, author: (1) full scene list matching the synopsis beats, (2) choice points at key decision moments (new student vs. social circle), (3) outcomes with trait deltas for CONFIDENCE/EMPATHY/ADAPTABILITY, (4) character sheets for the new student and clique members.",
+    "Once populated, re-run full QA pass focusing especially on branching reachability and trait mechanics verification.",
+    "Consider adding an 'intended scene count' or outline field to draft-stage episodes so QA can distinguish 'intentionally empty draft' from 'accidentally incomplete submission.'"
+  ]
+}
