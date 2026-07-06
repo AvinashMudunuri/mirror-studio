@@ -15,6 +15,7 @@ export * from './creative-director';
 export * from './qa-reviewer';
 export * from './child-psychologist';
 export * from './game-designer';
+export * from './ethics-reviewer';
 
 // Types
 export type { AgentConfig, AgentContext } from './base-agent-v2';

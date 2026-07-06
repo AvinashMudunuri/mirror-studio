@@ -96,6 +96,12 @@ export const AGENT_MODELS = {
     temperature: 0.6, // Balanced - needs consistency with creative insight
     maxTokens: LLM_CONFIG.maxTokens.medium,
   },
+  
+  ETHICS_REVIEWER: {
+    model: LLM_CONFIG.defaultModels.anthropic,
+    temperature: 0.4, // Low-medium - needs consistency with nuanced ethical judgment
+    maxTokens: LLM_CONFIG.maxTokens.medium,
+  },
 } as const;
 
 // Helper to override model for a specific agent via environment variable
