@@ -1,0 +1,540 @@
+{
+  "episodeOutline": {
+    "title": "First Bell",
+    "synopsis": "It's the player's first day at Fernbrook High after a mid-year family move. In one school day—from the parking lot to the final bell—the player must figure out who to sit with, who to trust, and who to be. A quiet classmate named Mia is being frozen out by a tight-knit friend group led by the effortlessly popular Jordan. A group science project throws the player together with an unpredictable partner, Sam, whose methods don't match anything the player's used to. By day's end, the player faces a choice that will define their reputation for the rest of the year: fit in, stand out, or find a third way.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "New Parking Lot, Same Nerves",
+        "location": "School front steps",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The player steps out of the car in front of an unfamiliar school. Groups of returning students greet each other loudly nearby; nobody notices the new kid yet. An old friend texts 'good luck today!' The player has a moment alone before the noise swallows them.",
+        "emotionalBeat": "Anticipatory anxiety mixed with a flicker of possibility — a blank slate.",
+        "defaultNextScene": "scene-2"
+      },
+      {
+        "id": "scene-2",
+        "title": "Locker Row",
+        "location": "Main hallway, locker bay",
+        "characters": [
+          "player",
+          "jordan",
+          "mia"
+        ],
+        "duration": 1.5,
+        "description": "Fumbling with an unfamiliar locker combination, the player overhears Jordan Park effortlessly working the room — jokes, compliments, a magnetic ease. Nearby, Mia Chen quietly reorganizes her locker alone, clearly used to being invisible. Jordan glances over and says, 'You're new, right? Come here a sec.' The player has seconds to decide how to show up.",
+        "emotionalBeat": "The pressure of a first impression crystallizing in real time."
+      },
+      {
+        "id": "scene-3a",
+        "title": "Making an Entrance",
+        "location": "Main hallway, locker bay",
+        "characters": [
+          "player",
+          "jordan",
+          "devon"
+        ],
+        "duration": 1,
+        "description": "The player answers Jordan with easy confidence, cracking a joke that lands. Jordan's friend Devon laughs and gives the player a nickname on the spot. Word starts to spread before first period even begins — the new kid is 'kind of cool.'",
+        "emotionalBeat": "A rush of validation, but also the first small performance of a persona.",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-3b",
+        "title": "Reading the Room",
+        "location": "Main hallway, locker bay",
+        "characters": [
+          "player",
+          "jordan",
+          "mia"
+        ],
+        "duration": 1,
+        "description": "The player gives a low-key, polite response and steps back, choosing to observe instead of perform. Jordan shrugs and moves on. Mia glances over — a small, grateful half-smile, like she recognizes someone else who watches rather than dives in.",
+        "emotionalBeat": "A quieter kind of connection; less immediate reward, more authenticity.",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-4",
+        "title": "The Cafeteria Math",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "mia",
+          "devon"
+        ],
+        "duration": 1.5,
+        "description": "Tray in hand, the player scans the room. Jordan's table waves the player over — there's an empty seat with the player's name basically on it already. Across the room, Mia sits alone, pretending to read while clearly listening to the laughter she's excluded from. The room feels like a test nobody announced.",
+        "emotionalBeat": "The gut-check moment between comfort and conscience."
+      },
+      {
+        "id": "scene-5a",
+        "title": "An Unlikely Lunch",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "mia"
+        ],
+        "duration": 1,
+        "description": "The player sits with Mia. It's awkward for about ten seconds, then surprisingly easy — Mia is funny in a dry, unexpected way once she's not guarding herself. She mentions she used to have a whole friend group before 'stuff happened' over the summer. She doesn't explain further, but trusts the player with that much.",
+        "emotionalBeat": "Warmth built from risk; a small act of courage pays off in connection.",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-5b",
+        "title": "In With the In-Crowd",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "devon"
+        ],
+        "duration": 1,
+        "description": "The player sits with Jordan's table. The conversation is fast, funny, and image-conscious. At one point Jordan makes an offhand joke at Mia's expense; the table laughs. The player laughs too, or doesn't — either way, it's noticed. Status has a price tag nobody mentions out loud.",
+        "emotionalBeat": "The comfort of belonging shadowed by a small, unexamined compromise.",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-6",
+        "title": "Lab Partners",
+        "location": "Science classroom",
+        "characters": [
+          "player",
+          "sam",
+          "ms_reyes"
+        ],
+        "duration": 1.5,
+        "description": "Ms. Reyes assigns partners for a semester-long project. The player is paired with Sam Okafor, whose brainstorming style is chaotic, tangential, and nothing like the player's usual approach — sticky notes everywhere, wild what-if questions, zero interest in a normal outline. Sam looks at the player expectantly: 'So — you in, or do you want to do it your way?'",
+        "emotionalBeat": "Friction between comfort zones and new possibilities."
+      },
+      {
+        "id": "scene-7a",
+        "title": "Yes, And",
+        "location": "Science classroom",
+        "characters": [
+          "player",
+          "sam"
+        ],
+        "duration": 1,
+        "description": "The player leans into Sam's messy process. It's uncomfortable at first, but somewhere in the chaos a genuinely original project idea emerges — one the player never would have thought of alone. Sam grins: 'See? Told you it'd get weird in a good way.'",
+        "emotionalBeat": "The relief and pride of growth through discomfort.",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-7b",
+        "title": "My Way or the Highway",
+        "location": "Science classroom",
+        "characters": [
+          "player",
+          "sam"
+        ],
+        "duration": 1,
+        "description": "The player insists on the tried-and-true method. Sam goes quiet, agrees to 'just do it your way then,' and the energy between them cools. The project will probably still get done — but something collaborative was lost before it even started.",
+        "emotionalBeat": "A small, private regret masked as practicality.",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-8",
+        "title": "After the Bell",
+        "location": "School courtyard",
+        "characters": [
+          "player",
+          "jordan",
+          "mia"
+        ],
+        "duration": 1.5,
+        "description": "As the player leaves campus, both threads collide. Jordan invites the player to a group hangout that afternoon — the exact hour Mia had shyly mentioned wanting to show the player something (a mural she's painting in the art room, the 'stuff' she never explained). The player can't be fully in both places. Jordan adds, half-joking, half-not: 'You're either one of us or you're not, you know.'",
+        "emotionalBeat": "The core dilemma of the episode — belonging versus authenticity, made concrete and immediate."
+      },
+      {
+        "id": "scene-9a",
+        "title": "Choosing the Mural",
+        "location": "Art room",
+        "characters": [
+          "player",
+          "mia"
+        ],
+        "duration": 1,
+        "description": "The player shows up for Mia instead. The mural is unfinished and half-hidden — a piece about feeling erased that Mia never planned to show anyone. She's stunned the player came. It isn't a dramatic scene; it's quiet, real, and it matters more than either of them says out loud.",
+        "emotionalBeat": "Earned trust; the quiet satisfaction of choosing character over convenience.",
+        "defaultNextScene": "scene-10"
+      },
+      {
+        "id": "scene-9b",
+        "title": "Choosing the Group",
+        "location": "Jordan's backyard",
+        "characters": [
+          "player",
+          "jordan",
+          "devon"
+        ],
+        "duration": 1,
+        "description": "The player goes with Jordan's group. It's a good time — genuinely fun, full of easy laughter — but a text from Mia goes unanswered on the player's phone, and a small knot of guilt sits under the good time like a stone in a shoe.",
+        "emotionalBeat": "Real belonging shadowed by an unresolved cost.",
+        "defaultNextScene": "scene-10"
+      },
+      {
+        "id": "scene-10",
+        "title": "Monday Morning, Again",
+        "location": "Main hallway, locker bay",
+        "characters": [
+          "player",
+          "jordan",
+          "mia",
+          "sam"
+        ],
+        "duration": 1.5,
+        "description": "A new week begins. The player passes both Jordan's table and Mia in the same five minutes, and everyone seems to be silently waiting to see which version of the player shows up now that the 'new kid' era is over and the 'who I actually am' era begins.",
+        "emotionalBeat": "The turning point where a first week becomes an identity."
+      },
+      {
+        "id": "scene-11a",
+        "title": "The Bridge",
+        "location": "Main hallway, locker bay",
+        "characters": [
+          "player",
+          "jordan",
+          "mia"
+        ],
+        "duration": 1,
+        "description": "The player makes a point of publicly including Mia in a conversation with Jordan's group — not a confrontation, just a quiet insistence that both worlds can overlap. It's awkward for a second. Then it isn't. The player has started building something rare: a friend group with room in it.",
+        "emotionalBeat": "Hopeful, expansive — belonging without erasing anyone.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-11b",
+        "title": "All In",
+        "location": "Main hallway, locker bay",
+        "characters": [
+          "player",
+          "jordan",
+          "devon"
+        ],
+        "duration": 1,
+        "description": "The player fully commits to Jordan's circle. It's comfortable, secure, and status feels good — but Mia gives the player a small, unreadable nod from across the hall before turning away, and the player understands exactly what that nod cost them.",
+        "emotionalBeat": "Bittersweet security; belonging purchased with a quiet loss.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-11c",
+        "title": "My Own Table",
+        "location": "Main hallway, locker bay",
+        "characters": [
+          "player",
+          "sam",
+          "mia"
+        ],
+        "duration": 1,
+        "description": "The player doesn't fully join either group, instead building something new with Sam and Mia — a smaller, odder, more honest table. It's not the easiest path, and not everyone understands it, but it's unmistakably the player's own.",
+        "emotionalBeat": "Quiet, grounded confidence; identity chosen deliberately rather than assigned.",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2",
+        "prompt": "Jordan waves you over in front of everyone. How do you respond?",
+        "context": "First social read of the day — take the spotlight or stay low-key and observe.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Walk over and own the moment with a joke.",
+            "nextScene": "scene-3a"
+          },
+          {
+            "id": "b",
+            "text": "Give a friendly but brief reply and keep organizing your locker.",
+            "nextScene": "scene-3b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-4",
+        "prompt": "Jordan's table has a seat waiting. Mia sits alone across the room. Where do you sit?",
+        "context": "The classic cafeteria dilemma — comfort and status versus quiet kindness.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Mia.",
+            "nextScene": "scene-5a"
+          },
+          {
+            "id": "b",
+            "text": "Sit with Jordan's table.",
+            "nextScene": "scene-5b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-6",
+        "prompt": "Sam's brainstorming style is nothing like yours. Do you jump into their chaos, or steer things back to something familiar?",
+        "context": "A working-style clash disguised as a simple partner assignment.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Dive into Sam's process, even if it's uncomfortable.",
+            "nextScene": "scene-7a"
+          },
+          {
+            "id": "b",
+            "text": "Politely insist on doing it the tried-and-true way.",
+            "nextScene": "scene-7b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "ADAPTABILITY": 2
+          },
+          "b": {
+            "ADAPTABILITY": -1,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-8",
+        "prompt": "Jordan invites you to hang out this afternoon — the same time Mia wanted to show you something important. You can't do both. Who do you choose?",
+        "context": "The episode's emotional core: belonging versus authenticity, no longer abstract.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Go see what Mia wants to show you.",
+            "nextScene": "scene-9a"
+          },
+          {
+            "id": "b",
+            "text": "Go hang out with Jordan's group.",
+            "nextScene": "scene-9b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 1,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-10",
+        "prompt": "It's a new week, and everyone's watching to see who you'll be. What do you do?",
+        "context": "The identity the player has been building all episode gets its first public test.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Bring Mia into the conversation with Jordan's group.",
+            "nextScene": "scene-11a"
+          },
+          {
+            "id": "b",
+            "text": "Fully commit to Jordan's circle.",
+            "nextScene": "scene-11b"
+          },
+          {
+            "id": "c",
+            "text": "Build your own table with Sam and Mia.",
+            "nextScene": "scene-11c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": -1
+          },
+          "c": {
+            "CONFIDENCE": 2
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "name": "The Confident Riser",
+        "path": [
+          "scene-1",
+          "scene-2",
+          "scene-3a",
+          "scene-4",
+          "scene-5b",
+          "scene-6",
+          "scene-7a",
+          "scene-8",
+          "scene-9b",
+          "scene-10",
+          "scene-11b"
+        ],
+        "summary": "Player leans into charisma and status from minute one, gaining social capital but risking losing sight of quieter, more meaningful connections."
+      },
+      {
+        "name": "The Quiet Bridge-Builder",
+        "path": [
+          "scene-1",
+          "scene-2",
+          "scene-3b",
+          "scene-4",
+          "scene-5a",
+          "scene-6",
+          "scene-7a",
+          "scene-8",
+          "scene-9a",
+          "scene-10",
+          "scene-11a"
+        ],
+        "summary": "Player observes before acting, chooses empathy over status repeatedly, and ends up building an inclusive, authentic social circle."
+      },
+      {
+        "name": "The Independent Path",
+        "path": [
+          "scene-1",
+          "scene-2",
+          "scene-3b",
+          "scene-4",
+          "scene-5a",
+          "scene-6",
+          "scene-7b",
+          "scene-8",
+          "scene-9a",
+          "scene-10",
+          "scene-11c"
+        ],
+        "summary": "Player mixes caution and conviction, ultimately prioritizing authenticity over any single group's approval."
+      }
+    ],
+    "emotionalArc": [
+      "Anticipation and vulnerability (new school jitters)",
+      "Pressure to perform an identity within seconds of arriving",
+      "First real moral choice disguised as a seating decision",
+      "Discomfort of being pushed outside a familiar working style",
+      "The central dilemma crystallizing into an unavoidable either/or",
+      "Quiet reflection on what was gained and what was cost",
+      "A public, low-stakes-seeming moment that actually defines identity going forward"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from reactive impression-management to intentional identity-building, discovering that confidence, empathy, and adaptability aren't mutually exclusive but often in tension."
+      },
+      {
+        "character": "mia",
+        "arc": "Begins isolated and guarded; depending on player choices, either opens up and finds an ally, or remains quietly excluded — a mirror for the cost of the player's decisions."
+      },
+      {
+        "character": "jordan",
+        "arc": "Consistent throughout as a magnetic, slightly transactional social gatekeeper — never a villain, just someone whose approval has real but not absolute value."
+      },
+      {
+        "character": "sam",
+        "arc": "A catalyst for adaptability — pushes the player out of comfort zones regardless of path, with the depth of the eventual collaboration depending on how open the player was."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "hiddenIn": "How boldly the player introduces themselves, sits with new people, and asserts preferences in group work",
+        "notes": "Never framed as a stat — framed as social bravery in ordinary teenage moments."
+      },
+      {
+        "trait": "EMPATHY",
+        "hiddenIn": "Cafeteria seating choice and the after-school Mia-vs-Jordan dilemma",
+        "notes": "Empathy is tested against real social cost (missing a fun hangout, sitting alone), not presented as an obviously 'correct' choice."
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "hiddenIn": "The lab partner collaboration style clash",
+        "notes": "Framed as a working-style preference, not a personality quiz, so it reads as organic classroom friction."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player & mia",
+        "dynamic": "Starts as strangers; can develop into a genuine, low-key friendship built on being seen, or remain a missed connection with lingering guilt."
+      },
+      {
+        "pair": "player & jordan",
+        "dynamic": "Starts as an aspirational social gateway; can evolve into either full belonging, a values clash, or a comfortable but limited alliance."
+      },
+      {
+        "pair": "player & sam",
+        "dynamic": "A forced pairing that becomes either a genuine creative partnership or a functional-but-cool collaboration, depending on the player's openness."
+      }
+    ],
+    "replayHooks": [
+      "Three distinct final-scene identities (bridge-builder, in-crowd, independent) encourage seeing how the same day plays out under different first impressions.",
+      "Mia's unfinished mural backstory ('stuff happened over the summer') is only partially revealed on the empathy path, teasing more story for replays.",
+      "The Sam collaboration produces a genuinely different, better project idea on the adaptability path, rewarding curiosity about 'what we could have built.'",
+      "Jordan's dialogue subtly shifts in later scenes depending on early choices, rewarding players who replay to catch the difference.",
+      "The final hallway scene plays as a natural 'season finale' cliffhanger no matter the path, inviting comparison of who ends up at the player's table."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Illustrate that confidence and kindness are not opposites, but can be practiced together",
+      "Model that inclusion often requires a small, specific cost, not just good intentions",
+      "Show adaptability as an active skill (adjusting to new working styles) rather than a passive trait",
+      "Demonstrate that identity is built through small daily choices, not one big dramatic decision"
+    ],
+    "conversationStarters": [
+      "Would you have sat with Mia or with Jordan's table? Why?",
+      "Was it fair for Jordan to say 'you're either one of us or you're not'?",
+      "Have you ever had to choose between two things that mattered on the same day?",
+      "What do you think happened to Mia over the summer?",
+      "Is it possible to be popular and stay true to yourself at the same time?"
+    ]
+  },
+  "designNotes": "The episode hides its trait targets inside ordinary teenage social physics: a locker-bay greeting, a cafeteria seat, a lab partner mismatch, and a scheduling conflict. None of these choices are framed as moral tests explicitly — the drama comes from competing, valid desires (fitting in vs. doing right by someone; comfort vs. growth). The three-way final choice was added specifically to avoid a binary 'good ending vs bad ending' trap; the bridge-builder path is designed to feel best but not to be the only 'valid' resolution, since the independent and in-crowd paths both have real emotional truth and consequence. Convergence points (scene-4, scene-6, scene-8, scene-10) keep the episode producible at 10-15 minutes while still allowing branches to feel materially different in tone and content, not just cosmetic flavor text.",
+  "uncertainties": [
+    "Whether 3 named side characters (Jordan, Mia, Sam) plus a teacher is the right density for a 12-13 minute episode, or if trimming to 2 side characters would sharpen focus.",
+    "Whether the after-school scheduling-conflict choice (choice-4) reads as too coincidental/contrived versus organically motivated — may need a stronger in-fiction reason the two events overlap.",
+    "Whether players will feel the in-crowd path (11b) is being subtly punished despite design intent to keep it emotionally valid rather than 'wrong'.",
+    "Replay incentive is strong structurally, but actual delta in scene content between 3a/3b and 5a/5b is currently moderate; may want to add one more distinct beat per branch if playtesting shows branches feel too similar early on."
+  ],
+  "alternativesConsidered": [
+    "A single binary choice tree (confidence only) was considered but rejected for not covering empathy/adaptability targets naturally.",
+    "Making Mia's backstory fully explicit in-episode was considered but rejected in favor of a hook for future episodes, keeping this one focused on first impressions rather than another character's full arc.",
+    "A 'confrontation with Jordan' climax was considered instead of the scheduling-conflict choice, but felt too on-the-nose as an authenticity test compared to the more naturalistic double-booking dilemma.",
+    "Adding a fourth trait (RESILIENCE) via a failed-project-grade subplot was considered but cut to keep the episode tightly scoped to the three target traits within the runtime."
+  ]
+}

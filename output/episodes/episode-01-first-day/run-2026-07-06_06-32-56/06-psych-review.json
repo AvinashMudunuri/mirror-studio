@@ -1,0 +1,88 @@
+{
+  "status": "NEEDS_REVISION",
+  "concerns": [
+    {
+      "severity": "MODERATE",
+      "category": "MENTAL_HEALTH",
+      "issue": "Mia's backstory ('stuff happened over the summer,' being frozen out, a mural about feeling 'erased') gestures toward social exclusion/possible deeper distress but never gives her an outlet to a trusted adult or resolution beyond peer connection. For an 11-14 audience, this could inadvertently model that peer validation alone is sufficient for a child experiencing ongoing social pain, without normalizing seeking help from counselors/family.",
+      "location": "scene-5a, scene-9a (mural)",
+      "recommendation": "Add a small beat—even a single line—where Mia mentions a supportive adult (school counselor, parent, older sibling) or where the narrative signals that talking to an adult is a normal, positive option, without requiring the player to be her only support.",
+      "mustFix": true
+    },
+    {
+      "severity": "MODERATE",
+      "category": "RELATIONSHIPS",
+      "issue": "Jordan's line 'You're either one of us or you're not, you know' models a subtle coercive/exclusionary social dynamic (in-group ultimatum). While narratively realistic and later softened, it risks normalizing this kind of social pressure without explicit narrative pushback or adult framing.",
+      "location": "scene-8, dialogue s8-3",
+      "recommendation": "Keep the line (it's realistic and useful for critical thinking) but ensure post-choice reflection or a later scene contains subtle textual cues that this pressure is a flawed way to build friendships—already partially achieved in scene-11a/11c, but consider adding a brief internal player thought-prompt acknowledging the discomfort of the ultimatum, to sharpen the SEL teaching moment.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "MENTAL_HEALTH",
+      "issue": "The 'bee girl' teasing incident (Jordan mocking Mia's presentation) is a mild bullying/exclusion example presented somewhat lightly ('I'm not being mean, I just—it was a whole thing'). This is realistic middle-school behavior but should ensure it doesn't read as consequence-free.",
+      "location": "scene-5b, dialogue s5b-3 to s5b-6",
+      "recommendation": "Consider a subtle consequence later (e.g., Jordan's guilty flicker already exists—good) or a beat where the player can gently push back in dialogue even while sitting with Jordan's group, giving players agency to model healthy pushback against mocking without leaving the group entirely.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "AGE_INAPPROPRIATE",
+      "issue": "Nickname 'Ace' and social dynamics are well-pitched, but Sam's chaotic brainstorming dialogue ('breaking something on purpose') could briefly read as endorsing carelessness in an academic setting; low risk but worth a clarity pass.",
+      "location": "scene-6, dialogue s6-4",
+      "recommendation": "Minor clarification that Sam means creative experimentation, not literal destruction/recklessness—could add one line from Ms. Reyes setting appropriate boundaries for the 'break something' idea.",
+      "mustFix": false
+    }
+  ],
+  "recommendations": [
+    "Add a light-touch reference to a trusted adult/counselor resource for Mia's storyline, reinforcing help-seeking as healthy without undermining the peer-support narrative.",
+    "Consider adding one moment of explicit narrator/internal reflection after choice-4 acknowledging the emotional cost of choosing one relationship over another, deepening SEL processing for younger end of the age range (11-12).",
+    "In scene-9b, the unanswered text from Mia is a good, subtle consequence—consider surfacing it again in scene-10 dialogue so the 'cost' is legible rather than implied only through action text (important for 11-year-old readers who may need explicit cues).",
+    "Optional: Give Jordan a brief character beat that hints at her 'secretly anxious' trait (per character notes) surfacing on-page, so her behavior reads as complex rather than simply socially dominant—this would strengthen the anti-stereotyping goal already partially achieved by her guilty flickers.",
+    "Ensure companion content/guides for parents/educators mention the exclusion and unresolved-backstory themes so they can support discussion if needed."
+  ],
+  "triggerWarnings": [
+    {
+      "category": "BULLYING",
+      "description": "Social exclusion/freezing out of a classmate (Mia) by a popular clique, including a mocking joke about a past incident",
+      "severity": "MILD",
+      "location": "scene-2, scene-4, scene-5b, scene-8, scene-9b"
+    },
+    {
+      "category": "SELF_ESTEEM",
+      "description": "Mia's mural theme of feeling 'erased,' implying past social pain and reduced self-worth",
+      "severity": "MODERATE",
+      "location": "scene-9a"
+    },
+    {
+      "category": "FAMILY_CONFLICT",
+      "description": "Implied mid-year family move causing disruption/anxiety for the player character",
+      "severity": "MILD",
+      "location": "scene-1"
+    }
+  ],
+  "scores": {
+    "ageAppropriateness": 9,
+    "emotionalSafety": 8,
+    "educationalValue": 9,
+    "mentalHealthRep": 6,
+    "overall": 8
+  },
+  "summary": {
+    "strengths": [
+      "Excellent branching structure that makes abstract SEL concepts (belonging vs. authenticity) concrete and personally meaningful through relatable, low-stakes-but-emotionally-real scenarios",
+      "Dialogue is age-appropriate, naturalistic, and respects teen intelligence—avoids preachy or moralizing tone",
+      "No graphic, sexual, or violent content; conflict is entirely social/emotional and realistic for a 11-14 middle school context",
+      "Multiple valid paths (confident riser, bridge-builder, independent path) avoid a single 'correct' moral answer, encouraging critical thinking over simplistic lesson delivery",
+      "Adaptability lesson (Sam's chaotic brainstorming) is a fresh, non-obvious take on SEL skill-building distinct from typical kindness/inclusion narratives",
+      "Costs of choices are shown through natural consequence (unanswered texts, guilty flickers, unreadable nods) rather than heavy-handed narration",
+      "Jordan is written with complexity (warmth, humor, minor unkindness, backpedaling) avoiding a flat 'mean girl' stereotype"
+    ],
+    "improvements": [
+      "Strengthen help-seeking/adult support signaling around Mia's implied social pain and mural content",
+      "Make the emotional 'cost' of choices slightly more explicit for younger readers (11-12) who may need clearer narrative cues than subtext alone",
+      "Add small texture to Jordan's 'secretly anxious' trait so her characterization more visibly resists popular-girl stereotypes on the page, not just in author notes"
+    ],
+    "readyForAudience": true
+  }
+}

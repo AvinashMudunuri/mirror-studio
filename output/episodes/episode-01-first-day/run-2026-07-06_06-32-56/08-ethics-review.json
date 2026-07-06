@@ -1,0 +1,99 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "CULTURAL",
+      "issue": "Jordan is referred to as 'Jordan Park' in the scene-2 description text, but the character master record lists her as 'Jordan Alvarez-Mireles.' This creates a direct contradiction in ethnic coding (Korean-American surname vs. Latina surname) for the same character.",
+      "location": "scene-2 description ('Jordan Park effortlessly working the room') vs. characters list ('Jordan Alvarez-Mireles')",
+      "harmPotential": "Treating ethnic surnames as interchangeable or arbitrary can read as careless tokenism — using identity markers as decoration rather than meaningful characterization. Korean-American and Latina readers could each feel the character isn't actually 'theirs,' or that ethnicity was an afterthought/placeholder that got swapped without updating the whole document.",
+      "recommendation": "Pick one consistent surname/ethnic background for Jordan and update all references (synopsis, scene descriptions, character sheet, background object which is currently empty). If a specific heritage is intended, make sure her characterization and background field reflect it authentically rather than existing only as a name.",
+      "priority": 7
+    },
+    {
+      "severity": "MINOR",
+      "category": "STEREOTYPE",
+      "issue": "Sam Okafor is characterized almost entirely through 'chaotic, tangential' neurodivergent-coded brainstorming behavior (sticky notes everywhere, rapid-fire ideas, uncertainty about being 'too much'). No other personality traits, interests, or context are given.",
+      "location": "scene-6, scene-7a, scene-7b, scene-10, scene-11c",
+      "harmPotential": "If Sam is meant to read as neurodivergent (e.g., ADHD-coded), reducing the character to a single behavioral quirk risks flattening a real identity into a 'quirky chaos generator' trope, even though the framing here is affectionate and ultimately validated as valuable (not mocked).",
+      "recommendation": "Give Sam at least one beat unrelated to the brainstorming chaos — a hobby, a home-life detail, a moment of vulnerability or a skill outside the 'ideas machine' role — so the character reads as a full person rather than a single trait in service of the player's growth.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Mia's backstory ('stuff happened over the summer') is left deliberately vague, which works narratively, but combined with her being the sole quiet/excluded character of the episode, there's a mild 'lonely outsider' pattern worth watching across the season.",
+      "location": "scene-5a, scene-9a",
+      "harmPotential": "If future episodes consistently position Mia (and characters like her) only as the excluded one needing rescue, it could tip into a 'perpetual outsider' pattern rather than a character with her own full arc.",
+      "recommendation": "Ensure future episodes show Mia with agency outside her relationship to inclusion/exclusion — friendships of her own, interests, moments where she isn't defined by loneliness. The mural scene already does this well (her art, her interiority); keep building on it.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Scene-11b (fully committing to Jordan's circle) ends with the player benefiting socially while Mia absorbs the emotional cost silently, and Jordan 'doesn't notice' — this is well-intentioned as a bittersweet consequence, but the resolution doesn't give the player any future opportunity, in-episode, to repair or reflect on this choice.",
+      "location": "scene-11b",
+      "harmPotential": "Low risk, but without a following beat, players who pick this path could interpret 'popularity has a hidden cost' as a passive observation rather than an actionable lesson.",
+      "recommendation": "Consider a brief coda line or season-level flag so the game engine can let this choice have visible narrative consequences later (e.g., Mia's guardedness in future episodes), reinforcing that the cost was real rather than just decorative flavor text.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Excellent choice architecture: consequences (unanswered text, Jordan's guilty flicker, Mia's unreadable nod) are proportionate and non-punitive, modeling that social choices have real but survivable costs — ideal for teen EI development.",
+    "Jordan is written with genuine complexity (funny-as-shield, secretly anxious, capable of casual cruelty she immediately regrets) rather than as a flat 'mean popular girl' stereotype.",
+    "Mia is given interiority, dry humor, and creative agency (the mural) rather than existing purely as a victim or a lesson for the protagonist.",
+    "No romance, no adult-teen power dynamics, and social risk-taking (locker banter, party attendance) is framed with age-appropriate, believable stakes for 11-14 year olds.",
+    "The 'no perfect choice' design in scene-8/scene-10 (three distinct resolutions, including the synthesis option 11a and the independent option 11c) avoids simplistic 'popular = bad, quiet = good' moralizing.",
+    "Diversity of names/backgrounds (Chen, Okafor, Alvarez-Mireles/Park, Reyes, Priya) reflects an authentically diverse urban school without any single character being tokenized as 'the' representative of their group."
+  ],
+  "recommendations": [
+    "Resolve the Jordan Park/Alvarez-Mireles surname inconsistency before publication and flesh out her background field.",
+    "Add one non-'chaos' character beat for Sam to round out representation.",
+    "Track Mia's arc across the season to ensure she gets agency beyond the inclusion/exclusion dynamic.",
+    "Consider letting scene-11b's social cost have a visible callback in later episodes."
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 8,
+    "tropes": 7,
+    "ethicalModeling": 9,
+    "culturalSensitivity": 6,
+    "overall": 7
+  },
+  "flaggedContent": [
+    {
+      "type": "NARRATIVE",
+      "location": "scene-2 description vs. character list",
+      "content": "'Jordan Park' (scene text) vs. 'Jordan Alvarez-Mireles' (character record)",
+      "concern": "Conflicting ethnic identity markers for the same character undermine authentic representation and suggest the identity was treated as interchangeable.",
+      "suggestion": "Standardize the name/background across all documents and ensure the chosen heritage informs her characterization intentionally."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "scene-6",
+      "content": "Sam's introduction defined entirely by chaotic, non-linear brainstorming style",
+      "concern": "Risk of reducing a neurodivergent-coded character to a single trait, even though it's framed positively.",
+      "suggestion": "Add a small beat showing Sam outside of the 'creative chaos' framework."
+    }
+  ],
+  "summary": {
+    "verdict": "A strong, thoughtfully constructed episode with excellent ethical choice design and nuanced character writing. The core belonging-vs-authenticity dilemma is handled with real sophistication for the target age group, and consequences for choices are proportionate rather than heavy-handed. The main blocker is a factual/representational inconsistency in Jordan's name and background that should be resolved, plus a minor opportunity to deepen Sam's characterization beyond a single behavioral trait.",
+    "criticalIssues": [],
+    "majorConcerns": [
+      "Jordan Park vs. Jordan Alvarez-Mireles naming inconsistency creates conflicting ethnic coding for the same character."
+    ],
+    "minorNotes": [
+      "Sam's characterization leans on a single 'chaotic brainstormer' trait — could use one grounding, non-quirk beat.",
+      "Watch Mia's arc across the season to ensure she gets agency beyond the exclusion narrative.",
+      "Scene-11b's social cost could use a future callback to reinforce consequence."
+    ],
+    "strengths": [
+      "Excellent, proportionate consequence design tied to player choices",
+      "Complex, non-stereotypical popular character (Jordan)",
+      "Mia given real interiority and creative agency, not just victimhood",
+      "Age-appropriate stakes and healthy social dynamics throughout",
+      "Diverse cast without tokenization of any single character"
+    ],
+    "readyForPublication": false
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "CONSISTENCY",
+      "message": "Character ID mismatch: dialogue and scene 'characters' arrays reference character id 'jordan', but the only declared character object has id 'protagonist-jordan-alvarez-mireles'. These do not resolve to the same entity per strict ID matching.",
+      "location": "scenes[*].dialogue[*].character (e.g. scene-2.dialogue[0].character = 'jordan') vs characters[0].id",
+      "expectedValue": "'protagonist-jordan-alvarez-mireles' used consistently, or character.id changed to 'jordan'",
+      "actualValue": "Dialogue uses 'jordan'; character object id is 'protagonist-jordan-alvarez-mireles'",
+      "fix": "Either add an 'id' alias/shortname field on the character object (e.g. 'jordan') that the engine resolves, or change all dialogue/character array references to the full id 'protagonist-jordan-alvarez-mireles'. Recommend adding a canonical short-id convention."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "COMPLETENESS",
+      "message": "Multiple characters referenced extensively in scenes and dialogue have no corresponding character definitions provided: 'mia', 'sam', 'devon', 'ms_reyes', 'priya_text', 'ambient_student', 'player'. Only one character object exists in the CHARACTERS array.",
+      "location": "scenes[*].characters, scenes[*].dialogue[*].character",
+      "expectedValue": "Character definitions for all speaking/referenced characters (mia, sam, devon, ms_reyes at minimum) should exist in the characters data store",
+      "actualValue": "Only 'protagonist-jordan-alvarez-mireles' is defined",
+      "fix": "Provide full character sheets for Mia Chen, Sam Okafor, Devon, and Ms. Reyes (at minimum name/pronoun/personality) so voice consistency and trait mapping can be validated. 'player', 'priya_text', and 'ambient_student' should be documented as system/utility roles if intentional."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Scene-2 description refers to the character as 'Jordan Park' ('Jordan Park effortlessly working the room'), but the provided character sheet names her 'Jordan Alvarez-Mireles'. This is a last-name inconsistency.",
+      "location": "scene-2.description",
+      "expectedValue": "Jordan Alvarez-Mireles",
+      "actualValue": "Jordan Park",
+      "fix": "Correct scene-2 description to use 'Jordan Alvarez-Mireles' or drop the surname entirely to avoid future mismatches."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene-2's defaultNextScene is missing. It relies entirely on choice-1 to route to scene-3a/3b, but there is no fallback defaultNextScene defined, which could break playback if the choice fails to fire or is skipped by tooling that expects a default path.",
+      "location": "scene-2 (missing 'defaultNextScene')",
+      "expectedValue": "A defaultNextScene (e.g., 'scene-3b' as safe default) or explicit documentation that choice-driven scenes intentionally omit defaultNextScene",
+      "actualValue": "Field absent",
+      "fix": "Add a defaultNextScene as a safety fallback, or confirm engine schema explicitly allows choice-only routing for scenes with a 'choices' entry (same issue applies to scene-4, scene-6, scene-8, scene-10 — verify this is an accepted schema pattern)."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "SCHEMA",
+      "message": "seasonId 'season-1' cannot be verified against WORLD CONTEXT, which lists seasons as descriptive strings ('Season 1: First Year') rather than IDs. There's no confirmed mapping between 'season-1' and 'Season 1: First Year'.",
+      "location": "episode.seasonId",
+      "expectedValue": "A season ID that matches a canonical seasons registry",
+      "actualValue": "'season-1' (unverified against world's season list format)",
+      "fix": "Confirm a season ID registry exists mapping 'season-1' -> 'Season 1: First Year', or standardize world context to use IDs instead of descriptive strings."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "estimatedPlayTime of 13 minutes seems low for 20 scenes with substantial branching dialogue (roughly 100+ dialogue lines across all paths).",
+      "location": "episode.estimatedPlayTime",
+      "suggestion": "Recalculate based on average reading speed / VO length per path; consider reporting a range (e.g., 15-20 min) given three distinct outcome paths of differing length."
+    },
+    {
+      "category": "STYLE",
+      "message": "Ambient/system characters ('priya_text', 'ambient_student') are used only once each and not documented as character types (e.g., 'text-message sender', 'background NPC'). This could confuse the branching/voice pipeline into treating them as full cast members needing sheets.",
+      "location": "scene-1.dialogue[1].character, scene-3a.dialogue[7].character",
+      "suggestion": "Add a 'characterType' field (e.g., NPC_AMBIENT, TEXT_MESSAGE) to distinguish these lightweight roles from primary/secondary characters."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Outcomes array paths reference specific branch combinations, but there are 2×2×2×2×3 = 24 possible paths through the episode; only 3 are explicitly named/summarized. This is fine narratively but should be confirmed as intentional (i.e., other 21 combinations are still valid gameplay, just unnamed archetypes).",
+      "location": "episode.outcomes",
+      "suggestion": "Consider documenting that 'outcomes' are illustrative archetypes, not an exhaustive list, to avoid QA/automation assuming only 3 valid paths exist."
+    },
+    {
+      "category": "STYLE",
+      "message": "Trait mapping for choice-1 option 'b' gives EMPATHY +1, but staying quiet/organizing a locker is a fairly weak signal for empathy specifically (it reads more like introversion/caution than empathy).",
+      "location": "choices[0].traitMapping.b",
+      "suggestion": "Consider whether ADAPTABILITY or a neutral/no trait change is more accurate than EMPATHY here; reserve EMPATHY bumps for choices more clearly about others' feelings (e.g., choice-2, choice-4)."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "Scene 'scene-10' includes four characters (player, jordan, mia, sam) simultaneously with three of them in passive 'watching/waiting' action beats — dialogue-light scenes with heavy stage direction may be harder to voice-act/animate consistently across engines.",
+      "location": "scene-10.dialogue",
+      "suggestion": "Consider adding a bit more explicit dialogue or internal player thought to clarify pacing for VO/animation teams."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 27,
+    "failedChecks": 5,
+    "warningCount": 5
+  },
+  "recommendations": [
+    "Establish a canonical character ID convention (e.g., always use short lowercase ids like 'jordan', 'mia', 'sam' as the authoritative character.id) and ensure the CHARACTERS collection includes every named/speaking role before content freeze.",
+    "Add a lightweight schema note or characterType field to distinguish primary characters (with full sheets) from ambient/system roles.",
+    "Run an automated link-checker across all scene IDs, choice nextScene targets, and defaultNextScene fields to guarantee no orphaned or unreachable scenes as the episode count grows.",
+    "Verify seasonId values against a canonical season registry before publishing to avoid downstream lookup failures."
+  ]
+}
