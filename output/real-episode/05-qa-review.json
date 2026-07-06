@@ -1,0 +1,112 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "No choices/options specify which scene the story transitions to after selection (no 'nextScene', 'leadsTo', or equivalent field). Without this, branching logic (scene-2 -> scene-3a/3b, scene-6 -> scene-7, etc.) cannot be programmatically resolved or validated as reachable/non-dead-ending.",
+      "location": "choices[*].options[*]",
+      "expectedValue": "Each option should include a field like 'nextScene' pointing to a valid scene id",
+      "actualValue": "No transition field present on any choice option",
+      "fix": "Add explicit nextScene/targetScene references to every option object so branching can be validated and executed."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "SCHEMA",
+      "message": "Scene 'characters' arrays reference the player as 'Player', but no character object with id 'Player' exists. The only defined character is 'protagonist-jules-okafor-rivas' (Jules Okafor-Rivas). This reference does not resolve.",
+      "location": "scenes[*].characters (e.g. scene-1.characters[0])",
+      "expectedValue": "\"protagonist-jules-okafor-rivas\" or a consistent alias mapped to that character",
+      "actualValue": "\"Player\"",
+      "fix": "Replace 'Player' with the protagonist's character ID, or add an explicit alias/mapping table connecting 'Player' to protagonist-jules-okafor-rivas."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Dialogue 'character' fields (mr_okafor, jordan, maya, deja, priya, alex, student_a, student_b, narrator) do not correspond to any character objects supplied in the CHARACTERS list. Only Jules Okafor-Rivas is defined. All NPCs referenced in dialogue are undefined/orphaned references.",
+      "location": "scenes[*].dialogue[*].character",
+      "expectedValue": "Character objects for mr_okafor, jordan, maya, deja, priya, alex, student_a, student_b (narrator may be exempt as a system role)",
+      "actualValue": "Only 'protagonist-jules-okafor-rivas' provided",
+      "fix": "Supply character definitions (or at minimum ID/name/pronoun records) for every speaking character, or confirm these are provided in a separate NPC roster not included in this review payload."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "scene-2's 'characters' array omits Deja and Priya, both of whom have dialogue lines in that scene (s2-l4, s2-l5).",
+      "location": "scenes[1] (scene-2).characters",
+      "expectedValue": "[\"Mr. Okafor\", \"Jordan\", \"Maya Chen\", \"Alex Rivera\", \"Deja\", \"Priya\", \"Player\"]",
+      "actualValue": "[\"Mr. Okafor\", \"Jordan\", \"Maya Chen\", \"Alex Rivera\"]",
+      "fix": "Add Deja and Priya to scene-2's characters array."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "scene-1's 'characters' array only lists 'Player', but student_a, student_b, and narrator all have dialogue in this scene.",
+      "location": "scenes[0] (scene-1).characters",
+      "expectedValue": "Include student_a/student_b (and note narrator convention) so every speaking party is represented",
+      "actualValue": "[\"Player\"]",
+      "fix": "Add student_a and student_b to the characters array, and establish a consistent policy for whether 'narrator' needs to be listed in characters arrays across all scenes."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "scene-7 (the episode's ending scene) contains only a single generic narrator line despite being described as reactive to player choices ('Depending on what you did, someone reaches out...'). No branch-specific dialogue exists for branch-popular, branch-authentic, or branch-bridge outcomes, nor for the divergent results of choice-6 (standing up for Alex vs. laughing along vs. staying back).",
+      "location": "scenes[7] (scene-7).dialogue",
+      "expectedValue": "Multiple dialogue variants reflecting at least the 3 outcome branches defined in 'outcomes', especially differentiating Alex's reaction based on choice-6 and Maya's/Jordan's reactions based on earlier choices.",
+      "actualValue": "One static narrator line only",
+      "fix": "Add branch-conditional dialogue blocks (e.g., keyed by outcome id) so the ending reflects the player's actual choice path, consistent with the outcomes described in the 'outcomes' array."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The 'outcomes' array defines only 3 named branches (popular, authentic, bridge) with trigger conditions referencing specific choice/option combos, but there is no mechanism tying these outcomes to actual scene content changes beyond scene-7, and no outcome path is defined for choice-6 options b, c, or d (only 'a' is referenced in branch-bridge). Players choosing b/c/d at choice-6 have no defined outcome branch at all.",
+      "location": "outcomes[2] (branch-bridge).trigger",
+      "expectedValue": "Outcome definitions or fallback logic covering all choice-6 option results (a, b, c, d), not just option 'a' combined with choice-5c.",
+      "actualValue": "Only 'choice-5 option c AND choice-6 option a' is covered by a named outcome; no outcomes reference choice-6 b/c/d directly.",
+      "fix": "Either define additional outcome branches for the remaining choice-6 results or clarify that scene-7's dialogue (once fixed per above) implicitly handles those paths without a formal 'outcome' object."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Estimated play time (12 minutes) doesn't precisely match the sum of scene durations (1+1.5+1.5+1.5+2+1.5+2+1.5 = 12.5 minutes). Minor discrepancy, but should be reconciled for metadata accuracy, especially since a player will only experience a subset of scenes (3a OR 3b) per playthrough, so actual playtime likely differs further depending on branch taken.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Recalculate estimatedPlayTime based on a single playthrough path (e.g., scene-1+2+3a(or b)+4+5+6+7) rather than summing all scenes, since 3a and 3b are mutually exclusive."
+    },
+    {
+      "category": "STYLE",
+      "message": "Naming convention inconsistency between scene 'characters' arrays (Title Case, e.g., 'Mr. Okafor', 'Maya Chen') and dialogue 'character' fields (snake_case/lowercase, e.g., 'mr_okafor', 'maya'). This makes automated ID matching brittle.",
+      "location": "scenes[*].characters vs scenes[*].dialogue[*].character",
+      "suggestion": "Standardize on one ID format (e.g., snake_case IDs everywhere) and use display names only in a separate rendering layer."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The protagonist's name (Jules Okafor-Rivas) never appears anywhere in scene text, dialogue, or choice text, despite a very detailed character profile being provided. If this is meant to be a fully personalized 'you are Jules' narrative rather than a silent self-insert protagonist, her name/identity should surface somewhere (e.g., Mr. Okafor calling attendance, other students greeting her by name).",
+      "location": "scenes[*], choices[*]",
+      "suggestion": "Consider having Mr. Okafor or another character address the protagonist by name (Jules) at least once to reinforce character identity, unless the intentional design is a nameless self-insert POV."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice-3a and Choice-3b are mutually exclusive (tied to scene-3a/3b, which are alternate versions of the same story beat depending on choice-2), but this mutual exclusivity is only inferable from scene IDs, not explicitly documented in the choices or outcomes schema.",
+      "location": "choices[2] (choice-3a), choices[3] (choice-3b)",
+      "suggestion": "Explicitly document in the outcome or choice metadata that scene-3a and scene-3b are alternate/exclusive paths dependent on choice-2's result."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "targetTraits changeAmounts are all flatly set to 1, but actual per-choice traitMapping deltas range from -3 to +3, meaning realistic accumulated trait totals could far exceed the stated 'target' change of 1 per trait for the episode.",
+      "location": "targetTraits",
+      "suggestion": "Clarify whether targetTraits represents a minimum expected net change, an average, or a design guideline — and reconcile with the wider possible swings in traitMapping deltas."
+    }
+  ],
+  "summary": {
+    "totalChecks": 24,
+    "passedChecks": 17,
+    "failedChecks": 7,
+    "warningCount": 5
+  },
+  "recommendations": [
+    "Add explicit scene-transition fields to every choice option to make branching logic machine-verifiable.",
+    "Provide full character records (or a shared NPC roster reference) for all speaking NPCs, not just the protagonist.",
+    "Flesh out scene-7 with branch-aware dialogue so the ending actually reflects player choices, matching the promise made in the 'outcomes' array.",
+    "Run an automated ID cross-reference pass (characters array vs dialogue.character vs character roster) as part of the CI pipeline for future episodes."
+  ]
+}

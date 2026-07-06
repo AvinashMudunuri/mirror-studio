@@ -1,0 +1,523 @@
+{
+  "episodeOutline": {
+    "title": "First Bell",
+    "synopsis": "On your first day at Ridgeline Academy, every hallway glance and empty seat feels like a test. When you're paired for a class project with Alex, the quiet kid everyone seems to avoid, the easy choices you made that morning start to cost more than you expected. By the final bell, you'll have decided not just where you sit, but who you are willing to be.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "New Halls",
+        "location": "School Hallway",
+        "characters": [
+          "Player"
+        ],
+        "duration": 1,
+        "description": "Lockers slam, groups cluster, and nobody knows your name yet. You spot Room 214 at the end of the hall as whispers ripple past you - 'who's that?' You have about ten seconds before you have to walk through that door.",
+        "emotionalBeat": "Anticipatory vulnerability - the ache of being unknown."
+      },
+      {
+        "id": "scene-2",
+        "title": "Homeroom Threshold",
+        "location": "Homeroom 214",
+        "characters": [
+          "Mr. Okafor",
+          "Jordan",
+          "Maya Chen",
+          "Alex Rivera"
+        ],
+        "duration": 1.5,
+        "description": "Mr. Okafor waves you toward two open seats. One is beside Jordan, who's doodling nervously and glances up hopefully. The other is at Maya Chen's crowded table, where she's already waving you over with a bright smile. In the back corner, Alex sits alone, unacknowledged by either group.",
+        "emotionalBeat": "The pull of belonging versus curiosity about who's been left out."
+      },
+      {
+        "id": "scene-3a",
+        "title": "Common Ground",
+        "location": "Homeroom 214 - Jordan's Desk",
+        "characters": [
+          "Jordan",
+          "Player"
+        ],
+        "duration": 1.5,
+        "description": "You sit next to Jordan, who blurts out an awkward joke about the school mascot to break the ice, then immediately looks like they want to disappear.",
+        "emotionalBeat": "Small, earnest vulnerability - a chance to be kind or dismissive."
+      },
+      {
+        "id": "scene-3b",
+        "title": "The Crew",
+        "location": "Homeroom 214 - Maya's Table",
+        "characters": [
+          "Maya Chen",
+          "Deja",
+          "Priya",
+          "Player"
+        ],
+        "duration": 1.5,
+        "description": "Maya's table is warm and fast-paced - compliments, quick questions, easy laughter. Then Maya nods toward Alex across the room and stage-whispers something dismissive, watching for your reaction.",
+        "emotionalBeat": "Charm masking a subtle test of your values."
+      },
+      {
+        "id": "scene-4",
+        "title": "Paired Up",
+        "location": "Homeroom 214",
+        "characters": [
+          "Mr. Okafor",
+          "Alex Rivera",
+          "Player"
+        ],
+        "duration": 2,
+        "description": "Mr. Okafor announces partner assignments for a semester project. You're paired with Alex, who braces immediately, muttering that you can ask to switch if you want - clearly used to being someone's unwanted assignment.",
+        "emotionalBeat": "Forced proximity creates a chance for redemption or reinforcement."
+      },
+      {
+        "id": "scene-5",
+        "title": "Lunch Line",
+        "location": "Cafeteria",
+        "characters": [
+          "Alex Rivera",
+          "Jordan",
+          "Maya Chen",
+          "Player"
+        ],
+        "duration": 1.5,
+        "description": "Tray in hand, you scan the cafeteria. Alex sits alone, still sorting project materials. Across the room, whichever group you've connected with waves you over.",
+        "emotionalBeat": "Public visibility of private choices - who gets your time?"
+      },
+      {
+        "id": "scene-6",
+        "title": "The Line Gets Crossed",
+        "location": "Cafeteria",
+        "characters": [
+          "Maya Chen",
+          "Deja",
+          "Priya",
+          "Alex Rivera",
+          "Jordan",
+          "Player"
+        ],
+        "duration": 2,
+        "description": "Maya's crew corners Alex, knocking project papers to the floor with a cutting remark. A small crowd has gone quiet, eyes flicking to you - the new kid - waiting to see where you'll stand.",
+        "emotionalBeat": "Peak tension - courage versus conformity, in public, with real cost."
+      },
+      {
+        "id": "scene-7",
+        "title": "First Day, Real Self",
+        "location": "Bus Stop / Walking Home",
+        "characters": [
+          "Jordan",
+          "Alex Rivera",
+          "Maya Chen",
+          "Player"
+        ],
+        "duration": 1.5,
+        "description": "The day's over. Depending on what you did, someone reaches out - a text, a walk beside you, a conditional offer of friendship - showing you the shape of the year ahead.",
+        "emotionalBeat": "Bittersweet or warm resolution; the first brick of your reputation is laid."
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-1",
+        "prompt": "How do you walk into the unknown?",
+        "context": "You're steps from the homeroom door and whispers are already starting behind you.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Walk in like you own it - shoulders back, easy nod."
+          },
+          {
+            "id": "b",
+            "text": "Duck in quietly and read the room before you do anything."
+          },
+          {
+            "id": "c",
+            "text": "Smile big and wave at everyone, hoping it lands."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "CONFIDENCE": 1,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-2",
+        "prompt": "Where do you sit?",
+        "context": "Two open seats, two very different worlds, and Mr. Okafor is waiting on you.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit next to Jordan - the doodling kid seems genuinely nice."
+          },
+          {
+            "id": "b",
+            "text": "Take the seat at Maya's table - looks like the place to be."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2
+          },
+          "b": {
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3a",
+        "scene": "scene-3a",
+        "prompt": "Jordan's joke lands awkwardly. What do you do?",
+        "context": "Jordan just told a corny joke and is visibly bracing for rejection.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Laugh for real - it's actually kind of funny."
+          },
+          {
+            "id": "b",
+            "text": "Smile politely and change the subject."
+          },
+          {
+            "id": "c",
+            "text": "Look away, unsure how to respond."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "EMPATHY": -2
+          }
+        }
+      },
+      {
+        "id": "choice-3b",
+        "scene": "scene-3b",
+        "prompt": "Maya tests you with a dig at Alex. How do you respond?",
+        "context": "Maya smirks, waiting to see if you'll join the joke at Alex's expense.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Laugh along - easiest way to fit in."
+          },
+          {
+            "id": "b",
+            "text": "Smoothly change the subject without confrontation."
+          },
+          {
+            "id": "c",
+            "text": "Say something kind about Alex, even if it's awkward."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -2
+          },
+          "b": {
+            "ADAPTABILITY": 2
+          },
+          "c": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-4",
+        "prompt": "Alex expects you to ask for a different partner. How do you react?",
+        "context": "Alex is already bracing for rejection, offering you an out before you even speak.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tell Alex you're genuinely glad to work together."
+          },
+          {
+            "id": "b",
+            "text": "Stay neutral and focus only on the assignment."
+          },
+          {
+            "id": "c",
+            "text": "Hesitate, glancing toward your new friend group first."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "EMPATHY": -1,
+            "ADAPTABILITY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-5",
+        "prompt": "Where do you sit for lunch?",
+        "context": "Alex is alone with the project spread out. Your group is waving you over. You have one tray and one decision.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Alex to keep working on the project."
+          },
+          {
+            "id": "b",
+            "text": "Sit with your group - you already have a spot there."
+          },
+          {
+            "id": "c",
+            "text": "Try to bring Alex over to sit with everyone."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "CONFIDENCE": 1
+          },
+          "c": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 2
+          }
+        }
+      },
+      {
+        "id": "choice-6",
+        "scene": "scene-6",
+        "prompt": "Maya's crew humiliates Alex in front of everyone. What do you do?",
+        "context": "Papers are scattered on the floor, Alex is frozen, and the whole cafeteria seems to be waiting to see what the new kid does.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Stand beside Alex and call out Maya directly."
+          },
+          {
+            "id": "b",
+            "text": "Quietly help Alex pick up the papers without confrontation."
+          },
+          {
+            "id": "c",
+            "text": "Stay back - it's not really your place to get involved."
+          },
+          {
+            "id": "d",
+            "text": "Laugh it off with the crew to keep the peace."
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 2
+          },
+          "b": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "CONFIDENCE": -2,
+            "EMPATHY": -1
+          },
+          "d": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -3
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-popular",
+        "name": "The Crew Path",
+        "trigger": "choice-2 option b",
+        "description": "You align early with Maya's table, trading warmth for social standing. This path tests whether charisma requires complicity, and whether you can still choose kindness once you're already 'in'.",
+        "divergesAt": "scene-2",
+        "convergesAt": "scene-4"
+      },
+      {
+        "id": "branch-authentic",
+        "name": "The Jordan Path",
+        "trigger": "choice-2 option a",
+        "description": "You choose the quieter, less obviously 'valuable' connection first. This path builds empathy earlier but tests your confidence when the popular crowd later puts you on the spot.",
+        "divergesAt": "scene-2",
+        "convergesAt": "scene-4"
+      },
+      {
+        "id": "branch-bridge",
+        "name": "The Bridge Ending",
+        "trigger": "choice-5 option c AND choice-6 option a",
+        "description": "A rarer emergent path where the player actively tries to merge both worlds rather than choosing one - visible only if empathy and confidence choices stack high enough by the climax.",
+        "divergesAt": "scene-5",
+        "convergesAt": "scene-7"
+      }
+    ],
+    "emotionalArc": [
+      {
+        "beat": "Anticipation",
+        "scene": "scene-1",
+        "description": "Nervous energy of being unknown."
+      },
+      {
+        "beat": "Temptation",
+        "scene": "scene-2",
+        "description": "The pull between easy belonging and genuine curiosity."
+      },
+      {
+        "beat": "Intimacy or Pressure",
+        "scene": "scene-3a/3b",
+        "description": "First real test of values in a low-stakes setting."
+      },
+      {
+        "beat": "Reckoning",
+        "scene": "scene-4",
+        "description": "Forced to face the consequences of earlier choices directly."
+      },
+      {
+        "beat": "Visibility",
+        "scene": "scene-5",
+        "description": "Private values become public behavior."
+      },
+      {
+        "beat": "Crisis",
+        "scene": "scene-6",
+        "description": "The emotional peak - courage tested in front of witnesses."
+      },
+      {
+        "beat": "Resolution",
+        "scene": "scene-7",
+        "description": "Consequences settle into the first thread of a reputation."
+      }
+    ],
+    "characterArcs": [
+      {
+        "character": "Player",
+        "arc": "From uncertain outsider to someone whose first-day choices begin defining who they'll be known as - popular, kind, adaptable, or some blend."
+      },
+      {
+        "character": "Jordan",
+        "arc": "From guarded self-deprecation to either a real friendship or a missed connection, depending on early warmth shown."
+      },
+      {
+        "character": "Maya Chen",
+        "arc": "Revealed as charismatic but conditionally kind; her arc either hardens (if unchallenged) or cracks slightly (if the player pushes back), hinting at future season depth."
+      },
+      {
+        "character": "Alex Rivera",
+        "arc": "From defensive isolation to cautious trust or reinforced loneliness, depending entirely on player follow-through, not just initial kindness."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "description": "Built through assertive entrances, standing up under social pressure, and initiating bold social risks (like bridging Alex into the group).",
+        "keyChoices": [
+          "choice-1",
+          "choice-5",
+          "choice-6"
+        ]
+      },
+      {
+        "trait": "EMPATHY",
+        "description": "Built through noticing and responding to others' vulnerability - Jordan's awkwardness, Alex's isolation - especially when it costs social capital.",
+        "keyChoices": [
+          "choice-3a",
+          "choice-3b",
+          "choice-4",
+          "choice-6"
+        ]
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "description": "Built through reading social situations correctly and adjusting approach without abandoning values - deflecting gossip smoothly, working well with an unfamiliar partner.",
+        "keyChoices": [
+          "choice-1",
+          "choice-2",
+          "choice-4",
+          "choice-5"
+        ]
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "Player & Jordan",
+        "dynamic": "Starts fragile and earnest; strengthens with small acts of genuine warmth, weakens with dismissiveness."
+      },
+      {
+        "pair": "Player & Maya",
+        "dynamic": "Charming but transactional; friendship is conditional on compliance, tested directly at the climax."
+      },
+      {
+        "pair": "Player & Alex",
+        "dynamic": "Begins as forced proximity, can evolve into the episode's most meaningful relationship if empathy is consistently chosen."
+      },
+      {
+        "pair": "Maya & Alex",
+        "dynamic": "Pre-existing tension the player did not create but must decide whether to perpetuate or interrupt."
+      }
+    ],
+    "replayHooks": [
+      "Choosing Jordan vs Maya at the seating choice leads to completely different dialogue and social dynamics for the rest of the episode.",
+      "The rare 'Bridge' ending is only reachable through a specific high-empathy, high-confidence combination, encouraging replay to discover it.",
+      "Maya's character has a subtle crack of vulnerability visible only if the player challenges her at the climax - inviting players to see 'the other side' of the popular kid.",
+      "Players who chose the Crew path may want to replay to see how differently Alex's arc resolves when approached from a place of established coolness rather than early kindness.",
+      "The epilogue text/dialogue changes based on cumulative trait totals, not just the last choice, rewarding players who track their overall pattern of behavior."
+    ],
+    "estimatedPlayTime": 12,
+    "educationalGoals": [
+      "Practice recognizing social exclusion in real time, even when it's disguised as humor.",
+      "Experience the emotional cost of choosing peer approval over authentic connection.",
+      "Build comfort with the discomfort of standing up for someone when it carries social risk.",
+      "Explore that confidence and empathy are not opposites - and that adaptability doesn't require abandoning values."
+    ],
+    "conversationStarters": [
+      "Have you ever laughed along with something that didn't feel right, just to fit in? What happened after?",
+      "What's the difference between being 'nice' and actually standing up for someone?",
+      "Did you like Maya? Why do you think someone like her acts the way she does?",
+      "If you replayed this and made different choices, do you think Alex's day would have gone differently - or the same?",
+      "What does it cost to be the new kid who does the unpopular thing on day one?"
+    ]
+  },
+  "designNotes": "The structure intentionally routes both major early branches (Jordan vs Maya) through the same forced-pairing scene with Alex, ensuring the climax lands with real weight regardless of path - the player's history colors the moment but doesn't let them avoid it. Trait scoring is cumulative rather than single-choice-determined, so the 'Bridge' ending rewards consistent behavior rather than a single lucky pick, which should encourage genuine reflection during play rather than choice-optimization. Maya was deliberately written as charming rather than cartoonishly cruel - the goal is to make the 'easy' path emotionally appealing, not just tempting on paper, so the climax choice actually costs something.",
+  "uncertainties": [
+    "Whether four options at the climax (choice-6) is too many for a single high-stakes beat - may want to trim to three to keep the moment sharper and less analysis-heavy.",
+    "The 'Bridge' branch is defined narrowly (two specific choices); playtesting may reveal it's too hard to reach and needs a wider trigger condition, or conversely too easy and undercuts its rarity.",
+    "Alex's characterization risks leaning on a 'sad outsider' trope - needs a distinct personality trait or interest (revealed in dialogue) to avoid feeling like a prop for the player's moral growth.",
+    "Jordan and Maya's paths converge fairly quickly (by scene-4); depending on target engagement, the episode might benefit from delaying convergence to let the two social worlds feel more distinct before the plot forces them together."
+  ],
+  "alternativesConsidered": [
+    "Considered making the seating choice (choice-2) have three options instead of two (adding 'sit alone') to create a third early branch, but cut it to keep the two-path structure clean and avoid diluting the Alex-pairing payoff in scene-4.",
+    "Considered setting the climax in a classroom instead of the cafeteria for more control, but chose the cafeteria for its public, chaotic energy, which raises the social stakes of the player's choice.",
+    "Considered giving Maya a redemption scene within this episode, but decided to hold that for a later episode so her arc doesn't resolve too neatly in a single first-day story.",
+    "Considered making trait mapping stat-visible to the player, but kept it fully hidden per design principle 1, trusting the narrative weight of choices to teach the lesson invisibly."
+  ]
+}

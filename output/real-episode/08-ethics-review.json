@@ -1,0 +1,112 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex Rivera, the 'quiet kid everyone avoids,' is characterized almost entirely through withdrawal, bracing for rejection, and being a target - with very little interiority beyond the social dynamic around them. We know Alex likes neat organization and does local history homework, but Alex's entire narrative function is 'the excluded kid who tests your character,' not a fully realized peer.",
+      "location": "Scenes 2, 4, 5, 6 - all Alex characterization",
+      "harmPotential": "Kids who are quiet, socially anxious, or on the margins (including neurodivergent students, kids with social anxiety, kids recovering from bullying) may feel reduced to a 'lesson' for other kids rather than seeing themselves reflected as a full person with their own goals/interests.",
+      "recommendation": "Give Alex at least one moment of specificity/agency not related to being excluded - e.g., a joke, an opinion on the project topic that shows a spark of personality, or a small choice Alex makes independent of the player's actions. Consider a branch where Alex's own voice pushes back or redirects the dynamic (e.g., 'I don't need saving, I need a partner who does the reading')."
+    },
+    {
+      "severity": "MINOR",
+      "category": "HARMFUL_TROPE",
+      "issue": "Alex's arc has shades of a 'redemption object' trope - existing primarily to test the player's moral choices ('the easy choices you made that morning start to cost more than you expected... who you are willing to be'). The synopsis itself frames Alex instrumentally relative to the player's growth.",
+      "location": "Synopsis and choice framing throughout",
+      "harmPotential": "Reinforces a subtle pattern where a marginalized-coded character's suffering serves as a growth vehicle for a more socially secure protagonist, rather than mutual relationship-building.",
+      "recommendation": "Reframe synopsis slightly to center mutual connection rather than the player's self-definition through Alex, e.g., add a beat where Alex also learns something about trusting people, not just where the player 'decides who to be.'"
+    },
+    {
+      "severity": "MINOR",
+      "category": "STEREOTYPE",
+      "issue": "Maya's group (Deja, Priya) participating in casual social cruelty risks the 'mean girl clique' trope, though it's handled with nuance (Deja's discomfort, Priya's hesitance) which mitigates flatness.",
+      "location": "Scenes 3b and 6",
+      "harmPotential": "Low - the trope is common but here it's used with texture (internal conflict shown in Deja/Priya) rather than one-dimensional villainy.",
+      "recommendation": "Consider giving Maya a brief humanizing beat elsewhere (not excusing behavior, but showing complexity) so cruelty isn't coded as an inherent trait of the 'popular girl' archetype."
+    },
+    {
+      "severity": "MINOR",
+      "category": "BIAS",
+      "issue": "Names used (Maya Chen, Priya, Deja, Jordan, Alex Rivera, Jules Okafor-Rivas) suggest a diverse cast, which is good, but ethnic/cultural markers are only in surnames/first names with zero cultural specificity beyond that - identity is present but thin.",
+      "location": "Character roster",
+      "harmPotential": "Minimal harm, but a missed opportunity; diversity risks feeling like a checklist of names rather than lived-in identity, though this is common and acceptable for a first episode focused on universal themes.",
+      "recommendation": "Not required to fix now, but future episodes should let specific cultural or family details emerge naturally through dialogue/actions for at least a couple of these characters."
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'bystander' choice (6c) and 'laugh along' choice (6d) are appropriately given negative trait consequences, but the episode doesn't show any narrative/social consequence toward Maya or the group beyond her being 'caught off guard' if confronted - there's no adult intervention or follow-up modeling that this behavior has real consequences.",
+      "location": "Scene 6, choice-6 outcomes",
+      "harmPotential": "Could send a subtle message that peer confrontation is the only accountability mechanism, when in reality trusted adults (like Mr. Okafor) modeling intervention could reinforce that seeking help is a valid response too - not just handled solely by the player as an individual to shoulder alone.",
+      "recommendation": "Consider adding an optional adult-awareness beat (Mr. Okafor noticing, or a resolution scene) to model that reporting/adult involvement is also a legitimate and encouraged option, especially for younger end of the 11-14 range."
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "All four choice options in scene-6 are good/thoughtful, but there's no representation of an 'imperfect but still trying' middle path beyond b/c/d - e.g., helping quietly IS treated as fully positive (EMPATHY+2) equal almost to direct confrontation, which is fine, but there's no option showing e.g. reporting to a teacher, which might resonate with more conflict-avoidant kids without coding them as failing (option c currently is coded very negatively at -2 CONFIDENCE, -1 EMPATHY).",
+      "location": "choice-6 options",
+      "harmPotential": "Kids who are shy or have anxiety may only see 'staying back' as a purely negative/cowardly choice with no nuance, which could feel discouraging rather than instructive for kids with different social capacities.",
+      "recommendation": "Consider a 5th option like 'quietly tell Mr. Okafor after class' that offers a lower-risk-but-still-positive path, especially valuable for conflict-avoidant or anxious teen players."
+    }
+  ],
+  "strengths": [
+    "Excellent ethical scaffolding: choices have clear, escalating stakes tied to empathy, confidence, and adaptability without being preachy",
+    "Deja and Priya are given internal conflict/nuance rather than being flat 'mean girl sidekicks' - Deja's visible discomfort is a strong touch",
+    "Multiple paths (Jordan path, Crew path, rare Bridge ending) avoid forcing a single 'correct' route, allowing player agency and replayability",
+    "The 'bystander' and 'laugh along' choices are not punished narratively with cartoonish villainy - Maya's reactions are recognizably human ('mask slipping'), avoiding over-simplified moral binaries",
+    "Diverse character roster represented without over-explaining or exoticizing identity",
+    "Themes of exclusion disguised as humor are handled with age-appropriate subtlety, matching the stated educational goals well",
+    "No romantic/power-imbalance concerns; no adult-teen inappropriate dynamics",
+    "The emotional arc structure supports genuine reflection on peer pressure and courage, well-matched to the target age"
+  ],
+  "recommendations": [
+    "Add at least one scene or line giving Alex agency/interiority beyond reactive bracing-for-rejection",
+    "Consider adding an adult-intervention or reporting-focused path in the climax scene for kids who are conflict-avoidant",
+    "Slightly rebalance the framing of Alex's narrative purpose so it reads less as 'moral test object' and more as a mutual relationship opportunity",
+    "In future episodes, deepen specific cultural texture for named characters beyond surnames"
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 6,
+    "tropes": 7,
+    "ethicalModeling": 8,
+    "culturalSensitivity": 8,
+    "overall": 7
+  },
+  "flaggedContent": [
+    {
+      "type": "NARRATIVE",
+      "location": "Synopsis and overall Alex arc",
+      "content": "Alex exists primarily as 'the quiet kid everyone avoids' whose main narrative function is to test the player's values",
+      "concern": "Risks positioning a marginalized-coded character as a plot device/growth catalyst for the more central protagonist rather than a co-equal character with independent agency",
+      "suggestion": "Add a beat giving Alex clear interests, humor, or pushback that exists independent of the player's choices"
+    },
+    {
+      "type": "DECISION",
+      "location": "choice-6 option c ('stay back')",
+      "content": "Staying back is coded as CONFIDENCE -2, EMPATHY -1 with Jordan also shown as complicit/guilty",
+      "concern": "May feel harshly punitive toward players who are naturally conflict-avoidant or have social anxiety, without offering a constructive lower-risk alternative",
+      "suggestion": "Add an option for seeking adult help/support as a valid non-confrontational but still positive path"
+    }
+  ],
+  "summary": {
+    "verdict": "This is a well-constructed, emotionally intelligent episode with strong ethical scaffolding around peer pressure, exclusion, and courage. The core mechanics (branching choices tied to empathy/confidence/adaptability) are handled thoughtfully and avoid moralizing. The main area for improvement is deepening Alex's characterization so the character reads as a full peer rather than primarily a narrative device for the player's growth, and providing a lower-risk-but-still-positive option in the climactic confrontation scene for conflict-avoidant players.",
+    "criticalIssues": [],
+    "majorConcerns": [
+      "Alex Rivera lacks sufficient independent agency/characterization beyond being the target of exclusion and a testing ground for the player's values"
+    ],
+    "minorNotes": [
+      "Consider adding an adult-reporting path as a middle-ground option in the cafeteria confrontation scene",
+      "Give Maya a humanizing beat elsewhere to avoid 'mean girl' flatness",
+      "Deepen cultural specificity for named characters in future episodes"
+    ],
+    "strengths": [
+      "Nuanced secondary characters (Deja, Priya) showing internal conflict",
+      "Multiple viable narrative paths respecting player agency",
+      "Age-appropriate handling of social exclusion and peer pressure",
+      "Clear, non-punitive consequence design tied to emotional intelligence goals"
+    ],
+    "readyForPublication": true
+  }
+}

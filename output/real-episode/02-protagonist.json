@@ -1,0 +1,94 @@
+{
+  "character": {
+    "id": "protagonist-jules-okafor-rivas",
+    "name": "Jules Okafor-Rivas",
+    "age": 15,
+    "pronouns": "she/they (fluid, still figuring out preference day to day)",
+    "appearance": {
+      "brief": "Medium height, soft-bodied, dark brown skin, tight coils she often has pulled back messily with whatever's on hand — a pen, a scrunchie, once a chip bag clip. Wears her older brother's oversized hoodies even in summer.",
+      "distinctiveFeatures": [
+        "A constellation of small burn scars on her left forearm from an old kitchen accident she doesn't talk about",
+        "Chews on pen caps until they're destroyed — has a drawer full of ruined pens",
+        "Draws on her own hands and arms in blue pen when bored or anxious"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "fiercely loyal",
+        "quick-witted",
+        "self-deprecating",
+        "secretly tender-hearted",
+        "avoidant of vulnerability"
+      ],
+      "bigFiveProfile": {
+        "openness": 8,
+        "conscientiousness": 4,
+        "extraversion": 6,
+        "agreeableness": 7,
+        "neuroticism": 8
+      },
+      "mannerisms": [
+        "Deflects compliments by immediately making a joke",
+        "Taps out rhythms on tables/desks when thinking — she used to take drum lessons",
+        "Goes very quiet and still right before she's about to cry, like she's trying to physically hold it in"
+      ],
+      "speechPatterns": [
+        "Uses humor as a shield — sarcasm is her first language",
+        "Talks fast when nervous, trails off mid-sentence when something actually matters to her",
+        "Occasionally code-switches between blunt Bronx-inflected bluntness and more formal, careful phrasing when talking to teachers or people she wants to impress"
+      ],
+      "emotionalTendencies": "Jules feels everything enormously but has trained herself to perform 'fine.' She's the friend who shows up with snacks during your crisis but disappears when she's the one in crisis. Anger comes easier to her than sadness — sadness feels too much like weakness, something she associates with her mom's depression after her parents' divorce."
+    },
+    "background": {
+      "family": "Lives with her mom, who has struggled with depression since the divorce three years ago, and her older brother Marcus (19), who works full-time and has become a de facto parent figure. Dad lives two states away and calls on birthdays, mostly. Money is tight — Jules has learned not to ask for things.",
+      "interests": [
+        "Drumming (used to be in a middle school band, quit when lessons became unaffordable)",
+        "True crime podcasts — she finds comfort in stories with clear villains and resolutions",
+        "Making elaborate playlists for her friends, each one a coded message she'd never say out loud"
+      ],
+      "strengths": [
+        "Radar for when someone else is hurting, even when they hide it well",
+        "Genuinely funny — can defuse tension in a room instantly",
+        "Fiercely protective of the people she loves"
+      ],
+      "struggles": [
+        "Chronic difficulty asking for help — sees needing people as a liability",
+        "Undiagnosed anxiety that manifests as irritability and 'shutting down'",
+        "School is a mess — she's smart but disorganized, missing assignments buried in her backpack for weeks"
+      ],
+      "secrets": [
+        "She's the one who's been quietly doing extra chores and picking up slack at home because she's scared her mom will 'break' if she asks for anything",
+        "She still has the drumsticks from her old lessons hidden in her closet and takes them out sometimes just to hold them"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Keep her family from falling apart — be the 'easy' kid so nobody has to worry about her",
+        "Get through the school year without anyone finding out how bad things are at home"
+      ],
+      "unconscious": [
+        "Wants permission to be a kid again — to need things without guilt",
+        "Craves being truly seen past the jokes, not just liked for being 'fun'"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Contemporary teen vernacular, quick and colloquial, peppered with pop culture references and podcast lingo. Not performatively 'cool' — genuinely how a sharp, online-savvy 15-year-old talks.",
+      "sentenceComplexity": "Short, punchy sentences when joking or deflecting; fragmented, hesitant sentences when approaching real emotion.",
+      "emotionalExpressiveness": "Indirect by default — she'll tell you she's fine while visibly not fine, and expects you to read between the lines like everyone in her family has learned to. Direct emotional expression is rare and therefore significant when it happens.",
+      "examples": [
+        "Example line 1: \"Oh my god, I'm fine, I just — okay it's not a big deal, can we talk about literally anything else, please, I'm begging you.\"",
+        "Example line 2: \"...Yeah. No, it's — yeah. I don't know. Forget it.\"",
+        "Example line 3: \"You know what's messed up? I can tell you the entire timeline of, like, four different unsolved murders, but I could not tell you what I'm actually feeling right now if you paid me.\""
+      ]
+    },
+    "storyRole": "Protagonist whose external arc (managing a crumbling home life while maintaining a 'together' facade at school) mirrors her internal arc (learning that needing help isn't failure). She's the emotional entry point for players — funny and guarded enough to be instantly likable, but slowly reveals depth.",
+    "arcPotential": [
+      "Episode 2: Jules is forced to choose between covering for her mom's bad day and being honest with a teacher who's starting to notice something's wrong",
+      "Episode 5: A fight with her best friend forces Jules to confront how her humor-as-deflection has been pushing people away, not just protecting her",
+      "Episode 9: Jules finally picks up the drumsticks again — small, quiet moment of reclaiming joy for herself, not as a coping mechanism but as a want",
+      "Season finale: Jules has to actually ask her brother for help instead of trying to fix everything alone — the vulnerability climax of her arc"
+    ]
+  },
+  "designNotes": "Jules is built around the contradiction of the 'funny friend' trope — she's genuinely funny, but the humor is doing labor most audiences won't immediately clock: it's a survival mechanism from parentification and unprocessed anxiety. I deliberately avoided making her a 'poor kid' cliché or an 'issue' character (no single-episode-lesson framing); her socioeconomic stress, her mother's depression, and her own anxiety are woven together as ongoing texture, not plot devices with tidy resolutions. Her love of true crime podcasts isn't random flavor — it reflects her psychological need for order and resolution in a life that feels chaotic. The drumsticks are a concrete symbolic object for her arc: reclaiming an abandoned joy is more resonant for teens than an abstract 'self care' message.",
+  "representationNotes": "Jules is a biracial (Nigerian-American father, Puerto Rican mother) teen navigating an under-depicted intersection: financial precarity, a parent's mental illness, and her own emerging queerness/gender fluidity — without any single identity being 'the point' of her story. Her queerness is present but not a coming-out plot; it's simply part of who she is, reflecting real teens for whom identity isn't always the central conflict. Care was taken to avoid the 'strong Black/Latina girl who doesn't need help' trope by making her avoidance of help-seeking an explicit flaw to be examined, not a virtue to be celebrated."
+}
