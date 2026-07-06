@@ -14,7 +14,6 @@
     "test:models": "node scripts/test-api-models.js",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
-    "sample:episode": "npx tsx scripts/create-sample-episode.ts",
     "demo:episode": "npx tsx scripts/demo-sample-episode.ts",
     "real:episode": "node scripts/create-real-episode.js",
     "real:episode:dev": "SKIP_REVIEWERS=childPsychologist,gameDesigner,ethicsReviewer MAX_RUN_TOKENS=400000 node scripts/create-real-episode.js",

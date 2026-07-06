@@ -28,7 +28,13 @@ export interface AgentConfig {
 export interface AgentContext {
   workflowId: string;
   threadId: string;
-  messageBus: MessageBus;
+  /**
+   * Optional by decision (docs/decisions/001-message-bus-out-of-runtime.md):
+   * the runtime pipeline orchestrates agents by direct calls, so agents must
+   * work without a bus. When provided (e.g. multi-process deployments),
+   * agents subscribe and can message each other.
+   */
+  messageBus?: MessageBus;
   memory: MemorySystem;
   llm: LLMGateway;
 }
@@ -48,11 +54,14 @@ export abstract class BaseAgent {
   async initialize(context: AgentContext): Promise<void> {
     this.context = context;
     
-    // Subscribe to messages
-    await context.messageBus.subscribe(
-      this.config.id,
-      this.handleMessage.bind(this)
-    );
+    // Subscribe to messages when a bus is wired (optional — the runtime
+    // pipeline orchestrates by direct calls without one)
+    if (context.messageBus) {
+      await context.messageBus.subscribe(
+        this.config.id,
+        this.handleMessage.bind(this)
+      );
+    }
     
     // Perform agent-specific initialization
     await this.onInitialize();
@@ -179,7 +188,13 @@ export abstract class BaseAgent {
       expiresAt: options?.expiresAt?.toISOString()
     };
     
-    await this.context!.messageBus.publish(message);
+    if (this.context!.messageBus) {
+      await this.context!.messageBus.publish(message);
+    } else {
+      // No bus in this deployment: the message is constructed and returned
+      // for the caller/orchestrator to act on, but not routed anywhere.
+      console.log(`[${this.config.id}] (no message bus) ${message.type} to ${Array.isArray(to) ? to.join(',') : to} not routed`);
+    }
     
     return message;
   }
@@ -357,7 +372,7 @@ export abstract class BaseAgent {
    * Shutdown agent gracefully
    */
   async shutdown(): Promise<void> {
-    if (this.context) {
+    if (this.context?.messageBus) {
       await this.context.messageBus.unsubscribe(this.config.id);
     }
     this.initialized = false;
