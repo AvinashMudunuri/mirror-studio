@@ -1,0 +1,20 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "branchDialogue entries (branch-genuine, branch-popularity, branch-selfprotective) are attached to each of the three ending scenes (scene-ending-belonging, scene-ending-popularity, scene-ending-lonely), but there is no field anywhere in the schema (on scenes, choices, or outcomes) that specifies which branchId should be selected at runtime. Nothing links a branchId to a prior choice, trait total, or visited-scene history. The rendering pipeline has no deterministic way to know which of the three branch dialogue sets to play when a player reaches, e.g., scene-ending-belonging. — Suggested fix: Add an explicit trigger field (e.g., on each ending scene: 'branchSelector': based on which path/outcome the player took, or a mapping keyed to trait totals) so the correct branchDialogue block can be resolved deterministically. (location: branchDialogue[*].branchId)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Dialogue line ID 'ep-1' inside scene-ending-popularity duplicates the top-level episode ID 'ep-1'. If dialogue IDs and top-level entity IDs share a namespace (common in flat content databases/analytics logging), this collision could cause lookup errors or overwrite the episode record. — Suggested fix: Rename dialogue IDs in scene-ending-popularity to a scene-specific prefix (e.g., 'eppop-1', 'eppop-2', 'eppop-3', 'eppop-4') to avoid collision with the episode ID and be consistent with sibling ending scenes. (location: scenes[scene-ending-popularity].dialogue[0].id)",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

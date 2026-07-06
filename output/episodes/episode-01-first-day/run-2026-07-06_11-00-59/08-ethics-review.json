@@ -1,0 +1,113 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "STEREOTYPE",
+      "issue": "Priya Chandran (coded South/South-Asian surname) is the sole named character of color with substantial screen time, and her defining traits are: quiet, sketchbook-obsessed, socially awkward, 'fiercely private.' This risks brushing against 'model minority'-adjacent or 'quiet artistic introvert' shorthand for an Asian-coded girl, especially since she's also the episode's designated bullying target/emotional-labor recipient.",
+      "location": "Character roster; scenes scene-homeroom, scene-lunch-priya, scene-hallway-mockery",
+      "harmPotential": "South/East Asian girls could feel reduced to 'the quiet artistic one who needs rescuing,' reinforcing a narrow, singular representation of what an Asian-coded girl is like when she's the only character of color with depth.",
+      "recommendation": "Give Priya more agency beyond reactivity to Rowan and Jordan — e.g., a beat where she asserts a boundary unprompted, or shows competence/leadership outside the sketchbook. Also diversify the named cast: add another background character of color with different traits (loud, athletic, class clown, etc.) so Priya isn't the lone representative of visible diversity carrying the entire 'otherness' narrative."
+    },
+    {
+      "severity": "MAJOR",
+      "category": "HARMFUL_TROPE",
+      "issue": "Structurally, Priya exists primarily as the vehicle for the player's moral growth — she is bullied, comforted, and then rewards the player with friendship/approval depending on choices. This leans toward a 'plot device' pattern where the marginalized-coded character's suffering exists to teach the (unmarked/default) protagonist empathy.",
+      "location": "scene-hallway-mockery, scene-defend-priya, scene-ending-belonging",
+      "harmPotential": "Readers from marginalized backgrounds may feel their pain is being used instrumentally for another character's character arc rather than their own story mattering intrinsically.",
+      "recommendation": "Give Priya a want/goal of her own that isn't about Rowan (e.g., entering an art contest, a family dynamic, a friendship she's protecting) so her arc has independent stakes beyond being the object of Rowan's choices."
+    },
+    {
+      "severity": "MINOR",
+      "category": "BIAS",
+      "issue": "Jordan is written as 'loyal to whoever's on top' and is the instigator of bullying/mockery — the charismatic, popular boy is coded as shallow/cruel-when-convenient. This is a mild trope (popular kid = performatively cruel) but is handled with nuance (he's 'genuinely thrown' and backs down, has insecurity under bravado).",
+      "location": "scene-hallway-mockery, scene-lunch-populars",
+      "harmPotential": "Low — popularity-equals-shallow is a common, low-stakes trope, but worth noting it's a flattening of a group (popular kids) without much redemption arc depth compared to Priya.",
+      "recommendation": "Consider one beat showing Jordan's insecurity more directly (already implied) so his behavior reads as understandable rather than purely a 'popular kid antagonist' function."
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Ms. Alvarez, the one adult character, is coded with a Latina surname and given 'warm but no-nonsense... protective of overlooked kids' — a fairly common 'tough-but-caring teacher of color' archetype. Not harmful on its own, but combined with Priya being the only other named POC-coded character, the episode's diversity is thin in range.",
+      "location": "Character roster",
+      "harmPotential": "Minimal — the archetype is positive, but if repeated across episodes without variation, could calcify into a pattern.",
+      "recommendation": "In future episodes, ensure adult characters of color occupy varied roles (not just warm nurturer/protector) to avoid pattern repetition across the season."
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'redirect humor' choice (choice-4c) is framed as an EMPATHY+1/ADAPTABILITY+2 positive outcome, but it leaves Priya's mockery unaddressed and she exits confused about 'whose side' the player is on. This is honest and nuanced, but the trait reward (empathy+1) for a choice that doesn't actually name or stop the harm could send a mixed message that clever avoidance is equally empathetic as direct defense.",
+      "location": "scene-redirect-humor, choice-4 traitMapping",
+      "harmPotential": "Teen players might internalize that distraction/avoidance is an equally empathetic response to witnessed bullying as direct intervention, potentially under-valuing the importance of naming harm.",
+      "recommendation": "Consider a slightly lower empathy reward for redirect-humor relative to direct defense, or add a follow-up beat where Priya explicitly clarifies she wasn't sure it counted as help — the branchDialogue already gestures at this ambiguity, which is good; just ensure trait scoring reflects the moral weight difference."
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "All major characters appear to default to able-bodied, no explicit disability, sexuality, gender-nonconformity, or neurodivergence representation in this episode.",
+      "location": "Full character roster",
+      "harmPotential": "Not harmful in itself for a single episode, but if the season doesn't broaden representation elsewhere, marginalized teen players (disabled, LGBTQ+, neurodivergent) may not see themselves reflected in the 'core cast' across the show.",
+      "recommendation": "Not required to fix in this episode, but flag for season-level tracking: ensure other episodes/worlds introduce broader identity representation with same narrative depth given to Priya here."
+    }
+  ],
+  "strengths": [
+    "Excellent, non-preachy ethical decision architecture: the hallway mockery scene presents three realistic, age-appropriate responses (defend, stay silent, redirect) with honest, proportionate emotional consequences rather than simplistic 'good kid vs bad kid' framing",
+    "Priya is written with real specificity and interiority (the Kessu lore, her guardedness, her testing behavior) rather than being purely defined by being bullied or being 'the artsy girl'",
+    "Jordan is humanized — his cruelty is shown as social performance/insecurity rather than innate villainy, and he's allowed a redemptive, non-punitive beat ('that was actually kind of cool')",
+    "No romantic/adult-power-dynamic content; peer relationships are age-appropriate throughout",
+    "The three branching 'outcomes' (Genuine Connection, Popularity Chase, Self-Protective) all end with nuanced, non-punitive internal monologue rather than moralizing — even the 'popularity' and 'lonely' paths avoid being framed as pure failure, modeling emotional complexity well for the target age",
+    "Confidence is validated across multiple expressions (loud, quiet, humorous) per the stated educational goal, avoiding a single 'correct' personality type",
+    "Ms. Alvarez models healthy adult authority — warm, funny, boundary-setting, protective of overlooked students — without being either absent or overbearing"
+  ],
+  "recommendations": [
+    "Add a beat giving Priya an independent goal/stake unrelated to Rowan, to avoid her functioning solely as the moral-growth catalyst for the player character",
+    "Diversify background/named characters of color beyond Priya and Ms. Alvarez, even briefly, to avoid tokenization by omission",
+    "Reconsider relative trait-scoring weight between 'redirect humor' and 'direct defense' choices to ensure moral clarity that naming harm is valued highly",
+    "Track representation gaps (disability, LGBTQ+, neurodivergence) at the season level rather than expecting single-episode coverage"
+  ],
+  "scores": {
+    "biasAvoidance": 7,
+    "representation": 6,
+    "tropes": 7,
+    "ethicalModeling": 9,
+    "culturalSensitivity": 8,
+    "overall": 7
+  },
+  "flaggedContent": [
+    {
+      "type": "NARRATIVE",
+      "location": "scene-hallway-mockery / scene-defend-priya arc",
+      "content": "Priya's private sketchbook is read aloud mockingly by Jordan; her resolution/relief is contingent on Rowan's choice",
+      "concern": "Positions the marginalized-coded character's wellbeing as dependent on the protagonist's action rather than her own agency",
+      "suggestion": "Consider giving Priya a moment of self-advocacy even within the mockery scene (e.g., a line where she starts to grab the book back herself before the player acts), so her own agency is visible regardless of the player's choice"
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Character roster - Priya Chandran",
+      "content": "Quiet, private, sketchbook-focused, socially guarded",
+      "concern": "Sole POC-coded peer character risks reading as a narrow 'type' for Asian/South-Asian-coded girls if not balanced elsewhere in the season",
+      "suggestion": "Ensure future episodes show Priya (or other characters of color) with expanded range - assertiveness, humor, leadership, flaws beyond guardedness"
+    }
+  ],
+  "summary": {
+    "verdict": "This is a well-crafted, emotionally intelligent episode with strong ethical decision modeling and an admirably non-preachy approach to bullying, belonging, and social risk. The core issue is representational thinness: Priya, the only character of color with real depth, is also the episode's bullying target and the primary vehicle for the player's moral growth, which risks (if repeated across the season) tokenizing her into a 'suffering-to-teach-empathy' role. None of the issues are critical or publication-blocking on their own, but they should be addressed via minor scene additions and tracked at the season level.",
+    "criticalIssues": [],
+    "majorConcerns": [
+      "Priya's characterization risks model-minority/quiet-artistic stereotype coding as the sole POC-coded peer character",
+      "Priya's narrative function leans toward 'suffering to catalyze protagonist's empathy growth' rather than having independent stakes"
+    ],
+    "minorNotes": [
+      "Popular-kid-as-shallow-antagonist trope for Jordan is mild but present",
+      "Trait scoring for 'redirect humor' vs 'direct defense' could better reflect moral weight",
+      "No representation of disability, LGBTQ+, or neurodivergent identities in this episode (acceptable for single episode, track at season level)"
+    ],
+    "strengths": [
+      "Nuanced, non-punitive branching consequences for all major choices",
+      "Priya has genuine interiority and specificity beyond her narrative function",
+      "Jordan is humanized rather than villainized",
+      "Strong age-appropriate modeling of healthy adult authority and peer conflict",
+      "Confidence/introversion both validated as legitimate ways of being"
+    ],
+    "readyForPublication": true
+  }
+}

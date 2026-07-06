@@ -1,0 +1,57 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Priya's surname is stated incorrectly in scene text, contradicting the character bible where she is named 'Priya Chandran'.",
+      "location": "scenes[1] (scene-homeroom).description",
+      "expectedValue": "Priya Chandran",
+      "actualValue": "Priya Chen",
+      "fix": "Update the description text to 'Priya Chandran' or remove the surname reference entirely to avoid contradiction."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "estimatedPlayTime (13) does not obviously correspond to the sum of scene durations (23 scenes x duration:1 = 23 units). If duration is meant to be in minutes, the metadata is inconsistent; if duration is an arbitrary weight, this should be documented.",
+      "location": "estimatedPlayTime / scenes[*].duration",
+      "suggestion": "Clarify the unit for 'duration' and recompute estimatedPlayTime accordingly, or add a comment/field explaining the relationship."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "seasonId 'season-1' does not correspond to any explicit season ID in the world data — the world only lists a display string ('Season 1: First Year'), not a season object with an id field.",
+      "location": "seasonId vs worldContext.seasons",
+      "suggestion": "Either add season objects with explicit IDs to the world schema, or document the season-1 -> 'Season 1: First Year' mapping convention so downstream tooling can resolve it reliably."
+    },
+    {
+      "category": "STYLE",
+      "message": "choiceDialogue for choice-4 option 'b' uses a field named 'reasoning' that isn't used anywhere else in choiceDialogue.options across the episode (other options only use 'id' and 'text').",
+      "location": "choiceDialogue[3].options[1] (choice-4, option b)",
+      "suggestion": "Remove the nonstandard 'reasoning' field or standardize it as an optional field used consistently (e.g., as a stage-direction/subtext field) across all choiceDialogue options."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "branchDialogue entries key off three archetypal branchIds ('branch-genuine', 'branch-popularity', 'branch-self-protective') attached to each ending scene, but no explicit logic/threshold is defined anywhere in the episode data for how a player's actual choice combination (which can mix across all three archetypes, e.g., sit with Priya but then join Jordan's mockery) maps to exactly one of these three branchIds. This is a design/runtime resolution gap that could cause ambiguous or undefined branch selection for non-canonical (mixed) playthroughs.",
+      "location": "branchDialogue[*].branchId",
+      "suggestion": "Define an explicit trait-threshold or dominant-path calculation (e.g., based on cumulative EMPATHY/CONFIDENCE/ADAPTABILITY scores) documented either in the episode schema or the rendering pipeline's spec, and add a documented fallback/default branch for tied or ambiguous cases."
+    },
+    {
+      "category": "STYLE",
+      "message": "choice-5 has only 2 options (a, b) while every other major choice (1-4, 6) has 3 options. Not an error, but an inconsistency in choice format across the episode that may read as a discontinuity in pacing/complexity.",
+      "location": "choices[4] (choice-5)",
+      "suggestion": "Consider adding a third 'middle ground' option for stylistic consistency with other choice points, though this is optional given the narrower thematic scope of that decision."
+    }
+  ],
+  "summary": {
+    "totalChecks": 24,
+    "passedChecks": 22,
+    "failedChecks": 1,
+    "warningCount": 5
+  },
+  "recommendations": [
+    "Add a short glossary/mapping doc clarifying how branchDialogue branchIds get selected at runtime based on cumulative trait scores or path history.",
+    "Standardize optional dialogue-object fields (action, emotion, reasoning) so all dialogue lines use a consistent set of optional keys.",
+    "Double check all character full-name references in scene descriptions against the character bible in a final pass before status changes from DRAFT to IN_REVIEW."
+  ]
+}

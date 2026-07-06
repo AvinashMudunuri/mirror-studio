@@ -1,0 +1,15 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Malformed dialogue line object: duplicate 'character' key, invalid 'id' value ('player' instead of a unique dialogue id), and an unexpected 'id2' field with null value. This will likely break JSON parsing/rendering of this line or cause it to silently fail to display. — Suggested fix: Remove the duplicate 'character' key and the extraneous 'id2' field. Assign a proper unique id following the established pattern (e.g., 'ba-d-2') consistent with sibling lines ba-d-1 and ba-d-3. (location: branchDialogue[3].lines[1] (scene-11a-ending-authentic, branchId: path-d-cost))",
+        "severity": "BLOCKER"
+      }
+    ]
+  }
+}

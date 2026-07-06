@@ -1,0 +1,1441 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-arrival",
+      "lines": [
+        {
+          "id": "arr-1",
+          "character": "NARRATOR",
+          "text": "The doors of Ridgeview Academy loom ahead — glass and brick, and a banner reading WELCOME BACK, FALCONS in letters starting to peel at the corners."
+        },
+        {
+          "id": "arr-2",
+          "character": "INTERNAL",
+          "text": "Okay. Cool. Normal building. Normal doors. You've done doors before."
+        },
+        {
+          "id": "arr-3",
+          "character": "NARRATOR",
+          "text": "Rowan's fingers find a rhythm on her thigh — tap tap-tap, tap tap-tap — before she notices and shoves her hand into her pocket instead.",
+          "action": "taps out a rhythm, catches herself"
+        },
+        {
+          "id": "arr-4",
+          "character": "INTERNAL",
+          "text": "Room 214. Room 214. It's not going to change if I stare at it a fourth time."
+        },
+        {
+          "id": "arr-5",
+          "character": "NARRATOR",
+          "text": "She takes a breath meant to be steadying. Mostly it just makes her aware of how loud breathing sounds when you're paying attention to it."
+        },
+        {
+          "id": "arr-6",
+          "character": "INTERNAL",
+          "text": "New school number four. You'd think there'd be a system by now."
+        },
+        {
+          "id": "arr-7",
+          "character": "INTERNAL",
+          "text": "There is not a system."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-homeroom",
+      "lines": [
+        {
+          "id": "hr-1",
+          "character": "NARRATOR",
+          "text": "Homeroom 214 is a low hum of backpacks hitting floors and half-finished conversations."
+        },
+        {
+          "id": "hr-2",
+          "character": "ms-alvarez",
+          "text": "Alright, folks, eyes up here —",
+          "emotion": "warm",
+          "action": "does a slow scan of the room"
+        },
+        {
+          "id": "hr-3",
+          "character": "ms-alvarez",
+          "text": "well, most of you. Priya, sketchbook can survive thirty more seconds, I promise.",
+          "emotion": "dry"
+        },
+        {
+          "id": "hr-4",
+          "character": "NARRATOR",
+          "text": "Priya looks up just long enough to close it — not annoyed, exactly. Just closed."
+        },
+        {
+          "id": "hr-5",
+          "character": "ms-alvarez",
+          "text": "We've got a new face today. Rowan Mercado, that's you, right? C'mon up. Give us something real.",
+          "action": "taps two fingers on the desk"
+        },
+        {
+          "id": "hr-6",
+          "character": "NARRATOR",
+          "text": "Twenty-some heads turn. In the back row, a boy is already grinning like he knows something nobody else does — Jordan, according to the seating chart taped by the door — leaning forward on his elbows."
+        },
+        {
+          "id": "hr-7",
+          "character": "INTERNAL",
+          "text": "Okay. Okay okay okay. Just — say words. In an order. That make sense."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-intro-confident",
+      "lines": [
+        {
+          "id": "ic-1",
+          "character": "player",
+          "text": "Hi — I'm Rowan. I just moved here from Portland, but don't worry, I'm not gonna make you sit through the whole saga.",
+          "action": "stands, decides to just go for it"
+        },
+        {
+          "id": "ic-2",
+          "character": "NARRATOR",
+          "text": "A couple kids laugh — real ones, not pity ones."
+        },
+        {
+          "id": "ic-3",
+          "character": "player",
+          "text": "This is move number four, so I've gotten weirdly good at the new-kid thing. Not, like, good good. Just — experienced."
+        },
+        {
+          "id": "ic-4",
+          "character": "jordan",
+          "text": "Respect. Four schools, zero fear.",
+          "action": "finger-guns from the back row"
+        },
+        {
+          "id": "ic-5",
+          "character": "ms-alvarez",
+          "text": "Rowan Mercado. I like that. Sit down before I make you say more.",
+          "emotion": "dry, small smile"
+        },
+        {
+          "id": "ic-6",
+          "character": "NARRATOR",
+          "text": "Rowan sits, pulse still going — but it's a good kind of loud, for once."
+        },
+        {
+          "id": "ic-7",
+          "character": "INTERNAL",
+          "text": "Okay. That didn't completely fall apart. Noted."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-intro-reserved",
+      "lines": [
+        {
+          "id": "ir-1",
+          "character": "player",
+          "text": "Um — hi. I'm Rowan. I just moved here. That's — yeah. That's it.",
+          "emotion": "quiet, fast"
+        },
+        {
+          "id": "ir-2",
+          "character": "NARRATOR",
+          "text": "She's sitting before Ms. Alvarez even nods, cheeks warm, staring hard at the scratched-up desk like it might have answers written on it somewhere."
+        },
+        {
+          "id": "ir-3",
+          "character": "ms-alvarez",
+          "text": "Rowan Mercado. Welcome to 214.",
+          "emotion": "gentle"
+        },
+        {
+          "id": "ir-4",
+          "character": "NARRATOR",
+          "text": "Across the room, Priya glances up from her sketchbook — just a flicker, there and gone — like something about that registered."
+        },
+        {
+          "id": "ir-5",
+          "character": "INTERNAL",
+          "text": "That's it. That's all anyone's getting today."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-intro-humor",
+      "lines": [
+        {
+          "id": "ih-1",
+          "character": "player",
+          "text": "Hi, I'm Rowan. Fair warning, I already got lost twice this morning, so if you see me walk into a supply closet with real confidence, just — let me have that."
+        },
+        {
+          "id": "ih-2",
+          "character": "NARRATOR",
+          "text": "The class laughs — actual, unforced. Jordan laughs loudest, slapping the desk."
+        },
+        {
+          "id": "ih-3",
+          "character": "jordan",
+          "text": "Bro got lost TWICE? On day one?? Okay, I respect the commitment to the bit."
+        },
+        {
+          "id": "ih-4",
+          "character": "NARRATOR",
+          "text": "In the corner, Priya smiles down at her sketchbook — small, but real."
+        },
+        {
+          "id": "ih-5",
+          "character": "ms-alvarez",
+          "text": "Noted for the record. Sit, before the supply closet becomes a running theme.",
+          "emotion": "fighting her own smile"
+        },
+        {
+          "id": "ih-6",
+          "character": "INTERNAL",
+          "text": "Okay. That worked. Don't get used to it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-lunch-hall",
+      "lines": [
+        {
+          "id": "lh-1",
+          "character": "NARRATOR",
+          "text": "The cafeteria hits like a wall of sound — trays clattering, a hundred conversations stacked on top of each other."
+        },
+        {
+          "id": "lh-2",
+          "character": "jordan",
+          "text": "Yo! Rowan-dawg! Over here, c'mon!",
+          "action": "waving big from a packed table"
+        },
+        {
+          "id": "lh-3",
+          "character": "NARRATOR",
+          "text": "Across the room, by the window, Priya sits alone, headphones in, pen tapping against her teeth, sketchbook open in front of her like a shield."
+        },
+        {
+          "id": "lh-4",
+          "character": "INTERNAL",
+          "text": "Okay but like. Loud table or quiet corner. Big decisions before I've even eaten."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-lunch-populars",
+      "lines": [
+        {
+          "id": "lp-1",
+          "character": "NARRATOR",
+          "text": "Rowan slides her tray onto the table. Four kids look up, size her up, go back to their conversation like she passed some invisible test."
+        },
+        {
+          "id": "lp-2",
+          "character": "jordan",
+          "text": "See, told you. This is basically the law now. New kid sits with us, day one.",
+          "action": "finger-guns"
+        },
+        {
+          "id": "lp-3",
+          "character": "jordan",
+          "text": "Okay so hot take — Coach Delgado's whistle count today was personally aggressive. Blew it four times just walking past me."
+        },
+        {
+          "id": "lp-4",
+          "character": "NARRATOR",
+          "text": "The table laughs. Someone mimics the whistle. It's fast and funny — and one joke lands a little sharp, aimed at some kid two tables over. Nobody else seems to notice."
+        },
+        {
+          "id": "lp-5",
+          "character": "jordan",
+          "text": "Anyway. You're funny, Rowan-dawg. I like it. You're in.",
+          "emotion": "grinning, oblivious"
+        },
+        {
+          "id": "lp-6",
+          "character": "INTERNAL",
+          "text": "In. Okay. That was easy. Weirdly easy."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-lunch-priya",
+      "lines": [
+        {
+          "id": "lpr-1",
+          "character": "player",
+          "text": "Hey — this seat taken?"
+        },
+        {
+          "id": "lpr-2",
+          "character": "priya",
+          "text": "...No. Go for it.",
+          "emotion": "not looking up"
+        },
+        {
+          "id": "lpr-3",
+          "character": "NARRATOR",
+          "text": "A beat of quiet that isn't quite comfortable yet."
+        },
+        {
+          "id": "lpr-4",
+          "character": "player",
+          "text": "Okay but like, is that a dragon? I feel like I need context."
+        },
+        {
+          "id": "lpr-5",
+          "character": "priya",
+          "text": "It's not a dragon. Dragons are lazy worldbuilding.",
+          "emotion": "instantly, a little defensive"
+        },
+        {
+          "id": "lpr-6",
+          "character": "NARRATOR",
+          "text": "She hesitates — then turns the sketchbook, just slightly."
+        },
+        {
+          "id": "lpr-7",
+          "character": "priya",
+          "text": "This is a Kessu. They live in flooded cities. Only come out at low tide, 'cause that's when the light does this thing—",
+          "action": "stops herself"
+        },
+        {
+          "id": "lpr-8",
+          "character": "priya",
+          "text": "—it doesn't matter."
+        },
+        {
+          "id": "lpr-9",
+          "character": "player",
+          "text": "No, it matters. Keep going."
+        },
+        {
+          "id": "lpr-10",
+          "character": "NARRATOR",
+          "text": "Priya looks up — actually looks — like she's checking whether that was real."
+        },
+        {
+          "id": "lpr-11",
+          "character": "priya",
+          "text": "...Yeah? Okay.",
+          "emotion": "small, careful",
+          "action": "the pen starts moving again, looser this time"
+        },
+        {
+          "id": "lpr-12",
+          "character": "priya",
+          "text": "So this one's not finished — the linework's off around the gills, but—"
+        },
+        {
+          "id": "lpr-13",
+          "character": "INTERNAL",
+          "text": "Okay. This is nice. This is actually nice."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-lunch-alone",
+      "lines": [
+        {
+          "id": "la-1",
+          "character": "NARRATOR",
+          "text": "Rowan picks the emptiest table in the corner, tray down, like this was always the plan."
+        },
+        {
+          "id": "la-2",
+          "character": "INTERNAL",
+          "text": "Just observe today. That's not sad. That's strategic."
+        },
+        {
+          "id": "la-3",
+          "character": "NARRATOR",
+          "text": "It's quieter here. Quiet enough to hear herself chew, which is its own kind of information."
+        },
+        {
+          "id": "la-4",
+          "character": "INTERNAL",
+          "text": "Tomorrow. Tomorrow I'll figure out where I go. Today's just recon."
+        },
+        {
+          "id": "la-5",
+          "character": "NARRATOR",
+          "text": "Across the room, laughter rises from the loud table. Rowan doesn't look over. Much."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-project-assigned",
+      "lines": [
+        {
+          "id": "pa-1",
+          "character": "ms-alvarez",
+          "text": "Alright, folks — group project, and before anyone starts negotiating: no, you don't get to pick your partner.",
+          "action": "taps two fingers on the desk"
+        },
+        {
+          "id": "pa-2",
+          "character": "NARRATOR",
+          "text": "A groan ripples through the room."
+        },
+        {
+          "id": "pa-3",
+          "character": "ms-alvarez",
+          "text": "Partners aren't punishment, Jordan, despite your face right now.",
+          "emotion": "flat, dry"
+        },
+        {
+          "id": "pa-4",
+          "character": "ms-alvarez",
+          "text": "Rowan, you're with Priya. Priya, be nice — she's new, she doesn't know your villain-origin-story reputation yet."
+        },
+        {
+          "id": "pa-5",
+          "character": "NARRATOR",
+          "text": "Priya's mouth twitches — almost a smile — before she catches herself and goes still again."
+        },
+        {
+          "id": "pa-6",
+          "character": "priya",
+          "text": "...I don't have a reputation. I have a system.",
+          "emotion": "flat, but not unkind"
+        },
+        {
+          "id": "pa-7",
+          "character": "INTERNAL",
+          "text": "Okay. Let's see how this goes."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-project-lead",
+      "lines": [
+        {
+          "id": "pl-1",
+          "character": "player",
+          "text": "Okay so I'm thinking we just do the ecosystem diagram thing, everyone always does it, it's simple, it's safe, we just—",
+          "action": "already moving"
+        },
+        {
+          "id": "pl-2",
+          "character": "priya",
+          "text": "...Sure.",
+          "emotion": "flat"
+        },
+        {
+          "id": "pl-3",
+          "character": "NARRATOR",
+          "text": "Her sketchbook stays closed on the desk, both hands resting on top of it — a habit, not a choice."
+        },
+        {
+          "id": "pl-4",
+          "character": "player",
+          "text": "You cool with that?"
+        },
+        {
+          "id": "pl-5",
+          "character": "priya",
+          "text": "Yeah. It's fine."
+        },
+        {
+          "id": "pl-6",
+          "character": "NARRATOR",
+          "text": "It sounds fine. It doesn't quite sound true."
+        },
+        {
+          "id": "pl-7",
+          "character": "INTERNAL",
+          "text": "That was fast. Almost too fast."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-project-collab",
+      "lines": [
+        {
+          "id": "pc-1",
+          "character": "player",
+          "text": "Okay but like — before I decide anything, what were you thinking? You had that look."
+        },
+        {
+          "id": "pc-2",
+          "character": "priya",
+          "text": "...What look.",
+          "emotion": "caught off guard"
+        },
+        {
+          "id": "pc-3",
+          "character": "player",
+          "text": "The pen-tapping look. That's a thinking-face. I've seen it."
+        },
+        {
+          "id": "pc-4",
+          "character": "NARRATOR",
+          "text": "Priya's mouth does the almost-smile thing again — but this time it finishes."
+        },
+        {
+          "id": "pc-5",
+          "character": "priya",
+          "text": "Okay, so — what if instead of the boring diagram, we made it a story? Like, the ecosystem has a whole narrative. Characters. I could draw it."
+        },
+        {
+          "id": "pc-6",
+          "character": "player",
+          "text": "Wait, that's actually really good."
+        },
+        {
+          "id": "pc-7",
+          "character": "priya",
+          "text": "...Yeah? Okay. Yeah, I'd like that.",
+          "emotion": "small, testing the words"
+        },
+        {
+          "id": "pc-8",
+          "character": "NARRATOR",
+          "text": "She opens the sketchbook fully this time, and turns it so they can both see."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-project-dismiss",
+      "lines": [
+        {
+          "id": "pd-1",
+          "character": "player",
+          "text": "Whatever you think is best, honestly. I don't really have opinions on this stuff."
+        },
+        {
+          "id": "pd-2",
+          "character": "priya",
+          "text": "...Okay. I guess we could do the diagram. Or — I don't know. Whatever's easiest.",
+          "emotion": "expecting more pushback that never comes"
+        },
+        {
+          "id": "pd-3",
+          "character": "NARRATOR",
+          "text": "She makes the decisions, one after another, and Rowan nods along to each one."
+        },
+        {
+          "id": "pd-4",
+          "character": "priya",
+          "text": "Kind of doing this alone either way, huh.",
+          "emotion": "quiet, almost to herself"
+        },
+        {
+          "id": "pd-5",
+          "character": "player",
+          "text": "What?"
+        },
+        {
+          "id": "pd-6",
+          "character": "priya",
+          "text": "Nothing. Diagram it is."
+        },
+        {
+          "id": "pd-7",
+          "character": "INTERNAL",
+          "text": "That wasn't nothing. Say something. ...Say something."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-hallway-mockery",
+      "lines": [
+        {
+          "id": "hm-1",
+          "character": "NARRATOR",
+          "text": "The hallway between classes, crowd thickening near the lockers. Jordan's got Priya's sketchbook raised over his head, flipping pages one-handed."
+        },
+        {
+          "id": "hm-2",
+          "character": "jordan",
+          "text": "'The Kessu weep saltwater when the tide turns—' bro, what IS this, are we in third grade—",
+          "emotion": "performing, voice pitched high and mocking"
+        },
+        {
+          "id": "hm-3",
+          "character": "NARRATOR",
+          "text": "A ring of kids laughs. Priya's face goes red, then very still — the flat, quiet kind of hurt that doesn't look like hurt to people who aren't paying attention."
+        },
+        {
+          "id": "hm-4",
+          "character": "priya",
+          "text": "Give it back.",
+          "emotion": "quiet, almost inaudible"
+        },
+        {
+          "id": "hm-5",
+          "character": "jordan",
+          "text": "Nah wait, there's a whole page of names, she's got, like, LORE—",
+          "emotion": "not hearing her, or not caring"
+        },
+        {
+          "id": "hm-6",
+          "character": "NARRATOR",
+          "text": "Every face turns toward Rowan. Waiting to see which way this goes."
+        },
+        {
+          "id": "hm-7",
+          "character": "INTERNAL",
+          "text": "Okay. Okay. Say something. Or don't. Everyone's watching either way."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-defend-priya",
+      "lines": [
+        {
+          "id": "dp-1",
+          "character": "player",
+          "text": "Jordan. Give it back.",
+          "emotion": "steady, not yelling"
+        },
+        {
+          "id": "dp-2",
+          "character": "NARRATOR",
+          "text": "The crowd's laughter stutters, dies."
+        },
+        {
+          "id": "dp-3",
+          "character": "jordan",
+          "text": "...What? It's just a joke, everybody thought it was funny.",
+          "emotion": "thrown, dropping the performance voice"
+        },
+        {
+          "id": "dp-4",
+          "character": "player",
+          "text": "It's hers. Give it back."
+        },
+        {
+          "id": "dp-5",
+          "character": "NARRATOR",
+          "text": "A beat. Jordan looks around — for backup, for the joke to land again — and finds neither. He hands the sketchbook back, quieter now, younger-sounding."
+        },
+        {
+          "id": "dp-6",
+          "character": "jordan",
+          "text": "Wait, you're actually mad at me right now?",
+          "emotion": "genuinely thrown"
+        },
+        {
+          "id": "dp-7",
+          "character": "player",
+          "text": "Yeah. Kind of."
+        },
+        {
+          "id": "dp-8",
+          "character": "NARRATOR",
+          "text": "Priya takes the sketchbook back with both hands, holding it against her chest. She looks at Rowan like she's redoing the math on something."
+        },
+        {
+          "id": "dp-9",
+          "character": "priya",
+          "text": "...Thanks.",
+          "emotion": "small, flat-voiced, still shaken"
+        },
+        {
+          "id": "dp-10",
+          "character": "NARRATOR",
+          "text": "The crowd's already dissolving. Jordan lingers a second too long before walking off, fidgeting."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-stay-neutral",
+      "lines": [
+        {
+          "id": "sn-1",
+          "character": "NARRATOR",
+          "text": "Rowan laughs — a beat too late, a little too loud, but a laugh."
+        },
+        {
+          "id": "sn-2",
+          "character": "jordan",
+          "text": "Right?? Bro, the NAMES she gives these things—",
+          "emotion": "riding the crowd's energy"
+        },
+        {
+          "id": "sn-3",
+          "character": "NARRATOR",
+          "text": "Priya's eyes flick to Rowan. Just once. Something in her face closes — quiet and complete, like a door that doesn't slam, just clicks shut."
+        },
+        {
+          "id": "sn-4",
+          "character": "priya",
+          "text": "Can I have it back now.",
+          "emotion": "flat, to no one in particular"
+        },
+        {
+          "id": "sn-5",
+          "character": "NARRATOR",
+          "text": "Jordan tosses it to her, already bored, already onto the next thing. Priya walks off without looking at anyone."
+        },
+        {
+          "id": "sn-6",
+          "character": "INTERNAL",
+          "text": "That's fine. That's — that's fine. Everyone laughed. It's fine."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-redirect-humor",
+      "lines": [
+        {
+          "id": "rh-1",
+          "character": "player",
+          "text": "Okay but like, if we're roasting hobbies, Jordan, we need to talk about your fantasy football team name. 'QB Steve Buscemi'? Explain.",
+          "action": "cutting in before Jordan can read more"
+        },
+        {
+          "id": "rh-2",
+          "character": "NARRATOR",
+          "text": "The crowd's attention swivels, laughing, already forgetting the sketchbook. Jordan, delighted despite himself, lowers it."
+        },
+        {
+          "id": "rh-3",
+          "character": "jordan",
+          "text": "Yo that team is UNDEFEATED, don't play me—"
+        },
+        {
+          "id": "rh-4",
+          "character": "NARRATOR",
+          "text": "In the confusion, Priya slips the sketchbook out of Jordan's loose grip and disappears down the hall, fast, without a word."
+        },
+        {
+          "id": "rh-5",
+          "character": "INTERNAL",
+          "text": "Okay. That worked. I think. I don't actually know if that worked."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-after-school",
+      "lines": [
+        {
+          "id": "as-1",
+          "character": "NARRATOR",
+          "text": "The library's mostly empty, late-afternoon light doing something gold across the table. Priya's got the presentation slides open, and her sketchbook — closed — right beside them."
+        },
+        {
+          "id": "as-2",
+          "character": "priya",
+          "text": "So I had this idea. For the presentation. But it's probably too much.",
+          "emotion": "not quite looking up"
+        },
+        {
+          "id": "as-3",
+          "character": "player",
+          "text": "What idea?"
+        },
+        {
+          "id": "as-4",
+          "character": "priya",
+          "text": "The illustrated story thing. Like, actually drawn out, not just a slide with bullet points. But nobody else is doing it like that, so.",
+          "action": "opens the sketchbook, slides it over, tentative"
+        },
+        {
+          "id": "as-5",
+          "character": "priya",
+          "text": "It's fine if it's dumb. I have a backup slide either way.",
+          "action": "taps her pen against her teeth"
+        },
+        {
+          "id": "as-6",
+          "character": "INTERNAL",
+          "text": "Okay. What do I actually say here."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-presentation-authentic",
+      "lines": [
+        {
+          "id": "pau-1",
+          "character": "player",
+          "text": "It's not dumb. It's the best idea in this whole assignment. We should do it your way."
+        },
+        {
+          "id": "pau-2",
+          "character": "NARRATOR",
+          "text": "Priya looks up, startled — like she hadn't actually expected a yes."
+        },
+        {
+          "id": "pau-3",
+          "character": "priya",
+          "text": "...Yeah? Okay.",
+          "emotion": "quiet, real"
+        },
+        {
+          "id": "pau-4",
+          "character": "priya",
+          "text": "Okay. Let's do it your— I mean. Our way.",
+          "emotion": "small smile, the first unguarded one today"
+        },
+        {
+          "id": "pau-5",
+          "character": "NARRATOR",
+          "text": "She opens the sketchbook fully, no hesitation this time, and starts sketching the layout right there on the table."
+        },
+        {
+          "id": "pau-6",
+          "character": "INTERNAL",
+          "text": "There it is. That's the smile from homeroom. Good."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-presentation-safe",
+      "lines": [
+        {
+          "id": "psf-1",
+          "character": "player",
+          "text": "Okay but like — maybe we just do it the way the Delgado-Martinez group's doing it? Slides, bullet points, safe. Less risky."
+        },
+        {
+          "id": "psf-2",
+          "character": "NARRATOR",
+          "text": "Priya's quiet for a second too long."
+        },
+        {
+          "id": "psf-3",
+          "character": "priya",
+          "text": "...Yeah. Sure. That's probably smarter."
+        },
+        {
+          "id": "psf-4",
+          "character": "NARRATOR",
+          "text": "She closes the sketchbook — fully, not just flipping it shut — and slides it to the edge of the table, out of the way."
+        },
+        {
+          "id": "psf-5",
+          "character": "priya",
+          "text": "I'll redo the slides tonight.",
+          "emotion": "flat, already moving on"
+        },
+        {
+          "id": "psf-6",
+          "character": "INTERNAL",
+          "text": "That was the right call. Probably. It was fine. It was — fine."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-presentation-day",
+      "lines": [
+        {
+          "id": "pday-1",
+          "character": "ms-alvarez",
+          "text": "Alright, folks, let's hear it. Rowan, Priya — you're up.",
+          "action": "two-finger tap on the desk"
+        },
+        {
+          "id": "pday-2",
+          "character": "NARRATOR",
+          "text": "They present. It goes the way it goes — better or worse depending on what got decided in the library, but it's theirs, for better or worse."
+        },
+        {
+          "id": "pday-3",
+          "character": "NARRATOR",
+          "text": "From his seat, Jordan watches quieter than usual — more interested in Priya's face than the slides."
+        },
+        {
+          "id": "pday-4",
+          "character": "ms-alvarez",
+          "text": "That's a real detail, whichever way you went with this. I like real details.",
+          "emotion": "warm, a little dry"
+        },
+        {
+          "id": "pday-5",
+          "character": "ms-alvarez",
+          "text": "Alright, folks — five minutes, then you're free."
+        },
+        {
+          "id": "pday-6",
+          "character": "NARRATOR",
+          "text": "The bell's going to ring soon. Rowan can feel today ending, the shape of it already mostly set."
+        },
+        {
+          "id": "pday-7",
+          "character": "INTERNAL",
+          "text": "One day down. However many left to figure out who I actually want to be here."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-belonging",
+      "lines": [
+        {
+          "id": "eb-1",
+          "character": "NARRATOR",
+          "text": "The steps outside are golden with late light, everyone flooding out around them."
+        },
+        {
+          "id": "eb-2",
+          "character": "player",
+          "text": "Hey — wait up."
+        },
+        {
+          "id": "eb-3",
+          "character": "priya",
+          "text": "...Oh. Hey.",
+          "emotion": "surprised, turning"
+        },
+        {
+          "id": "eb-4",
+          "character": "player",
+          "text": "Okay but like, are you doing anything for lunch tomorrow? Asking for, um. Reasons."
+        },
+        {
+          "id": "eb-5",
+          "character": "priya",
+          "text": "...Yeah. Okay. Yeah, I'd like that.",
+          "emotion": "real smile"
+        },
+        {
+          "id": "eb-6",
+          "character": "NARRATOR",
+          "text": "It's small. Not cinematic. Just two people deciding to keep going."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-popularity",
+      "lines": [
+        {
+          "id": "ep-1",
+          "character": "NARRATOR",
+          "text": "Jordan's crew spills out the doors laughing, already loud, already planning tomorrow like it's a foregone conclusion."
+        },
+        {
+          "id": "ep-2",
+          "character": "jordan",
+          "text": "Yo, Rowan-dawg. Same table tomorrow, obviously.",
+          "action": "finger-guns"
+        },
+        {
+          "id": "ep-3",
+          "character": "player",
+          "text": "Obviously."
+        },
+        {
+          "id": "ep-4",
+          "character": "NARRATOR",
+          "text": "It feels good. It also feels, a little, like a costume she put on this morning and forgot to take off."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-lonely",
+      "lines": [
+        {
+          "id": "el-1",
+          "character": "NARRATOR",
+          "text": "The steps are emptying out, voices fading into the parking lot, into cars, into tomorrow."
+        },
+        {
+          "id": "el-2",
+          "character": "INTERNAL",
+          "text": "Nobody waved. That's fine. Nobody waves on day one."
+        },
+        {
+          "id": "el-3",
+          "character": "NARRATOR",
+          "text": "Rowan pulls out her schedule one more time, even though she has it memorized by now."
+        },
+        {
+          "id": "el-4",
+          "character": "INTERNAL",
+          "text": "Tomorrow. Tomorrow will be different. Probably."
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hi — I'm Rowan. I just moved here, this is move number four, ask me anything."
+        },
+        {
+          "id": "b",
+          "text": "Um, hi, I'm Rowan. That's... that's it."
+        },
+        {
+          "id": "c",
+          "text": "Hi, I'm Rowan, and I already got lost twice today, so, low bar from here."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r1a-1",
+            "character": "INTERNAL",
+            "text": "Okay. Just go. Loud and real beats quiet and safe. Probably."
+          }
+        ],
+        "b": [
+          {
+            "id": "r1b-1",
+            "character": "INTERNAL",
+            "text": "Fewer words, fewer ways to mess this up."
+          }
+        ],
+        "c": [
+          {
+            "id": "r1c-1",
+            "character": "INTERNAL",
+            "text": "Joke. Say the joke. Nervous system's already picked one."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yeah, I'm coming — save me a seat."
+        },
+        {
+          "id": "b",
+          "text": "Actually — I think I'll sit over there."
+        },
+        {
+          "id": "c",
+          "text": "I'm good just chilling here today."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r2a-1",
+            "character": "INTERNAL",
+            "text": "Visible beats invisible. Probably."
+          }
+        ],
+        "b": [
+          {
+            "id": "r2b-1",
+            "character": "INTERNAL",
+            "text": "She's not bothering anyone. I could just... not bother her either."
+          }
+        ],
+        "c": [
+          {
+            "id": "r2c-1",
+            "character": "INTERNAL",
+            "text": "Just watch today. That's allowed."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "Okay, here's what I'm thinking — let's just do the diagram thing."
+        },
+        {
+          "id": "b",
+          "text": "Wait, what were you picturing? I want to hear it first."
+        },
+        {
+          "id": "c",
+          "text": "Whatever you think is best. You lead."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r3a-1",
+            "character": "INTERNAL",
+            "text": "Fast and simple. Get it done, move on."
+          }
+        ],
+        "b": [
+          {
+            "id": "r3b-1",
+            "character": "INTERNAL",
+            "text": "She's clearly got something in her head. Might as well ask."
+          }
+        ],
+        "c": [
+          {
+            "id": "r3c-1",
+            "character": "INTERNAL",
+            "text": "Safer to agree than to be wrong out loud."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Jordan. Give it back. Now."
+        },
+        {
+          "id": "b",
+          "text": "Ha — yeah, that's, um—"
+        },
+        {
+          "id": "c",
+          "text": "Okay but like, we need to talk about YOUR hobbies, Jordan."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r4a-1",
+            "character": "INTERNAL",
+            "text": "Everyone's watching. Do it anyway."
+          }
+        ],
+        "b": [
+          {
+            "id": "r4b-1",
+            "character": "INTERNAL",
+            "text": "Laugh now, feel bad later. Standard plan."
+          }
+        ],
+        "c": [
+          {
+            "id": "r4c-1",
+            "character": "INTERNAL",
+            "text": "Don't fight it head-on. Just move it somewhere else."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "Do the real thing. Your way. It's better."
+        },
+        {
+          "id": "b",
+          "text": "Maybe just copy what the other groups are doing. Safer."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r5a-1",
+            "character": "INTERNAL",
+            "text": "It's actually good. Why would we do the boring version."
+          }
+        ],
+        "b": [
+          {
+            "id": "r5b-1",
+            "character": "INTERNAL",
+            "text": "Nobody ever got in trouble for being exactly like everyone else."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-6",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hey Priya — wait up!"
+        },
+        {
+          "id": "b",
+          "text": "Yeah, I'm coming — same table tomorrow?"
+        },
+        {
+          "id": "c",
+          "text": "..."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r6a-1",
+            "character": "INTERNAL",
+            "text": "Say it before you talk yourself out of it."
+          }
+        ],
+        "b": [
+          {
+            "id": "r6b-1",
+            "character": "INTERNAL",
+            "text": "This is easy. Easy's good, right?"
+          }
+        ],
+        "c": [
+          {
+            "id": "r6c-1",
+            "character": "INTERNAL",
+            "text": "Nobody's waiting. That's fine. Keep walking."
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-ending-belonging",
+      "branchId": "branch-genuine",
+      "lines": [
+        {
+          "id": "beb-gen-1",
+          "character": "priya",
+          "text": "You know, you're actually the first person today who asked me a question and waited for the answer."
+        },
+        {
+          "id": "beb-gen-2",
+          "character": "player",
+          "text": "Okay but like, that's a really low bar, Priya."
+        },
+        {
+          "id": "beb-gen-3",
+          "character": "priya",
+          "text": "I know.",
+          "emotion": "laughs, real",
+          "action": "the kind of laugh that surprises even her"
+        },
+        {
+          "id": "beb-gen-4",
+          "character": "priya",
+          "text": "That's kind of the problem."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-belonging",
+      "branchId": "branch-popularity",
+      "lines": [
+        {
+          "id": "beb-pop-1",
+          "character": "player",
+          "text": "I don't actually know if I said two words to you all day. That's kind of messed up, if I'm honest.",
+          "emotion": "uncertain, this doesn't come naturally"
+        },
+        {
+          "id": "beb-pop-2",
+          "character": "priya",
+          "text": "...You don't have to feel bad about it.",
+          "emotion": "guarded, testing"
+        },
+        {
+          "id": "beb-pop-3",
+          "character": "player",
+          "text": "I want to anyway. Lunch tomorrow?"
+        },
+        {
+          "id": "beb-pop-4",
+          "character": "priya",
+          "text": "...Yeah. Okay.",
+          "emotion": "small, surprised"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-belonging",
+      "branchId": "branch-selfprotective",
+      "lines": [
+        {
+          "id": "beb-sp-1",
+          "character": "player",
+          "text": "I spent basically all day trying not to mess anything up. That was not a great plan, it turns out.",
+          "emotion": "quieter than she means to be"
+        },
+        {
+          "id": "beb-sp-2",
+          "character": "priya",
+          "text": "Yeah, I noticed you kind of orbiting the room.",
+          "emotion": "dry"
+        },
+        {
+          "id": "beb-sp-3",
+          "character": "player",
+          "text": "Lunch tomorrow? Actual words this time, I promise."
+        },
+        {
+          "id": "beb-sp-4",
+          "character": "priya",
+          "text": "...Yeah. Okay. Yeah, I'd like that.",
+          "emotion": "real smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-popularity",
+      "branchId": "branch-popularity",
+      "lines": [
+        {
+          "id": "eppop-1",
+          "character": "jordan",
+          "text": "Bro, today was crazy. You already feel like one of us, not even lying."
+        },
+        {
+          "id": "eppop-2",
+          "character": "player",
+          "text": "...Yeah. I guess I do.",
+          "emotion": "a beat too long before answering"
+        },
+        {
+          "id": "eppop-3",
+          "character": "NARRATOR",
+          "text": "Somewhere behind them, across the yard, a sketchbook closes. Rowan doesn't turn around to check."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-popularity",
+      "branchId": "branch-genuine",
+      "lines": [
+        {
+          "id": "eppop-gen-1",
+          "character": "jordan",
+          "text": "See, told you — new kid, day one, already one of the crew."
+        },
+        {
+          "id": "eppop-gen-2",
+          "character": "player",
+          "text": "...Yeah. I guess.",
+          "action": "glances back toward where Priya usually sits"
+        },
+        {
+          "id": "eppop-gen-3",
+          "character": "INTERNAL",
+          "text": "She's probably already gone. That's fine. Tomorrow, maybe."
+        },
+        {
+          "id": "eppop-gen-4",
+          "character": "jordan",
+          "text": "You coming or what?"
+        },
+        {
+          "id": "eppop-gen-5",
+          "character": "player",
+          "text": "Yeah. Coming."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-popularity",
+      "branchId": "branch-selfprotective",
+      "lines": [
+        {
+          "id": "eppop-sp-1",
+          "character": "jordan",
+          "text": "Didn't peg you as a joiner, honestly. Glad you're in, though."
+        },
+        {
+          "id": "eppop-sp-2",
+          "character": "player",
+          "text": "Yeah. Me neither.",
+          "emotion": "surprised at herself"
+        },
+        {
+          "id": "eppop-sp-3",
+          "character": "INTERNAL",
+          "text": "Easier to be invisible in a crowd than invisible alone, I guess."
+        },
+        {
+          "id": "eppop-sp-4",
+          "character": "jordan",
+          "text": "See you tomorrow, same table."
+        },
+        {
+          "id": "eppop-sp-5",
+          "character": "player",
+          "text": "...Yeah. See you."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-lonely",
+      "branchId": "branch-selfprotective",
+      "lines": [
+        {
+          "id": "elsp-1",
+          "character": "INTERNAL",
+          "text": "I sat alone at lunch. I let Priya make every call on the project. I laughed along in the hallway so nobody would look at me twice."
+        },
+        {
+          "id": "elsp-2",
+          "character": "INTERNAL",
+          "text": "Mission accomplished, I guess. Nobody looked twice."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-lonely",
+      "branchId": "branch-genuine",
+      "lines": [
+        {
+          "id": "elgen-1",
+          "character": "INTERNAL",
+          "text": "Priya probably would've said yes. I didn't even ask."
+        },
+        {
+          "id": "elgen-2",
+          "character": "INTERNAL",
+          "text": "Funny how you can do everything right all day and still walk out the door alone because you didn't say one more sentence."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-ending-lonely",
+      "branchId": "branch-popularity",
+      "lines": [
+        {
+          "id": "elpop-1",
+          "character": "INTERNAL",
+          "text": "Jordan's crowd is already three blocks gone, laughing at something that wasn't about me."
+        },
+        {
+          "id": "elpop-2",
+          "character": "INTERNAL",
+          "text": "Turns out being everyone's favorite for one day doesn't mean anyone waits for you at the door."
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Rowan (player) leans on 'okay but like' as a pivot when she's nervous or trying to redirect a moment toward humor — it's armor as much as it is a verbal tic. Her internal voice runs faster and more anxious than her spoken lines; the gap between what she thinks and what she says is where most of the episode's tension lives. Jordan's dialogue is almost entirely performance — rehearsed-sounding punchlines, nicknames deployed like a handshake — until he's caught off guard (dp-3, dp-6), where the register drops entirely: shorter words, no jokes, genuinely rattled. Priya defaults to clipped, guarded answers with strangers and only opens up through specific, technical detail about her art (never vague compliments-fishing) — her comfort is legible through information density, not warmth of tone. Ms. Alvarez's dry humor lands a beat late for some students by design; she repeats names back warmly ('Rowan Mercado. I like that.') as a small, deliberate act of being seen. Branch dialogue differentiates the shared ending scenes by making each character's exact words reference specific choices made earlier in the day — genuine-path Priya references being asked and waited-for; popularity-path Rowan has to reckon with silence toward Priya; self-protective-path Rowan admits to 'orbiting the room.' None of the endings resolve neatly — that's intentional. First days don't.",
+  "alternativeLines": [
+    {
+      "lineId": "dp-4",
+      "alternatives": [
+        "Come on. That's hers.",
+        "Jordan. Seriously. Hand it over."
+      ],
+      "reasoning": "Slightly softer or firmer variants depending on how confrontational the studio wants the 'defend' choice to read — current line keeps it clipped and calm, which reads as more mature/controlled courage."
+    },
+    {
+      "lineId": "lpr-9",
+      "alternatives": [
+        "Wait, no, tell me more.",
+        "That's actually really cool, keep going."
+      ],
+      "reasoning": "Current line ('No, it matters. Keep going.') is quieter and more sincere; alternatives are slightly more enthusiastic if the scene needs more energy at this beat."
+    },
+    {
+      "lineId": "eb-4",
+      "alternatives": [
+        "So, um. Lunch tomorrow. You in?",
+        "Okay but like, we should sit together tomorrow. If you want."
+      ],
+      "reasoning": "Original keeps Rowan's verbal tic ('okay but like') and trailing hesitance intact for voice consistency; alternatives offer slightly more direct phrasing if a punchier ending beat is preferred."
+    },
+    {
+      "lineId": "hm-2",
+      "alternatives": [
+        "'They only come out at low tide'— what even IS this—",
+        "Bro she's got a whole DICTIONARY for this thing—"
+      ],
+      "reasoning": "Keeps Jordan's mockery specific and page-referencing rather than generically cruel, which fits his 'quick with a joke, doesn't realize the cost' characterization better than blanket meanness."
+    }
+  ]
+}

@@ -1,0 +1,669 @@
+{
+  "episodeOutline": {
+    "title": "First Bell",
+    "synopsis": "It's the first day at Ridgeview Academy, and every hallway, lunch table, and group project feels like a test. As the new kid, you'll decide how loud or quiet to be, who to sit with, and what to do when someone else gets caught in the crossfire of popularity. By the final bell, you'll have started to answer a bigger question: do you want to fit in, or do you want to belong?",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-arrival",
+        "title": "New Building, Same Nerves",
+        "location": "School Entrance",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The player steps through the doors of Ridgeview Academy for the first time, schedule crumpled in hand, trying to look like they've done this a thousand times before.",
+        "emotionalBeat": "Anticipatory anxiety, the universal 'first day' feeling",
+        "defaultNextScene": "scene-homeroom"
+      },
+      {
+        "id": "scene-homeroom",
+        "title": "All Eyes On You",
+        "location": "Homeroom 214",
+        "characters": [
+          "player",
+          "ms-alvarez"
+        ],
+        "duration": 1,
+        "description": "Ms. Alvarez welcomes the player and asks them to introduce themselves to the class. Twenty-something strangers turn to look, including Jordan Reyes in the back row and a quiet girl, Priya Chandran, sketching in the corner.",
+        "emotionalBeat": "Spotlight pressure - the first small test of who you're going to be here",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-intro-confident",
+        "title": "Owning the Room",
+        "location": "Homeroom 214",
+        "characters": [
+          "player",
+          "ms-alvarez",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player introduces themselves with energy and a genuine detail about their life. A few kids laugh warmly; Jordan gives an approving nod from the back.",
+        "emotionalBeat": "A small rush of validation, but also exposure",
+        "defaultNextScene": "scene-lunch-hall"
+      },
+      {
+        "id": "scene-intro-reserved",
+        "title": "Quick and Quiet",
+        "location": "Homeroom 214",
+        "characters": [
+          "player",
+          "ms-alvarez"
+        ],
+        "duration": 1,
+        "description": "The player keeps it short and sits down fast, cheeks warm. Priya glances up from her sketchbook, a flicker of recognition in her eyes.",
+        "emotionalBeat": "Relief mixed with a nagging sense of invisibility",
+        "defaultNextScene": "scene-lunch-hall"
+      },
+      {
+        "id": "scene-intro-humor",
+        "title": "Breaking the Ice",
+        "location": "Homeroom 214",
+        "characters": [
+          "player",
+          "ms-alvarez",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player tosses in a self-deprecating joke about getting lost twice already. The class laughs, Jordan laughs loudest, and Priya smiles down at her sketchbook.",
+        "emotionalBeat": "Relief through humor, a fragile but real connection",
+        "defaultNextScene": "scene-lunch-hall"
+      },
+      {
+        "id": "scene-lunch-hall",
+        "title": "The Cafeteria Gauntlet",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Tray in hand, the player scans the room. Jordan waves them over to the loudest, most crowded table. Across the room, Priya sits alone, headphones in, sketching quietly.",
+        "emotionalBeat": "The classic crossroads - visibility versus connection",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-lunch-populars",
+        "title": "The Popular Table",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player sits with Jordan's crowd. The conversation is fast, funny, and a little cutting - jokes at other students' expense included.",
+        "emotionalBeat": "Belonging that feels conditional",
+        "defaultNextScene": "scene-project-assigned"
+      },
+      {
+        "id": "scene-lunch-priya",
+        "title": "The Quiet Corner",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player sits across from Priya. After a slow start, she shows the player her sketchbook - detailed, imaginative drawings of imaginary creatures.",
+        "emotionalBeat": "Small, unforced intimacy - a real conversation forming",
+        "defaultNextScene": "scene-project-assigned"
+      },
+      {
+        "id": "scene-lunch-alone",
+        "title": "A Table for One",
+        "location": "Cafeteria",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The player picks an empty table, telling themselves it's fine to just observe today. It's quieter than expected, and lonelier too.",
+        "emotionalBeat": "Self-protection that curdles into isolation",
+        "defaultNextScene": "scene-project-assigned"
+      },
+      {
+        "id": "scene-project-assigned",
+        "title": "Partnered Up",
+        "location": "Classroom 214",
+        "characters": [
+          "player",
+          "ms-alvarez",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Ms. Alvarez announces a group project and pairs the player with Priya. Depending on lunch, this either feels natural or awkward.",
+        "emotionalBeat": "Forced proximity as a chance for growth or friction",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-project-lead",
+        "title": "My Way",
+        "location": "Classroom 214",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player decides the project direction without much input from Priya, who quietly goes along with it, her sketchbook closed.",
+        "emotionalBeat": "Efficient but hollow - a missed connection",
+        "defaultNextScene": "scene-hallway-mockery"
+      },
+      {
+        "id": "scene-project-collab",
+        "title": "Building Together",
+        "location": "Classroom 214",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player asks Priya what she's imagining first. Her idea - turning the assignment into an illustrated story - lights up as they build it together.",
+        "emotionalBeat": "Genuine collaboration, mutual respect forming",
+        "defaultNextScene": "scene-hallway-mockery"
+      },
+      {
+        "id": "scene-project-dismiss",
+        "title": "Let Her Lead",
+        "location": "Classroom 214",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player stays quiet and lets Priya make every decision, unsure of their own opinions and afraid of getting it wrong.",
+        "emotionalBeat": "Safety through passivity, but a nagging sense of not showing up",
+        "defaultNextScene": "scene-hallway-mockery"
+      },
+      {
+        "id": "scene-hallway-mockery",
+        "title": "Caught in the Crossfire",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Between classes, Jordan spots Priya's sketchbook and reads a page aloud in a mocking voice to a small crowd. Priya freezes, face reddening. Everyone looks at the player.",
+        "emotionalBeat": "The core moral pressure point of the episode",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-defend-priya",
+        "title": "Speaking Up",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player steps in, telling Jordan to knock it off - calmly but firmly. The crowd goes quiet. Priya looks at the player like she's seeing them for the first time.",
+        "emotionalBeat": "Courage that costs something but earns real trust",
+        "defaultNextScene": "scene-after-school"
+      },
+      {
+        "id": "scene-stay-neutral",
+        "title": "Laughing Along",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player laughs along with the crowd to avoid becoming a target themselves. Priya's eyes flick to the player, and something closes off in her expression.",
+        "emotionalBeat": "The uncomfortable cost of self-preservation",
+        "defaultNextScene": "scene-after-school"
+      },
+      {
+        "id": "scene-redirect-humor",
+        "title": "Changing the Subject",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player cracks a joke that shifts the crowd's attention away from Priya entirely, defusing the moment without direct confrontation. Priya slips away, unsure how to read what just happened.",
+        "emotionalBeat": "A clever escape that leaves things unresolved",
+        "defaultNextScene": "scene-after-school"
+      },
+      {
+        "id": "scene-after-school",
+        "title": "Finishing Touches",
+        "location": "Library",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player and Priya meet to finalize the project presentation. Priya suggests including her original illustrated story idea, unsure if it's 'too much' for the assignment.",
+        "emotionalBeat": "A quiet moment of decision about what kind of work - and person - to present tomorrow",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-presentation-authentic",
+        "title": "Going With the Real Thing",
+        "location": "Library",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player encourages using Priya's original idea, even if it's different from what other groups are doing. Priya's relief is visible.",
+        "emotionalBeat": "Choosing authenticity over safety",
+        "defaultNextScene": "scene-presentation-day"
+      },
+      {
+        "id": "scene-presentation-safe",
+        "title": "Playing It Safe",
+        "location": "Library",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player suggests copying the format other, more popular groups are using instead. Priya nods, but quietly closes her sketchbook.",
+        "emotionalBeat": "A small betrayal of something real for the sake of fitting in",
+        "defaultNextScene": "scene-presentation-day"
+      },
+      {
+        "id": "scene-presentation-day",
+        "title": "Front of the Class",
+        "location": "Classroom 214",
+        "characters": [
+          "player",
+          "priya",
+          "jordan",
+          "ms-alvarez"
+        ],
+        "duration": 1,
+        "description": "The project is presented. However it goes, the day is almost over - and the player has to decide, walking out of class, what tomorrow is going to look like.",
+        "emotionalBeat": "The culmination of a single day's worth of small choices",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-ending-belonging",
+        "title": "Someone to Sit With",
+        "location": "School Steps",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Walking out, the player catches up with Priya and asks about tomorrow's lunch. She smiles - genuinely, for the first time all day - and says she'd like that.",
+        "emotionalBeat": "Belonging built on being seen, not performed",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-ending-popularity",
+        "title": "Sitting Pretty",
+        "location": "School Steps",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player leaves with Jordan's group, laughing at the right moments, already invited to sit at the popular table tomorrow. It feels good. It also feels like a costume.",
+        "emotionalBeat": "Belonging that costs a piece of yourself",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-ending-lonely",
+        "title": "Walking Out Alone",
+        "location": "School Steps",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The player walks out alone, telling themselves tomorrow will be easier once people know them. Maybe it will be. Today, though, no one waves goodbye.",
+        "emotionalBeat": "The quiet ache of a day spent protecting yourself instead of showing up",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-homeroom",
+        "prompt": "Ms. Alvarez asks you to introduce yourself to the class. Every face is turned toward you.",
+        "context": "The first impression you make will ripple through the rest of the day.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Stand tall and share something real and interesting about yourself",
+            "nextScene": "scene-intro-confident"
+          },
+          {
+            "id": "b",
+            "text": "Keep it brief and sit down as quickly as possible",
+            "nextScene": "scene-intro-reserved"
+          },
+          {
+            "id": "c",
+            "text": "Crack a self-deprecating joke to get a laugh",
+            "nextScene": "scene-intro-humor"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "EMPATHY": 1,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-lunch-hall",
+        "prompt": "Jordan waves you over to the loudest table in the cafeteria. Across the room, Priya sits alone, headphones in.",
+        "context": "Where you sit today might quietly decide who you sit with for the rest of the year.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Join Jordan's table - it's the easy, visible choice",
+            "nextScene": "scene-lunch-populars"
+          },
+          {
+            "id": "b",
+            "text": "Sit with Priya instead",
+            "nextScene": "scene-lunch-priya"
+          },
+          {
+            "id": "c",
+            "text": "Sit alone and just watch today",
+            "nextScene": "scene-lunch-alone"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -1
+          },
+          "b": {
+            "EMPATHY": 2
+          },
+          "c": {
+            "ADAPTABILITY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-project-assigned",
+        "prompt": "Ms. Alvarez pairs you with Priya for the group project. Time to figure out how you two are going to work together.",
+        "context": "The way you handle a partner you didn't necessarily expect says a lot about you.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Take charge and decide the direction yourself",
+            "nextScene": "scene-project-lead"
+          },
+          {
+            "id": "b",
+            "text": "Ask what she's imagining first, and build from there together",
+            "nextScene": "scene-project-collab"
+          },
+          {
+            "id": "c",
+            "text": "Stay quiet and let her make all the decisions",
+            "nextScene": "scene-project-dismiss"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "EMPATHY": -1
+          },
+          "b": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "ADAPTABILITY": 1,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-hallway-mockery",
+        "prompt": "Jordan is reading Priya's private sketchbook aloud in a mocking voice while a crowd gathers. Priya looks mortified. Everyone's waiting to see what you'll do.",
+        "context": "This is the moment the whole day has been building toward - the choice with real social risk.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Step in and tell Jordan to stop",
+            "nextScene": "scene-defend-priya"
+          },
+          {
+            "id": "b",
+            "text": "Laugh along so you don't become the next target",
+            "nextScene": "scene-stay-neutral"
+          },
+          {
+            "id": "c",
+            "text": "Crack a joke that redirects everyone's attention away from Priya",
+            "nextScene": "scene-redirect-humor"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "EMPATHY": -2,
+            "CONFIDENCE": -1
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-after-school",
+        "prompt": "Priya wonders aloud if her illustrated story idea is 'too much' for the project. You have to decide what to tell her - and what to actually present tomorrow.",
+        "context": "This choice is really about whether you value being interesting or being safe.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Encourage her to go with her real idea, differences and all",
+            "nextScene": "scene-presentation-authentic"
+          },
+          {
+            "id": "b",
+            "text": "Suggest copying the format other, more popular groups are using",
+            "nextScene": "scene-presentation-safe"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "EMPATHY": 1
+          },
+          "b": {
+            "ADAPTABILITY": -1,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-6",
+        "scene": "scene-presentation-day",
+        "prompt": "Walking out after the presentation, you have to decide what kind of first year you actually want.",
+        "context": "One day is ending, but it's already shaping what tomorrow looks like.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Catch up with Priya and ask about tomorrow",
+            "nextScene": "scene-ending-belonging"
+          },
+          {
+            "id": "b",
+            "text": "Head off with Jordan's group, already invited to sit with them tomorrow",
+            "nextScene": "scene-ending-popularity"
+          },
+          {
+            "id": "c",
+            "text": "Walk out alone, telling yourself tomorrow will be easier",
+            "nextScene": "scene-ending-lonely"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -1
+          },
+          "c": {
+            "ADAPTABILITY": -1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "name": "The Genuine Connection Path",
+        "path": [
+          "scene-lunch-priya",
+          "scene-project-collab",
+          "scene-defend-priya",
+          "scene-presentation-authentic",
+          "scene-ending-belonging"
+        ],
+        "description": "Player consistently prioritizes real connection with Priya over social visibility, ending in earned belonging."
+      },
+      {
+        "name": "The Popularity Chase Path",
+        "path": [
+          "scene-lunch-populars",
+          "scene-project-lead",
+          "scene-stay-neutral",
+          "scene-presentation-safe",
+          "scene-ending-popularity"
+        ],
+        "description": "Player chases visibility and status at the cost of empathy, ending in a hollow but socially secure position."
+      },
+      {
+        "name": "The Self-Protective Path",
+        "path": [
+          "scene-lunch-alone",
+          "scene-project-dismiss",
+          "scene-redirect-humor",
+          "scene-presentation-safe",
+          "scene-ending-lonely"
+        ],
+        "description": "Player avoids risk and confrontation throughout, ending isolated despite good intentions."
+      }
+    ],
+    "emotionalArc": [
+      "Anticipatory anxiety (arrival)",
+      "Spotlight pressure and self-definition (homeroom)",
+      "Social risk assessment (cafeteria crossroads)",
+      "Relational build or friction (project pairing)",
+      "Moral crisis point (hallway mockery)",
+      "Quiet reflection and values check (after-school)",
+      "Resolution and identity statement (walking out)"
+    ],
+    "characterArcs": [
+      {
+        "character": "Priya Chandran",
+        "arc": "From invisible and guarded to either genuinely seen (if player chooses connection/defense) or further withdrawn (if player chooses safety/neutrality)."
+      },
+      {
+        "character": "Jordan Reyes",
+        "arc": "Remains largely constant across paths - a charismatic but sometimes careless figure - functioning as a mirror for the player's own choices about status versus kindness."
+      },
+      {
+        "character": "player",
+        "arc": "Moves from uncertain outsider through a series of self-defining choices toward one of three distinct identities: authentic connector, status-seeker, or self-protective observer."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "hiddenIn": [
+          "how you introduce yourself",
+          "whether you take charge or defer on the project",
+          "whether you speak up in the hallway"
+        ]
+      },
+      {
+        "trait": "EMPATHY",
+        "hiddenIn": [
+          "who you choose to sit with at lunch",
+          "how you treat your project partner's ideas",
+          "how you respond when someone else is mocked"
+        ]
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "hiddenIn": [
+          "how you handle an unplanned partner pairing",
+          "whether you defuse or escalate the hallway conflict",
+          "how you respond to social pressure while finishing the project"
+        ]
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player and Priya",
+        "dynamic": "Can range from a genuine early friendship to a missed connection, depending almost entirely on small choices around attention and defense."
+      },
+      {
+        "pair": "player and Jordan",
+        "dynamic": "Can range from an ally you've disappointed, to a friend you've impressed, to someone whose approval you've simply stopped needing."
+      }
+    ],
+    "replayHooks": [
+      "Three distinct endings (belonging, popularity, isolation) invite replay to see all outcomes",
+      "Priya's sketchbook and hidden creative idea only fully pays off on the empathy-forward path, rewarding a second playthrough",
+      "Jordan's mockery scene reads completely differently depending on whether the player sat with him at lunch",
+      "The 'safe vs authentic' presentation choice changes the tone of the final classroom scene even on a repeat path",
+      "Players who chase popularity may want to replay to see what genuine connection with Priya feels like, and vice versa"
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Model that confidence can be expressed in different ways (loud, quiet, humorous) without one being 'more correct'",
+      "Show that empathy often requires a small, specific cost (social risk) rather than being effortless",
+      "Illustrate adaptability as responding well to unexpected pairings and pressure, not just going along with everything",
+      "Demonstrate that authenticity and belonging are earned through consistent small choices, not a single grand gesture"
+    ],
+    "conversationStarters": [
+      "Would you have sat with Priya or with Jordan's table? Why?",
+      "Was staying neutral in the hallway a betrayal, or just self-protection - can it be both?",
+      "Which ending felt most true to how you actually act on a first day somewhere new?",
+      "Did Priya deserve more from the player earlier in the story, regardless of what happened in the hallway?",
+      "What would it take for the 'popularity' ending to actually feel like belonging?"
+    ]
+  },
+  "designNotes": "Fixed the QA-flagged surname contradiction: the homeroom scene description now reads 'Priya Chandran' to match the character bible, and I swept the rest of the outline (specifically the characterArcs entry, which also incorrectly said 'Priya Chen') for the same error to keep the document internally consistent. No scene ids, character ids ('priya' stays lowercase/stable), choice structures, transitions, or trait mappings were altered - this was purely a naming-consistency fix. All existing nextScene/defaultNextScene wiring was re-verified: every choice option has a nextScene, every non-choice scene has a defaultNextScene, all three endings resolve to END, and every scene remains reachable from scene-arrival.",
+  "uncertainties": [
+    "I assumed the character bible's spelling is definitively 'Priya Chandran' (as stated in the feedback) rather than a different alternate spelling - worth a quick double-check against the actual bible doc if one exists beyond this feedback note.",
+    "I left the character id as 'priya' (lowercase, no surname) since ids weren't flagged as part of the contradiction and changing them could break references elsewhere - confirm this is acceptable if there's a separate canonical id convention.",
+    "I did not add a surname anywhere else in dialogue-adjacent scene descriptions beyond the one flagged instance plus the characterArcs entry, since no other scenes reference her surname - let me know if the bible expects the full name reinforced elsewhere (e.g., in the after-school or presentation scenes) for consistency/repetition."
+  ]
+}

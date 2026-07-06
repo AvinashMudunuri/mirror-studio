@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "errors": [
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "branchDialogue entries define four branchIds per ending scene (path-a-direct, path-b-observer, path-c-bridge, path-d-cost) but nothing in the choices, scenes, or branchDialogue objects specifies the selection rule for which branchId fires based on the player's prior choices (e.g., choice-1 result, choice-3 result, choice-4 result). Without an explicit mapping (such as a 'conditions' or 'requiredChoices' field), the rendering pipeline has no deterministic way to choose which of the four dialogue variants to display in scene-11a/11b/11c.",
+      "location": "branchDialogue[*].branchId",
+      "expectedValue": "A condition/trigger field (e.g., 'requiresChoice': {'choice-1':'a'}) linking each branchId to specific prior player decisions",
+      "actualValue": "branchId strings with no linkage to choices/traits",
+      "fix": "Add an explicit condition object to each branchDialogue entry (e.g., based on choice-1/choice-3/choice-4 selections or accumulated trait totals) so the engine can deterministically resolve which branch dialogue to show."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "PERFORMANCE",
+      "message": "estimatedPlayTime is 13 (presumably minutes), but summing scene 'duration' values along any single playthrough path (scene-1 through one ending) totals approximately 16, not 13.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Recalculate estimatedPlayTime by summing durations along a representative playthrough path, or clarify what unit/method duration and estimatedPlayTime use."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Theme 'First Impressions' is listed in the episode themes array but does not appear in the parent world's themes list (Belonging, Authenticity, Friendship, Identity).",
+      "location": "themes[2]",
+      "suggestion": "Either add 'First Impressions' to the world's theme list for consistency, or replace it with 'Friendship'/'Identity' which are already established world themes and are also clearly present in the content (Jordan, Mia friendship dynamics)."
+    },
+    {
+      "category": "STYLE",
+      "message": "The 'outcomes' array (Path A–D) has overlapping keyScenes (e.g., scene-9b-lunch-with-mia appears in both 'Path A: Direct Approach' and 'Path D: Fitting In at a Cost'), and these outcome objects aren't referenced by any scene/choice field, so their purpose (narrative summary vs. actual computed path) is ambiguous.",
+      "location": "outcomes",
+      "suggestion": "Clarify in schema/documentation whether 'outcomes' are purely descriptive/analytics metadata or are meant to be computed and surfaced to the player; if the latter, define the trait-threshold or choice-combination logic that determines which outcome is 'achieved.'"
+    },
+    {
+      "category": "STYLE",
+      "message": "INTERNAL and NARRATOR are used extensively as dialogue 'character' values but are not included in any scene's 'characters' array or the episode/world 'characters' list.",
+      "location": "scenes[*].dialogue[*].character",
+      "suggestion": "This is likely an intentional convention (INTERNAL = player's inner thoughts, NARRATOR = scene-setting), but consider documenting this convention explicitly in the schema so future QA passes don't flag it as a missing character reference."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice-3 has 3 options (a/b/c) while choice-1, choice-2, and choice-5 alternate between 2 and 3 options; choice-4 also has 3. This variability is fine narratively but creates uneven trait-impact magnitude across choices (choice-1 only offers CONFIDENCE vs ADAPTABILITY, not a 3-way empathy option), which may skew trait accumulation depending on path taken.",
+      "location": "choices[0] (choice-1)",
+      "suggestion": "Consider whether the 2-option vs 3-option asymmetry across choices is intentional for pacing, or whether choice-1 should also offer a third, empathy-oriented option for consistency with later choices."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 33,
+    "failedChecks": 0,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Add explicit trigger/condition fields to branchDialogue entries so branch selection is deterministic and testable.",
+    "Reconcile estimatedPlayTime with actual summed scene durations along representative paths.",
+    "Document the INTERNAL/NARRATOR dialogue convention in the schema to avoid future false positives in QA.",
+    "Consider adding a formal 'outcome achieved' computation rule (trait thresholds or choice-path matching) if outcomes are meant to be shown to players, not just internal design documentation."
+  ]
+}
