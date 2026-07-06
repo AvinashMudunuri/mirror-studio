@@ -145,6 +145,33 @@ describe('Dialogue Writer branch-aware endings', () => {
     expect(prompt).toContain('scene-2');
   });
 
+  it('wraps a bare scene array (no dialogue envelope) instead of failing', async () => {
+    // Observed live on REVISE_DIALOGUE: the model returned a JSON array of
+    // scene dialogues at the top level, crashing revision iteration 2.
+    const bareArray = {
+      content: '```json\n' + JSON.stringify([
+        { sceneId: 'scene-1', lines: [{ id: 'l1', character: 'player', text: 'Revised line.' }] }
+      ]) + '\n```',
+      model: 'claude-sonnet-5',
+      provider: 'claude',
+      usage: { inputTokens: 100, outputTokens: 100, totalTokens: 200 },
+      stopReason: 'end_turn'
+    };
+    const agent = await initAgent(jest.fn<any>().mockResolvedValue(bareArray));
+
+    const result = await agent.process({
+      type: 'REVISE_DIALOGUE' as const,
+      revisionRequest: {
+        currentDialogue: [{ sceneId: 'scene-1', lines: [] }],
+        feedback: [{ from: 'QA_REVIEWER', message: 'fix the surname', severity: 'MAJOR' as const }]
+      }
+    });
+    expect(result.dialogue).toHaveLength(1);
+    expect(result.dialogue[0].lines[0].text).toBe('Revised line.');
+    expect(result.choiceDialogue).toEqual([]);
+    expect(result.branchDialogue).toEqual([]);
+  });
+
   it('passes branchDialogue through and defaults it to [] when absent', async () => {
     const withBranches = llmResponse({
       dialogue: [{ sceneId: 'scene-9', lines: [{ id: 'l1', character: 'NARRATOR', text: 'Shared beat.' }] }],

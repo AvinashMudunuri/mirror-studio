@@ -317,7 +317,18 @@ Revise the dialogue to address all feedback while maintaining:
 - Subtext and emotional layering
 - Age-appropriateness
 
-FORMAT YOUR RESPONSE AS JSON (same structure as before).`;
+FORMAT YOUR RESPONSE AS JSON wrapped in a \`\`\`json code block. The revised
+scenes MUST be nested under the "dialogue" key — do NOT return a bare array
+of scenes:
+{
+  "dialogue": [
+    { "sceneId": "scene-1", "lines": [ { "id": "...", "character": "...", "text": "..." } ] }
+  ],
+  "choiceDialogue": [],
+  "branchDialogue": [],
+  "voiceNotes": "what you changed and why"
+}
+Only include the scenes you actually revised.`;
     
     const response = await this.callLLM(
       this.systemPrompt,
@@ -489,8 +500,13 @@ BRANCH-AWARE ENDINGS (MANDATORY):
     console.log('[Dialogue Writer] Response length:', content.length);
     console.log('[Dialogue Writer] Response preview (first 1000 chars):', content.substring(0, 1000));
     
-    // Extract JSON from response (handle markdown code blocks)
-    const jsonMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/) || content.match(/(\{[\s\S]*\})/);
+    // Extract JSON from response (handle markdown code blocks). The model
+    // sometimes returns a bare ARRAY of scene dialogues instead of the
+    // {dialogue: [...]} envelope (observed live on REVISE_DIALOGUE), so
+    // match either an object or an array.
+    const jsonMatch =
+      content.match(/```(?:json)?\s*([\{\[][\s\S]*[\}\]])\s*```/) ||
+      content.match(/([\{\[][\s\S]*[\}\]])/);
     
     if (!jsonMatch) {
       console.error('[Dialogue Writer] No JSON found in response');
@@ -514,7 +530,13 @@ BRANCH-AWARE ENDINGS (MANDATORY):
     }
     
     try {
-      const parsed = JSON.parse(jsonString);
+      let parsed = JSON.parse(jsonString);
+      
+      // Tolerate a bare array of scene dialogues in place of the envelope.
+      if (Array.isArray(parsed) && parsed.every(s => s && typeof s.sceneId === 'string' && Array.isArray(s.lines))) {
+        console.warn('[Dialogue Writer] Response was a bare scene array; wrapping in dialogue envelope');
+        parsed = { dialogue: parsed };
+      }
       
       // Validate required fields
       if (!parsed.dialogue || !Array.isArray(parsed.dialogue)) {
