@@ -1,0 +1,145 @@
+{
+  "episode": {
+    "number": 2,
+    "title": "Group Work",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "a0a1eebe-5e09-410f-b755-98873cd55602",
+    "threadId": "4394124a-6460-4075-a2f5-e1f18228b3c8",
+    "startedAt": "2026-07-06T17:10:26.827Z",
+    "completedAt": "2026-07-06T17:45:17.699Z",
+    "totalSeconds": 2090.8,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [
+      "childPsychologist",
+      "gameDesigner",
+      "ethicsReviewer"
+    ],
+    "previousEpisodes": [
+      {
+        "id": "ep-1",
+        "title": "First Bell"
+      }
+    ],
+    "previousEpisodesSource": "postgres",
+    "usage": {
+      "calls": 15,
+      "inputTokens": 178171,
+      "outputTokens": 165280,
+      "totalTokens": 343451,
+      "budget": 400000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 11,
+          "inputTokens": 64398,
+          "outputTokens": 149299
+        },
+        "claude-haiku-4-5-20251001": {
+          "calls": 4,
+          "inputTokens": 113773,
+          "outputTokens": 15981
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Nico Salgado",
+      "role": "Player character (protagonist) of 'Group Work' — the moral fulcrum of the group. His choices, moment to moment, determine whether the group's dishonesty gets addressed or buried, and whether Maya feels seen or erased.",
+      "active": true
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Alvarez",
+      "role": "Jordan is the friction the player has to navigate — not a villain, but a kid whose survival strategy (charm, shortcuts, credit-grabbing) actively erases quieter, harder-working Maya unless someone intervenes. He's the live wire of the episode: his choices (shortcut vs. real work, crediting Maya or not) are reactive to the player's courage or avoidance, making him a mirror for how confrontation actually lands with a real, defensive, scared kid instead of a cardboard bully.",
+      "active": true
+    },
+    {
+      "id": "maya",
+      "name": "Maya Okafor",
+      "role": "Maya is the emotional stakes of 'Group Work' made human — not a lesson about credit-sharing, but a specific kid whose quiet competence makes her easy to lean on and easy to erase. She's the pressure gauge for the player's choices: every scene either makes her a little smaller or lets her take up the space she's earned.",
+      "active": true
+    },
+    {
+      "id": "casey",
+      "name": "Casey Nakamura-Díaz",
+      "role": "Casey is the outside conscience of 'Group Work' — not embedded in the group's dynamics, which is exactly what gives them the clarity (and the standing) to ask the question everyone else is too tangled up to ask. They don't moralize or lecture; they just notice, and their noticing is a mirror the player can't fully dodge. The cafeteria scene is less about Casey extracting a confession and more about whether Nico can finally hear his own answer out loud.",
+      "active": true
+    },
+    {
+      "id": "ms-patel",
+      "name": "Priya Patel",
+      "role": "Ms. Patel is the steady axis the episode's moral weight turns on — not a judge handing down verdicts, but an adult who has deliberately built a practice of asking rather than accusing, giving Nico real room to choose honesty or avoidance without ever forcing his hand. Her calm isn't passivity; it's a considered response to her own history, which makes her quiet questions land heavier than a lecture would.",
+      "active": true
+    }
+  ],
+  "finalStatus": "APPROVED",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "PASS",
+    "childPsychologist": "SKIPPED",
+    "gameDesigner": "SKIPPED",
+    "ethicsReviewer": "SKIPPED"
+  },
+  "revisions": [
+    {
+      "iteration": 1,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 6,
+      "dialogueFeedbackCount": 5,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "SKIPPED",
+        "gameDesigner": "SKIPPED",
+        "ethicsReviewer": "SKIPPED"
+      }
+    },
+    {
+      "iteration": 2,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 4,
+      "dialogueFeedbackCount": 8,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "PASS",
+        "childPsychologist": "SKIPPED",
+        "gameDesigner": "SKIPPED",
+        "ethicsReviewer": "SKIPPED"
+      }
+    }
+  ],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "revision-1/feedback.json",
+    "revision-1/story-outline.json",
+    "revision-1/dialogue.json",
+    "revision-1/qa-review.json",
+    "revision-2/feedback.json",
+    "revision-2/story-outline.json",
+    "revision-2/dialogue.json",
+    "revision-2/qa-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}

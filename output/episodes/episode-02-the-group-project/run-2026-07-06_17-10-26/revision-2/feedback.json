@@ -1,0 +1,71 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-6c-early-honesty leads to scene-10-teacher-conversation, but scene-10 is designed as a choice point that branches to three different endings. If the player already went to Ms. Patel in scene-6c, they shouldn't encounter the same 'how did it really go' question again in scene-10. — Suggested fix: Either: (A) Create a variant scene-10 with conditional dialogue that recognizes the player already spoke to Ms. Patel, OR (B) Have scene-6c transition directly to scene-7-presentation-day, skipping the redundant teacher conversation, OR (C) Add branchDialogue to scene-10 keyed to 'branch-early-truth-teller' that reflects the player's prior honesty (location: scene-6c-early-honesty.transition.nextScene and scene-10-teacher-conversation.choicePointId)",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-9-hallway-relief and scene-9-hallway-tension both exist and both transition to scene-10-teacher-conversation. However, they are reached via different paths (scene-8a/8c vs. scene-8b), but there is no mechanism in the data to ensure the correct scene-9 variant is reached based on which scene-8 preceded it. The transition logic is implicit, not explicit. — Suggested fix: N/A — transitions are correctly specified. (location: scene-8a.transition, scene-8b.transition, scene-8c.transition, and corresponding scene-9 variants)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "The outcomes array references 'branch-early-truth-teller' as triggered by 'choice-3:c', but choice-3:c leads to scene-6c-early-honesty, which then leads to scene-10-teacher-conversation. However, scene-10 is a choice point with three options (a, b, c) that lead to three different endings (scene-11-integrity-ending, scene-11-compromise-ending, scene-11-complicit-ending). The player who chose choice-3:c could then choose any of the three options in choice-5, leading to three different outcomes, not just 'branch-early-truth-teller'. The outcome definition is incomplete. — Suggested fix: Revise outcomes[4].triggeredBy to 'choice-3:c AND choice-5:a' (early honesty + full integrity), OR add a note in the description that this outcome represents the structural choice to disclose early, with the final outcome determined by choice-5 (location: outcomes[4] (branch-early-truth-teller))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome 'branch-quiet-diplomat' is triggered by 'choice-1:c, choice-2:c, choice-4:c', but choice-3 is missing. A player could take the diplomat path (gentle redirection, compromise, subtle correction) but then choose choice-3:a (direct confrontation with Jordan) or choice-3:c (escalation to teacher), breaking the diplomat pattern. The outcome definition doesn't account for this branching inconsistency. — Suggested fix: Clarify outcome definition: either add choice-3 constraints, or add a note that outcomes represent dominant patterns, not strict linear paths (location: outcomes[1] (branch-quiet-diplomat).triggeredBy)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice-3 option (c) text says 'I think we should talk to Ms. Patel about how this project actually came together — will you come with me?' but the scene it leads to (scene-6c-early-honesty) is titled 'Before It Goes Wrong' and includes dialogue where the player and Maya go to Ms. Patel together. However, the responseDialogue for choice-3:c in choiceDialogue array does not exist — there is no c3c-* dialogue entries. — Suggested fix: Add responseDialogue.c to choiceDialogue[2] with dialogue entries showing the player asking Maya to go to Ms. Patel together and her acceptance. Example structure: c3c-1 (player), c3c-2 (maya hesitates), c3c-3 (player reassures), c3c-4 (maya agrees) (location: choices[2] (choice-3), choiceDialogue[2] (choice-3 responseDialogue))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-9-hallway-relief dialogue uses speaker id 's9r-*' (e.g., 's9r-1', 's9r-2'), but scene-9-hallway-tension uses speaker id 's9t-*' (e.g., 's9t-1', 's9t-2'). This is inconsistent naming convention — both are scene-9 variants and should use a consistent prefix or the same prefix with a variant suffix. — Suggested fix: Rename all dialogue ids in scene-9-hallway-relief from 's9r-*' to 's9-relief-*' (or 's9a-*'), and all in scene-9-hallway-tension from 's9t-*' to 's9-tension-*' (or 's9b-*'), for consistency (location: scene-9-hallway-relief.dialogue[*].id and scene-9-hallway-tension.dialogue[*].id)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice-4 (scene-7-presentation-day) has three options (a, b, c) that lead to three different scene-8 variants. However, the responseDialogue for choice-4 in the choiceDialogue array is missing the 'c' option's dialogue. choiceDialogue[3] has responseDialogue.a and responseDialogue.b, but responseDialogue.c is absent. — Suggested fix: Add responseDialogue.c to choiceDialogue[3] with dialogue entries (c4c-1 through c4c-4) showing Jordan catching the player's eye, hesitating, and quietly crediting Maya (location: choiceDialogue[3] (choice-4))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-7-presentation-day dialogue entry s7-5 references 'Maya's careful callouts' but no such callouts are shown in the dialogue or described in the scene. The narrative suggests Maya has prepared visual elements or annotations, but they are never explicitly shown or referenced in dialogue. — Suggested fix: Add a dialogue entry after s7-4 showing Jordan briefly acknowledging or skipping over a slide with Maya's annotations, OR revise s7-5 narrative to say 'barely glancing at the slides Maya prepared' without the undefined 'callouts' reference (location: scene-7-presentation-day.dialogue[4] (s7-5))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-11-compromise-ending dialogue entry s11b-1 has Ms. Patel saying 'Rough patches happen. I trust you'll tell me if it's more than that.' But this is a response to the player choosing option-b in choice-5 ('Mention rough patches without naming names'). However, the player's actual dialogue option is not shown in the scene — only Ms. Patel's response is present. The scene should include the player's dialogue first. — Suggested fix: Add a dialogue entry before s11b-1 showing the player saying something like 'It went okay. There were some rough patches — figuring out who'd do what, stuff like that.' Then Ms. Patel responds. (location: scene-11-compromise-ending.dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-11-complicit-ending dialogue entry s11c-1 has Ms. Patel saying 'Good to hear.' But this is a response to the player choosing option-c in choice-5 ('It went great, everyone contributed equally'). However, the player's actual dialogue is not shown in the scene — only Ms. Patel's response is present. — Suggested fix: Add a dialogue entry before s11c-1 showing the player saying 'It went great. Everyone contributed equally.' Then Ms. Patel responds with 'Good to hear.' (location: scene-11-complicit-ending.dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-11-integrity-ending dialogue entry s11a-1 has Ms. Patel saying 'Thank you for telling me. That couldn't have been the easy answer.' But this is a response to the player choosing option-a in choice-5 ('Tell her everything'). However, the player's actual dialogue is not shown in the scene — only Ms. Patel's response is present. — Suggested fix: Add a dialogue entry before s11a-1 showing the player saying something like 'Honestly? We almost used Jordan's brother's old project as a shortcut. We didn't, in the end — but the credit slide wasn't right until today, and Maya did way more of the work than it showed.' Then Ms. Patel responds. (location: scene-11-integrity-ending.dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-12-epilogue (final scene) has dialogue from choice-5 responseDialogue entries (c5a-1, c5b-1, c5c-1, etc.) embedded in the choiceDialogue array, but the scene-12 dialogue array does not reference these. The scene-12 dialogue shows Casey asking 'So. You gonna tell me how it actually went, or should I just watch your face while you eat your fries?' but the player's response is not shown — it's only in the branchDialogue array. This creates a disconnect: the scene dialogue doesn't show the player's answer, only Casey's question. — Suggested fix: Integrate branchDialogue entries into scene-12 dialogue as conditional branches, OR restructure scene-12 as a choice point that branches to different dialogue variants based on the player's prior choice-5 selection (location: scene-12-epilogue.dialogue and branchDialogue entries for scene-12-epilogue)",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

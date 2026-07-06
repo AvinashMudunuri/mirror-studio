@@ -1,0 +1,66 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice-2 has three options but all three point to the same nextScene (scene-3-crunch-time), making the choice functionally meaningless. Each option should lead to a distinct scene reflecting the player's decision. — Suggested fix: Update choice-2.options to route correctly: option a → scene-4a-honest-path, option b → scene-4b-shortcut-path, option c → scene-4c-uneasy-compromise. The transition.nextScenes array should reflect this. (location: choices[1] (choice-2))",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-2-first-meeting has choicePointId 'choice-1' but its transition.nextScenes array contains three identical values ['scene-3-crunch-time', 'scene-3-crunch-time', 'scene-3-crunch-time']. This breaks the branching logic — all three choice options lead to the same scene regardless of player selection. — Suggested fix: Either: (1) Update nextScenes to ['scene-3-crunch-time', 'scene-3-crunch-time', 'scene-3-crunch-time'] is actually correct IF all three options lead to the same scene (which they do in the choice definition), OR (2) If the intent is for different options to lead to different scenes, update choice-1.options to specify different nextScene values and update the transition accordingly. Based on the narrative, all three options DO lead to scene-3-crunch-time, so this is actually CORRECT — see warning below instead. (location: scenes[1] (scene-2-first-meeting).transition.nextScenes)",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-7-presentation-day (choice-4) has three options but the nextScenes array maps them as [scene-8a-credit-corrected, scene-8b-credit-stolen, scene-8a-credit-corrected]. Options a and c both lead to scene-8a, but they represent different player actions ('speak up now' vs. 'catch Jordan's eye and gesture'). This creates narrative confusion — the same scene outcome for two distinct choices. — Suggested fix: Either consolidate options a and c into a single 'speak up' option with a sub-choice about method, OR create a scene-8a-subtle-correction that reflects the 'catch his eye' approach differently from the direct call-out. The current structure suggests two different player choices lead to identical outcomes, which undermines player agency. (location: scenes[6] (scene-7-presentation-day).transition.nextScenes)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcomes array references branches that are triggered by choice paths, but the triggeredBy arrays don't account for all possible choice combinations. For example, 'branch-integrity-champion' is triggered by [choice-2:a, choice-3:a, choice-5:a], but a player could take choice-2:a, choice-3:b, choice-5:a and wouldn't match any defined branch. This creates orphaned choice paths with no outcome. — Suggested fix: Either: (1) Define outcomes more broadly (e.g., 'branch-integrity-champion' triggers on ANY path with 2+ integrity-aligned choices), OR (2) Accept that not all paths have explicit outcomes and document that the final scene (scene-12-epilogue) uses branchDialogue to generate context-specific responses based on the player's actual choices, not just outcome branches. If (2) is the intent, add a note to the outcomes section clarifying this. (location: outcomes array)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-9 is referenced in the narrative flow (it should exist between scene-8 and scene-10) but is not defined in the scenes array. The episode jumps from scene-8a/8b (presentation day) directly to scene-10 (teacher conversation after the bell), skipping any transition or downtime. — Suggested fix: Either: (1) Create a scene-9 (e.g., 'scene-9-between-classes' or 'scene-9-hallway-moment') that provides a beat between the presentation and the teacher conversation, OR (2) Rename scene-10 to 'scene-9-teacher-conversation' and adjust all references. The current numbering gap is confusing. (location: scenes array (missing scene-9))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-6a-team-recommits, scene-6b-doubt-lingers, and scene-6c-early-honesty all have different characters and locations, but they're all supposed to be responses to choice-3 (Maya's confession). However, scene-6c takes place in 'Ms. Patel's Classroom, After School' with only the player and Ms. Patel, while scenes 6a and 6b take place in the library with Maya and/or Jordan. This means the player's response to Maya's vulnerability (choice-3) determines not just what they say, but whether they even stay in the room with Maya. This is narratively valid but creates a discontinuity: if the player chooses option c (talk to Ms. Patel), Maya is left hanging in the library without a response. — Suggested fix: Add a brief dialogue exchange in scene-6c's opening where the player explains to Maya that they're going to talk to Ms. Patel, OR add a transition scene showing Maya's reaction to being left alone. Alternatively, clarify in the choice-3 prompt that option c involves telling Maya about the plan. (location: scenes[5] (scene-6c-early-honesty) vs. scenes[4] (scene-5-maya-confides))",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-6c-early-honesty (choice-3:c) transitions to scene-10-teacher-conversation, but this creates a narrative skip — the player goes directly from talking to Ms. Patel about the issues to the final teacher conversation, bypassing scenes 4, 5, 6a/b, 7, 8a/b, and 9. This means the presentation day never happens if the player chooses option c in choice-3. The episode structure assumes a linear progression through presentation day, but this path breaks that. — Suggested fix: Either: (1) Create a scene-9-presentation-day-variant that shows how the presentation plays out after the player has already talked to Ms. Patel, OR (2) Reroute scene-6c to scene-7-presentation-day so the presentation still happens, and the final teacher conversation (scene-10) happens after. The current structure creates a narrative gap. (location: scenes[5] (scene-6c-early-honesty).transition.nextScene)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "branchDialogue references 'branch-early-truth-teller' which is triggered by choice-3:c, but the narrative flow for that choice (scene-6c-early-honesty → scene-10-teacher-conversation) skips the presentation day entirely. The branchDialogue for 'branch-early-truth-teller' in scene-12-epilogue assumes the player has already talked to Ms. Patel ('I actually went to Patel before presentation day'), but the scene-12 dialogue doesn't account for the fact that the presentation day was never shown. This creates a narrative inconsistency. — Suggested fix: Clarify the narrative intent: Does the presentation day happen after scene-6c, or is it skipped? If skipped, update branchDialogue to reflect that. If it happens, reroute scene-6c to scene-7-presentation-day instead of scene-10. (location: branchDialogue[4] (branch-early-truth-teller) and scenes[5] (scene-6c-early-honesty))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "The player character is referred to as 'Nico Salgado' in the character roster, but in scene-1 dialogue (s1-l3), Ms. Patel says 'Group four: Jordan Alvarez, Maya Okafor, Nico Salgado.' However, in scene-1 narrative (s1-l8), it says 'Across the room, Casey catches Nico's eye and mouths something.' This is correct. BUT in scene-2 dialogue (s2-l9), the INTERNAL monologue says '[CHOICE POINT: choice-1]' as dialogue, which is a formatting error — choice points should not appear in the dialogue array. — Suggested fix: Remove the '[CHOICE POINT: choice-1]' line from the dialogue array. The choicePointId field already marks this scene as having a choice. (location: scenes[1] (scene-2-first-meeting).dialogue[9] (s2-l10))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Similar formatting error: Scene-3 dialogue includes '[CHOICE POINT: choice-2]' as a line (s3-l11), and scene-5 includes '[CHOICE POINT: choice-3]' (s5-l11), and scene-7 includes '[CHOICE POINT: choice-4]' (s7-l6), and scene-10 includes '[CHOICE POINT: choice-5]' (s10-l5). These should not be in the dialogue array. — Suggested fix: Remove all '[CHOICE POINT: ...]' lines from dialogue arrays. The choicePointId field on the scene already marks where choices occur. (location: scenes[2].dialogue[10], scenes[4].dialogue[10], scenes[6].dialogue[5], scenes[8].dialogue[4])",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-11-compromise-ending references 'scene-11-compromise-ending' as its own ID, but the scene ID is 'scene-11-compromise-ending' and the title is 'Some Rough Patches'. However, there are THREE scene-11 variants (scene-11-integrity-ending, scene-11-compromise-ending, scene-11-complicit-ending), all with the same defaultNextScene ('scene-12-epilogue'). This is correct branching, but the scene IDs are confusing because they're numbered 11 when they're actually the third branching point (after scenes 8a/8b and 6a/6b/6c). The numbering suggests a linear progression that doesn't exist. — Suggested fix: Rename to scene-9a-integrity-ending, scene-9b-compromise-ending, scene-9c-complicit-ending (if they're the third choice point), OR keep the current names but add a comment clarifying that these are branching variants of a single choice outcome, not sequential scenes. (location: scenes[9], [10], [11] (scene-11-* variants))",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

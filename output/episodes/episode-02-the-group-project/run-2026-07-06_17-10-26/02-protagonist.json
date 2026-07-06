@@ -1,0 +1,93 @@
+{
+  "character": {
+    "id": "player",
+    "name": "Nico Salgado",
+    "age": 13,
+    "pronouns": "he/him",
+    "appearance": {
+      "brief": "Medium height, still growing into his hands and feet, with dark curly hair he's constantly pushing out of his eyes because he refuses to admit he needs a haircut.",
+      "distinctiveFeatures": [
+        "A chipped front tooth from a skateboard incident he tells three different versions of",
+        "Wears the same faded green hoodie from his old school so often that new classmates think it's a uniform",
+        "Chews on pen caps when he's thinking, so most of his pens have little teeth marks"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "easygoing on the surface",
+        "quietly anxious about fitting in",
+        "fiercely loyal once he trusts someone",
+        "avoids conflict until he can't anymore"
+      ],
+      "bigFiveProfile": {
+        "openness": 6,
+        "conscientiousness": 5,
+        "extraversion": 6,
+        "agreeableness": 7,
+        "neuroticism": 6
+      },
+      "mannerisms": [
+        "Cracks jokes when a room gets tense, even bad ones, just to break the silence",
+        "Taps a rhythm on his desk with two fingers when he's nervous",
+        "Physically leans back from arguments like he can dodge them"
+      ],
+      "speechPatterns": [
+        "Trails off mid-sentence when he's not sure if what he's about to say will land ('I just think maybe we should— nah, never mind.')",
+        "Uses 'honestly' as a verbal tic right before he says something he's not being fully honest about",
+        "Slips into sarcasm as a shield ('Oh yeah, sure, let's just turn in half a project, that'll go great.')"
+      ],
+      "emotionalTendencies": "Nico feels things intensely but processes them privately — he'll seem fine for two days and then blurt out what's actually bothering him at the worst possible moment. He hates being the reason for tension, which makes him prone to smoothing things over rather than solving them."
+    },
+    "background": {
+      "family": "Only child of a single mom, Elena, who works two jobs (daytime at a pharmacy, weekends doing hair from their apartment) to keep them afloat after a divorce that moved them across the city. Nico and his mom are close, but he doesn't tell her much about school because he doesn't want to add to her plate.",
+      "interests": [
+        "skateboarding (badly, enthusiastically)",
+        "making stop-motion videos with action figures",
+        "trivia — the kind of kid who actually likes weird historical facts but won't admit it's 'cool'"
+      ],
+      "strengths": [
+        "can read a room fast",
+        "genuinely funny, disarms tension with humor",
+        "notices when someone's being quietly left out"
+      ],
+      "struggles": [
+        "conflict-avoidant to a fault — will let something slide three times before saying anything",
+        "new-kid anxiety: convinced everyone already has their friend groups locked in and he's just filling a gap",
+        "struggles to separate 'keeping the peace' from 'letting something wrong happen'"
+      ],
+      "secrets": [
+        "He got moved to this school mid-year after a blowup at his old one where he stayed silent while a friend took the blame for something Nico also did — he's never told anyone at New School about it, and it's exactly the kind of situation this project is about to recreate."
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Make actual friends before the year ends",
+        "Not screw up the history fair project — first big group grade at the new school",
+        "Avoid being 'that new kid drama' "
+      ],
+      "unconscious": [
+        "To prove to himself he's not the kind of person who stays quiet while something unfair happens — again",
+        "To be liked without having to hide what he actually thinks"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Casual middle-school vernacular; occasional surprising vocabulary when he's excited about trivia/history facts, which he then downplays.",
+      "sentenceComplexity": "Short, conversational sentences; trails off often; jokes interrupt serious thoughts.",
+      "emotionalExpressiveness": "Deflects with humor first, gets earnest and a little clumsy with words when finally being direct.",
+      "examples": [
+        "\"Okay but historically? Copying two sentences from Wikipedia is NOT what the Founding Fathers meant by 'life, liberty, and the pursuit of a passing grade.'\"",
+        "\"I'm not trying to start anything, I just— nah, forget it, it's fine.\"",
+        "\"Honestly? I think if we just say something now it's way less weird than if Ms. Patel finds out on Friday.\"",
+        "\"I've been the quiet kid before. Turns out it doesn't actually fix anything. It just makes it your fault later too.\""
+      ]
+    },
+    "storyRole": "Player character (protagonist) of 'Group Work' — the moral fulcrum of the group. His choices, moment to moment, determine whether the group's dishonesty gets addressed or buried, and whether Maya feels seen or erased.",
+    "arcPotential": [
+      "Episode 'Group Work': Nico must decide, in small escalating moments, whether to call out Jordan's corner-cutting and make space for Maya's disappearing contributions — forcing him to confront the same silence that got him in trouble at his old school.",
+      "Future episode potential: Nico opens up to his mom about the move and what really happened at his old school, turning a private shame into an honest conversation.",
+      "Future episode potential: Nico has to set a boundary with a friend group that wants him to keep smoothing things over rather than speaking up, testing whether his growth from 'Group Work' actually stuck."
+    ]
+  },
+  "designNotes": "Nico is built as a mirror-state protagonist: someone whose core wound (staying silent while a friend took the fall) is structurally identical to the situation the episode will force him into again. This isn't a coincidence — it's the point. Because he's the player character, his personality is drawn with enough texture (the humor, the trivia love, the mom relationship) to feel like a real kid, not a blank avatar, while his central conflict (conflict-avoidance vs. honesty) is broad and relatable enough that players project their own experiences onto his choices. The 'new kid' status does double duty: it explains his social caution (not wanting to rock the boat when he's still finding his footing) and organically supports the 'navigating new school' requirement without needing exposition. His humor is a defense mechanism, not just comic relief — it's the exact same impulse that lets him avoid hard conversations, so scenes where he chooses honesty over a joke are earned character beats, not tonal whiplash.",
+  "representationNotes": "Nico is written as Latino (last name Salgado) and from a single-parent, working-class household — a background often underrepresented in middle-grade media outside of 'struggle narratives.' Care was taken to make his home life textured and warm rather than purely a source of hardship: his mom is present, funny, and competent, and his economic situation (worn hoodie, small apartment) is depicted matter-of-factly rather than as a plot device for pity. His emotional struggle — conflict avoidance rooted in not wanting to be a burden — is a common but underexplored form of anxiety in boys this age, offering an alternative to louder, more stereotypically 'dramatic' portrayals of middle-school conflict."
+}

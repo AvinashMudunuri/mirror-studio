@@ -1,0 +1,384 @@
+[
+  {
+    "character": {
+      "id": "jordan",
+      "name": "Jordan Alvarez",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Tall for his age, broad-shouldered, moves like he's always half a second from breaking into a grin. Wears his older brother's hand-me-down hoodies and sneakers that are always a little too fresh for a Tuesday.",
+        "distinctiveFeatures": [
+          "a chipped front tooth from a skateboard incident he's turned into three different legendary origin stories",
+          "talks with his hands constantly, like he's conducting an invisible orchestra",
+          "a habit of tapping a pen against his knee when he's pretending not to be nervous"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "charismatic",
+          "conflict-avoidant under the bravado",
+          "genuinely funny",
+          "insecure about being 'the smart one's' opposite",
+          "loyal in fits and starts"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 3,
+          "extraversion": 9,
+          "agreeableness": 5,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "snaps his fingers when an idea hits him, like he's summoning it",
+          "leans back in his chair with his arms crossed when challenged, a wall going up fast",
+          "does a little air-guitar move when he's stalling for time",
+          "over-explains jokes that already landed"
+        ],
+        "speechPatterns": [
+          "talks in confident declaratives even when he's guessing — 'Okay so here's the thing' is basically a verbal tic",
+          "downplays effort with phrases like 'it's basically done' or 'don't even worry about it'",
+          "uses humor to deflect — turns tension into a bit almost automatically",
+          "goes quiet and short-answered exactly when he's caught, a total tell if you know him"
+        ],
+        "emotionalTendencies": "Jordan performs confidence as a first language. He's the kid who fills silence before it gets awkward, who volunteers to go first so nobody can see him hesitate. Underneath, he's terrified of being seen as not good enough — not smart enough, not disciplined enough, not enough like his older brother, who was valedictorian material and never lets Jordan forget the bar he's supposedly failing to clear. When he takes credit or cuts a corner, it's rarely calculated cruelty — it's self-protection dressed up as swagger. He feels guilt fast and hides it faster."
+      },
+      "background": {
+        "family": "Middle child in a house that runs on comparison. His older brother Marcus graduated top of his class and is now the family's favorite conversation topic; his younger sister is the 'easy' one. Jordan's the one who gets 'you're smart, you just don't apply yourself' at every parent-teacher conference. Dad works long shifts at a distribution warehouse and is proud of Jordan in a distracted way; Mom rides him hard about grades because she's scared for him, though it lands as pressure, not love, most days.",
+        "interests": [
+          "basketball (bench player, but loud about the team)",
+          "editing hype videos for his friends' pickup games",
+          "his brother's old laptop full of 'genius' shortcuts and templates he's inherited like family heirlooms",
+          "making people laugh, especially people who look bored"
+        ],
+        "strengths": [
+          "natural leader — people want to follow his energy",
+          "quick verbal improviser, good at thinking on his feet in front of a crowd",
+          "genuinely funny in a way that defuses tension",
+          "capable of real loyalty once someone calls him out and he respects them for it"
+        ],
+        "struggles": [
+          "chronic corner-cutting because starting feels harder than finishing looks",
+          "conflates being liked with being valuable",
+          "struggles to sit with slow, careful work — it feels like proof he's not naturally good at things",
+          "difficulty admitting fault out loud, even when he knows he's wrong"
+        ],
+        "secrets": [
+          "he's genuinely scared he's 'the dumb one' in his family and has built his whole personality around not needing to prove otherwise",
+          "he actually thinks Maya's research is impressive and has no idea how to say that without sounding like he's copying his brother's whole 'smart kid' lane"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "get the project done with minimum pain and maximum credit",
+          "be seen as the guy who carried the group",
+          "not fall behind — or at least not look like he's falling behind"
+        ],
+        "unconscious": [
+          "prove to himself he's not the family disappointment",
+          "be valued for something other than being 'fun'",
+          "learn that asking for help or admitting he's wrong doesn't erase him"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual, slangy, current without trying too hard — the vocabulary of a kid who talks more than he reads, but isn't dumb, just impatient.",
+        "sentenceComplexity": "Short, punchy, declarative. Trails off or deflects with a joke when things get emotionally real.",
+        "emotionalExpressiveness": "Loud and easy on the surface — jokes, confidence, physical energy. Goes clipped and defensive fast when actually challenged. Real vulnerability shows up sideways, never head-on, usually through a joke that doesn't quite land.",
+        "examples": [
+          "Okay okay, hear me out — what if the whole board is just, like, one big timeline, but it *pops*, you know?",
+          "It's basically done, I just gotta... finesse a couple things. Don't stress it.",
+          "(defensive, arms crossed) I mean — it's not like I said it wasn't a group thing. I just... talked first. That's not a crime.",
+          "(quiet, caught off guard) ...Yeah. No, you're right. That was — yeah. My bad. I'll fix it.",
+          "(at the end, trying to joke his way out of the discomfort) See? Nailed it. Group effort, baby. ...Right? Group effort."
+        ]
+      },
+      "storyRole": "Jordan is the friction the player has to navigate — not a villain, but a kid whose survival strategy (charm, shortcuts, credit-grabbing) actively erases quieter, harder-working Maya unless someone intervenes. He's the live wire of the episode: his choices (shortcut vs. real work, crediting Maya or not) are reactive to the player's courage or avoidance, making him a mirror for how confrontation actually lands with a real, defensive, scared kid instead of a cardboard bully.",
+      "arcPotential": [
+        "Group Work: Learns (or fails to learn, depending on player choices) that credit isn't a zero-sum resource — that acknowledging Maya's work doesn't diminish his own contribution.",
+        "Future episode: A storyline where Jordan has to do a solo project and confronts what he's capable of without a group to lean on or outshine.",
+        "Future episode: Jordan and his brother Marcus have an actual conversation — the first crack in the comparison narrative Jordan's built his whole identity around."
+      ]
+    },
+    "designNotes": "Jordan is designed to resist the easy 'group project slacker' trope by giving his corner-cutting and credit-hogging a clear emotional engine: fear of being the family's designated underachiever. His confidence is a costume, not a character trait — which is why it cracks so specifically under direct, quiet confrontation (per his speech pattern: goes clipped/quiet when caught). I built in real charm and real usefulness (leadership, humor, defusing tension) so players and Nico actually *like* him — the moral tension of 'Group Work' only works if giving Jordan a pass feels genuinely tempting, not just easy. His arc across the episode is entirely reactive to player choices, which fits his core trait of conflict-avoidance: he won't self-correct without a nudge, but he *can* self-correct, which is what separates him from a static antagonist.",
+    "representationNotes": "Jordan's home pressure (older sibling as the 'success' benchmark, parental focus on grades as anxiety rather than warmth) is written to reflect a common, non-stereotyped family dynamic without tying it to any single ethnic or cultural essentialism — it's a middle-child pressure story, not a 'strict immigrant parents' trope, though writers should stay alert to not sliding it that direction unintentionally. His surname (Alvarez) and family context can be played with light, specific cultural texture (food, music, family gatherings) in later episodes without making his arc *about* his ethnicity — the story is about sibling comparison and self-worth, universal terrain that shouldn't be flattened into a cultural stereotype about achievement pressure."
+  },
+  {
+    "character": {
+      "id": "maya",
+      "name": "Maya Okafor",
+      "age": 13,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Small and neat, the kind of neat that looks intentional rather than fussy — box braids usually pulled back with the same blue scrunchie, a backpack with exactly one pin on it (a tiny enamel owl, gift from her older cousin). She dresses comfortably, nothing flashy, but her folders and notecards are color-coded like a small filing system.",
+        "distinctiveFeatures": [
+          "Chews the end of a mechanical pencil when thinking, never the pen cap",
+          "Color-coded notecards she rewrites if they get smudged",
+          "A habit of angling her body slightly away from a conversation right before she goes quiet"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "meticulous",
+          "quietly funny when she trusts you",
+          "conflict-avoidant to a fault",
+          "deeply competent",
+          "slow to trust, hard to shake once she does"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 10,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Squares her notecards against the table edge when nervous",
+          "Goes very still and small when talked over, like she's trying to take up less space",
+          "Taps her pencil twice before writing anything down, a little ritual",
+          "Cracks a dry one-liner under her breath that only lands if you're actually listening"
+        ],
+        "speechPatterns": [
+          "Precise, complete sentences — she doesn't trail off",
+          "Undersells her own work ('it's not a big deal, I just organized some stuff')",
+          "Gets clipped and short when hurt, rather than loud",
+          "Occasionally slips into genuine enthusiasm about research that surprises people who only know her as 'the quiet one'"
+        ],
+        "emotionalTendencies": "Maya processes hurt by going smaller and more efficient, not by confronting it. She'll absorb being overlooked for a surprisingly long time, doing more work as a way of proving her value rather than asking to be seen. When she finally does speak up, it's quiet and unarmed — she's not looking for a fight, she's looking for the truth to be said out loud, once, by someone."
+      },
+      "background": {
+        "family": "Middle child of three, Nigerian-American, parents run a small pharmacy together. Her older cousin (in college) is her hero and gave her the owl pin; her younger brother is loud and adored and takes up a lot of family oxygen, which Maya has quietly adjusted to by becoming the 'easy,' low-maintenance one.",
+        "interests": [
+          "History — specifically stuff nobody assigns her, like local neighborhood history",
+          "Making elaborate organizational systems (color codes, labeled bins, a bullet journal she's embarrassed about but loves)",
+          "Baking, especially recipes that require exact measurements"
+        ],
+        "strengths": [
+          "Research and synthesis",
+          "Follow-through",
+          "Noticing details other people miss",
+          "Genuine curiosity about how things actually happened, not just the 'story' version"
+        ],
+        "struggles": [
+          "Believes that being useful is the same as being valued",
+          "Struggles to advocate for herself in the moment, only after",
+          "Has internalized being 'the reliable one' as her whole identity, and is quietly scared of what happens if she's ever not"
+        ],
+        "secrets": [
+          "She's kept a running note in her phone titled 'things I did that no one noticed' — half joke, half not",
+          "She almost asked to switch groups on day one because she had a bad feeling about Jordan, and regrets not trusting that instinct"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get a genuinely good grade on the project",
+          "Make sure the history is actually right, not just impressive-looking"
+        ],
+        "unconscious": [
+          "To be seen and credited for her work without having to ask for it",
+          "To learn that her value isn't contingent on being useful and invisible at the same time"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Articulate for her age, precise word choice, occasional dry wit — she reads a lot and it shows without her showing off",
+        "sentenceComplexity": "Full, considered sentences when she feels safe; short and guarded when she doesn't",
+        "emotionalExpressiveness": "Reserved by default, restrained even under real hurt — her feelings show more in what she stops doing (going quiet, shrinking, disappearing into a task) than in what she says",
+        "examples": [
+          "\"I already cross-referenced two of the sources — one of them's actually wrong, if you want to swap it before we present.\"",
+          "\"It's fine. I'll just, um — I'll fix the formatting.\"",
+          "\"I'm not trying to make it a whole thing. I just did most of it, and I guess I wanted someone to know that.\"",
+          "\"No, it's — it's good, actually. It just would've been nice if my name was on it too. That's all.\""
+        ]
+      },
+      "storyRole": "Maya is the emotional stakes of 'Group Work' made human — not a lesson about credit-sharing, but a specific kid whose quiet competence makes her easy to lean on and easy to erase. She's the pressure gauge for the player's choices: every scene either makes her a little smaller or lets her take up the space she's earned.",
+      "arcPotential": [
+        "Episode 'Group Work': Learns (or doesn't) that her work can be seen without her having to disappear into it to make room for someone louder",
+        "Future episode potential: Maya starting to advocate for herself unprompted, maybe in a new group project where Nico isn't there to notice — testing whether the growth holds without him"
+      ]
+    },
+    "designNotes": "Maya's core wound is that she's mistaken being needed for being valued — she over-functions because it's the only love language she's confident in. The design leans hard into specificity (the owl pin, the notecards, the secret phone note) so she reads as a real 13-year-old and not a 'quiet studious girl' archetype. Her dry humor is important — it stops her from being purely a sympathy device; she's someone you'd actually want to be friends with, not just someone to feel bad for. Her arc isn't 'Maya learns to speak up' in one big dramatic beat — it's incremental, mirroring the episode's structure of small moments, because that's how real kids actually learn to advocate for themselves: haltingly, imperfectly, often needing someone else to go first.",
+    "representationNotes": "Maya is written as a Nigerian-American girl whose personality isn't defined by her race, but her family context (immigrant parents running a small business, a specific cousin/sibling dynamic) is textured rather than generic. Care was taken to avoid the 'quiet, hardworking Black/Brown girl who sacrifices for others' trope by giving her a clear unconscious need of her own (to be seen without asking) and an active interior life — humor, secret ambitions, a phone note that's equal parts funny and sad — so she's not defined solely by her usefulness to the group or by suffering quietly. Her arc resolution should ideally NOT hinge entirely on Nico speaking for her — the strongest version of this story lets Maya find even a small moment of self-advocacy that's hers alone."
+  },
+  {
+    "character": {
+      "id": "casey",
+      "name": "Casey Nakamura-Díaz",
+      "age": 13,
+      "pronouns": "they/them",
+      "appearance": {
+        "brief": "Medium height, lanky in that not-grown-into-it-yet middle school way, with a mop of dark hair usually pushed back with a pencil stuck through it. Wears the same faded green army-surplus jacket regardless of weather.",
+        "distinctiveFeatures": [
+          "Chipped front tooth from a skateboard incident they will absolutely tell you the full story of",
+          "Doodles tiny stick-figure comics in the margins of every notebook",
+          "Has a habit of chewing on pen caps until they crack"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "observant",
+          "wry",
+          "loyal from a distance",
+          "conflict-comfortable but not conflict-seeking",
+          "quietly principled"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 5,
+          "extraversion": 6,
+          "agreeableness": 6,
+          "neuroticism": 4
+        },
+        "mannerisms": [
+          "Tilts head slightly and squints when they think someone's not telling the whole truth",
+          "Taps a rhythm on the table when waiting for someone else to finish talking",
+          "Makes a small 'hm' sound instead of asking a follow-up question, letting silence do the work"
+        ],
+        "speechPatterns": [
+          "Short, direct sentences — rarely more than one clause",
+          "Deflects with a joke first, then circles back to the real question if you let the joke pass",
+          "Uses 'so' as a conversational hinge: 'So. You gonna tell me or should I guess?'"
+        ],
+        "emotionalTendencies": "Casey reads a room fast and says little about what they see until they trust you enough to say it plainly. They're not performatively nice — they'll let an awkward silence sit rather than smooth it over — but once they ask a real question, they actually want the real answer, and they'll wait for it."
+      },
+      "background": {
+        "family": "Raised by a mom who teaches community college night classes and a stepdad who coaches rec-league soccer; a much older half-sister who's basically a third parent and taught Casey to skateboard badly.",
+        "interests": [
+          "skateboarding (badly, enthusiastically)",
+          "making short stop-motion videos with action figures",
+          "collecting weird conspiracy-theory trivia to argue about at lunch"
+        ],
+        "strengths": [
+          "reads people accurately",
+          "unbothered by social risk of asking blunt questions",
+          "remembers what people say and holds them to it, gently"
+        ],
+        "struggles": [
+          "avoids being vulnerable first — will ask hard questions of others long before answering one honestly themself",
+          "restless in structured schoolwork, grades suffer from disorganization not ability"
+        ],
+        "secrets": [
+          "Last year, Casey was the 'Maya' in a group project — did all the work, got quietly written out of the presentation — and nobody, including a friend who noticed, said anything. Casey has never told anyone how much that stung, and it's exactly why they clock it happening to Maya now."
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Stay easy and low-drama with everyone, be the friend people can talk to without it turning into a whole thing"
+        ],
+        "unconscious": [
+          "Get someone, somewhere, to do the thing nobody did for them — notice, and say something"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual middle-school vernacular, dry rather than sarcastic-mean, occasional deadpan understatement",
+        "sentenceComplexity": "Short and clipped when being direct; slightly more rambling when telling a story or deflecting",
+        "emotionalExpressiveness": "Undersells feelings verbally, oversells them through timing and eye contact — a look across a room says more than a sentence would",
+        "examples": [
+          "\"Good luck. You're gonna need it — Jordan talks fast and Maya alphabetizes her pencils.\"",
+          "\"So. You gonna tell me how it actually went, or should I just watch your face while you lie to me?\"",
+          "\"I'm not saying Maya got steamrolled. I'm saying if I were Maya, I'd be looking for the nearest exit right about now.\"",
+          "\"Hey — for what it's worth? Noticing counts for something, even when you don't say anything. It just... counts for less than saying something.\""
+        ]
+      },
+      "storyRole": "Casey is the outside conscience of 'Group Work' — not embedded in the group's dynamics, which is exactly what gives them the clarity (and the standing) to ask the question everyone else is too tangled up to ask. They don't moralize or lecture; they just notice, and their noticing is a mirror the player can't fully dodge. The cafeteria scene is less about Casey extracting a confession and more about whether Nico can finally hear his own answer out loud.",
+      "arcPotential": [
+        "A future episode could reveal Casey's own group-work history in full — giving the player a chance to be the friend nobody was for Casey, closing the loop the 'Group Work' episode opens",
+        "Casey could recur as the 'low-stakes' friend the player checks in with across episodes, functioning as an emotional barometer for how Nico is changing over the season",
+        "A quieter subplot: Casey's disorganization getting them in real academic trouble, testing whether the player's growing honesty extends to helping a friend who won't ask for it directly"
+      ]
+    },
+    "designNotes": "Casey only appears in three scenes but needed enough interior life that their glance across the classroom and their cafeteria question land with real weight rather than functioning as a plot device (Greek chorus/conscience-figure). The choice to give Casey a hidden personal history that mirrors Maya's situation does two things: it explains *why* Casey notices what other bystanders miss, and it turns the final scene from 'adult-coded moral quiz' into one kid quietly, imperfectly trying to make sure another kid doesn't disappear the way they once did. Keeping Casey's own vulnerability a secret (rather than stating it outright) preserves subtlety — it's there for a future episode or a sharp-eyed player, not spelled out. Voice was built to contrast sharply with Jordan (all bravado) and Maya (precise, guarded) — Casey is loose, funny, unafraid of silence, which makes their directness in 'What Casey Asks' land differently than a more anxious character's would.",
+    "representationNotes": "Casey's mixed heritage (Japanese and Latine, reflected in the hyphenated surname) and they/them pronouns are treated as simple facts of who they are — never commented on, explained, or made into a Lesson, in keeping with the show's grounded realism. Casey's household (working mom, stepdad, older half-sister as de facto co-parent) reflects blended-family realities common among the target audience without being flagged as unusual. The character avoids the 'wise outsider who exists to dispense truth' trope by having their own selfish reason for caring — old, unresolved hurt — rather than pure altruism, which keeps them a person first."
+  },
+  {
+    "character": {
+      "id": "ms-patel",
+      "name": "Priya Patel",
+      "age": 41,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height, dark hair usually twisted up with a pencil stuck through it that she forgets is there until a student points it out. Wears cardigans over slightly-too-bright kurtas, chunky glasses she pushes up with a knuckle rather than a fingertip.",
+        "distinctiveFeatures": [
+          "A thin silver bangle that clinks against the whiteboard when she writes dates",
+          "A dying-but-never-dead pothos plant on her desk that students have started naming ('Steve is thriving, Ms. Patel')",
+          "Writes the date in the corner of the board in a specific looping cursive every single class, no exceptions"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "unshakeably calm on the surface",
+          "genuinely curious about kids as people",
+          "quietly exhausted",
+          "principled without being preachy",
+          "wry"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 8,
+          "extraversion": 5,
+          "agreeableness": 7,
+          "neuroticism": 4
+        },
+        "mannerisms": [
+          "Waits a full three seconds after asking a question before speaking again — kids have learned not to fill the silence, but it still gets them every time",
+          "Taps a pen against her coffee mug (chai, always, going cold) when she's thinking rather than reacting",
+          "Takes off her glasses to clean them on her cardigan hem when a conversation is about to get real, like she's giving the kid a second to prepare"
+        ],
+        "speechPatterns": [
+          "Asks questions instead of making accusations: 'How did it really go?' not 'Did you cheat?'",
+          "Uses 'I appreciate that' as a genuine phrase, not a brush-off — she means it every time",
+          "Occasionally slips into teacher-brain mid-conversation and starts a sentence with 'Historically speaking—' before catching herself and laughing"
+        ],
+        "emotionalTendencies": "Reads as endlessly patient, but it's a practiced patience, not an infinite one — she has bad days like anyone, and on those days the pause before she responds is a little longer, a little more effortful. She doesn't perform disappointment; she lets discomfort sit in the room and trusts kids to fill it honestly if given room."
+      },
+      "background": {
+        "family": "Second-generation immigrant kid herself, raised by a single mother who ran a corner pharmacy; Priya was the 'good kid' who never got caught doing anything, which she now recognizes meant she never got asked the right questions either.",
+        "interests": [
+          "local history and oral history projects",
+          "terrible reality TV she won't admit to loving",
+          "keeping a running spreadsheet of which plant nicknames students give her desk plant each semester"
+        ],
+        "strengths": [
+          "reads a room fast",
+          "genuinely remembers small details about every student's life",
+          "doesn't need to raise her voice to hold authority"
+        ],
+        "struggles": [
+          "burns out quietly every spring and doesn't tell anyone",
+          "sometimes gives kids too much rope trying to let them self-correct, and it doesn't always work out",
+          "still occasionally over-identifies with the 'good kid' in a group and has to check that bias"
+        ],
+        "secrets": [
+          "In eighth grade she told a teacher the truth about a group project and got branded a snitch for a year — it's the entire reason she built her 'curious, not furious' approach to conflict",
+          "She already knows, within a day, which group dynamics are heading toward trouble — she just believes kids need the chance to bring it to her themselves rather than being caught"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "run a history fair project that actually teaches something beyond dates and facts",
+          "grade fairly, based on real information, not performance"
+        ],
+        "unconscious": [
+          "give kids the space to tell the truth that she never quite got as a student herself",
+          "prove that trusting kids with hard moments actually works, even when it's slower and messier than just laying down the law"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult, warm, plainspoken — she doesn't talk down to students but doesn't over-explain either. Precise word choice without jargon.",
+        "sentenceComplexity": "Short, declarative sentences when it matters most ('I appreciate the honesty.'); longer, looser ones when she's musing or joking.",
+        "emotionalExpressiveness": "Restrained but not cold — warmth comes through in specificity and attention, not enthusiasm or volume. She rarely raises her voice; the weight is in the pause, not the pitch.",
+        "examples": [
+          "\"Trios. No trading, no negotiating — I've seen what happens when I allow negotiating.\"",
+          "\"I'm not asking to catch anyone. I'm asking because I'd actually like to know.\"",
+          "\"I'll grade with full information. That's all that means — full information.\"",
+          "\"Good to hear.\" [beat] \"Go on, you'll be late for lunch.\""
+        ]
+      },
+      "storyRole": "Ms. Patel is the steady axis the episode's moral weight turns on — not a judge handing down verdicts, but an adult who has deliberately built a practice of asking rather than accusing, giving Nico real room to choose honesty or avoidance without ever forcing his hand. Her calm isn't passivity; it's a considered response to her own history, which makes her quiet questions land heavier than a lecture would.",
+      "arcPotential": [
+        "Group Work: Establishes her signature 'curious, not furious' approach and plants the seed that she already half-knows more than she lets on",
+        "Future episode: A storyline where a student calls out her tendency to let things play out too long before intervening, forcing her to examine whether her hands-off trust sometimes leaves kids like Maya exposed for too long",
+        "Future episode: A quieter beat where a student asks her directly about her own middle school experience, and she tells the truncated, real version of the snitch story"
+      ]
+    },
+    "designNotes": "Ms. Patel needed to avoid the two easy traps for adult characters in a YA-adjacent story: the toothless 'wise mentor' who exists purely to dispense lessons, and the punitive authority figure who forces the plot's morality. Instead, she's built around a specific psychological throughline — a kid who told the truth once and got burned for it, now channeling that into a teaching philosophy that gives students agency over their own honesty rather than extracting it. This makes her patience feel earned and slightly costly rather than infinite and effortless, and it explains why she never simply confronts Jordan or 'catches' anyone — she's recreating, for her students, the space she wishes she'd had. Small tactile details (the bangle, the plant, the cold chai) keep her grounded as a specific person rather than a mouthpiece, and giving her a private cost (burnout, quiet bias toward the 'good kid') keeps her human rather than saintly.",
+    "representationNotes": "Priya Patel is written as a second-generation South Asian American teacher without making her ethnicity the point of any scene — it shows up in texture (kurtas, chai, her mother's pharmacy) rather than as an Issue. As one of the only adults in the episode, care was taken to make her authority feel earned through specific behavior and history rather than generic 'wise teacher' shorthand, and to ensure she's allowed contradictions (burnout, bias, imperfect judgment calls) rather than functioning as a flawless moral compass for the middle schoolers around her."
+  }
+]

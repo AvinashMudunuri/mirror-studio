@@ -1,0 +1,76 @@
+{
+  "decision": "APPROVED",
+  "creativeNotes": "This is genuinely strong work. 'Group Work' does what the best teen narratives do — it takes a mundane, relatable scenario (a school project) and uses it to explore something psychologically real about how we navigate honesty, fairness, and social pressure. The episode refuses easy answers. It doesn't punish the player for choosing diplomacy or reward them for choosing confrontation; instead, it traces the emotional and relational consequences of each path with specificity and nuance.\n\nThe character work is the real strength here. Jordan isn't a villain — he's magnetic, a little thoughtless, and genuinely capable of course-correction when caught. Maya isn't a martyr — she's precise, quietly hurt, and testing whether the player is trustworthy enough to confide in. The player themselves is positioned not as a moral arbiter but as someone figuring out, in real time, what their values actually are when they're tested. That's the kind of character arc that resonates with teenagers because it mirrors their actual experience.\n\nThe dialogue is consistently authentic. Nobody speaks in exposition or moral lessons. Jordan's 'I'm just saying the *shape* of it matters first' captures exactly how confident people dismiss careful work without malice. Maya's 'They're organized by hue, actually' is the kind of dry, self-aware response that real quiet kids use to maintain dignity. Ms. Patel's silences are more powerful than her words — 'three full seconds of silence, the kind she's known for' is a detail that does enormous work.\n\nThe emotional beats are earned. The vulnerability in scene 5 lands because Maya has been consistently underestimated and quiet up to that point. The presentation day reckoning matters because the player has been making choices all week that led directly to it. The final conversation with Casey works because it's asking the player to name, out loud, who they've chosen to be — and that's the real test, not the grade.\n\nThe branching structure is sophisticated without being confusing. Five choice points, each with real consequences that ripple forward. The 'outcomes' section shows you've thought about what each path actually means for relationships and character development, not just plot. That's the difference between a branching narrative that feels like a game and one that feels like a story.\n\nThis episode would absolutely engage teenagers. It's about something they care about (fairness, friendship, whether speaking up is worth the social cost), it doesn't condescend to them, and it trusts them to understand complexity and ambiguity.",
+  "specificFeedback": {
+    "story": [
+      "Scene 3 (The Shortcut) is the structural and thematic pivot — it's where the episode's real question crystallizes. The setup is clean: time pressure, an easy out, and a choice that will cascade through everything that follows. Strong work.",
+      "The three-day timeline is tight and purposeful. It creates real urgency without feeling arbitrary. You're using time as a character here.",
+      "One small structural note: Scene 5 (Maya Confides) happens *after* the group has already made their choice about the shortcut. Depending on which path the player took in choice-2, this scene lands very differently emotionally — if they chose the honest path, it's cathartic; if they chose the shortcut, it's complicated guilt. That's intentional and good. Just flag that this is doing heavy lifting in terms of how the player will feel about their earlier choice.",
+      "The epilogue (scene 12) is elegantly simple — just Casey asking a direct question and the player answering it. It's the right move. It lets the player's choice in scene 10 (what to tell Ms. Patel) determine the tone of the entire ending. No extra moralizing."
+    ],
+    "character": [
+      "Jordan is the most interesting character here because he's not a caricature. He's genuinely likable and genuinely careless in equal measure. His arc — from 'I'll just adapt my brother's project' to 'Yeah, my bad' — is small but real. He's not redeemed, exactly, but he's capable of growth when called on it. That's more true to how actual teenagers work than a dramatic conversion would be.",
+      "Maya's quiet precision is her whole identity, and it's used consistently. The color-coded notecards, the hue-organized pencils, the careful folder work — these aren't quirks, they're how she shows up in the world. And the episode respects that. She's not punished for being meticulous; she's hurt by not being *seen* for it. That's a meaningful distinction.",
+      "The player character is deliberately under-specified, which is exactly right for a choice-driven narrative. But they're not blank — their internal monologue (INTERNAL lines) shows someone actively thinking through social dynamics and their own complicity. 'That felt like the easy answer. I'm not totally sure it was the right one' is the kind of self-awareness that makes a player character feel real.",
+      "Ms. Patel is a standout. She's the adult in the room, but she's not performative about it. Her silences, her refusal to push, her 'I'd rather reward the fixing than punish the mistake' — she's modeling a kind of wisdom that teenagers actually need to see. She's not a plot device; she's a fully realized person with a philosophy of teaching.",
+      "Casey is a little less developed than the core trio, but that's appropriate — they're the outside observer, the mirror. Their 'Good luck — you're gonna need it' in scene 1 and their pointed questions in scene 12 frame the whole episode. They're doing important structural work even if they're not a main character."
+    ],
+    "dialogue": [
+      "The dialogue consistently avoids exposition and moral signposting. Nobody says 'We should be honest' or 'Teamwork is important.' The characters just live those values or violate them, and the player experiences the consequences.",
+      "Jordan's speech patterns are distinctly his: quick, confident, with physical gestures ('snaps his fingers,' 'already sketching'). He talks fast and moves fast. That's consistent across every scene he's in.",
+      "Maya's dialogue is sparse but loaded. 'They're organized by hue, actually' does three things at once: it's a correction, it's dry humor, and it's her asserting her own standards. That's economy of language.",
+      "One dialogue note: In scene 2, when Maya says 'I actually found some primary sources that could—' and Jordan cuts her off with 'Right, right, sources, yeah, we'll drop those in wherever' — that moment is doing a lot of work. It's showing Jordan's dismissiveness without him being mean about it. The follow-up internal monologue ('She had a whole thing to say. He just... didn't hear it.') helps the player understand what just happened. That's good craft.",
+      "Ms. Patel's dialogue is minimal but precise. 'I appreciate that. That's not a small thing to bring to me before it's even a problem' is a complete statement of values in one sentence. Her silences (the three-second pauses, the 'good to hear' that sits heavy) are actually more powerful than her words. You're using dialogue and silence together effectively."
+    ],
+    "tone": [
+      "The tone is consistently grounded and realistic. This isn't a melodrama — nobody has a meltdown, nobody gives a speech. It's the small, quiet discomforts of navigating fairness and social dynamics in real time. That's exactly right for the target age.",
+      "There's a dry humor running through the dialogue that keeps it from feeling heavy-handed. Jordan's 'I'm just saying the *shape* of it matters first,' Maya's 'I don't know what that says about me' when she admits to having fun doing homework, Casey's 'You're gonna need it — Jordan talks fast and Maya alphabetizes her pencils.' These moments of lightness make the heavier moments land harder.",
+      "The internal monologue maintains the player's voice without being preachy. 'New group. New group dynamics. Great. Love that for me' is a teenager's actual thought pattern — self-aware, slightly self-deprecating, processing anxiety through humor.",
+      "One tonal consistency note: The NARRATOR voice is used sparingly and effectively. It's not doing heavy lifting in terms of telling the player how to feel. It's describing action and setting mood through detail: 'Jordan drops his backpack on the table like he's announcing something,' 'Ms. Patel's classroom is empty except for the hum of the radiator.' These details create atmosphere without editorializing.",
+      "The branch dialogue (the epilogue variations) maintains tone across all four paths. Whether the player chose integrity, diplomacy, avoidance, or complicity, Casey's response is consistent with their character — pointed, not judgmental, and ultimately asking the player to own their choice. That's harder to do than it looks."
+    ]
+  },
+  "inspirationReferences": [
+    {
+      "type": "TV",
+      "title": "Heartstopper (Season 1-2)",
+      "reasoning": "Similar commitment to showing how teenagers actually navigate social dynamics and honesty. The show trusts its audience to understand complexity and doesn't resolve everything neatly. Also: the focus on small, repeated choices that build character rather than single dramatic moments."
+    },
+    {
+      "type": "BOOK",
+      "title": "The Hate U Give by Angie Thomas",
+      "reasoning": "The central question — 'Do I speak up and risk everything, or stay quiet and live with that?' — is structurally similar. Thomas shows how a single choice ripples through relationships and identity. Also models how teenagers actually think about integrity under pressure."
+    },
+    {
+      "type": "GAME",
+      "title": "Life is Strange (Season 1)",
+      "reasoning": "The branching structure where small choices have real consequences, and the player is forced to reckon with their own complicity or agency. Also: the use of dialogue and silence to build emotional weight."
+    },
+    {
+      "type": "TV",
+      "title": "Friday Night Lights (Coach Taylor scenes)",
+      "reasoning": "Ms. Patel is doing what Coach Taylor does — modeling a kind of quiet wisdom and integrity that teenagers need to see. The refusal to be performative about morality, the willingness to listen without judgment, the 'I'd rather reward the fixing than punish the mistake' philosophy."
+    },
+    {
+      "type": "BOOK",
+      "title": "Simon vs. the Homo Sapiens Agenda by Becky Albertalli",
+      "reasoning": "The way it handles group dynamics and the question of 'who gets to decide what's fair' — also the dry humor that keeps everything from feeling heavy. And the central character learning that speaking up for someone else is a form of both communication and courage."
+    }
+  ],
+  "revisionPriority": "LOW",
+  "polishNotes": {
+    "optional_enhancements": [
+      "Scene 4a (Starting Over, For Real) has a wonderful moment where Maya says 'This letter here — the guy's handwriting is a disaster, but the argument's solid' and Jordan actually listens. Consider extending this scene by one or two more exchanges where they discover something genuinely interesting together. It would deepen the earned camaraderie. (This is texture, not a structural need.)",
+      "In scene 6a (Fixing the Slide), Jordan's response 'Yeah. No, you're right. That was — yeah. My bad' is good, but it happens very fast. Consider one more beat where he actually articulates *why* he left Maya off — not to excuse it, but to show him understanding his own thoughtlessness. Something like: 'I built the slide first, and I guess I just... didn't think to add anyone else.' That makes his growth feel earned rather than just compliant.",
+      "The branch dialogue in scene 12 is strong, but the 'branch-conflict-avoider' path (Casey saying 'Noticing counts for something. It just counts for less than saying something') is doing a lot of moral work. Consider softening it slightly — Casey's not a teacher, and this moment risks feeling preachy. Maybe: 'You're thinking about it now, which is something. Just... earlier would've been better.' Leaves it with the player rather than telling them they failed.",
+      "Scene 10 (How Did It Really Go?) is the emotional center of the episode, but Ms. Patel's silence after the player finishes their answer could be extended slightly. Right now it's three seconds. Consider making it five or six — let it sit uncomfortably longer. Teenagers need to feel the weight of being truly heard by an adult.",
+      "In scene 7 (Center Stage), the line 'From the back row, Casey catches Nico's eye — a small, deliberate look' is doing a lot. Consider one more line of internal monologue here: something like 'Casey's watching. Casey knows.' It would heighten the sense that the player's choice in this moment is being witnessed."
+    ],
+    "minor_notes": [
+      "Scene 1, dialogue line s1-l10: Casey says 'Jordan talks fast and Maya alphabetizes her pencils.' This is great characterization, but it's worth noting that Maya responds with 'They're organized by hue, actually' — which is perfect. Just make sure in implementation that this response lands as dry humor, not defensive. The tone is key.",
+      "Scene 5, dialogue line s5-l5: Maya says 'And I don't know if my name's even going to be on the final slide. Jordan built that one.' This is the emotional crux of the scene. Make sure the voice acting here carries the hurt underneath the matter-of-factness.",
+      "Scene 6c (Before It Goes Wrong) is an alternate path that skips the presentation day drama entirely. Make sure players who take this path don't feel like they're missing out on the 'real' episode. The conversation with Ms. Patel should feel like a complete and valid ending, not a shortcut.",
+      "The outcomes section is excellent, but consider adding a line about what each path teaches the player about themselves. Right now it's about external consequences (grades, relationships). What does each path reveal about the player's values? That's what will stick with them."
+    ]
+  }
+}

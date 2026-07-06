@@ -1,0 +1,1454 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1-team-assignment",
+      "lines": [
+        {
+          "id": "s1-l1",
+          "character": "NARRATOR",
+          "text": "Ms. Patel reads names off a clipboard while the room hums with side conversations and the smell of dry-erase marker."
+        },
+        {
+          "id": "s1-l2",
+          "character": "ms-patel",
+          "text": "Trios. No trading, no negotiating — I've seen what happens when I allow negotiating.",
+          "emotion": "wry"
+        },
+        {
+          "id": "s1-l3",
+          "character": "ms-patel",
+          "text": "Group four: Jordan Alvarez, Maya Okafor, Nico Salgado."
+        },
+        {
+          "id": "s1-l4",
+          "character": "jordan",
+          "text": "Yes! Okay — okay, let's go, team.",
+          "emotion": "excited",
+          "action": "snaps his fingers like he's already had an idea"
+        },
+        {
+          "id": "s1-l5",
+          "character": "maya",
+          "text": "Hi.",
+          "emotion": "reserved",
+          "action": "already squaring a stack of color-coded notecards against her desk"
+        },
+        {
+          "id": "s1-l6",
+          "character": "player",
+          "text": "Hey. So — history fair, huh. Cool. Very normal amount of pressure for a Tuesday."
+        },
+        {
+          "id": "s1-l7",
+          "character": "INTERNAL",
+          "text": "New group. New group dynamics. Great. Love that for me."
+        },
+        {
+          "id": "s1-l8",
+          "character": "NARRATOR",
+          "text": "Across the room, Casey catches Nico's eye and mouths something."
+        },
+        {
+          "id": "s1-l9",
+          "character": "casey",
+          "text": "Good luck.",
+          "emotion": "teasing",
+          "action": "mouths it silently, then adds out loud"
+        },
+        {
+          "id": "s1-l10",
+          "character": "casey",
+          "text": "You're gonna need it — Jordan talks fast and Maya alphabetizes her pencils.",
+          "emotion": "dry"
+        },
+        {
+          "id": "s1-l11",
+          "character": "maya",
+          "text": "They're organized by hue, actually.",
+          "emotion": "flat, not looking up",
+          "action": "doesn't miss a beat"
+        },
+        {
+          "id": "s1-l12",
+          "character": "ms-patel",
+          "text": "Find your groups, please. Historically speaking — you'll want the full three days.",
+          "emotion": "amused"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2-first-meeting",
+      "lines": [
+        {
+          "id": "s2-l1",
+          "character": "NARRATOR",
+          "text": "Library study room. Jordan drops his backpack on the table like he's announcing something."
+        },
+        {
+          "id": "s2-l2",
+          "character": "jordan",
+          "text": "Okay okay, hear me out — what if the whole board is just, like, one big timeline, but it *pops*, you know?",
+          "emotion": "confident",
+          "action": "already talking with his hands"
+        },
+        {
+          "id": "s2-l3",
+          "character": "player",
+          "text": "Pops like... confetti? Or pops like—"
+        },
+        {
+          "id": "s2-l4",
+          "character": "jordan",
+          "text": "Pops like — colors, layers, a *centerpiece*. I'm thinking 3D. I'm thinking people walk by and go 'whoa.'"
+        },
+        {
+          "id": "s2-l5",
+          "character": "maya",
+          "text": "I actually found some primary sources that could—",
+          "action": "opens her folder carefully"
+        },
+        {
+          "id": "s2-l6",
+          "character": "jordan",
+          "text": "Right, right, sources, yeah, we'll drop those in wherever. I'm just saying the *shape* of it matters first.",
+          "action": "already moving on, doesn't look at her folder"
+        },
+        {
+          "id": "s2-l7",
+          "character": "maya",
+          "text": "...Okay.",
+          "emotion": "clipped",
+          "action": "closes the folder halfway, pulls it a little closer to her chest"
+        },
+        {
+          "id": "s2-l8",
+          "character": "NARRATOR",
+          "text": "Jordan keeps talking, already sketching boxes on a napkin. Maya goes quiet — the kind of quiet that isn't agreement."
+        },
+        {
+          "id": "s2-l9",
+          "character": "INTERNAL",
+          "text": "She had a whole thing to say. He just... didn't hear it. Do I say something or is that making it weird."
+        },
+        {
+          "id": "s2-l10",
+          "character": "NARRATOR",
+          "text": "[CHOICE POINT: choice-1]"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3-crunch-time",
+      "lines": [
+        {
+          "id": "s3-l1",
+          "character": "NARRATOR",
+          "text": "Jordan's kitchen table. Two days left. Laptops open, one half-finished poster board leaning against a chair."
+        },
+        {
+          "id": "s3-l2",
+          "character": "jordan",
+          "text": "Okay so here's the thing.",
+          "action": "spins his laptop around"
+        },
+        {
+          "id": "s3-l3",
+          "character": "jordan",
+          "text": "My brother did this exact fair, like, three years ago. Same rubric basically. I've got the whole template.",
+          "emotion": "casual, a little too casual"
+        },
+        {
+          "id": "s3-l4",
+          "character": "player",
+          "text": "Wait, like — his actual project? From three years ago?"
+        },
+        {
+          "id": "s3-l5",
+          "character": "jordan",
+          "text": "It's basically done, I just gotta finesse a couple things. Don't stress it. We swap some facts, boom, done by tonight.",
+          "action": "snaps his fingers"
+        },
+        {
+          "id": "s3-l6",
+          "character": "maya",
+          "text": "That's — his project. Not ours.",
+          "emotion": "careful, not accusing yet",
+          "action": "taps her pencil twice"
+        },
+        {
+          "id": "s3-l7",
+          "character": "jordan",
+          "text": "I mean, it's just a *structure*. Nobody's gonna know. And we're out of time, so.",
+          "action": "leans back, arms crossed"
+        },
+        {
+          "id": "s3-l8",
+          "character": "player",
+          "text": "Honestly? Two days is tight, but—"
+        },
+        {
+          "id": "s3-l9",
+          "character": "maya",
+          "text": "I already cross-referenced two of my sources. One of them's actually wrong, if it matters.",
+          "emotion": "quietly hopeful this lands"
+        },
+        {
+          "id": "s3-l10",
+          "character": "jordan",
+          "text": "See, that's great, that's — we can just fit that in wherever. It's fine. It's basically the same amount of work either way, right?",
+          "emotion": "deflecting"
+        },
+        {
+          "id": "s3-l11",
+          "character": "NARRATOR",
+          "text": "[CHOICE POINT: choice-2]"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4a-honest-path",
+      "lines": [
+        {
+          "id": "s4a-l1",
+          "character": "NARRATOR",
+          "text": "Later. The template's closed. Highlighters everywhere. It's slower going, and it shows in everyone's shoulders."
+        },
+        {
+          "id": "s4a-l2",
+          "character": "jordan",
+          "text": "This is gonna take forever.",
+          "emotion": "grumbling, but typing anyway"
+        },
+        {
+          "id": "s4a-l3",
+          "character": "maya",
+          "text": "It's actually kind of interesting once you get into it. This letter here — the guy's handwriting is a disaster, but the argument's solid.",
+          "emotion": "genuine, a little surprised at her own enthusiasm"
+        },
+        {
+          "id": "s4a-l4",
+          "character": "jordan",
+          "text": "Wait, read that part again?",
+          "action": "leans over, actually looking now"
+        },
+        {
+          "id": "s4a-l5",
+          "character": "maya",
+          "text": "'We hold these truths to be self-evident, except when inconvenient' — I'm paraphrasing, but not by a lot.",
+          "emotion": "dry"
+        },
+        {
+          "id": "s4a-l6",
+          "character": "jordan",
+          "text": "Okay that's — okay, that's actually kind of funny. Put that in.",
+          "emotion": "surprised laugh"
+        },
+        {
+          "id": "s4a-l7",
+          "character": "player",
+          "text": "See, this is way better than a stolen PowerPoint."
+        },
+        {
+          "id": "s4a-l8",
+          "character": "jordan",
+          "text": "Don't say 'stolen,' it's — okay, fine. Yeah. This is better.",
+          "emotion": "grudging"
+        },
+        {
+          "id": "s4a-l9",
+          "character": "maya",
+          "text": "It's midnight and I'm having fun doing homework. I don't know what that says about me.",
+          "action": "small, real smile"
+        },
+        {
+          "id": "s4a-l10",
+          "character": "player",
+          "text": "It says you're built different, honestly."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4b-shortcut-path",
+      "lines": [
+        {
+          "id": "s4b-l1",
+          "character": "NARRATOR",
+          "text": "The template's open. It's fast — fonts already picked, layout already done. They're just swapping in facts."
+        },
+        {
+          "id": "s4b-l2",
+          "character": "jordan",
+          "text": "See? This is the move. Barely even had to think.",
+          "emotion": "relieved"
+        },
+        {
+          "id": "s4b-l3",
+          "character": "maya",
+          "text": "Where do you want this source?",
+          "emotion": "flat",
+          "action": "typing without looking up"
+        },
+        {
+          "id": "s4b-l4",
+          "character": "jordan",
+          "text": "Uh, slide four's fine. Just — wherever it fits.",
+          "action": "not really looking either"
+        },
+        {
+          "id": "s4b-l5",
+          "character": "player",
+          "text": "Feels weird how fast this is going."
+        },
+        {
+          "id": "s4b-l6",
+          "character": "jordan",
+          "text": "That's called *efficient*, my friend.",
+          "action": "high-fives the player without waiting for a response"
+        },
+        {
+          "id": "s4b-l7",
+          "character": "jordan",
+          "text": "See? Nailed it. Group effort, baby.",
+          "emotion": "performing confidence"
+        },
+        {
+          "id": "s4b-l8",
+          "character": "jordan",
+          "text": "...Right? Group effort.",
+          "emotion": "quieter, almost checking"
+        },
+        {
+          "id": "s4b-l9",
+          "character": "maya",
+          "text": "Mm-hm.",
+          "emotion": "not agreeing, not fighting it either",
+          "action": "keeps typing"
+        },
+        {
+          "id": "s4b-l10",
+          "character": "INTERNAL",
+          "text": "This should feel like a win. It doesn't, quite."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4c-uneasy-compromise",
+      "lines": [
+        {
+          "id": "s4c-l1",
+          "character": "NARRATOR",
+          "text": "The template's open, but so is Maya's folder — and every claim on the slide gets a little sticky-note flag before it's allowed to stay."
+        },
+        {
+          "id": "s4c-l2",
+          "character": "jordan",
+          "text": "This is taking so long for something that's supposed to save time.",
+          "emotion": "sighing"
+        },
+        {
+          "id": "s4c-l3",
+          "character": "player",
+          "text": "We just gotta cite where it actually came from. Ten more minutes."
+        },
+        {
+          "id": "s4c-l4",
+          "character": "maya",
+          "text": "This claim on slide six is unsourced. I can find something, give me a second.",
+          "action": "taps her pencil twice before writing"
+        },
+        {
+          "id": "s4c-l5",
+          "character": "jordan",
+          "text": "It's a *template*, Maya, it's not supposed to be a whole research paper.",
+          "emotion": "frustrated but not mean"
+        },
+        {
+          "id": "s4c-l6",
+          "character": "maya",
+          "text": "It doesn't have to be. It just has to be true.",
+          "emotion": "steady, not backing down"
+        },
+        {
+          "id": "s4c-l7",
+          "character": "jordan",
+          "text": "...Fine. Fine, find your source.",
+          "action": "arms crossed, but he waits"
+        },
+        {
+          "id": "s4c-l8",
+          "character": "player",
+          "text": "This is slower, but it's kind of starting to feel like ours, at least."
+        },
+        {
+          "id": "s4c-l9",
+          "character": "jordan",
+          "text": "It better be worth it.",
+          "emotion": "grumbling, though he's still here at eleven at night"
+        },
+        {
+          "id": "s4c-l10",
+          "character": "maya",
+          "text": "It will be.",
+          "emotion": "quiet certainty"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-maya-confides",
+      "lines": [
+        {
+          "id": "s5-l1",
+          "character": "NARRATOR",
+          "text": "Library study room. Jordan's at the printer down the hall. Maya squares her notecards against the table edge, not quite meeting Nico's eyes."
+        },
+        {
+          "id": "s5-l2",
+          "character": "maya",
+          "text": "Can I say something? It's not a big deal.",
+          "emotion": "hesitant, undercutting herself already"
+        },
+        {
+          "id": "s5-l3",
+          "character": "player",
+          "text": "Yeah, of course. What's up?"
+        },
+        {
+          "id": "s5-l4",
+          "character": "maya",
+          "text": "I organized the timeline, the sources, the citations — most of the actual content, if I'm being honest.",
+          "emotion": "careful, not bragging"
+        },
+        {
+          "id": "s5-l5",
+          "character": "maya",
+          "text": "And I don't know if my name's even going to be on the final slide. Jordan built that one.",
+          "emotion": "clipped, hurt trying not to show"
+        },
+        {
+          "id": "s5-l6",
+          "character": "player",
+          "text": "Wait, seriously? He didn't put your name on it?"
+        },
+        {
+          "id": "s5-l7",
+          "character": "maya",
+          "text": "I'm not trying to make it a whole thing. I just did most of it, and I guess I wanted someone to know that.",
+          "emotion": "quiet, this is the real ask"
+        },
+        {
+          "id": "s5-l8",
+          "character": "maya",
+          "text": "It's fine either way. I'll just fix the formatting later if I have to.",
+          "action": "starts squaring the notecards again, a nervous ritual"
+        },
+        {
+          "id": "s5-l9",
+          "character": "player",
+          "text": "It's not fine, though. Not if you did the work."
+        },
+        {
+          "id": "s5-l10",
+          "character": "maya",
+          "text": "No, it's — it's good, actually, the project. It just would've been nice if my name was on it too. That's all.",
+          "emotion": "trying to sound like it's smaller than it is"
+        },
+        {
+          "id": "s5-l11",
+          "character": "NARRATOR",
+          "text": "[CHOICE POINT: choice-3]"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6a-team-recommits",
+      "lines": [
+        {
+          "id": "s6a-l1",
+          "character": "NARRATOR",
+          "text": "Jordan's back from the printer, warm paper in hand, not expecting an ambush."
+        },
+        {
+          "id": "s6a-l2",
+          "character": "player",
+          "text": "Hey, quick thing — the credits slide only has your name and mine on it."
+        },
+        {
+          "id": "s6a-l3",
+          "character": "jordan",
+          "text": "I mean — it's not like I said it wasn't a group thing. I just... built the slide first. That's not a crime.",
+          "emotion": "defensive",
+          "action": "arms crossed, a wall going up fast"
+        },
+        {
+          "id": "s6a-l4",
+          "character": "maya",
+          "text": "I organized every source in this project. I'd like my name on it.",
+          "emotion": "steady, surprising herself with how steady"
+        },
+        {
+          "id": "s6a-l5",
+          "character": "jordan",
+          "text": "...Yeah. No, you're right. That was — yeah. My bad.",
+          "emotion": "quiet, caught off guard",
+          "action": "the arms uncross"
+        },
+        {
+          "id": "s6a-l6",
+          "character": "jordan",
+          "text": "I'll fix it. Like, right now, actually.",
+          "action": "already pulling the laptop back over"
+        },
+        {
+          "id": "s6a-l7",
+          "character": "maya",
+          "text": "Thank you.",
+          "emotion": "small, real relief"
+        },
+        {
+          "id": "s6a-l8",
+          "character": "player",
+          "text": "See? Wasn't that hard."
+        },
+        {
+          "id": "s6a-l9",
+          "character": "jordan",
+          "text": "Don't push it.",
+          "emotion": "half a smile despite himself"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6b-doubt-lingers",
+      "lines": [
+        {
+          "id": "s6b-l1",
+          "character": "player",
+          "text": "I'm sure it'll be fine. Ms. Patel's usually pretty good about noticing who did what."
+        },
+        {
+          "id": "s6b-l2",
+          "character": "maya",
+          "text": "Sure.",
+          "emotion": "unconvinced, but not pushing"
+        },
+        {
+          "id": "s6b-l3",
+          "character": "player",
+          "text": "Try not to stress about it, okay?"
+        },
+        {
+          "id": "s6b-l4",
+          "character": "maya",
+          "text": "I won't.",
+          "action": "goes back to formatting slides, small and quiet",
+          "emotion": "clipped"
+        },
+        {
+          "id": "s6b-l5",
+          "character": "INTERNAL",
+          "text": "That felt like the easy answer. I'm not totally sure it was the right one."
+        },
+        {
+          "id": "s6b-l6",
+          "character": "maya",
+          "text": "Anyway. I'll just — fix the formatting.",
+          "emotion": "quiet resignation"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6c-early-honesty",
+      "lines": [
+        {
+          "id": "s6c-l1",
+          "character": "NARRATOR",
+          "text": "After school. Ms. Patel's classroom is empty except for the hum of the radiator. Nico lingers by the door."
+        },
+        {
+          "id": "s6c-l2",
+          "character": "player",
+          "text": "Ms. Patel? Can I talk to you for a sec? It's about the project."
+        },
+        {
+          "id": "s6c-l3",
+          "character": "ms-patel",
+          "text": "Of course.",
+          "action": "takes off her glasses to clean them on her cardigan hem",
+          "emotion": "unhurried"
+        },
+        {
+          "id": "s6c-l4",
+          "character": "ms-patel",
+          "text": "I'm not asking to catch anyone. I'm asking because I'd actually like to know."
+        },
+        {
+          "id": "s6c-l5",
+          "character": "player",
+          "text": "Honestly? We almost used a template from Jordan's brother's old project. We didn't, in the end, but it was close."
+        },
+        {
+          "id": "s6c-l6",
+          "character": "player",
+          "text": "And Maya's done most of the actual research, but it wasn't going to have her name on it. I don't know if it still won't."
+        },
+        {
+          "id": "s6c-l7",
+          "character": "ms-patel",
+          "text": "I appreciate that. That's not a small thing to bring to me before it's even a problem.",
+          "emotion": "genuinely, not performing it"
+        },
+        {
+          "id": "s6c-l8",
+          "character": "ms-patel",
+          "text": "I'll be paying attention on presentation day. You don't have to do anything else."
+        },
+        {
+          "id": "s6c-l9",
+          "character": "player",
+          "text": "Okay. Yeah. Thanks.",
+          "emotion": "relieved, a little lighter"
+        },
+        {
+          "id": "s6c-l10",
+          "character": "ms-patel",
+          "text": "Go on, you'll be late for the bus.",
+          "emotion": "wry, gentle"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-presentation-day",
+      "lines": [
+        {
+          "id": "s7-l1",
+          "character": "NARRATOR",
+          "text": "Front of the classroom. The poster board's up, the slides are cued. Jordan's already talking before Ms. Patel finishes introducing them."
+        },
+        {
+          "id": "s7-l2",
+          "character": "jordan",
+          "text": "So this whole project actually started with an idea I had — the timeline concept, the layout, all of it.",
+          "emotion": "smooth, in his element"
+        },
+        {
+          "id": "s7-l3",
+          "character": "jordan",
+          "text": "And then obviously I did a ton of the research to back it up.",
+          "action": "clicks past a slide that's clearly all Maya's citations, barely glancing at her"
+        },
+        {
+          "id": "s7-l4",
+          "character": "NARRATOR",
+          "text": "Maya's hands go still on her notecards. She doesn't say anything."
+        },
+        {
+          "id": "s7-l5",
+          "character": "NARRATOR",
+          "text": "From the back row, Casey catches Nico's eye — a small, deliberate look."
+        },
+        {
+          "id": "s7-l6",
+          "character": "NARRATOR",
+          "text": "[CHOICE POINT: choice-4]"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8a-credit-corrected",
+      "lines": [
+        {
+          "id": "s8a-l1",
+          "character": "jordan",
+          "text": "Actually — hang on. Maya did the research on this slide. Like, all of it.",
+          "emotion": "catching himself, or being caught"
+        },
+        {
+          "id": "s8a-l2",
+          "character": "maya",
+          "text": "Two of the sources, actually. But yes.",
+          "emotion": "dry, but her shoulders drop with relief"
+        },
+        {
+          "id": "s8a-l3",
+          "character": "jordan",
+          "text": "Right — sorry. Maya did the research. I just built the slides around it.",
+          "emotion": "a little humbled, genuinely"
+        },
+        {
+          "id": "s8a-l4",
+          "character": "ms-patel",
+          "text": "Good to know.",
+          "action": "taps her pen against her mug, a small nod",
+          "emotion": "quietly approving"
+        },
+        {
+          "id": "s8a-l5",
+          "character": "maya",
+          "text": "Thank you.",
+          "emotion": "quiet, to Jordan, and maybe to the player too"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8b-credit-stolen",
+      "lines": [
+        {
+          "id": "s8b-l1",
+          "character": "NARRATOR",
+          "text": "The presentation wraps. A scattering of applause. Jordan does a small, easy bow."
+        },
+        {
+          "id": "s8b-l2",
+          "character": "jordan",
+          "text": "Thank you, thank you — group effort, really.",
+          "emotion": "performing modesty he doesn't quite mean"
+        },
+        {
+          "id": "s8b-l3",
+          "character": "NARRATOR",
+          "text": "Maya says nothing. She gathers her notecards, edges square, and walks back to her seat without meeting anyone's eyes."
+        },
+        {
+          "id": "s8b-l4",
+          "character": "ms-patel",
+          "text": "Nice work, all three of you.",
+          "emotion": "even, though her eyes linger on Maya a beat longer than necessary"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10-teacher-conversation",
+      "lines": [
+        {
+          "id": "s10-l1",
+          "character": "NARRATOR",
+          "text": "After the bell. Ms. Patel's classroom empties out except for Nico, hovering near her desk."
+        },
+        {
+          "id": "s10-l2",
+          "character": "ms-patel",
+          "text": "How did it really go?",
+          "action": "takes off her glasses, cleans them, waits",
+          "emotion": "unhurried, genuinely curious"
+        },
+        {
+          "id": "s10-l3",
+          "character": "player",
+          "text": "It went— ",
+          "emotion": "trails off, unsure which version of the truth he's about to tell"
+        },
+        {
+          "id": "s10-l4",
+          "character": "ms-patel",
+          "text": "Take your time.",
+          "action": "three full seconds of silence, the kind she's known for"
+        },
+        {
+          "id": "s10-l5",
+          "character": "NARRATOR",
+          "text": "[CHOICE POINT: choice-5]"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-integrity-ending",
+      "lines": [
+        {
+          "id": "s11i-l1",
+          "character": "player",
+          "text": "We almost used Jordan's brother's old project as a shortcut. And Maya did most of the actual work, but it almost didn't have her name on it."
+        },
+        {
+          "id": "s11i-l2",
+          "character": "ms-patel",
+          "text": "I appreciate that. I mean that every time I say it, but especially now.",
+          "emotion": "genuine"
+        },
+        {
+          "id": "s11i-l3",
+          "character": "ms-patel",
+          "text": "I'll grade with full information. That's all that means — full information.",
+          "emotion": "even, no judgment in it"
+        },
+        {
+          "id": "s11i-l4",
+          "character": "player",
+          "text": "Even if it costs us a little on the grade?"
+        },
+        {
+          "id": "s11i-l5",
+          "character": "ms-patel",
+          "text": "Even then. Though I'd rather reward the fixing than punish the mistake, historically speaking.",
+          "emotion": "small smile"
+        },
+        {
+          "id": "s11i-l6",
+          "character": "player",
+          "text": "Historically speaking?",
+          "emotion": "teasing"
+        },
+        {
+          "id": "s11i-l7",
+          "character": "ms-patel",
+          "text": "Don't push it. Go on, you'll be late for lunch."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-compromise-ending",
+      "lines": [
+        {
+          "id": "s11c-l1",
+          "character": "player",
+          "text": "It had some rough patches. We figured most of it out, though."
+        },
+        {
+          "id": "s11c-l2",
+          "character": "ms-patel",
+          "text": "Rough patches.",
+          "action": "taps her pen against her mug, waits three seconds",
+          "emotion": "not quite buying it, not quite pushing either"
+        },
+        {
+          "id": "s11c-l3",
+          "character": "player",
+          "text": "Yeah. Nothing major.",
+          "emotion": "avoiding specifics, aware of it"
+        },
+        {
+          "id": "s11c-l4",
+          "character": "ms-patel",
+          "text": "Okay.",
+          "emotion": "lets it sit there a beat too long to be fully comfortable"
+        },
+        {
+          "id": "s11c-l5",
+          "character": "ms-patel",
+          "text": "If anything ever needs revisiting, my door's open. Even after grades are in.",
+          "emotion": "leaving the door open on purpose"
+        },
+        {
+          "id": "s11c-l6",
+          "character": "player",
+          "text": "Got it. Thanks.",
+          "emotion": "relief that's a little too quick"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-complicit-ending",
+      "lines": [
+        {
+          "id": "s11x-l1",
+          "character": "player",
+          "text": "It went great, honestly. Everyone contributed equally.",
+          "emotion": "practiced, a little too smooth"
+        },
+        {
+          "id": "s11x-l2",
+          "character": "ms-patel",
+          "text": "Good to hear.",
+          "action": "beat, three full seconds",
+          "emotion": "unreadable"
+        },
+        {
+          "id": "s11x-l3",
+          "character": "ms-patel",
+          "text": "Go on, you'll be late for lunch.",
+          "emotion": "even"
+        },
+        {
+          "id": "s11x-l4",
+          "character": "INTERNAL",
+          "text": "That should've felt like getting away with something. Mostly it just feels like a rock in my stomach."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-12-epilogue",
+      "lines": [
+        {
+          "id": "s12-l1",
+          "character": "NARRATOR",
+          "text": "Cafeteria. Casey slides into the seat across from Nico with a tray and a look that already knows something."
+        },
+        {
+          "id": "s12-l2",
+          "character": "casey",
+          "text": "So. You gonna tell me how it actually went, or should I just watch your face while you lie to me?",
+          "emotion": "dry, half-joking"
+        },
+        {
+          "id": "s12-l3",
+          "character": "player",
+          "text": "Wow. Rude. Accurate, but rude."
+        },
+        {
+          "id": "s12-l4",
+          "character": "casey",
+          "text": "Hm.",
+          "action": "tilts head, squints, waits"
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wait — I think Maya had something. Let's actually hear it."
+        },
+        {
+          "id": "b",
+          "text": "(Say nothing. Let it go.)"
+        },
+        {
+          "id": "c",
+          "text": "What if we combined both ideas?"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c1-a-1",
+            "character": "jordan",
+            "text": "Oh — yeah, sure, go ahead.",
+            "emotion": "slightly caught off guard, recovers fast"
+          },
+          {
+            "id": "c1-a-2",
+            "character": "maya",
+            "text": "Oh. Okay.",
+            "action": "sits up a little, folder loosening in her grip",
+            "emotion": "surprised, then quietly pleased"
+          },
+          {
+            "id": "c1-a-3",
+            "character": "maya",
+            "text": "I found some letters from actual people who lived through it — not just textbook summaries. It could ground the whole board in something real."
+          },
+          {
+            "id": "c1-a-4",
+            "character": "jordan",
+            "text": "Huh. Okay, yeah, that's — that could work with the timeline thing.",
+            "emotion": "genuinely considering it"
+          }
+        ],
+        "b": [
+          {
+            "id": "c1-b-1",
+            "character": "NARRATOR",
+            "text": "Nico says nothing. Jordan keeps sketching his boxes. Maya's folder stays pulled tight against her chest."
+          },
+          {
+            "id": "c1-b-2",
+            "character": "maya",
+            "text": "It's fine. I'll just... I'll fit the sources in wherever there's room.",
+            "emotion": "small, resigned"
+          },
+          {
+            "id": "c1-b-3",
+            "character": "INTERNAL",
+            "text": "That felt like the easy way out. I'm not sure it actually was easy."
+          }
+        ],
+        "c": [
+          {
+            "id": "c1-c-1",
+            "character": "player",
+            "text": "What if we combined both ideas — your layout, but built around Maya's sources?"
+          },
+          {
+            "id": "c1-c-2",
+            "character": "jordan",
+            "text": "Oh, see, that's — yeah, okay, I can work with that.",
+            "emotion": "warming to it"
+          },
+          {
+            "id": "c1-c-3",
+            "character": "maya",
+            "text": "That actually could work.",
+            "emotion": "cautiously pleased",
+            "action": "loosens her grip on the folder just slightly"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "No — let's just do the real work. I'll help."
+        },
+        {
+          "id": "b",
+          "text": "Fine, just this once. It's not a big deal."
+        },
+        {
+          "id": "c",
+          "text": "Let's use it as a structure, but cite everything properly."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2-a-1",
+            "character": "jordan",
+            "text": "Wait, seriously? We've got two days.",
+            "emotion": "half-relieved someone else is committing to the harder thing"
+          },
+          {
+            "id": "c2-a-2",
+            "character": "player",
+            "text": "Two days is enough if we all actually work instead of finessing a shortcut."
+          },
+          {
+            "id": "c2-a-3",
+            "character": "maya",
+            "text": "I already have half the sources organized. This is doable.",
+            "emotion": "quietly energized"
+          },
+          {
+            "id": "c2-a-4",
+            "character": "jordan",
+            "text": "...Okay. Fine. Real work it is.",
+            "action": "closes the laptop with the template"
+          }
+        ],
+        "b": [
+          {
+            "id": "c2-b-1",
+            "character": "jordan",
+            "text": "See, that's the spirit.",
+            "emotion": "relieved, snapping his fingers"
+          },
+          {
+            "id": "c2-b-2",
+            "character": "maya",
+            "text": "Okay.",
+            "emotion": "flat, already retreating a little"
+          },
+          {
+            "id": "c2-b-3",
+            "character": "INTERNAL",
+            "text": "It's just this once. That's what I keep telling myself, anyway."
+          }
+        ],
+        "c": [
+          {
+            "id": "c2-c-1",
+            "character": "player",
+            "text": "Let's use the structure, but every fact gets a real source. No exceptions."
+          },
+          {
+            "id": "c2-c-2",
+            "character": "jordan",
+            "text": "That's gonna take way longer than 'just swap some facts.'",
+            "emotion": "skeptical"
+          },
+          {
+            "id": "c2-c-3",
+            "character": "maya",
+            "text": "It'll take exactly as long as it needs to.",
+            "emotion": "steady",
+            "action": "already pulling her folder back open"
+          },
+          {
+            "id": "c2-c-4",
+            "character": "jordan",
+            "text": "...Fine. Slower version. Got it.",
+            "emotion": "grudging"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "That's not okay. Let's fix it with Jordan, together."
+        },
+        {
+          "id": "b",
+          "text": "I'm sure it'll work out — try not to worry."
+        },
+        {
+          "id": "c",
+          "text": "I think we should talk to Ms. Patel about how this actually came together."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3-a-1",
+            "character": "maya",
+            "text": "You'd actually say something? To him?",
+            "emotion": "cautiously hopeful"
+          },
+          {
+            "id": "c3-a-2",
+            "character": "player",
+            "text": "Yeah. It's not a big deal for me to bring up. It clearly is one for you."
+          },
+          {
+            "id": "c3-a-3",
+            "character": "maya",
+            "text": "...Thank you.",
+            "emotion": "quiet, means it more than the word carries"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3-b-1",
+            "character": "maya",
+            "text": "Sure.",
+            "emotion": "unconvinced, retreating a little"
+          },
+          {
+            "id": "c3-b-2",
+            "character": "maya",
+            "text": "I'll just fix the formatting.",
+            "action": "goes back to her notecards, smaller than before"
+          },
+          {
+            "id": "c3-b-3",
+            "character": "INTERNAL",
+            "text": "I said the comforting thing. I'm not sure I said the true thing."
+          }
+        ],
+        "c": [
+          {
+            "id": "c3-c-1",
+            "character": "maya",
+            "text": "Ms. Patel? I don't want to make it a whole— ",
+            "emotion": "alarmed, trails off"
+          },
+          {
+            "id": "c3-c-2",
+            "character": "player",
+            "text": "Not to get anyone in trouble. Just so there's a record of what actually happened, in case it matters later."
+          },
+          {
+            "id": "c3-c-3",
+            "character": "maya",
+            "text": "...Okay. Yeah. That's — that's fair, actually.",
+            "emotion": "relaxing slightly"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Actually, Maya did most of this research."
+        },
+        {
+          "id": "b",
+          "text": "(Stay quiet. Let the presentation finish.)"
+        },
+        {
+          "id": "c",
+          "text": "(Catch Jordan's eye. Gesture him toward crediting Maya.)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4-a-1",
+            "character": "player",
+            "text": "Actually — Maya did most of this research. Like, all the sourcing on the board is hers.",
+            "action": "the room goes a little quiet"
+          },
+          {
+            "id": "c4-a-2",
+            "character": "jordan",
+            "text": "I mean — yeah. She did.",
+            "emotion": "caught, short-answered",
+            "action": "goes very still for a second"
+          },
+          {
+            "id": "c4-a-3",
+            "character": "maya",
+            "text": "...Thank you.",
+            "emotion": "quiet, surprised",
+            "action": "her shoulders drop"
+          },
+          {
+            "id": "c4-a-4",
+            "character": "ms-patel",
+            "text": "Good to know. Go on, Jordan.",
+            "emotion": "unbothered, filing it away"
+          }
+        ],
+        "b": [
+          {
+            "id": "c4-b-1",
+            "character": "NARRATOR",
+            "text": "Nico says nothing. Jordan finishes strong. The class claps."
+          },
+          {
+            "id": "c4-b-2",
+            "character": "casey",
+            "text": "So. That happened.",
+            "emotion": "flat, from the back row"
+          },
+          {
+            "id": "c4-b-3",
+            "character": "INTERNAL",
+            "text": "That's a thing I didn't do. I'll be thinking about that for a while."
+          }
+        ],
+        "c": [
+          {
+            "id": "c4-c-1",
+            "character": "NARRATOR",
+            "text": "Nico catches Jordan's eye mid-sentence and tilts his head toward Maya, just slightly."
+          },
+          {
+            "id": "c4-c-2",
+            "character": "jordan",
+            "text": "— and, uh, actually, a lot of this came from Maya's research. Like, most of it.",
+            "emotion": "recovering smoothly, but it's clearly not his original plan"
+          },
+          {
+            "id": "c4-c-3",
+            "character": "maya",
+            "text": "Two of the sources are wrong, if anyone wants to know which ones.",
+            "emotion": "dry, relieved",
+            "action": "a small, real smile"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tell her everything — the shortcut, the credit issue, all of it."
+        },
+        {
+          "id": "b",
+          "text": "Mention 'some rough patches' without naming names."
+        },
+        {
+          "id": "c",
+          "text": "It went great, everyone contributed equally."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c5-a-1",
+            "character": "player",
+            "text": "Honestly? Not perfectly. Can I just tell you the whole thing?"
+          },
+          {
+            "id": "c5-a-2",
+            "character": "ms-patel",
+            "text": "Please.",
+            "emotion": "leaning in slightly, genuinely interested"
+          }
+        ],
+        "b": [
+          {
+            "id": "c5-b-1",
+            "character": "player",
+            "text": "There were some rough patches. We worked through most of it."
+          },
+          {
+            "id": "c5-b-2",
+            "character": "ms-patel",
+            "text": "Most of it.",
+            "emotion": "noting the word choice, not challenging it yet"
+          }
+        ],
+        "c": [
+          {
+            "id": "c5-c-1",
+            "character": "player",
+            "text": "It went great, honestly. Everyone contributed equally.",
+            "emotion": "too smooth, and he knows it"
+          },
+          {
+            "id": "c5-c-2",
+            "character": "ms-patel",
+            "text": "Good to hear.",
+            "action": "three full seconds of silence",
+            "emotion": "unreadable"
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-12-epilogue",
+      "branchId": "branch-integrity-champion",
+      "lines": [
+        {
+          "id": "b-int-1",
+          "character": "player",
+          "text": "I told Ms. Patel everything. The shortcut we almost used, the credit thing with Maya — all of it."
+        },
+        {
+          "id": "b-int-2",
+          "character": "casey",
+          "text": "Huh. Didn't peg you for the 'tell the teacher everything' type.",
+          "emotion": "genuinely a little impressed"
+        },
+        {
+          "id": "b-int-3",
+          "character": "player",
+          "text": "Yeah, well. Maya actually looked at me today without that whole 'bracing for disappointment' thing. Feels worth it."
+        },
+        {
+          "id": "b-int-4",
+          "character": "casey",
+          "text": "Noticing counts for something. Turns out saying something counts for more, huh.",
+          "emotion": "warm, teasing"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-12-epilogue",
+      "branchId": "branch-quiet-diplomat",
+      "lines": [
+        {
+          "id": "b-dip-1",
+          "character": "player",
+          "text": "It went fine. Nobody yelled, nobody cried, credits got fixed. Jordan doesn't even know I engineered half of it."
+        },
+        {
+          "id": "b-dip-2",
+          "character": "casey",
+          "text": "So the group's better and Jordan thinks it just... happened.",
+          "emotion": "amused, a little admiring"
+        },
+        {
+          "id": "b-dip-3",
+          "character": "player",
+          "text": "Sometimes the quiet way works. You just gotta actually do something with the quiet."
+        },
+        {
+          "id": "b-dip-4",
+          "character": "casey",
+          "text": "Look at you. Diplomat era.",
+          "emotion": "dry smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-12-epilogue",
+      "branchId": "branch-conflict-avoider",
+      "lines": [
+        {
+          "id": "b-avo-1",
+          "character": "player",
+          "text": "It went fine, I guess. Nothing bad happened."
+        },
+        {
+          "id": "b-avo-2",
+          "character": "casey",
+          "text": "Hm. That's not the same as 'good.'",
+          "emotion": "tilting head, squinting"
+        },
+        {
+          "id": "b-avo-3",
+          "character": "player",
+          "text": "Maya barely talked to me on the walk out. I don't know. I keep thinking there was a moment I should've said something and didn't."
+        },
+        {
+          "id": "b-avo-4",
+          "character": "casey",
+          "text": "Noticing counts for something. It just counts for less than saying something. Told you that once already.",
+          "emotion": "not unkind, but pointed"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-12-epilogue",
+      "branchId": "branch-complicit",
+      "lines": [
+        {
+          "id": "b-com-1",
+          "character": "player",
+          "text": "I told Patel it went great. Everyone contributed equally.",
+          "emotion": "flat, still uncomfortable"
+        },
+        {
+          "id": "b-com-2",
+          "character": "casey",
+          "text": "So. You gonna tell me how it actually went, or should I just watch your face while you lie to me?",
+          "emotion": "gentle, but not letting him off easy"
+        },
+        {
+          "id": "b-com-3",
+          "character": "player",
+          "text": "...We used a shortcut. Jordan took the credit. Maya hasn't really looked at me since.",
+          "emotion": "quiet admission"
+        },
+        {
+          "id": "b-com-4",
+          "character": "casey",
+          "text": "Yeah. Your face already told me that part.",
+          "emotion": "not gloating, just tired for him"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-12-epilogue",
+      "branchId": "branch-early-truth-teller",
+      "lines": [
+        {
+          "id": "b-ear-1",
+          "character": "player",
+          "text": "I actually went to Patel before presentation day. Told her about the shortcut and the credit thing before it even played out in front of everyone."
+        },
+        {
+          "id": "b-ear-2",
+          "character": "casey",
+          "text": "Huh. So there was no big blow-up in front of the class?",
+          "emotion": "surprised, a little disappointed for the drama"
+        },
+        {
+          "id": "b-ear-3",
+          "character": "player",
+          "text": "Nope. Just a very calm, very long conversation about 'full information.' Somehow scarier than the blow-up would've been."
+        },
+        {
+          "id": "b-ear-4",
+          "character": "casey",
+          "text": "That tracks. She's got a whole PhD in calm.",
+          "emotion": "amused"
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Jordan front-loads confidence and rarely finishes explaining a joke that already landed — his defensiveness ('it's not like I said it wasn't a group thing') is a tell that he knows he's wrong before he admits it. Maya undersells everything ('it's not a big deal') until pushed, then gets precise and clipped rather than emotional — her hurt shows in shortness, not volume. Nico's sarcasm ('Very normal amount of pressure for a Tuesday') is a pressure valve; his 'honestly' tic should appear right before choice-adjacent lines where he's not fully sure of himself. Casey never asks a direct emotional question twice — the 'hm' does the work silence should do. Ms. Patel's three-second pauses should be represented as a beat/action tag rather than described outright, letting the player feel the weight of it rather than being told about it.",
+  "alternativeLines": [
+    {
+      "lineId": "s2-l9",
+      "alternatives": [
+        "She had a whole thing to say. He just talked right over it. Is that a me problem now?",
+        "Okay that was a little rough. Do I say something or let it go?"
+      ],
+      "reasoning": "Keeps Nico's internal hedging pattern ('Do I say something or is that making it weird') while offering a slightly more casual register if the tone needs to skew lighter early in the episode."
+    },
+    {
+      "lineId": "c5-c-2",
+      "alternatives": [
+        "Good to hear.' [beat] 'Go on, you'll be late for lunch.",
+        "Good to hear.",
+        "Mm. Good to hear."
+      ],
+      "reasoning": "Matches Ms. Patel's canonical voice example almost verbatim for the complicit path, reinforcing that her calm response is a known pattern, not a one-off — making the player's guilt land harder against her unreadable consistency."
+    }
+  ]
+}
