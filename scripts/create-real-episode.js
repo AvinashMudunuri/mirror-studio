@@ -1,12 +1,29 @@
 #!/usr/bin/env node
 
 /**
- * Simple Real Episode Creation
- * Uses built JS files directly (no TypeScript compilation needed)
+ * Real Episode Creation Pipeline
+ *
+ * Sequential agent pipeline (no Docker required):
+ *   Story Architect → Character Designer (protagonist + full NPC roster)
+ *   → Dialogue Writer → 5 reviewers → bounded revision loop.
+ *
+ * Reviewer verdicts drive revisions: story-level feedback goes to the
+ * Story Architect's REVISION_REQUEST input, dialogue-level feedback to the
+ * Dialogue Writer's REVISE_DIALOGUE input, then only the previously failing
+ * reviewers re-review. Bounded by MAX_REVISION_ITERATIONS.
  */
 
 const path = require('path');
 const fs = require('fs');
+
+const {
+  collectSupportingCharacterIds,
+  describeAppearances,
+  failingReviewers,
+  collectRevisionFeedback,
+  mergeSceneDialogue,
+  mergeChoiceDialogue
+} = require('./lib/pipeline-helpers');
 
 // Import from built packages (resolve from script location)
 const packageRoot = path.resolve(__dirname, '..');
@@ -49,7 +66,7 @@ if (!agentsModule) {
   process.exit(1);
 }
 
-const { 
+const {
   StoryArchitectAgent,
   CharacterDesignerAgent,
   DialogueWriterAgent,
@@ -89,6 +106,9 @@ const TEST_WORLD = {
   seasons: ['Season 1: First Year']
 };
 
+/** How many revise → re-review rounds to attempt before accepting the result. */
+const MAX_REVISION_ITERATIONS = 2;
+
 // ============================================================================
 // Output Location
 // ============================================================================
@@ -104,6 +124,16 @@ const runStamp = RUN_STARTED_AT.toISOString().slice(0, 19).replace('T', '_').rep
 const episodeFolder = `episode-${String(EPISODE_BRIEF.episodeNumber).padStart(2, '0')}-${slugify(EPISODE_BRIEF.title)}`;
 const OUTPUT_DIR = path.join(__dirname, '..', 'output', 'episodes', episodeFolder, `run-${runStamp}`);
 const OUTPUT_DIR_RELATIVE = path.relative(path.join(__dirname, '..'), OUTPUT_DIR);
+
+const savedFiles = [];
+
+function saveToFile(filename, data) {
+  const filepath = path.join(OUTPUT_DIR, filename);
+  fs.mkdirSync(path.dirname(filepath), { recursive: true });
+  fs.writeFileSync(filepath, JSON.stringify(data, null, 2), 'utf-8');
+  savedFiles.push(filename);
+  console.log(`   💾 Saved: ${path.join(OUTPUT_DIR_RELATIVE, filename)}\n`);
+}
 
 // ============================================================================
 // Mock Infrastructure (No Docker Required)
@@ -123,16 +153,233 @@ const mockMemory = {
 };
 
 // ============================================================================
+// Agents (initialized in main)
+// ============================================================================
+
+const agents = {
+  storyArchitect: new StoryArchitectAgent(),
+  characterDesigner: new CharacterDesignerAgent(),
+  dialogueWriter: new DialogueWriterAgent(),
+  creativeDirector: new CreativeDirectorAgent(),
+  qaReviewer: new QAReviewerAgent(),
+  childPsychologist: new ChildPsychologistAgent(),
+  gameDesigner: new GameDesignerAgent(),
+  ethicsReviewer: new EthicsReviewerAgent()
+};
+
+// ============================================================================
+// Pipeline Steps
+// ============================================================================
+
+function worldBrief() {
+  return `${TEST_WORLD.name} — ${TEST_WORLD.description}. Setting: ${TEST_WORLD.setting}. Tone: ${TEST_WORLD.tone}. Target age: ${TEST_WORLD.targetAge.join('-')}.`;
+}
+
+async function generateProtagonist(outline) {
+  const result = await agents.characterDesigner.process({
+    type: 'NEW_CHARACTER',
+    newCharacter: {
+      world: worldBrief(),
+      role: 'PROTAGONIST',
+      requirements: [
+        `This character is the player character of the episode "${outline.title}": ${outline.synopsis}`,
+        'Relatable to 11-14 year olds (CRITICAL)',
+        'Navigating a new school environment (HIGH)',
+        `Their arc must support the episode themes: ${outline.themes.join(', ')}`
+      ],
+      relationshipContext: []
+    }
+  });
+  // Scenes and dialogue reference the protagonist as "player" (the Story
+  // Architect is instructed to use that id) — force the profile to match
+  // so reviewers see a consistent roster.
+  result.character.id = 'player';
+  return result;
+}
+
+/**
+ * Generate a Character Designer profile for every supporting character the
+ * outline references but the roster doesn't have yet. Returns the new
+ * profiles (full designer outputs, character ids forced to the outline ids).
+ */
+async function generateMissingSupportingCharacters(outline, roster) {
+  const known = new Set(roster.map(c => c.id));
+  const missing = collectSupportingCharacterIds(outline).filter(id => !known.has(id));
+  const results = [];
+
+  for (const characterId of missing) {
+    const appearances = describeAppearances(outline, characterId);
+    console.log(`   🔄 Designing supporting character "${characterId}" (${appearances.length} scene(s))...`);
+    const startTime = Date.now();
+
+    const result = await agents.characterDesigner.process({
+      type: 'NEW_CHARACTER',
+      newCharacter: {
+        world: worldBrief(),
+        role: `SUPPORTING character referenced as "${characterId}" in the episode "${outline.title}"`,
+        requirements: [
+          `Episode synopsis: ${outline.synopsis}`,
+          `They appear in these scenes:\n${appearances.map(a => `  - ${a}`).join('\n') || '  - (scene list unavailable)'}`,
+          'Age-appropriate for a middle-school story (students 11-14, adults where the role demands it)',
+          'Must feel like a real person, not a plot device'
+        ],
+        relationshipContext: roster.concat(results.map(r => r.character))
+      }
+    });
+
+    // The outline's scene lists and dialogue reference this exact id.
+    result.character.id = characterId;
+    results.push(result);
+    console.log(`   ✅ ${result.character.name} [${characterId}] created (${((Date.now() - startTime) / 1000).toFixed(1)}s)\n`);
+  }
+
+  return results;
+}
+
+async function writeFullDialogue(outline, roster) {
+  return await agents.dialogueWriter.process({
+    type: 'WRITE_DIALOGUE',
+    writeRequest: {
+      episodeOutline: outline,
+      characters: roster,
+      scenes: outline.scenes,
+      emotionalBeats: outline.emotionalArc || [],
+      choicePoints: outline.choicePoints
+    }
+  });
+}
+
+function buildEpisodeForReview(outline, dialogueResult, roster) {
+  // Reviewers evaluate what they are given — an empty scenes/choices array
+  // makes QA fail the episode and turns safety reviews into synopsis-only
+  // guesses.
+  const scenesWithDialogue = (outline.scenes || []).map(scene => ({
+    ...scene,
+    dialogue: dialogueResult.dialogue?.find(d => d.sceneId === scene.id)?.lines || []
+  }));
+
+  return {
+    id: `ep-${EPISODE_BRIEF.episodeNumber}`,
+    worldId: TEST_WORLD.id,
+    seasonId: 'season-1',
+    episodeNumber: EPISODE_BRIEF.episodeNumber,
+    title: outline.title,
+    synopsis: outline.synopsis,
+    scenes: scenesWithDialogue,
+    choices: outline.choicePoints || [],
+    choiceDialogue: dialogueResult.choiceDialogue || [],
+    outcomes: outline.branches || [],
+    emotionalArc: outline.emotionalArc || [],
+    themes: outline.themes,
+    educationalGoals: outline.educationalGoals || [],
+    targetTraits: outline.targetTraits.map(t => ({ traitId: t, changeAmount: 1 })),
+    targetAge: TEST_WORLD.targetAge,
+    characters: roster.map(c => c.id),
+    estimatedPlayTime: outline.estimatedPlayTime,
+    status: 'DRAFT',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+}
+
+// ============================================================================
+// Reviewers
+// ============================================================================
+
+const REVIEWERS = {
+  creativeDirector: {
+    label: 'Creative Director',
+    run: (episode, roster) => agents.creativeDirector.process({
+      type: 'EPISODE_REVIEW',
+      episodeReview: { episode, worldContext: TEST_WORLD, previousEpisodes: [] }
+    }),
+    verdict: r => r.decision
+  },
+  qaReviewer: {
+    label: 'QA Reviewer',
+    run: (episode, roster) => agents.qaReviewer.process({
+      type: 'REVIEW_EPISODE',
+      episodeReview: { episode, characters: roster, world: TEST_WORLD, previousEpisodes: [] }
+    }),
+    verdict: r => r.status
+  },
+  childPsychologist: {
+    label: 'Child Psychologist',
+    run: (episode, roster) => agents.childPsychologist.process({
+      type: 'REVIEW_EPISODE',
+      episodeReview: { episode, characters: roster, world: TEST_WORLD }
+    }),
+    verdict: r => r.status
+  },
+  gameDesigner: {
+    label: 'Game Designer',
+    run: (episode, roster) => agents.gameDesigner.process({
+      type: 'REVIEW_EPISODE',
+      episodeReview: { episode, characters: roster, world: TEST_WORLD }
+    }),
+    verdict: r => r.status
+  },
+  ethicsReviewer: {
+    label: 'Ethics Reviewer',
+    run: (episode, roster) => agents.ethicsReviewer.process({
+      type: 'REVIEW_EPISODE',
+      episodeReview: { episode, characters: roster, world: TEST_WORLD }
+    }),
+    verdict: r => r.status
+  }
+};
+
+const REVIEW_FILES = {
+  creativeDirector: 'creative-review.json',
+  qaReviewer: 'qa-review.json',
+  childPsychologist: 'psych-review.json',
+  gameDesigner: 'game-review.json',
+  ethicsReviewer: 'ethics-review.json'
+};
+
+// Initial-pass files keep the numbered convention from earlier runs
+// (e.g. 05-qa-review.json); revision-pass files live under revision-N/.
+const INITIAL_REVIEW_FILES = {
+  creativeDirector: '04-creative-review.json',
+  qaReviewer: '05-qa-review.json',
+  childPsychologist: '06-psych-review.json',
+  gameDesigner: '07-game-review.json',
+  ethicsReviewer: '08-ethics-review.json'
+};
+
+async function runReviewers(keys, episode, roster, filenameFor) {
+  const results = {};
+  for (const key of keys) {
+    const reviewer = REVIEWERS[key];
+    console.log(`   🔎 ${reviewer.label} reviewing...`);
+    const startTime = Date.now();
+    const result = await reviewer.run(episode, roster);
+    results[key] = result;
+    console.log(`   ✅ ${reviewer.label}: ${reviewer.verdict(result)} (${((Date.now() - startTime) / 1000).toFixed(1)}s)\n`);
+    saveToFile(filenameFor(key), result);
+  }
+  return results;
+}
+
+function verdicts(reviews) {
+  const out = {};
+  for (const [key, reviewer] of Object.entries(REVIEWERS)) {
+    if (reviews[key] !== undefined) out[key] = reviewer.verdict(reviews[key]);
+  }
+  return out;
+}
+
+// ============================================================================
 // Main Workflow
 // ============================================================================
 
 async function main() {
   console.log('🎬 REAL EPISODE CREATION WITH CLAUDE\n');
   console.log('═══════════════════════════════════════════════════════════\n');
-  
+
   // Step 0: Check API Key
   console.log('📋 Step 0: Checking Prerequisites\n');
-  
+
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     console.error('❌ Error: ANTHROPIC_API_KEY not set!\n');
@@ -141,97 +388,34 @@ async function main() {
     console.error('   Then run this script again.\n');
     process.exit(1);
   }
-  
+
   console.log('✅ Claude API key found');
   console.log(`   Key: ${apiKey.substring(0, 10)}...${apiKey.slice(-4)}\n`);
   console.log('⚡ Running in SIMPLIFIED mode (no Docker required)\n');
   console.log(`📁 Output folder for this run:\n   ${OUTPUT_DIR_RELATIVE}\n`);
   console.log('═══════════════════════════════════════════════════════════\n');
-  
-  // Initialize LLM Gateway
+
   const workflowId = uuidv4();
   const threadId = uuidv4();
-  
+
   console.log(`   Workflow ID: ${workflowId.substring(0, 8)}...`);
   console.log(`   Thread ID: ${threadId.substring(0, 8)}...\n`);
-  
+
   const llm = createLLMGateway({
     anthropicApiKey: apiKey,
     defaultProvider: 'claude'
   });
   console.log('✅ LLM Gateway ready\n');
-  
-  // Initialize Agents
+
+  // Step 1: Initialize Agents
   console.log('🤖 Step 1: Initializing Agents\n');
-  
-  const storyArchitect = new StoryArchitectAgent();
-  const characterDesigner = new CharacterDesignerAgent();
-  const dialogueWriter = new DialogueWriterAgent();
-  const creativeDirector = new CreativeDirectorAgent();
-  const qaReviewer = new QAReviewerAgent();
-  const childPsychologist = new ChildPsychologistAgent();
-  const gameDesigner = new GameDesignerAgent();
-  const ethicsReviewer = new EthicsReviewerAgent();
-  
-  await Promise.all([
-    storyArchitect.initialize({ 
-      workflowId, 
-      threadId, 
-      messageBus: mockMessageBus, 
-      memory: mockMemory, 
-      llm 
-    }),
-    characterDesigner.initialize({ 
-      workflowId, 
-      threadId, 
-      messageBus: mockMessageBus, 
-      memory: mockMemory, 
-      llm 
-    }),
-    dialogueWriter.initialize({ 
-      workflowId, 
-      threadId, 
-      messageBus: mockMessageBus, 
-      memory: mockMemory, 
-      llm 
-    }),
-    creativeDirector.initialize({ 
-      workflowId, 
-      threadId, 
-      messageBus: mockMessageBus, 
-      memory: mockMemory, 
-      llm 
-    }),
-    qaReviewer.initialize({ 
-      workflowId, 
-      threadId, 
-      messageBus: mockMessageBus, 
-      memory: mockMemory, 
-      llm 
-    }),
-    childPsychologist.initialize({ 
-      workflowId, 
-      threadId, 
-      messageBus: mockMessageBus, 
-      memory: mockMemory, 
-      llm 
-    }),
-    gameDesigner.initialize({ 
-      workflowId, 
-      threadId, 
-      messageBus: mockMessageBus, 
-      memory: mockMemory, 
-      llm 
-    }),
-    ethicsReviewer.initialize({ 
-      workflowId, 
-      threadId, 
-      messageBus: mockMessageBus, 
-      memory: mockMemory, 
-      llm 
-    })
-  ]);
-  
+
+  await Promise.all(
+    Object.values(agents).map(agent =>
+      agent.initialize({ workflowId, threadId, messageBus: mockMessageBus, memory: mockMemory, llm })
+    )
+  );
+
   console.log('✅ Story Architect (River) ready');
   console.log('✅ Character Designer (Kai) ready');
   console.log('✅ Dialogue Writer (Echo) ready');
@@ -240,20 +424,21 @@ async function main() {
   console.log('✅ Child Psychologist (Dr. Sam) ready');
   console.log('✅ Game Designer (Jordan) ready');
   console.log('✅ Ethics Reviewer (Riley) ready\n');
-  
+
   console.log('═══════════════════════════════════════════════════════════\n');
-  
-  // Step 2: Story Architect - Create Episode Outline
-  console.log('📖 Step 2: Story Architect - Creating Episode Outline\n');
-  console.log(`   Episode: "${EPISODE_BRIEF.title}"`);
-  console.log(`   Synopsis: ${EPISODE_BRIEF.synopsis}\n`);
-  console.log('   🔄 Calling Claude API to generate story structure...');
-  console.log('   ⏳ This may take 30-60 seconds...\n');
-  
+
   const startTime = Date.now();
-  
+  const revisionHistory = [];
+
   try {
-    const storyResult = await storyArchitect.process({
+    // Step 2: Story Architect - Episode Outline
+    console.log('📖 Step 2: Story Architect - Creating Episode Outline\n');
+    console.log(`   Episode: "${EPISODE_BRIEF.title}"`);
+    console.log(`   Synopsis: ${EPISODE_BRIEF.synopsis}\n`);
+    console.log('   🔄 Calling Claude API to generate story structure...\n');
+
+    const storyStart = Date.now();
+    const storyResult = await agents.storyArchitect.process({
       type: 'NEW_EPISODE',
       brief: {
         world: EPISODE_BRIEF.world,
@@ -264,353 +449,174 @@ async function main() {
         characters: []
       }
     });
-    
-    const duration = ((Date.now() - startTime) / 1000).toFixed(1);
-    
-    console.log(`✅ Episode outline created! (${duration}s)`);
-    console.log(`   Title: ${storyResult.episodeOutline.title}`);
-    console.log(`   Scenes: ${storyResult.episodeOutline.scenes.length}`);
-    console.log(`   Choice Points: ${storyResult.episodeOutline.choicePoints.length}`);
-    console.log(`   Branches: ${storyResult.episodeOutline.branches?.length || 0}`);
-    console.log(`   Estimated Play Time: ${storyResult.episodeOutline.estimatedPlayTime || 'N/A'} minutes\n`);
-    
+    let outline = storyResult.episodeOutline;
+
+    console.log(`✅ Episode outline created! (${((Date.now() - storyStart) / 1000).toFixed(1)}s)`);
+    console.log(`   Title: ${outline.title}`);
+    console.log(`   Scenes: ${outline.scenes.length}`);
+    console.log(`   Choice Points: ${outline.choicePoints.length}`);
+    console.log(`   Branches: ${outline.branches?.length || 0}\n`);
+
     saveToFile('01-story-outline.json', storyResult);
-    
-    // Step 3: Character Designer - Create Protagonist
+
+    // Step 3: Character Designer - Protagonist
     console.log('👥 Step 3: Character Designer - Creating Protagonist\n');
-    console.log('   🔄 Calling Claude API to design character...\n');
-    
-    const charStartTime = Date.now();
-    
-    const protagonistResult = await characterDesigner.process({
-      type: 'NEW_CHARACTER',
-      newCharacter: {
-        world: TEST_WORLD,
-        role: 'PROTAGONIST',
-        requirements: [
-          {
-            trait: 'Relatable to 11-14 year olds',
-            importance: 'CRITICAL'
-          },
-          {
-            trait: 'Navigating new school environment',
-            importance: 'HIGH'
-          }
-        ],
-        relationshipContext: []
-      }
-    });
-    
-    const charDuration = ((Date.now() - charStartTime) / 1000).toFixed(1);
-    
-    console.log(`✅ Protagonist created! (${charDuration}s)`);
-    console.log(`   Name: ${protagonistResult.character?.name}`);
+    console.log('   🔄 Calling Claude API to design the protagonist...\n');
+
+    const charStart = Date.now();
+    const protagonistResult = await generateProtagonist(outline);
+
+    console.log(`✅ Protagonist created! (${((Date.now() - charStart) / 1000).toFixed(1)}s)`);
+    console.log(`   Name: ${protagonistResult.character?.name} [id: player]`);
     console.log(`   Age: ${protagonistResult.character?.age}`);
-    console.log(`   Pronouns: ${protagonistResult.character?.pronouns}`);
-    console.log(`   Core Traits: ${protagonistResult.character?.personality.coreTraits.join(', ')}`);
-    console.log(`   Role: ${protagonistResult.character?.storyRole}\n`);
-    
+    console.log(`   Core Traits: ${protagonistResult.character?.personality.coreTraits.join(', ')}\n`);
+
     saveToFile('02-protagonist.json', protagonistResult);
-    
-    // Step 4: Dialogue Writer - Write Scene Dialogue
-    console.log('💬 Step 4: Dialogue Writer - Creating Scene Dialogue\n');
+
+    // Step 4: Character Designer - Supporting Cast (NPC roster)
+    console.log('👥 Step 4: Character Designer - Creating Supporting Cast\n');
+
+    let roster = [protagonistResult.character];
+    const supportingResults = await generateMissingSupportingCharacters(outline, roster);
+    roster = roster.concat(supportingResults.map(r => r.character));
+
+    console.log(`✅ Roster complete: ${roster.map(c => `${c.name} [${c.id}]`).join(', ')}\n`);
+    saveToFile('02-supporting-characters.json', supportingResults);
+
+    // Step 5: Dialogue Writer
+    console.log('💬 Step 5: Dialogue Writer - Creating Scene Dialogue\n');
     console.log('   🔄 Calling Claude API to write dialogue...\n');
-    console.log('   ⏳ This may take 60-90 seconds...\n');
-    
-    const dialogueStartTime = Date.now();
-    
-    const dialogueResult = await dialogueWriter.process({
-      type: 'WRITE_DIALOGUE',
-      writeRequest: {
-        episodeOutline: storyResult.episodeOutline,
-        characters: [protagonistResult.character],
-        scenes: storyResult.episodeOutline.scenes,
-        emotionalBeats: storyResult.episodeOutline.emotionalArc || [],
-        choicePoints: storyResult.episodeOutline.choicePoints
-      }
-    });
-    
-    const dialogueDuration = ((Date.now() - dialogueStartTime) / 1000).toFixed(1);
-    
-    console.log(`✅ Dialogue created! (${dialogueDuration}s)`);
+
+    const dialogueStart = Date.now();
+    let dialogueResult = await writeFullDialogue(outline, roster);
+
+    console.log(`✅ Dialogue created! (${((Date.now() - dialogueStart) / 1000).toFixed(1)}s)`);
     console.log(`   Scenes with dialogue: ${dialogueResult.dialogue?.length || 0}`);
-    console.log(`   Total lines: ${dialogueResult.dialogue?.reduce((sum, scene) => sum + (scene.lines?.length || 0), 0) || 0}`);
-    console.log(`   Voice notes: ${dialogueResult.voiceNotes?.substring(0, 100) || 'N/A'}...\n`);
-    
+    console.log(`   Total lines: ${dialogueResult.dialogue?.reduce((sum, scene) => sum + (scene.lines?.length || 0), 0) || 0}\n`);
+
     saveToFile('03-dialogue.json', dialogueResult);
-    
-    // Step 5: Creative Director - Review Episode
-    console.log('✨ Step 5: Creative Director - Final Review\n');
-    console.log('   🔄 Calling Claude API for creative review...\n');
-    console.log('   ⏳ This may take 30-60 seconds...\n');
-    
-    const reviewStartTime = Date.now();
-    
-    // Build the Episode object for review from the ACTUAL generated content.
-    // Reviewers evaluate what they are given — an empty scenes/choices array
-    // makes QA fail the episode and turns safety reviews into synopsis-only
-    // guesses.
-    const scenesWithDialogue = (storyResult.episodeOutline.scenes || []).map(scene => ({
-      ...scene,
-      dialogue: dialogueResult.dialogue?.find(d => d.sceneId === scene.id)?.lines || []
-    }));
-    
-    const episodeForReview = {
-      id: `ep-${EPISODE_BRIEF.episodeNumber}`,
-      worldId: TEST_WORLD.id,
-      seasonId: 'season-1',
-      episodeNumber: EPISODE_BRIEF.episodeNumber,
-      title: storyResult.episodeOutline.title,
-      synopsis: storyResult.episodeOutline.synopsis,
-      scenes: scenesWithDialogue,
-      choices: storyResult.episodeOutline.choicePoints || [],
-      choiceDialogue: dialogueResult.choiceDialogue || [],
-      outcomes: storyResult.episodeOutline.branches || [],
-      emotionalArc: storyResult.episodeOutline.emotionalArc || [],
-      themes: storyResult.episodeOutline.themes,
-      educationalGoals: storyResult.episodeOutline.educationalGoals || [],
-      targetTraits: storyResult.episodeOutline.targetTraits.map(t => ({ traitId: t, changeAmount: 1 })),
-      targetAge: TEST_WORLD.targetAge,
-      characters: [protagonistResult.character.id],
-      estimatedPlayTime: storyResult.episodeOutline.estimatedPlayTime,
-      status: 'DRAFT',
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString()
-    };
-    
-    const reviewResult = await creativeDirector.process({
-      type: 'EPISODE_REVIEW',
-      episodeReview: {
-        episode: episodeForReview,
-        worldContext: TEST_WORLD,
-        previousEpisodes: []
-      }
-    });
-    
-    const reviewDuration = ((Date.now() - reviewStartTime) / 1000).toFixed(1);
-    
-    console.log(`✅ Creative review complete! (${reviewDuration}s)`);
-    console.log(`   Decision: ${reviewResult.decision || 'N/A'}`);
-    console.log(`   Creative Notes: ${reviewResult.creativeNotes?.substring(0, 100) || 'N/A'}...`);
-    console.log(`   Story Feedback: ${reviewResult.specificFeedback?.story?.length || 0} items`);
-    console.log(`   Character Feedback: ${reviewResult.specificFeedback?.characters?.length || 0} items\n`);
-    
-    saveToFile('04-creative-review.json', reviewResult);
-    
-    // Step 6: QA Reviewer - Technical Quality Check
-    console.log('🔍 Step 6: QA Reviewer - Technical Quality Check\n');
-    console.log('   🔄 Calling Claude API for QA review...\n');
-    console.log('   ⏳ This may take 10-20 seconds...\n');
-    
-    const qaStartTime = Date.now();
-    
-    const qaResult = await qaReviewer.process({
-      type: 'REVIEW_EPISODE',
-      episodeReview: {
-        episode: episodeForReview,
-        characters: [protagonistResult.character],
-        world: TEST_WORLD,
-        previousEpisodes: []
-      }
-    });
-    
-    const qaDuration = ((Date.now() - qaStartTime) / 1000).toFixed(1);
-    
-    console.log(`✅ QA review complete! (${qaDuration}s)`);
-    console.log(`   Status: ${qaResult.status}`);
-    console.log(`   Errors: ${qaResult.errors?.length || 0} blocking issues`);
-    console.log(`   Warnings: ${qaResult.warnings?.length || 0} concerns`);
-    console.log(`   Checks: ${qaResult.summary?.passedChecks || 0}/${qaResult.summary?.totalChecks || 0} passed\n`);
-    
-    if (qaResult.errors && qaResult.errors.length > 0) {
-      console.log('   ❌ Issues found:');
-      qaResult.errors.slice(0, 3).forEach(err => {
-        console.log(`      • [${err.severity}] ${err.message}`);
-        console.log(`        Location: ${err.location}`);
-        if (err.fix) {
-          console.log(`        Fix: ${err.fix}`);
-        }
-      });
-      if (qaResult.errors.length > 3) {
-        console.log(`      ... and ${qaResult.errors.length - 3} more\n`);
-      } else {
-        console.log('');
-      }
-    }
-    
-    saveToFile('05-qa-review.json', qaResult);
-    
-    // Step 7: Child Psychologist - Psychological Safety Review
-    console.log('👨‍⚕️ Step 7: Child Psychologist - Psychological Safety Review\n');
-    console.log('   🔄 Calling Claude API for psychological safety review...\n');
-    console.log('   ⏳ This may take 20-30 seconds...\n');
-    
-    const psychStartTime = Date.now();
-    
-    const psychResult = await childPsychologist.process({
-      type: 'REVIEW_EPISODE',
-      episodeReview: {
-        episode: episodeForReview,
-        characters: [protagonistResult.character],
-        world: TEST_WORLD
-      }
-    });
-    
-    const psychDuration = ((Date.now() - psychStartTime) / 1000).toFixed(1);
-    
-    console.log(`✅ Psychological safety review complete! (${psychDuration}s)`);
-    console.log(`   Status: ${psychResult.status}`);
-    console.log(`   Concerns: ${psychResult.concerns?.length || 0} issues`);
-    console.log(`   Trigger Warnings: ${psychResult.triggerWarnings?.length || 0}`);
-    console.log(`   Overall Score: ${psychResult.scores?.overall || 'N/A'}/10`);
-    console.log(`   Ready for Audience: ${psychResult.summary?.readyForAudience ? 'Yes' : 'No'}\n`);
-    
-    if (psychResult.concerns && psychResult.concerns.length > 0) {
-      console.log('   ⚠️  Concerns:');
-      psychResult.concerns.slice(0, 3).forEach(concern => {
-        console.log(`      • [${concern.severity}] ${concern.issue}`);
-        console.log(`        Category: ${concern.category}`);
-        console.log(`        Recommendation: ${concern.recommendation}`);
-      });
-      if (psychResult.concerns.length > 3) {
-        console.log(`      ... and ${psychResult.concerns.length - 3} more\n`);
-      } else {
-        console.log('');
-      }
-    }
-    
-    if (psychResult.triggerWarnings && psychResult.triggerWarnings.length > 0) {
-      console.log('   ⚠️  Trigger Warnings:');
-      psychResult.triggerWarnings.forEach(tw => {
-        console.log(`      • [${tw.severity}] ${tw.category}: ${tw.description}`);
-      });
-      console.log('');
-    }
-    
-    saveToFile('06-psych-review.json', psychResult);
-    
-    // Step 7: Game Designer - Gameplay & Engagement Review
-    console.log('🎮 Step 7: Game Designer - Gameplay & Engagement Review\n');
-    console.log('   🔄 Calling Claude API for gameplay review...\n');
-    console.log('   ⏳ This may take 20-30 seconds...\n');
-    
-    const gameStartTime = Date.now();
-    
-    const gameResult = await gameDesigner.process({
-      type: 'REVIEW_EPISODE',
-      episodeReview: {
-        episode: episodeForReview,
-        characters: [protagonistResult.character],
-        world: TEST_WORLD
-      }
-    });
-    
-    const gameDuration = ((Date.now() - gameStartTime) / 1000).toFixed(1);
-    
-    console.log(`✅ Gameplay review complete! (${gameDuration}s)`);
-    console.log(`   Status: ${gameResult.status}`);
-    console.log(`   Issues: ${gameResult.issues?.length || 0} gameplay issues`);
-    console.log(`   Engagement Score: ${gameResult.scores?.engagement || 'N/A'}/10`);
-    console.log(`   Choice Quality: ${gameResult.scores?.choiceQuality || 'N/A'}/10`);
-    console.log(`   Overall: ${gameResult.scores?.overall || 'N/A'}/10\n`);
-    
-    if (gameResult.issues && gameResult.issues.length > 0) {
-      console.log('   🎯 Key Issues:');
-      gameResult.issues.slice(0, 3).forEach(issue => {
-        console.log(`      • [${issue.severity}] ${issue.issue}`);
-        console.log(`        Category: ${issue.category}`);
-        console.log(`        Fix: ${issue.fix}`);
-      });
-      if (gameResult.issues.length > 3) {
-        console.log(`      ... and ${gameResult.issues.length - 3} more\n`);
-      } else {
-        console.log('');
-      }
-    }
-    
-    if (gameResult.strengths && gameResult.strengths.length > 0) {
-      console.log('   💪 Strengths:');
-      gameResult.strengths.slice(0, 3).forEach(strength => {
-        console.log(`      • ${strength}`);
-      });
-      console.log('');
-    }
-    
-    saveToFile('07-game-review.json', gameResult);
-    
-    // Step 8: Ethics Reviewer - Ethics & Representation Review
-    console.log('⚖️  Step 8: Ethics Reviewer - Ethics & Representation Review\n');
-    console.log('   🔄 Calling Claude API for ethics review...\n');
-    console.log('   ⏳ This may take 20-30 seconds...\n');
-    
-    const ethicsStartTime = Date.now();
-    
-    const ethicsResult = await ethicsReviewer.process({
-      type: 'REVIEW_EPISODE',
-      episodeReview: {
-        episode: episodeForReview,
-        characters: [protagonistResult.character],
-        world: TEST_WORLD
-      }
-    });
-    
-    const ethicsDuration = ((Date.now() - ethicsStartTime) / 1000).toFixed(1);
-    
-    console.log(`✅ Ethics review complete! (${ethicsDuration}s)`);
-    console.log(`   Status: ${ethicsResult.status}`);
-    console.log(`   Issues: ${ethicsResult.issues?.length || 0} ethical issues`);
-    console.log(`   Bias Avoidance: ${ethicsResult.scores?.biasAvoidance || 'N/A'}/10`);
-    console.log(`   Representation: ${ethicsResult.scores?.representation || 'N/A'}/10`);
-    console.log(`   Overall: ${ethicsResult.scores?.overall || 'N/A'}/10`);
-    console.log(`   Ready for Publication: ${ethicsResult.summary?.readyForPublication ? 'Yes' : 'No'}\n`);
-    
-    if (ethicsResult.issues && ethicsResult.issues.length > 0) {
-      const criticalIssues = ethicsResult.issues.filter(i => i.severity === 'CRITICAL');
-      const majorIssues = ethicsResult.issues.filter(i => i.severity === 'MAJOR');
-      
-      if (criticalIssues.length > 0) {
-        console.log('   🚨 CRITICAL Issues:');
-        criticalIssues.forEach(issue => {
-          console.log(`      • ${issue.issue}`);
-          console.log(`        Category: ${issue.category}`);
-          console.log(`        Harm: ${issue.harmPotential}`);
-          console.log(`        Fix: ${issue.recommendation}`);
+
+    // Step 6: Full review board
+    console.log('🔎 Step 6: Review Board (5 reviewers)\n');
+
+    let episodeForReview = buildEpisodeForReview(outline, dialogueResult, roster);
+    let reviews = await runReviewers(
+      Object.keys(REVIEWERS),
+      episodeForReview,
+      roster,
+      key => INITIAL_REVIEW_FILES[key]
+    );
+
+    console.log('   📊 Initial verdicts:', JSON.stringify(verdicts(reviews)), '\n');
+
+    // Step 7: Revision loop — bounded, feedback-routed
+    let iteration = 0;
+    while (failingReviewers(reviews).length > 0 && iteration < MAX_REVISION_ITERATIONS) {
+      iteration += 1;
+      const failing = failingReviewers(reviews);
+      const feedback = collectRevisionFeedback(reviews);
+
+      console.log('═══════════════════════════════════════════════════════════\n');
+      console.log(`🔁 Step 7.${iteration}: Revision Iteration ${iteration}/${MAX_REVISION_ITERATIONS}\n`);
+      console.log(`   Failing reviewers: ${failing.join(', ')}`);
+      console.log(`   Story feedback items: ${feedback.story.length}`);
+      console.log(`   Dialogue feedback items: ${feedback.dialogue.length}\n`);
+
+      const prefix = `revision-${iteration}/`;
+      saveToFile(`${prefix}feedback.json`, { failing, feedback });
+
+      const actions = [];
+
+      if (feedback.story.length > 0) {
+        // Story-level problems: revise the outline, then rewrite dialogue
+        // against the revised outline (scene structure may have changed).
+        console.log('   📖 Story Architect revising outline (REVISION_REQUEST)...\n');
+        const revisionStart = Date.now();
+        const revisedStory = await agents.storyArchitect.process({
+          type: 'REVISION_REQUEST',
+          revisionRequest: {
+            currentDraft: outline,
+            feedback: feedback.story,
+            constraints: [
+              'Keep the same protagonist (referenced as "player")',
+              `Keep the episode themes: ${EPISODE_BRIEF.themes.join(', ')}`,
+              'Prefer keeping existing scene/character ids stable unless a fix requires changing them'
+            ]
+          }
         });
-        console.log('');
-      }
-      
-      if (majorIssues.length > 0) {
-        console.log('   ⚠️  MAJOR Issues:');
-        majorIssues.slice(0, 3).forEach(issue => {
-          console.log(`      • ${issue.issue}`);
-          console.log(`        Category: ${issue.category}`);
-          console.log(`        Recommendation: ${issue.recommendation}`);
-        });
-        if (majorIssues.length > 3) {
-          console.log(`      ... and ${majorIssues.length - 3} more\n`);
-        } else {
-          console.log('');
+        outline = revisedStory.episodeOutline;
+        actions.push('story-revision');
+        console.log(`   ✅ Outline revised (${((Date.now() - revisionStart) / 1000).toFixed(1)}s)\n`);
+        saveToFile(`${prefix}story-outline.json`, revisedStory);
+
+        // The revised outline may reference new characters.
+        const newSupporting = await generateMissingSupportingCharacters(outline, roster);
+        if (newSupporting.length > 0) {
+          roster = roster.concat(newSupporting.map(r => r.character));
+          actions.push('roster-extension');
+          saveToFile(`${prefix}supporting-characters.json`, newSupporting);
         }
+
+        console.log('   💬 Dialogue Writer rewriting dialogue for revised outline...\n');
+        const rewriteStart = Date.now();
+        dialogueResult = await writeFullDialogue(outline, roster);
+        actions.push('dialogue-rewrite');
+        console.log(`   ✅ Dialogue rewritten (${((Date.now() - rewriteStart) / 1000).toFixed(1)}s)\n`);
+        saveToFile(`${prefix}dialogue.json`, dialogueResult);
+      } else if (feedback.dialogue.length > 0) {
+        // Dialogue-only problems: targeted revision, merge over previous.
+        console.log('   💬 Dialogue Writer revising dialogue (REVISE_DIALOGUE)...\n');
+        const reviseStart = Date.now();
+        const revisedDialogue = await agents.dialogueWriter.process({
+          type: 'REVISE_DIALOGUE',
+          revisionRequest: {
+            currentDialogue: dialogueResult.dialogue,
+            feedback: feedback.dialogue
+          }
+        });
+        dialogueResult = {
+          ...dialogueResult,
+          dialogue: mergeSceneDialogue(dialogueResult.dialogue, revisedDialogue.dialogue),
+          choiceDialogue: mergeChoiceDialogue(dialogueResult.choiceDialogue, revisedDialogue.choiceDialogue)
+        };
+        actions.push('dialogue-revision');
+        console.log(`   ✅ Dialogue revised (${((Date.now() - reviseStart) / 1000).toFixed(1)}s)\n`);
+        saveToFile(`${prefix}dialogue.json`, dialogueResult);
+      } else {
+        // Failing verdicts but no actionable feedback — nothing to route.
+        console.log('   ⚠️ Reviewers failed the episode but produced no actionable feedback items; stopping revision loop.\n');
+        revisionHistory.push({ iteration, failingBefore: failing, actions: [], verdictsAfter: verdicts(reviews) });
+        break;
       }
-    }
-    
-    if (ethicsResult.strengths && ethicsResult.strengths.length > 0) {
-      console.log('   💎 Ethical Strengths:');
-      ethicsResult.strengths.slice(0, 3).forEach(strength => {
-        console.log(`      • ${strength}`);
+
+      // Re-review with only the reviewers that were failing.
+      console.log(`   🔎 Re-running ${failing.length} failing reviewer(s)...\n`);
+      episodeForReview = buildEpisodeForReview(outline, dialogueResult, roster);
+      const newReviews = await runReviewers(failing, episodeForReview, roster, key => `${prefix}${REVIEW_FILES[key]}`);
+      reviews = { ...reviews, ...newReviews };
+
+      revisionHistory.push({
+        iteration,
+        failingBefore: failing,
+        actions,
+        storyFeedbackCount: feedback.story.length,
+        dialogueFeedbackCount: feedback.dialogue.length,
+        verdictsAfter: verdicts(reviews)
       });
-      console.log('');
+
+      console.log(`   📊 Verdicts after iteration ${iteration}:`, JSON.stringify(verdicts(reviews)), '\n');
     }
-    
-    saveToFile('08-ethics-review.json', ethicsResult);
-    
-    // Run manifest: what was generated, by which config, with what verdicts
+
+    const stillFailing = failingReviewers(reviews);
+    const finalStatus = stillFailing.length === 0 ? 'APPROVED' : 'NEEDS_HUMAN_REVIEW';
+
+    // Run manifest: what was generated, with what verdicts, and how revisions went
     const totalDuration = ((Date.now() - startTime) / 1000).toFixed(1);
-    
+
     const manifest = {
       episode: {
         number: EPISODE_BRIEF.episodeNumber,
-        title: storyResult.episodeOutline.title,
+        title: outline.title,
         world: TEST_WORLD.id
       },
       run: {
@@ -621,61 +627,24 @@ async function main() {
         totalSeconds: parseFloat(totalDuration),
         model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5'
       },
-      verdicts: {
-        creativeDirector: reviewResult.decision,
-        qaReviewer: qaResult.status,
-        childPsychologist: psychResult.status,
-        gameDesigner: gameResult.status,
-        ethicsReviewer: ethicsResult.status
-      },
-      files: [
-        '01-story-outline.json',
-        '02-protagonist.json',
-        '03-dialogue.json',
-        '04-creative-review.json',
-        '05-qa-review.json',
-        '06-psych-review.json',
-        '07-game-review.json',
-        '08-ethics-review.json'
-      ]
+      roster: roster.map(c => ({ id: c.id, name: c.name, role: c.storyRole })),
+      finalStatus,
+      verdicts: verdicts(reviews),
+      revisions: revisionHistory,
+      files: savedFiles.concat('manifest.json')
     };
     saveToFile('manifest.json', manifest);
-    
+
     console.log('═══════════════════════════════════════════════════════════\n');
     console.log('✨ FULL EPISODE PIPELINE COMPLETE!\n');
-    console.log('📦 Output Files:\n');
-    console.log('   1. Story Outline (Story Architect → Claude)');
-    console.log('   2. Protagonist Profile (Character Designer → Claude)');
-    console.log('   3. Scene Dialogue (Dialogue Writer → Claude)');
-    console.log('   4. Creative Review (Creative Director → Claude)');
-    console.log('   5. QA Review (QA Reviewer → Claude)');
-    console.log('   6. Psychological Safety Review (Child Psychologist → Claude)');
-    console.log('   7. Gameplay Review (Game Designer → Claude)');
-    console.log('   8. Ethics Review (Ethics Reviewer → Claude)');
-    console.log('   9. Run Manifest (metadata + reviewer verdicts)\n');
     console.log(`   📁 Location: ${OUTPUT_DIR_RELATIVE}\n`);
-    console.log('⏱️  Total Time:\n');
-    console.log(`   Story: ${duration}s`);
-    console.log(`   Character: ${charDuration}s`);
-    console.log(`   Dialogue: ${dialogueDuration}s`);
-    console.log(`   Review: ${reviewDuration}s`);
-    console.log(`   QA: ${qaDuration}s`);
-    console.log(`   Psych: ${psychDuration}s`);
-    console.log(`   Game: ${gameDuration}s`);
-    console.log(`   Ethics: ${ethicsDuration}s`);
-    console.log(`   Total: ${totalDuration}s (${(totalDuration / 60).toFixed(1)} minutes)\n`);
-    console.log('🎯 Full AI Studio Pipeline:\n');
-    console.log('   ✅ Story structure designed');
-    console.log('   ✅ Characters created with depth');
-    console.log('   ✅ Authentic dialogue written');
-    console.log('   ✅ Quality assured by Creative Director');
-    console.log('   ✅ Technical validation by QA Reviewer');
-    console.log('   ✅ Psychological safety validated by Child Psychologist');
-    console.log('   ✅ Gameplay & engagement validated by Game Designer');
-    console.log('   ✅ Ethics & representation validated by Ethics Reviewer\n');
-    console.log('═══════════════════════════════════════════════════════════\n');
-    console.log('🎉 Success! ALL Phase 2 validation agents complete!\n');
-    
+    console.log(`   Final status: ${finalStatus}`);
+    console.log(`   Final verdicts: ${JSON.stringify(verdicts(reviews))}`);
+    console.log(`   Revision iterations used: ${revisionHistory.length}/${MAX_REVISION_ITERATIONS}`);
+    if (stillFailing.length > 0) {
+      console.log(`   ⚠️ Still failing after revisions: ${stillFailing.join(', ')} — human review needed`);
+    }
+    console.log(`   ⏱️ Total: ${totalDuration}s (${(totalDuration / 60).toFixed(1)} minutes)\n`);
   } catch (error) {
     console.error('\n❌ Error during episode creation:\n');
     if (error.message?.includes('401')) {
@@ -689,20 +658,6 @@ async function main() {
     }
     process.exit(1);
   }
-}
-
-// ============================================================================
-// Helper Functions
-// ============================================================================
-
-function saveToFile(filename, data) {
-  if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-  }
-  
-  const filepath = path.join(OUTPUT_DIR, filename);
-  fs.writeFileSync(filepath, JSON.stringify(data, null, 2), 'utf-8');
-  console.log(`   💾 Saved: ${path.join(OUTPUT_DIR_RELATIVE, filename)}\n`);
 }
 
 // ============================================================================
