@@ -164,12 +164,9 @@ function saveToFile(filename, data) {
 // ============================================================================
 // Mock Infrastructure (No Docker Required)
 // ============================================================================
-
-const mockMessageBus = {
-  publish: async () => {},
-  subscribe: async () => {},
-  disconnect: async () => {}
-};
+// No message bus: this pipeline orchestrates agents by direct calls
+// (docs/decisions/001-message-bus-out-of-runtime.md). Memory is mocked
+// until Postgres persistence lands.
 
 const mockMemory = {
   store: async () => {},
@@ -500,7 +497,7 @@ async function main() {
 
   await Promise.all(
     Object.values(agents).map(agent =>
-      agent.initialize({ workflowId, threadId, messageBus: mockMessageBus, memory: mockMemory, llm })
+      agent.initialize({ workflowId, threadId, memory: mockMemory, llm })
     )
   );
 
