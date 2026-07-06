@@ -239,13 +239,19 @@ CREATE TABLE agent_memory (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   expires_at TIMESTAMP,
   access_count INTEGER DEFAULT 0,
-  last_accessed TIMESTAMP
+  last_accessed TIMESTAMP,
+  -- MemorySystem.store() upserts with ON CONFLICT (agent_id, key);
+  -- without this constraint every store() throws.
+  CONSTRAINT agent_memory_agent_id_key_unique UNIQUE (agent_id, key)
 );
 
 CREATE INDEX idx_memory_agent ON agent_memory(agent_id);
 CREATE INDEX idx_memory_scope ON agent_memory(scope);
-CREATE INDEX idx_memory_key ON agent_memory(agent_id, key);
-CREATE INDEX idx_memory_embedding ON agent_memory USING ivfflat (embedding vector_cosine_ops);
+-- NOTE: no vector index. ivfflat/hnsw cap at 2000 dimensions and the
+-- embedding column is 3072 (text-embedding-3-large) — the old ivfflat
+-- index made the whole init script fail. Sequential scan is fine at
+-- current memory volumes; revisit (halfvec or 1536-dim embeddings) if
+-- semantic search gets slow.
 
 -- Workflows
 CREATE TABLE workflows (

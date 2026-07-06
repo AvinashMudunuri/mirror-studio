@@ -33,18 +33,26 @@ Open question: is step 1 worth doing before Postgres persistence, given it
 would read the filesystem it already has? (Recommendation: yes — it makes
 runs reviewable by humans without reading JSON, today.)
 
-## 2. Postgres persistence (schema exists, unused)
+## 2. Postgres persistence — DECIDED & WIRED (2026-07-06)
 
-Episodes and agent memory are not persisted; the pipeline passes a no-op
-mock memory. `infrastructure` SQL schema exists but is unwired. Known
-defect to fix on the way in: the `agent_memory` upsert requires a unique
-constraint on `(agent_id, key)` that the SQL schema lacks.
+Model: **the filesystem run folder is the source of truth**; Postgres holds
+the *latest* episode content per (season, episode_number) plus agent
+memory. When `DATABASE_URL` is set, the pipeline writes agent memory to
+Postgres and upserts the finished episode (best effort — a DB failure
+never kills a completed run); `npm run persist:run [run-folder]` backfills
+any committed run for free.
 
-Open questions:
-- Persist per-run artifacts (episodes, reviews) in addition to the
-  filesystem, or replace the filesystem as the source of truth?
-- Does agent memory (`remember`/`recall`) earn persistence yet? Nothing
-  reads memories across runs today.
+Fixed on the way in (both verified against a live Postgres 16 + pgvector):
+- `agent_memory` upsert crashed without `UNIQUE (agent_id, key)` — added
+  to the init schema; existing DBs use
+  `infrastructure/db/migrations/2026-07-06-agent-memory-fixes.sql`.
+- The 3072-dim ivfflat index aborted schema init (pgvector caps indexes at
+  2000 dims) — removed; sequential scan until volumes demand halfvec or
+  1536-dim embeddings.
+
+Still open: nothing *reads* agent memory across runs yet (previous-episode
+context for the Story Architect is the obvious first consumer); semantic
+search needs `OPENAI_API_KEY` for embeddings and is untested live.
 
 ## 3. Message bus (decided: out of runtime — ADR 001)
 
