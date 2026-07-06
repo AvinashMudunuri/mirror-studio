@@ -1,0 +1,110 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "First choice (scene-2, hallway) is a false dilemma — 'bold intro' leads to a warmer, more rewarding path (Maya, social foothold) while 'head down' leads to a more passive, lower-agency scene with no NPC payoff",
+      "location": "choice-1",
+      "impact": "Confident playstyle feels clearly 'correct,' discouraging cautious/introverted players from feeling good about their choice",
+      "fix": "Give the 'head down' path its own distinct social reward (e.g., a peer notices her composure) so both routes feel equally valid",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPLAYABILITY",
+      "issue": "All lunch-table branches (5a/5b/5c) funnel into the same scene-7 with only minor variation in tone, and the final 4 endings are the real branch point — meaning the first 6 choices have low narrative payoff on replay",
+      "location": "scene-4 through scene-6 branches converging at scene-7",
+      "impact": "Players may feel their early choices didn't matter much once they realize the convergence, reducing motivation to replay from the start",
+      "fix": "Add small persistent state callbacks in Act 2 (e.g., Tyler or Chloe remarks differently in scene-7/8 based on earlier choice) so early choices visibly echo forward",
+      "priority": 6
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scene lengths are extremely uniform (mostly 1-1.5 min) with little variation, creating a metronomic rhythm without a clear high-tension peak scene",
+      "location": "throughout",
+      "impact": "Emotional beats risk feeling same-weight; nothing stands out as the 'big' scene",
+      "fix": "Lengthen/intensify one key confrontation (e.g., the Tyler mockery scene) to create a clear peak before the quieter resolution",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "AGENCY",
+      "issue": "Choices are almost all binary or ternary A/B dialogue picks with similar structure (kind vs. self-protective), giving limited variety in choice TYPE",
+      "location": "choice-1 through choice-8",
+      "impact": "Repetitive choice format can make the 13-minute experience feel mechanically samey despite emotional variety",
+      "fix": "Introduce at least one choice with a different mechanic feel — e.g., a timed/pressure choice, or a choice affecting how Jordan is introduced to Ms. Alvarez",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "No explicit onboarding for how trait changes work or that this is a trait-driving narrative; players may not realize CONFIDENCE/EMPATHY/ADAPTABILITY are being tracked",
+      "location": "episode start",
+      "impact": "Players might not understand why an ending occurred or how to intentionally build a personality profile",
+      "fix": "Add a subtle UI/narrative cue after first choice showing trait shift, even briefly, to teach the system diegetically",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "Opening scene-1 has no choice for 90 seconds, delaying first interactive moment",
+      "location": "scene-1 to scene-2",
+      "impact": "Slower start to agency; some players may feel like passive readers before their first real decision at choice-1",
+      "fix": "Consider a small optional interaction in scene-1 (e.g., choosing how to react to being brushed past) to establish agency immediately",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Strong internal-voice writing creates immediate relatable emotional hook (anxious teen interiority)",
+    "Choice framing consistently ties back to core traits (confidence/empathy/adaptability) in a legible way",
+    "The four-ending convergence structure (9a-9d) is a smart, replayable capstone that rewards emotional risk-taking",
+    "NPCs (Tyler, Chloe, Maya, Jordan) have consistent, believable characterization that reacts appropriately to player choices",
+    "Good use of callback dialogue (Jordan's 'worse conversation' line) rewarding attentive/consistent players",
+    "The overall arc (setup->pressure->consequence->vulnerability->resolution) is clean and age-appropriate for the 11-14 target"
+  ],
+  "recommendations": [
+    "Add mid-branch state tracking so early lunch choice affects tone/dialogue in Act 2 scenes even though structurally they converge",
+    "Vary scene pacing/length to create one clear 'peak' emotional scene distinct from the rest",
+    "Diversify choice mechanics beyond dialogue A/B (e.g., add a sequence/ordering choice or timed choice)",
+    "Consider giving the 'quiet observer' path in scene-2/3b a slightly stronger emotional payoff to balance against the 'bold' path's social reward",
+    "Add a subtle trait-shift indicator early on to teach the underlying system without breaking immersion"
+  ],
+  "scores": {
+    "engagement": 7,
+    "choiceQuality": 7,
+    "pacing": 7,
+    "playerAgency": 6,
+    "replayability": 7,
+    "overall": 7
+  },
+  "metrics": {
+    "averageSceneLength": 75,
+    "choiceFrequency": 0.6,
+    "branchingFactor": 2.25,
+    "estimatedReplayValue": 7
+  },
+  "summary": {
+    "verdict": "A well-crafted, emotionally resonant episode with a clear thematic throughline and satisfying convergence structure, but choice variety and mid-game consequence visibility could be strengthened to boost replay incentive and player agency.",
+    "keyIssues": [
+      "First hallway choice slightly favors the 'confident' option in perceived reward",
+      "Early lunch-table choices converge without much lasting narrative echo",
+      "Choice mechanics are repetitive in format (mostly binary dialogue picks)"
+    ],
+    "topStrengths": [
+      "Strong character voice and relatable internal monologue",
+      "Four-ending structure rewards emotional risk and vulnerability",
+      "Consistent trait-choice mapping supports clear thematic goals"
+    ],
+    "mustFix": [
+      "Balance reward feel between confident and cautious opening choices",
+      "Add persistent echoes of early choices into later scenes to reinforce agency"
+    ],
+    "niceToHave": [
+      "Vary scene length for a clearer emotional peak",
+      "Introduce a non-dialogue choice type for mechanical variety",
+      "Add lightweight tutorial cue for trait system"
+    ]
+  }
+}

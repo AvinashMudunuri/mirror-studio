@@ -164,6 +164,31 @@ describe('Story Architect self-repair', () => {
     expect(llmCall).toHaveBeenCalledTimes(1);
   });
 
+  it('wraps a bare outline object (no episodeOutline key) instead of failing', async () => {
+    // Observed live on REVISION_REQUEST: the model returned the outline
+    // fields at the top level, crashing the revision loop.
+    const bare = {
+      content: '```json\n' + JSON.stringify(validOutline()) + '\n```',
+      model: 'claude-sonnet-5',
+      provider: 'claude',
+      usage: { inputTokens: 100, outputTokens: 100, totalTokens: 200 },
+      stopReason: 'end_turn'
+    };
+    const llmCall = jest.fn<any>().mockResolvedValue(bare);
+    const agent = await initAgent(llmCall);
+
+    const result = await agent.process({
+      type: 'REVISION_REQUEST' as const,
+      revisionRequest: {
+        currentDraft: validOutline() as any,
+        feedback: [{ from: 'QA_REVIEWER', message: 'fix pacing', severity: 'MAJOR' as const }],
+        constraints: []
+      }
+    });
+    expect(result.episodeOutline.title).toBe('First Day');
+    expect(result.episodeOutline.scenes).toHaveLength(4);
+  });
+
   it('repairs a broken graph via one extra LLM call with the errors in the prompt', async () => {
     const llmCall = jest.fn<any>()
       .mockResolvedValueOnce(llmResponse(brokenOutline()))

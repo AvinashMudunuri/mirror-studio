@@ -1,0 +1,1426 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1",
+      "lines": [
+        {
+          "id": "s1-1",
+          "character": "NARRATOR",
+          "text": "The front doors swallow her into a river of strangers — backpacks, laughter, lockers slamming like punctuation she doesn't understand yet."
+        },
+        {
+          "id": "s1-2",
+          "character": "INTERNAL",
+          "text": "Okay so. New school. Totally normal. I've done this before. (I have never done this before.)"
+        },
+        {
+          "id": "s1-3",
+          "character": "player",
+          "text": "Locker two-fourteen. Two-fourteen. Two—",
+          "emotion": "muttering",
+          "action": "checks schedule for the third time"
+        },
+        {
+          "id": "s1-4",
+          "character": "NARRATOR",
+          "text": "A group brushes past, already laughing about something that happened before she existed to them."
+        },
+        {
+          "id": "s1-5",
+          "character": "INTERNAL",
+          "text": "Everyone already has a person. I used to have a person."
+        },
+        {
+          "id": "s1-6",
+          "character": "player",
+          "text": "Okay. Fine. Two-fourteen is—",
+          "action": "straightens backpack straps"
+        },
+        {
+          "id": "s1-7",
+          "character": "NARRATOR",
+          "text": "She spots it — wedged between two lockers covered in stickers that aren't hers."
+        },
+        {
+          "id": "s1-8",
+          "character": "INTERNAL",
+          "text": "Just get through first period. That's the whole plan. Get through first period."
+        },
+        {
+          "id": "s1-9",
+          "character": "player",
+          "text": "Here goes.",
+          "emotion": "small breath",
+          "pause": 800
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2",
+      "lines": [
+        {
+          "id": "s2-1",
+          "character": "NARRATOR",
+          "text": "The hallway narrows into a gauntlet of glances. Near the lockers, a boy leans back like he's been waiting for exactly this."
+        },
+        {
+          "id": "s2-2",
+          "character": "tyler",
+          "text": "Yo — fresh meat alert! Tour costs five bucks. Cash only.",
+          "emotion": "grinning, too loud",
+          "action": "leans against locker, arms crossed"
+        },
+        {
+          "id": "s2-3",
+          "character": "chloe",
+          "text": "...Ha. Yeah.",
+          "emotion": "laughs a half-beat late",
+          "action": "glances at Tyler first"
+        },
+        {
+          "id": "s2-4",
+          "character": "INTERNAL",
+          "text": "Okay so that's — a whole thing. Cool. Cool cool cool."
+        },
+        {
+          "id": "s2-5",
+          "character": "tyler",
+          "text": "What, no comeback? Tough crowd.",
+          "action": "leans in, enjoying himself"
+        },
+        {
+          "id": "s2-6",
+          "character": "INTERNAL",
+          "text": "Rehearsed line. He's probably used it on the last new kid too. Doesn't make it land any less."
+        },
+        {
+          "id": "s2-7",
+          "character": "NARRATOR",
+          "text": "Every face in the hallway seems to slow down just enough to watch what she does next."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3a",
+      "lines": [
+        {
+          "id": "s3a-1",
+          "character": "NARRATOR",
+          "text": "Down the hall, a girl with an armful of textbooks watched the whole exchange, one eyebrow raised."
+        },
+        {
+          "id": "s3a-2",
+          "character": "priya",
+          "text": "Okay, that was either really brave or really unhinged. Five bucks, though? Steep.",
+          "emotion": "impressed",
+          "action": "catches up, matching her pace"
+        },
+        {
+          "id": "s3a-3",
+          "character": "player",
+          "text": "Okay so — I figured if he's charging, I should at least get a discount for showing up early.",
+          "action": "buying a second to think"
+        },
+        {
+          "id": "s3a-4",
+          "character": "priya",
+          "text": "Oh, I like her. I'm Priya.",
+          "emotion": "genuine laugh"
+        },
+        {
+          "id": "s3a-5",
+          "character": "player",
+          "text": "Maya."
+        },
+        {
+          "id": "s3a-6",
+          "character": "priya",
+          "text": "Tyler's harmless, mostly. Loud, mostly harmless. It's a package deal."
+        },
+        {
+          "id": "s3a-7",
+          "character": "player",
+          "text": "Noted. Loud. Mostly harmless.",
+          "action": "mouths it once before saying it out loud"
+        },
+        {
+          "id": "s3a-8",
+          "character": "priya",
+          "text": "\"Mostly harmless.\" I'm gonna use that. Hey — you got lunch fourth period?",
+          "action": "tilts head, tries the phrase on"
+        },
+        {
+          "id": "s3a-9",
+          "character": "player",
+          "text": "Uh — yeah, actually."
+        },
+        {
+          "id": "s3a-10",
+          "character": "priya",
+          "text": "Sit with us. Consider it a rescue mission."
+        },
+        {
+          "id": "s3a-11",
+          "character": "player",
+          "text": "Yeah. Okay. Cool.",
+          "emotion": "small, real smile"
+        },
+        {
+          "id": "s3a-12",
+          "character": "INTERNAL",
+          "text": "That was... easy? Why do I feel like I just passed a test I didn't study for."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3b",
+      "lines": [
+        {
+          "id": "s3b-1",
+          "character": "NARRATOR",
+          "text": "She decides the safest move is no move at all — just watch, catalogue, survive."
+        },
+        {
+          "id": "s3b-2",
+          "character": "INTERNAL",
+          "text": "Okay so — that kid by the window, gone the second the bell rings. Whoever's near the door, everyone lets them go first. Rules. There's always rules, I just don't know them yet."
+        },
+        {
+          "id": "s3b-3",
+          "character": "NARRATOR",
+          "text": "In the back of the classroom, a kid with a battered paperback held up like a shield doesn't look up once — not at the door, not at the clock, not at anyone."
+        },
+        {
+          "id": "s3b-4",
+          "character": "INTERNAL",
+          "text": "Huh. Bird book. In the middle of all this. Kind of respect it, honestly."
+        },
+        {
+          "id": "s3b-5",
+          "character": "NARRATOR",
+          "text": "The bell rings like an alarm going off inside her ribs. Before she's even out of her seat, the kid with the book is already gone — out the door, down the hall, like they'd mapped the exit before the bell finished ringing."
+        },
+        {
+          "id": "s3b-6",
+          "character": "INTERNAL",
+          "text": "Okay. That's a skill. I need that skill."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4",
+      "lines": [
+        {
+          "id": "s4-1",
+          "character": "NARRATOR",
+          "text": "The cafeteria hits like a wall of sound — trays clattering, a hundred conversations already in progress without her."
+        },
+        {
+          "id": "s4-2",
+          "character": "priya",
+          "text": "Maya! Over here, come on!",
+          "action": "waving, spotting her across the room"
+        },
+        {
+          "id": "s4-3",
+          "character": "NARRATOR",
+          "text": "In the corner, a familiar face is folded over a battered field guide, alone, an empty seat across from them that nobody's claimed. Near the windows, an entire table sits untouched, like it's waiting for someone brave enough to be alone in public."
+        },
+        {
+          "id": "s4-4",
+          "character": "INTERNAL",
+          "text": "Okay so. Three options. Popular table, invisible table, or the kid with the bird book. No pressure. Definitely no pressure."
+        },
+        {
+          "id": "s4-5",
+          "character": "chloe",
+          "text": "...Is she coming or—",
+          "action": "glances over, quick, then back down at her tray"
+        },
+        {
+          "id": "s4-6",
+          "character": "tyler",
+          "text": "She's got options, Chloe, let the girl live.",
+          "emotion": "loud, to no one and everyone"
+        },
+        {
+          "id": "s4-7",
+          "character": "INTERNAL",
+          "text": "Everybody's watching. Great. Love that. Love this for me."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5a",
+      "lines": [
+        {
+          "id": "s5a-1",
+          "character": "NARRATOR",
+          "text": "Lunch at Priya's table moves easy, familiar, like slipping into a rhythm someone else already started."
+        },
+        {
+          "id": "s5a-2",
+          "character": "priya",
+          "text": "Okay so — tell the table the five dollar story, I already ruined the ending."
+        },
+        {
+          "id": "s5a-3",
+          "character": "player",
+          "text": "Okay so, basically Tyler tried to charge me a toll—",
+          "emotion": "a little looser now"
+        },
+        {
+          "id": "s5a-4",
+          "character": "tyler",
+          "text": "It's a legitimate business model, I don't make the rules, I am the rules—",
+          "emotion": "delighted with himself"
+        },
+        {
+          "id": "s5a-5",
+          "character": "chloe",
+          "text": "I mean — he kind of does just make them up though—",
+          "action": "half-beat laugh"
+        },
+        {
+          "id": "s5a-6",
+          "character": "tyler",
+          "text": "Hah — see, this is betrayal, Chloe, this is what betrayal looks like.",
+          "action": "points, laugh-exhale first"
+        },
+        {
+          "id": "s5a-7",
+          "character": "NARRATOR",
+          "text": "Across the room, Jordan sits alone, a field guide propped against a juice carton like a tiny barricade."
+        },
+        {
+          "id": "s5a-8",
+          "character": "tyler",
+          "text": "Careful — don't let it migrate on you.",
+          "emotion": "pleased with a joke he'll forget by tomorrow",
+          "action": "nods toward Jordan's bag"
+        },
+        {
+          "id": "s5a-9",
+          "character": "NARRATOR",
+          "text": "The table laughs. Chloe half a beat behind, like always. Every eye slides to Maya, waiting to see which way she'll go."
+        },
+        {
+          "id": "s5a-10",
+          "character": "INTERNAL",
+          "text": "Okay so. This is the part where I find out what kind of new kid I am."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5b",
+      "lines": [
+        {
+          "id": "s5b-1",
+          "character": "NARRATOR",
+          "text": "Eating alone at the empty table has a spotlight quality she didn't expect — like everyone can see exactly how alone it is."
+        },
+        {
+          "id": "s5b-2",
+          "character": "jordan",
+          "text": "Is the seat taken? — sorry, that's a stupid question, obviously it's a table, tables have seats, I just meant— yeah. Is it okay if I sit here.",
+          "emotion": "nervous",
+          "action": "book held slightly raised, like armor"
+        },
+        {
+          "id": "s5b-3",
+          "character": "INTERNAL",
+          "text": "Okay so. This is either the best or worst possible next five minutes."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5c",
+      "lines": [
+        {
+          "id": "s5c-1",
+          "character": "NARRATOR",
+          "text": "Jordan doesn't look up right away, like they're braced for the seat to be a mistake."
+        },
+        {
+          "id": "s5c-2",
+          "character": "jordan",
+          "text": "...oh. Um. Hi.",
+          "action": "quick, too-fast eye contact, then away"
+        },
+        {
+          "id": "s5c-3",
+          "character": "player",
+          "text": "Okay so, is this seat cursed or can I actually sit?"
+        },
+        {
+          "id": "s5c-4",
+          "character": "jordan",
+          "text": "Statistically? Unconfirmed. I'd sit anyway.",
+          "emotion": "almost smiling"
+        },
+        {
+          "id": "s5c-5",
+          "character": "player",
+          "text": "Bold choice from someone hiding behind a bird book."
+        },
+        {
+          "id": "s5c-6",
+          "character": "jordan",
+          "text": "It's a field guide. There's a difference. The difference is very important to me.",
+          "emotion": "deadpan",
+          "action": "holds it up slightly higher"
+        },
+        {
+          "id": "s5c-7",
+          "character": "player",
+          "text": "Noted. So — new, or just built different?"
+        },
+        {
+          "id": "s5c-8",
+          "character": "jordan",
+          "text": "New. Three schools in four years, actually. I've gotten really good at finding the fastest route to the bathroom and really bad at, uh, everything else about starting over."
+        },
+        {
+          "id": "s5c-9",
+          "character": "player",
+          "text": "Okay that's oddly specific.",
+          "emotion": "small, genuine laugh"
+        },
+        {
+          "id": "s5c-10",
+          "character": "jordan",
+          "text": "You learn what you learn.",
+          "action": "shrugs"
+        },
+        {
+          "id": "s5c-11",
+          "character": "NARRATOR",
+          "text": "Across the cafeteria, Priya waves, catching Maya's eye, mouthing something like come on."
+        },
+        {
+          "id": "s5c-12",
+          "character": "jordan",
+          "text": "You can go, it's fine. I'm not gonna, like, keep score. ...I mean I might. But not out loud.",
+          "emotion": "voice going flat and careful",
+          "action": "noticing the wave"
+        },
+        {
+          "id": "s5c-13",
+          "character": "INTERNAL",
+          "text": "Okay so. Decision time."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6a1",
+      "lines": [
+        {
+          "id": "s6a1-1",
+          "character": "NARRATOR",
+          "text": "The laugh comes out before Maya decides to let it."
+        },
+        {
+          "id": "s6a1-2",
+          "character": "player",
+          "text": "",
+          "emotion": "laughs a beat too early, then wishes she hadn't",
+          "action": "catches herself, keeps laughing anyway"
+        },
+        {
+          "id": "s6a1-3",
+          "character": "tyler",
+          "text": "See?! She gets it.",
+          "emotion": "grinning, victorious"
+        },
+        {
+          "id": "s6a1-4",
+          "character": "chloe",
+          "text": "",
+          "emotion": "laughs too, half-beat behind, like she was waiting for permission",
+          "action": "picks at her bracelet while laughing"
+        },
+        {
+          "id": "s6a1-5",
+          "character": "NARRATOR",
+          "text": "Priya doesn't laugh. She doesn't say anything either — just looks at her tray a second too long."
+        },
+        {
+          "id": "s6a1-6",
+          "character": "priya",
+          "text": "Okay so — anyone doing the bio homework tonight or are we all just winging it?",
+          "emotion": "quiet, changing the subject",
+          "action": "taps the table twice"
+        },
+        {
+          "id": "s6a1-7",
+          "character": "INTERNAL",
+          "text": "That landed weird. Why did that land so weird. I won. Didn't I win?"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6a2",
+      "lines": [
+        {
+          "id": "s6a2-1",
+          "character": "player",
+          "text": "...That's not cool, honestly.",
+          "emotion": "even, not loud"
+        },
+        {
+          "id": "s6a2-2",
+          "character": "NARRATOR",
+          "text": "A beat. The table doesn't combust. Nothing dramatic happens at all."
+        },
+        {
+          "id": "s6a2-3",
+          "character": "tyler",
+          "text": "Relax, it's a joke. ...whatever, man, it's not that deep.",
+          "emotion": "shrugs, already bored",
+          "action": "taps fork against the table, faster than before"
+        },
+        {
+          "id": "s6a2-4",
+          "character": "NARRATOR",
+          "text": "Chloe doesn't laugh this time. She just looks at Maya, like she's re-doing a math problem in her head."
+        },
+        {
+          "id": "s6a2-5",
+          "character": "chloe",
+          "text": "...Huh.",
+          "emotion": "quiet, almost to herself"
+        },
+        {
+          "id": "s6a2-6",
+          "character": "priya",
+          "text": "Okay so. Noted.",
+          "emotion": "small approving nod, seeing her clearly for the first time"
+        },
+        {
+          "id": "s6a2-7",
+          "character": "INTERNAL",
+          "text": "Okay. That didn't blow up. That's... actually kind of a relief."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-priya-fade",
+      "lines": [
+        {
+          "id": "spf-1",
+          "character": "NARRATOR",
+          "text": "Days pass. Priya is friendly at the lockers, warm in the halls — but the invitation back to the table never quite comes."
+        },
+        {
+          "id": "spf-2",
+          "character": "priya",
+          "text": "Hey — good luck on the quiz.",
+          "action": "small wave, walking past"
+        },
+        {
+          "id": "spf-3",
+          "character": "player",
+          "text": "Yeah, you too.",
+          "action": "waves back"
+        },
+        {
+          "id": "spf-4",
+          "character": "NARRATOR",
+          "text": "Priya keeps walking. It isn't cold. It just isn't an invitation."
+        },
+        {
+          "id": "spf-5",
+          "character": "INTERNAL",
+          "text": "Not mad. Just... noted."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-priya-respect",
+      "lines": [
+        {
+          "id": "spr-1",
+          "character": "NARRATOR",
+          "text": "The next morning, Priya falls into step beside her at the lockers, easy, like she'd been meaning to."
+        },
+        {
+          "id": "spr-2",
+          "character": "priya",
+          "text": "Hey — that was a good thing you did. Yesterday. With Tyler."
+        },
+        {
+          "id": "spr-3",
+          "character": "player",
+          "text": "Okay so — I wasn't sure anyone noticed.",
+          "emotion": "a little thrown"
+        },
+        {
+          "id": "spr-4",
+          "character": "priya",
+          "text": "I noticed. Come sit with us again — I'll save you the seat by the window.",
+          "emotion": "small smile"
+        },
+        {
+          "id": "spr-5",
+          "character": "INTERNAL",
+          "text": "Huh. Turns out that's the seat that actually matters."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6b1",
+      "lines": [
+        {
+          "id": "s6b1-1",
+          "character": "jordan",
+          "text": "...oh. Okay. Cool. Thanks.",
+          "action": "settling in, book lowering slightly"
+        },
+        {
+          "id": "s6b1-2",
+          "character": "player",
+          "text": "No problem. Fair warning, I have no idea where anything is in this school, so if you see me wandering into a supply closet, that's normal now."
+        },
+        {
+          "id": "s6b1-3",
+          "character": "jordan",
+          "text": "That tracks. I walked into the teacher's lounge yesterday. Twice.",
+          "emotion": "small, real laugh"
+        },
+        {
+          "id": "s6b1-4",
+          "character": "player",
+          "text": "Twice?"
+        },
+        {
+          "id": "s6b1-5",
+          "character": "jordan",
+          "text": "The first time was an accident. The second time I panicked and went back in like I meant to."
+        },
+        {
+          "id": "s6b1-6",
+          "character": "player",
+          "text": "Okay that's the most unhinged recovery plan I've ever heard.",
+          "emotion": "laughing"
+        },
+        {
+          "id": "s6b1-7",
+          "character": "jordan",
+          "text": "Thank you. I workshopped it in real time.",
+          "emotion": "a little proud"
+        },
+        {
+          "id": "s6b1-8",
+          "character": "NARRATOR",
+          "text": "Something in Jordan's shoulders loosens, like they've set the book down without noticing."
+        },
+        {
+          "id": "s6b1-9",
+          "character": "jordan",
+          "text": "First days are the worst, honestly. You'd think it'd get easier. It does not get easier."
+        },
+        {
+          "id": "s6b1-10",
+          "character": "player",
+          "text": "Okay so, glad it's not just me spiraling internally this whole time."
+        },
+        {
+          "id": "s6b1-11",
+          "character": "jordan",
+          "text": "Oh, we're all spiraling. Some of us just have a bird book to hide it.",
+          "emotion": "deadpan"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6b2",
+      "lines": [
+        {
+          "id": "s6b2-1",
+          "character": "player",
+          "text": "I guess. Whatever.",
+          "emotion": "shrug"
+        },
+        {
+          "id": "s6b2-2",
+          "character": "jordan",
+          "text": "...right. Cool.",
+          "action": "small nod, sitting, book still up"
+        },
+        {
+          "id": "s6b2-3",
+          "character": "NARRATOR",
+          "text": "The conversation doesn't really start. Jordan asks one question, gets one-word answers, and the silence fills in around the edges."
+        },
+        {
+          "id": "s6b2-4",
+          "character": "jordan",
+          "text": "So — where'd you move from?",
+          "emotion": "quiet, testing"
+        },
+        {
+          "id": "s6b2-5",
+          "character": "player",
+          "text": "Uh. Around.",
+          "action": "checking phone"
+        },
+        {
+          "id": "s6b2-6",
+          "character": "jordan",
+          "text": "...Cool. Yeah.",
+          "emotion": "small, disappointed"
+        },
+        {
+          "id": "s6b2-7",
+          "character": "NARRATOR",
+          "text": "Jordan eats fast after that, packs up before the bell even rings."
+        },
+        {
+          "id": "s6b2-8",
+          "character": "jordan",
+          "text": "I'm gonna — yeah. See you around.",
+          "action": "standing, not quite looking at her"
+        },
+        {
+          "id": "s6b2-9",
+          "character": "INTERNAL",
+          "text": "That was... not my best moment."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6c1",
+      "lines": [
+        {
+          "id": "s6c1-1",
+          "character": "player",
+          "text": "I'm good here, actually."
+        },
+        {
+          "id": "s6c1-2",
+          "character": "jordan",
+          "text": "...oh. Okay. Cool.",
+          "emotion": "visibly relieved, trying to play it cool and failing"
+        },
+        {
+          "id": "s6c1-3",
+          "character": "player",
+          "text": "So. Three schools, huh. That's a lot of first days."
+        },
+        {
+          "id": "s6c1-4",
+          "character": "jordan",
+          "text": "Yeah. You'd think I'd have a system by now. I have a system for finding bathrooms. Everything else is just — improvised.",
+          "action": "turning the field guide over in their hands"
+        },
+        {
+          "id": "s6c1-5",
+          "character": "player",
+          "text": "What happened? If that's — you don't have to—"
+        },
+        {
+          "id": "s6c1-6",
+          "character": "jordan",
+          "text": "Dad's job. We move when it moves. I've stopped, um. Really unpacking all the way. Feels like less to carry if I have to leave again.",
+          "action": "deciding to answer, after a beat"
+        },
+        {
+          "id": "s6c1-7",
+          "character": "player",
+          "text": "That's... actually really smart. And really sad.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s6c1-8",
+          "character": "jordan",
+          "text": "Yeah. Both things can be true, I've found.",
+          "emotion": "small, surprised laugh"
+        },
+        {
+          "id": "s6c1-9",
+          "character": "NARRATOR",
+          "text": "For the first time, Jordan sets the book all the way down on the table."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6c2",
+      "lines": [
+        {
+          "id": "s6c2-1",
+          "character": "NARRATOR",
+          "text": "Maya waves back and crosses the cafeteria before she can think too hard about it."
+        },
+        {
+          "id": "s6c2-2",
+          "character": "priya",
+          "text": "Okay so — glad you made it. Come on, sit.",
+          "action": "scooting over, welcoming"
+        },
+        {
+          "id": "s6c2-3",
+          "character": "player",
+          "text": "",
+          "action": "settles in, laughs at something Tyler says a beat later",
+          "emotion": "easy, relieved"
+        },
+        {
+          "id": "s6c2-4",
+          "character": "NARRATOR",
+          "text": "It's easy. It's fun. It's exactly the kind of lunch she pictured having."
+        },
+        {
+          "id": "s6c2-5",
+          "character": "NARRATOR",
+          "text": "Across the room, Jordan sits alone again, field guide up, not looking over — except once, quick, like checking if it's safe, and then looking away just as fast."
+        },
+        {
+          "id": "s6c2-6",
+          "character": "INTERNAL",
+          "text": "...Huh."
+        },
+        {
+          "id": "s6c2-7",
+          "character": "NARRATOR",
+          "text": "The feeling doesn't have a name yet. It just sits there, quiet, under the laughter."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7",
+      "lines": [
+        {
+          "id": "s7-1",
+          "character": "NARRATOR",
+          "text": "By fifth period, the halls already know something happened at lunch — a few glances follow Maya now, curious, approving, unreadable."
+        },
+        {
+          "id": "s7-2",
+          "character": "ms_alvarez",
+          "text": "Partners are on the board. No, I won't be switching them. Yes, I know exactly what I'm doing.",
+          "action": "taps two fingers on her desk, not looking up",
+          "emotion": "dry"
+        },
+        {
+          "id": "s7-3",
+          "character": "NARRATOR",
+          "text": "Maya scans the list. Her name, and next to it — Jordan Kessler."
+        },
+        {
+          "id": "s7-4",
+          "character": "jordan",
+          "text": "...Guess we're stuck now.",
+          "emotion": "deadpan, not quite looking over"
+        },
+        {
+          "id": "s7-5",
+          "character": "player",
+          "text": "Okay so, semester-long. That's — a lot of togetherness."
+        },
+        {
+          "id": "s7-6",
+          "character": "ms_alvarez",
+          "text": "Maya and Jordan — funny, that. Almost like I thought about it.",
+          "action": "pushes up glasses that don't need it",
+          "emotion": "dry"
+        },
+        {
+          "id": "s7-7",
+          "character": "ms_alvarez",
+          "text": "You've got the whole semester. Use it to actually get to know each other, or use it to suffer separately in the same room. Your call. Only one of those gets you a good grade."
+        },
+        {
+          "id": "s7-8",
+          "character": "jordan",
+          "text": "So. Library, after school? Or we could just, uh, divide it up and never speak again. Efficient, if nothing else.",
+          "emotion": "testing"
+        },
+        {
+          "id": "s7-9",
+          "character": "INTERNAL",
+          "text": "Okay so. This is either going to be really good or really long."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8a",
+      "lines": [
+        {
+          "id": "s8a-1",
+          "character": "NARRATOR",
+          "text": "The library after school is quiet in a way the cafeteria never is. Books open, half-finished outline between them."
+        },
+        {
+          "id": "s8a-2",
+          "character": "player",
+          "text": "Okay so, I think we actually have a decent thesis buried in here somewhere."
+        },
+        {
+          "id": "s8a-3",
+          "character": "jordan",
+          "text": "\"Buried\" is generous. It's more like — fossilized. But yes.",
+          "emotion": "small, pleased"
+        },
+        {
+          "id": "s8a-4",
+          "character": "NARRATOR",
+          "text": "Jordan's bag shifts, and the battered field guide slides half out onto the table."
+        },
+        {
+          "id": "s8a-5",
+          "character": "player",
+          "text": "You carry that everywhere, huh."
+        },
+        {
+          "id": "s8a-6",
+          "character": "jordan",
+          "text": "It's my grandma's, actually. Bird book. She died before I was old enough to remember her voice, so I just — I don't know. Birds feel like the closest thing I've got.",
+          "action": "hand resting on the cover",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s8a-7",
+          "character": "NARRATOR",
+          "text": "Jordan doesn't look up right away, waiting to see what happens to the silence."
+        },
+        {
+          "id": "s8a-8",
+          "character": "jordan",
+          "text": "Do you ever feel like you don't fit in either? Or is that just, uh, a me thing.",
+          "emotion": "quiet, testing the water"
+        },
+        {
+          "id": "s8a-9",
+          "character": "INTERNAL",
+          "text": "Okay so. This is the real question. The actual one."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8b",
+      "lines": [
+        {
+          "id": "s8b-1",
+          "character": "NARRATOR",
+          "text": "The work session is efficient. Outline, sources, citations — Jordan speaks only when the project requires it."
+        },
+        {
+          "id": "s8b-2",
+          "character": "jordan",
+          "text": "You can take the intro, I'll do the habitat section. It's basically already written in my head.",
+          "emotion": "flat, focused"
+        },
+        {
+          "id": "s8b-3",
+          "character": "player",
+          "text": "Sure. Sounds good."
+        },
+        {
+          "id": "s8b-4",
+          "character": "NARRATOR",
+          "text": "They work in silence for a long stretch, the kind that isn't quite comfortable but isn't quite hostile either."
+        },
+        {
+          "id": "s8b-5",
+          "character": "NARRATOR",
+          "text": "As they pack up, Jordan hesitates, bag half-zipped, like there's a sentence stuck somewhere behind their teeth."
+        },
+        {
+          "id": "s8b-6",
+          "character": "jordan",
+          "text": "Hey, can I — never mind. It's not important.",
+          "emotion": "starting, stopping"
+        },
+        {
+          "id": "s8b-7",
+          "character": "INTERNAL",
+          "text": "Okay so. That was clearly something."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9a",
+      "lines": [
+        {
+          "id": "s9a-1",
+          "character": "player",
+          "text": "Yeah. Actually — every single day. I'm apparently very good at looking like I know what I'm doing. It's mostly a bit."
+        },
+        {
+          "id": "s9a-2",
+          "character": "jordan",
+          "text": "You hide it better than I do, then.",
+          "emotion": "small, disbelieving laugh"
+        },
+        {
+          "id": "s9a-3",
+          "character": "player",
+          "text": "Okay so, don't tell anyone. I have a reputation to protect. A fake one, but still."
+        },
+        {
+          "id": "s9a-4",
+          "character": "jordan",
+          "text": "Deal. Your secret's, um, statistically safe with me.",
+          "emotion": "relaxing, leaning back"
+        },
+        {
+          "id": "s9a-5",
+          "character": "NARRATOR",
+          "text": "Neither of them mentions the field guide sitting between them, but it feels like part of the conversation anyway."
+        },
+        {
+          "id": "s9a-6",
+          "character": "jordan",
+          "text": "This is — this is nice, actually. The talking. I don't do this a lot.",
+          "emotion": "quiet, genuine"
+        },
+        {
+          "id": "s9a-7",
+          "character": "player",
+          "text": "Yeah. Me neither, really.",
+          "emotion": "equally quiet"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9b",
+      "lines": [
+        {
+          "id": "s9b-1",
+          "character": "player",
+          "text": "Only every day since birth, so. Basically a personality trait at this point.",
+          "emotion": "light"
+        },
+        {
+          "id": "s9b-2",
+          "character": "jordan",
+          "text": "...Right. Yeah.",
+          "emotion": "small polite laugh",
+          "action": "picks the book back up, holds it a little higher"
+        },
+        {
+          "id": "s9b-3",
+          "character": "NARRATOR",
+          "text": "The conversation drifts back to the project after that, easy but surface, like a door that opened partway and quietly closed again."
+        },
+        {
+          "id": "s9b-4",
+          "character": "NARRATOR",
+          "text": "Walking home, the question sits with her longer than she expects."
+        },
+        {
+          "id": "s9b-5",
+          "character": "INTERNAL",
+          "text": "I could've just... said the real answer. Would that have been so bad?"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9c",
+      "lines": [
+        {
+          "id": "s9c-1",
+          "character": "player",
+          "text": "You can tell me. Or not. But you can."
+        },
+        {
+          "id": "s9c-2",
+          "character": "jordan",
+          "text": "It's dumb. It's just — nobody actually looked at me today. Like, all day. Teachers took attendance, people stepped around me in the hall, and it's — it's fine, I'm used to it, I just. Forgot how loud that is. Being invisible.",
+          "action": "long pause, picking words carefully"
+        },
+        {
+          "id": "s9c-3",
+          "character": "player",
+          "text": "That's not dumb.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s9c-4",
+          "character": "jordan",
+          "text": "...Thanks. For asking. Most people don't.",
+          "emotion": "small, almost surprised"
+        },
+        {
+          "id": "s9c-5",
+          "character": "player",
+          "text": "Okay so, for the record — I saw you. All day, actually. The bird book kind of gives you away."
+        },
+        {
+          "id": "s9c-6",
+          "character": "jordan",
+          "text": "That's fair. That's completely fair.",
+          "emotion": "a real laugh, surprised out of them"
+        },
+        {
+          "id": "s9c-7",
+          "character": "NARRATOR",
+          "text": "It's a late start. But it's a real one."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9d",
+      "lines": [
+        {
+          "id": "s9d-1",
+          "character": "player",
+          "text": "Okay so — see you tomorrow."
+        },
+        {
+          "id": "s9d-2",
+          "character": "jordan",
+          "text": "...Yeah. See you.",
+          "emotion": "small, deflating",
+          "action": "the sentence swallowed back down"
+        },
+        {
+          "id": "s9d-3",
+          "character": "NARRATOR",
+          "text": "The project gets finished on time. A good grade, even. But something quieter closes in the space where a question could have been."
+        },
+        {
+          "id": "s9d-4",
+          "character": "INTERNAL",
+          "text": "They almost said something. I wonder what it was."
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hi — I'm Maya. Is the five bucks non-negotiable, or...?"
+        },
+        {
+          "id": "b",
+          "text": "(Keep your head down and keep walking.)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c1a-1",
+            "character": "tyler",
+            "text": "...hah. Okay, she's got jokes.",
+            "emotion": "surprised, points and laugh-exhales first"
+          },
+          {
+            "id": "c1a-2",
+            "character": "chloe",
+            "text": "",
+            "emotion": "laughs for real this time, not a beat late",
+            "action": "genuinely caught off guard"
+          },
+          {
+            "id": "c1a-3",
+            "character": "INTERNAL",
+            "text": "Okay. That worked. That actually worked — don't push it."
+          }
+        ],
+        "b": [
+          {
+            "id": "c1b-1",
+            "character": "INTERNAL",
+            "text": "Not worth it. Head down, keep moving."
+          },
+          {
+            "id": "c1b-2",
+            "character": "tyler",
+            "text": "Relax, it's a joke, geez.",
+            "emotion": "shrugging it off, already looking for someone else"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Head over to Priya's table."
+        },
+        {
+          "id": "b",
+          "text": "Sit alone at the empty table by the windows."
+        },
+        {
+          "id": "c",
+          "text": "Sit across from Jordan."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2a-1",
+            "character": "priya",
+            "text": "Okay so — glad you didn't leave me hanging. Sit, sit.",
+            "action": "scoots over, taps table twice"
+          }
+        ],
+        "b": [
+          {
+            "id": "c2b-1",
+            "character": "NARRATOR",
+            "text": "She picks the empty table by the windows and sits down like it was the plan all along."
+          },
+          {
+            "id": "c2b-2",
+            "character": "INTERNAL",
+            "text": "Totally fine. Very chill. Very normal lunch-alone experience."
+          }
+        ],
+        "c": [
+          {
+            "id": "c2c-1",
+            "character": "NARRATOR",
+            "text": "She crosses the room before she can talk herself out of it, dropping into the seat across from the bird book."
+          },
+          {
+            "id": "c2c-2",
+            "character": "jordan",
+            "text": "...oh. Um. Hi.",
+            "action": "glancing up, quick, too fast"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "(Laugh along.)"
+        },
+        {
+          "id": "b",
+          "text": "\"That's not cool, honestly.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3a-1",
+            "character": "player",
+            "text": "",
+            "emotion": "laughs a beat too early",
+            "action": "commits to it once it's already out"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3b-1",
+            "character": "tyler",
+            "text": "Relax, it's a joke, God. ...whatever, man, it's not that deep.",
+            "action": "shrugs, doesn't fully back down but doesn't push again either"
+          },
+          {
+            "id": "c3b-2",
+            "character": "chloe",
+            "text": "",
+            "emotion": "doesn't laugh this time, just looks at her",
+            "action": "picks at her bracelet"
+          },
+          {
+            "id": "c3b-3",
+            "character": "priya",
+            "text": "",
+            "emotion": "small approving nod"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Smile and wave them over."
+        },
+        {
+          "id": "b",
+          "text": "Shrug. \"I guess, whatever.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4a-1",
+            "character": "jordan",
+            "text": "...oh. Okay. Cool. Thanks.",
+            "emotion": "visibly relaxing"
+          }
+        ],
+        "b": [
+          {
+            "id": "c4b-1",
+            "character": "jordan",
+            "text": "...right. Cool. Yeah.",
+            "action": "small nod, sitting anyway, book still held up"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stay. Finish lunch here."
+        },
+        {
+          "id": "b",
+          "text": "Wave back and get up to join Priya."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c5a-1",
+            "character": "jordan",
+            "text": "...oh. Okay. Cool.",
+            "emotion": "surprised, trying to hide it"
+          }
+        ],
+        "b": [
+          {
+            "id": "c5b-1",
+            "character": "jordan",
+            "text": "Yeah. No, go. Seriously. It's fine.",
+            "emotion": "already retreating behind the book"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-6",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Want to meet after school? Actually dig into it?\""
+        },
+        {
+          "id": "b",
+          "text": "\"Let's just split the work and keep it simple.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c6a-1",
+            "character": "jordan",
+            "text": "...oh. Okay. Yeah. I can do that.",
+            "action": "quick eye contact, then away"
+          }
+        ],
+        "b": [
+          {
+            "id": "c6b-1",
+            "character": "jordan",
+            "text": "Efficient. Got it.",
+            "action": "small nod, already retreating behind the book"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-7",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Yeah. Actually — every single day.\""
+        },
+        {
+          "id": "b",
+          "text": "\"Only every day since birth, so — basically a personality trait.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c7a-1",
+            "character": "jordan",
+            "text": "",
+            "emotion": "looking up, surprised, something in their posture easing"
+          }
+        ],
+        "b": [
+          {
+            "id": "c7b-1",
+            "character": "jordan",
+            "text": "...Right. Yeah.",
+            "emotion": "small polite laugh, but retreating slightly",
+            "action": "picks the book back up"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-8",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Hey — what's wrong?\""
+        },
+        {
+          "id": "b",
+          "text": "\"Okay so — see you tomorrow.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c8a-1",
+            "character": "jordan",
+            "text": "...Yeah, okay. Um.",
+            "action": "hesitates, then decides to stay"
+          }
+        ],
+        "b": [
+          {
+            "id": "c8b-1",
+            "character": "jordan",
+            "text": "...Yeah. See you.",
+            "emotion": "small, deflating"
+          }
+        ]
+      }
+    }
+  ],
+  "voiceNotes": "Maya (player) buys time with 'okay so' before almost every real answer — it's her tell that she's rehearsing in her head half a beat behind real time. Her sarcasm ('love this for me') only surfaces when she feels exposed, so it should spike right after a moment of being watched, not during private INTERNAL lines, which stay more sincere/anxious than her spoken voice. Tyler is loud because silence might mean someone gets to look at him without a script running; his 'whatever, man, it's not that deep' is a retreat, not a surrender — he never apologizes, he just stops pushing. Chloe's laugh timing is the whole character: track it precisely, half a beat late when uneasy, on time when she means it, absent entirely when she's genuinely reconsidering (choice-3b, 6a2). Priya rarely confronts directly — her disapproval shows as silence and subject-changes (tapping table twice), never as lecture; her approval shows as small, dry, almost throwaway lines ('Okay so. Noted.') that matter more because she doesn't oversell them. Jordan's dry deflection ('It's a field guide. There's a difference.') is armor; the vocabulary gets more precise and controlled the closer the conversation gets to something real, then breaks down into trailing fragments right at the vulnerable core (the grandmother line, the invisibility line) — that shift from articulate to fragmented IS the emotional beat, don't smooth it out. Ms. Alvarez should almost never explain herself twice; if she repeats a thought, it loses power. She rewards nothing with words, only with the placement of names on a board.",
+  "alternativeLines": [
+    {
+      "lineId": "s3a-3",
+      "alternatives": [
+        "Okay so — I figure if there's a toll, there's probably a loyalty discount somewhere.",
+        "Depends. Do I get a receipt?"
+      ],
+      "reasoning": "Keeps Maya's buy-time habit ('okay so') but offers a version with less setup, in case the scene needs a snappier read."
+    },
+    {
+      "lineId": "s5a-8",
+      "alternatives": [
+        "Careful — birds carry diseases, probably.",
+        "Is that thing gonna migrate south without you?"
+      ],
+      "reasoning": "Tyler's joke should feel thoughtless and half-improvised rather than clever — these alternates keep the same lazy cruelty if 'migrate' reads too polished for a 13-year-old's off-the-cuff insult."
+    },
+    {
+      "lineId": "s8a-6",
+      "alternatives": [
+        "It's my grandma's. She used to point out warblers in the backyard, back before — yeah. Birds are just, I don't know. What's left."
+      ],
+      "reasoning": "Alternate leans slightly more fragmented/trailing, if the scene needs Jordan's guard to crack more visibly in delivery rather than stay controlled through the whole line."
+    },
+    {
+      "lineId": "s9c-2",
+      "alternatives": [
+        "It's dumb, forget it — no, okay. Nobody looked at me today. Not once. I know that's not, like, a crisis, I just felt it more than usual."
+      ],
+      "reasoning": "Offers a version where Jordan tries to retract the confession mid-sentence before continuing anyway, heightening the vulnerability of being asked twice."
+    }
+  ]
+}

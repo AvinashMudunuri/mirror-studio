@@ -1,0 +1,95 @@
+[
+  {
+    "character": {
+      "id": "priya",
+      "name": "Priya Nair",
+      "age": 13,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Tall for her age with an easy, upright posture that reads as confidence even when she's uncertain. Dark hair usually in a high ponytail with flyaways she doesn't bother smoothing down. Wears mismatched enamel pins on her backpack straps — collects them, doesn't always know why.",
+        "distinctiveFeatures": [
+          "A laugh that starts before the joke's punchline, like she's already decided to enjoy it",
+          "Chews on pen caps when she's actually paying close attention to something",
+          "Wears her older sister's hand-me-down denim jacket even though it's a size too big"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "warm",
+          "socially fluent",
+          "quietly conflict-avoidant",
+          "genuinely curious about people"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 6,
+          "extraversion": 8,
+          "agreeableness": 8,
+          "neuroticism": 5
+        },
+        "mannerisms": [
+          "Taps two fingers on the table when she's deciding whether to say something",
+          "Tilts her head and repeats the last few words someone says, like she's trying them on",
+          "Goes quiet and busies herself with her food when a conversation turns uncomfortable, rather than joining in or objecting"
+        ],
+        "speechPatterns": [
+          "Uses 'okay but' to soften disagreement before she commits to it",
+          "Asks a lot of genuine questions — 'wait, so where'd you move from?' — real curiosity, not small talk",
+          "Goes clipped and short when she's uneasy, a contrast to her normal chattiness"
+        ],
+        "emotionalTendencies": "Priya reads rooms fast and adjusts to keep them comfortable — for herself and everyone else. She isn't performing popularity so much as she's genuinely good at making people feel noticed. Her discomfort shows up as silence and a shift in expression rather than confrontation; she'll telegraph disapproval with a look long before she says anything with her mouth. She respects people who say the thing she wishes she'd said."
+      },
+      "background": {
+        "family": "Middle kid of three, raised partly by an older sister who taught her that being liked is a kind of armor. Parents run a small pharmacy together and are rarely both home at once; Priya's grown used to being the one who keeps things running smoothly, at home and at school.",
+        "interests": [
+          "Volleyball (JV team)",
+          "Making overly detailed friendship bracelets she gives away and forgets she made",
+          "True crime podcasts she's not supposed to listen to yet"
+        ],
+        "strengths": [
+          "Reads social dynamics quickly and accurately",
+          "Genuinely inclusive instinct — notices new kids, lonely kids, awkward silences",
+          "Doesn't hold grudges"
+        ],
+        "struggles": [
+          "Avoids conflict even when she privately disagrees",
+          "Ties her sense of self-worth to being liked by everyone, which sometimes means staying quiet when she shouldn't",
+          "Underestimates her own influence — doesn't realize how much weight her approval carries at the table"
+        ],
+        "secrets": [
+          "She's noticed Tyler's jokes about Jordan for weeks and has said nothing, and it bothers her more than she admits",
+          "She sat with someone like Jordan once, back in sixth grade, and stopped when it cost her socially — she's never forgiven herself for it, quietly"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Keep her friend group easy and drama-free",
+          "Be the person new kids remember as 'the nice one'",
+          "Make varsity next year"
+        ],
+        "unconscious": [
+          "Wants someone else to do the brave thing first so she doesn't have to risk her own position",
+          "Craves proof that kindness and popularity aren't actually mutually exclusive"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual middle-school vernacular, warm and quick, no slang that ages out fast — grounded rather than trendy.",
+        "sentenceComplexity": "Short, conversational sentences; trails off when uneasy; rapid-fire when excited or curious.",
+        "emotionalExpressiveness": "Expressive through tone and face rather than direct statements about feelings — she shows approval or discomfort more than she names it.",
+        "examples": [
+          "Okay, that was either really brave or really unhinged, come sit with us.",
+          "Careful, don't let it migrate on you — okay, that's not even that funny, Tyler.",
+          "Hey. That was a good thing you did. ...You want the seat by the window or should I save you the good one?"
+        ]
+      },
+      "storyRole": "Priya is the episode's gravitational center of social belonging — the 'comfortable seat' the title promises. She's not a gatekeeper or a mean girl; she's the version of popularity that costs nothing upfront and everything in small increments. Her reactions across the episode function as a silent report card on Maya's choices: her approving nod in 'Small Stand' and her quiet withdrawal in 'A Friendly Distance' show the player, without a single lecture, that real respect and easy belonging aren't always the same thing.",
+      "arcPotential": [
+        "Episode 'First Impressions': Establishes Priya as warm and inclusive on the surface, tested by whether she'll actually act on her private discomfort with Tyler's jokes.",
+        "Future episode potential: Priya could be the one who finally says something to Tyler herself, once she's seen Maya do it first — an arc about borrowed courage becoming real courage.",
+        "Future episode potential: A storyline where Priya has to reconcile her sixth-grade memory of abandoning a friend with her present choices, giving her the same crossroads Maya faces now."
+      ]
+    },
+    "designNotes": "Priya needed to feel like a real, well-liked kid rather than a queen-bee archetype — someone whose popularity comes from genuine warmth, which is exactly what makes her silence in 'Fitting In, At a Cost' so quietly devastating. I gave her a private history (the sixth-grade friend she stopped sitting with) to explain why she never confronts Tyler herself: she's not cruel, she's scared of repeating a specific old failure. Her arc mirrors Maya's without duplicating it — she's the version of the choice already made and lived with, which is why her approval in 'Small Stand' and her retreat in 'A Friendly Distance' both land as earned rather than didactic. I treated the 'Maya Reyes' entry in the existing cast list as a naming artifact referring to this same character, and designed Priya to fully match those described beats under her correct name to avoid confusion with protagonist Maya Ortiz-Chen.",
+    "representationNotes": "Priya is written as an Indian-American middle schooler whose cultural background is present but not the point of her story — it shows up in small, unforced details (family running a pharmacy, an older sister's jacket) rather than being flagged as a 'lesson.' Her social fluency and popularity are grounded in genuine curiosity about people rather than superficial charisma, avoiding the 'mean popular girl' trope. Her conflict-avoidance is framed as a believable, sympathetic flaw tied to a specific personal wound, not a moral failing to be punished, which keeps her arc open for redemption and complexity in future episodes."
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "decision": "NEEDS_REVISION",
+  "creativeNotes": "This is genuinely strong branching work — probably the best-constructed episode I've reviewed this season. The scene-7 trifurcation (connected/neutral/guarded) is a real achievement: it means the *same* plot beat (getting paired with Jordan) carries entirely different emotional weight depending on how the player treated her at lunch. That's exactly the kind of consequence-tracking that makes choices feel like they matter instead of just cosmetic flavor text. Priya refusing to be a simple moral compass (her 'I used to let stuff like that go too' line) and the 'small stand' costing real social capital are both mature choices that respect the audience. A few things need tightening before this ships, mostly around a couple of repeated tics and some internal monologue that skews older than an 11-14 narrator.",
+  "specificFeedback": {
+    "story": [
+      "The three-way convergence at scene-7 is excellent design — don't lose this in revision, it's the spine of the episode's sophistication.",
+      "Scene-6c2b (the library glance) is a great addition — it stops 'abandoning Jordan' from being a choice that just quietly resolves itself, which is thematically important given the episode's own stated goal ('consequences don't disappear on their own').",
+      "The two 'quiet regret' endings (9b, 9d) are thinner than the other two — they resolve in a single internal line each. Give the player one more beat of specificity (what exactly does she notice about Jordan's exit, what does she almost say) so the loss actually lands instead of just being asserted.",
+      "Consider whether Tyler needs any single beat of texture beyond 'bully' — even one line that suggests he's performing for status rather than genuinely cruel would make choice-3 feel like a real social read rather than a morality quiz."
+    ],
+    "character": [
+      "Jordan is the strongest character here — the field guide/grandmother backstory is specific and earns its emotion rather than gesturing at 'sad backstory.' The 'I contain multitudes' line and the nervous run-on in scene-5b are both age-authentic and distinct.",
+      "Priya avoids the 'perfect popular mentor' trap nicely with her unfinished-business admission — keep that ambiguity, don't resolve it further, it's more interesting left open.",
+      "Chloe's 'laughs half a beat late' motif is a good character shorthand the first two times it appears, but it's now used nearly verbatim five times across the episode (s2-3, s5a-6, s6a1-3, s5a-9/s6a1... ). It's starting to read as a repeated script direction rather than an organic tic. Vary the description or trust the reader to remember it after scene 2-3."
+    ],
+    "dialogue": [
+      "Jordan's dialogue is the standout — rhythms like 'It's not, like, reserved' and 'I contain multitudes' sound like an actual smart, guarded 13-year-old.",
+      "Some INTERNAL lines read more literary-adult than middle-schooler interiority: 'the specific discomfort of knowing you had a choice, and knowing which one you made' (scene-6c2b) and 'like a rerun nobody's watched before' (s9a-2) are polished in a way that risks breaking voice consistency. These aren't bad lines, but they belong to a wiser, older narrator than an 11-14 protagonist navigating day one at a new school. Recommend simplifying 2-3 of these to feel more like an actual kid's internal voice rather than essay prose.",
+      "Tyler's insult 'don't let it migrate on you' is a nice specific joke (better than generic 'nerd' insults) — keep this level of specificity, it's what makes the bullying feel observed rather than generic."
+    ],
+    "tone": [
+      "The emotional arc is well-calibrated — anxiety, social pressure, moral tension, private reckoning, vulnerability, resolution. Nothing feels rushed.",
+      "The choice to make the 'right' choice (calling out Tyler) cost something socially is the single best tonal decision in the episode — it avoids the after-school-special trap of 'kindness = instant reward' that a lot of this genre falls into.",
+      "Good restraint in NOT over-explaining Jordan's family situation — 'birds feel like the closest thing I've got' followed by narrator noting 'Maya doesn't ask her to explain further' respects the audience's ability to sit with ambiguity."
+    ]
+  },
+  "inspirationReferences": [
+    {
+      "type": "TV",
+      "title": "PEN15",
+      "reasoning": "For calibrating middle-school internal voice — that show is expert at let kids sound genuinely awkward and specific rather than wise-beyond-their-years, which is the note I'd push hardest on the INTERNAL lines here."
+    },
+    {
+      "type": "BOOK",
+      "title": "Better Nate Than Ever (Tim Federle)",
+      "reasoning": "Good model for a new-kid narrator whose internal monologue is funny and self-aware but still recognizably a kid's voice, not an adult's retrospective prose."
+    },
+    {
+      "type": "GAME",
+      "title": "Life is Strange",
+      "reasoning": "Reference point for the branching-consequence structure this episode is already doing well — worth studying how that game handles 'the same later scene, three emotional colorings' for inspiration on making scene-7's three variants even more distinct in blocking/staging, not just dialogue."
+    }
+  ],
+  "revisionPriority": "MEDIUM"
+}

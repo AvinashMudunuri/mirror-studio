@@ -1,0 +1,95 @@
+{
+  "character": {
+    "id": "player",
+    "name": "Maya Ortiz-Chen",
+    "age": 12,
+    "pronouns": "she/her",
+    "appearance": {
+      "brief": "Medium height, curly dark brown hair she's constantly pulling into a messy bun and then taking back down, warm brown skin, wears mismatched socks on purpose 'as a personality thing.' Still has a slightly-too-big backpack from last year because her mom said it 'still has good use in it.'",
+      "distinctiveFeatures": [
+        "A friendship bracelet from her old best friend Priya that she still wears even though they haven't texted in three weeks",
+        "Bites the inside of her cheek when nervous instead of her nails (a habit she's proud of, calls it 'the mature version')",
+        "Doodles tiny cartoon eyes on the corner of every worksheet"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "quick-witted",
+        "adaptable to a fault",
+        "secretly anxious",
+        "loyal once she trusts you"
+      ],
+      "bigFiveProfile": {
+        "openness": 7,
+        "conscientiousness": 6,
+        "extraversion": 6,
+        "agreeableness": 7,
+        "neuroticism": 7
+      },
+      "mannerisms": [
+        "Rehearses conversations in her head before she has them, mouthing words slightly",
+        "Laughs a beat too early at jokes when she's trying to seem chill",
+        "Straightens her backpack straps repeatedly when entering a new room"
+      ],
+      "speechPatterns": [
+        "Uses 'okay so' to buy thinking time before answering a question",
+        "Slides into sarcasm when she feels exposed ('Oh great, love that for me')",
+        "Talks faster and more when nervous, then catches herself and goes quiet"
+      ],
+      "emotionalTendencies": "Maya performs confidence before she feels it — she's the kid who can walk into a room and seem totally fine, then go cry in the bathroom stall five minutes later. She reads social rooms like a sport she's good at, which makes her feel powerful and exhausted at the same time. She swings between genuinely warm and defensively cool depending on how safe she feels."
+    },
+    "background": {
+      "family": "Only child of a Mexican-American mom (ER nurse, works irregular shifts) and Chinese-American dad (recently laid off, now 'figuring things out' from home, which everyone pretends isn't stressful). They moved three towns over so Mom could take a promotion — Maya didn't get a vote, and she knows it.",
+      "interests": [
+        "making stop-motion videos with her old figurines",
+        "collecting weird facts about oceans",
+        "playing the trumpet badly but enthusiastically in band"
+      ],
+      "strengths": [
+        "reads people fast",
+        "genuinely funny when she relaxes",
+        "fiercely defends anyone she decides is 'hers'"
+      ],
+      "struggles": [
+        "conflates being liked with being safe",
+        "abandons her real opinions to match whoever she's with",
+        "hasn't told anyone how much she misses her old school because she thinks that makes her sound ungrateful"
+      ],
+      "secrets": [
+        "She already texted her old best friend Priya 'this school sucks' on day one before even finding a seat at lunch — a lie she's now stuck maintaining",
+        "She's scared that if people here knew the real her — the one who cries at commercials and researches octopuses for fun — they'd like the performed version better"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Find a place to sit at lunch that doesn't feel like a mistake",
+        "Not be 'the new girl' by Thanksgiving",
+        "Make at least one friend who isn't just proximity-based"
+      ],
+      "unconscious": [
+        "Prove to herself that she can be liked for who she actually is, not just who she pretends to be",
+        "Feel some sense of control after a move she didn't choose"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Contemporary 12-year-old — casual, some slang ('lowkey,' 'that's so real,' 'not me doing X'), but not try-hard slang-for-slang's-sake. Occasional oddly formal word when she's nervous and overcorrecting.",
+      "sentenceComplexity": "Short, punchy internal thoughts; run-on sentences when rambling from nerves; trails off with '...' when unsure.",
+      "emotionalExpressiveness": "Says less than she feels out loud, but her internal monologue (player choices/thoughts) is much more raw and honest than her outward performance — that gap IS the character.",
+      "examples": [
+        "\"Okay so. New school. Totally normal. I've done this before. (I have never done this before.)\"",
+        "\"I could sit with them. Or I could sit with the kid nobody's talking to and just... see what happens. Low stakes. Right?\"",
+        "\"I'm fine. I'm SO fine. Why does everyone keep asking if I'm fine.\"",
+        "\"Jordan's not weird. Jordan's just... doing his own thing. Honestly? Kind of respect it.\""
+      ]
+    },
+    "storyRole": "Player-character protagonist. Her choices in 'First Impressions' — how she introduces herself, who she sits with, how she treats Jordan — are the primary mechanism through which the player experiences the episode's themes.",
+    "arcPotential": [
+      "Episode 1 (First Impressions): Decides between easy social safety and genuine connection with Jordan; sets the tone for whether she's building a real friendship or a convenient one.",
+      "Episode 2-3: Semester project partnership with Jordan forces her to either keep performing 'chill new girl' or let him see her actual interests (the ocean facts, the stop-motion videos) — risk of real intimacy vs. safety of surface-level ease.",
+      "Mid-season: Old friend group back home starts drifting, forcing Maya to confront whether she's been more honest with Jordan than with people who supposedly know her — a moment of realizing authenticity isn't about location, it's a choice she keeps making.",
+      "Finale potential: A moment where the 'easy' popular-adjacent seat and the 'real' friendship seat are mutually exclusive — Maya has to choose publicly, not just in her head."
+    ]
+  },
+  "designNotes": "Maya's central engine is the gap between performed confidence and internal anxiety — a very true-to-12-year-old contradiction. She's not a blank self-insert; she has specific texture (the lie to Priya, the trumpet, the octopus facts) that gives writers something to play with and gives players someone to *become* rather than just steer. Her defense mechanism — social chameleoning — is directly the obstacle the episode needs her to overcome to actually connect with Jordan. Her arc isn't 'learn to be confident,' it's 'learn that being liked for a performance isn't the same as belonging,' which ties directly to all three episode themes without being a lecture.",
+  "representationNotes": "Maya is mixed-heritage (Mexican-American/Chinese-American) in a way that's present in texture (family details, food, names) but not the plot's central conflict — her story is about belonging in a new social world, not a story ABOUT her ethnicity, which avoids reducing her to a single-issue character. Her dad's recent job loss is included as ambient family stress (common for this age group to sense but not fully understand) without becoming an after-school-special subplot — it's texture that explains why the move happened and why she feels destabilized, not a 'lesson' the episode teaches through her family."
+}

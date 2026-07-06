@@ -67,6 +67,15 @@ const MAX_TOTAL_OUTPUT_TOKENS = 32768;
 /** Attempts per Claude call: initial + budget doubling + effort drop. */
 const MAX_CLAUDE_ATTEMPTS = 3;
 
+/**
+ * Request timeout. The SDK default (10 min) is too short for non-streaming
+ * requests with large max_tokens budgets: a 32k-token generation with
+ * adaptive thinking regularly takes longer and dies in
+ * APIConnectionTimeoutError (observed live on the retry-with-doubled-budget
+ * path).
+ */
+const REQUEST_TIMEOUT_MS = 30 * 60 * 1000;
+
 export class LLMGateway {
   private anthropic?: Anthropic;
   private openai?: OpenAI;
@@ -88,7 +97,8 @@ export class LLMGateway {
 
     if (config.anthropicApiKey) {
       this.anthropic = new Anthropic({
-        apiKey: config.anthropicApiKey
+        apiKey: config.anthropicApiKey,
+        timeout: REQUEST_TIMEOUT_MS
       });
     }
 

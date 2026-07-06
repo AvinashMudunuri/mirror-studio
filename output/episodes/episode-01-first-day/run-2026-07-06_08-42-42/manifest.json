@@ -1,0 +1,126 @@
+{
+  "episode": {
+    "number": 1,
+    "title": "New School: First Impressions",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "66bbda45-b0c6-4938-aa2e-d4f9da2fc1ea",
+    "threadId": "a811311f-5ca4-4806-915e-48da72baa4c3",
+    "startedAt": "2026-07-06T08:42:42.131Z",
+    "completedAt": "2026-07-06T09:35:06.507Z",
+    "totalSeconds": 3144.4,
+    "model": "claude-sonnet-5"
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Maya Ortiz-Chen",
+      "role": "Player-character protagonist. Her choices in 'First Impressions' — how she introduces herself, who she sits with, how she treats Jordan — are the primary mechanism through which the player experiences the episode's themes."
+    },
+    {
+      "id": "tyler",
+      "name": "Tyler Brennan",
+      "role": "Tyler is the social pressure incarnate in 'First Impressions' — the kid whose casual cruelty toward Jordan tests whether Maya (the player) will conform or push back. He's not a villain; he's the mirror of what Maya could become if she chooses comfort over courage. His unbothered shrug in 'Small Stand' matters more than a dramatic comeuppance would — it shows the player that standing up doesn't always change the bully, but it does change how others see you, and how you see yourself."
+    },
+    {
+      "id": "chloe",
+      "name": "Chloe Park",
+      "role": "Chloe is the social barometer of 'First Impressions' — a supporting character who shows the player what conformity looks like from the inside. Unlike Tyler, who performs cruelty for an audience, Chloe absorbs it out of fear. She's proof that not everyone laughing at Jordan is enjoying it; some are just surviving the room. Her reactions in 'Whispers in the Hallway' and 'In the Circle' subtly shift based on the player's choices, planting seeds for a possible future arc where she's the one who needs someone to be brave for her."
+    },
+    {
+      "id": "maya",
+      "name": "Maya Reyes",
+      "role": "Maya is the gravitational center of the episode's social pressure — not a villain, but the embodiment of the 'comfortable seat' the title promises. She represents the version of belonging that costs nothing upfront and everything in small increments. Her silent reaction in 'Fitting In, At a Cost' and her approving nod in 'Small Stand' are the episode's real report card: she's always watching to see who the player actually is, even when she isn't brave enough to show it herself."
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Kessler",
+      "role": "Jordan is the emotional stakes made visible — the living consequence of every choice Maya makes in 'First Impressions.' They're not a prop meant to teach a lesson about kindness; they're a kid with their own guardedness, wit, and reasons for both, whose openness has to be earned rather than assumed. Jordan's arc tracks in parallel with Maya's choices: warmth is met with real reciprocity, coldness is met with a believable, undramatic withdrawal (not sobbing, just quietly leaving), and persistence is met with slow, hard-won trust. Jordan should never feel like a reward to be unlocked — their reactions are consistent with a kid who has learned, through repeated loss, to protect themselves first."
+    },
+    {
+      "id": "ms_alvarez",
+      "name": "Sofia Alvarez",
+      "role": "Ms. Alvarez is the adult hand that turns the episode's social choices into structural consequence. She doesn't lecture Maya about kindness or reference the lunchroom directly — she simply, deliberately, makes Maya's private choices public and permanent by pairing her with Jordan. She functions as the mechanism of 'consequences arrive,' but she's written as a person with her own quiet agenda: she's been watching Jordan all week, and this pairing is a calculated risk on her part, not a random administrative act. Her flat delivery ('almost like I thought about it') is a subtle wink that lets sharp players sense she's not neutral — she's rooting for something."
+    },
+    {
+      "id": "priya",
+      "name": "Priya Nair",
+      "role": "Priya is the episode's gravitational center of social belonging — the 'comfortable seat' the title promises. She's not a gatekeeper or a mean girl; she's the version of popularity that costs nothing upfront and everything in small increments. Her reactions across the episode function as a silent report card on Maya's choices: her approving nod in 'Small Stand' and her quiet withdrawal in 'A Friendly Distance' show the player, without a single lecture, that real respect and easy belonging aren't always the same thing."
+    }
+  ],
+  "finalStatus": "NEEDS_HUMAN_REVIEW",
+  "verdicts": {
+    "creativeDirector": "NEEDS_REVISION",
+    "qaReviewer": "FAIL",
+    "childPsychologist": "APPROVED",
+    "gameDesigner": "GOOD",
+    "ethicsReviewer": "GOOD"
+  },
+  "revisions": [
+    {
+      "iteration": 1,
+      "failingBefore": [
+        "creativeDirector",
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "roster-extension",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 11,
+      "dialogueFeedbackCount": 6,
+      "verdictsAfter": {
+        "creativeDirector": "NEEDS_REVISION",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    },
+    {
+      "iteration": 2,
+      "failingBefore": [
+        "creativeDirector",
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 11,
+      "dialogueFeedbackCount": 6,
+      "verdictsAfter": {
+        "creativeDirector": "NEEDS_REVISION",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    }
+  ],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "06-psych-review.json",
+    "07-game-review.json",
+    "08-ethics-review.json",
+    "revision-1/feedback.json",
+    "revision-1/story-outline.json",
+    "revision-1/supporting-characters.json",
+    "revision-1/dialogue.json",
+    "revision-1/creative-review.json",
+    "revision-1/qa-review.json",
+    "revision-2/feedback.json",
+    "revision-2/story-outline.json",
+    "revision-2/dialogue.json",
+    "revision-2/creative-review.json",
+    "revision-2/qa-review.json",
+    "manifest.json"
+  ]
+}

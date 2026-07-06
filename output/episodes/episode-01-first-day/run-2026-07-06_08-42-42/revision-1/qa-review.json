@@ -1,0 +1,71 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "CONSISTENCY",
+      "message": "Duplicate/orphaned character: there are two distinct 'Maya' characters — the player character (id: 'player', name: 'Maya Ortiz-Chen') and a separate unused character (id: 'maya', name: 'Maya Reyes'). The 'maya' character is listed in episode.characters but never appears in any scene's characters array or dialogue. Its personality/background/voiceGuidelines text is also near-verbatim duplicated from Priya's character sheet (warm/socially fluent/conflict-avoidant, 'okay so', 'taps table twice', etc.), strongly suggesting Priya's profile was copy-pasted from a leftover 'maya' draft that was never deleted.",
+      "location": "episode.characters[3] ('maya'); characters[3] object",
+      "expectedValue": "Either remove the unused 'maya' character entirely, or rename/repurpose it so it doesn't collide with the player character's name and doesn't duplicate Priya's profile.",
+      "actualValue": "'maya' character exists, is unused in all scenes, and duplicates Priya's content almost word-for-word.",
+      "fix": "Delete the orphaned 'maya' character record from the character roster and episode.characters array. If it was meant to become Priya, confirm Priya's sheet is intentional and remove the stale duplicate."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "SCHEMA",
+      "message": "Multiple dialogue entries have an empty string for 'text' with no spoken line, relying solely on emotion/action metadata. If the schema requires non-empty dialogue text, these will fail validation, and even if allowed, they read as incomplete content for a text-driven episode player.",
+      "location": "scene-6a1.dialogue[1] (s6a1-2), scene-6a1.dialogue[3] (s6a1-4), scene-6c2.dialogue[2] (s6c2-3), choiceDialogue[choice-1].responseDialogue.a[1] (c1a-2), choiceDialogue[choice-3].responseDialogue.a[0] (c3a-1), choiceDialogue[choice-3].responseDialogue.b[1] (c3b-2), choiceDialogue[choice-3].responseDialogue.b[2] (c3b-3), choiceDialogue[choice-7].responseDialogue.a[0] (c7a-1)",
+      "expectedValue": "Non-empty 'text' string for every dialogue entry, or a schema-approved alternative field for silent/reaction-only beats (e.g., omit text field or use a dedicated 'reaction' type).",
+      "actualValue": "\"text\": \"\"",
+      "fix": "Add minimal text (even a nonverbal transliteration like '(laughs)') or restructure schema to explicitly support text-less reaction beats."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Jordan is listed in scene-5a's characters array despite being explicitly described as sitting alone 'across the room' — not physically present at the table with the player, Priya, Tyler, and Chloe.",
+      "location": "scene-5a.characters",
+      "expectedValue": "characters: [\"player\", \"priya\", \"tyler\", \"chloe\"] (Jordan referenced narratively but not physically present)",
+      "actualValue": "characters: [\"player\", \"priya\", \"tyler\", \"chloe\", \"jordan\"]",
+      "fix": "Remove 'jordan' from scene-5a.characters, or add a note/field distinguishing 'present' vs 'referenced' characters if the schema needs to track off-screen mentions."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The 'outcomes' array uses loose, human-readable path notation (e.g., 'scene-6a(1/2)', 'scene-priya-(fade/respect)') rather than exact scene/choice IDs, making it unsuitable for any automated path validation or analytics tooling.",
+      "location": "episode.outcomes[*].path",
+      "suggestion": "Consider storing outcomes as structured arrays of exact scene/choice IDs in addition to (or instead of) the prose-style path summaries, so tooling can programmatically verify reachability."
+    },
+    {
+      "category": "STYLE",
+      "message": "Jordan's pronouns are inconsistently referenced across content: Jordan's official character sheet uses they/them, and most narration correctly uses 'they/their' (e.g., s6c1-9 'Jordan sets the book down'), but scene-5c/description and scene-7 description use 'they' correctly while a few narrator lines use ambiguous phrasing that could be misread. No outright pronoun errors found, but this is worth a final pass given how easy pronoun slips are with a they/them character alongside heavily gendered secondary characters (Priya/Chloe using she/her).",
+      "location": "scene-5c, scene-6c1, scene-9a/b/c/d narration",
+      "suggestion": "Do a targeted pronoun-consistency pass specifically on Jordan's lines/narration before final approval."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "estimatedPlayTime (13 minutes) is only roughly validated — it approximately matches one full playthrough path's summed scene durations (~13.5 min for the Priya→SmallStand→8a→9a path), but other paths (e.g., Solo Table or Ally Arc paths) sum to different totals (e.g., scene-1+2+3b+4+5b+6b1+7+8a/b+9x ≈ 12–13.5 depending on branch). Since branch lengths vary, a single fixed estimate is an approximation, not a guarantee.",
+      "location": "episode.estimatedPlayTime",
+      "suggestion": "Consider providing a min/max range or per-path estimate instead of a single static number, since branch length varies by 1-2 scenes depending on choices."
+    },
+    {
+      "category": "STYLE",
+      "message": "Ms. Alvarez is introduced only in scene-7 with no prior setup, and her dialogue implies she's been observing Jordan 'all week' (per her character background) — this context is entirely absent from earlier scenes, so the payoff of her deliberate pairing may read as unmotivated to players who don't have her character sheet.",
+      "location": "scene-7 (ms_alvarez dialogue)",
+      "suggestion": "Consider a brief earlier visual/narrative beat (e.g., Ms. Alvarez glancing at the cafeteria in scene-4) to foreshadow her awareness, though not strictly required for logical completeness."
+    }
+  ],
+  "summary": {
+    "totalChecks": 28,
+    "passedChecks": 22,
+    "failedChecks": 3,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Remove or repurpose the orphaned 'maya' character to eliminate name collision with the player character.",
+    "Audit all dialogue entries for empty 'text' fields and either fill them in or formalize a schema pattern for reaction-only beats.",
+    "Tighten the characters[] array per scene so it reflects only physically present characters, using narration for off-screen mentions.",
+    "Consider converting the prose-style 'outcomes.path' fields into structured ID arrays for automated QA in future episodes.",
+    "Overall branching logic, ID uniqueness (aside from the 'maya' collision), trait mechanics, and thematic/educational alignment are strong and internally consistent — this episode is close to ship-ready once the above issues are resolved."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "episode": {
+    "number": 1,
+    "title": "First Bell",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "7bcefedf-9a1d-4d4b-ab5a-3d69ee3764ef",
+    "threadId": "65bffa8c-061a-474a-adf0-436b2e4d8d83",
+    "startedAt": "2026-07-06T06:32:56.964Z",
+    "completedAt": "2026-07-06T06:47:22.250Z",
+    "totalSeconds": 865.3,
+    "model": "claude-sonnet-5"
+  },
+  "verdicts": {
+    "creativeDirector": "NEEDS_REVISION",
+    "qaReviewer": "FAIL",
+    "childPsychologist": "NEEDS_REVISION",
+    "gameDesigner": "GOOD",
+    "ethicsReviewer": "GOOD"
+  },
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "06-psych-review.json",
+    "07-game-review.json",
+    "08-ethics-review.json"
+  ]
+}

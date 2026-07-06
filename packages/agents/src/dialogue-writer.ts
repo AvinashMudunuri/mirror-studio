@@ -186,6 +186,8 @@ Be authentic. Be specific. Be brave with subtext.`;
     // Build context for LLM
     const context = this.buildDialogueContext(episodeOutline, characters, scenes, emotionalBeats);
     
+    const rosterIds = characters.map(c => `"${c.id}"`).join(', ');
+    
     const prompt = `${context}
 
 YOUR TASK:
@@ -197,6 +199,11 @@ For each scene:
 3. Use action/emotion tags sparingly but effectively
 4. Include pauses and emphasis where natural
 5. Ensure choice options sound like things players would say
+
+CHARACTER ID RULES (MANDATORY):
+- Every line's "character" field MUST be exactly one of these ids: ${rosterIds}
+- The ONLY other allowed values are "NARRATOR" (scene narration) and "INTERNAL" (the protagonist's inner voice)
+- NEVER invent new speakers or use a character's display name as an id
 
 FORMAT YOUR RESPONSE AS JSON:
 {
@@ -368,7 +375,7 @@ Themes: ${episodeOutline.themes.join(', ')}
 
 CHARACTERS:
 ${characters.map(c => `
-${c.name} (${c.age}, ${c.pronouns}):
+${c.name} [id: ${c.id}] (${c.age}, ${c.pronouns}):
 - Core Traits: ${c.personality.coreTraits.join(', ')}
 - Speech Patterns: ${c.personality.speechPatterns.join(', ')}
 - Mannerisms: ${c.personality.mannerisms.join(', ')}

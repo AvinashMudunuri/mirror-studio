@@ -1,0 +1,881 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1",
+      "lines": [
+        {
+          "id": "s1-1",
+          "character": "player",
+          "text": "",
+          "action": "steps out of the car, car door slams shut behind them. Stands still for a second, looking up at the unfamiliar building."
+        },
+        {
+          "id": "s1-2",
+          "character": "priya_text",
+          "text": "good luck today!! not that you need it. you're gonna do great. text me at lunch, i need DETAILS",
+          "action": "phone buzzes in pocket"
+        },
+        {
+          "id": "s1-3",
+          "character": "player",
+          "text": "New school. Same me, I guess.",
+          "emotion": "quiet, half to self",
+          "action": "pockets the phone, watches a cluster of returning students laugh loudly nearby without looking over"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2",
+      "lines": [
+        {
+          "id": "s2-1",
+          "character": "jordan",
+          "text": "No — no, okay, listen, if you tell Ms. Reyes I said that I will actually move to Canada—",
+          "action": "mid-conversation with an unseen friend, laughing before she even finishes the sentence",
+          "emotion": "loud, easy"
+        },
+        {
+          "id": "s2-2",
+          "character": "player",
+          "text": "",
+          "action": "fumbles with an unfamiliar locker combination, tries it twice, gets nothing"
+        },
+        {
+          "id": "s2-3",
+          "character": "mia",
+          "text": "",
+          "action": "a few lockers down, quietly color-coding folders, glances over once, says nothing"
+        },
+        {
+          "id": "s2-4",
+          "character": "jordan",
+          "text": "Oh my god, is that thing stuck? They never update those, I swear it's the same lock from, like, 2004.",
+          "emotion": "amused, already walking over in her head before her feet catch up"
+        },
+        {
+          "id": "s2-5",
+          "character": "jordan",
+          "text": "You're new, right? Come here a sec.",
+          "emotion": "warm, a little performative — she does this for everyone, but it still lands"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3a",
+      "lines": [
+        {
+          "id": "s3a-1",
+          "character": "jordan",
+          "text": "Okay but for real, this lock situation is a hate crime, I don't make the rules—"
+        },
+        {
+          "id": "s3a-2",
+          "character": "player",
+          "text": "Nah, it's fine. I've beaten harder combinations. Mostly on video games. Never actual metal, but — same energy.",
+          "emotion": "easy grin"
+        },
+        {
+          "id": "s3a-3",
+          "character": "jordan",
+          "text": "Oh — okay, see, I like this one already.",
+          "emotion": "surprised-laugh, genuinely delighted"
+        },
+        {
+          "id": "s3a-4",
+          "character": "devon",
+          "text": "Wait, video games? Nice. What are we calling them — 'Combo'? No, wait — 'New Kid' is just a placeholder, we need something better.",
+          "emotion": "leaning in, grinning"
+        },
+        {
+          "id": "s3a-5",
+          "character": "jordan",
+          "text": "Devon, don't just invent nicknames on day one, that's—"
+        },
+        {
+          "id": "s3a-6",
+          "character": "devon",
+          "text": "Too late. Ace. Locker-cracking champion of the free world.",
+          "emotion": "already decided"
+        },
+        {
+          "id": "s3a-7",
+          "character": "jordan",
+          "text": "...Okay that's actually kind of good. I hate that for you.",
+          "emotion": "smiling despite herself",
+          "action": "shakes her head"
+        },
+        {
+          "id": "s3a-8",
+          "character": "ambient_student",
+          "text": "Wait, who's the new kid Devon's calling Ace?",
+          "action": "overheard from a nearby locker, not directed at player"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3b",
+      "lines": [
+        {
+          "id": "s3b-1",
+          "character": "player",
+          "text": "Oh — I'm okay, thanks. Just trying to figure out if this locker hates me specifically.",
+          "emotion": "polite, a little flat"
+        },
+        {
+          "id": "s3b-2",
+          "character": "jordan",
+          "text": "Ha — fair. Okay. Well. Welcome to Fernbrook, or whatever.",
+          "emotion": "half-smile, already turning away",
+          "action": "turns back to her friends mid-laugh at something else before she's even finished the sentence"
+        },
+        {
+          "id": "s3b-3",
+          "character": "mia",
+          "text": "",
+          "action": "glances over, a small real smile — gone as fast as it appeared"
+        },
+        {
+          "id": "s3b-4",
+          "character": "mia",
+          "text": "...It's actually the second locker from the left that's cursed. Yours is fine.",
+          "emotion": "quiet, dry, not really expecting a reply",
+          "action": "the most she's said to anyone all morning"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4",
+      "lines": [
+        {
+          "id": "s4-1",
+          "character": "player",
+          "text": "",
+          "action": "tray in hand, scans the cafeteria"
+        },
+        {
+          "id": "s4-2",
+          "character": "devon",
+          "text": "Ace! Over here, we saved you a seat, don't make it weird!",
+          "emotion": "calling across the room, grinning"
+        },
+        {
+          "id": "s4-3",
+          "character": "jordan",
+          "text": "I swear if you scared them off on day one—",
+          "action": "muttered to Devon, not quite loud enough to carry, half-laughing"
+        },
+        {
+          "id": "s4-4",
+          "character": "mia",
+          "text": "",
+          "action": "sits alone across the room, book held very still, page hasn't turned in a while, eyes flicking toward the laughter and back down"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5a",
+      "lines": [
+        {
+          "id": "s5a-1",
+          "character": "player",
+          "text": "",
+          "action": "sets tray down across from Mia"
+        },
+        {
+          "id": "s5a-2",
+          "character": "mia",
+          "text": "...Oh. Hi.",
+          "emotion": "surprised, quickly smoothed into neutral"
+        },
+        {
+          "id": "s5a-3",
+          "character": "mia",
+          "text": "You know the seat next to Jordan's table has, like, unofficial assigned seating, right? You're gonna throw off the whole ecosystem.",
+          "emotion": "not looking up, dry"
+        },
+        {
+          "id": "s5a-4",
+          "character": "player",
+          "text": "Guess I'm a disruptor.",
+          "emotion": "light"
+        },
+        {
+          "id": "s5a-5",
+          "character": "mia",
+          "text": "Bold strategy for day one.",
+          "emotion": "almost a smile"
+        },
+        {
+          "id": "s5a-6",
+          "character": "mia",
+          "text": "I used to sit over there. Different — group. Different everything, actually.",
+          "emotion": "casual on the surface, hands going still around her water bottle",
+          "action": "shrugs like it's nothing"
+        },
+        {
+          "id": "s5a-7",
+          "character": "mia",
+          "text": "Stuff happened. Over the summer. I don't—",
+          "action": "small shake of her head, doesn't finish"
+        },
+        {
+          "id": "s5a-8",
+          "character": "mia",
+          "text": "It's fine. It's whatever.",
+          "emotion": "closing the door on the topic, but gently"
+        },
+        {
+          "id": "s5a-9",
+          "character": "mia",
+          "text": "Anyway. You're better off not knowing the full Fernbrook cast of characters yet. Takes the fun out of it.",
+          "emotion": "first real laugh of the day",
+          "action": "looks at player like she's deciding something, and decides"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5b",
+      "lines": [
+        {
+          "id": "s5b-1",
+          "character": "jordan",
+          "text": "Okay, see, THIS is the correct choice. I'm very biased but also completely right.",
+          "emotion": "pleased"
+        },
+        {
+          "id": "s5b-2",
+          "character": "devon",
+          "text": "Ace made it. Day one and already got the good seat, couldn't be me.",
+          "emotion": "impressed"
+        },
+        {
+          "id": "s5b-3",
+          "character": "jordan",
+          "text": "Okay but like — remember when Mia tried to present that whole slideshow about bees unprompted? In April? Unprompted, you guys.",
+          "emotion": "laughing, gesturing vaguely across the room without really looking",
+          "action": "quick guilty flicker crosses her face before she covers it"
+        },
+        {
+          "id": "s5b-4",
+          "character": "devon",
+          "text": "The bee girl! I forgot about the bee girl.",
+          "emotion": "cracking up"
+        },
+        {
+          "id": "s5b-5",
+          "character": "jordan",
+          "text": "I'm not being mean, I just — it was a whole thing, okay, you had to be there—",
+          "emotion": "backpedaling fast, still smiling"
+        },
+        {
+          "id": "s5b-6",
+          "character": "jordan",
+          "text": "Anyway — Ace. Tell us something about yourself that isn't boring, go.",
+          "emotion": "already moving on",
+          "action": "eyes flick toward player for half a second, gauging"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6",
+      "lines": [
+        {
+          "id": "s6-1",
+          "character": "ms_reyes",
+          "text": "Alright, settle down — partners for the semester project are assigned, not negotiable. I've seen the trading and it's chaos every year.",
+          "emotion": "brisk, unbothered by groans"
+        },
+        {
+          "id": "s6-2",
+          "character": "ms_reyes",
+          "text": "...Okafor, you're with our new student. Come on, let's move.",
+          "action": "reading off a list without looking up"
+        },
+        {
+          "id": "s6-3",
+          "character": "sam",
+          "text": "Okay so I already have, like, four ideas, none of them are good yet, but that's kind of the point—",
+          "action": "bounds over dragging a chair that screeches, dumps a bag of sticky notes on the table",
+          "emotion": "buzzing with energy"
+        },
+        {
+          "id": "s6-4",
+          "character": "sam",
+          "text": "What if the project wasn't about proving something — what if it was about breaking something on purpose and seeing what we learn from that? Is that too much? That might be too much.",
+          "action": "sticking neon notes to the table in no visible order",
+          "emotion": "genuinely unsure if that was too much"
+        },
+        {
+          "id": "s6-5",
+          "character": "sam",
+          "text": "So — you in, or do you want to do it your way?",
+          "emotion": "grinning, actually waiting for the answer"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7a",
+      "lines": [
+        {
+          "id": "s7a-1",
+          "character": "player",
+          "text": "",
+          "action": "grabs a sticky note, writes something equally odd, sticks it next to Sam's"
+        },
+        {
+          "id": "s7a-2",
+          "character": "sam",
+          "text": "Oh — okay, see, THAT'S — wait, what if we combined that with the broken thing—",
+          "emotion": "delighted, talking fast"
+        },
+        {
+          "id": "s7a-3",
+          "character": "sam",
+          "text": "Wait. Wait wait wait.",
+          "action": "goes very still, staring at the mess of notes like it just clicked"
+        },
+        {
+          "id": "s7a-4",
+          "character": "sam",
+          "text": "...That's actually a project. That's an actual, real project we could actually do.",
+          "emotion": "stunned, quiet for once"
+        },
+        {
+          "id": "s7a-5",
+          "character": "sam",
+          "text": "See? Told you it'd get weird in a good way.",
+          "emotion": "grinning"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7b",
+      "lines": [
+        {
+          "id": "s7b-1",
+          "character": "player",
+          "text": "Maybe we start with an outline — figure out the hypothesis first, then build from there.",
+          "emotion": "reasonable, gently redirecting"
+        },
+        {
+          "id": "s7b-2",
+          "character": "sam",
+          "text": "...Yeah. No, that's — that works too, I guess.",
+          "emotion": "energy visibly dimming",
+          "action": "starts quietly peeling the sticky notes off the table, one at a time"
+        },
+        {
+          "id": "s7b-3",
+          "character": "sam",
+          "text": "I'll just, um. I'll follow your lead on this one.",
+          "emotion": "careful now, less bouncy"
+        },
+        {
+          "id": "s7b-4",
+          "character": "player",
+          "text": "",
+          "action": "the rest of the period passes efficiently, correctly, and a little flat"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8",
+      "lines": [
+        {
+          "id": "s8-1",
+          "character": "jordan",
+          "text": "Hey — okay, so, some of us are doing a thing at my place later, nothing big, just — people. You should come. You've earned it, surviving day one.",
+          "emotion": "warm, catching up to player in the courtyard"
+        },
+        {
+          "id": "s8-2",
+          "character": "mia",
+          "text": "...Hey. So I'm, um. I'm actually in the art room later, if you wanted to see — it's not a big deal, just a thing I'm working on. No pressure.",
+          "emotion": "quieter, hovering, not sure she should ask",
+          "action": "waiting a little ways off"
+        },
+        {
+          "id": "s8-3",
+          "character": "jordan",
+          "text": "...You're either one of us or you're not, you know.",
+          "emotion": "half-joking, testing, lighter than she means it",
+          "action": "glances between Mia and player"
+        },
+        {
+          "id": "s8-4",
+          "character": "jordan",
+          "text": "I'm kidding. Mostly. Okay, not really, but — whatever, no pressure, obviously. Do your thing.",
+          "emotion": "backpedaling with a laugh that doesn't quite land"
+        },
+        {
+          "id": "s8-5",
+          "character": "mia",
+          "text": "",
+          "action": "says nothing, just waits, watching player carefully"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9a",
+      "lines": [
+        {
+          "id": "s9a-1",
+          "character": "mia",
+          "text": "...You actually came.",
+          "emotion": "like she's still confirming it's real",
+          "action": "standing near a large canvas half-covered by a sheet"
+        },
+        {
+          "id": "s9a-2",
+          "character": "mia",
+          "text": "",
+          "action": "pulls the sheet back — a mural of faces without features, colors bleeding into blank space, something about being erased"
+        },
+        {
+          "id": "s9a-3",
+          "character": "mia",
+          "text": "It's not, um. It's not finished. I wasn't gonna show anyone, really, I just—",
+          "action": "stops, doesn't finish the sentence"
+        },
+        {
+          "id": "s9a-4",
+          "character": "mia",
+          "text": "I don't know. I wanted someone to see it before I decided if I hated it or not.",
+          "emotion": "quiet, exposed"
+        },
+        {
+          "id": "s9a-5",
+          "character": "player",
+          "text": "I don't think you hate it.",
+          "emotion": "simple, honest"
+        },
+        {
+          "id": "s9a-6",
+          "character": "mia",
+          "text": "...Yeah. Okay. Good.",
+          "emotion": "small, real smile, looking at the mural instead of the player"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9b",
+      "lines": [
+        {
+          "id": "s9b-1",
+          "character": "devon",
+          "text": "Okay, no, the real question is whether Ace here can actually back up the confidence—",
+          "action": "string lights, someone's playlist too loud"
+        },
+        {
+          "id": "s9b-2",
+          "character": "jordan",
+          "text": "Don't — okay, don't turn this into a whole thing, but yes. Prove it.",
+          "emotion": "laughing, relaxed in a way she wasn't all day"
+        },
+        {
+          "id": "s9b-3",
+          "character": "player",
+          "text": "",
+          "action": "phone buzzes in pocket — a text from Mia. Nobody notices. It stays unopened."
+        },
+        {
+          "id": "s9b-4",
+          "character": "jordan",
+          "text": "You disappeared for a sec there. You good?",
+          "emotion": "tossed out casually, not looking up from the game"
+        },
+        {
+          "id": "s9b-5",
+          "character": "player",
+          "text": "Yeah — all good. Just tired.",
+          "emotion": "noncommittal"
+        },
+        {
+          "id": "s9b-6",
+          "character": "player",
+          "text": "",
+          "action": "the night continues, easy and warm and fine — but the phone stays a little heavier in the pocket than it should"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10",
+      "lines": [
+        {
+          "id": "s10-1",
+          "character": "jordan",
+          "text": "Hey — Ace! We still on for—",
+          "emotion": "casual wave, from her group"
+        },
+        {
+          "id": "s10-2",
+          "character": "mia",
+          "text": "",
+          "action": "passes a few feet away, doesn't stop, gives a small practiced nod if there's eye contact, keeps walking"
+        },
+        {
+          "id": "s10-3",
+          "character": "sam",
+          "text": "Oh good, you're both here, I need a non-biased opinion on whether this is genius or a cry for help—",
+          "action": "appears holding a poster board covered in something that might be a brilliant diagram or complete nonsense"
+        },
+        {
+          "id": "s10-4",
+          "character": "jordan",
+          "text": "",
+          "action": "watching player, waiting, not obviously — but waiting"
+        },
+        {
+          "id": "s10-5",
+          "character": "mia",
+          "text": "",
+          "action": "a few steps away, also watching, also waiting, pretending not to"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11a",
+      "lines": [
+        {
+          "id": "s11a-1",
+          "character": "player",
+          "text": "Hey — Mia, you should hear this. Sam's about to explain something that's either genius or a cry for help, I need backup.",
+          "emotion": "easy, deliberate"
+        },
+        {
+          "id": "s11a-2",
+          "character": "jordan",
+          "text": "",
+          "action": "smile flickers, surprised, recalibrating fast"
+        },
+        {
+          "id": "s11a-3",
+          "character": "mia",
+          "text": "",
+          "action": "hesitates half a step, like she's waiting for the catch"
+        },
+        {
+          "id": "s11a-4",
+          "character": "jordan",
+          "text": "Okay wait, I need to see this diagram before I have opinions about geniuses—",
+          "emotion": "covering the beat with a joke, recovering fast"
+        },
+        {
+          "id": "s11a-5",
+          "character": "mia",
+          "text": "...If this is a cry for help, I want it on record I called it first.",
+          "emotion": "dry, testing the water",
+          "action": "steps in closer than she has all semester"
+        },
+        {
+          "id": "s11a-6",
+          "character": "sam",
+          "text": "",
+          "action": "beams, oblivious to the significance, already unrolling the poster further"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "lines": [
+        {
+          "id": "s11b-1",
+          "character": "devon",
+          "text": "See, I told you, day one Ace energy was not a fluke—",
+          "emotion": "grinning, fully bought in"
+        },
+        {
+          "id": "s11b-2",
+          "character": "jordan",
+          "text": "Okay, I'm taking full credit for finding you, for the record.",
+          "emotion": "genuinely warm"
+        },
+        {
+          "id": "s11b-3",
+          "character": "mia",
+          "text": "",
+          "action": "passes across the hall, doesn't stop, gives player a small nod — unreadable, brief"
+        },
+        {
+          "id": "s11b-4",
+          "character": "player",
+          "text": "",
+          "action": "smile doesn't quite reach the same place it did a second ago"
+        },
+        {
+          "id": "s11b-5",
+          "character": "jordan",
+          "text": "",
+          "action": "doesn't notice, already moving on to the next joke, the next thing"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "lines": [
+        {
+          "id": "s11c-1",
+          "character": "sam",
+          "text": "Okay but seriously — genius or cry for help, I need a verdict, the suspense is killing me—",
+          "emotion": "bouncing"
+        },
+        {
+          "id": "s11c-2",
+          "character": "mia",
+          "text": "It's both. It's definitely both.",
+          "emotion": "deadpan, already invested"
+        },
+        {
+          "id": "s11c-3",
+          "character": "player",
+          "text": "I'm gonna go with 'genius, but only if we don't tell Ms. Reyes how we got here.'",
+          "emotion": "grinning"
+        },
+        {
+          "id": "s11c-4",
+          "character": "player",
+          "text": "",
+          "action": "small, real, unforced laughter from the three of them"
+        },
+        {
+          "id": "s11c-5",
+          "character": "jordan",
+          "text": "",
+          "action": "watches from across the hallway for a second, something unreadable on her face — not unkind, just noticing"
+        },
+        {
+          "id": "s11c-6",
+          "character": "jordan",
+          "text": "",
+          "action": "turns back to her group, doesn't call player over. doesn't need to. everyone already knows where this table is."
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Play it cool — walk over and crack a joke."
+        },
+        {
+          "id": "b",
+          "text": "Give a quick, friendly reply and keep organizing your locker."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c1-resp-a-1",
+            "character": "player",
+            "text": "",
+            "action": "walks over, already halfway to a joke before arriving"
+          }
+        ],
+        "b": [
+          {
+            "id": "c1-resp-b-1",
+            "character": "player",
+            "text": "",
+            "action": "stays put, keeps working the combination, offers a small smile without closing the distance"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Head over and sit with Mia."
+        },
+        {
+          "id": "b",
+          "text": "Take the open seat at Jordan's table."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2-resp-a-1",
+            "character": "player",
+            "text": "",
+            "action": "changes course mid-step, heads toward Mia's table instead"
+          }
+        ],
+        "b": [
+          {
+            "id": "c2-resp-b-1",
+            "character": "player",
+            "text": "",
+            "action": "crosses the cafeteria toward the noise and the waiting seat"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dive into Sam's chaos and see where it goes."
+        },
+        {
+          "id": "b",
+          "text": "Suggest doing it the tried-and-true way instead."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3-resp-a-1",
+            "character": "player",
+            "text": "Okay. Yeah — let's see where this goes.",
+            "emotion": "a little unsure, leaning in anyway"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3-resp-b-1",
+            "character": "player",
+            "text": "Can we maybe start with something a little more... structured?",
+            "emotion": "polite but firm"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Go see what Mia wants to show you."
+        },
+        {
+          "id": "b",
+          "text": "Go hang out with Jordan's group."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4-resp-a-1",
+            "character": "player",
+            "text": "I'll come find you in the art room.",
+            "emotion": "quiet, decided"
+          },
+          {
+            "id": "c4-resp-a-2",
+            "character": "jordan",
+            "text": "...Okay. Cool. Have fun with that, I guess.",
+            "emotion": "light on the surface, something else underneath",
+            "action": "already turning to catch up with the group"
+          }
+        ],
+        "b": [
+          {
+            "id": "c4-resp-b-1",
+            "character": "player",
+            "text": "Yeah — I'm in. Text me the address?",
+            "emotion": "easy"
+          },
+          {
+            "id": "c4-resp-b-2",
+            "character": "mia",
+            "text": "...Oh. Okay. No, that's — that's fine.",
+            "emotion": "quick, practiced, already retreating",
+            "action": "small nod, turns and walks off before player can say anything else"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bring Mia into the conversation with Jordan's group."
+        },
+        {
+          "id": "b",
+          "text": "Fully commit to Jordan's circle."
+        },
+        {
+          "id": "c",
+          "text": "Build your own table with Sam and Mia."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c5-resp-a-1",
+            "character": "player",
+            "text": "",
+            "action": "turns, deliberately widening the circle instead of picking a side"
+          }
+        ],
+        "b": [
+          {
+            "id": "c5-resp-b-1",
+            "character": "player",
+            "text": "",
+            "action": "steps fully into Jordan's group, laughing at whatever Devon just said"
+          }
+        ],
+        "c": [
+          {
+            "id": "c5-resp-c-1",
+            "character": "player",
+            "text": "",
+            "action": "drifts toward Sam and the poster board instead, not toward either bigger group"
+          }
+        ]
+      }
+    }
+  ],
+  "voiceNotes": "JORDAN runs hot and fast — her lines should almost always have more words than she needs, because silence is where her anxiety lives. She jokes immediately after anything true slips out (see s5b-5, s8-4). Her 'okay but like—' reset appears when she's caught off guard emotionally, not just conversationally. She never apologizes directly; she backpedals with humor instead. MIA is the opposite: sparse, exact, dry. Her humor is a test — she says something slightly odd and waits to see if you catch it (s3b-4, s5a-3). She trails off rather than finishing emotional sentences (s5a-6, s5a-7, s9a-3) because finishing them would mean admitting how much they matter. Her silences (in scenes 4, 9b, 10) carry more weight than dialogue. SAM talks like their brain is one step ahead of their mouth — run-on sentences, self-interruption, genuine uncertainty about their own ideas even mid-pitch ('is that too much?'). When shut down (7b), Sam doesn't argue — they just quietly get smaller, which is a different and sadder kind of chaos. DEVON is the confidence Jordan performs, but real — lower stakes, quicker to hand out warmth (and nicknames) because Devon isn't hiding anxiety underneath it. MS. REYES is efficient background texture — a handful of lines, no wasted words, contrast to the teen chaos around her. The PLAYER's lines are intentionally light in this draft since tone/voice should flex per player choice — defaults lean warm-but-restrained so they can flex toward either Jordan's energy or Mia's economy depending on choices made.",
+  "alternativeLines": [
+    {
+      "lineId": "s3a-2",
+      "alternatives": [
+        "Please. I speedran a Rubik's cube in fourth grade. This is basically retirement.",
+        "Oh, easy. I just have to pretend it's a video game boss fight."
+      ],
+      "reasoning": "Keeps the joke in-character (self-deprecating, references games/hobbies rather than trying too hard to be cool) while giving alternate flavor depending on desired player persona."
+    },
+    {
+      "lineId": "s5a-4",
+      "alternatives": [
+        "Somebody's gotta shake things up.",
+        "I contain multitudes, apparently."
+      ],
+      "reasoning": "Alternate low-key humor options that match Mia's dry energy without overexplaining."
+    },
+    {
+      "lineId": "s7b-1",
+      "alternatives": [
+        "What if we get the basics down first, then get weird with it?",
+        "I just — I don't want us to run out of time. Can we start simple?"
+      ],
+      "reasoning": "Softer versions that show the player isn't trying to shut Sam down, just anxious — makes the 'cooling' feel like a missed connection rather than a power move."
+    },
+    {
+      "lineId": "s9a-5",
+      "alternatives": [
+        "I don't think you hate it. I think you're scared people will actually see it.",
+        "It's kind of the opposite of erased, honestly."
+      ],
+      "reasoning": "Alternates let the moment be either gently perceptive or more directly affirming, depending on desired subtlety."
+    },
+    {
+      "lineId": "s11c-3",
+      "alternatives": [
+        "Genius. Cry for help. Possibly a school project. All valid.",
+        "I vote we frame it and never explain it to anyone."
+      ],
+      "reasoning": "Keeps the found-family humor of the 'third table' ending light without forcing a big emotional statement — the found belonging speaks through ease, not declaration."
+    }
+  ]
+}

@@ -342,7 +342,19 @@ ${constraints.map(c => `- ${c}`).join('\n')}
 YOUR TASK:
 Revise the episode outline to address all feedback while maintaining story quality.
 
-FORMAT YOUR RESPONSE AS JSON (same structure as before).`;
+FORMAT YOUR RESPONSE AS JSON wrapped in a \`\`\`json code block. The outline
+MUST be nested under the "episodeOutline" key — do NOT return the outline
+object directly:
+{
+  "episodeOutline": { ...complete revised outline, same fields as the draft... },
+  "designNotes": "what you changed and why",
+  "uncertainties": [...]
+}
+
+TRANSITION RULES (MANDATORY — the episode is unplayable without them):
+- EVERY option in EVERY choicePoint must include "nextScene" (a scene id or "END")
+- EVERY scene that has NO choice point must include "defaultNextScene" (a scene id or "END")
+- Every scene must be reachable from the first scene; at least one path must reach "END"`;
     
     const response = await this.callLLM(
       this.systemPrompt,
@@ -419,7 +431,15 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
     }
     
     try {
-      const parsed = JSON.parse(jsonString);
+      let parsed = JSON.parse(jsonString);
+      
+      // Tolerate the model returning the outline object directly
+      // (observed on REVISION_REQUEST) instead of nested under
+      // "episodeOutline".
+      if (!parsed.episodeOutline && parsed.title && Array.isArray(parsed.scenes)) {
+        console.warn('[Story Architect] Response was a bare outline; wrapping in episodeOutline');
+        parsed = { episodeOutline: parsed, designNotes: parsed.designNotes || '' };
+      }
       
       // Validate required fields
       if (!parsed.episodeOutline || !parsed.episodeOutline.title) {

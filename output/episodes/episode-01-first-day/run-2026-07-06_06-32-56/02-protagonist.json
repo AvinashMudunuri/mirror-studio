@@ -1,0 +1,94 @@
+{
+  "character": {
+    "id": "protagonist-jordan-alvarez-mireles",
+    "name": "Jordan Alvarez-Mireles",
+    "age": 15,
+    "pronouns": "she/her",
+    "appearance": {
+      "brief": "Medium height, broad-shouldered from years of competitive swimming, with dark curly hair she usually shoves into a messy bun that never stays put. She has a scar through one eyebrow from a bike accident at 10 and wears the same faded green hoodie so often her friends joke it has legal residency in her locker.",
+      "distinctiveFeatures": [
+        "Eyebrow scar she absentmindedly touches when nervous",
+        "Chipped nail polish she reapplies badly during class instead of studying",
+        "A silver ring on a chain around her neck that belonged to her abuela"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "fiercely loyal",
+        "quick-tempered",
+        "secretly anxious",
+        "funny as a shield"
+      ],
+      "bigFiveProfile": {
+        "openness": 7,
+        "conscientiousness": 5,
+        "extraversion": 8,
+        "agreeableness": 6,
+        "neuroticism": 7
+      },
+      "mannerisms": [
+        "Cracks jokes the second a conversation gets emotionally real",
+        "Taps a rhythm on her thigh when she's trying not to say something",
+        "Physically puts herself between friends and conflict without thinking"
+      ],
+      "speechPatterns": [
+        "Fast talker who trails off mid-sentence when she's actually nervous",
+        "Uses 'okay but like—' as a verbal reset button",
+        "Slips into Spanish single words when frustrated or overwhelmed (mixes with English naturally, not performatively)"
+      ],
+      "emotionalTendencies": "Jordan feels everything at full volume but has trained herself to convert sadness into humor or anger almost instantly — it's faster and feels safer than sitting in it. She cries alone, never in front of people, and considers that a point of pride rather than a problem."
+    },
+    "background": {
+      "family": "Raised primarily by her mom and grandmother after her dad moved out when she was 9; her mom works two jobs, so Jordan has been quasi-parenting her younger brother since middle school. Her abuela recently moved in after a health scare, which has scrambled the household routine and made Jordan feel both needed and invisible.",
+      "interests": [
+        "competitive swimming",
+        "making chaotic playlists for every mood",
+        "amateur photography of 'ugly-beautiful' things — cracked sidewalks, dead flowers, etc."
+      ],
+      "strengths": [
+        "fierce protector of people she loves",
+        "genuinely funny, disarms tension in a room",
+        "notices when other people are hurting before they say anything"
+      ],
+      "struggles": [
+        "Cannot ask for help without framing it as a joke first",
+        "Picks fights with people she's actually scared of losing",
+        "Struggling academically because she's stretched too thin at home and won't admit it"
+      ],
+      "secrets": [
+        "She's terrified her abuela is going to die and she has practiced the eulogy in her head more than once",
+        "She quit the swim team's advanced track without telling her mom because the pressure was making her physically sick, and has been faking practice schedules for three weeks"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Keep her family from falling apart",
+        "Get back on the swim team's radar without anyone finding out she quit",
+        "Be the reliable one so nobody has to worry about her"
+      ],
+      "unconscious": [
+        "To be taken care of for once instead of always being the one taking care",
+        "Permission to be scared without it meaning she's failed everyone"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Casual teen vernacular, code-switches with Spanish words naturally, sharp comedic timing, avoids therapy-speak entirely unless mocking it",
+      "sentenceComplexity": "Short punchy sentences when joking or deflecting; sentences trail off or get clipped when she's actually vulnerable",
+      "emotionalExpressiveness": "Loud and expressive on the surface (jokes, sarcasm, big reactions to small things), guarded and minimal when it's something that actually matters",
+      "examples": [
+        "\"Oh my god, I'm FINE, I just — okay, why is everyone looking at me like that, I said I'm fine.\"",
+        "\"You can't just say 'we need to talk' and then not talk, that's, like, a war crime.\"",
+        "\"Abuela's ring doesn't even fit me, I just — I don't know. It's stupid.\"",
+        "\"I'm not mad. I'm just going to be very loudly and specifically not mad at you for the rest of the day.\""
+      ]
+    },
+    "storyRole": "Protagonist whose external arc (reclaiming her place on the swim team, being honest with her mom about the household load) mirrors her internal arc of learning that being needed and being enough are not the same thing — and that asking for help is not the same as failing the people she loves.",
+    "arcPotential": [
+      "Episode 2: Jordan's lie about swim practice starts to unravel when her coach calls home, forcing a confrontation about why she really quit.",
+      "Episode 5: Abuela has a health scare that forces Jordan to sit in a hospital waiting room with nothing to fix and no one to protect — she has to just feel something for once.",
+      "Episode 8: Jordan finally tells her mom the truth about how much she's been carrying, expecting to be needed less afterward and instead discovering what it feels like to be held."
+    ]
+  },
+  "designNotes": "Since the request provided empty/placeholder world and requirement fields, I designed a grounded, contemporary teen protagonist built around a strong emotional core rather than a specific genre or 'MIRROR' worldbuilding, so she can be dropped into most realistic-fiction or slice-of-life contexts (which seems to fit a general 'Project MIRROR' teen-facing platform). I intentionally avoided making her a 'lesson' character — her humor isn't just charm, it's armor, and her loyalty isn't purely a virtue, it's partly how she avoids reckoning with her own needs. The contradiction at her center (fiercely protective of others / terrible at protecting herself) gives writers a lot of room without becoming preachy or issue-of-the-week.",
+  "representationNotes": "Jordan is written as a Mexican-American teen girl navigating a multigenerational household, which is common but underrepresented as a *default* protagonist experience rather than an 'issue' storyline — her ethnicity and family structure inform her voice and pressures naturally (code-switching, caretaking expectations, multigenerational living) without being the singular focus of her identity or arc. Her anxiety and caretaker-burnout are depicted without pathologizing her humor or resilience as purely 'symptoms' — she's allowed to be genuinely funny and genuinely struggling at the same time, which matters for teens who use humor as a real coping tool, not just a mask to be 'fixed.'"
+}

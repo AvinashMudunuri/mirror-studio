@@ -1,0 +1,467 @@
+[
+  {
+    "character": {
+      "id": "tyler",
+      "name": "Tyler Brennan",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Average height for seventh grade but built like he's compensating for something — broad shoulders, always in a sports hoodie even when it's warm out. Restless hands, a little acne along the jaw he picks at when he thinks no one's looking.",
+        "distinctiveFeatures": [
+          "Chipped front tooth from a bike accident in fifth grade — he tells three different versions of how it happened",
+          "Wears the same lucky wristband every day, faded almost to gray",
+          "Loud laugh that comes half a second before anyone else's, like he's trying to set the tone"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "performatively confident",
+          "quick to mock others before they can mock him",
+          "surprisingly perceptive when he's not showing off",
+          "craves an audience"
+        ],
+        "bigFiveProfile": {
+          "openness": 4,
+          "conscientiousness": 3,
+          "extraversion": 9,
+          "agreeableness": 3,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Leans back in his chair with arms crossed like he's judging a show only he can see",
+          "Points and does a little laugh-exhale ('hah') before he actually starts laughing",
+          "Taps his pencil or fork against the table when he's bored or nervous, faster when it's the latter"
+        ],
+        "speechPatterns": [
+          "Uses nicknames as a weapon and a leash — everyone gets a label, and the label sticks",
+          "Deflects with 'relax, it's a joke' the second someone pushes back",
+          "Talks louder than the conversation requires, like volume equals winning"
+        ],
+        "emotionalTendencies": "Tyler performs confidence like it's a full-time job because the alternative — being seen as ordinary, or worse, invisible — terrifies him. He reads a room fast and picks the safest target, which is almost never the strongest kid. His cruelty is reflexive, not calculated; he genuinely doesn't clock the damage until someone makes him look at it."
+      },
+      "background": {
+        "family": "Middle of three brothers, all athletic, all loud. His oldest brother made varsity as a freshman and Tyler's been chasing that shadow since third grade. Dinner table is competitive — jokes, sports stats, who can talk over whom. Nobody's ever cruel on purpose at home, but nobody's gentle either.",
+        "interests": [
+          "basketball (JV hopeful, not there yet)",
+          "prank videos",
+          "collecting sneakers he can't really afford",
+          "actually pretty good at drawing, tells almost no one"
+        ],
+        "strengths": [
+          "genuinely funny when he's not aiming it at someone",
+          "loyal to the friends already inside his circle",
+          "notices social dynamics fast — knows exactly how to work a room"
+        ],
+        "struggles": [
+          "reading before hitting middle school, still slower than he'd like, deeply embarrassed by it",
+          "fear of being 'the loser' so acute he'll throw someone else under the bus to avoid the label",
+          "no real outlet for how much he's performing all the time"
+        ],
+        "secrets": [
+          "He actually likes drawing comics and has a sketchbook he'd die before showing anyone",
+          "He was 'Jordan' once, in fourth grade — new kid, ate alone, got mocked for weeks. He's terrified someone will remember."
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Stay firmly inside the popular orbit",
+          "Make people laugh, especially Maya's table — it's the one that matters",
+          "Make varsity someday like his brother"
+        ],
+        "unconscious": [
+          "Prove he's not the awkward kid he used to be",
+          "Be liked enough that nobody looks too closely",
+          "Find one place where he doesn't have to perform"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual seventh-grade slang, current but not try-hard; leans on hyperbole and pop-culture references",
+        "sentenceComplexity": "Short, punchy, interruption-heavy — talks in bursts, rarely finishes a thought before someone reacts",
+        "emotionalExpressiveness": "Loud and performative on the surface, defensive and clipped if actually challenged — his jokes get faster and meaner when he's rattled, not slower",
+        "examples": [
+          "\"Yo, new kid alert — bet she brought a name tag and everything.\"",
+          "\"Relax, Jordan, it's a joke, God. Can you not read the room? Oh wait—\"",
+          "\"...whatever, man, it's not that deep.\" (mutters this after Maya's nod, doesn't fully back down but doesn't push again either)"
+        ]
+      },
+      "storyRole": "Tyler is the social pressure incarnate in 'First Impressions' — the kid whose casual cruelty toward Jordan tests whether Maya (the player) will conform or push back. He's not a villain; he's the mirror of what Maya could become if she chooses comfort over courage. His unbothered shrug in 'Small Stand' matters more than a dramatic comeuppance would — it shows the player that standing up doesn't always change the bully, but it does change how others see you, and how you see yourself.",
+      "arcPotential": [
+        "Episode 3: A group project forces Tyler and Jordan into proximity, and his sketchbook accidentally gets seen — cracking his image just enough for the player to glimpse who he actually is",
+        "Episode 6: Tyler's older brother gets cut from a team, and Tyler's bravado collapses in a smaller, quieter scene — an opening for real conversation if the player's built any trust",
+        "Season finale potential: Tyler starts sitting with Jordan without fanfare, a small unexplained shift the player notices but is never fully spelled out — growth shown, not announced"
+      ]
+    },
+    "designNotes": "Tyler is written to resist the 'flat bully' trap: his meanness comes from a specific, sympathetic wound (his own history as an outsider) without excusing the harm he causes. The goal is for players to feel two things at once — Tyler is genuinely hurting Jordan, and Tyler is a scared kid performing a role he thinks keeps him safe. The 'Small Stand' scene is designed so his response (a shrug, a mutter, not a dramatic reversal) feels true to how real middle schoolers actually back down — quietly, defensively, without ceremony — while Maya's growth is the real payoff, reflected in Maya's nod rather than Tyler's redemption arc.",
+    "representationNotes": "Tyler is deliberately not coded as any specific ethnicity or background beyond 'urban middle school kid with an athletic family' to keep him broadly recognizable without leaning on stereotypes about who bullies 'look like.' His arc potential intentionally offers a path toward change that doesn't require public shaming or adult intervention — modeling for players that peer courage (Maya's small stand) can shift group dynamics over time without needing to 'fix' the antagonist in one episode."
+  },
+  {
+    "character": {
+      "id": "chloe",
+      "name": "Chloe Park",
+      "age": 13,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height, dark hair usually in a messy half-up bun held together with pens or pencils she forgets are there. Wears oversized hoodies from her older brother, sleeves pulled over her hands.",
+        "distinctiveFeatures": [
+          "Ink stains on the side of her hand from writing left-handed",
+          "A friendship bracelet she still wears even though the friend moved away in 6th grade",
+          "Doodles constantly on her arms, notebooks, and occasionally other people's homework"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "watchful",
+          "quick to laugh at others' jokes but rarely makes her own",
+          "fiercely loyal to whoever she's standing next to",
+          "more thoughtful than she lets on"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 5,
+          "extraversion": 6,
+          "agreeableness": 5,
+          "neuroticism": 7
+        },
+        "mannerisms": [
+          "Laughs a half-second after everyone else, like she's checking the room first",
+          "Picks at her bracelet when she's uncomfortable",
+          "Tucks her chin down and glances sideways at Tyler before reacting to anything"
+        ],
+        "speechPatterns": [
+          "Trails off mid-sentence when she second-guesses herself",
+          "Echoes the last thing someone confident said, almost word for word",
+          "Uses 'I mean' as a verbal safety net before disagreeing with anyone"
+        ],
+        "emotionalTendencies": "Chloe reads a room before she feels safe having a reaction of her own. She's not cruel by nature — she's a mirror for whoever has the most social power nearby. Underneath the laughing-along is a kid who's terrified of being the one people whisper about next."
+      },
+      "background": {
+        "family": "Middle child of three, parents both work long shifts (mom's a nurse, dad manages a restaurant), so she's often looking after her younger sibling and rarely gets attention at home for anything except grades.",
+        "interests": [
+          "drawing manga-style characters in the margins of her notebooks",
+          "true crime podcasts she's not supposed to listen to yet",
+          "actually really likes reading — the same genre Jordan reads, which she'd never admit"
+        ],
+        "strengths": [
+          "perceptive about people's moods",
+          "genuinely funny one-on-one, away from an audience",
+          "loyal to a fault once she trusts someone"
+        ],
+        "struggles": [
+          "chronic fear of being socially replaceable",
+          "conflates being liked with being safe",
+          "hasn't figured out how to have an opinion that isn't borrowed from someone louder"
+        ],
+        "secrets": [
+          "She sat with Jordan at lunch for the first two weeks of school last year, before Tyler's group 'discovered' her and Jordan got quietly dropped",
+          "She still has one of Jordan's book recommendations saved in her phone notes, unread but not deleted"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Stay inside Tyler's orbit because it feels like the safest seat in the building",
+          "Be seen as easy to get along with, never the problem"
+        ],
+        "unconscious": [
+          "Wants permission to like what she actually likes without fear of losing her spot",
+          "Craves a friendship that doesn't require constant social maintenance"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual middle-school vernacular, slightly self-editing — she chooses safer words in group settings, more specific and vivid ones one-on-one.",
+        "sentenceComplexity": "Short, hedging sentences in groups; longer, more detailed sentences when she forgets to be careful.",
+        "emotionalExpressiveness": "Guarded in public, surprisingly open in private — her real self leaks out in small, unguarded moments before she catches herself.",
+        "examples": [
+          "Whispers in the Hallway: \"Wait, is that her? ...Okay, don't stare, don't stare —\"",
+          "In the Circle (laughing along): \"I mean — okay that WAS kind of funny —\" (glances at Tyler, then quickly back down at her tray)",
+          "Quiet moment (if player is kind to her later): \"You actually read that whole series? I have — I mean, I've heard it's good."
+        ]
+      },
+      "storyRole": "Chloe is the social barometer of 'First Impressions' — a supporting character who shows the player what conformity looks like from the inside. Unlike Tyler, who performs cruelty for an audience, Chloe absorbs it out of fear. She's proof that not everyone laughing at Jordan is enjoying it; some are just surviving the room. Her reactions in 'Whispers in the Hallway' and 'In the Circle' subtly shift based on the player's choices, planting seeds for a possible future arc where she's the one who needs someone to be brave for her.",
+      "arcPotential": [
+        "Episode 2 (hypothetical 'Group Project'): Chloe is paired with Maya and Jordan and has to choose whether to keep performing for Tyler's table or admit she's read the same books as Jordan all along",
+        "Episode 3 (hypothetical 'Cracks'): A moment where Tyler turns his mockery on Chloe herself, testing whether Maya extends her the same grace Chloe never gave Jordan",
+        "Long-term: Chloe could become a genuine friend to the player if shown consistent kindness, or double down defensively if the player also chooses comfort over courage — mirroring Maya's own arc back at her"
+      ]
+    },
+    "designNotes": "Chloe was built to avoid being a flat 'mean girl' accessory to Tyler. Her core wound is fear of social irrelevance, not malice — she laughs at Jordan not because she believes it's funny but because dissenting feels like a bigger risk than complicity. Giving her a hidden history with Jordan (the abandoned lunch friendship) creates dramatic irony: she's the character with the most to feel guilty about, and the most potential to change if the player models a different way of belonging. Her mannerisms (delayed laughter, glancing at Tyler before reacting) are designed to be visually/textually readable in-scene, giving sharp players a clue that her cruelty is borrowed, not owned.",
+    "representationNotes": "Chloe is written as Korean American without making her ethnicity a plot point in this episode — it's part of her specificity (family context, work schedules) rather than a lesson. Her anxiety and people-pleasing are portrayed as a recognizable, non-pathologized middle-school survival strategy rather than a diagnosis, keeping her relatable to the target age group without reducing her to 'the anxious kid.' Care was taken to make her complicit without making her irredeemable — middle schoolers should recognize both the fear that drives her and the harm it causes."
+  },
+  {
+    "character": {
+      "id": "maya",
+      "name": "Maya Reyes",
+      "age": 13,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height with an easy, confident posture, dark curly hair usually pulled back with a mismatched scrunchie collection she trades with friends. Dresses in thrifted band tees and bright sneakers she's decorated herself with marker doodles.",
+        "distinctiveFeatures": [
+          "A backpack covered in pins from six different interests, half of which she's already 'over'",
+          "A loud, unselfconscious laugh that turns heads",
+          "Chipped nail polish she never quite finishes redoing"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "warm",
+          "socially fluent",
+          "quietly conflict-avoidant",
+          "genuinely curious about new people"
+        ],
+        "bigFiveProfile": {
+          "openness": 8,
+          "conscientiousness": 5,
+          "extraversion": 9,
+          "agreeableness": 7,
+          "neuroticism": 4
+        },
+        "mannerisms": [
+          "Taps the table twice when she's about to change the subject",
+          "Leans in when someone new is talking, like she's genuinely trying to memorize them",
+          "Goes quiet and busies herself with her food when things get tense instead of speaking up"
+        ],
+        "speechPatterns": [
+          "Starts sentences with 'Okay so—' when she's excited",
+          "Calls people 'friend' as a warm, slightly teasing nickname",
+          "Uses humor to smooth over awkward moments rather than address them directly"
+        ],
+        "emotionalTendencies": "Maya reads a room fast and adjusts to keep the mood light — it's a genuine gift, but it means she sometimes prioritizes group harmony over calling out what's wrong. She isn't cruel, and she isn't a pushover exactly; she's someone who has learned that being liked is safer than being right, and she hasn't yet had to pay a real price for that choice."
+      },
+      "background": {
+        "family": "Oldest of three, parents run a small taquería near the school. She helps out on weekends and talks about it with pride, not embarrassment — she's used to being 'on' for customers, which maybe explains how easily she performs warmth.",
+        "interests": [
+          "Making Spotify playlists for every mood and occasion",
+          "Photography — mostly candid shots of friends she never shows anyone",
+          "Basketball, which she plays fiercely but without any interest in joining the school team"
+        ],
+        "strengths": [
+          "Makes new people feel instantly welcome",
+          "Genuinely observant about who's struggling, even quietly",
+          "Has real range — funny with the popular table, gentle one-on-one"
+        ],
+        "struggles": [
+          "Was the 'new kid' herself in 5th grade and remembers being invisible for months — she overcorrected by becoming the person everyone knows",
+          "Freezes up, rather than speaks up, when someone she likes (Tyler included) does something unkind",
+          "Fears that being 'too nice' publicly will cost her social standing she worked hard to build"
+        ],
+        "secrets": [
+          "She still has the photo she took of herself eating alone in the bathroom in 5th grade — she's never deleted it",
+          "She's noticed Jordan before today and has meant to say something kind, but never has"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Make the new kid feel welcome (it's easy, it feels good, it's who she wants to be)",
+          "Keep her table's vibe fun and drama-free"
+        ],
+        "unconscious": [
+          "Prove to herself she can be both popular and good, without ever being tested on the 'good' part",
+          "Avoid becoming invisible again — even for a moment"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual, current middle-school slang used naturally, not performatively — she's fluent in it, not try-hard.",
+        "sentenceComplexity": "Short, punchy sentences when she's being funny; slightly longer and softer when she's being sincere.",
+        "emotionalExpressiveness": "Big and open on the surface — laughs loud, compliments freely — but goes quiet or non-committal the moment real conflict shows up.",
+        "examples": [
+          "Okay so — bold move, introducing yourself like that on day one. I respect it. Sit with us.",
+          "Tyler's just... Tyler. Don't let it ruin your lunch, okay?",
+          "(quietly, after the player pushes back on Tyler) ...Yeah. Okay. Cool."
+        ]
+      },
+      "storyRole": "Maya is the gravitational center of the episode's social pressure — not a villain, but the embodiment of the 'comfortable seat' the title promises. She represents the version of belonging that costs nothing upfront and everything in small increments. Her silent reaction in 'Fitting In, At a Cost' and her approving nod in 'Small Stand' are the episode's real report card: she's always watching to see who the player actually is, even when she isn't brave enough to show it herself.",
+      "arcPotential": [
+        "Episode 'New School: Second Semester': Maya's own history of exclusion surfaces when a new 'new kid' arrives and she has to decide whether to be the person she wishes had noticed her in 5th grade",
+        "Episode 'The Group Project' (semester-long partnership arc): If the player befriended Jordan, Maya's friendship deepens into something more honest — she starts admitting when she's scared to speak up, rather than just smoothing things over",
+        "Potential future beat: Maya confides in the player about the bathroom photo, marking the first time she's shown anyone the parts of herself that aren't 'on'"
+      ]
+    },
+    "designNotes": "Maya is built to be seductive, not sinister — the episode's real tension isn't 'popular kid vs. outsider,' it's 'genuine kindness that stops short of courage.' Her warmth toward the player in 'Bold Start' has to be completely real; if players sense she's fake, the later moral weight of her silence during Tyler's mocking collapses. Her backstory (being the invisible new kid in 5th grade) explains both her gift for welcoming people AND her fear of rocking the boat — same wound, two different survival strategies. I gave her a name overlap with the protagonist's surname-neighboring identity (Maya Ortiz-Chen / Maya Reyes) intentionally worth flagging to writers — it may be worth a light rename in later drafts to avoid player confusion in dialogue-heavy scenes, but narratively it creates a subtle mirror: this is who the player-Maya could become if she settles for comfort.",
+    "representationNotes": "Maya is a Latina girl from a working-class immigrant family whose social capital is earned, not inherited — she's not '\"the popular girl\" as a stock trope but someone whose likability is a skill she developed out of necessity. Care was taken to avoid making her complicity in Tyler's behavior read as villainous or performative meanness; she's meant to model a very real, very common form of bystander behavior that many teen readers will recognize in themselves, making her more mirror than cautionary tale."
+  },
+  {
+    "character": {
+      "id": "jordan",
+      "name": "Jordan Kessler",
+      "age": 12,
+      "pronouns": "they/them",
+      "appearance": {
+        "brief": "Average height, a little slouchy, like they're trying to take up less space. Dark hair that falls into their eyes and gets pushed back constantly. Wears the same oversized olive-green hoodie often enough that it's basically a signature — sleeves pulled over their hands even when it's not cold.",
+        "distinctiveFeatures": [
+          "A backpack covered in small, careful pin collection — mostly birds and obscure fantasy book logos, arranged with more precision than the rest of their look suggests",
+          "Doodles in the margins of every notebook — same recurring cartoon bird character, evolving in tiny ways like a flipbook",
+          "Bites the inside of their cheek when nervous instead of visibly fidgeting — a tell only someone paying close attention would catch"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "guarded",
+          "sharp-witted once safe",
+          "quietly observant",
+          "self-protectively withdrawn"
+        ],
+        "bigFiveProfile": {
+          "openness": 8,
+          "conscientiousness": 6,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 7
+        },
+        "mannerisms": [
+          "Uses a book or phone as a physical shield when feeling exposed, holding it slightly raised even when not really reading",
+          "Makes brief, too-fast eye contact then looks away — like checking if it's safe before allowing a real reaction",
+          "When comfortable, talks with their hands, sketching shapes in the air to describe things"
+        ],
+        "speechPatterns": [
+          "Deflects nerves with dry, quick one-liners delivered almost under their breath",
+          "Over-articulate vocabulary when discussing books/interests — the one place they let themselves sound smart out loud",
+          "Trails off mid-sentence when getting too close to something real, then changes the subject abruptly"
+        ],
+        "emotionalTendencies": "Jordan runs hot underneath a very controlled surface. They've learned to modulate visible reactions because new schools taught them that being 'too much' gets noticed, and being noticed gets you labeled before you get a say in it. When something breaks through — genuine kindness, a shared joke, being truly listened to — the relief is almost embarrassing in its size, like a pressure valve releasing. They cry rarely, but when they do, it's less about the immediate moment and more like months of held tension finally letting go."
+      },
+      "background": {
+        "family": "Only child. Mom is a travel nurse who takes contract assignments in different cities — good pay, health insurance, stability in every way except the one that matters most to a 12-year-old: staying anywhere. This is the third school in four years. Dad is around but lives two states away; they talk on Sundays, which Jordan has mixed feelings about admitting they look forward to.",
+        "interests": [
+          "Fantasy novels with maps in the front — reads series obsessively, always the whole thing before starting the next",
+          "Birdwatching, inherited from a grandmother Jordan barely remembers but keeps a life list for anyway",
+          "Runs an anonymous fan-art Instagram with a genuinely decent following — draws the bird-comic-character seen in their notebooks. No one at any school has ever known about this."
+        ],
+        "strengths": [
+          "Genuinely funny once you get past the guard — quick, observational humor",
+          "Remembers small details people mention and brings them up later, which makes people feel unexpectedly seen",
+          "Adaptable in the sense that they've learned to read a room fast — a survival skill, but a real one"
+        ],
+        "struggles": [
+          "Convinced that investing in friendships is pointless because they'll just have to leave again",
+          "Struggles to ask for what they need directly — tests people instead of telling them, then feels crushed when they 'fail' a test they never announced",
+          "Physically transferring three times has left a gap in some schoolwork and a bigger gap in trusting that effort in relationships pays off"
+        ],
+        "secrets": [
+          "The art account — 40K followers who know nothing about the actual Jordan sitting alone at lunch",
+          "Cried in the school bathroom on day one at the last school and has developed something like a phobia of it happening again"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the day without drawing attention",
+          "Finish the project, get the grade, don't get attached"
+        ],
+        "unconscious": [
+          "Wants someone to choose them without being asked twice",
+          "Wants proof that a place can feel like home before they inevitably lose it"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Reads above grade level and it shows — precise words, occasional big vocabulary dropped casually, especially about books/birds. Self-conscious about sounding 'like a nerd' so sometimes undercuts their own smart comment right after making it.",
+        "sentenceComplexity": "Short and clipped when guarded; longer, winding, enthusiastic sentences when talking about something they love and forget to monitor themselves.",
+        "emotionalExpressiveness": "Withholding by default, but leaks emotion through humor and small physical tells rather than words. When they do open up, it comes out in a rush, almost too much at once, like a dam breaking.",
+        "examples": [
+          "Is the seat taken? — sorry, that's a stupid question, obviously it's a table, tables have seats, I just meant—yeah. Is it okay if I sit here.",
+          "Three schools in four years. I've gotten really good at figuring out the fastest route to the bathroom and really bad at, uh, everything else about starting over.",
+          "You can go, it's fine. I'm not gonna, like, keep score. ...I mean I might. But not out loud.",
+          "That's my grandma's bird book, actually. She died before I was old enough to remember her voice, so I just — I don't know. Birds feel like the closest thing I've got."
+        ]
+      },
+      "storyRole": "Jordan is the emotional stakes made visible — the living consequence of every choice Maya makes in 'First Impressions.' They're not a prop meant to teach a lesson about kindness; they're a kid with their own guardedness, wit, and reasons for both, whose openness has to be earned rather than assumed. Jordan's arc tracks in parallel with Maya's choices: warmth is met with real reciprocity, coldness is met with a believable, undramatic withdrawal (not sobbing, just quietly leaving), and persistence is met with slow, hard-won trust. Jordan should never feel like a reward to be unlocked — their reactions are consistent with a kid who has learned, through repeated loss, to protect themselves first.",
+      "arcPotential": [
+        "Episode 'First Impressions': Establishes Jordan's guardedness and tests whether Maya will offer connection despite social cost.",
+        "Future episode potential: Jordan's anonymous art account gets discovered at school — testing whether the friendship built with Maya can survive Jordan being truly seen, not just chosen.",
+        "Future episode potential: Mom gets word of another possible relocation, and Jordan has to decide whether to tell Maya before it's confirmed — or protect themselves by pulling away first, the way they always have.",
+        "Longer arc: Jordan slowly becomes the one who stands up for someone else (perhaps Chloe), putting into practice the courage they were only on the receiving end of in 'First Impressions.'"
+      ]
+    },
+    "designNotes": "Jordan is built to resist the 'sad lonely new kid' trope by having an actual interior life that exists independently of being lonely — the birdwatching, the anonymous art account, the dry humor — these exist whether or not Maya ever sits with them. The core contradiction (guarded IRL, genuinely thriving and witty online/in private) gives the character somewhere to go and keeps them from being defined solely by their need for friendship. Their defense mechanism — testing people indirectly rather than stating needs ('You can go, it's fine') — creates natural, non-melodramatic tension in every scene without requiring Jordan to be either a saint or overly performative in their hurt. The three-move backstory via a travel-nurse parent is a specific, contemporary, non-tragic explanation for instability — no death, no dramatic trauma, just an ordinary hard thing many kids actually experience.",
+    "representationNotes": "Jordan's they/them pronouns are present but not thematized — no scene makes their gender identity 'the point'; it's simply a fact about them, modeling that nonbinary kids exist in ordinary friendship stories without their identity being the central conflict. The travel-nurse single-parent household reflects realistic economic and family diversity without leaning on poverty-as-plot or divorce-as-tragedy tropes. Jordan's social awkwardness is written as situational (rooted in repeated relocation) rather than coded as a disability or diagnosis, keeping the character specific rather than symbolic — care should be taken in dialogue passes to keep Jordan's wit and interiority front and center so they never read as merely 'the lonely kid who needs saving.'"
+  },
+  {
+    "character": {
+      "id": "ms_alvarez",
+      "name": "Sofia Alvarez",
+      "age": 34,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Compact and energetic, favors bright cardigans over practical teacher-wear, always has at least one pen tucked behind her ear that she forgets is there.",
+        "distinctiveFeatures": [
+          "A chipped front tooth she never bothered fixing — got it falling off her bike at 19 and calls it 'character'",
+          "Reading glasses on a beaded chain she made with a former student, worn even though she rarely needs them",
+          "Handwriting on the whiteboard that's aggressively neat, like she's compensating for something chaotic underneath"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "deliberately unsentimental",
+          "quietly strategic",
+          "dry-humored",
+          "protective without hovering"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 8,
+          "extraversion": 6,
+          "agreeableness": 6,
+          "neuroticism": 4
+        },
+        "mannerisms": [
+          "Taps two fingers on the desk when she's about to say something she's decided on and isn't taking questions about",
+          "Pushes her glasses up even when they're not sliding down — a tell that she's stalling to choose her words",
+          "Writes partner names on the board instead of announcing them out loud, letting the room read it and react"
+        ],
+        "speechPatterns": [
+          "Uses dry understatement instead of enthusiasm — 'Well, that happened' instead of visible reaction",
+          "Rarely raises her voice; drops it lower to get quiet, which somehow works better",
+          "Calls students by full first name when serious, nickname or last name when relaxed"
+        ],
+        "emotionalTendencies": "Sofia keeps a flat, competent surface because seven years of middle school has taught her that kids trust adults who don't perform their feelings at them. Underneath, she notices everything — who flinches, who's friendless, who's performing — and she cares more than she lets show. She's not naive about the social ecosystem of 7th grade; she uses her authority quietly, like moving a chess piece, rather than lecturing."
+      },
+      "background": {
+        "family": "Grew up one of five kids in a loud house in the same neighborhood the school serves; still lives ten minutes away, shops at the same grocery store as half her students' parents.",
+        "interests": [
+          "restoring old furniture she finds on the curb",
+          "running a low-key school garden club",
+          "true crime podcasts she pretends she doesn't listen to during grading"
+        ],
+        "strengths": [
+          "reads social dynamics fast",
+          "doesn't rescue kids from consequences, lets them sit in them",
+          "remembers small details about every student"
+        ],
+        "struggles": [
+          "can come across as cold or unbothered to kids who want visible warmth",
+          "sometimes intervenes too subtly and kids miss that she's trying to help at all",
+          "burned out on performative 'inspirational teacher' expectations from admin"
+        ],
+        "secrets": [
+          "She paired Maya and Jordan on purpose — she clocked the lunchroom dynamic on day one and it wasn't random at all",
+          "She was the Jordan of her own middle school and has never told a single colleague that"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the semester project without a parent email crisis",
+          "Get Jordan — who she's watched go quiet in every group activity so far — one real shot at a partnership that isn't pity or punishment"
+        ],
+        "unconscious": [
+          "Prove to herself she can still meaningfully intervene in a kid's year without becoming the 'inspirational teacher' trope she privately rolls her eyes at",
+          "Give some kid the pairing she never got"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult, direct, no baby-talk or forced slang — she doesn't try to sound young or cool, and that's part of why students respect her.",
+        "sentenceComplexity": "Short, declarative sentences when giving instructions; slightly longer, dryly wry ones when she's needling a student affectionately.",
+        "emotionalExpressiveness": "Understated on purpose. She shows care through specificity and attention, not warmth-language. A raised eyebrow does more work than a smile.",
+        "examples": [
+          "\"Partners are on the board. No, I won't be switching them. Yes, I know exactly what I'm doing.\"",
+          "\"Maya and Jordan — funny, that. Almost like I thought about it.\"",
+          "\"You've got the whole semester. Use it to actually get to know each other, or use it to suffer separately in the same room. Your call, but only one of those gets you a good grade.\""
+        ]
+      },
+      "storyRole": "Ms. Alvarez is the adult hand that turns the episode's social choices into structural consequence. She doesn't lecture Maya about kindness or reference the lunchroom directly — she simply, deliberately, makes Maya's private choices public and permanent by pairing her with Jordan. She functions as the mechanism of 'consequences arrive,' but she's written as a person with her own quiet agenda: she's been watching Jordan all week, and this pairing is a calculated risk on her part, not a random administrative act. Her flat delivery ('almost like I thought about it') is a subtle wink that lets sharp players sense she's not neutral — she's rooting for something.",
+      "arcPotential": [
+        "Episode 'Group Work': Ms. Alvarez notices tension between Maya and Jordan mid-project and chooses whether to intervene directly or let it play out — testing her own belief in letting kids sit in consequences",
+        "Episode 'Parent-Teacher Night': A glimpse of her home life / neighborhood roots when a parent recognizes her from the block, humanizing her outside 'teacher mode'",
+        "Later season: Jordan, now trusting her more, asks why she paired them with Maya — giving Sofia a rare moment to almost tell them about her own middle school self before deciding it's not her story to make the moment about"
+      ]
+    },
+    "designNotes": "I built Ms. Alvarez around a contradiction: she is emotionally perceptive and even sentimental in her private motivations, but her surface presentation is dry, unbothered, almost brusque — because that's what reads as trustworthy to 12-year-olds who are allergic to performed adult warmth. She's not a wise mentor dispensing lessons; she's a working teacher with limited time, a full roster, and one quiet strategic move (the pairing) that she doesn't explain or take credit for. Giving her a secret parallel to Jordan's situation (without ever stating it to the player) lets writers deepen her in later episodes without turning her into an exposition machine in this one. Her humor and specificity (curb furniture, true crime podcasts, the chipped tooth) exist so she reads as an actual adult with a life, not a walking classroom fixture.",
+    "representationNotes": "Sofia Alvarez is written as a Latina teacher in an urban, working-class community she's part of, not separate from — deliberately avoiding the 'inspirational teacher from outside the neighborhood who saves the kids' trope. Her competence and authority aren't tied to warmth-performance, which pushes back on a common flattening of women of color educators into either stern disciplinarians or endlessly nurturing figures. Her backstory (being 'the Jordan' of her own middle school) is included as an internal motivator only — it should never be revealed as a tidy speech to students, preserving her privacy and avoiding the trope of adults using their trauma as a teaching prop."
+  }
+]

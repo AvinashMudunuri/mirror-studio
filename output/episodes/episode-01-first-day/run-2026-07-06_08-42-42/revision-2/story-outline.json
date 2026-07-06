@@ -1,0 +1,804 @@
+{
+  "episodeOutline": {
+    "title": "New School: First Impressions",
+    "synopsis": "On her first day at a new school, the player must navigate unfamiliar social terrain — deciding how to introduce herself, where to sit at lunch, and how to treat a fellow outsider named Jordan. Small choices about confidence, kindness, and fitting in ripple forward into a semester-long project partnership — and the partnership itself now visibly carries the weight of what happened at lunch, whether that's a head start on friendship, a blank slate, or something the player has to own up to.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "First Day, New Halls",
+        "location": "School Entrance & Hallway",
+        "characters": [
+          "player"
+        ],
+        "duration": 1.5,
+        "synopsis": "The player arrives at a new school, alone in a crowd that already knows itself.",
+        "description": "The player walks into an unfamiliar school, clutching a schedule, searching for locker 214 among a sea of strangers who already know each other. Sounds of laughter and lockers slamming feel louder than they should.",
+        "emotionalBeat": "Anxious anticipation",
+        "defaultNextScene": "scene-2"
+      },
+      {
+        "id": "scene-2",
+        "title": "Whispers in the Hallway",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "tyler",
+          "chloe"
+        ],
+        "duration": 1.5,
+        "synopsis": "Tyler and Chloe clock the player as new; the player feels watched for the first time.",
+        "description": "Tyler leans against a locker and calls out, 'Fresh meat — tour costs five bucks, cash only,' the line clearly rehearsed on other new kids before her. Beside him, Chloe's laugh arrives half a second late, like she's checking the room's reaction before committing to her own. The player feels, for the first time, the particular weight of being 'the new kid.'",
+        "emotionalBeat": "Self-consciousness under scrutiny"
+      },
+      {
+        "id": "scene-3a",
+        "title": "Bold Start",
+        "location": "Hallway near lockers",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 1.5,
+        "synopsis": "A confident introduction catches the eye of Priya, a senior who remembers being new once too.",
+        "description": "Priya, a senior with an easy confidence, catches the player's introduction and grins — half impressed, half amused, like she remembers what it's like to be the new one somewhere. 'Come find me at lunch if you want,' she says, already walking off before the player can overthink it. It doesn't feel like a spotlight — more like an open door left unlocked.",
+        "emotionalBeat": "Unexpected spark of belonging",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-3b",
+        "title": "Quiet Observer",
+        "location": "Hallway & Classroom",
+        "characters": [
+          "player"
+        ],
+        "duration": 1.5,
+        "synopsis": "The player watches from a safe distance and notices Jordan, isolated with a book.",
+        "description": "The player keeps her head down, mapping the school's social terrain from a safe distance — who sits where, which hallway gets congested. She notices Jordan at the back of the classroom, a battered field guide to birds held up like a shield against the noise. When the bell rings, Jordan is first out the door — already knows, she'll learn later, the fastest route to the single-stall bathroom by the choir room, the one almost nobody uses.",
+        "emotionalBeat": "Cautious calculation",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-4",
+        "title": "Cafeteria Crossroads",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "priya",
+          "jordan",
+          "tyler",
+          "chloe"
+        ],
+        "duration": 1.5,
+        "synopsis": "Three options, one public decision: Priya's table, Jordan's corner, or an empty seat.",
+        "description": "The cafeteria is loud and every table seems already claimed. Priya waves the player over — an easy, unbothered wave, like it's no big deal either way. In the corner, Jordan sits alone with a book. An empty table sits untouched near the windows.",
+        "emotionalBeat": "The pressure of a public decision"
+      },
+      {
+        "id": "scene-5a",
+        "title": "In the Circle",
+        "location": "Priya's Table",
+        "characters": [
+          "player",
+          "priya",
+          "tyler",
+          "chloe"
+        ],
+        "duration": 1.5,
+        "synopsis": "The table is easy and warm — until Tyler mocks Jordan and looks to the player to join in.",
+        "description": "The player joins Priya's table. Conversation is easy until Tyler nods across the cafeteria at the field guide poking out of Jordan's bag. 'Careful,' he says, 'don't let it migrate on you' — pleased with a joke he'll have forgotten by tomorrow. The table laughs, Chloe half a beat behind as always, and every eye drifts to the player, waiting.",
+        "emotionalBeat": "Social pressure to conform"
+      },
+      {
+        "id": "scene-5b",
+        "title": "Solo Table",
+        "location": "Corner Table",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "synopsis": "Eating alone, the player is approached by a nervous Jordan.",
+        "description": "Eating alone, the player is approached by Jordan, who nervously asks if the seat is taken.",
+        "emotionalBeat": "A vulnerable overture"
+      },
+      {
+        "id": "scene-5c",
+        "title": "Jordan's Table",
+        "location": "Corner Table",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 1.5,
+        "synopsis": "The player sits with Jordan, then gets pulled toward the easier table across the room.",
+        "description": "The player sits with Jordan and learns they just transferred too. Mid-conversation, Priya waves the player over to her table. Jordan quietly says, 'You can go, it's fine.'",
+        "emotionalBeat": "The pull between comfort and connection"
+      },
+      {
+        "id": "scene-6a1",
+        "title": "Fitting In, At a Cost",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "priya",
+          "chloe"
+        ],
+        "duration": 1,
+        "synopsis": "The player laughs along; it feels hollow, and Priya notices.",
+        "description": "The player laughs along with the group. It feels like victory, but hollow. Priya says nothing, though something in her expression shifts. Chloe laughs too — same half-beat behind — like she's relieved someone else did it first.",
+        "emotionalBeat": "Uneasy compromise",
+        "defaultNextScene": "scene-priya-fade"
+      },
+      {
+        "id": "scene-6a2",
+        "title": "Small Stand",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "priya",
+          "tyler",
+          "chloe"
+        ],
+        "duration": 1,
+        "synopsis": "A gentle pushback on the joke earns quiet respect — but not without a stiffer, stranger rest of lunch.",
+        "description": "The player pushes back gently: 'That's not cool, honestly.' Tyler blinks, caught off guard, then shrugs — 'Relax, it's just a joke' — a little edge under the ease, like he doesn't love being called out in front of people. The table goes quiet a beat too long. Chloe's laugh doesn't come this time; she just looks between Tyler and the player, recalculating something. Priya gives an approving nod, but for the rest of lunch the conversation stays a half-step stiffer than before — a small, real cost for a small, real thing.",
+        "emotionalBeat": "Courage that costs a little, even when it's right",
+        "defaultNextScene": "scene-priya-respect"
+      },
+      {
+        "id": "scene-priya-fade",
+        "title": "A Friendly Distance",
+        "location": "Hallway, days later",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 0.5,
+        "synopsis": "Priya stays friendly but never invites the player back to her table.",
+        "description": "Over the next few days, Priya stays friendly enough — a wave at the lockers, a 'hey' by the water fountain — but she doesn't invite the player back to sit with her group again. It isn't punishment, just a quiet drift toward people who don't ask her to look away from things.",
+        "emotionalBeat": "The cost of belonging, revealed slowly",
+        "defaultNextScene": "scene-7-neutral"
+      },
+      {
+        "id": "scene-priya-respect",
+        "title": "A Seat Kept Open",
+        "location": "Hallway, days later",
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "duration": 0.5,
+        "synopsis": "Priya acknowledges the small stand the player took — and admits it's not always one she takes herself.",
+        "description": "The next morning, Priya falls into step beside the player at her locker. 'Hey — that was a good thing you did,' she says, like it's no big deal, though the seat she starts saving at lunch says otherwise. Then, quieter: 'I used to let stuff like that go all the time. Told myself it wasn't my place.' She doesn't finish the thought, and the player gets the sense it's not entirely about Tyler. It's a nice feeling, being seen like this — the player notices that, and notices, too, that it isn't why she said anything in the first place.",
+        "emotionalBeat": "Respect earned through honesty — and a glimpse that even the confident ones have unfinished business",
+        "defaultNextScene": "scene-7-neutral"
+      },
+      {
+        "id": "scene-6b1",
+        "title": "New Friend",
+        "location": "Corner Table",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "synopsis": "A warm welcome breaks the ice between two first-day strangers.",
+        "description": "The player welcomes Jordan warmly. They end up laughing about how nerve-wracking first days are, and the ice fully breaks.",
+        "emotionalBeat": "Genuine connection",
+        "defaultNextScene": "scene-7-connected"
+      },
+      {
+        "id": "scene-6b2",
+        "title": "Missed Connection",
+        "location": "Corner Table",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "synopsis": "A cool response makes Jordan retreat before the moment can open.",
+        "description": "The player's cool response makes Jordan visibly deflate. Jordan eats quickly and leaves early, the moment closing before it opened.",
+        "emotionalBeat": "Quiet regret",
+        "defaultNextScene": "scene-7-guarded"
+      },
+      {
+        "id": "scene-6c1",
+        "title": "Loyalty",
+        "location": "Corner Table",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "synopsis": "Staying pays off — Jordan opens up about moving schools three times.",
+        "description": "The player stays. Jordan is visibly relieved and opens up about having moved schools three times, unsure she'll ever feel settled anywhere.",
+        "emotionalBeat": "Trust built",
+        "defaultNextScene": "scene-7-connected"
+      },
+      {
+        "id": "scene-6c2",
+        "title": "The Easy Choice",
+        "location": "Priya's Table",
+        "characters": [
+          "player",
+          "priya",
+          "jordan"
+        ],
+        "duration": 1,
+        "synopsis": "The player takes the easier table; Jordan is left alone again.",
+        "description": "The player joins Priya's table instead. It's easy and fun, but across the cafeteria, Jordan sits alone again, and the player can't quite ignore the glance thrown her way.",
+        "emotionalBeat": "Guilt beneath comfort",
+        "defaultNextScene": "scene-6c2b"
+      },
+      {
+        "id": "scene-6c2b",
+        "title": "The Weight of It",
+        "location": "Library, a few days later",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 0.5,
+        "synopsis": "A brief, wordless moment forces the player to sit with what she did at lunch.",
+        "description": "In the days since lunch, the player has clocked Jordan a few times — always alone, always fine, technically. In the library before homeroom, their eyes catch for half a second over the top of the field guide. Jordan looks away first. The player feels something twist that's harder to name than guilt exactly — more like the specific discomfort of knowing you had a choice, and knowing which one you made.",
+        "emotionalBeat": "Guilt without an easy fix",
+        "defaultNextScene": "scene-7-guarded"
+      },
+      {
+        "id": "scene-7-connected",
+        "title": "Partners, Already Halfway There",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "ms_alvarez"
+        ],
+        "duration": 1.5,
+        "synopsis": "Whatever grew at lunch gets a second act when Ms. Alvarez pairs the two for a semester project.",
+        "description": "By fifth period, word has traveled the halls the way it does in a school this size — though for once, the player barely notices, still thinking about lunch. Ms. Alvarez announces semester-long partner projects and reads out: 'Jordan and — ' the player's name. Jordan's face does something complicated — surprise, then something like relief — before settling into a small, real smile. It doesn't feel like a sentence. It feels like a continuation."
+      },
+      {
+        "id": "scene-7-neutral",
+        "title": "Partners, Starting from Scratch",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "ms_alvarez"
+        ],
+        "duration": 1.5,
+        "synopsis": "Ms. Alvarez pairs the player with Jordan — a near-stranger the player barely registered at lunch.",
+        "description": "By fifth period, the day's social math has mostly settled into place, and the player's part in it barely made a ripple either way. Ms. Alvarez announces semester-long partner projects and pairs the player with Jordan — the girl with the field guide, the one the player noticed but never really met. Whatever happens next, they're starting from nothing."
+      },
+      {
+        "id": "scene-7-guarded",
+        "title": "Partners, After the Fact",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "jordan",
+          "ms_alvarez"
+        ],
+        "duration": 1.5,
+        "synopsis": "Ms. Alvarez pairs the player with the very person she let down — or was cool to — at lunch.",
+        "description": "By fifth period, a few extra glances follow the player through the halls — curious, or knowing, depending on who saw what happen at lunch. Ms. Alvarez announces semester-long partner projects and pairs the player with Jordan. Jordan's expression barely changes, already braced, like she decided a few days ago not to expect much from people here. The player feels the particular discomfort of getting exactly what fairness would predict."
+      },
+      {
+        "id": "scene-8a",
+        "title": "Finding Common Ground",
+        "location": "Library, after school",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "synopsis": "Real conversation emerges, and Jordan reveals what the bird book means to her.",
+        "description": "Working together outside of class, real conversation starts to emerge — easier if there was already something there, slower and more deliberate if not, but real either way. Jordan mentions, almost offhand, that the field guide was her grandmother's — she used to point out warblers in the backyard before she passed. 'Birds feel like the closest thing I've got,' Jordan says, and doesn't explain further, and the player doesn't ask her to.",
+        "emotionalBeat": "Walls coming down"
+      },
+      {
+        "id": "scene-8b",
+        "title": "Working Alone Together",
+        "location": "Library, after school",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "synopsis": "An efficient but tense work session leaves something unsaid.",
+        "description": "The work session is efficient but tense and quiet. As they pack up, Jordan hesitates, like there's something unsaid hanging in the air.",
+        "emotionalBeat": "A closing window of opportunity"
+      },
+      {
+        "id": "scene-9a",
+        "title": "Real Connection",
+        "location": "Library",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "synopsis": "The player shares something real in return, and Jordan finally relaxes.",
+        "description": "The player shares something real and vulnerable in return. Jordan's whole posture relaxes — for the first time all day, someone truly sees her, and vice versa. Neither of them mentions the bird book sitting on the table between them, though it feels like part of the conversation anyway.",
+        "emotionalBeat": "Authentic belonging achieved",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-9b",
+        "title": "Comfortable Distance",
+        "location": "Library",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "synopsis": "A deflecting joke keeps things pleasant but surface-level.",
+        "description": "The player deflects with a joke. The moment passes pleasantly but stays surface-level. Walking home, the player wonders what might have happened if she'd said more.",
+        "emotionalBeat": "Bittersweet safety",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-9c",
+        "title": "Second Chance",
+        "location": "Library",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "synopsis": "Asking what's wrong gives Jordan a late but real opening.",
+        "description": "The player asks what's wrong. Jordan finally opens up about feeling invisible all day. It's a late start, but a real one — a friendship begins.",
+        "emotionalBeat": "Redemption through effort",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-9d",
+        "title": "The Door Not Opened",
+        "location": "Library",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "synopsis": "A quick goodbye closes the door on something quieter that could have opened.",
+        "description": "The player says a quick goodbye and leaves. The project is done, technically a success, but something quieter was lost in the silence between them.",
+        "emotionalBeat": "Quiet awareness of a missed chance",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2",
+        "prompt": "How do you respond to the stares and whispers?",
+        "context": "Everyone can tell you're new, and it feels like the whole hallway is watching to see what you'll do.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Walk up and introduce yourself with a smile",
+            "nextScene": "scene-3a"
+          },
+          {
+            "id": "b",
+            "text": "Put your head down and keep walking to class",
+            "nextScene": "scene-3b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "ADAPTABILITY": 1,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-4",
+        "prompt": "Where do you sit for lunch on your first day?",
+        "context": "Priya is waving you over, Jordan sits alone with a book, and there's an empty table by the windows. You have seconds to decide before it looks awkward.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Join Priya's table",
+            "nextScene": "scene-5a"
+          },
+          {
+            "id": "b",
+            "text": "Sit alone at the empty table",
+            "nextScene": "scene-5b"
+          },
+          {
+            "id": "c",
+            "text": "Sit with Jordan",
+            "nextScene": "scene-5c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "ADAPTABILITY": -1
+          },
+          "c": {
+            "EMPATHY": 2
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-5a",
+        "prompt": "Tyler makes another joke about Jordan and looks at you to laugh along. What do you do?",
+        "context": "The whole table is watching to see if you'll join in. Laughing feels easy. Not laughing feels risky.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Laugh along to fit in",
+            "nextScene": "scene-6a1"
+          },
+          {
+            "id": "b",
+            "text": "Say, 'That's not cool, honestly'",
+            "nextScene": "scene-6a2"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": -2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-5b",
+        "prompt": "Jordan nervously asks if they can sit with you. How do you respond?",
+        "context": "You're both clearly the odd ones out today. Jordan looks braced for rejection.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Smile and wave them over warmly",
+            "nextScene": "scene-6b1"
+          },
+          {
+            "id": "b",
+            "text": "Shrug and say 'I guess, whatever'",
+            "nextScene": "scene-6b2"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-5c",
+        "prompt": "Priya's group is waving you over, and Jordan says it's fine if you go. What do you do?",
+        "context": "Jordan is giving you an easy out, but you can see she doesn't really mean it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Stay and finish lunch with Jordan",
+            "nextScene": "scene-6c1"
+          },
+          {
+            "id": "b",
+            "text": "Wave back and get up to join Priya's table",
+            "nextScene": "scene-6c2"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 1,
+            "EMPATHY": -2
+          }
+        }
+      },
+      {
+        "id": "choice-6-connected",
+        "scene": "scene-7-connected",
+        "prompt": "You and Jordan already found something at lunch. How do you build on it?",
+        "context": "This is your chance to turn a good lunch into something that lasts, or let the momentum fade into just okay.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Suggest meeting after school to really dig into the project together",
+            "nextScene": "scene-8a"
+          },
+          {
+            "id": "b",
+            "text": "Keep it easy and low-key — just split the work fairly",
+            "nextScene": "scene-8b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 1,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 1,
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-6-neutral",
+        "scene": "scene-7-neutral",
+        "prompt": "You barely know Jordan. How do you start this partnership?",
+        "context": "This is your chance to define what this partnership will actually be — you're building from nothing, for better or worse.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Suggest meeting after school to really connect on the project",
+            "nextScene": "scene-8a"
+          },
+          {
+            "id": "b",
+            "text": "Keep it strictly business — just split the work",
+            "nextScene": "scene-8b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 1,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 1,
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-6-guarded",
+        "scene": "scene-7-guarded",
+        "prompt": "Jordan is polite but guarded — she hasn't forgotten lunch. How do you start this partnership?",
+        "context": "You know why she's careful with you. The question is whether you try to earn something back, or just get the project done.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Own it — say something honest about lunch, then suggest meeting after school",
+            "nextScene": "scene-8a"
+          },
+          {
+            "id": "b",
+            "text": "Say nothing about lunch and keep things strictly business",
+            "nextScene": "scene-8b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 1,
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-7",
+        "scene": "scene-8a",
+        "prompt": "Jordan asks if you ever feel like you don't fit in either. Do you open up honestly?",
+        "context": "This is the most real Jordan has been all day. Your answer will shape whether this becomes a real friendship.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Share something real and vulnerable about yourself",
+            "nextScene": "scene-9a"
+          },
+          {
+            "id": "b",
+            "text": "Keep it light and deflect with a joke",
+            "nextScene": "scene-9b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-8",
+        "scene": "scene-8b",
+        "prompt": "Jordan hesitates like she wants to say something as you pack up. Do you ask what's on her mind?",
+        "context": "The session was quiet and tense all afternoon. This might be the only opening you get.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ask Jordan what's wrong",
+            "nextScene": "scene-9c"
+          },
+          {
+            "id": "b",
+            "text": "Say a quick goodbye and leave",
+            "nextScene": "scene-9d"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "EMPATHY": -1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "name": "The Confident Approacher",
+        "path": "scene-1 > scene-2(a) > scene-3a > scene-4",
+        "description": "Player leads with bold self-introduction, gets an early social foothold via Priya — framed as a mutual, low-key connection rather than a reward for boldness."
+      },
+      {
+        "name": "The Quiet Observer",
+        "path": "scene-1 > scene-2(b) > scene-3b > scene-4",
+        "description": "Player watches and gathers information before committing socially, entering lunch with more caution but more awareness — and a first, foreshadowed glimpse of Jordan's coping habits."
+      },
+      {
+        "name": "The Popular Table Arc",
+        "path": "scene-4(a) > scene-5a > choice-3 > scene-6a(1/2) > scene-priya-(fade/respect) > scene-7-neutral",
+        "description": "Tests whether the player will trade empathy for social comfort when peer pressure targets someone else. The 'small stand' path now carries a real, if minor, social cost, and Priya's own approval is revealed to come with her own unfinished business rather than moral perfection."
+      },
+      {
+        "name": "The Solo Table Arc",
+        "path": "scene-4(b) > scene-5b > choice-4 > scene-6b(1/2) > scene-7-connected/scene-7-guarded",
+        "description": "Tests whether isolation makes the player more or less open to connecting with another outsider — and the coolness of a rejected overture now visibly guards Jordan going into the partnership."
+      },
+      {
+        "name": "The Ally Arc",
+        "path": "scene-4(c) > scene-5c > choice-5 > scene-6c(1/2) > [scene-6c2b] > scene-7-connected/scene-7-guarded",
+        "description": "Tests loyalty under the direct temptation of an easier, more popular alternative. Abandoning Jordan is no longer a choice that quietly resolves — it's dramatized in a follow-up beat (scene-6c2b) before the semester project forces the reckoning into the open."
+      },
+      {
+        "name": "Three Faces of the Same Pairing",
+        "path": "scene-7-connected / scene-7-neutral / scene-7-guarded > choice-6-* > scene-8a/8b",
+        "description": "The convergence point is no longer a single neutral reset — it now has three distinct emotional textures (already-bonded, starting-from-nothing, or guarded-after-a-letdown), each with its own framing and choice language, before funneling into the shared final act."
+      },
+      {
+        "name": "Four Endings",
+        "path": "scene-8a/8b > scene-9a/9b/9c/9d",
+        "description": "Regardless of the lunchtime and mid-day path taken, the final act converges on the same two work sessions, but the depth of authenticity chosen there determines whether the episode ends in real connection, comfortable distance, a late redemption, or a missed chance."
+      }
+    ],
+    "emotionalArc": [
+      "Anxiety and self-consciousness (arrival)",
+      "Pressure of a public, defining decision (hallway/cafeteria)",
+      "Moral tension between comfort and kindness (lunch table choices)",
+      "A private reckoning with what was chosen, before consequences are forced into the open (guilt beat, project pairing)",
+      "Vulnerability and the risk of being truly known (final choice)",
+      "Resolution: earned belonging, comfortable safety, late redemption, or quiet loss"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from anxious uncertainty about how to be perceived toward a defining moment of choosing authenticity over ease (or not), discovering that belonging is built through honesty rather than performance — and, in the guarded path, that consequences don't erase themselves just because time passes."
+      },
+      {
+        "character": "jordan",
+        "arc": "Begins as an isolated, guarded figure using a book — and a memorized escape route — as armor; depending on player choices, either remains alone, is briefly seen then dropped, or is given the space to open up and be genuinely known, culminating in the quiet reveal of her grandmother's field guide."
+      },
+      {
+        "character": "priya",
+        "arc": "Functions partly as a mirror for the player's choices, but is written with her own unfinished business — a quiet admission that she doesn't always practice what she approves of in others. Her friendship with the player thins or deepens in direct response to the peer-pressure choice, and her approval is framed as one person's honest reaction, not a moral verdict."
+      },
+      {
+        "character": "tyler",
+        "arc": "Loud, performative bravado that the story never explicitly labels as harmless or malicious — his jokes are rehearsed on every new kid, and whether he 'means' anything by them is left for the player (and the audience) to weigh. When called out, a flicker of real irritation shows under the ease, suggesting the joke cost him something to have interrupted, even if he'd never admit it."
+      },
+      {
+        "character": "chloe",
+        "arc": "Her half-second-late laugh recurs as a small, consistent tell of performed loyalty. Depending on the player's stand at lunch, she edges toward quiet complicity or a flicker of reconsideration — never breaking from the group outright, but never quite the same either."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "expression": "Measured through willingness to introduce yourself, speak up against peer pressure even at a real (if small) social cost, and be vulnerable in conversation rather than deflecting."
+      },
+      {
+        "trait": "EMPATHY",
+        "expression": "Measured through choices to include, defend, or genuinely connect with Jordan versus prioritizing personal comfort or social standing — and, in the guarded path, whether the player is willing to own up to having let someone down."
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "expression": "Measured through how flexibly the player adjusts approach across unfamiliar social situations (observing before acting, going with the room) versus rigid caution or resistance to unfamiliar dynamics."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "dynamic": "The emotional core of the episode — a relationship that can be nurtured, damaged, delayed, or repaired depending on cumulative choices, now with a dramatized reckoning beat when the player abandons her, culminating in one of four distinct final states."
+      },
+      {
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "dynamic": "A softer, lower-stakes relationship that reflects the player's choices back at them without judgment, offering an easier path to social belonging that is never explicitly framed as wrong. It visibly thins or deepens after the peer-pressure moment, and is deliberately humanized with a moment of Priya's own admitted inconsistency, so her approval reads as one peer's reaction rather than a scoreboard."
+      },
+      {
+        "characters": [
+          "player",
+          "tyler_chloe"
+        ],
+        "dynamic": "Represent low-stakes social pressure — Tyler as a mostly unchanging but not narratively pre-forgiven fixture whose jokes visibly cost him a flicker of composure when challenged, and Chloe as the more interesting figure, her recurring half-second-late laugh signaling loyalty she doesn't fully feel and might, in small ways, reconsider."
+      }
+    ],
+    "replayHooks": [
+      "Four distinct endings (scene-9a/9b/9c/9d) reward replay to see how different lunch choices ripple into the final relationship state with Jordan.",
+      "The three lunch-table branches (Priya's table, alone, Jordan's table) offer meaningfully different scenes and dialogue, encouraging exploration of 'what if I'd sat somewhere else.'",
+      "The convergence scene is now three distinct variants (scene-7-connected / scene-7-neutral / scene-7-guarded) — players who only saw one may replay just to see how the same partnership feels entirely different depending on lunch.",
+      "The new reckoning beat (scene-6c2b) rewards players who abandoned Jordan with a gut-punch they might not expect on a first playthrough — and invites replay to see how the 'own it' option in choice-6-guarded changes the tone of everything after.",
+      "The Priya thread now has its own two-scene payoff (scene-priya-fade / scene-priya-respect), including a moment of her own vulnerability — players who only saw one version may replay just to see how differently that friendship settles, and what Priya admits about herself.",
+      "Players who chose the 'easy' or 'cold' options may want to replay to see the warmer, more vulnerable version of scene-8a and scene-9a, including Jordan's bird-book reveal.",
+      "The subtlety of Priya's and Chloe's reactions (an approving nod, a laugh that doesn't come, a stiffer lunch table) invites players to notice details they may have missed and replay to catch them."
+    ],
+    "estimatedPlayTime": 14,
+    "educationalGoals": [
+      "Illustrate that confidence is expressed through authentic action, not performance for others.",
+      "Show that empathy often requires a small, uncomfortable choice in the moment rather than a grand gesture — and that choosing well can still cost something.",
+      "Demonstrate that adaptability is about reading a new environment thoughtfully, not simply going along with the crowd.",
+      "Model that first impressions and small daily choices compound into meaningful relationships over time.",
+      "Show that consequences of small choices don't disappear on their own — sometimes belonging means having to own what you did, not just move past it."
+    ],
+    "conversationStarters": [
+      "Have you ever had to decide between fitting in and doing the right thing? What did you choose?",
+      "What does it feel like to be the 'new kid' anywhere — not just at school?",
+      "Was there a moment in the episode where you wished you'd chosen differently? Why?",
+      "Do you think Jordan and the player could have connected sooner? What would it have taken?",
+      "How did Priya's reactions change how you felt about your own choices? Do you think the story wants you to be kind because it's noticed and rewarded, or for its own reasons?",
+      "Priya admits she doesn't always do what she quietly believes in either — does that change how you see her approval of the player?",
+      "Chloe laughs half a second late almost every time — what do you think that says about her, and would you want to be friends with her?",
+      "In the version where the player abandons Jordan at lunch, would you have tried to make it right when you got paired together, or just gotten the project done? Why?"
+    ]
+  },
+  "designNotes": "Key changes: (1) Split the single convergence scene-7 into three variants (scene-7-connected / scene-7-neutral / scene-7-guarded), each with its own tone, description, and paired choice point (choice-6-connected/neutral/guarded), so the project-pairing beat visibly carries the emotional weight of the lunch path rather than resetting to neutral. (2) Added a new scene (scene-6c2b, 'The Weight of It') that dramatizes the reckoning after the player abandons Jordan at lunch — a brief, wordless guilt beat — before the forced pairing, and gave choice-6-guarded an explicit 'own it' option so the player can actively address (or avoid) that history. (3) Gave scene-6a2 ('Small Stand') real friction: Tyler shows a flicker of genuine irritation, and the table stays socially stiffer for the rest of lunch, so the win isn't free. (4) Humanized Priya by having her admit, in scene-priya-respect, that she doesn't always practice what she approves of in others — turning her from a moral-compass NPC into a peer with her own unfinished business — and added an explicit narrative beat noting the player's own awareness that approval isn't why she acted, to guard against a 'be good and the cool girl will like you' reading. Also softened scene-3a and scene-4's framing of Priya's attention so it reads as mutual/casual rather than a spotlight/reward. (5) Adjusted Tyler's character-arc language so the narrative no longer flatly declares him 'harmless' — his impact is left for the player to weigh, with a small visible cost when confronted. (6) Removed 'jordan' from scene-5a's characters array per QA, since she's referenced but not physically present at that table. (7) Updated branches, replayHooks, characterArcs, relationshipDynamics, educationalGoals, and conversationStarters to reflect all of the above so the meta-fields stay honest about what the story now does.",
+  "uncertainties": [
+    "Splitting scene-7 into three variants adds scene count/complexity; if the studio wants a strictly leaner build, an alternative is a single scene-7 with three swappable description/dialogue blocks selected by a hidden path-state flag rather than three distinct scene ids — functionally similar but lighter on the schema. I chose distinct scenes for clarity and guaranteed reachability without needing conditional-text logic in the engine.",
+    "The 'small stand costs a little' revision (scene-6a2) is intentionally subtle (a stiffer lunch, not a lasting rupture) — if the Creative Director wants a sharper cost (e.g., Tyler needling the player again later in the semester), that would need an additional callback scene in Act 3, which isn't currently built.",
+    "Priya's admitted flaw is written as a single restrained line ('I used to let stuff like that go... told myself it wasn't my place') rather than a full scene of her own — this keeps her a secondary character without overloading runtime, but it's a light touch and could be expanded if playtesting shows it doesn't land.",
+    "I kept scene-8a/8b largely unchanged (not split by incoming path) since the feedback specifically targeted the scene-7 convergence; if testing shows players want the after-school work session to also visibly reflect 'connected vs. guarded' history, that would be a natural next expansion but risks scene-count bloat for a 13-15 minute episode."
+  ]
+}
