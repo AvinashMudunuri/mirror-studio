@@ -1,5 +1,6 @@
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
+import { ReviewParseError, requireEnum, requireScore } from './errors';
 import { jsonrepair } from 'jsonrepair';
 import type { Episode, Character, World } from '@mirror/schemas';
 
@@ -361,7 +362,11 @@ Return assessment in JSON format.`;
     if (!jsonMatch) {
       console.error('[Game Designer] No JSON found in response');
       console.error('Full response:', content);
-      return this.getDefaultResponse('Could not parse review response');
+      throw new ReviewParseError(
+        this.config.id,
+        'No JSON found in LLM review response',
+        content
+      );
     }
     
     let jsonString = jsonMatch[1];
@@ -380,83 +385,54 @@ Return assessment in JSON format.`;
       console.warn('[Game Designer] JSON repair failed:', repairError);
     }
     
+    let parsed: any;
     try {
-      const parsed = JSON.parse(jsonString);
-      const normalized = this.normalizeOutput(parsed);
-      console.log('[Game Designer] Successfully parsed review:', normalized.status);
-      return normalized;
+      parsed = JSON.parse(jsonString);
     } catch (error) {
       console.error('[Game Designer] Failed to parse JSON:', error);
       console.error('JSON string:', jsonString.substring(0, 1000));
-      return this.getDefaultResponse(`JSON parsing failed: ${error}`);
+      throw new ReviewParseError(
+        this.config.id,
+        `LLM review response is not valid JSON: ${error}`,
+        content
+      );
     }
+    
+    const normalized = this.normalizeOutput(parsed, content);
+    console.log('[Game Designer] Successfully parsed review:', normalized.status);
+    return normalized;
   }
   
-  private normalizeOutput(parsed: any): GameDesignerOutput {
-    // Ensure all required fields exist with defaults
+  private normalizeOutput(parsed: any, rawResponse: string): GameDesignerOutput {
+    // Verdict and scores must come from the LLM; fabricated defaults would
+    // masquerade as a real gameplay assessment. Informational lists and
+    // metrics may default (missing metrics don't change the verdict).
     return {
-      status: parsed.status || 'NEEDS_WORK',
+      status: requireEnum(this.config.id, rawResponse, 'status', parsed.status,
+        ['EXCELLENT', 'GOOD', 'NEEDS_WORK', 'POOR'] as const),
       issues: parsed.issues || [],
       strengths: parsed.strengths || [],
       recommendations: parsed.recommendations || [],
       scores: {
-        engagement: parsed.scores?.engagement || 5,
-        choiceQuality: parsed.scores?.choiceQuality || 5,
-        pacing: parsed.scores?.pacing || 5,
-        playerAgency: parsed.scores?.playerAgency || 5,
-        replayability: parsed.scores?.replayability || 5,
-        overall: parsed.scores?.overall || 5
+        engagement: requireScore(this.config.id, rawResponse, 'scores.engagement', parsed.scores?.engagement),
+        choiceQuality: requireScore(this.config.id, rawResponse, 'scores.choiceQuality', parsed.scores?.choiceQuality),
+        pacing: requireScore(this.config.id, rawResponse, 'scores.pacing', parsed.scores?.pacing),
+        playerAgency: requireScore(this.config.id, rawResponse, 'scores.playerAgency', parsed.scores?.playerAgency),
+        replayability: requireScore(this.config.id, rawResponse, 'scores.replayability', parsed.scores?.replayability),
+        overall: requireScore(this.config.id, rawResponse, 'scores.overall', parsed.scores?.overall)
       },
       metrics: {
-        averageSceneLength: parsed.metrics?.averageSceneLength || 0,
-        choiceFrequency: parsed.metrics?.choiceFrequency || 0,
-        branchingFactor: parsed.metrics?.branchingFactor || 0,
-        estimatedReplayValue: parsed.metrics?.estimatedReplayValue || 5
+        averageSceneLength: parsed.metrics?.averageSceneLength ?? 0,
+        choiceFrequency: parsed.metrics?.choiceFrequency ?? 0,
+        branchingFactor: parsed.metrics?.branchingFactor ?? 0,
+        estimatedReplayValue: parsed.metrics?.estimatedReplayValue ?? 0
       },
       summary: {
-        verdict: parsed.summary?.verdict || 'Review incomplete',
+        verdict: parsed.summary?.verdict || 'No verdict provided',
         keyIssues: parsed.summary?.keyIssues || [],
         topStrengths: parsed.summary?.topStrengths || [],
         mustFix: parsed.summary?.mustFix || [],
         niceToHave: parsed.summary?.niceToHave || []
-      }
-    };
-  }
-  
-  private getDefaultResponse(reason: string): GameDesignerOutput {
-    return {
-      status: 'NEEDS_WORK',
-      issues: [{
-        severity: 'MAJOR',
-        category: 'ENGAGEMENT',
-        issue: `Review could not be completed: ${reason}`,
-        location: 'general',
-        impact: 'Unable to assess gameplay quality',
-        fix: 'Manual game design review required',
-        priority: 5
-      }],
-      strengths: [],
-      recommendations: ['Manual gameplay review recommended'],
-      scores: {
-        engagement: 5,
-        choiceQuality: 5,
-        pacing: 5,
-        playerAgency: 5,
-        replayability: 5,
-        overall: 5
-      },
-      metrics: {
-        averageSceneLength: 0,
-        choiceFrequency: 0,
-        branchingFactor: 0,
-        estimatedReplayValue: 5
-      },
-      summary: {
-        verdict: 'Automated review incomplete - manual review needed',
-        keyIssues: ['Review system error'],
-        topStrengths: [],
-        mustFix: ['Complete manual gameplay review'],
-        niceToHave: []
       }
     };
   }

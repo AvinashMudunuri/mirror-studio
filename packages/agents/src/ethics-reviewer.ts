@@ -1,5 +1,6 @@
 import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
+import { ReviewParseError, requireEnum, requireScore } from './errors';
 import { jsonrepair } from 'jsonrepair';
 import type { Episode, Character, World } from '@mirror/schemas';
 
@@ -438,7 +439,11 @@ Return assessment in JSON format.`;
     if (!jsonMatch) {
       console.error('[Ethics Reviewer] No JSON found in response');
       console.error('Full response:', content);
-      return this.getDefaultResponse('Could not parse review response');
+      throw new ReviewParseError(
+        this.config.id,
+        'No JSON found in LLM review response',
+        content
+      );
     }
     
     let jsonString = jsonMatch[1];
@@ -457,75 +462,50 @@ Return assessment in JSON format.`;
       console.warn('[Ethics Reviewer] JSON repair failed:', repairError);
     }
     
+    let parsed: any;
     try {
-      const parsed = JSON.parse(jsonString);
-      const normalized = this.normalizeOutput(parsed);
-      console.log('[Ethics Reviewer] Successfully parsed review:', normalized.status);
-      return normalized;
+      parsed = JSON.parse(jsonString);
     } catch (error) {
       console.error('[Ethics Reviewer] Failed to parse JSON:', error);
       console.error('JSON string:', jsonString.substring(0, 1000));
-      return this.getDefaultResponse(`JSON parsing failed: ${error}`);
+      throw new ReviewParseError(
+        this.config.id,
+        `LLM review response is not valid JSON: ${error}`,
+        content
+      );
     }
+    
+    const normalized = this.normalizeOutput(parsed, content);
+    console.log('[Ethics Reviewer] Successfully parsed review:', normalized.status);
+    return normalized;
   }
   
-  private normalizeOutput(parsed: any): EthicsReviewerOutput {
-    // Ensure all required fields exist with defaults
+  private normalizeOutput(parsed: any, rawResponse: string): EthicsReviewerOutput {
+    // Verdict and scores must come from the LLM; a fabricated ethics review
+    // is a safety hazard. Lists may default to empty (clean content can
+    // legitimately have no issues or flagged passages).
     return {
-      status: parsed.status || 'NEEDS_WORK',
+      status: requireEnum(this.config.id, rawResponse, 'status', parsed.status,
+        ['EXCELLENT', 'GOOD', 'NEEDS_WORK', 'UNACCEPTABLE'] as const),
       issues: parsed.issues || [],
       strengths: parsed.strengths || [],
       recommendations: parsed.recommendations || [],
       scores: {
-        biasAvoidance: parsed.scores?.biasAvoidance || 5,
-        representation: parsed.scores?.representation || 5,
-        tropes: parsed.scores?.tropes || 5,
-        ethicalModeling: parsed.scores?.ethicalModeling || 5,
-        culturalSensitivity: parsed.scores?.culturalSensitivity || 5,
-        overall: parsed.scores?.overall || 5
+        biasAvoidance: requireScore(this.config.id, rawResponse, 'scores.biasAvoidance', parsed.scores?.biasAvoidance),
+        representation: requireScore(this.config.id, rawResponse, 'scores.representation', parsed.scores?.representation),
+        tropes: requireScore(this.config.id, rawResponse, 'scores.tropes', parsed.scores?.tropes),
+        ethicalModeling: requireScore(this.config.id, rawResponse, 'scores.ethicalModeling', parsed.scores?.ethicalModeling),
+        culturalSensitivity: requireScore(this.config.id, rawResponse, 'scores.culturalSensitivity', parsed.scores?.culturalSensitivity),
+        overall: requireScore(this.config.id, rawResponse, 'scores.overall', parsed.scores?.overall)
       },
       flaggedContent: parsed.flaggedContent || [],
       summary: {
-        verdict: parsed.summary?.verdict || 'Review incomplete',
+        verdict: parsed.summary?.verdict || 'No verdict provided',
         criticalIssues: parsed.summary?.criticalIssues || [],
         majorConcerns: parsed.summary?.majorConcerns || [],
         minorNotes: parsed.summary?.minorNotes || [],
         strengths: parsed.summary?.strengths || [],
         readyForPublication: parsed.summary?.readyForPublication ?? false
-      }
-    };
-  }
-  
-  private getDefaultResponse(reason: string): EthicsReviewerOutput {
-    return {
-      status: 'NEEDS_WORK',
-      issues: [{
-        severity: 'MAJOR',
-        category: 'BIAS',
-        issue: `Review could not be completed: ${reason}`,
-        location: 'general',
-        harmPotential: 'Unable to assess ethical quality',
-        recommendation: 'Manual ethics review required',
-        priority: 5
-      }],
-      strengths: [],
-      recommendations: ['Manual ethics review recommended'],
-      scores: {
-        biasAvoidance: 5,
-        representation: 5,
-        tropes: 5,
-        ethicalModeling: 5,
-        culturalSensitivity: 5,
-        overall: 5
-      },
-      flaggedContent: [],
-      summary: {
-        verdict: 'Automated review incomplete - manual review needed',
-        criticalIssues: [],
-        majorConcerns: ['Review system error'],
-        minorNotes: [],
-        strengths: [],
-        readyForPublication: false
       }
     };
   }
