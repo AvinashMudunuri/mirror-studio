@@ -26,6 +26,7 @@ const {
   mergeChoiceDialogue,
   mergeBranchDialogue
 } = require('./lib/pipeline-helpers');
+const { compileScreenplay } = require('./lib/compile-screenplay');
 
 // Import from built packages (resolve from script location)
 const packageRoot = path.resolve(__dirname, '..');
@@ -733,9 +734,16 @@ async function main() {
       finalStatus,
       verdicts: verdicts(reviews),
       revisions: revisionHistory,
-      files: savedFiles.concat('manifest.json')
+      files: savedFiles.concat(['manifest.json', 'episode-script.md'])
     };
     saveToFile('manifest.json', manifest);
+
+    // Bind the script: one human-readable screenplay of the final content.
+    // Stamped FINAL — LOCKED only when the board approved it.
+    const screenplay = compileScreenplay({ outline, cast, dialogueResult, manifest });
+    const screenplayPath = path.join(OUTPUT_DIR, 'episode-script.md');
+    fs.writeFileSync(screenplayPath, screenplay, 'utf-8');
+    console.log(`   📜 Bound script: ${path.join(OUTPUT_DIR_RELATIVE, 'episode-script.md')} (${finalStatus === 'APPROVED' ? 'FINAL — LOCKED' : 'DRAFT'})\n`);
 
     console.log('═══════════════════════════════════════════════════════════\n');
     console.log('✨ FULL EPISODE PIPELINE COMPLETE!\n');
