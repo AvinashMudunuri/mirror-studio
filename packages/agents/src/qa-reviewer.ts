@@ -94,6 +94,18 @@ VALIDATION CHECKLIST:
 6. Completeness - All required content present?
 7. Metadata Accuracy - Play time, tags, dependencies correct?
 
+GROUND RULES (violating these makes your review wrong):
+- Validate against the field names and shapes ACTUALLY USED in the provided
+  episode JSON. Do NOT invent requirements for fields the data never uses
+  (e.g. if scenes have "description", do not fail them for lacking
+  "synopsis"; if the world lists seasons as strings, do not demand season
+  objects).
+- An error must describe a defect a player or the rendering pipeline would
+  actually hit. Style preferences and hypothetical schema mismatches belong
+  in "warnings", not "errors".
+- FAIL means the episode cannot ship as-is because of the listed errors.
+  If everything you found is a warning, the status is PASS.
+
 For each issue found:
 - State the severity (BLOCKER, CRITICAL, WARNING)
 - Specify exact location (e.g., "scene-3.choices[1].options[0]")
@@ -177,6 +189,7 @@ Perform a comprehensive QA review of this episode. Check:
    - All required fields present (id, worldId, seasonId, episodeNumber, title, synopsis, scenes, choices, outcomes, themes, educationalGoals, targetTraits, status)
    - Data types correct (numbers are numbers, strings are strings, arrays are arrays)
    - Enum values valid (status must be DRAFT/IN_REVIEW/APPROVED/PUBLISHED)
+   - Judge scenes by the fields they actually carry (id, title, location, characters, duration, description, emotionalBeat, transitions, dialogue) — do not require fields this pipeline does not produce
 
 2. ID CONSISTENCY
    - Episode ID is unique
@@ -204,7 +217,7 @@ Perform a comprehensive QA review of this episode. Check:
    - Trait IDs are valid
 
 6. COMPLETENESS
-   - Every scene has title and synopsis
+   - Every scene has a title and a description
    - All choices have options
    - Educational goals defined
    - Themes match content

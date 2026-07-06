@@ -74,6 +74,19 @@ export interface Feedback {
   severity: 'MINOR' | 'MAJOR' | 'BLOCKER';
 }
 
+/**
+ * Branch-specific dialogue for scenes that play differently depending on
+ * the path taken (above all: ending scenes). QA flagged endings that
+ * consisted of one generic narrator line despite the outline promising a
+ * choice-reactive resolution.
+ */
+export interface BranchDialogue {
+  sceneId: string;
+  /** Branch id from the episode outline's `branches` array. */
+  branchId: string;
+  lines: DialogueLine[];
+}
+
 export interface DialogueWriterOutput {
   dialogue: SceneDialogue[];
   
@@ -82,6 +95,8 @@ export interface DialogueWriterOutput {
     options: ChoiceOption[];
     responseDialogue: Record<string, DialogueLine[]>;
   }[];
+  
+  branchDialogue?: BranchDialogue[];
   
   internalMonologue?: InternalThought[];
   
@@ -204,7 +219,7 @@ CHARACTER ID RULES (MANDATORY):
 - Every line's "character" field MUST be exactly one of these ids: ${rosterIds}
 - The ONLY other allowed values are "NARRATOR" (scene narration) and "INTERNAL" (the protagonist's inner voice)
 - NEVER invent new speakers or use a character's display name as an id
-
+${this.buildBranchEndingRules(episodeOutline)}
 FORMAT YOUR RESPONSE AS JSON:
 {
   "dialogue": [
@@ -238,6 +253,19 @@ FORMAT YOUR RESPONSE AS JSON:
           }
         ]
       }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-9",
+      "branchId": "branch-authentic",
+      "lines": [
+        {
+          "id": "b-auth-1",
+          "character": "INTERNAL",
+          "text": "Branch-specific resolution line reflecting THIS path..."
+        }
+      ]
     }
   ],
   "voiceNotes": "Character voice analysis and subtext notes...",
@@ -408,7 +436,47 @@ ${cp.options.map(opt => `  ${opt.id}) ${opt.text}`).join('\n')}
 `).join('\n')}`;
     }
     
+    if ((episodeOutline.branches?.length ?? 0) > 0) {
+      context += `\n\nBRANCHES (paths the player can be on by the end):
+${episodeOutline.branches.map(b => `- ${b.id} ("${b.name}"): ${b.description} → Outcome: ${b.outcome}`).join('\n')}`;
+    }
+    
     return context;
+  }
+  
+  /** Scenes that terminate the episode (defaultNextScene or an option → END). */
+  private endingSceneIds(outline: EpisodeOutline): string[] {
+    const ids = new Set<string>();
+    for (const scene of outline.scenes || []) {
+      if (scene.defaultNextScene === 'END') ids.add(scene.id);
+    }
+    for (const cp of outline.choicePoints || []) {
+      if ((cp.options || []).some(opt => opt.nextScene === 'END')) ids.add(cp.scene);
+    }
+    return [...ids];
+  }
+  
+  /**
+   * Prompt rules requiring branch-aware ending dialogue. Endings that play
+   * identically no matter what the player chose undercut the whole
+   * choice-consequence design (QA critical from the first live run).
+   */
+  private buildBranchEndingRules(outline: EpisodeOutline): string {
+    const branches = outline.branches || [];
+    const endings = this.endingSceneIds(outline);
+    if (branches.length === 0 || endings.length === 0) return '';
+    
+    return `
+BRANCH-AWARE ENDINGS (MANDATORY):
+- Ending scene(s): ${endings.join(', ')}. Branches: ${branches.map(b => b.id).join(', ')}.
+- An ending shared by multiple branches MUST NOT play identically for all of
+  them. For EVERY (ending scene, branch) pair where the branch can reach that
+  scene, add a "branchDialogue" entry with at least 2 lines that concretely
+  reflect what happened on that path (who the player befriended, what they
+  chose, what it cost). Generic wrap-up narration is not acceptable.
+- Lines in "dialogue" for an ending scene should carry only the shared beats;
+  the branch-specific payoff belongs in "branchDialogue".
+`;
   }
   
   private parseDialogueFromResponse(content: string): DialogueWriterOutput {
@@ -453,9 +521,12 @@ ${cp.options.map(opt => `  ${opt.id}) ${opt.text}`).join('\n')}
         throw new Error('Invalid dialogue structure - missing dialogue array');
       }
       
-      // Ensure choiceDialogue exists (can be empty)
+      // Ensure choiceDialogue/branchDialogue exist (can be empty)
       if (!parsed.choiceDialogue) {
         parsed.choiceDialogue = [];
+      }
+      if (!parsed.branchDialogue) {
+        parsed.branchDialogue = [];
       }
       
       // Ensure voiceNotes exists

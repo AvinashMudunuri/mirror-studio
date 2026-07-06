@@ -23,7 +23,8 @@ const {
   failingReviewers,
   collectRevisionFeedback,
   mergeSceneDialogue,
-  mergeChoiceDialogue
+  mergeChoiceDialogue,
+  mergeBranchDialogue
 } = require('./lib/pipeline-helpers');
 
 // Import from built packages (resolve from script location)
@@ -280,6 +281,7 @@ function buildEpisodeForReview(outline, dialogueResult, roster) {
     scenes: scenesWithDialogue,
     choices: outline.choicePoints || [],
     choiceDialogue: dialogueResult.choiceDialogue || [],
+    branchDialogue: dialogueResult.branchDialogue || [],
     outcomes: outline.branches || [],
     emotionalArc: outline.emotionalArc || [],
     themes: outline.themes,
@@ -595,7 +597,8 @@ async function main() {
         dialogueResult = {
           ...dialogueResult,
           dialogue: mergeSceneDialogue(dialogueResult.dialogue, revisedDialogue.dialogue),
-          choiceDialogue: mergeChoiceDialogue(dialogueResult.choiceDialogue, revisedDialogue.choiceDialogue)
+          choiceDialogue: mergeChoiceDialogue(dialogueResult.choiceDialogue, revisedDialogue.choiceDialogue),
+          branchDialogue: mergeBranchDialogue(dialogueResult.branchDialogue, revisedDialogue.branchDialogue)
         };
         actions.push('dialogue-revision');
         console.log(`   ✅ Dialogue revised (${((Date.now() - reviseStart) / 1000).toFixed(1)}s)\n`);
