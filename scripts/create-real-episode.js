@@ -56,6 +56,7 @@ const {
   CreativeDirectorAgent,
   QAReviewerAgent,
   ChildPsychologistAgent,
+  GameDesignerAgent,
   createLLMGateway
 } = agentsModule;
 
@@ -153,6 +154,7 @@ async function main() {
   const creativeDirector = new CreativeDirectorAgent();
   const qaReviewer = new QAReviewerAgent();
   const childPsychologist = new ChildPsychologistAgent();
+  const gameDesigner = new GameDesignerAgent();
   
   await Promise.all([
     storyArchitect.initialize({ 
@@ -196,6 +198,13 @@ async function main() {
       messageBus: mockMessageBus, 
       memory: mockMemory, 
       llm 
+    }),
+    gameDesigner.initialize({ 
+      workflowId, 
+      threadId, 
+      messageBus: mockMessageBus, 
+      memory: mockMemory, 
+      llm 
     })
   ]);
   
@@ -204,7 +213,8 @@ async function main() {
   console.log('✅ Dialogue Writer (Echo) ready');
   console.log('✅ Creative Director (Aria) ready');
   console.log('✅ QA Reviewer (Alex) ready');
-  console.log('✅ Child Psychologist (Dr. Sam) ready\n');
+  console.log('✅ Child Psychologist (Dr. Sam) ready');
+  console.log('✅ Game Designer (Jordan) ready\n');
   
   console.log('═══════════════════════════════════════════════════════════\n');
   
@@ -447,6 +457,56 @@ async function main() {
     saveToFile('06-psych-review.json', psychResult);
     console.log('   💾 Saved: output/real-episode/06-psych-review.json\n');
     
+    // Step 8: Game Designer - Gameplay & Engagement Review
+    console.log('🎮 Step 8: Game Designer - Gameplay & Engagement Review\n');
+    console.log('   🔄 Calling Claude API for gameplay review...\n');
+    console.log('   ⏳ This may take 20-30 seconds...\n');
+    
+    const gameStartTime = Date.now();
+    
+    const gameResult = await gameDesigner.process({
+      type: 'REVIEW_EPISODE',
+      episodeReview: {
+        episode: episodeForReview,
+        characters: [protagonistResult.character],
+        world: TEST_WORLD
+      }
+    });
+    
+    const gameDuration = ((Date.now() - gameStartTime) / 1000).toFixed(1);
+    
+    console.log(`✅ Gameplay review complete! (${gameDuration}s)`);
+    console.log(`   Status: ${gameResult.status}`);
+    console.log(`   Issues: ${gameResult.issues?.length || 0} gameplay issues`);
+    console.log(`   Engagement Score: ${gameResult.scores?.engagement || 'N/A'}/10`);
+    console.log(`   Choice Quality: ${gameResult.scores?.choiceQuality || 'N/A'}/10`);
+    console.log(`   Overall: ${gameResult.scores?.overall || 'N/A'}/10\n`);
+    
+    if (gameResult.issues && gameResult.issues.length > 0) {
+      console.log('   🎯 Key Issues:');
+      gameResult.issues.slice(0, 3).forEach(issue => {
+        console.log(`      • [${issue.severity}] ${issue.issue}`);
+        console.log(`        Category: ${issue.category}`);
+        console.log(`        Fix: ${issue.fix}`);
+      });
+      if (gameResult.issues.length > 3) {
+        console.log(`      ... and ${gameResult.issues.length - 3} more\n`);
+      } else {
+        console.log('');
+      }
+    }
+    
+    if (gameResult.strengths && gameResult.strengths.length > 0) {
+      console.log('   💪 Strengths:');
+      gameResult.strengths.slice(0, 3).forEach(strength => {
+        console.log(`      • ${strength}`);
+      });
+      console.log('');
+    }
+    
+    saveToFile('07-game-review.json', gameResult);
+    console.log('   💾 Saved: output/real-episode/07-game-review.json\n');
+    
     // Final Summary
     const totalDuration = ((Date.now() - startTime) / 1000).toFixed(1);
     
@@ -458,7 +518,8 @@ async function main() {
     console.log('   3. Scene Dialogue (Dialogue Writer → Claude)');
     console.log('   4. Creative Review (Creative Director → Claude)');
     console.log('   5. QA Review (QA Reviewer → Claude)');
-    console.log('   6. Psychological Safety Review (Child Psychologist → Claude)\n');
+    console.log('   6. Psychological Safety Review (Child Psychologist → Claude)');
+    console.log('   7. Gameplay Review (Game Designer → Claude)\n');
     console.log(`   📁 Location: ${OUTPUT_DIR}\n`);
     console.log('⏱️  Total Time:\n');
     console.log(`   Story: ${duration}s`);
@@ -467,6 +528,7 @@ async function main() {
     console.log(`   Review: ${reviewDuration}s`);
     console.log(`   QA: ${qaDuration}s`);
     console.log(`   Psych: ${psychDuration}s`);
+    console.log(`   Game: ${gameDuration}s`);
     console.log(`   Total: ${totalDuration}s (${(totalDuration / 60).toFixed(1)} minutes)\n`);
     console.log('🎯 Full AI Studio Pipeline:\n');
     console.log('   ✅ Story structure designed');
@@ -474,9 +536,10 @@ async function main() {
     console.log('   ✅ Authentic dialogue written');
     console.log('   ✅ Quality assured by Creative Director');
     console.log('   ✅ Technical validation by QA Reviewer');
-    console.log('   ✅ Psychological safety validated by Child Psychologist\n');
+    console.log('   ✅ Psychological safety validated by Child Psychologist');
+    console.log('   ✅ Gameplay & engagement validated by Game Designer\n');
     console.log('═══════════════════════════════════════════════════════════\n');
-    console.log('🎉 Success! Phase 1 + Phase 2 validation agents working!\n');
+    console.log('🎉 Success! 3 out of 4 Phase 2 validation agents complete!\n');
     
   } catch (error) {
     console.error('\n❌ Error during episode creation:\n');
