@@ -3,11 +3,13 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
-    "composite": true
+    "composite": true,
+    "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
   },
   "include": ["src/**/*"],
   "references": [
     { "path": "../schemas" },
-    { "path": "../memory" }
+    { "path": "../memory" },
+    { "path": "../message-bus" }
   ]
 }
