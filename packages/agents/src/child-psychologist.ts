@@ -2,6 +2,7 @@ import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 import { requireEnum, requireScore } from './errors';
 import { parseReviewJson } from './json-parsing';
+import { buildSharedReviewContext } from './review-context';
 import type { Episode, Character, World } from '@mirror/schemas';
 
 // ============================================================================
@@ -208,16 +209,22 @@ Remember: You protect teens while respecting their intelligence and capacity for
     // Educational goals might be passed but not in official Episode type
     const educationalGoals = (episode as any).educationalGoals || [];
     
-    const prompt = `REVIEW EPISODE FOR PSYCHOLOGICAL SAFETY AND AGE APPROPRIATENESS:
+    // Same episode/character/world payload every reviewer gets on this
+    // episode — cached so only the first reviewer to run pays full price.
+    const systemPrompt = [
+      { text: buildSharedReviewContext({ episode, characters, world }), cache: true },
+      { text: this.systemPrompt }
+    ];
+    
+    const prompt = `REVIEW EPISODE FOR PSYCHOLOGICAL SAFETY AND AGE APPROPRIATENESS (see the shared episode data above for full content):
 
 TARGET AUDIENCE: ${world.targetAge?.[0] || 13}-${world.targetAge?.[1] || 17} years old
 
-EPISODE:
+EPISODE SUMMARY:
 Title: ${episode.title}
 Synopsis: ${episode.synopsis}
 Themes: ${episode.themes?.join(', ') || 'Not specified'}
 Educational Goals: ${Array.isArray(educationalGoals) ? educationalGoals.join(', ') : 'Not specified'}
-Full Episode Data: ${JSON.stringify(episode, null, 2)}
 
 CHARACTERS:
 ${characters.map(c => `- ${c.name} (${c.age} years, ${c.pronouns}): ${c.personality.coreTraits.join(', ')}`).join('\n')}
@@ -270,7 +277,7 @@ Rate each area 1-10, identify concerns with severity levels, recommend improveme
 
 Return your assessment as JSON in the format specified in your system prompt.`;
 
-    const response = await this.callLLM(this.systemPrompt, prompt);
+    const response = await this.callLLM(systemPrompt, prompt);
     const result = this.parseReview(response);
     
     // Store in memory

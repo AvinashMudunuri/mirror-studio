@@ -55,6 +55,24 @@ episode 1: `npm run persist:run <episode-1-run-folder>` (or just have
 - Dialogue writing is the token hog; reviewers carry the largest inputs.
 - The gateway hard-stops at the budget with a BUDGET_EXCEEDED manifest —
   artifacts up to that point are preserved.
+- The review board is prompt-cached (`review-context.ts` + `LLMSystemBlock`
+  in `llm-gateway.ts`): the episode/character/world payload is identical
+  across all 5 reviewers, so only the first to run in an un-revised review
+  pass pays full price for it; the rest read it at ~10% cost. Watch for
+  `[LLM] Cache: N tokens written/read` in the log, or
+  `usage.cacheCreationInputTokens`/`cacheReadInputTokens` in the manifest.
+  Only pays off on a pass where multiple reviewers see the same episode
+  content — a revision's re-review starts a fresh cache entry. If you add
+  a 6th reviewer or touch the review prompts, keep the shared block a
+  byte-identical FIRST system block (see `tests/unit/review-board-caching.test.ts`)
+  or the cache silently stops matching (no error, just no discount).
+- Three previously-recurring QA false-positive/defect classes are now
+  fixed deterministically instead of costing a revision round trip: choice-
+  point markers leaking into dialogue, incomplete `responseDialogue`
+  coverage, and a "redundant transition mechanism" misread — see
+  `docs/OPEN-QUESTIONS.md` item 4 for the evidence and what's deliberately
+  NOT automated (a choice where every option leads to the same scene can
+  be a legitimate design choice, not always a bug).
 
 ## Where results land
 

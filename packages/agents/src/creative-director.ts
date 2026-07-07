@@ -2,10 +2,12 @@ import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 import { requireEnum } from './errors';
 import { parseReviewJson } from './json-parsing';
+import { buildSharedReviewContext } from './review-context';
 import type { 
   Episode, 
   World,
-  AgentId
+  AgentId,
+  Character
 } from '@mirror/schemas';
 import type { 
   StoryCharacterArc 
@@ -64,6 +66,13 @@ export interface CreativeDirectorInput {
     episode: Episode;
     worldContext: World;
     previousEpisodes: EpisodeReference[];
+    /**
+     * Optional so callers that predate this field keep compiling. Pass it
+     * (the same roster given to the other 4 reviewers) so the shared,
+     * cacheable review context this agent builds matches theirs
+     * byte-for-byte — see `buildSharedReviewContext`.
+     */
+    characters?: Character[];
   };
   
   worldConsistencyCheck?: {
@@ -252,7 +261,16 @@ Provide your creative assessment.`;
   private async reviewEpisode(review: NonNullable<CreativeDirectorInput['episodeReview']>): Promise<CreativeDirectorOutput> {
     const context = this.buildEpisodeContext(review);
     
-    const userPrompt = `EPISODE FOR CREATIVE REVIEW:
+    // The episode/character/world payload is identical (byte-for-byte)
+    // across all 5 reviewers on this episode — see buildSharedReviewContext.
+    // Placing it in a cached system block first means only the FIRST
+    // reviewer to run pays full price for it; the rest read it from cache.
+    const systemPrompt = [
+      { text: buildSharedReviewContext({ episode: review.episode, characters: review.characters, world: review.worldContext }), cache: true },
+      { text: this.systemPrompt }
+    ];
+    
+    const userPrompt = `EPISODE FOR CREATIVE REVIEW (see the shared episode data above for full content):
 
 Title: ${review.episode.title}
 Synopsis: ${review.episode.synopsis}
@@ -262,9 +280,6 @@ Themes: ${review.episode.themes?.join(', ') || 'None specified'}
 
 Previous Episodes in Season:
 ${review.previousEpisodes.map(ep => `- ${ep.title}: ${ep.synopsis}`).join('\n')}
-
-Episode Details:
-${JSON.stringify(review.episode, null, 2)}
 
 Context:
 ${context}
@@ -280,7 +295,7 @@ Review this episode for creative quality. Consider:
 
 Provide detailed creative feedback with specific examples.`;
 
-    const response = await this.callLLM(this.systemPrompt, userPrompt);
+    const response = await this.callLLM(systemPrompt, userPrompt);
     const output = this.parseCreativeResponse(response);
     
     await this.remember(`episode_${review.episode.id}_review`, {
