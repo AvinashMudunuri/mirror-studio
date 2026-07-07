@@ -104,5 +104,7 @@ APPROVED / NEEDS_HUMAN_REVIEW / BUDGET_EXCEEDED), `episode-script.md`
   paying for the wasted first attempt.
 - Anthropic SDK default timeout is too short for 32k-token generations —
   gateway sets 30 min; don't lower it.
-- Reviewer parse failure throws ReviewParseError and kills the run late
-  (known open item in docs/OPEN-QUESTIONS.md).
+- Reviewer parse failure throws ReviewParseError — `runReviewers()` now
+  catches it specifically and marks that reviewer `UNREADABLE` (raw
+  response saved) instead of crashing the run; any other error still
+  propagates. See docs/OPEN-QUESTIONS.md item 8.

@@ -70,6 +70,22 @@ now wired to a real "episode 2" brief. Live-verified twice against episode
   most relevant to this episode's "cut corners for the group / honesty"
   premise, so the dev-mode run alone doesn't clear it for production.
 
+**Creative Director / QA Reviewer previousEpisodes — DONE (2026-07-07).**
+Both now receive the real `previousEpisodes` `loadPreviousEpisodes()`
+already loads for the Story Architect (`create-real-episode.js` threads
+it through `runReviewers()` to `reviewer.run(episode, roster,
+previousEpisodes)`). Creative Director's `EpisodeReference[]` shape was
+already an exact match; QA's declared `Episode[]` type is looser than
+what it actually reads (only `previousEpisodes.length`, for a
+continuity-checking blurb), so the lighter reference shape is fine there
+too. Live-verified (`run-2026-07-07_01-02-55`): queried both agents'
+`last_input` from Postgres `agent_memory` directly and confirmed episode
+1's real title/synopsis/themes/episodeNumber are present, not the old
+hardcoded `[]`. childPsychologist/gameDesigner/ethicsReviewer don't have
+a `previousEpisodes` field in their input types at all — not wired,
+lower value since QA/Creative Director are the two that reason about
+narrative continuity across episodes.
+
 Still open:
 - **Protagonist continuity.** Each run still calls Character Designer for
   a brand-new protagonist regardless of `previousEpisodes` — episode 2's
@@ -79,11 +95,6 @@ Still open:
   existing protagonist profile instead of always generating one; NPC ids
   the outline reuses (e.g. "jordan") already get regenerated per-run
   rather than reusing the prior profile, for the same reason.
-- Creative Director's `EpisodeReview.previousEpisodes` (`EpisodeReference[]`)
-  and QA Reviewer's `episodeReview.previousEpisodes` are still always
-  passed `[]` in `create-real-episode.js` — the loader now produces data
-  in the right shape for the Creative Director's continuity/tone checks,
-  it just isn't wired to that call site yet.
 - Semantic search needs `OPENAI_API_KEY` for embeddings and is untested live.
 
 ## 3. Message bus (decided: out of runtime — ADR 001)
@@ -198,16 +209,34 @@ overlap and partially contradict current behavior. Consolidate into
 `output/real-episode/` is the legacy flat evidence folder, superseded by
 `output/episodes/…` — keep or delete deliberately.
 
-## 8. Reviewer parse-failure retry (fail-loud today, by design)
+## 8. Reviewer parse-failure retry — DONE (2026-07-07)
 
-Reviewer parse failures throw `ReviewParseError` and crash the run
-(deliberate: a fabricated review is worse than a crash). The revision loop
-exists now, but there is still no retry/escalation on a *parse* failure —
-one malformed reviewer response late in a run wastes the whole run's
-tokens. Options: one re-ask with the parse error quoted; or mark the
-reviewer's verdict `UNREADABLE` and continue to `NEEDS_HUMAN_REVIEW` with
-the raw response saved. Either preserves fail-loud semantics; the second
-is cheaper.
+Took the cheaper of the two options previously listed here: `runReviewers()`
+in `create-real-episode.js` now catches `ReviewParseError` specifically
+(`instanceof` check — any other error, network/auth/budget/bug, still
+propagates and crashes the run as before) and marks that reviewer's
+verdict `UNREADABLE` via `pipeline-helpers.js`'s `unreadableResult()`,
+saving the raw unparseable response to the same review file a normal
+result would get. `UNREADABLE` never matches a `REVIEWER_PASSES`
+predicate, so it flows through the exact same machinery as a genuine
+FAIL/NEEDS_REVISION — gates the run to `NEEDS_HUMAN_REVIEW`, gets
+re-invoked on the next revision iteration if there's budget left, all for
+free (no new special-casing needed downstream).
+
+Fail-loud semantics are preserved: a fabricated review is still never
+possible — the synthetic result is unambiguously `UNREADABLE`, not a
+made-up verdict, and the raw response is preserved for a human to read.
+
+Tested: `tests/unit/pipeline-helpers.test.ts` (pure `unreadableResult`/
+`failingReviewers` behavior) and `tests/unit/review-parse-failure.test.ts`
+(a REAL agent + a REAL thrown `ReviewParseError`, caught the exact way
+`runReviewers()` does it, verifying both the escalation path and that a
+non-parse error still propagates instead of being swallowed). A live
+run confirmed the wrapper doesn't change behavior when reviewers parse
+normally (no regression to the common path); forcing a genuine parse
+failure from the real API isn't practical to reproduce on demand (the
+model rarely misbehaves this way), so that specific trigger condition
+relies on the unit-level coverage above rather than a live repro.
 
 ## 9. Prompt caching across the review board — DONE (2026-07-06)
 

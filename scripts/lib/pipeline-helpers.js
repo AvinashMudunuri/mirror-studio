@@ -56,6 +56,23 @@ function failingReviewers(reviews) {
   );
 }
 
+/**
+ * Synthetic verdict for a reviewer whose response couldn't be parsed
+ * (ReviewParseError — see packages/agents/src/errors.ts). Left unhandled,
+ * that exception crashes the whole run late, wasting every token spent so
+ * far. "UNREADABLE" never matches a REVIEWER_PASSES predicate above, so it
+ * correctly gates the run to NEEDS_HUMAN_REVIEW exactly like a genuine
+ * FAIL/NEEDS_REVISION — the run finishes instead of crashing, and the raw
+ * response is preserved for debugging.
+ */
+function unreadableResult(verdictField, error) {
+  return {
+    [verdictField]: 'UNREADABLE',
+    parseError: error.message,
+    rawResponse: error.rawResponse
+  };
+}
+
 function isDialogueLocated(text) {
   return /dialogue|line|speech|says|spoken/i.test(text);
 }
@@ -176,6 +193,7 @@ module.exports = {
   activeRoster,
   REVIEWER_PASSES,
   failingReviewers,
+  unreadableResult,
   collectRevisionFeedback,
   mergeSceneDialogue,
   mergeChoiceDialogue,
