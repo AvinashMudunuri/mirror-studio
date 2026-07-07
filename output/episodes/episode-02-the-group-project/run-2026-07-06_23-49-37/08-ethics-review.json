@@ -1,0 +1,178 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Limited representation of disabled characters and neurodivergent perspectives in a school setting",
+      "location": "Overall character roster and world-building",
+      "harmPotential": "Students with disabilities or neurodivergence may not see themselves reflected in the narrative; normalizes absence of disabled peers in school stories",
+      "recommendation": "Consider adding a disabled character to the core cast or supporting cast (e.g., a student with ADHD, dyslexia, physical disability, or chronic illness). Alternatively, acknowledge disability/neurodivergence naturally in existing characters' backgrounds or experiences. This would enrich the 'diverse urban community' setting authentically.",
+      "priority": 6
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Limited LGBTQ+ representation in character roster",
+      "location": "Character descriptions and backgrounds",
+      "harmPotential": "LGBTQ+ youth (ages 11-14) may not see themselves reflected; normalizes heteronormative default in peer groups",
+      "recommendation": "Consider adding an LGBTQ+ character to the core or supporting cast (e.g., Sam could be confirmed as having a crush on a same-gender peer, or a new character could be introduced). Ensure representation is authentic and not tokenistic. Given Sam's use of they/them pronouns, consider expanding their character arc to include identity exploration if appropriate.",
+      "priority": 6
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Priya's conflict-avoidance and silence in response to ethical concerns may model unhealthy coping for marginalized students",
+      "location": "Scene 4-shortcut-guilt, Scene 5-silenced, Scene 5-blamed pathways",
+      "harmPotential": "Students from backgrounds where speaking up feels unsafe (due to family dynamics, cultural context, or previous negative experiences) may internalize that silence is the correct response to witnessing wrongdoing. Priya's pattern of 'going quiet' when unheard could reinforce learned helplessness.",
+      "recommendation": "Ensure that in at least one pathway, Priya's decision to speak up (even imperfectly) is explicitly validated and rewarded. In the 'redo-honest' path, show her relief and agency clearly. Consider adding a scene where Priya reflects on her own growth in speaking up, or where another character (Ms. Alvarez, Theo) acknowledges the courage it took. This models that silence isn't the only option.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Marcus's home instability and avoidance pattern may be resolved too quickly or superficially depending on player choice",
+      "location": "Scene 5-direct-talk pathway; Marcus's background (parents split over summer, unpredictable living situation)",
+      "harmPotential": "Students experiencing family instability may feel their struggles are being minimized if the narrative suggests one conversation 'fixes' the problem. Could also normalize that struggling students should just 'try harder' or 'communicate better' without acknowledging systemic barriers.",
+      "recommendation": "In the 'direct-talk' pathway, show that Marcus's situation is ongoing and complex, not solved by one conversation. Have Theo acknowledge that he can help with the project, but can't fix Marcus's home situation. Consider adding a follow-up moment where Marcus's relief is real but partial—he still has to navigate his living situation. This models realistic support and boundaries.",
+      "priority": 7
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Priya's character relies heavily on 'model minority' adjacent traits (meticulous, ambitious, responsible, translates for parents)",
+      "location": "Priya's character background and personality",
+      "harmPotential": "While Priya is complex and flawed, her background (oldest of three, translates paperwork, high parental expectations, perfectionism) aligns with 'model minority' stereotype patterns. Could reinforce pressure on South Asian students to be the 'responsible one.'",
+      "recommendation": "Ensure Priya's arc includes moments where her perfectionism is shown as a burden, not just a strength. In future episodes, show her struggling with the weight of responsibility, setting boundaries, or being allowed to fail without catastrophic consequences. The current episode does this somewhat (her stress about the project), but emphasize that her worth isn't tied to being 'correct' or 'useful.'",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Marcus's charisma and humor as primary traits may lean toward 'charming Black character' archetype",
+      "location": "Marcus's character description and dialogue patterns",
+      "harmPotential": "While Marcus is complex (conflict-avoidant, struggling, real), his primary introduction is through charisma and humor. Combined with his home instability, could reinforce 'struggling Black kid who uses humor to cope' stereotype if not balanced.",
+      "recommendation": "Ensure Marcus has moments in future episodes where his intelligence, ambition, or other strengths are highlighted equally to his humor. Show him in contexts where he's not performing or deflecting. The current episode does show his vulnerability, which is good—maintain that balance.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'covered-work' pathway (Scene 5-covered-work) models self-sacrifice without addressing its unhealthiness",
+      "location": "Scene 5-covered-work and associated internal monologue",
+      "harmPotential": "Theo's tendency to people-please and avoid conflict is already established as a flaw. This pathway reinforces it without clear consequences or reflection. Students who already struggle with over-functioning may see this as validated.",
+      "recommendation": "Ensure that the 'covered-work' pathway has clear negative consequences—either immediate (Theo's resentment leaks out, affecting the presentation) or in the reflection scene (Sam notices Theo's exhaustion and calls it out). The internal monologue hints at this ('I'm fine... definitely didn't just do someone else's homework at midnight'), but make the cost more explicit so it's not read as a viable solution.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "CULTURAL_SENSITIVITY",
+      "issue": "Priya's family pharmacy business and parental expectations are portrayed accurately but could be expanded to show cultural nuance",
+      "location": "Priya's background description",
+      "harmPotential": "Low risk, but portrayal could feel reductive if it's only about 'immigrant parents with high expectations' without showing cultural values, language, or community context",
+      "recommendation": "In future episodes or even subtle additions to this one, show Priya's family and cultural context with more specificity—not just the 'hard work' narrative, but also family values, language, cultural celebrations, or community. This prevents the 'immigrant work ethic' from being the only dimension of her identity.",
+      "priority": 4
+    }
+  ],
+  "strengths": [
+    "Diverse character roster with authentic representation: Theo (Black, middle child, single-parent household), Marcus (Black, experiencing family instability), Priya (South Asian, first-generation), Sam (Latinx, uses they/them pronouns), Ms. Alvarez (Latina, adult authority figure). Diversity feels natural, not tokenistic.",
+    "Ethical decision-making is clearly framed with meaningful consequences: The episode doesn't glorify shortcuts or dishonesty. Different pathways show different costs (guilt, lost trust, resentment, relief).",
+    "Complex, flawed characters with agency: Priya isn't just 'the smart one,' Marcus isn't just 'the funny one,' Theo isn't just 'the new kid.' Each has internal conflicts and growth potential.",
+    "Healthy adult modeling: Ms. Alvarez demonstrates fairness, mercy, and accountability without being punitive. Her offer of a redo instead of a zero models restorative justice.",
+    "Peer pressure is portrayed realistically: The shortcut is tempting because Marcus is likeable and charismatic, not because the narrative is pushing it. Player agency is clear.",
+    "Vulnerability is normalized: Marcus's home situation, Theo's people-pleasing, Priya's anxiety about speaking up—these are shown as real struggles, not character flaws to be mocked.",
+    "Age-appropriate content: The ethical dilemma (academic integrity) is relevant to middle schoolers without being patronizing. Language and scenarios feel authentic.",
+    "Intersectionality is present: Characters have multiple identities (race, family structure, socioeconomic status, neurodiversity implied) that interact naturally.",
+    "Consequences match actions: Honesty leads to relief and growth; silence leads to guilt and distance; self-sacrifice leads to resentment. Moral logic is consistent.",
+    "Sam's character (they/them pronouns) is normalized: No big announcement, just natural inclusion. Sets good precedent for LGBTQ+ representation."
+  ],
+  "recommendations": [
+    "Expand representation of disability/neurodivergence: Consider adding a character with ADHD, dyslexia, or another neurodivergent trait, or a character with a physical disability or chronic illness. This would authentically reflect most middle school classrooms.",
+    "Deepen LGBTQ+ representation: Sam's pronouns are a good start. Consider expanding their character arc in future episodes to include identity exploration, or introducing another LGBTQ+ character to the core cast.",
+    "Strengthen Priya's agency in the 'silence' pathways: Ensure that even when Priya goes quiet, her internal experience is validated. Show her discomfort clearly so players understand the cost of silencing her.",
+    "Add nuance to Marcus's home situation: Avoid the 'one conversation fixes everything' narrative. Show that support is real but the underlying situation is ongoing.",
+    "Balance Marcus's charisma with other strengths: In future episodes, show his intelligence, ambition, or other qualities equally. Ensure humor isn't his only tool.",
+    "Make consequences of self-sacrifice explicit: In the 'covered-work' pathway, ensure the cost to Theo is clear—either through immediate fallout or through his own reflection.",
+    "Expand cultural context for Priya: In future episodes, show her family and cultural identity with more specificity beyond the 'hardworking immigrant' narrative.",
+    "Consider adding a character with a different family structure: While Theo (single parent), Marcus (split parents), and Priya (two-parent household) show variety, consider a character with grandparents as guardians, foster family, or other structure.",
+    "Ensure Ms. Alvarez's fairness is explained: Her offer of a redo is restorative and good, but make sure players understand her reasoning (accountability + growth opportunity) so they learn the principle, not just the outcome."
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 7,
+    "tropes": 8,
+    "ethicalModeling": 7,
+    "culturalSensitivity": 8,
+    "overall": 7
+  },
+  "flaggedContent": [
+    {
+      "type": "PORTRAYAL",
+      "location": "Marcus's character description and dialogue patterns",
+      "content": "Marcus introduced primarily through charisma, humor, and charm; home instability is secondary",
+      "concern": "Could reinforce 'charming Black character' or 'struggling kid who jokes to cope' stereotype if not balanced with other strengths",
+      "suggestion": "In future episodes, show Marcus's intelligence, ambition, or other qualities equally. Include moments where he's not performing or deflecting."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Priya's background (oldest of three, translates for parents, perfectionism, high expectations)",
+      "content": "Priya's traits align with 'model minority' stereotype pattern",
+      "concern": "Could reinforce pressure on South Asian students to be the 'responsible one' and tie worth to achievement",
+      "suggestion": "Ensure Priya's arc includes moments where perfectionism is a burden, not just a strength. Show her allowed to fail or set boundaries without catastrophic consequences."
+    },
+    {
+      "type": "NARRATIVE",
+      "location": "Scene 5-covered-work pathway",
+      "content": "Theo quietly does Marcus's work instead of confronting the issue; internal monologue suggests this is acceptable",
+      "concern": "Reinforces Theo's people-pleasing tendency without clear negative consequences; could validate self-sacrifice as a solution",
+      "suggestion": "Add explicit consequences—either immediate (resentment leaks out) or in reflection (Sam notices exhaustion). Make clear this isn't a viable long-term solution."
+    },
+    {
+      "type": "NARRATIVE",
+      "location": "Scene 5-silenced and Scene 5-blamed pathways",
+      "content": "Priya's concerns are dismissed or she's blamed for raising them; she goes quiet and compliant",
+      "concern": "Models that speaking up about ethical concerns leads to isolation and punishment; could teach marginalized students that silence is safer",
+      "suggestion": "Ensure consequences are clear (lost friendship, guilt, distance) so players understand this as a negative outcome. In future episodes, show Priya's recovery and the value of her voice."
+    },
+    {
+      "type": "DECISION",
+      "location": "Choice-teammate-integrity (Scene 4): Options are 'ask,' 'do it yourself,' or 'tell teacher'",
+      "content": "All three options have costs; no clearly 'best' choice",
+      "concern": "While realistic, could leave players uncertain about healthy conflict resolution; might teach that direct communication is just one option among equally valid avoidance strategies",
+      "suggestion": "Ensure the 'ask' pathway (direct communication) has the most positive outcome and clearest emotional reward. Other pathways should show real costs (guilt, resentment, broken trust)."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Sam's character description",
+      "content": "Sam is scattered, info-dump prone, and somewhat oblivious to emotional weight",
+      "concern": "Could reinforce stereotype of ADHD/neurodivergent people as inconsiderate or lacking empathy (though Sam is shown as genuinely caring)",
+      "suggestion": "Ensure Sam's scatteredness is balanced with moments of genuine emotional insight. Show that their obliviousness is a processing style, not a character flaw. In future episodes, let Sam have moments of surprising depth."
+    }
+  ],
+  "summary": {
+    "verdict": "This is a well-crafted episode with strong ethical modeling and authentic, diverse representation. The core cast reflects a real contemporary middle school, and the ethical dilemma is presented with nuance and player agency. However, there are opportunities to deepen representation (disability, LGBTQ+) and ensure that vulnerable characters' agency is consistently validated. The episode is ready for publication with minor enhancements recommended for future iterations.",
+    "criticalIssues": [],
+    "majorConcerns": [
+      "Priya's conflict-avoidance and silence in response to ethical concerns may model unhealthy coping for marginalized students—ensure her voice is validated in at least one pathway",
+      "Marcus's home instability could be resolved too quickly in the 'direct-talk' pathway—show that one conversation helps but doesn't fix the underlying situation",
+      "Limited representation of disabled/neurodivergent characters and LGBTQ+ characters (beyond Sam's pronouns) in a diverse school setting"
+    ],
+    "minorNotes": [
+      "Marcus's charisma could overshadow other strengths—balance with intelligence and ambition in future episodes",
+      "Priya's 'model minority' adjacent traits could be explored more deeply to show the burden, not just the benefit",
+      "The 'covered-work' pathway could have more explicit negative consequences",
+      "Cultural context for Priya's family could be expanded beyond 'hardworking immigrants'"
+    ],
+    "strengths": [
+      "Diverse, authentic character roster with natural representation",
+      "Clear ethical framing with meaningful consequences for different choices",
+      "Complex, flawed characters with agency and growth potential",
+      "Healthy adult modeling (Ms. Alvarez's restorative justice approach)",
+      "Realistic peer pressure and vulnerability",
+      "Age-appropriate content and language",
+      "Intersectional character design",
+      "Normalized inclusion of they/them pronouns (Sam)"
+    ],
+    "readyForPublication": true
+  }
+}

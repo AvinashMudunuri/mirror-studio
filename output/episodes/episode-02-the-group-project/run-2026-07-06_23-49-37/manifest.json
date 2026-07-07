@@ -1,0 +1,148 @@
+{
+  "episode": {
+    "number": 2,
+    "title": "Group Work",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "27335d34-006e-4772-8015-f15e4b2a12f1",
+    "threadId": "67f42728-c24f-4937-9f61-06f8ab309ec9",
+    "startedAt": "2026-07-06T23:49:37.807Z",
+    "completedAt": "2026-07-07T00:24:26.862Z",
+    "totalSeconds": 2089,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [],
+    "previousEpisodes": [
+      {
+        "id": "ep-1",
+        "title": "First Bell"
+      }
+    ],
+    "previousEpisodesSource": "postgres",
+    "usage": {
+      "calls": 19,
+      "inputTokens": 242871,
+      "outputTokens": 223926,
+      "totalTokens": 466797,
+      "cacheCreationInputTokens": 67939,
+      "cacheReadInputTokens": 81800,
+      "budget": 800000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 12,
+          "inputTokens": 81731,
+          "outputTokens": 195705,
+          "cacheReadInputTokens": 0
+        },
+        "claude-haiku-4-5-20251001": {
+          "calls": 7,
+          "inputTokens": 161140,
+          "outputTokens": 28221,
+          "cacheReadInputTokens": 81800
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Theo Osei",
+      "role": "Player character (protagonist) of 'Group Work.' Theo is the emotional lens through which the player experiences peer pressure, uneven workload, and the temptation to take a shortcut. His people-pleasing tendency makes the moral pressure land harder — going along with a charismatic teammate's plan isn't just about laziness or fear, it's about his deep need to be liked and not rock the boat as the new kid.",
+      "active": true
+    },
+    {
+      "id": "Ms. Alvarez",
+      "name": "Ms. Alvarez",
+      "role": "The adult authority whose quiet, precise attention creates the conditions for the episode's central test — she doesn't lecture the kids into honesty, she simply asks one exact question at one exact moment and lets the truth do the rest of the work. Her offer of a redo (not a zero) is what makes 'Owning It' feel survivable instead of catastrophic, modeling that accountability and grace can coexist.",
+      "active": true
+    },
+    {
+      "id": "Marcus",
+      "name": "Marcus Brody",
+      "role": "Marcus is the inciting pressure of 'Group Work' — his charisma is what makes the shortcut feel safe rather than sketchy, and his later disappearance from the project is what forces the player into a decision about confrontation vs. deflection. He's not a villain; he's a kid quietly drowning who happens to be very good at looking like he's fine. His arc runs parallel to Theo's: where Theo people-pleases to avoid rocking the boat, Marcus jokes to avoid being seen — and the episode's warmth comes from these two kids learning to actually ask each other what's going on instead of guessing.",
+      "active": true
+    },
+    {
+      "id": "Priya",
+      "name": "Priya Shah",
+      "role": "Priya is the episode's conscience and its quietest casualty. She sees the ethical line first, names it earliest, and is the one who pays the real relational cost of how Theo responds — her arc tracks whether Theo's choices make her feel safe enough to keep contributing, or teach her (again) that speaking up just gets her sidelined. Her hidden creative spark (the idea that saves the 'honest' version of the project) is the story's proof that doing it the hard way was never a consolation prize — it was the better path all along.",
+      "active": true
+    },
+    {
+      "id": "Sam",
+      "name": "Sam Delgado",
+      "role": "The low-stakes outside friend whose recurring 'how'd it go?' question gives the player a beat to reflect on and narrate their own choice — a mirror that isn't trying to be one. Sam's obliviousness or perceptiveness in each variant scales with how well things actually went, making their reaction a quiet gauge for the player's own read on what just happened.",
+      "active": true
+    }
+  ],
+  "finalStatus": "NEEDS_HUMAN_REVIEW",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "FAIL",
+    "childPsychologist": "APPROVED",
+    "gameDesigner": "GOOD",
+    "ethicsReviewer": "GOOD"
+  },
+  "revisions": [
+    {
+      "iteration": 1,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 1,
+      "dialogueFeedbackCount": 7,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    },
+    {
+      "iteration": 2,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 6,
+      "dialogueFeedbackCount": 7,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    }
+  ],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "06-psych-review.json",
+    "07-game-review.json",
+    "08-ethics-review.json",
+    "revision-1/feedback.json",
+    "revision-1/story-outline.json",
+    "revision-1/dialogue.json",
+    "revision-1/qa-review.json",
+    "revision-2/feedback.json",
+    "revision-2/story-outline.json",
+    "revision-2/dialogue.json",
+    "revision-2/qa-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}

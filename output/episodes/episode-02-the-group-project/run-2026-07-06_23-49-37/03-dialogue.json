@@ -1,0 +1,1581 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1-homeroom",
+      "lines": [
+        {
+          "id": "s1-1",
+          "character": "NARRATOR",
+          "text": "Homeroom still has that first-two-weeks smell — new notebooks, old air conditioning. Ms. Alvarez waits for the room to settle, which takes a while."
+        },
+        {
+          "id": "s1-2",
+          "character": "Ms. Alvarez",
+          "text": "Two weeks from today, you'll present a team showcase. It's forty percent of your quarter grade.",
+          "action": "taps two fingers on the desk"
+        },
+        {
+          "id": "s1-3",
+          "character": "Ms. Alvarez",
+          "text": "So — no pressure.",
+          "emotion": "deadpan",
+          "action": "beat"
+        },
+        {
+          "id": "s1-4",
+          "character": "Ms. Alvarez",
+          "text": "Okay. Some pressure."
+        },
+        {
+          "id": "s1-5",
+          "character": "NARRATOR",
+          "text": "A ripple of nervous laughter. She reads down the list of names without looking up."
+        },
+        {
+          "id": "s1-6",
+          "character": "Ms. Alvarez",
+          "text": "Theo, Marcus, Priya — you're a team."
+        },
+        {
+          "id": "s1-7",
+          "character": "Marcus",
+          "text": "Nice. I got the funny one and the smart one.",
+          "emotion": "grinning",
+          "action": "spins his chair around"
+        },
+        {
+          "id": "s1-8",
+          "character": "Marcus",
+          "text": "I'm basically covered."
+        },
+        {
+          "id": "s1-9",
+          "character": "Priya",
+          "text": "There are four required components.",
+          "action": "still reading the assignment sheet, not looking up"
+        },
+        {
+          "id": "s1-10",
+          "character": "Priya",
+          "text": "Did anyone else catch that there are four required components?"
+        },
+        {
+          "id": "s1-11",
+          "character": "player",
+          "text": "Honestly? I caught 'group project' and kind of blacked out after that."
+        },
+        {
+          "id": "s1-12",
+          "character": "Marcus",
+          "text": "Same, honestly. Bold of her to expect us to read the whole page.",
+          "emotion": "laughing"
+        },
+        {
+          "id": "s1-13",
+          "character": "Priya",
+          "text": "It's one page.",
+          "emotion": "flat"
+        },
+        {
+          "id": "s1-14",
+          "character": "Ms. Alvarez",
+          "text": "Before you scatter — I want each team to divide up roles. Out loud, so I hear it."
+        },
+        {
+          "id": "s1-15",
+          "character": "Ms. Alvarez",
+          "text": "Theo, let's start with you."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2-group-meeting",
+      "lines": [
+        {
+          "id": "s2-1",
+          "character": "NARRATOR",
+          "text": "Library study room. Priya already has a folder open and labeled. Marcus is leaning back so far his chair creaks."
+        },
+        {
+          "id": "s2-2",
+          "character": "Marcus",
+          "text": "Okay, hear me out.",
+          "action": "pulls out his phone, grinning"
+        },
+        {
+          "id": "s2-3",
+          "character": "Marcus",
+          "text": "My sister did basically this exact project last year. Got a ribbon at the regional fair and everything."
+        },
+        {
+          "id": "s2-4",
+          "character": "player",
+          "text": "...Okay?"
+        },
+        {
+          "id": "s2-5",
+          "character": "Marcus",
+          "text": "So we could just, like, use hers as a starting point. It's not even the same class. Nobody's gonna know."
+        },
+        {
+          "id": "s2-6",
+          "character": "NARRATOR",
+          "text": "Priya goes very still. Her eyes flick to the player before she says anything."
+        },
+        {
+          "id": "s2-7",
+          "character": "Priya",
+          "text": "Marcus.",
+          "action": "pen tapping a slow four-count"
+        },
+        {
+          "id": "s2-8",
+          "character": "Marcus",
+          "text": "What? I'm just saying it's already good. Why reinvent the wheel."
+        },
+        {
+          "id": "s2-9",
+          "character": "Priya",
+          "text": "Because it's not our wheel.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s2-10",
+          "character": "Marcus",
+          "text": "It's basically a suggestion. A jumping-off point.",
+          "emotion": "shrugging, a little too fast"
+        },
+        {
+          "id": "s2-11",
+          "character": "Marcus",
+          "text": "So. What do we think?"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3-integrity-brainstorm",
+      "lines": [
+        {
+          "id": "s3i-1",
+          "character": "Marcus",
+          "text": "Fine, fine. From scratch.",
+          "emotion": "deflated",
+          "action": "slumps back in his chair"
+        },
+        {
+          "id": "s3i-2",
+          "character": "Marcus",
+          "text": "Love starting from literally nothing, two weeks before it's due. Great use of time."
+        },
+        {
+          "id": "s3i-3",
+          "character": "Priya",
+          "text": "I had an idea. It's probably stupid.",
+          "action": "opens her notebook, doesn't quite look up"
+        },
+        {
+          "id": "s3i-4",
+          "character": "player",
+          "text": "No, go — what've you got?"
+        },
+        {
+          "id": "s3i-5",
+          "character": "Priya",
+          "text": "Okay, so — what if the base rotated?",
+          "emotion": "in a rush now that she's been asked",
+          "action": "flips the notebook around"
+        },
+        {
+          "id": "s3i-6",
+          "character": "Priya",
+          "text": "Instead of a static display, the whole thing turns, so people can see every side without touching it."
+        },
+        {
+          "id": "s3i-7",
+          "character": "Marcus",
+          "text": "Wait, hold on.",
+          "action": "sits up straighter"
+        },
+        {
+          "id": "s3i-8",
+          "character": "Marcus",
+          "text": "Like a lazy Susan. But for science."
+        },
+        {
+          "id": "s3i-9",
+          "character": "Priya",
+          "text": "...Essentially, yes.",
+          "emotion": "small, surprised smile"
+        },
+        {
+          "id": "s3i-10",
+          "character": "Marcus",
+          "text": "Okay that's actually kind of sick."
+        },
+        {
+          "id": "s3i-11",
+          "character": "player",
+          "text": "See, this is already better than a hand-me-down ribbon."
+        },
+        {
+          "id": "s3i-12",
+          "character": "Marcus",
+          "text": "Low blow.",
+          "emotion": "mock offended, grinning anyway"
+        },
+        {
+          "id": "s3i-13",
+          "character": "NARRATOR",
+          "text": "It's slower than copying would've been. But for the first time, all three of them are leaning over the same notebook."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3-shortcut-tempted",
+      "lines": [
+        {
+          "id": "s3s-1",
+          "character": "Marcus",
+          "text": "See, changing the title slide alone basically counts as original research.",
+          "emotion": "pleased with himself"
+        },
+        {
+          "id": "s3s-2",
+          "character": "Priya",
+          "text": "I swapped the color scheme. And the font.",
+          "action": "typing, eyes on the screen"
+        },
+        {
+          "id": "s3s-3",
+          "character": "Marcus",
+          "text": "Look at us. Innovators."
+        },
+        {
+          "id": "s3s-4",
+          "character": "player",
+          "text": "Honestly? This feels—",
+          "emotion": "trailing off, glancing at the original file"
+        },
+        {
+          "id": "s3s-5",
+          "character": "player",
+          "text": "—fast. Really fast."
+        },
+        {
+          "id": "s3s-6",
+          "character": "Marcus",
+          "text": "Fast is good! Fast means we get to go home before dinner."
+        },
+        {
+          "id": "s3s-7",
+          "character": "Priya",
+          "text": "Two days from a blank folder to a finished model does feel... unusually fast.",
+          "emotion": "not quite meeting anyone's eyes"
+        },
+        {
+          "id": "s3s-8",
+          "character": "Marcus",
+          "text": "Right? We're basically geniuses.",
+          "emotion": "missing the point entirely"
+        },
+        {
+          "id": "s3s-9",
+          "character": "NARRATOR",
+          "text": "Everyone's laughing. It looks great on the screen. Something small keeps tightening in the player's stomach anyway."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4-integrity-crisis",
+      "lines": [
+        {
+          "id": "s4i-1",
+          "character": "Priya",
+          "text": "Marcus's section still says 'in progress.'",
+          "action": "refreshing the shared folder for what is clearly not the first time"
+        },
+        {
+          "id": "s4i-2",
+          "character": "Priya",
+          "text": "It has said 'in progress' since Tuesday."
+        },
+        {
+          "id": "s4i-3",
+          "character": "player",
+          "text": "Has he answered your texts?"
+        },
+        {
+          "id": "s4i-4",
+          "character": "Priya",
+          "text": "Two check marks. No reply.",
+          "action": "tightens her braid"
+        },
+        {
+          "id": "s4i-5",
+          "character": "NARRATOR",
+          "text": "Marcus slides in late, doesn't quite make eye contact with either of them."
+        },
+        {
+          "id": "s4i-6",
+          "character": "Marcus",
+          "text": "Hey — sorry, sorry, I'm here."
+        },
+        {
+          "id": "s4i-7",
+          "character": "Priya",
+          "text": "You're here. Is your part here.",
+          "emotion": "clipped"
+        },
+        {
+          "id": "s4i-8",
+          "character": "Marcus",
+          "text": "It's fine, it's fine, I got it, I just—",
+          "action": "taps his pen against the table, stalling",
+          "emotion": "trailing off"
+        },
+        {
+          "id": "s4i-9",
+          "character": "Marcus",
+          "text": "—I got it."
+        },
+        {
+          "id": "s4i-10",
+          "character": "Priya",
+          "text": "We don't have time for 'I got it.'",
+          "emotion": "low, to the player"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4-shortcut-guilt",
+      "lines": [
+        {
+          "id": "s4s-1",
+          "character": "NARRATOR",
+          "text": "Priya catches the player alone in the hallway after the session, voice low."
+        },
+        {
+          "id": "s4s-2",
+          "character": "Priya",
+          "text": "Can I say something. Just to you."
+        },
+        {
+          "id": "s4s-3",
+          "character": "player",
+          "text": "...Yeah. Of course."
+        },
+        {
+          "id": "s4s-4",
+          "character": "Priya",
+          "text": "This is basically his sister's project with a new title slide."
+        },
+        {
+          "id": "s4s-5",
+          "character": "Priya",
+          "text": "Doesn't that feel wrong to you?"
+        },
+        {
+          "id": "s4s-6",
+          "character": "Priya",
+          "text": "I already checked the folder. Twice. It says 'last edited two days ago' — from before we even touched it."
+        },
+        {
+          "id": "s4s-7",
+          "character": "Priya",
+          "text": "That's not a coincidence. That's a paper trail."
+        },
+        {
+          "id": "s4s-8",
+          "character": "player",
+          "text": "You've been sitting on this."
+        },
+        {
+          "id": "s4s-9",
+          "character": "Priya",
+          "text": "I didn't want to be the one who ruins it.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s4s-10",
+          "character": "Priya",
+          "text": "But it's getting harder to pretend I don't notice."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-direct-talk",
+      "lines": [
+        {
+          "id": "s5d-1",
+          "character": "player",
+          "text": "Hey — can we actually talk for a sec. Not the hallway version."
+        },
+        {
+          "id": "s5d-2",
+          "character": "Marcus",
+          "text": "...About?",
+          "action": "leans back against the lockers"
+        },
+        {
+          "id": "s5d-3",
+          "character": "player",
+          "text": "You keep saying you've got it. You don't got it. What's actually going on?"
+        },
+        {
+          "id": "s5d-4",
+          "character": "NARRATOR",
+          "text": "A long pause. Marcus taps his pen against the locker instead of answering right away."
+        },
+        {
+          "id": "s5d-5",
+          "character": "Marcus",
+          "text": "...Yeah. Things have been kind of a lot at home."
+        },
+        {
+          "id": "s5d-6",
+          "character": "Marcus",
+          "text": "I didn't— I didn't know how to say that without it turning into a whole thing."
+        },
+        {
+          "id": "s5d-7",
+          "character": "player",
+          "text": "It doesn't have to turn into a whole thing. I just need to know if you need help."
+        },
+        {
+          "id": "s5d-8",
+          "character": "Marcus",
+          "text": "...Yeah. I think I do, actually.",
+          "emotion": "quietly relieved"
+        },
+        {
+          "id": "s5d-9",
+          "character": "player",
+          "text": "Okay. So we figure it out. Together — not you disappearing and me guessing."
+        },
+        {
+          "id": "s5d-10",
+          "character": "Marcus",
+          "text": "Honestly? Nobody's asked like that before.",
+          "emotion": "small, real smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-covered-work",
+      "lines": [
+        {
+          "id": "s5c-1",
+          "character": "NARRATOR",
+          "text": "The kitchen clock says 11:42. The half-finished model sits under a lamp that's too bright for this time of night."
+        },
+        {
+          "id": "INTERNAL-1",
+          "character": "INTERNAL",
+          "text": "This would take five minutes to explain to Marcus. It's taking me three hours to just... do it instead."
+        },
+        {
+          "id": "s5c-2",
+          "character": "player",
+          "text": "There. Done.",
+          "action": "sets the last piece down, quiet"
+        },
+        {
+          "id": "INTERNAL-2",
+          "character": "INTERNAL",
+          "text": "Nobody's gonna know I did this. That's kind of the point. And also kind of the problem."
+        },
+        {
+          "id": "s5c-3",
+          "character": "NARRATOR",
+          "text": "The player checks their phone. No messages. Not from Marcus, not from Priya."
+        },
+        {
+          "id": "INTERNAL-3",
+          "character": "INTERNAL",
+          "text": "I'm fine. I'm great. I am a hundred percent fine and definitely didn't just do someone else's homework at midnight."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-reported",
+      "lines": [
+        {
+          "id": "s5r-1",
+          "character": "Ms. Alvarez",
+          "text": "Marcus.",
+          "emotion": "even, unhurried"
+        },
+        {
+          "id": "s5r-2",
+          "character": "Ms. Alvarez",
+          "text": "Finish your part. Then we'll talk about the part you skipped."
+        },
+        {
+          "id": "s5r-3",
+          "character": "Marcus",
+          "text": "...Yes, ma'am.",
+          "action": "doesn't look at the player"
+        },
+        {
+          "id": "s5r-4",
+          "character": "player",
+          "text": "Marcus, I didn't mean to—"
+        },
+        {
+          "id": "s5r-5",
+          "character": "Marcus",
+          "text": "It's fine.",
+          "emotion": "flat, cutting the sentence off",
+          "action": "already packing his bag"
+        },
+        {
+          "id": "s5r-6",
+          "character": "Marcus",
+          "text": "I said I'd finish it. I'll finish it."
+        },
+        {
+          "id": "s5r-7",
+          "character": "Ms. Alvarez",
+          "text": "You did the right thing telling me.",
+          "emotion": "gentler, to the player"
+        },
+        {
+          "id": "s5r-8",
+          "character": "Ms. Alvarez",
+          "text": "That doesn't always feel like it in the moment."
+        },
+        {
+          "id": "s5r-9",
+          "character": "player",
+          "text": "...Doesn't feel like much of anything right now.",
+          "action": "watching Marcus leave without a word"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-redo-honest",
+      "lines": [
+        {
+          "id": "s5rh-1",
+          "character": "Priya",
+          "text": "We need to tell you something."
+        },
+        {
+          "id": "s5rh-2",
+          "character": "Marcus",
+          "text": "...Okay, that's an ominous way to start a sentence."
+        },
+        {
+          "id": "s5rh-3",
+          "character": "player",
+          "text": "We're not using your sister's project. We're starting over."
+        },
+        {
+          "id": "s5rh-4",
+          "character": "NARRATOR",
+          "text": "A long beat. Marcus doesn't argue right away."
+        },
+        {
+          "id": "s5rh-5",
+          "character": "Marcus",
+          "text": "...Oh.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s5rh-6",
+          "character": "Marcus",
+          "text": "Honestly? Kind of relieved. I felt weird every time I opened that folder."
+        },
+        {
+          "id": "s5rh-7",
+          "character": "Priya",
+          "text": "You did?",
+          "emotion": "surprised"
+        },
+        {
+          "id": "s5rh-8",
+          "character": "Marcus",
+          "text": "Yeah. I just didn't know how to say it without sounding like I was killing the easy option."
+        },
+        {
+          "id": "s5rh-9",
+          "character": "player",
+          "text": "Well. Consider it killed. Priya's got an idea, though."
+        },
+        {
+          "id": "s5rh-10",
+          "character": "Priya",
+          "text": "It's probably stupid—",
+          "action": "already flipping to the sketch",
+          "emotion": "pushed into a rush"
+        },
+        {
+          "id": "s5rh-11",
+          "character": "Priya",
+          "text": "—okay, what if the base rotated—"
+        },
+        {
+          "id": "s5rh-12",
+          "character": "Marcus",
+          "text": "Wait, I'm listening.",
+          "action": "sits up"
+        },
+        {
+          "id": "s5rh-13",
+          "character": "NARRATOR",
+          "text": "They work past dinner, past tired, into something that's actually, finally, theirs."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-silenced",
+      "lines": [
+        {
+          "id": "s5sl-1",
+          "character": "Priya",
+          "text": "...Okay.",
+          "emotion": "quiet, unreadable"
+        },
+        {
+          "id": "s5sl-2",
+          "character": "Marcus",
+          "text": "Great! Adapting is basically half the work anyway.",
+          "emotion": "oblivious"
+        },
+        {
+          "id": "s5sl-3",
+          "character": "player",
+          "text": "We just need to swap enough that it doesn't look—",
+          "emotion": "trailing off"
+        },
+        {
+          "id": "s5sl-4",
+          "character": "player",
+          "text": "—like it is what it is."
+        },
+        {
+          "id": "s5sl-5",
+          "character": "Priya",
+          "text": "Understood.",
+          "emotion": "short"
+        },
+        {
+          "id": "s5sl-6",
+          "character": "NARRATOR",
+          "text": "Over the next few sessions, Priya stops sketching new ideas. She just executes."
+        },
+        {
+          "id": "s5sl-7",
+          "character": "Marcus",
+          "text": "Priya, you're quiet today."
+        },
+        {
+          "id": "s5sl-8",
+          "character": "Priya",
+          "text": "I'm working.",
+          "emotion": "flat"
+        },
+        {
+          "id": "s5sl-9",
+          "character": "NARRATOR",
+          "text": "The player notices. Says nothing. It gets easier the second time."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-blamed",
+      "lines": [
+        {
+          "id": "s5b-1",
+          "character": "Marcus",
+          "text": "Priya said you didn't really... back her up. When she brought up the whole copying thing."
+        },
+        {
+          "id": "s5b-2",
+          "character": "player",
+          "text": "It wasn't really my call to make."
+        },
+        {
+          "id": "s5b-3",
+          "character": "Marcus",
+          "text": "Huh. Okay.",
+          "emotion": "unimpressed"
+        },
+        {
+          "id": "s5b-4",
+          "character": "NARRATOR",
+          "text": "Priya walks in. Polite. Cool."
+        },
+        {
+          "id": "s5b-5",
+          "character": "Priya",
+          "text": "Hi. Are we reviewing the slides or not."
+        },
+        {
+          "id": "s5b-6",
+          "character": "player",
+          "text": "Priya, I just meant—"
+        },
+        {
+          "id": "s5b-7",
+          "character": "Priya",
+          "text": "It's fine.",
+          "emotion": "even, closing the door on it",
+          "action": "opening her laptop"
+        },
+        {
+          "id": "s5b-8",
+          "character": "Priya",
+          "text": "Let's just finish this."
+        },
+        {
+          "id": "s5b-9",
+          "character": "NARRATOR",
+          "text": "It is, in fact, not fine. It just isn't going to be said out loud."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-integrity-presentation",
+      "lines": [
+        {
+          "id": "s6i-1",
+          "character": "NARRATOR",
+          "text": "The rotating base spins smoothly under the classroom lights. A few classmates lean in, actually curious."
+        },
+        {
+          "id": "s6i-2",
+          "character": "Ms. Alvarez",
+          "text": "Nice work on the mechanism.",
+          "emotion": "genuinely impressed"
+        },
+        {
+          "id": "s6i-3",
+          "character": "Ms. Alvarez",
+          "text": "Who wants to walk me through the division of labor?"
+        },
+        {
+          "id": "s6i-4",
+          "character": "Marcus",
+          "text": "...I mean, Priya basically designed the whole rotation system, and Theo—",
+          "action": "taps his pen, unsure how much of the rough patch to mention"
+        },
+        {
+          "id": "s6i-5",
+          "character": "Marcus",
+          "text": "—Theo kind of, held things together. When I wasn't."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-shortcut-presentation",
+      "lines": [
+        {
+          "id": "s6s-1",
+          "character": "NARRATOR",
+          "text": "The board looks great. Half the class is impressed. The other half is bored, which is honestly the goal."
+        },
+        {
+          "id": "s6s-2",
+          "character": "Ms. Alvarez",
+          "text": "This looks a lot like a project from the regional fair a couple years back.",
+          "action": "tilts her head, taps two fingers on her desk"
+        },
+        {
+          "id": "s6s-3",
+          "character": "Ms. Alvarez",
+          "text": "Where did the idea come from?"
+        },
+        {
+          "id": "s6s-4",
+          "character": "NARRATOR",
+          "text": "The room goes very quiet."
+        },
+        {
+          "id": "s6s-5",
+          "character": "Marcus",
+          "text": "...Um.",
+          "emotion": "frozen, monosyllabic"
+        },
+        {
+          "id": "s6s-6",
+          "character": "Priya",
+          "text": "",
+          "action": "stares at the desk, pen tapping a four-count under the table, saying nothing"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-integrity-unity",
+      "lines": [
+        {
+          "id": "s7iu-1",
+          "character": "Marcus",
+          "text": "Thanks. For saying that in there.",
+          "emotion": "quieter than usual"
+        },
+        {
+          "id": "s7iu-2",
+          "character": "player",
+          "text": "I meant it."
+        },
+        {
+          "id": "s7iu-3",
+          "character": "Marcus",
+          "text": "Yeah. I know.",
+          "emotion": "small smile"
+        },
+        {
+          "id": "s7iu-4",
+          "character": "NARRATOR",
+          "text": "Sam catches up in the hallway, still holding a half-eaten granola bar."
+        },
+        {
+          "id": "s7iu-5",
+          "character": "Sam",
+          "text": "Okay but did you guys actually finish the big project or is it still 'basically done' in the metaphysical sense."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-integrity-quiet",
+      "lines": [
+        {
+          "id": "s7iq-1",
+          "character": "Marcus",
+          "text": "...Thanks for not making it weird in there.",
+          "action": "not quite looking at the player"
+        },
+        {
+          "id": "s7iq-2",
+          "character": "player",
+          "text": "Yeah. No problem."
+        },
+        {
+          "id": "s7iq-3",
+          "character": "NARRATOR",
+          "text": "Something unsaid sits between them anyway, small but present, like a shoe with a pebble in it."
+        },
+        {
+          "id": "s7iq-4",
+          "character": "Sam",
+          "text": "Wait— you good? You've got the face.",
+          "action": "squinting at the player"
+        },
+        {
+          "id": "s7iq-5",
+          "character": "Sam",
+          "text": "The face you get."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-shortcut-honesty",
+      "lines": [
+        {
+          "id": "s7sh-1",
+          "character": "Ms. Alvarez",
+          "text": "A zero teaches you to hide better next time. A redo teaches you something else.",
+          "emotion": "even"
+        },
+        {
+          "id": "s7sh-2",
+          "character": "Ms. Alvarez",
+          "text": "I'd rather teach you the second thing. You've got until Friday."
+        },
+        {
+          "id": "s7sh-3",
+          "character": "Priya",
+          "text": "...Thank you.",
+          "emotion": "the first real breath she's taken in days"
+        },
+        {
+          "id": "s7sh-4",
+          "character": "Marcus",
+          "text": "Yeah. Thanks, Ms. Alvarez."
+        },
+        {
+          "id": "s7sh-5",
+          "character": "NARRATOR",
+          "text": "Sam catches up after the bell, unable to read a room to save their life, in the best way."
+        },
+        {
+          "id": "s7sh-6",
+          "character": "Sam",
+          "text": "Lowkey I don't even care what grade you got, I just want to know if it was chaos. Was it chaos."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-shortcut-lie",
+      "lines": [
+        {
+          "id": "s7sl-1",
+          "character": "NARRATOR",
+          "text": "Ms. Alvarez holds the look a second too long, then moves on to the next group."
+        },
+        {
+          "id": "s7sl-2",
+          "character": "Priya",
+          "text": "",
+          "action": "won't meet the player's eyes, gathering the slides in silence"
+        },
+        {
+          "id": "s7sl-3",
+          "character": "player",
+          "text": "Priya—"
+        },
+        {
+          "id": "s7sl-4",
+          "character": "Priya",
+          "text": "Nice presentation.",
+          "emotion": "quiet, already walking off"
+        },
+        {
+          "id": "s7sl-5",
+          "character": "NARRATOR",
+          "text": "Sam catches up in the hallway, doing their best impression of someone who hasn't noticed anything's wrong."
+        },
+        {
+          "id": "s7sl-6",
+          "character": "Sam",
+          "text": "Okay but did you guys actually finish it or is Marcus still 'working on his part' in the metaphysical sense—"
+        },
+        {
+          "id": "s7sl-7",
+          "character": "Sam",
+          "text": "—wait. You've got the face."
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-role",
+      "options": [
+        {
+          "id": "a",
+          "text": "Team leader — I'll help keep us on track."
+        },
+        {
+          "id": "b",
+          "text": "Researcher — I'll dig into the material."
+        },
+        {
+          "id": "c",
+          "text": "Support role — I'll help wherever's needed."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "cr-a1",
+            "character": "Marcus",
+            "text": "Sure, go be in charge, boss.",
+            "emotion": "teasing"
+          },
+          {
+            "id": "cr-a2",
+            "character": "Priya",
+            "text": "Noted.",
+            "action": "actually writes it down"
+          }
+        ],
+        "b": [
+          {
+            "id": "cr-b1",
+            "character": "Priya",
+            "text": "Good. Someone should double-check the rubric before we build anything."
+          },
+          {
+            "id": "cr-b2",
+            "character": "Marcus",
+            "text": "Called it. Nerd-adjacent duo."
+          }
+        ],
+        "c": [
+          {
+            "id": "cr-c1",
+            "character": "Marcus",
+            "text": "Support's clutch, honestly. That's the guy who saves the project at hour eleven."
+          },
+          {
+            "id": "cr-c2",
+            "character": "Priya",
+            "text": "We'll see who ends up doing that.",
+            "emotion": "dry, not looking up"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-copy",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"That's basically cheating. Let's come up with our own idea.\""
+        },
+        {
+          "id": "b",
+          "text": "\"I mean... let's at least look at it for inspiration.\""
+        },
+        {
+          "id": "c",
+          "text": "\"Maybe we should ask Ms. Alvarez what's actually allowed first.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "cc-a1",
+            "character": "Marcus",
+            "text": "Okay, harsh, but— fine. Fine! We'll do it the hard way.",
+            "emotion": "mock wounded"
+          },
+          {
+            "id": "cc-a2",
+            "character": "Priya",
+            "text": "Thank you.",
+            "emotion": "quiet relief"
+          }
+        ],
+        "b": [
+          {
+            "id": "cc-b1",
+            "character": "Marcus",
+            "text": "See, that's all I'm asking. Just a peek.",
+            "emotion": "pleased"
+          },
+          {
+            "id": "cc-b2",
+            "character": "Priya",
+            "text": "\"Inspiration\" is doing a lot of work in that sentence.",
+            "emotion": "not quite meeting anyone's eyes"
+          }
+        ],
+        "c": [
+          {
+            "id": "cc-c1",
+            "character": "Marcus",
+            "text": "Ugh, buzzkill move. But — okay, fair.",
+            "emotion": "shrugging"
+          },
+          {
+            "id": "cc-c2",
+            "character": "Priya",
+            "text": "That's actually the responsible thing to do.",
+            "emotion": "approving"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-teammate-integrity",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pull Marcus aside and ask what's actually going on."
+        },
+        {
+          "id": "b",
+          "text": "Quietly do his part yourself so it gets done."
+        },
+        {
+          "id": "c",
+          "text": "Tell Ms. Alvarez he's not pulling his weight."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "ct-a1",
+            "character": "Priya",
+            "text": "...That's probably smarter than what I was about to do.",
+            "emotion": "surprised"
+          }
+        ],
+        "b": [
+          {
+            "id": "ct-b1",
+            "character": "Priya",
+            "text": "You're just going to... do it? For him?",
+            "emotion": "uneasy"
+          },
+          {
+            "id": "ct-b2",
+            "character": "player",
+            "text": "It's faster than arguing about it."
+          }
+        ],
+        "c": [
+          {
+            "id": "ct-c1",
+            "character": "Priya",
+            "text": "That feels like a last resort, not a first one.",
+            "emotion": "conflicted"
+          },
+          {
+            "id": "ct-c2",
+            "character": "player",
+            "text": "Honestly? We're kind of out of resorts."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-teammate-shortcut",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"You're right. Let's tell Marcus and start over, honestly.\""
+        },
+        {
+          "id": "b",
+          "text": "\"We've come too far now — let's just keep this between us.\""
+        },
+        {
+          "id": "c",
+          "text": "\"It was Marcus's idea, not mine — go talk to him.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "cts-a1",
+            "character": "Priya",
+            "text": "...Okay.",
+            "emotion": "quiet exhale, like she'd been holding her breath"
+          },
+          {
+            "id": "cts-a2",
+            "character": "Priya",
+            "text": "Thank you for not making me say it twice."
+          }
+        ],
+        "b": [
+          {
+            "id": "cts-b1",
+            "character": "Priya",
+            "text": "...Okay.",
+            "emotion": "flat, resigned",
+            "action": "tightens her braid"
+          }
+        ],
+        "c": [
+          {
+            "id": "cts-c1",
+            "character": "Priya",
+            "text": "It was his idea. You didn't say no.",
+            "emotion": "quiet, pointed"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-presentation-integrity",
+      "options": [
+        {
+          "id": "a",
+          "text": "Speak up and credit the whole team, including how Marcus turned things around."
+        },
+        {
+          "id": "b",
+          "text": "Let Marcus answer for himself and stay out of it."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "cpi-a1",
+            "character": "player",
+            "text": "Honestly? Marcus was going through something none of us knew about, and once we talked, he showed up. All the way."
+          },
+          {
+            "id": "cpi-a2",
+            "character": "Ms. Alvarez",
+            "text": "Good teamwork looks like that more often than people think.",
+            "emotion": "small, real approval"
+          },
+          {
+            "id": "cpi-a3",
+            "character": "Marcus",
+            "text": "...Yeah. What he said.",
+            "emotion": "quietly grateful"
+          }
+        ],
+        "b": [
+          {
+            "id": "cpi-b1",
+            "character": "Marcus",
+            "text": "...I finished my part. Eventually.",
+            "emotion": "mumbled"
+          },
+          {
+            "id": "cpi-b2",
+            "character": "Ms. Alvarez",
+            "text": "Alright.",
+            "emotion": "letting it sit there a beat"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-presentation-shortcut",
+      "options": [
+        {
+          "id": "a",
+          "text": "Admit it was based too closely on an old project, and apologize."
+        },
+        {
+          "id": "b",
+          "text": "Insist it's completely original."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "cps-a1",
+            "character": "player",
+            "text": "It's based on Marcus's sister's old project. We changed some things, but... not enough. That's on us. Mostly me."
+          },
+          {
+            "id": "cps-a2",
+            "character": "Ms. Alvarez",
+            "text": "I appreciate you telling me that in front of the whole class. That took something.",
+            "emotion": "quiet, genuine"
+          }
+        ],
+        "b": [
+          {
+            "id": "cps-b1",
+            "character": "player",
+            "text": "No, it's — it's ours. We just, um, had similar ideas, I guess.",
+            "emotion": "unconvincing even to himself"
+          },
+          {
+            "id": "cps-b2",
+            "character": "Ms. Alvarez",
+            "text": "Hm.",
+            "emotion": "not buying it, but letting it go for now"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-final-unity",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Honestly? Rough start, but we pulled together in the end.\""
+        },
+        {
+          "id": "b",
+          "text": "\"It went fine.\" (leave it there)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "cfu-a1",
+            "character": "Sam",
+            "text": "Okay wait, chaos details, please. I need the full timeline."
+          }
+        ],
+        "b": [
+          {
+            "id": "cfu-b1",
+            "character": "Sam",
+            "text": "That's it? 'Fine'? You always say more than that.",
+            "emotion": "genuinely curious, not letting it go"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-final-quiet",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Fine, but I keep wondering if I should've said more in there.\""
+        },
+        {
+          "id": "b",
+          "text": "\"It worked out. That's all that matters.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "cfq-a1",
+            "character": "Sam",
+            "text": "Lowkey, saying more is usually the move. But I get it.",
+            "emotion": "surprisingly gentle"
+          }
+        ],
+        "b": [
+          {
+            "id": "cfq-b1",
+            "character": "Sam",
+            "text": "...If you say so.",
+            "emotion": "not convinced, but letting it go"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-final-honesty",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Terrifying, honestly. But I'm glad I owned up to it.\""
+        },
+        {
+          "id": "b",
+          "text": "\"It's fine now, no big deal.\" (downplay it)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "cfh-a1",
+            "character": "Sam",
+            "text": "Deadass? In front of the whole class? That's lowkey the bravest thing I've heard all week.",
+            "emotion": "impressed"
+          }
+        ],
+        "b": [
+          {
+            "id": "cfh-b1",
+            "character": "Sam",
+            "text": "You keep saying 'no big deal' with a face that says extremely big deal.",
+            "action": "squinting"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-final-lie",
+      "options": [
+        {
+          "id": "a",
+          "text": "Admit quietly that you're worried the truth will still come out."
+        },
+        {
+          "id": "b",
+          "text": "Insist everything's fine, to Sam and to yourself."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "cfl-a1",
+            "character": "Sam",
+            "text": "...Okay, that's not a 'fine' voice. That's a whole other voice.",
+            "emotion": "quietly concerned"
+          }
+        ],
+        "b": [
+          {
+            "id": "cfl-b1",
+            "character": "Sam",
+            "text": "If you say so.",
+            "emotion": "not buying it, letting it drop anyway"
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-7-integrity-unity",
+      "branchId": "branch-integrity-path",
+      "lines": [
+        {
+          "id": "b-ip-u1",
+          "character": "INTERNAL",
+          "text": "We built the whole thing from a scribble in Priya's notebook. Two weeks of arguing over glue and grading rubrics — and it's actually ours."
+        },
+        {
+          "id": "b-ip-u2",
+          "character": "Priya",
+          "text": "For the record — the rotating base was worth the extra three days.",
+          "emotion": "small, proud smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-integrity-unity",
+      "branchId": "branch-empathy-earned",
+      "lines": [
+        {
+          "id": "b-ee-u1",
+          "character": "Marcus",
+          "text": "You know you're the only one who actually asked, right? Not assumed. Asked."
+        },
+        {
+          "id": "b-ee-u2",
+          "character": "player",
+          "text": "Figured it was worth a shot."
+        },
+        {
+          "id": "b-ee-u3",
+          "character": "Marcus",
+          "text": "It was more than a shot. It was, like — the thing.",
+          "emotion": "uncharacteristically earnest"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-integrity-unity",
+      "branchId": "branch-quiet-redemption",
+      "lines": [
+        {
+          "id": "b-qr-u1",
+          "character": "Priya",
+          "text": "I wasn't sure you'd actually back me up, that night at my place."
+        },
+        {
+          "id": "b-qr-u2",
+          "character": "player",
+          "text": "You were right. Wasn't hard once you said it out loud."
+        },
+        {
+          "id": "b-qr-u3",
+          "character": "Priya",
+          "text": "It's usually not, once someone says it.",
+          "emotion": "quiet, grateful"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-integrity-quiet",
+      "branchId": "branch-integrity-path",
+      "lines": [
+        {
+          "id": "b-ip-q1",
+          "character": "INTERNAL",
+          "text": "The project was ours. Real, built-from-scratch ours. I just didn't say so when it mattered, and now that feels like its own small unfinished thing."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-integrity-quiet",
+      "branchId": "branch-quiet-redemption",
+      "lines": [
+        {
+          "id": "b-qr-q1",
+          "character": "Priya",
+          "text": "We rebuilt the whole thing in one night and you still let him mumble through it alone up there.",
+          "emotion": "not quite an accusation"
+        },
+        {
+          "id": "b-qr-q2",
+          "character": "player",
+          "text": "...Yeah. I know. I should've jumped in."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-shortcut-honesty",
+      "branchId": "branch-shortcut-path",
+      "lines": [
+        {
+          "id": "b-sp-h1",
+          "character": "INTERNAL",
+          "text": "Two weeks of looking over my shoulder, and it turns out the scary part was just saying it out loud. Once."
+        },
+        {
+          "id": "b-sp-h2",
+          "character": "Priya",
+          "text": "I've never wanted to hug someone for getting us in trouble before.",
+          "emotion": "half-laughing, half-serious"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-shortcut-honesty",
+      "branchId": "branch-cover-up",
+      "lines": [
+        {
+          "id": "b-cu-h1",
+          "character": "Priya",
+          "text": "I stopped bringing up ideas for a week because I thought you'd already decided I didn't matter to this.",
+          "emotion": "quiet, still a little raw"
+        },
+        {
+          "id": "b-cu-h2",
+          "character": "player",
+          "text": "I'm sorry. That was on me, not just the project."
+        },
+        {
+          "id": "b-cu-h3",
+          "character": "Priya",
+          "text": "...Redo starts tomorrow. We'll see.",
+          "emotion": "not quite forgiveness yet, but a door left open"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-shortcut-lie",
+      "branchId": "branch-shortcut-path",
+      "lines": [
+        {
+          "id": "b-sp-l1",
+          "character": "INTERNAL",
+          "text": "The grade's fine. Everything's fine. So why does 'fine' keep feeling like a countdown?"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-shortcut-lie",
+      "branchId": "branch-cover-up",
+      "lines": [
+        {
+          "id": "b-cu-l1",
+          "character": "Priya",
+          "text": "You told me to keep it between us. I did. Look how that's going.",
+          "emotion": "cold, not loud",
+          "action": "doesn't slow down as she says it"
+        },
+        {
+          "id": "b-cu-l2",
+          "character": "player",
+          "text": "Priya, wait—"
+        },
+        {
+          "id": "b-cu-l3",
+          "character": "Priya",
+          "text": "",
+          "action": "keeps walking"
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Theo (player) leans on 'honestly' right before admitting something he's nervous about, and turns statements into questions when he's unsure of himself — this should show up most in scenes where he's choosing between comfort and confrontation. Marcus performs even when it's just three people in a library — pauses for laughs that don't always come — and drops into flat monosyllables the moment someone corners him with something real ('...Um.' / '...Oh.'). Priya's tell is control: complete, ordered sentences when she's fine, clipped one-word answers when she isn't ('It's fine.' delivered exactly the way that means it isn't). Her silence in scene-5-silenced and scene-5-blamed should read as louder than her usual precision. Ms. Alvarez never raises her voice — the read is that her quiet is the consequence, not a lecture. Sam is the tonal release valve after heavier scenes; keep their lines slightly oblivious to emotional weight but not unkind, and let them catch on a beat late ('Wait— you good?') rather than immediately, which keeps them endearing instead of insightful.",
+  "alternativeLines": [
+    {
+      "lineId": "s3s-4",
+      "alternatives": [
+        "Honestly? This is moving kind of fast, right?",
+        "...Anyone else feel like we're speedrunning this?"
+      ],
+      "reasoning": "Keeps Theo's trailing-off, question-tagged uncertainty but offers a slightly lighter/more deflective version if the tone needs to stay less heavy this early in the shortcut branch."
+    },
+    {
+      "lineId": "s5d-6",
+      "alternatives": [
+        "Things have been kind of a lot at home lately. I didn't know how to bring it up without making it a whole thing.",
+        "Home's been rough. I didn't want it to turn into some big group therapy session, so I just... didn't say anything."
+      ],
+      "reasoning": "Marcus's admission needs to land as a genuine crack in the performance — alternatives preserve the monosyllabic buildup but vary how much vulnerability he allows himself in the actual phrasing."
+    },
+    {
+      "lineId": "s7sl-4",
+      "alternatives": [
+        "It worked.",
+        "You did great up there."
+      ],
+      "reasoning": "Priya's line needs to sting through politeness rather than open hostility — 'Nice presentation' keeps her characteristic control while the subtext (this is a closed door) does the emotional work."
+    }
+  ]
+}

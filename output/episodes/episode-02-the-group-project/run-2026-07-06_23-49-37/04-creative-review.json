@@ -1,0 +1,69 @@
+{
+  "decision": "APPROVED",
+  "creativeNotes": "This is genuinely strong work. 'Group Work' understands its audience in a way that feels earned rather than performed. The core premise—that integrity is tested in private, low-supervision moments, not in front of authority—is exactly the kind of insight middle schoolers need, and the episode builds it through character choice rather than lecture. The branching structure is sophisticated without being gimmicky; each path (honest foundation vs. borrowed idea) creates meaningfully different emotional stakes. What makes this exceptional is the attention to how peer pressure actually works: not through villain characters, but through likeable people making small deflections, and through the player's own people-pleasing instinct. Marcus isn't a bad kid pressuring Theo; he's a struggling kid using charm as a smokescreen, and the episode trusts the audience to see both things at once. Priya's quiet discomfort—the way she stops offering ideas when silenced—is a small, devastating detail that shows what happens when someone's conscience gets traded for group cohesion. The dialogue consistently sounds like real middle schoolers: the verbal tics (Theo's 'honestly,' Marcus's 'basically,' Priya's precision), the way humor becomes a deflection tool, the fragments that appear when someone's actually scared. Ms. Alvarez is particularly well-drawn: her offer of a redo instead of a zero isn't a soft teacher moment, it's a specific pedagogical choice rooted in her own history, and the episode earns that through her character background. The pacing respects the audience's intelligence—it doesn't rush the temptation or the reckoning. This will land with the target age group because it doesn't condescend to them, and it doesn't pretend that 'doing the right thing' is easy or costs nothing.",
+  "specificFeedback": {
+    "story": [
+      "The branching structure is clear and consequential, but consider adding one small visual or environmental callback in the presentation scenes (scene-6) that subtly reminds the player which path they took—a detail that only appears if they chose the shortcut, or a specific comment from Ms. Alvarez that only makes sense if they chose honesty. This would deepen the sense that their earlier choice *shaped* this moment, not just diverted it.",
+      "The 'covered work' path (scene-5-covered-work) is emotionally honest but narratively brief compared to the other scene-5 branches. Consider adding one more beat where the player realizes Marcus doesn't know, and sits with that specific loneliness—the work is done, but invisible. This would make the cost of that choice more felt.",
+      "Scene transitions are generally smooth, but the jump from 'team assignments' to 'shortcut offered' happens very fast (one scene). Consider whether a brief scene of the team's first brainstorm—where they're actually trying—before Marcus offers the shortcut would make his suggestion land harder as a betrayal of that initial effort. (This is optional; the current pacing works, but the contrast would deepen it.)"
+    ],
+    "character": [
+      "Theo's voice is consistent and authentic throughout. The nervous tics, the verbal hedging, the way he cracks jokes when tension rises—all of it rings true. One small note: in the scenes where Theo is actually confronting something (like pulling Marcus aside), his dialogue becomes slightly more direct than his usual pattern. This is intentional and good, but make sure it's *clearly* intentional—maybe one line where he notices his own directness and second-guesses it slightly, to show he's pushing against his own nature. (Example: 'Look, I'm not mad. I'm just... doing the math on how much of this project is actually mine.' He notices he's being blunt and doesn't immediately soften it, which is growth.)",
+      "Marcus's deflection pattern is excellent, but watch for one thing: in the 'direct talk' scene (scene-5-direct-talk), his admission of home trouble is earned and quiet. Make sure his relief at being asked isn't so complete that it reads as 'problem solved.' His relief should be mixed with residual shame or guardedness—he's still processing that someone noticed. The current dialogue handles this well, but the action beats could reinforce it (maybe he still doesn't quite make eye contact, even after admitting the truth).",
+      "Priya is the emotional conscience of the episode, and her arc is subtle and painful. The detail about her stopping to offer ideas when silenced is devastating. One note: make sure her 'redo' moment (if the team chooses honesty) shows her actually *risking* something by speaking up again. She shouldn't bounce back to full confidence immediately—there should be a beat where she offers an idea and waits to see if it will be dismissed again. This would make her participation in the honest version feel like genuine trust-rebuilding, not just relief.",
+      "Ms. Alvarez is grounded and specific. Her two-finger desk tap, her green pen, her question about the regional fair project—these details work. One small consideration: her internal conflict about whether to call out the plagiarism publicly or privately is mentioned in her character background but never surfaces in the episode itself. If the player takes the shortcut path, consider one small moment where Ms. Alvarez's choice to ask the question in front of the class (rather than privately) is shown as deliberate—maybe a beat where she pauses before asking, or where she meets the player's eyes for a half-second too long. This would show that her mercy (the redo offer) is paired with a specific kind of accountability."
+    ],
+    "dialogue": [
+      "The dialogue is strong overall, but watch for one rhythm issue: some of Theo's longer responses in emotional scenes are slightly more articulate than his usual pattern. Example: 'Look, I'm not mad. I'm just... doing the math on how much of this project is actually mine. And the number's not great.' This line is *perfect* in content, but Theo would likely hedge it more in the moment ('I'm not... I'm not mad. I'm just, like, doing the math...?'). The version in the guidelines is better. Make sure the final dialogue matches that slightly-more-fragmented authenticity.",
+      "Marcus's verbal warm-ups ('basically,' 'honestly') are used well, but make sure they're distributed across his dialogue—he shouldn't use both in the same scene unless he's particularly nervous. Current draft seems good on this, but worth a final pass.",
+      "Priya's shift from detailed to clipped when hurt is excellent. One note: in the 'blamed' path (scene-5-blamed), her line 'It's fine' is perfectly flat, but consider whether she needs one more beat of silence or a physical action (closing her laptop, turning away) to make the finality land. The dialogue is doing the work, but a small action would reinforce that she's not going to keep explaining.",
+      "Ms. Alvarez's dialogue is consistently precise and unhurried. The lines about 'a zero teaches you to hide better, a redo teaches you something else' are excellent. One small consideration: make sure her tone in the 'reported' path (scene-5-reported) shows that she's not punishing Marcus for struggling, but she *is* holding him accountable. The current line 'Marcus. Finish your part. Then we'll talk about the part you skipped.' does this well—it's direct without being harsh. Keep this balance."
+    ],
+    "tone": [
+      "The episode maintains a grounded, realistic tone throughout, which is exactly right for the world. The humor (mostly from Marcus and Theo) never undercuts the seriousness of the ethical choice, which is a difficult balance to strike. Current draft nails this.",
+      "One tonal consideration: the 'covered work' path (scene-5-covered-work) is notably quieter and more melancholic than the other branches. This is intentional and good—it should feel lonelier than the other paths. Make sure the final scene (scene-7) after this path reflects that loneliness. If the player chose to do the work alone, their reflection with Sam should feel slightly more isolated, even if the project succeeded. (Current draft seems to handle this, but worth checking in final pass.)",
+      "The presentation day scenes (scene-6) have a moment of real tension when Ms. Alvarez asks about the project's origin. The silence that follows is well-placed. Make sure the pacing of that silence is actually *felt*—a beat long enough that the player experiences the discomfort, not just reads about it. This is a moment where the interactive format has an advantage over passive media; use it.",
+      "The 'redo' offer from Ms. Alvarez is a moment of grace, but it shouldn't feel unearned. Current dialogue handles this well—she frames it as a pedagogical choice, not a soft let-off. The tone here is important: she's not forgiving them, she's offering them a chance to learn something harder than 'don't get caught.' This distinction comes through in her voice."
+    ]
+  },
+  "inspirationReferences": [
+    {
+      "type": "TV",
+      "title": "Friday Night Lights (particularly the Riggins/Saracen dynamic)",
+      "reasoning": "The way Marcus and Theo's relationship mirrors the show's treatment of peer pressure—it's not about a villain pushing the hero, it's about likeable people making small deflections under stress, and the cost of staying silent about it. The show understands that the hardest choices happen between friends, not against enemies."
+    },
+    {
+      "type": "BOOK",
+      "title": "The Absolutely True Diary of a Part-Time Indian by Sherman Alexie",
+      "reasoning": "The way this episode handles code-switching and the performance of okayness mirrors Alexie's treatment of how kids navigate multiple worlds. Theo performing 'fine-ness,' Marcus using humor as a smokescreen, Priya managing her own stress through control—these are all forms of the same adaptive behavior Alexie explores, and the episode treats them with the same compassion."
+    },
+    {
+      "type": "GAME",
+      "title": "Life is Strange (particularly the branching consequences structure)",
+      "reasoning": "Not in terms of supernatural stakes, but in the way the game uses branching to show that small choices in private moments create different emotional landscapes in public ones. This episode's structure does something similar: the choice to go along with the shortcut or push back creates meaningfully different presentation-day scenarios."
+    },
+    {
+      "type": "OTHER",
+      "title": "The work of Brené Brown on vulnerability and shame",
+      "reasoning": "The episode's understanding that people deflect (Marcus's humor, Theo's people-pleasing, Priya's control) as a response to shame or fear of disconnection, and that the antidote is direct, curious communication—this is Brown's framework, applied to middle school. The 'pull Marcus aside and ask' choice is literally Brown's 'rumor vs. reality' framework in action."
+    }
+  ],
+  "revisionPriority": "LOW",
+  "detailedAssessment": {
+    "strengths": [
+      "The core insight—that integrity is tested in private, not public—is age-appropriate, non-preachy, and structurally central to the episode. This is not a lecture disguised as a story; it's a story that *demonstrates* the insight through consequence.",
+      "The characterization of peer pressure as something that comes from likeable people under stress, not from villains, is sophisticated and true to how actual middle schoolers experience it. Marcus isn't bad; he's drowning and using charm as a life raft.",
+      "The branching structure creates genuinely different emotional landscapes without feeling arbitrary. Each path has its own internal logic and emotional weight.",
+      "Dialogue consistently sounds like real middle schoolers—the verbal tics, the humor patterns, the way directness appears under pressure. This is harder than it sounds, and the draft nails it.",
+      "The supporting cast (Ms. Alvarez, Priya, Sam) are all distinct and serve specific narrative functions without feeling like NPCs. Priya in particular is a full character, not just 'the conscience.'"
+    ],
+    "areas_for_polish": [
+      "The 'covered work' path could use one additional beat to deepen the loneliness of that choice—a moment where Theo realizes Marcus will never know, and sits with that specifically.",
+      "Consider adding a small environmental or dialogue callback in the presentation scenes that makes the player's earlier choice feel like it shaped this moment, not just diverted it.",
+      "Theo's dialogue in emotional moments is slightly more articulate than his usual pattern—a small polish to make it more consistently fragmented and hedging would increase authenticity.",
+      "Ms. Alvarez's internal conflict about when/how to call out plagiarism (mentioned in her background) could surface in one small moment during the shortcut path, showing her choice to ask publicly as deliberate.",
+      "In the 'redo' moment, make sure the grace of the offer is paired with the accountability—she's not forgiving them, she's offering them a harder lesson. Current dialogue does this, but worth reinforcing."
+    ],
+    "audience_resonance": "This episode will land with the target age group (11-14) because it respects their intelligence and doesn't pretend that 'doing the right thing' is easy or cost-free. The choices feel real because they're between competing values (loyalty to a friend vs. integrity to the group), not between 'good' and 'obviously bad.' The dialogue sounds like them. The emotional beats earn their moments. This is the kind of story that middle schoolers will recognize in their own lives, which is exactly what makes it powerful."
+  }
+}

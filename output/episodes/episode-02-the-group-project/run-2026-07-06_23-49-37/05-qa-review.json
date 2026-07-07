@@ -1,0 +1,84 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-4-integrity-crisis has a choice (choice-teammate-integrity) that branches to three different scenes, but scene-4-shortcut-guilt (which should be an alternative path from scene-3-shortcut-tempted) has no incoming choice — it only has a defaultNextScene pointing to scene-4-shortcut-guilt. This creates an unreachable state: players on the 'shortcut' branch never encounter the guilt scene before the crisis.",
+      "location": "scenes[].id matching 'scene-4-*', choices[id='choice-teammate-integrity']",
+      "expectedValue": "Both scene-4-integrity-crisis and scene-4-shortcut-guilt should be reachable via distinct choice paths from their respective preceding scenes.",
+      "actualValue": "scene-3-shortcut-tempted has defaultNextScene='scene-4-shortcut-guilt', but scene-4-shortcut-guilt has no incoming choice — only a default transition. This means players following the shortcut path skip the guilt reflection entirely and jump straight to the crisis.",
+      "fix": "Either (a) add a choice at scene-3-shortcut-tempted that explicitly routes to scene-4-shortcut-guilt, or (b) merge scene-4-shortcut-guilt's dialogue into scene-4-integrity-crisis as a branch variant, or (c) restructure so the guilt scene is a mandatory waypoint before the crisis for shortcut-path players."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Choice choice-teammate-shortcut (scene-4-shortcut-guilt) has three options pointing to three different scenes (scene-5-redo-honest, scene-5-silenced, scene-5-blamed), but this choice is only reachable if the player took choice-copy:b (shortcut tempted). However, if the player took choice-copy:a or choice-copy:c (integrity brainstorm), they never reach scene-4-shortcut-guilt, so choice-teammate-shortcut is unreachable on the integrity path. This is intentional branching, but the dialogue in scene-4-shortcut-guilt assumes Priya is confronting the player about the shortcut — which only makes sense if the shortcut was actually taken. On the integrity path, this scene should not exist.",
+      "location": "scenes[id='scene-4-shortcut-guilt'], choices[id='choice-teammate-shortcut']",
+      "expectedValue": "scene-4-shortcut-guilt should only be reachable via the shortcut branch (choice-copy:b → scene-3-shortcut-tempted → scene-4-shortcut-guilt).",
+      "actualValue": "The scene exists in the scenes array and is referenced as a defaultNextScene, but there is no explicit choice routing to it from scene-3-shortcut-tempted. The choice-teammate-shortcut is defined but only makes narrative sense on the shortcut branch.",
+      "fix": "Add an explicit choice at scene-3-shortcut-tempted with options that route to scene-4-shortcut-guilt (shortcut path) or skip it entirely (integrity path). Alternatively, confirm that scene-3-shortcut-tempted's defaultNextScene='scene-4-shortcut-guilt' is intentional and that the integrity path never reaches this scene (which it doesn't, so this is actually correct — but the structure is confusing)."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-cover-up' is triggered by choice-teammate-shortcut:b OR choice-presentation-shortcut:b, but the branchDialogue entries for this branch are only attached to scenes scene-7-shortcut-honesty and scene-7-shortcut-lie. If a player takes choice-teammate-shortcut:b (silencing Priya) but then later takes choice-presentation-shortcut:a (admitting the truth), they reach scene-7-shortcut-honesty, which has branchDialogue keyed to 'branch-cover-up'. However, the dialogue in that scene's branchDialogue['branch-cover-up'] references Priya saying 'I stopped bringing up ideas for a week because I thought you'd already decided I didn't matter' — which only makes sense if the player silenced her AND then admitted the truth. If the player takes choice-teammate-shortcut:a (redo honest) but somehow reaches scene-7-shortcut-honesty anyway, the branch dialogue will be wrong.",
+      "location": "outcomes[id='branch-cover-up'], branchDialogue entries for scene-7-shortcut-honesty",
+      "expectedValue": "Branch dialogue should only fire when the player's choice history actually matches the branch's triggeredBy conditions. The 'branch-cover-up' dialogue in scene-7-shortcut-honesty should only appear if the player took choice-teammate-shortcut:b AND choice-presentation-shortcut:a.",
+      "actualValue": "The branchDialogue is keyed by branch ID, but the rendering logic must check the player's full choice history against the branch's triggeredBy array. If the triggeredBy array is ['choice-teammate-shortcut:b', 'choice-presentation-shortcut:b'], then a player who took choice-teammate-shortcut:b but choice-presentation-shortcut:a will not match, and the wrong dialogue will render.",
+      "fix": "Verify that the triggeredBy array for 'branch-cover-up' correctly specifies the exact choice sequence that leads to that branch. If a player can reach scene-7-shortcut-honesty via multiple paths, ensure each path has its own branch outcome with appropriate dialogue. Consider splitting 'branch-cover-up' into two branches: one for 'silenced Priya then admitted truth' and one for 'silenced Priya then lied'."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-5-covered-work (player does Marcus's work alone) has no incoming choice — it is only reachable via defaultNextScene from scene-4-integrity-crisis. However, scene-4-integrity-crisis has a choice (choice-teammate-integrity) with three options, one of which points to scene-5-covered-work. This is correct. But scene-5-covered-work's defaultNextScene points to scene-6-integrity-presentation, which is the same destination as the other two options from choice-teammate-integrity. This means all three paths (direct talk, covered work, reported) converge at scene-6-integrity-presentation, but the dialogue and emotional context in that scene does not branch based on which path was taken. The scene assumes the project is 'theirs, built the hard way' (per the description), which is only true if the player took choice-teammate-integrity:a (direct talk). If the player took choice-teammate-integrity:b (covered work), the project is still theirs, but the emotional context is different — the player did the work alone, resentfully. If the player took choice-teammate-integrity:c (reported), Marcus was forced to finish, and the dynamic is different again.",
+      "location": "scenes[id='scene-6-integrity-presentation'], choice-teammate-integrity options",
+      "expectedValue": "scene-6-integrity-presentation should have branchDialogue variants for each of the three paths from choice-teammate-integrity, OR the three paths should lead to different presentation scenes with different dialogue.",
+      "actualValue": "All three paths converge at scene-6-integrity-presentation, which has a single dialogue sequence that assumes the team 'pulled together.' This is only accurate for the 'direct talk' path.",
+      "fix": "Add branchDialogue entries to scene-6-integrity-presentation keyed to outcomes representing each path (e.g., 'branch-empathy-earned' for direct talk, 'branch-quiet-resentment' for covered work, 'branch-escalated' for reported). Alternatively, create three separate presentation scenes with different dialogue and have each option from choice-teammate-integrity point to its corresponding scene."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The 'integrity path' (choice-copy:a or choice-copy:c) leads to scene-3-integrity-brainstorm, which has defaultNextScene='scene-4-integrity-crisis'. However, scene-4-integrity-crisis is described as a crisis where 'Marcus's part of the model is nowhere close to done' and 'the team's patience is running out.' This crisis makes sense on the integrity path (the team is working hard, Marcus is struggling). But the scene's dialogue and description do not distinguish between the integrity path and the shortcut path. If a player somehow reached scene-4-integrity-crisis via the shortcut path (which they shouldn't, but the branching structure is unclear), the dialogue would be confusing because it assumes the team is working on an original project, not a copied one.",
+      "location": "scenes[id='scene-4-integrity-crisis'], scenes[id='scene-3-integrity-brainstorm']",
+      "expectedValue": "The integrity path should never reach scene-4-shortcut-guilt, and the shortcut path should never reach scene-4-integrity-crisis. The branching should be mutually exclusive.",
+      "actualValue": "scene-3-integrity-brainstorm has defaultNextScene='scene-4-integrity-crisis', and scene-3-shortcut-tempted has defaultNextScene='scene-4-shortcut-guilt'. These are separate, which is correct. However, the naming and structure make it unclear that these are two entirely different crisis scenarios.",
+      "fix": "This is actually correct as-is, but add a comment or clarification in the scene descriptions to make it explicit that scene-4-integrity-crisis is only reachable via the integrity path, and scene-4-shortcut-guilt is only reachable via the shortcut path. Alternatively, rename scene-4-shortcut-guilt to something like 'scene-4-shortcut-guilt-crisis' to make the parallel structure clearer."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-5-covered-work has dialogue that includes an INTERNAL monologue ('This would take five minutes to explain to Marcus...'), but the scene's character list is ['player'], which typically means only the player character is present. INTERNAL monologues are acceptable (they're a reserved speaker ID), but the scene description says 'The player quietly finishes Marcus's part themselves rather than deal with the conversation.' This implies the player is alone, which matches the character list. However, the scene's emotional beat is 'Quiet resentment simmering under a job well done,' which suggests the player's internal state should be explored. The dialogue does this, but the scene lacks any external dialogue or interaction — it's purely internal. This is valid, but it's the only scene in the episode with no dialogue from another character. Ensure this is intentional.",
+      "location": "scenes[id='scene-5-covered-work'].characters, scenes[id='scene-5-covered-work'].dialogue",
+      "expectedValue": "If a scene has only INTERNAL and NARRATOR dialogue, it should be explicitly marked as a 'reflection' or 'internal' scene, or the character list should be empty or contain only 'player'.",
+      "actualValue": "The scene has character list ['player'] and dialogue from INTERNAL, NARRATOR, and INTERNAL again. This is valid, but unusual.",
+      "fix": "No fix required if this is intentional. If you want to clarify, add a note in the scene description that this is a 'solo reflection' scene. Otherwise, this is acceptable."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-presentation-integrity (scene-6-integrity-presentation) has two options: (a) 'Speak up and credit the whole team...' → scene-7-integrity-unity, and (b) 'Let Marcus answer for himself...' → scene-7-integrity-quiet. However, scene-6-integrity-presentation is only reachable via the integrity path (choice-copy:a or choice-copy:c → scene-3-integrity-brainstorm → scene-4-integrity-crisis → choice-teammate-integrity → scene-5-* → scene-6-integrity-presentation). The shortcut path leads to scene-6-shortcut-presentation instead. This is correct. However, the dialogue in scene-6-integrity-presentation assumes the team 'built the hard way' and that Marcus 'turned things around.' This is only true if the player took choice-teammate-integrity:a (direct talk). If the player took choice-teammate-integrity:b (covered work) or choice-teammate-integrity:c (reported), the context is different, and the dialogue in scene-6-integrity-presentation will be misleading.",
+      "location": "scenes[id='scene-6-integrity-presentation'].dialogue, choice-teammate-integrity",
+      "expectedValue": "scene-6-integrity-presentation should have branchDialogue variants for each of the three outcomes from choice-teammate-integrity.",
+      "actualValue": "The scene has a single dialogue sequence that assumes the 'direct talk' outcome.",
+      "fix": "Add branchDialogue entries to scene-6-integrity-presentation for each of the three paths from choice-teammate-integrity. The dialogue should reflect whether the player talked to Marcus, did his work, or reported him."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The outcomes array defines 'branch-quiet-redemption' as triggered by choice-teammate-shortcut:a, but this branch has branchDialogue entries for both scene-7-integrity-unity and scene-7-integrity-quiet. However, choice-teammate-shortcut:a (redo honest) should only be reachable on the shortcut path, which leads to scene-5-redo-honest, not to scene-6-integrity-presentation. Therefore, the branchDialogue for 'branch-quiet-redemption' in scene-7-integrity-unity and scene-7-integrity-quiet should never fire, because those scenes are only reachable via the integrity path. This is a logic error.",
+      "location": "outcomes[id='branch-quiet-redemption'].triggeredBy, branchDialogue entries for 'branch-quiet-redemption'",
+      "expectedValue": "'branch-quiet-redemption' should only have branchDialogue entries in scenes reachable via the shortcut path (e.g., scene-7-shortcut-honesty), not in scenes reachable via the integrity path.",
+      "actualValue": "branchDialogue['branch-quiet-redemption'] is defined for scene-7-integrity-unity and scene-7-integrity-quiet, which are integrity-path scenes, not shortcut-path scenes.",
+      "fix": "Remove the branchDialogue entries for 'branch-quiet-redemption' from scene-7-integrity-unity and scene-7-integrity-quiet. If 'branch-quiet-redemption' is meant to represent a specific outcome on the shortcut path, add branchDialogue entries to the appropriate shortcut-path scenes (e.g., scene-7-shortcut-honesty or scene-7-shortcut-lie)."
+    }
+  ],
+  "warnings": [],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 8,
+    "warningCount": 0
+  }
+}

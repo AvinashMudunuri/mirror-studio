@@ -1,0 +1,744 @@
+{
+  "episodeOutline": {
+    "title": "Group Work",
+    "synopsis": "Two weeks into the school year, the player is placed in a three-person team for the year's first big project. When a charismatic teammate suggests a shortcut that blurs the line between 'inspiration' and copying, the player must navigate peer pressure, an uneven workload, and a moment of public truth — discovering that how they handle pressure in private says more about them than how they perform in public.",
+    "themes": [
+      "Peer Pressure",
+      "Honesty",
+      "Teamwork"
+    ],
+    "targetTraits": [
+      "INTEGRITY",
+      "COMMUNICATION",
+      "JUDGMENT"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1-homeroom",
+        "title": "Team Assignments",
+        "location": "Homeroom, Ridgemont Middle School",
+        "characters": [
+          "player",
+          "Ms. Alvarez",
+          "Marcus",
+          "Priya"
+        ],
+        "duration": 1.5,
+        "description": "Ms. Alvarez announces the year's first big project: a team showcase due in two weeks, worth a huge chunk of the grade. The player is grouped with Marcus, whose easy confidence already has people laughing at his jokes, and Priya, who's quietly reading the assignment sheet twice before anyone else has finished once. Before they scatter to plan, the teacher asks each team to divide up roles.",
+        "emotionalBeat": "Nervous anticipation of a new kind of test - not academic, but social.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-2-group-meeting",
+        "title": "The Shortcut",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "Marcus",
+          "Priya"
+        ],
+        "duration": 1.5,
+        "description": "The team's first real planning session. Marcus pulls out his phone, grinning. 'My sister did basically this exact project last year and got a ribbon for it. We could just... use hers as a starting point. Nobody's going to know.' Priya goes quiet, eyes flicking to the player.",
+        "emotionalBeat": "The first real test arrives disguised as a favor.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-3-integrity-brainstorm",
+        "title": "Starting From Scratch",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "Marcus",
+          "Priya"
+        ],
+        "duration": 1.5,
+        "description": "The team agrees to build something of their own. Marcus is a little deflated at first but warms up once Priya sketches an idea that actually excites him. It's slower going than copying would've been, but it feels like theirs.",
+        "emotionalBeat": "Cautious optimism - harder road, but a shared one.",
+        "defaultNextScene": "scene-4-integrity-crisis"
+      },
+      {
+        "id": "scene-3-shortcut-tempted",
+        "title": "Just for Reference",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "Marcus",
+          "Priya"
+        ],
+        "duration": 1.5,
+        "description": "The team pulls up Marcus's sister's old project and starts 'adapting' it. It's fast, it looks great, and everyone's laughing and getting along - except for a small knot of unease that keeps tightening in the player's stomach every time they glance at the original file.",
+        "emotionalBeat": "Excitement laced with a quiet, growing unease.",
+        "defaultNextScene": "scene-4-shortcut-guilt"
+      },
+      {
+        "id": "scene-4-integrity-crisis",
+        "title": "The Missing Piece",
+        "location": "Library Study Room, two days before deadline",
+        "characters": [
+          "player",
+          "Marcus",
+          "Priya"
+        ],
+        "duration": 1.5,
+        "description": "Deadline's in two days and Marcus's part of the model is nowhere close to done. Priya is visibly stressed, refreshing a shared folder that hasn't updated in days. The team's patience is running out.",
+        "emotionalBeat": "Frustration boiling over into a decision point.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-4-shortcut-guilt",
+        "title": "Priya's Doubt",
+        "location": "Hallway outside the library",
+        "characters": [
+          "player",
+          "Priya"
+        ],
+        "duration": 1.5,
+        "description": "Priya catches the player alone after the session. 'This is basically his sister's project with a new title slide. Doesn't that feel wrong to you?' Her voice is low, worried - not accusing, just scared.",
+        "emotionalBeat": "Conscience surfacing, quiet and hard to ignore.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-5-direct-talk",
+        "title": "What's Going On",
+        "location": "Hallway by the lockers",
+        "characters": [
+          "player",
+          "Marcus"
+        ],
+        "duration": 1.5,
+        "description": "Pulled aside, Marcus admits things have been rough at home lately and he's been avoiding the project because he didn't know how to say he was falling behind. He looks relieved someone asked instead of assumed.",
+        "emotionalBeat": "Empathy rewarded - the team becomes a team.",
+        "defaultNextScene": "scene-6-integrity-presentation"
+      },
+      {
+        "id": "scene-5-covered-work",
+        "title": "Doing It Alone",
+        "location": "Player's kitchen table, late at night",
+        "characters": [
+          "player"
+        ],
+        "duration": 1.5,
+        "description": "The player quietly finishes Marcus's part themselves rather than deal with the conversation. It gets done. Nobody thanks them, because nobody knows - including Marcus, who has no idea anything was ever wrong.",
+        "emotionalBeat": "Quiet resentment simmering under a job well done.",
+        "defaultNextScene": "scene-6-integrity-presentation"
+      },
+      {
+        "id": "scene-5-reported",
+        "title": "Going to the Teacher",
+        "location": "Ms. Alvarez's classroom",
+        "characters": [
+          "player",
+          "Ms. Alvarez",
+          "Marcus"
+        ],
+        "duration": 1.5,
+        "description": "Ms. Alvarez has a quiet word with Marcus, who finishes his part but won't quite look at the player afterward. The project gets done, but something between the teammates feels harder now.",
+        "emotionalBeat": "A problem solved from the outside, at the cost of trust.",
+        "defaultNextScene": "scene-6-integrity-presentation"
+      },
+      {
+        "id": "scene-5-redo-honest",
+        "title": "Starting Over, For Real",
+        "location": "Priya's living room, that evening",
+        "characters": [
+          "player",
+          "Priya",
+          "Marcus"
+        ],
+        "duration": 1.5,
+        "description": "The team tells Marcus they're scrapping the copied version. He's frustrated at first, then - surprisingly - relieved; he'd felt weird about it too. They spend the evening rebuilding the project from scratch, exhausted but proud.",
+        "emotionalBeat": "Redemption earned through shared effort.",
+        "defaultNextScene": "scene-6-shortcut-presentation"
+      },
+      {
+        "id": "scene-5-silenced",
+        "title": "Going Along With It",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "Priya",
+          "Marcus"
+        ],
+        "duration": 1.5,
+        "description": "Priya agrees to stay quiet, but she stops offering ideas in meetings, answering in short sentences. The project moves forward smoothly on the surface - underneath, something has quietly broken.",
+        "emotionalBeat": "Uneasy compliance; a friendship fraying without a word.",
+        "defaultNextScene": "scene-6-shortcut-presentation"
+      },
+      {
+        "id": "scene-5-blamed",
+        "title": "Passing It Off",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "Priya",
+          "Marcus"
+        ],
+        "duration": 1.5,
+        "description": "Priya goes to Marcus instead, and word gets around the team that the player wouldn't own their part in the decision. Priya is polite in group meetings now, and nothing else.",
+        "emotionalBeat": "The cost of deflection - respect quietly lost.",
+        "defaultNextScene": "scene-6-shortcut-presentation"
+      },
+      {
+        "id": "scene-6-integrity-presentation",
+        "title": "Presentation Day",
+        "location": "Classroom, in front of the class",
+        "characters": [
+          "player",
+          "Marcus",
+          "Priya",
+          "Ms. Alvarez"
+        ],
+        "duration": 1.5,
+        "description": "The project is theirs, built the hard way. During Q&A, Ms. Alvarez asks who contributed what. Marcus goes quiet, still visibly unsure how the rough patch will be remembered.",
+        "emotionalBeat": "A public moment that could recognize the whole team - or not.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-6-shortcut-presentation",
+        "title": "Presentation Day",
+        "location": "Classroom, in front of the class",
+        "characters": [
+          "player",
+          "Marcus",
+          "Priya",
+          "Ms. Alvarez"
+        ],
+        "duration": 1.5,
+        "description": "Midway through the presentation, Ms. Alvarez tilts her head at the display board. 'This looks a lot like a project from the regional fair a couple years back. Where did the idea come from?' The room goes very quiet.",
+        "emotionalBeat": "The moment the shortcut gets tested in the open.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-7-integrity-unity",
+        "title": "After the Bell",
+        "location": "Hallway, after class",
+        "characters": [
+          "player",
+          "Marcus",
+          "Sam"
+        ],
+        "duration": 1,
+        "description": "Marcus catches the player afterward, quieter than usual: 'Thanks for saying that in there.' Later, Sam from the player's lunch table asks how the big project went.",
+        "emotionalBeat": "Quiet pride in a team that held together.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-7-integrity-quiet",
+        "title": "After the Bell",
+        "location": "Hallway, after class",
+        "characters": [
+          "player",
+          "Marcus",
+          "Sam"
+        ],
+        "duration": 1,
+        "description": "Marcus mumbles his own answer to Ms. Alvarez's question and it's fine, technically, but there's an awkward gap where a fuller answer could have been. Later, Sam asks how the project went.",
+        "emotionalBeat": "A result that worked out, but left something unsaid.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-7-shortcut-honesty",
+        "title": "Owning It",
+        "location": "Classroom, after the bell",
+        "characters": [
+          "player",
+          "Ms. Alvarez",
+          "Priya",
+          "Marcus",
+          "Sam"
+        ],
+        "duration": 1,
+        "description": "Admitting the truth in front of the class was terrifying, but Ms. Alvarez offers a redo for partial credit instead of a zero. Priya looks relieved for the first time in days. Later, Sam asks how the project went.",
+        "emotionalBeat": "The scary kind of relief that comes after telling the truth.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-7-shortcut-lie",
+        "title": "Getting Away With It",
+        "location": "Classroom, after the bell",
+        "characters": [
+          "player",
+          "Priya",
+          "Marcus",
+          "Sam"
+        ],
+        "duration": 1,
+        "description": "The lie holds - Ms. Alvarez lets it go. But Priya won't meet the player's eyes, and the good grade doesn't feel the way a good grade is supposed to feel. Later, Sam asks how the project went.",
+        "emotionalBeat": "A hollow victory that doesn't quite land.",
+        "defaultNextScene": null
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-role",
+        "scene": "scene-1-homeroom",
+        "prompt": "Ms. Alvarez asks each team to divide up roles before they start planning. What do you volunteer for?",
+        "context": "First chance to set the tone for how this team will work together.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Team leader - I'll help keep us on track.",
+            "nextScene": "scene-2-group-meeting"
+          },
+          {
+            "id": "b",
+            "text": "Researcher - I'll dig into the material.",
+            "nextScene": "scene-2-group-meeting"
+          },
+          {
+            "id": "c",
+            "text": "Support role - I'll help wherever's needed.",
+            "nextScene": "scene-2-group-meeting"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "JUDGMENT": 1,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "JUDGMENT": 1
+          },
+          "c": {
+            "COMMUNICATION": 1
+          }
+        }
+      },
+      {
+        "id": "choice-copy",
+        "scene": "scene-2-group-meeting",
+        "prompt": "Marcus wants to use his sister's old award-winning project as the team's starting point. How do you respond?",
+        "context": "The first real fork: go along with an easy shortcut, or push back on a friend's suggestion in the very first week of working together.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"That's basically cheating. Let's come up with our own idea.\"",
+            "nextScene": "scene-3-integrity-brainstorm"
+          },
+          {
+            "id": "b",
+            "text": "\"I mean... let's at least look at it for inspiration.\"",
+            "nextScene": "scene-3-shortcut-tempted"
+          },
+          {
+            "id": "c",
+            "text": "\"Maybe we should ask Ms. Alvarez what's actually allowed first.\"",
+            "nextScene": "scene-3-integrity-brainstorm"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": -2
+          },
+          "c": {
+            "JUDGMENT": 2,
+            "COMMUNICATION": 1
+          }
+        }
+      },
+      {
+        "id": "choice-teammate-integrity",
+        "scene": "scene-4-integrity-crisis",
+        "prompt": "Marcus's part of the project still isn't done, and the deadline is close. What do you do?",
+        "context": "A teamwork crisis with no clean answer - confrontation, quiet self-sacrifice, or escalation to an adult all cost something.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Pull Marcus aside and ask what's actually going on.",
+            "nextScene": "scene-5-direct-talk"
+          },
+          {
+            "id": "b",
+            "text": "Quietly do his part yourself so it gets done.",
+            "nextScene": "scene-5-covered-work"
+          },
+          {
+            "id": "c",
+            "text": "Tell Ms. Alvarez he's not pulling his weight.",
+            "nextScene": "scene-5-reported"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -1,
+            "JUDGMENT": -1
+          },
+          "c": {
+            "JUDGMENT": -1,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-teammate-shortcut",
+        "scene": "scene-4-shortcut-guilt",
+        "prompt": "Priya says using Marcus's sister's project doesn't feel right. How do you respond to her?",
+        "context": "A teammate is asking the player to be honest, right when honesty is inconvenient for everyone.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"You're right. Let's tell Marcus and start over, honestly.\"",
+            "nextScene": "scene-5-redo-honest"
+          },
+          {
+            "id": "b",
+            "text": "\"We've come too far now - let's just keep this between us.\"",
+            "nextScene": "scene-5-silenced"
+          },
+          {
+            "id": "c",
+            "text": "\"It was Marcus's idea, not mine - go talk to him.\"",
+            "nextScene": "scene-5-blamed"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1
+          },
+          "c": {
+            "INTEGRITY": -1,
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-presentation-integrity",
+        "scene": "scene-6-integrity-presentation",
+        "prompt": "Ms. Alvarez asks who contributed what. Marcus goes quiet, clearly unsure how the rough patch will look. What do you say?",
+        "context": "A public chance to either share credit honestly or stay comfortably silent.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speak up and credit the whole team, including how Marcus turned things around.",
+            "nextScene": "scene-7-integrity-unity"
+          },
+          {
+            "id": "b",
+            "text": "Let Marcus answer for himself and stay out of it.",
+            "nextScene": "scene-7-integrity-quiet"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -1,
+            "JUDGMENT": 1
+          }
+        }
+      },
+      {
+        "id": "choice-presentation-shortcut",
+        "scene": "scene-6-shortcut-presentation",
+        "prompt": "Ms. Alvarez asks where the idea came from, clearly suspicious. The whole class is listening. What do you say?",
+        "context": "The moment the shortcut either gets owned or gets covered up, in front of everyone.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Admit it was based too closely on an old project, and apologize.",
+            "nextScene": "scene-7-shortcut-honesty"
+          },
+          {
+            "id": "b",
+            "text": "Insist it's completely original.",
+            "nextScene": "scene-7-shortcut-lie"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-final-unity",
+        "scene": "scene-7-integrity-unity",
+        "prompt": "Sam asks how the big project went. What do you tell them?",
+        "context": "A low-stakes moment that reveals how the player actually feels about what happened, once no one's grading it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"Honestly? Rough start, but we pulled together in the end.\"",
+            "nextScene": "END"
+          },
+          {
+            "id": "b",
+            "text": "\"It went fine.\" (leave it there)",
+            "nextScene": "END"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 1,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-final-quiet",
+        "scene": "scene-7-integrity-quiet",
+        "prompt": "Sam asks how the big project went. What do you tell them?",
+        "context": "A quiet chance to admit a small regret, or to let it go.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"Fine, but I keep wondering if I should've said more in there.\"",
+            "nextScene": "END"
+          },
+          {
+            "id": "b",
+            "text": "\"It worked out. That's all that matters.\"",
+            "nextScene": "END"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "JUDGMENT": 1,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-final-honesty",
+        "scene": "scene-7-shortcut-honesty",
+        "prompt": "Sam asks how the big project went. What do you tell them?",
+        "context": "The truth already came out publicly - now the question is whether the player owns it privately, too.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"Terrifying, honestly. But I'm glad I owned up to it.\"",
+            "nextScene": "END"
+          },
+          {
+            "id": "b",
+            "text": "\"It's fine now, no big deal.\" (downplay it)",
+            "nextScene": "END"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2
+          },
+          "b": {
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-final-lie",
+        "scene": "scene-7-shortcut-lie",
+        "prompt": "Sam asks how the big project went. What do you tell them?",
+        "context": "Nobody caught the lie - but the player still has to live with it, starting with this conversation.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Admit quietly that you're worried the truth will still come out.",
+            "nextScene": "END"
+          },
+          {
+            "id": "b",
+            "text": "Insist everything's fine, to Sam and to yourself.",
+            "nextScene": "END"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 1
+          },
+          "b": {
+            "INTEGRITY": -1,
+            "JUDGMENT": -1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-integrity-path",
+        "name": "The Honest Foundation",
+        "triggeredBy": [
+          "choice-copy:a",
+          "choice-copy:c"
+        ],
+        "description": "The team rejects the shortcut early and builds an original project, shifting the central conflict from 'should we cheat' to 'how do we handle a struggling teammate.'",
+        "outcome": "The project is entirely the team's own work; the emotional stakes center on trust, workload fairness, and public credit-sharing."
+      },
+      {
+        "id": "branch-shortcut-path",
+        "name": "The Borrowed Idea",
+        "triggeredBy": [
+          "choice-copy:b"
+        ],
+        "description": "The team leans on Marcus's sister's old project, shifting the conflict toward managing guilt, a worried teammate, and an eventual reckoning in front of the class.",
+        "outcome": "The project's origin becomes a live risk that must be confronted or concealed by presentation day."
+      },
+      {
+        "id": "branch-empathy-earned",
+        "name": "Meeting Marcus Halfway",
+        "triggeredBy": [
+          "choice-teammate-integrity:a"
+        ],
+        "description": "Choosing direct, curious communication over confrontation or escalation reveals the reason behind Marcus's absence and repairs the team from the inside.",
+        "outcome": "Strongest team cohesion outcome; sets up the most rewarding presentation-day choice."
+      },
+      {
+        "id": "branch-quiet-redemption",
+        "name": "Starting Over, Together",
+        "triggeredBy": [
+          "choice-teammate-shortcut:a"
+        ],
+        "description": "Listening to Priya's discomfort and choosing to redo the work honestly turns a mistake into a bonding experience, even under time pressure.",
+        "outcome": "The team enters presentation day exhausted but proud, with nothing to hide."
+      },
+      {
+        "id": "branch-cover-up",
+        "name": "Keeping the Secret",
+        "triggeredBy": [
+          "choice-teammate-shortcut:b",
+          "choice-presentation-shortcut:b"
+        ],
+        "description": "Choosing to silence a teammate's doubts and later lying to the teacher compounds the original shortcut into a lasting breach of trust.",
+        "outcome": "The grade survives, but the friendship and the player's own comfort with themselves do not - set up for consequences in a future episode."
+      }
+    ],
+    "emotionalArc": [
+      "Anticipation - a new kind of test begins with team assignments.",
+      "Temptation - an easy shortcut is offered by someone likeable.",
+      "Divergence - the story splits based on whether the shortcut is taken.",
+      "Pressure - a teammate crisis forces a private choice with no adult watching.",
+      "Reckoning - the choice gets tested in public, in front of the whole class.",
+      "Reflection - a low-stakes conversation with a friend reveals what the player actually believes about what happened."
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from an untested new student to someone whose private choices under pressure start to define their reputation and self-image, independent of outcomes or grades."
+      },
+      {
+        "character": "Marcus",
+        "arc": "Starts as a confident, shortcut-suggesting charmer; depending on the path, either reveals vulnerability and grows through being truly seen, or remains unaddressed and quietly resentful."
+      },
+      {
+        "character": "Priya",
+        "arc": "Functions as the story's conscience - her trust in the player rises or falls sharply based on whether her doubts are honored or dismissed."
+      },
+      {
+        "character": "Ms. Alvarez",
+        "arc": "A steady, fair authority figure who never punishes honesty harshly, subtly modeling that owning a mistake costs less than hiding one."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "INTEGRITY",
+        "keyMoments": [
+          "choice-copy",
+          "choice-teammate-shortcut",
+          "choice-presentation-shortcut",
+          "choice-final-honesty",
+          "choice-final-lie"
+        ],
+        "notes": "Measured primarily through whether the player originates, tolerates, or confesses the shortcut - never through a lecture, always through in-scene consequence."
+      },
+      {
+        "trait": "COMMUNICATION",
+        "keyMoments": [
+          "choice-role",
+          "choice-teammate-integrity",
+          "choice-teammate-shortcut",
+          "choice-presentation-integrity",
+          "choice-final-unity"
+        ],
+        "notes": "Measured by whether the player engages directly with people (Marcus, Priya, Sam) versus avoiding, deflecting, or going over their heads."
+      },
+      {
+        "trait": "JUDGMENT",
+        "keyMoments": [
+          "choice-role",
+          "choice-copy",
+          "choice-teammate-integrity",
+          "choice-presentation-integrity",
+          "choice-final-lie"
+        ],
+        "notes": "Measured by whether the player picks proportionate, situationally-appropriate responses - e.g. escalating to a teacher too fast, or lying under pressure that didn't require a lie."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player-Marcus",
+        "dynamic": "A charismatic near-friend whose suggestions carry real social weight; the relationship can deepen into genuine trust or curdle into quiet resentment depending on how his struggles are handled."
+      },
+      {
+        "pair": "player-Priya",
+        "dynamic": "The most sensitive relationship in the episode - she represents the player's conscience made external, and how her concerns are treated determines whether she becomes an ally or a quiet critic."
+      },
+      {
+        "pair": "player-Ms. Alvarez",
+        "dynamic": "A safe authority figure whose reactions consistently reward honesty over concealment, without ever feeling like a morality lecture."
+      },
+      {
+        "pair": "player-Sam",
+        "dynamic": "A carryover friendship from Episode 1 used as a low-pressure mirror at the end - how the player talks to a friend they trust reveals what they really think about their own choices."
+      }
+    ],
+    "replayHooks": [
+      "The two major branches (original project vs. borrowed project) create completely different back halves of the episode, encouraging a full replay to see the other version of presentation day.",
+      "Six distinct final scenes (three per branch) reward experimenting with different responses to the teammate crisis.",
+      "Marcus's hidden reason for falling behind is only revealed on the 'direct talk' path, creating a strong incentive to replay for backstory.",
+      "Players who chose the shortcut path will want to see whether honesty or the lie holds up under Ms. Alvarez's questioning.",
+      "The final conversation with Sam changes tone entirely across paths, inviting comparison of how differently the 'same' project can be described."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Show that integrity is tested most in private, low-supervision moments, not in front of authority figures.",
+      "Demonstrate that direct communication under pressure (asking 'what's going on') often resolves conflict better than avoidance or escalation.",
+      "Illustrate that judgment involves choosing a proportionate response to a problem, not just a technically 'correct' one.",
+      "Normalize that admitting a mistake has real but survivable costs, and that hiding one has quieter, longer-lasting costs."
+    ],
+    "conversationStarters": [
+      "Was there a fair option when Marcus wasn't doing his part, or did every choice cost something?",
+      "Why might someone go along with a shortcut even when it feels wrong in the moment?",
+      "What's the difference between 'using something for inspiration' and copying it? Where's the line?",
+      "Priya raised her concerns quietly instead of announcing them to the whole team - why might she have done it that way, and does it matter how a concern is raised?",
+      "Which version of the ending felt most like 'you'? What would you have done differently?"
+    ]
+  },
+  "designNotes": "This episode intentionally routes the three target traits through a single ordinary school situation (a group project) rather than a dramatic moral dilemma, so the educational scaffolding stays invisible. The central mechanic is that the *same* pressure (a friend asking you to bend a rule, then a teammate not pulling weight, then a public test) recurs in two different flavors depending on the Episode's first fork, which is what creates genuine replay incentive rather than cosmetic variation. Marcus is written as sympathetic rather than a 'bad influence' archetype - his shortcut suggestion and his later slacking both stem from the same root (he's overwhelmed and doesn't know how to say so), so that 'integrity' isn't rewarded by making the tempter a villain, and 'communication' is rewarded by making curiosity about someone's motives pay off narratively. The final Sam conversation exists purely to let players self-report their own read on what happened without a scored 'reflection quiz' - this is the invisible-education layer doing its job.",
+  "uncertainties": [
+    "Whether three-option choice points (choice-copy, choice-teammate-integrity, choice-teammate-shortcut) are too textually similar to distinguish gameplay-wise for younger players versus a cleaner binary; may need playtesting to see if option 'c' choices feel meaningfully distinct from 'a'.",
+    "The 'report to teacher' option (choice-teammate-integrity:c) is written as mildly negative (skipping communication), which risks implying that involving an adult is always the wrong move - this framing should be revisited to avoid discouraging kids from seeking help when a situation genuinely warrants it.",
+    "Six distinct scene-7 endings may be more content than needed for a 10-15 minute target; if runtime testing shows the episode running long, the 'quiet' and 'blamed' sub-branches could be merged.",
+    "Marcus's home-life hint in scene-5-direct-talk should be worded carefully in final copy so it reads as relatable middle-school stress rather than implying a specific sensitive family situation (e.g., divorce, abuse) without deliberate creative/sensitivity review."
+  ],
+  "alternativesConsidered": [
+    "A version where the shortcut involves plagiarizing text from the internet rather than a sibling's old project - rejected because 'sibling's old project' creates a more relatable, less clearly-illegal gray area that better represents real peer-pressure ambiguity for this age group.",
+    "A single binary choice-copy (no 'ask the teacher' option) - rejected in favor of keeping a third JUDGMENT-flavored option, since 'checking with an authority' is a distinct and valuable strategy worth modeling separately from outright refusal.",
+    "Converging both major branches into one shared presentation scene - rejected because it would flatten the two paths' distinct stakes (creative pride vs. fear of being caught) and reduce replay incentive.",
+    "Ending the episode immediately after the presentation-day choice, without the Sam reflection scene - rejected because the low-stakes private conversation is where genuine trait signal (versus performance for an audience) comes through most clearly."
+  ]
+}
