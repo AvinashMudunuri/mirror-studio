@@ -2,6 +2,7 @@ import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 import { requireEnum, requireScore } from './errors';
 import { parseReviewJson } from './json-parsing';
+import { buildSharedReviewContext } from './review-context';
 import type { Episode, Character, World } from '@mirror/schemas';
 
 // ============================================================================
@@ -217,11 +218,16 @@ Remember: You're evaluating GAMEPLAY and FUN FACTOR, not just story quality. A w
   ): Promise<GameDesignerOutput> {
     const { episode, characters, world } = review;
     
-    // Scripts may pass partially-assembled episodes; the full JSON below is
-    // the real review payload, so missing summary fields must not crash.
-    const prompt = `REVIEW EPISODE FOR GAMEPLAY AND ENGAGEMENT:
+    // Scripts may pass partially-assembled episodes; the shared block below
+    // is the real review payload, so missing summary fields must not crash.
+    const systemPrompt = [
+      { text: buildSharedReviewContext({ episode, characters, world }), cache: true },
+      { text: this.systemPrompt }
+    ];
+    
+    const prompt = `REVIEW EPISODE FOR GAMEPLAY AND ENGAGEMENT (see the shared episode data above for full content):
 
-EPISODE:
+EPISODE SUMMARY:
 Title: ${episode.title}
 Synopsis: ${episode.synopsis}
 Themes: ${episode.themes?.join(', ') || 'Not specified'}
@@ -229,8 +235,6 @@ Target Traits: ${(episode.targetTraits as unknown[])?.map(t => typeof t === 'str
 Estimated Play Time: ${episode.estimatedPlayTime ?? 'Not specified'} minutes
 Scenes: ${episode.scenes?.length ?? 0}
 Characters: ${episode.characters?.length ?? 0}
-
-Full Episode Data: ${JSON.stringify(episode, null, 2)}
 
 CHARACTERS:
 ${characters?.length > 0 ? characters.map(c => `- ${c.name}: ${c.personality.coreTraits.join(', ')}`).join('\n') : 'No characters provided'}
@@ -289,7 +293,7 @@ Rate each dimension 1-10, identify issues with severity and priority, provide sp
 
 Return your assessment as JSON in the format specified in your system prompt.`;
 
-    const response = await this.callLLM(this.systemPrompt, prompt);
+    const response = await this.callLLM(systemPrompt, prompt);
     const result = this.parseReview(response);
     
     // Store in memory

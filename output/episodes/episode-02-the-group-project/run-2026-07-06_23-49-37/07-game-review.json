@@ -1,0 +1,149 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Choice consequences are inconsistent and sometimes unclear. Multiple choices lead to the same scene (choice-copy has 3 options but only 2 distinct paths; choice-role has 3 options but identical nextScene for all). Players may not understand what their choice actually changed.",
+      "location": "Scenes 1-3, especially choice-copy and choice-role",
+      "impact": "Undermines player agency and makes replaying feel pointless. Players won't understand which choices matter if three different answers lead to identical outcomes.",
+      "fix": "Ensure each distinct option has visibly different consequences. If choice-copy:a and choice-copy:c both go to scene-3-integrity-brainstorm, differentiate the scene content (Priya's reaction, Marcus's tone, or opening dialogue should reflect which path was chosen). Add branching dialogue in choiceDialogue that makes the difference clear.",
+      "priority": 9
+    },
+    {
+      "severity": "MAJOR",
+      "category": "AGENCY",
+      "issue": "Player has only 6 meaningful choice moments across 13 minutes of gameplay (choices at scenes 1, 2, 4-integrity, 4-shortcut, 6-integrity, 6-shortcut, then 4 final reflection choices). That's roughly 0.46 choices per minute, which is low for a choice-driven narrative game. Long stretches of scenes 2-5 are purely expository/dialogue with no player input.",
+      "location": "Scenes 2-5 (the core project work sequences)",
+      "impact": "Players feel like passive observers watching a story unfold rather than active participants making decisions. The 13-minute playtime feels long relative to the number of meaningful decisions.",
+      "fix": "Add 2-3 intermediate choices during the project work sequences. Examples: (1) When Marcus suggests the shortcut, add a choice about how to respond immediately vs. waiting to discuss with Priya. (2) During the 'missing piece' crisis, let player choose how to approach Marcus (tone/timing). (3) Add a choice point when Priya expresses doubt about the shortcut, letting player decide whether to hear her out immediately or deflect.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "PACING",
+      "issue": "Scene lengths are not well-balanced. Scene 1 (homeroom) is 1.5 minutes with heavy exposition about the assignment. Scene 2 (shortcut) is 1.5 minutes but is the critical decision point. Then scenes 3-4 are also 1.5 minutes each, creating a monotonous rhythm. No variation to signal importance or create tension peaks.",
+      "location": "Scenes 1-6",
+      "impact": "Pacing feels flat. The shortcut moment (scene 2) should feel more urgent/compressed, while the crisis moment (scene 4) should expand slightly to build tension. Current uniform pacing makes all scenes feel equally important, diluting the dramatic weight of the central choice.",
+      "fix": "Compress scene 1 to 1 minute (streamline the assignment explanation). Expand scene 2 to 2 minutes (let the shortcut temptation breathe, build pressure). Keep scene 3 at 1.5 minutes. Expand scene 4 (crisis) to 2 minutes to build tension before the resolution choice. This creates a 1→2→1.5→2 rhythm that mirrors emotional intensity.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPLAYABILITY",
+      "issue": "While there are 5 branch outcomes (integrity-path, shortcut-path, empathy-earned, quiet-redemption, cover-up), the paths don't feel substantially different to the player. The final scenes (7-integrity-unity, 7-integrity-quiet, 7-shortcut-honesty, 7-shortcut-lie) are only 1 minute each and feel rushed. Players won't feel motivated to replay because the payoff feels minimal.",
+      "location": "Scenes 6-7 and branch outcomes",
+      "impact": "Low replay motivation. Even though there are multiple paths, they converge quickly and the final resolution feels abbreviated. Players may not see enough difference between paths to justify a second playthrough.",
+      "fix": "Expand final scenes to 1.5-2 minutes each. Add more differentiated dialogue and consequences based on the path taken. Example: In the integrity-unity path, add a scene where the team celebrates or reflects on what they learned. In the shortcut-lie path, add tension about the truth potentially emerging. Make each ending feel earned and distinct, not just a quick wrap-up.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ENGAGEMENT",
+      "issue": "The opening hook (scene 1) is weak. 'Ms. Alvarez announces a group project worth 40% of grade' is expected/predictable. The real hook (the shortcut temptation) doesn't arrive until scene 2, which means scene 1 is pure setup with no curiosity gap or tension.",
+      "location": "Scene 1 (homeroom)",
+      "impact": "Players don't feel hooked immediately. In a 13-minute experience, every minute counts. Spending 1.5 minutes on standard assignment explanation before the actual conflict arrives is pacing waste.",
+      "fix": "Restructure scene 1 to plant curiosity. Example: Have Ms. Alvarez mention that 'last year's showcase had some... interesting interpretations of the assignment,' creating intrigue. Or open with Theo already nervous about group dynamics, then reveal the assignment. Or start with Marcus already joking about 'shortcuts' before the official assignment, setting up the thematic tension early.",
+      "priority": 6
+    },
+    {
+      "severity": "MINOR",
+      "category": "CHOICES",
+      "issue": "Some choices have unclear trade-offs. Example: choice-copy option (a) 'That's basically cheating' vs. option (c) 'Maybe we should ask Ms. Alvarez' both lead to integrity-brainstorm, but the framing makes (a) seem more confrontational while (c) seems safer. The actual difference in player experience is unclear.",
+      "location": "choice-copy, choice-teammate-integrity",
+      "impact": "Players may not understand what they're trading off. Is (c) 'playing it safe' vs. (a) 'being direct'? The distinction matters for character expression but isn't clear.",
+      "fix": "Ensure branching dialogue clearly shows the difference. If both lead to the same scene, differentiate the team's reaction. Example: After (a), Marcus is mock-offended but respects the directness. After (c), Marcus appreciates the 'smart' approach. Make the social cost/benefit of each choice visible.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "The transition from scene 4 (integrity-crisis) to its three possible outcomes (scenes 5-direct-talk, 5-covered-work, 5-reported) is abrupt. Scene 4 ends with tension ('We don't have time for I got it'), then immediately splits into three different resolutions. No breathing room between the crisis and the chosen response.",
+      "location": "Scene 4 → Scene 5 transition",
+      "impact": "Pacing feels jerky. The tension peaks and immediately resolves without a moment for the player to sit with the difficulty of the decision.",
+      "fix": "Add a brief internal monologue or scene transition moment after the choice is made, before the next scene begins. Example: 'You take a breath. Here's what you're going to do:' Then show the chosen path. This creates a micro-beat that makes the transition feel intentional rather than abrupt.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "The game doesn't explicitly teach players how choices work or what the trait system is. A player encountering this as their first episode won't understand that their choices are building INTEGRITY, COMMUNICATION, and JUDGMENT traits, or why those matter.",
+      "location": "Scene 1 and overall",
+      "impact": "New players may not understand the game's core mechanic. They'll make choices based on story preference without realizing they're building a character profile that affects future episodes.",
+      "fix": "Add a subtle, unobtrusive tutorial element. Option 1: Brief flavor text before scene 1 ('Your choices will shape who Theo becomes'). Option 2: After the first choice, a brief reflection moment where Theo internally acknowledges what he just chose ('I just picked the direct route—I guess that's who I am'). Option 3: A post-episode reflection scene where Sam or another character comments on Theo's choice pattern, naturally surfacing the mechanic.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "The emotional arc peaks at scene 4 (crisis), then immediately resolves in scene 5. There's no sustained tension or secondary conflict to keep engagement high through the presentation day (scene 6). Scene 6 feels like a denouement rather than a climax.",
+      "location": "Scenes 4-6",
+      "impact": "The story's emotional intensity drops after the midpoint. Presentation day (the natural climax) should feel high-stakes, but instead it feels like a formality after the 'real' conflict is already resolved.",
+      "fix": "Restructure so the presentation day choice (choice-presentation-integrity or choice-presentation-shortcut) feels like the true climax, not a foregone conclusion. Example: Even in the integrity path, add tension at scene 6 where Ms. Alvarez's question about 'division of labor' threatens to expose the rough patch. Make the presentation day choice matter as much as the private choices.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPLAYABILITY",
+      "issue": "The final reflection choices (choice-final-unity, choice-final-quiet, etc.) are purely tonal—they don't change the outcome, only how Theo talks about it. While this is narratively interesting, it doesn't add replayability value. Players won't feel motivated to replay just to see different reflection dialogue.",
+      "location": "Scenes 7 and final choices",
+      "impact": "The final choices feel cosmetic. They're good for character expression but don't create meaningful branching that would motivate a second playthrough.",
+      "fix": "Consider whether the final choices should have actual consequences. Example: If Theo admits he's worried the truth will come out (choice-final-lie:a), that could trigger a follow-up scene where Ms. Alvarez notices his anxiety and offers guidance. This would make the final choice feel consequential rather than purely reflective.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "CHOICES",
+      "issue": "Choice framing sometimes uses loaded language that nudges toward a 'correct' answer. Example: choice-copy option (a) 'That's basically cheating' uses strong moral language, while option (b) 'let's at least look at it' sounds more reasonable. This may discourage players from exploring different moral positions.",
+      "location": "choice-copy, choice-presentation-shortcut",
+      "impact": "Players may feel the game is judging them if they choose the 'wrong' moral option. This reduces the sense that choices are genuinely open-ended.",
+      "fix": "Reframe choices to be morally neutral or present both sides fairly. Example: Instead of 'That's basically cheating,' try 'We should build something completely our own.' Instead of 'Insist it's completely original,' try 'It's inspired by existing work, but we've made it our own.' This removes the moral nudge and lets players choose based on their actual values.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Strong character voices and dialogue. Each character (Theo, Marcus, Priya, Ms. Alvarez) has distinct speech patterns and emotional tells that make them feel real and differentiated.",
+    "Thematically coherent. The episode clearly explores peer pressure, integrity, and communication through multiple angles (Marcus's avoidance, Priya's directness, Theo's people-pleasing).",
+    "Multiple meaningful paths. The five branch outcomes (integrity-path, shortcut-path, empathy-earned, quiet-redemption, cover-up) represent genuinely different team dynamics and personal growth trajectories.",
+    "Nuanced moral landscape. The episode doesn't present a simple 'cheat vs. don't cheat' binary. It explores the gray area of 'inspiration' vs. copying, and how peer pressure works on likeable people.",
+    "Good use of internal monologue. The INTERNAL dialogue lines let players access Theo's anxious thought process, making his inner conflict visible.",
+    "Branching dialogue that reacts to choices. The choiceDialogue section shows that dialogue changes based on player decisions, which helps choices feel consequential.",
+    "Realistic middle-school dynamics. The scenario (group project shortcut, uneven workload, social pressure) is authentic and relatable to the target age group (11-14).",
+    "Ms. Alvarez as a strong authority figure. She's not a villain or a pushover—she's fair, perceptive, and offers redemption (redo instead of zero), which models good adult-student dynamics."
+  ],
+  "recommendations": [
+    "CRITICAL: Differentiate choice outcomes. Ensure each distinct choice option leads to visibly different scenes or dialogue. If multiple options converge, make the difference clear through branching dialogue.",
+    "CRITICAL: Increase choice frequency. Add 2-3 intermediate choices during scenes 2-5 to raise choice frequency from 0.46 to ~0.6-0.7 per minute. This will make players feel more active.",
+    "CRITICAL: Vary scene lengths to match emotional intensity. Compress scene 1, expand scenes 2, 4, and 6-7 to create a rhythm that mirrors the story's emotional arc.",
+    "HIGH: Strengthen the opening hook. Plant curiosity or tension in scene 1 before the assignment is announced, so players are hooked before the shortcut temptation arrives.",
+    "HIGH: Expand final scenes. Give scenes 6-7 more breathing room (2+ minutes) so the resolution feels earned and distinct across different paths.",
+    "HIGH: Make presentation day (scene 6) feel like the climax, not a foregone conclusion. Add tension that makes the presentation choice feel as high-stakes as the private choices.",
+    "MEDIUM: Clarify choice trade-offs. Ensure players understand what they're gaining/losing with each option, not just the surface difference.",
+    "MEDIUM: Add a subtle tutorial element. Help new players understand that their choices are building traits that affect their character profile.",
+    "MEDIUM: Add micro-transitions between choice and outcome. A brief internal monologue after a choice is made will make the pacing feel more intentional.",
+    "MEDIUM: Reframe choice language to be morally neutral. Remove loaded language that nudges toward 'correct' answers.",
+    "LOW: Consider giving final reflection choices actual consequences. If players choose to admit worry about the truth coming out, trigger a follow-up scene with Ms. Alvarez.",
+    "LOW: Add hidden content or Easter eggs. Small secrets (like a character reference or callback to earlier dialogue) could increase replay motivation."
+  ],
+  "scores": {
+    "engagement": 7,
+    "choiceQuality": 6,
+    "pacing": 6,
+    "playerAgency": 6,
+    "replayability": 7,
+    "overall": 6.4
+  },
+  "metrics": {
+    "averageSceneLength": 72,
+    "choiceFrequency": 0.46,
+    "branchingFactor": 1.67,
+    "estimatedReplayValue": 6
+  },
+  "summary": {
+    "verdict": "No verdict provided",
+    "keyIssues": [],
+    "topStrengths": [],
+    "mustFix": [],
+    "niceToHave": []
+  }
+}

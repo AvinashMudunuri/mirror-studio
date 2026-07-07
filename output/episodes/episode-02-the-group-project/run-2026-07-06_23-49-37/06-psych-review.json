@@ -1,0 +1,101 @@
+{
+  "status": "APPROVED",
+  "concerns": [
+    {
+      "severity": "MINOR",
+      "category": "AGE_INAPPROPRIATE",
+      "issue": "Target audience listed as 11-14 years, but episode is designed for 13-17 per system prompt. The 11-12 year old characters and their developmental stage may feel slightly young for older teens in the 15-17 range, though this is mitigated by the universal nature of peer pressure themes.",
+      "location": "Episode overview and character ages",
+      "recommendation": "Consider adding a note that this episode resonates across the 11-17 range due to thematic universality, or clarify primary audience as 12-14 with appeal to younger/older teens.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "EMOTIONAL_SAFETY",
+      "issue": "The 'silenced' and 'blamed' outcomes (scene-5-silenced, scene-5-blamed) show Priya withdrawing emotionally and the player losing respect/trust. While realistic, these outcomes could leave younger players (11-12) feeling lingering guilt without sufficient processing support.",
+      "location": "Scenes 5-silenced and 5-blamed; scene-7-shortcut-lie",
+      "recommendation": "Ensure post-episode reflection questions or follow-up content helps players process negative outcomes. Consider adding a brief Ms. Alvarez moment in these branches acknowledging the relational cost, not just the academic one.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "MENTAL_HEALTH",
+      "issue": "Marcus's home situation (parents' separation, unpredictable living situation) is introduced as context for his avoidance but never fully resolved within the episode. While realistic, players may worry about Marcus's wellbeing without closure.",
+      "location": "Marcus's background and scene-5-direct-talk",
+      "recommendation": "In the 'direct-talk' branch, consider a brief follow-up (even in a future episode hint) showing Marcus has support or a plan, not just acknowledgment of the problem. This prevents the episode from feeling like it abandons a struggling character.",
+      "mustFix": false
+    }
+  ],
+  "recommendations": [
+    "Add explicit reflection prompts after the episode (especially for negative outcome branches) to help players process their choices and the relational consequences—this supports emotional learning.",
+    "Consider a brief epilogue or follow-up scene showing how the team dynamic settles after presentation day, particularly for the 'shortcut-honesty' branch where there's a redo. This gives closure and models recovery.",
+    "In the 'direct-talk' branch, consider having Marcus mention a trusted adult (parent, counselor, coach) he's going to talk to. This normalizes help-seeking without requiring the episode to resolve his home situation.",
+    "The 'covered-work' branch (scene-5-covered-work) is emotionally realistic but could benefit from a brief internal monologue showing the player recognizing their own resentment building—this teaches emotional awareness.",
+    "Ensure discussion guides for educators highlight that the 'shortcut' path isn't presented as 'the bad ending'—it's a realistic outcome with real costs, which is more educationally valuable than a simple moral lesson.",
+    "Consider adding a content note about academic integrity for educators, clarifying that the episode doesn't teach 'how to plagiarize' but rather explores the psychology of why students do and the consequences of both getting caught and not getting caught."
+  ],
+  "triggerWarnings": [
+    {
+      "category": "ANXIETY",
+      "description": "Peer pressure to engage in academic dishonesty; social anxiety about being the 'new kid' and fitting in; performance anxiety during public presentation",
+      "severity": "MILD",
+      "location": "Scenes 2-3 (shortcut temptation), scene-6 (presentation day), throughout player's internal monologue"
+    },
+    {
+      "category": "SELF_ESTEEM",
+      "description": "Theo's people-pleasing tendency and fear of not being liked; Priya's self-doubt about her ideas ('It's probably stupid'); Marcus's shame about struggling; social comparison and worry about being perceived as 'fake'",
+      "severity": "MILD",
+      "location": "Character backgrounds, scenes 3-4, dialogue throughout"
+    },
+    {
+      "category": "FAMILY_CONFLICT",
+      "description": "Marcus's parents' separation and unpredictable home situation; Theo's father living in another city; Priya's family pressure to be 'the responsible one'; parental expectations and work-life stress",
+      "severity": "MILD",
+      "location": "Character backgrounds (Marcus, Theo, Priya); scene-5-direct-talk mentions Marcus's home stress"
+    },
+    {
+      "category": "BULLYING",
+      "description": "Social exclusion risk (Priya withdrawing from group, Marcus avoiding teammates); subtle relational aggression in the 'blamed' outcome where the player is socially isolated for not backing Priya up",
+      "severity": "MILD",
+      "location": "Scenes 5-silenced, 5-blamed; scene-7-shortcut-lie"
+    },
+    {
+      "category": "LOSS",
+      "description": "Loss of friendship/trust (Priya's withdrawal, Marcus's emotional distance after being reported); loss of integrity/self-respect in dishonesty outcomes",
+      "severity": "MILD",
+      "location": "Scenes 5-silenced, 5-blamed, 5-reported; scene-7-shortcut-lie"
+    }
+  ],
+  "scores": {
+    "ageAppropriateness": 9,
+    "emotionalSafety": 8,
+    "educationalValue": 9,
+    "mentalHealthRep": 8,
+    "overall": 8.5
+  },
+  "summary": {
+    "strengths": [
+      "Exceptional modeling of realistic peer pressure and the psychology of why smart kids make dishonest choices—not because they're bad, but because of social dynamics and competing needs.",
+      "Multiple branching outcomes that avoid a single 'correct' answer, respecting player agency while showing realistic consequences of each path. This teaches judgment, not just rules.",
+      "Authentic portrayal of adolescent emotional experience: people-pleasing, conflict avoidance, shame, the gap between performing okay-ness and actually being okay. Validates teen experiences without pathologizing them.",
+      "Excellent modeling of direct communication as a conflict-resolution tool (the 'direct-talk' branch shows asking 'what's going on' as more effective than confrontation or escalation).",
+      "Strong representation of diverse family structures and stressors (parental separation, work-related stress, cultural expectations, single-parent households) without stereotyping.",
+      "Ms. Alvarez's character models healthy authority: fairness, follow-through, and the belief that accountability and grace coexist. Her offer of a redo instead of a zero is powerful.",
+      "Priya's character validates the experience of being the 'responsible one' and shows the cost of staying silent when something feels wrong—important for high-achieving students.",
+      "The episode respects teen intelligence by not simplifying the ethics: using a sibling's old project IS a gray area, and the episode doesn't pretend otherwise.",
+      "Emotional language and internal monologue feel authentic to 12-year-olds (Theo's self-awareness about his own performance, Marcus's shame, Priya's fear of being ignored).",
+      "Clear educational goals are embedded in narrative rather than preached—players discover these truths through choice consequences, not lectures."
+    ],
+    "improvements": [
+      "Add post-episode reflection prompts to help players process negative outcomes and recognize their own patterns (people-pleasing, conflict avoidance, etc.). This moves the episode from entertainment to genuine learning.",
+      "Provide closure for Marcus's home situation in the 'direct-talk' branch—not resolution, but evidence that he has support or a plan. This prevents abandoning a character who disclosed vulnerability.",
+      "Consider a brief follow-up scene or epilogue showing team dynamics after presentation day, especially for the 'shortcut-honesty' branch. This models recovery and shows that admitting mistakes doesn't permanently damage relationships.",
+      "In the 'covered-work' branch, strengthen the internal monologue showing the player recognizing their own building resentment. This teaches emotional awareness and the hidden costs of self-sacrifice.",
+      "Ensure educator guides clarify that this episode explores WHY students cheat (social pressure, desire to help, fear of failure) rather than HOW to cheat. This prevents misuse.",
+      "Consider a content note about the realistic portrayal of academic dishonesty for parents/educators—this is a strength, but some may need reassurance that the episode doesn't normalize or reward cheating.",
+      "The 'reported' outcome (scene-5-reported) could include a brief moment where Ms. Alvarez acknowledges the difficulty of the choice, not just Marcus's responsibility. This validates the player's internal conflict.",
+      "For the youngest players (11-12), consider optional 'check-in' prompts after high-emotional-intensity scenes (like the presentation-day reckoning) to ensure they're processing rather than just experiencing."
+    ],
+    "readyForAudience": true
+  }
+}

@@ -104,14 +104,59 @@ two aborted runs mixed genuine findings with convention misreadings
 data-model documentation added to the QA prompt and the derived
 per-scene `transition` object.
 
-Options, cheapest first:
+**Three specific, recurring false-positive/defect classes fixed
+deterministically (2026-07-06), grounded in real QA findings across
+episode 1 and episode 2 live runs (not the speculative "character-presence
+checks" originally proposed here):**
+1. **`[CHOICE POINT: choice-N]` leaking into dialogue as spoken text** —
+   recurred 4x in one live QA review, always wrong. `DialogueWriterAgent`
+   now strips any line matching that pattern deterministically
+   (`sanitizeDialogue`, zero LLM cost) instead of paying for a QA-driven
+   revision to remove it.
+2. **`choiceDialogue.responseDialogue` missing an entry for one of a
+   choice's options** — recurred 2x in one live QA review, always a
+   defect. `DialogueWriterAgent.ensureCompleteChoiceDialogue()` detects
+   the gap and requests ONE targeted self-repair call (only the missing
+   option's dialogue, not a full resend) before the output ever reaches a
+   reviewer — mirrors the Story Architect's `ensurePlayableOutline()`
+   self-repair pattern.
+3. **"`defaultNextScene: null` but also defines transition.type: 'choice'"
+   false BLOCKER/CRITICAL** — recurred 6x in a single live QA review
+   (episode 1, `run-2026-07-06_13-32-10/revision-1`). Caused by
+   `buildEpisodeForReview()` spreading the outline's raw (often `null`)
+   `defaultNextScene` onto choice-scenes alongside the derived
+   `transition` object; QA misread the mere presence of the field as a
+   conflict — `null` there is correct (it means "not applicable, this
+   scene uses a choice instead"). Now stripped from the review payload
+   for choice-scenes — the reviewer only ever sees the authoritative
+   transition mechanism.
+
+Deliberately NOT automated: a choicePoint where every option routes to
+the same `nextScene` (flagged as a BLOCKER on one real choice, but as an
+intentional "low-stakes calibration choice" on another in the same
+episode) — telling a legitimate design pattern apart from a bug needs
+narrative judgment a mechanical rule doesn't have; hard-blocking it would
+just add a new class of false positive to fix the old one.
+
+Live-verified before/after on episode 2, same brief and continuity input,
+for fixes 1 and 2 (fix 3's "before" evidence is from episode 1, above —
+episode 2 never happened to hit it): `run-2026-07-06_17-10-26` (before —
+its QA reviews are where the choice-marker and missing-responseDialogue
+patterns were found: 6 and 11 occurrences respectively) vs.
+`run-2026-07-06_23-49-37` (after — none of the three recurred in any of
+the runs since; QA's remaining findings were genuinely new/legitimate
+each time, e.g. real duplicate scene ids, real missing dialogue on a
+newly-introduced choice). Verdict variance is otherwise unchanged — see
+Known Quirks in the session handoff.
+
+Remaining options, cheapest first:
 - Pin QA alone back to the creation model: `QA_REVIEWER_MODEL=claude-sonnet-5`
   (env var, no code change). Other four reviewers stay on haiku.
 - Strengthen the data-model examples in the QA prompt (worked partially).
-- A deterministic pre-QA structural validator in code (the Story
-  Architect's `validateTransitions()` already covers the scene graph;
-  extending it to character-presence checks would remove the most
-  misread-prone checks from the LLM entirely). Likely the best fix.
+- Extend the deterministic checks above to character-presence
+  (the originally-proposed fix here) if it turns out to be a real
+  recurring class — it wasn't among what actually recurred live, so it's
+  deprioritized until evidenced.
 
 ## 5. Branch selection at runtime (schema gap, flagged by QA)
 
@@ -163,3 +208,61 @@ tokens. Options: one re-ask with the parse error quoted; or mark the
 reviewer's verdict `UNREADABLE` and continue to `NEEDS_HUMAN_REVIEW` with
 the raw response saved. Either preserves fail-loud semantics; the second
 is cheaper.
+
+## 9. Prompt caching across the review board — DONE (2026-07-06)
+
+Token-cost investigation: the 5 reviewers each embedded their own
+`JSON.stringify(episode/characters/world, null, 2)` — the same multi-KB
+payload paid for in full up to 5 times per run. Naively caching each
+agent's own system prompt does NOT work here: Anthropic's cache key is a
+byte-exact prefix match over `tools -> system -> messages`, and (a) every
+agent's static system prompt (301–1357 tokens measured) is below even
+Haiku's 4096-token cache minimum on its own, and (b) reviewers only share
+identical episode content on the FIRST review pass — a reviewer
+re-invoked after a revision gets different content and can't reuse the
+old cache entry regardless.
+
+Fix: `packages/agents/src/review-context.ts` (`buildSharedReviewContext`)
+serializes `{world, characters, episode}` once, byte-identically
+regardless of which reviewer calls it (unit-tested:
+`tests/unit/review-board-caching.test.ts` drives all 5 reviewers through
+`.process()` and asserts the block is identical across them). Each
+reviewer places it as the FIRST block of a structured `system` array with
+`cache: true`, followed by its own persona/instructions (uncached) —
+order matters, since `cache_control` caches everything up to and
+including the marked block. `LLMGateway` (`llm-gateway.ts`) gained
+`LLMSystemBlock`/structured `systemPrompt` support and surfaces
+`cache_creation_input_tokens`/`cache_read_input_tokens` in usage stats.
+Creative Director's `episodeReview.characters` field was added (it
+previously didn't receive the roster at all) so its block matches the
+other four byte-for-byte.
+
+Live-verified (`run-2026-07-06_23-49-37`, full board): `67,939 tokens
+written, 81,800 tokens read` — reads are billed at ~10% of normal input
+price, so this run's haiku reviewer calls paid full price for roughly
+11k of the ~161k input tokens they actually processed. Also live-verified
+the "shares the cache across a full review round, not just within one
+API call" claim specifically: a later reviewer's log line read `Cache: 0
+tokens written, 20450 tokens read` — it read a cache entry an EARLIER
+reviewer wrote in a prior HTTP call.
+
+**Bug found and fixed via this live verification** (would have shipped
+wrong if not tested against the real API): Anthropic's `usage.input_tokens`
+excludes `cache_creation_input_tokens`/`cache_read_input_tokens` — they're
+accounted separately (`total_input_tokens = cache_read + cache_creation +
+input_tokens`). `LLMGateway` was summing only `input_tokens + output_tokens`
+into `totalTokens`, silently undercounting real usage (and the
+`MAX_RUN_TOKENS` budget check with it) by exactly the cached portion
+whenever caching was active. Fixed in both `recordUsage()` (cumulative
+gateway stats) and `toClaudeResponse()` (the per-call `LLMResponse.usage`
+`BaseAgent` reads for its own token bookkeeping).
+
+Still open:
+- Only pays off within an un-revised review round (all N enabled
+  reviewers seeing the same first-draft episode) — a revision iteration's
+  re-review always starts a fresh, unshared cache entry. Runs that pass
+  first-try benefit the most.
+- QA Reviewer's `episodeReview.previousEpisodes` and Creative Director's
+  are still not wired to real data in `create-real-episode.js` (see item
+  2) — feeding them would grow the shared block further, which is exactly
+  the kind of content caching is meant to absorb.

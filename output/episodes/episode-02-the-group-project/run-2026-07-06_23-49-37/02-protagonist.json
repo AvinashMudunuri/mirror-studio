@@ -1,0 +1,93 @@
+{
+  "character": {
+    "id": "player",
+    "name": "Theo Osei",
+    "age": 12,
+    "pronouns": "he/him",
+    "appearance": {
+      "brief": "Medium height, lanky in the way of a kid who hasn't grown into his limbs yet. Warm brown skin, close-cropped hair he's constantly touching when nervous. Wears the same faded green hoodie so often his friends call it 'the shell.'",
+      "distinctiveFeatures": [
+        "A chipped front tooth from a bike accident he tells three different stories about",
+        "Doodles tiny cartoon faces in the margins of every notebook",
+        "Wears one mismatched sock on purpose 'for luck' — a habit he won't explain"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "eager to please",
+        "funny as a shield",
+        "quietly observant",
+        "loyal to a fault"
+      ],
+      "bigFiveProfile": {
+        "openness": 7,
+        "conscientiousness": 5,
+        "extraversion": 6,
+        "agreeableness": 8,
+        "neuroticism": 6
+      },
+      "mannerisms": [
+        "Cracks a joke the second a conversation gets tense",
+        "Taps a rhythm on his desk when he's trying not to say something",
+        "Physically shrinks his shoulders when he disagrees with someone but doesn't voice it"
+      ],
+      "speechPatterns": [
+        "Uses 'honestly' as a verbal tic when he's about to say something he's nervous about",
+        "Turns statements into questions when unsure ('That's... good? Right?')",
+        "Slips into impressions of teachers or characters to defuse awkward moments"
+      ],
+      "emotionalTendencies": "Theo processes stress by performing okay-ness before he actually feels it. He's genuinely warm and wants everyone around him to feel good, which means he swallows his own discomfort until it leaks out sideways — in sarcasm, in sudden silence, or in doing something he regrets to keep the peace."
+    },
+    "background": {
+      "family": "Middle kid of three. His mom, a nurse, works rotating shifts, so Theo's often the one making sure his little sister does her homework. His dad lives in another city; they talk on video calls most Sundays, which Theo looks forward to more than he admits.",
+      "interests": [
+        "making stop-motion videos with his phone",
+        "basketball (mediocre, enthusiastic)",
+        "collecting weird facts to drop into conversation",
+        "his sister's hamster, Waffles"
+      ],
+      "strengths": [
+        "genuinely funny, disarms tension in a room",
+        "empathetic — notices when someone's having a bad day before anyone else does",
+        "creative problem-solver when he's not panicking"
+      ],
+      "struggles": [
+        "Says yes to things he doesn't want to do, then resents it later",
+        "New to this school (moved over the summer), still feels like an outsider performing a role rather than being himself",
+        "Struggles to advocate for himself directly — routes everything through jokes"
+      ],
+      "secrets": [
+        "He didn't actually finish reading the last two books assigned in English and has been faking his way through discussions",
+        "He's scared that if people saw how much effort he puts into seeming easygoing, they'd think he was fake"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Make real friends at the new school before he becomes 'the funny new kid' forever",
+        "Do well on the group project without anyone finding out he was struggling to keep up"
+      ],
+      "unconscious": [
+        "To be liked for who he actually is, not the version of himself he performs",
+        "To feel like his voice has weight even when he's the newest, quietest person in the room"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Casual middle-school vocabulary, peppered with internet-speak he's slightly self-conscious about using out loud. Occasionally reaches for a bigger word and stumbles over it, then jokes about it.",
+      "sentenceComplexity": "Short, punchy sentences when joking; fragmented and hedging when nervous or being honest.",
+      "emotionalExpressiveness": "Expressive on the surface (jokes, faces, physical comedy) but guarded underneath — real feelings come out in short, blunt bursts when he can't hold them back anymore.",
+      "examples": [
+        "Honestly? I don't even think Ms. Alvarez would notice if we just — okay, no. No, forget I said that.",
+        "I'm fine. I'm great. I am a hundred percent fine and definitely didn't just say something I'm gonna think about for the rest of my life.",
+        "Look, I'm not mad. I'm just... doing the math on how much of this project is actually mine. And the number's not great."
+      ]
+    },
+    "storyRole": "Player character (protagonist) of 'Group Work.' Theo is the emotional lens through which the player experiences peer pressure, uneven workload, and the temptation to take a shortcut. His people-pleasing tendency makes the moral pressure land harder — going along with a charismatic teammate's plan isn't just about laziness or fear, it's about his deep need to be liked and not rock the boat as the new kid.",
+    "arcPotential": [
+      "Episode 'Group Work': Learns that protecting a friendship by staying silent isn't the same as being a good teammate — and that honesty, even late and awkward, matters more than a clean performance.",
+      "Later episode potential: Theo auditions for something (talent show, student council) and has to sit with wanting recognition on his own terms, not through borrowed material or other people's approval.",
+      "Later episode potential: A conflict with his mom's work schedule forces Theo to ask for help directly instead of quietly managing everything and joking about the stress."
+    ]
+  },
+  "designNotes": "Theo's core wound — needing to be liked so badly that he silences his own discomfort — is what makes the 'Group Work' dilemma land emotionally rather than just logically. He's not a kid who doesn't know copying is wrong; he's a kid who knows and stays quiet anyway because conflict feels more dangerous to him than dishonesty. This gives the episode's 'private pressure vs public performance' theme real teeth: the player isn't choosing between good and evil, they're choosing between comfort and integrity, filtered through a character who has genuine reasons to want comfort. His humor is functional, not just charming — it's specifically a coping mechanism that the story can gently crack open. Being new to the school compounds the peer pressure stakes: he has more to lose (social standing not yet secured) and less established trust to fall back on.",
+  "representationNotes": "Theo is written as a Ghanaian-American kid navigating a blended sense of identity (new city, split-parent household, code-switching between home and school culture) without making any of that his 'issue of the episode' — it's simply texture, not plot. His emotional arc (people-pleasing, fear of being 'found out') is deliberately universal so kids of many backgrounds can see themselves in him, while the specific details (his dad's video calls, his sister, his stop-motion videos) keep him from reading as generic or purely symbolic. Avoided making him either a 'model minority' overachiever or a comic-relief stereotype — his humor has cost and complexity, and his strengths (empathy, creativity) are as central to his character as his flaws."
+}

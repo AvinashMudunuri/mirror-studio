@@ -1,0 +1,181 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-2-group-meeting is referenced by choice-role but appears in the scenes array three times with identical IDs, creating ambiguity in branching logic.",
+      "location": "scenes[1], scenes[2], scenes[3] and choice-role.options[*].nextScene",
+      "expectedValue": "Each scene should have a unique ID; if three variants exist, they should be named scene-2-group-meeting-a, scene-2-group-meeting-b, scene-2-group-meeting-c",
+      "actualValue": "Three separate scene objects all have id='scene-2-group-meeting'",
+      "fix": "Rename the three variants to scene-2-group-meeting-a (for leader role), scene-2-group-meeting-b (for researcher role), scene-2-group-meeting-c (for support role), and update choice-role options to point to the correct variant. Alternatively, merge into a single scene with conditional dialogue based on the prior choice."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Choice choice-copy references scene-2-group-meeting as its scene, but that scene ID is duplicated. The branching engine cannot determine which variant the choice belongs to.",
+      "location": "choices[1].scene",
+      "expectedValue": "A unique scene ID that appears exactly once in the scenes array",
+      "actualValue": "scene-2-group-meeting (appears 3 times)",
+      "fix": "After resolving the duplicate scene IDs above, update choice-copy.scene to reference the correct unique scene ID (likely scene-2-group-meeting-a, -b, or -c depending on which variant should present this choice)."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-6-integrity-presentation has a choice (choice-presentation-integrity) but the dialogue for that choice is incomplete: the player's response option is missing.",
+      "location": "scenes[27].dialogue[6]",
+      "expectedValue": "A dialogue entry with character='player' and a text field containing the player's response to Ms. Alvarez's question",
+      "actualValue": "Dialogue entry s6i-2 has character='Marcus', text='', and no substantive content",
+      "fix": "Add a proper dialogue entry for the player's response, or restructure the scene to make the choice-presentation-integrity choice trigger after the dialogue concludes."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-unease (scene-3-shortcut-tempted) has nextScenes pointing to the same scene twice: both options lead to scene-4-shortcut-guilt.",
+      "location": "choices[2].options[*].nextScene",
+      "expectedValue": "Options should lead to different scenes or the same scene should be the defaultNextScene with no choice",
+      "actualValue": "options[0].nextScene = 'scene-4-shortcut-guilt' and options[1].nextScene = 'scene-4-shortcut-guilt'",
+      "fix": "Either remove the choice and use defaultNextScene='scene-4-shortcut-guilt' instead, or create a distinct scene for the 'say something now' path (e.g., scene-4-shortcut-guilt-early) that branches differently downstream."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'Sam' is referenced in dialogue and scenes (e.g., scene-7-integrity-unity) but does not appear in the scene's characters array.",
+      "location": "scenes[30].characters and scenes[30].dialogue[2]",
+      "expectedValue": "Sam should be listed in the characters array for any scene where Sam speaks",
+      "actualValue": "Scene scene-7-integrity-unity has characters=['player','Marcus','Ms. Alvarez','Priya'] but dialogue includes Sam speaking",
+      "fix": "Add 'Sam' to the characters array for all scenes where Sam appears in dialogue (scene-7-integrity-unity, scene-7-integrity-quiet, scene-7-integrity-bittersweet, scene-7-redo-honesty, scene-7-redo-quiet, scene-7-shortcut-honesty, scene-7-shortcut-lie)."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch-empathy-earned is triggered by two different choice paths but both lead to the same scene (scene-7-integrity-unity). The branchDialogue for this outcome will fire for both paths, but the dialogue variants do not distinguish between them.",
+      "location": "outcomes[2].triggeredBy and branchDialogue[0]",
+      "expectedValue": "Either the two triggering paths should have distinct dialogue variants, or the outcome should clarify which variant applies to which path",
+      "actualValue": "triggeredBy includes [['choice-copy:a','choice-teammate-integrity:a'],['choice-copy:c','choice-teammate-integrity:a']] but branchDialogue only has one set of lines (beu-1, beu-2, beu-3)",
+      "fix": "Create separate branchDialogue entries for each triggering path (e.g., branch-empathy-earned-path-a and branch-empathy-earned-path-c), or add conditional logic to the dialogue to handle both cases."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-presentation-integrity-oblivious (scene-6-integrity-presentation-oblivious) has options that lead to scene-7-integrity-bittersweet and scene-7-integrity-quiet, but neither of these scenes is reachable from the 'covered work' path that leads to scene-6-integrity-presentation-oblivious.",
+      "location": "choices[7].options[*].nextScene",
+      "expectedValue": "Options should lead to scenes that make narrative sense for the 'covered work' branch",
+      "actualValue": "Option 0 leads to scene-7-integrity-bittersweet (which has branchDialogue for branch-silent-sacrifice), but the choice itself is not mapped to that branch in outcomes",
+      "fix": "Verify that choice-presentation-integrity-oblivious is correctly associated with the branch-silent-sacrifice outcome, or create a new outcome for this choice path."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-6-shortcut-presentation has a choice (choice-presentation-shortcut) but the dialogue is incomplete: Ms. Alvarez's question is present, but the player and team's responses are missing.",
+      "location": "scenes[29].dialogue[1-3]",
+      "expectedValue": "Complete dialogue showing the player's response options to Ms. Alvarez's question",
+      "actualValue": "Dialogue entries s6s-2 and s6s-3 have empty text fields and no substantive content",
+      "fix": "Add dialogue entries for the player's response options, or restructure the scene to present the choice before the dialogue concludes."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Choice choice-presentation-integrity-guarded references scene-6-integrity-presentation-guarded, but that scene's dialogue does not include a clear question or prompt for the player to respond to.",
+      "location": "scenes[28].dialogue and choices[8]",
+      "expectedValue": "Scene dialogue should set up the choice clearly before the choice is presented",
+      "actualValue": "Scene dialogue ends with Marcus's guarded answer, but there is no clear prompt for the player's next action",
+      "fix": "Add dialogue to scene-6-integrity-presentation-guarded that explicitly prompts the player to respond (e.g., Ms. Alvarez looking at the player expectantly, or another character asking for clarification)."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch-cover-up is triggered by choice-presentation-shortcut:b, but the branchDialogue for this outcome (bcu-1, bcu-2, bcu-3) references Priya's reaction, which assumes the player lied in front of the class. However, the choice-presentation-shortcut:b option text is 'Insist it's completely original,' which is ambiguous about whether Priya is present or aware.",
+      "location": "outcomes[7].triggeredBy and branchDialogue[7]",
+      "expectedValue": "The branchDialogue should match the narrative context of the choice (i.e., is Priya present when the lie is told?)",
+      "actualValue": "branchDialogue assumes Priya knows the lie happened, but the scene dialogue does not confirm this",
+      "fix": "Either update scene-6-shortcut-presentation dialogue to show Priya's reaction to the lie, or update the branchDialogue to reflect a scenario where Priya doesn't immediately know."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-final-unity (scene-7-integrity-unity) has two options, but the second option ('It went fine') is identical to options in other final-choice scenes. This creates confusion about which branch the player is on.",
+      "location": "choices[15].options[1].text",
+      "expectedValue": "Each final choice should have distinct options that reflect the specific branch the player is on",
+      "actualValue": "Option 1 is 'It went fine.' which appears in multiple final-choice scenes",
+      "fix": "Customize the final-choice options for each branch to reflect the specific emotional state and narrative context (e.g., for branch-empathy-earned, option 2 might be 'We figured it out together' instead of 'It went fine')."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Trait mapping for choice-role is incomplete: only two of the three options have trait mappings defined.",
+      "location": "choices[0].traitMapping",
+      "expectedValue": "All three options (a, b, c) should have traitMapping entries",
+      "actualValue": "traitMapping has entries for 'a' and 'b', but 'c' is missing",
+      "fix": "Add a traitMapping entry for option 'c' (support role), e.g., {\"c\": {\"COMMUNICATION\": 1}}"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-4-integrity-crisis is reachable from choice-copy:a and choice-copy:c, but the dialogue assumes Marcus has been missing work for days. This is inconsistent with the choice-copy:c path (asking Ms. Alvarez first), where the team would have clarified expectations before Marcus fell behind.",
+      "location": "scenes[9].dialogue[0-3]",
+      "expectedValue": "Dialogue should reflect the narrative context of how the team reached this point",
+      "actualValue": "Dialogue assumes Marcus has been avoiding work for days, regardless of which path led here",
+      "fix": "Create two variants of scene-4-integrity-crisis (e.g., scene-4-integrity-crisis-direct and scene-4-integrity-crisis-clarified) with different dialogue, or add conditional dialogue based on the prior choice."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-teammate-shortcut (scene-4-shortcut-guilt) has three options, but the nextScenes array only has two unique destinations: scene-5-redo-honest, scene-5-silenced, and scene-5-blamed. However, the choice's nextScenes field is not present in the JSON.",
+      "location": "choices[4]",
+      "expectedValue": "Choice should have either a 'nextScenes' array with three entries (one per option) or each option should have its own 'nextScene' field",
+      "actualValue": "The choice object does not have a 'nextScenes' field; instead, each option has a 'nextScene' field, which is correct, but the structure is inconsistent with other choices",
+      "fix": "Verify that all choices follow the same pattern: either top-level 'nextScenes' array or per-option 'nextScene' fields. The current structure (per-option) is correct; no fix needed if this is intentional."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-5-covered-work has a defaultNextScene of 'scene-6-integrity-presentation-oblivious', but the dialogue in this scene is entirely internal monologue (INTERNAL speaker). There is no clear transition point or prompt for the player to move forward.",
+      "location": "scenes[16].dialogue and scenes[16].defaultNextScene",
+      "expectedValue": "A scene with only internal dialogue should have a clear narrative transition or a choice to move forward",
+      "actualValue": "Scene ends with internal monologue and no explicit transition",
+      "fix": "Either add a final dialogue line that signals the transition (e.g., 'The next day, presentation time.'), or add a choice to let the player decide when to move forward."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-presentation-redo (scene-6-redo-presentation) has a defaultNextScene of 'scene-7-redo-honesty', but the choice itself has two options with nextScenes. This is contradictory: a scene cannot have both a choice and a defaultNextScene.",
+      "location": "scenes[26].transition and choices[9]",
+      "expectedValue": "Either the scene should have a choice (and no defaultNextScene), or a defaultNextScene (and no choice)",
+      "actualValue": "Scene has both transition.type='choice' and transition.nextScenes, AND the choice has options with nextScene values",
+      "fix": "Remove the defaultNextScene from the scene's transition object, as the choice will handle routing."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene scene-1-homeroom has a choice (choice-role) that converges all three options to the same next scene (scene-2-group-meeting). While the design note explains this is intentional for trait mapping, it may confuse players who expect their choice to matter immediately.",
+      "location": "choices[0]",
+      "suggestion": "Consider adding a brief dialogue response that acknowledges the player's choice before moving to the next scene, to reinforce that their decision was heard."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Multiple scenes have dialogue entries with empty text fields (e.g., s6i-2, s6s-2, s6s-3). These are likely placeholders that were not filled in.",
+      "location": "scenes[27].dialogue[6], scenes[29].dialogue[2-3]",
+      "suggestion": "Complete all dialogue entries before shipping. If these are intentional silent moments, use a special marker (e.g., text='[silent]') instead of an empty string."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has 7 final-choice scenes (scene-7-*) that all ask 'What do you tell Sam?' but some of these scenes are not reachable from all branches. For example, scene-7-integrity-bittersweet is only reachable from the 'covered work' branch, but the choice dialogue assumes the player is reflecting on a specific experience.",
+      "location": "scenes[31-37]",
+      "suggestion": "Verify that each final-choice scene is only reachable from the branches it's designed for, and consider adding branch-specific dialogue to clarify the context."
+    },
+    {
+      "category": "CONSISTENCY",
+      "message": "Character 'Sam' is introduced in the final scenes but does not appear in any earlier scenes. This may feel abrupt to players who haven't met Sam yet.",
+      "location": "characters[4] and scenes[30+]",
+      "suggestion": "Consider introducing Sam earlier in the episode (e.g., in a lunch scene before the project work begins) to establish the relationship before the final reflection."
+    }
+  ],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 16,
+    "warningCount": 4
+  }
+}

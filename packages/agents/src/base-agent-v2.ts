@@ -1,7 +1,7 @@
 import { AgentId, AgentMessage, MessageType, MessagePriority } from '@mirror/schemas';
 import { MessageBus } from '@mirror/message-bus';
 import { MemorySystem } from '@mirror/memory';
-import { LLMGateway, LLMCallOptions } from './llm-gateway';
+import { LLMGateway, LLMCallOptions, LLMSystemBlock } from './llm-gateway';
 import { v4 as uuidv4 } from 'uuid';
 
 /**
@@ -322,7 +322,7 @@ export abstract class BaseAgent {
    * Call AI model with prompt
    */
   protected async callLLM(
-    systemPrompt: string,
+    systemPrompt: string | LLMSystemBlock[],
     userPrompt: string,
     options?: LLMCallOptions
   ): Promise<string> {

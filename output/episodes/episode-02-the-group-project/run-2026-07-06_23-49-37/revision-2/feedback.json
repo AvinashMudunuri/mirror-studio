@@ -1,0 +1,76 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-2-group-meeting is referenced by choice-role but appears three times in the nextScenes array with identical values, creating redundant branching. — Suggested fix: Verify intent: if all paths truly converge here, this is acceptable but unusual. If different dialogue should occur, create variant scenes (e.g., scene-2-group-meeting-leader, scene-2-group-meeting-researcher, scene-2-group-meeting-support) or confirm the role choice affects only trait mapping, not scene flow. (location: choices[0].options[*].nextScene)",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice choice-unease references scene-4-shortcut-guilt in both options, but the choice is embedded in scene-3-shortcut-tempted which is only reachable via choice-copy:b. This means the 'integrity' path (choice-copy:a or :c) never encounters this choice, yet the outcomes array lists 'branch-shortcut-path' as triggered by choice-copy:b, choice-unease:a, and choice-unease:b. The branch logic is inconsistent with reachability. — Suggested fix: Clarify: (1) If choice-unease should exist in both paths, add it to scene-3-integrity-brainstorm as well, or (2) Remove choice-unease from the branch-shortcut-path triggeredBy list and rely only on choice-copy:b, or (3) Restructure so the unease choice is a universal gate before the copy/integrity fork. (location: choices[2] (choice-unease) and outcomes[1] (branch-shortcut-path))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-4-integrity-crisis has a choice (choice-teammate-integrity) with three options leading to three different scenes (scene-5-direct-talk, scene-5-covered-work, scene-5-reported). However, scene-4-shortcut-guilt also exists and has its own choice (choice-teammate-shortcut) with three options. These two scenes represent different branches of the story (integrity vs. shortcut), but both are reachable and both have choices. The outcomes array does not clearly map which choice combinations lead to which branch outcomes. — Suggested fix: Update all outcome triggeredBy lists to include the full choice sequence (e.g., ['choice-copy:a', 'choice-teammate-integrity:a'] for branch-empathy-earned). This ensures the rendering engine can correctly identify which branch dialogue to apply. (location: scenes[5] (scene-4-integrity-crisis) and scenes[6] (scene-4-shortcut-guilt), and outcomes array)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-5-redo-honest (reachable via choice-teammate-shortcut:a) has defaultNextScene 'scene-6-integrity-presentation', but scene-6-integrity-presentation is only appropriate if the player chose the integrity path (choice-copy:a or :c). If the player chose choice-copy:b (shortcut) and then choice-teammate-shortcut:a (redo honest), they should transition to a different presentation scene that reflects they're redoing the project, not presenting the original integrity work. — Suggested fix: Change defaultNextScene to 'scene-6-shortcut-presentation' (which already exists and handles the Ms. Alvarez question about origin). Alternatively, create a new scene that shows the team presenting a hastily rebuilt project and Ms. Alvarez asking if they finished in time. (location: scenes[9] (scene-5-redo-honest).defaultNextScene)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-6-integrity-presentation has a choice (choice-presentation-integrity) with two options, both leading to different scenes (scene-7-integrity-unity and scene-7-integrity-quiet). However, this scene is only reachable if the player took the integrity path (choice-copy:a or :c) AND resolved the teammate crisis via one of the three options in choice-teammate-integrity. The choice-presentation-integrity options do not account for the fact that the player may have chosen choice-teammate-integrity:b (covered work) or :c (reported), which would change the emotional context of the presentation. — Suggested fix: Add branchDialogue entries for scene-6-integrity-presentation that vary the dialogue based on the player's choice-teammate-integrity selection. For example, if they chose :b (covered work), Marcus should seem oblivious; if they chose :c (reported), Marcus should seem guarded. (location: scenes[11] (scene-6-integrity-presentation) and choice-presentation-integrity)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "The choice-teammate-integrity choice (scene-4-integrity-crisis) has three options: :a (direct talk), :b (cover work), :c (report to teacher). However, scene-4-integrity-crisis is only reachable if the player chose the integrity path (choice-copy:a or :c). If the player chose the shortcut path (choice-copy:b), they would reach scene-4-shortcut-guilt instead, which has a different choice (choice-teammate-shortcut). This is correct branching, but the outcomes array does not clearly distinguish between the two paths. — Suggested fix: This is actually correct as-is, but add a comment in the outcomes array clarifying which branches are 'integrity path' and which are 'shortcut path' for clarity. (location: outcomes array and choice-teammate-integrity vs choice-teammate-shortcut)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-5-silenced has defaultNextScene 'scene-6-shortcut-presentation', but the dialogue in this scene shows Priya going quiet and withdrawing from the team. However, scene-6-shortcut-presentation begins with Ms. Alvarez asking about the project origin mid-presentation. There is no scene showing the team actually presenting the shortcut project before Ms. Alvarez's question. The transition is abrupt. — Suggested fix: Add a brief narrative line at the start of scene-6-shortcut-presentation (e.g., 'The team presents their project. Midway through, Ms. Alvarez tilts her head...') to bridge the gap, or create a new scene-6-shortcut-setup that shows the team entering the presentation. (location: scenes[10] (scene-5-silenced).defaultNextScene and scenes[12] (scene-6-shortcut-presentation))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-5-blamed has defaultNextScene 'scene-6-shortcut-presentation', but the dialogue shows Priya leaving the team and the player not explaining themselves to Marcus. This creates a scenario where the player is presenting a shortcut project that Priya has abandoned, and Marcus doesn't know why. Scene-6-shortcut-presentation should reflect this fractured team state, but the dialogue does not account for Priya's absence or Marcus's confusion. — Suggested fix: Add branchDialogue for scene-6-shortcut-presentation keyed to 'branch-cover-up' that shows Marcus and the player presenting without Priya, or Ms. Alvarez asking where Priya is. (location: scenes[10] (scene-5-blamed) and scenes[12] (scene-6-shortcut-presentation))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome 'branch-cover-up' is triggered by ['choice-teammate-shortcut:b', 'choice-presentation-shortcut:b'], but choice-teammate-shortcut:b (silenced) leads to scene-6-shortcut-presentation, and choice-presentation-shortcut:b (lie) is a choice within that scene. This means the branch is only fully triggered if the player reaches choice-presentation-shortcut:b. However, the branchDialogue for scene-7-shortcut-lie is keyed to 'branch-cover-up', which should only fire if both choices are made. The logic is correct, but the triggeredBy list is incomplete. — Suggested fix: Update triggeredBy to include all preceding choices that lead to this outcome, or add a note that this branch fires on any path reaching choice-presentation-shortcut:b. (location: outcomes[4] (branch-cover-up).triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-7-integrity-unity has a choice (choice-final-unity) with two options, both leading to 'END'. However, this scene is only reachable if the player took the integrity path AND chose choice-presentation-integrity:a (speak up and credit the team). The dialogue in scene-7-integrity-unity references Marcus saying 'Thanks for saying that in there,' which assumes the player made that specific choice. If the player had chosen choice-presentation-integrity:b (let Marcus answer), they would reach scene-7-integrity-quiet instead. This is correct, but the final choice should reflect the emotional state of that specific path. — Suggested fix: This is actually acceptable as-is because the dialogue already reflects the choice-presentation-integrity:a path. However, consider adding branchDialogue for choice-final-unity to vary the options based on whether the player spoke up or stayed quiet. (location: scenes[14] (scene-7-integrity-unity) and choice-final-unity)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-7-shortcut-honesty is reachable via choice-presentation-shortcut:a (admit the truth). The dialogue shows Ms. Alvarez offering a redo for partial credit. However, the scene has a choice (choice-final-honesty) with two options, both leading to 'END'. The second option is 'It's fine now, no big deal.' (downplay it), which contradicts the emotional arc of admitting the truth. A player who just confessed in front of the class would not downplay it immediately after. — Suggested fix: Change the second option to something more emotionally consistent with the scene, such as 'I don't know what to feel yet, honestly' or 'I'm just glad Ms. Alvarez didn't fail us.' (location: scenes[16] (scene-7-shortcut-honesty) and choice-final-honesty.options[1])",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-7-shortcut-lie is reachable via choice-presentation-shortcut:b (insist it's original). The dialogue shows Priya not meeting the player's eyes and the grade being in. However, the scene has a choice (choice-final-lie) with two options, both leading to 'END'. The first option is 'Admit quietly that you're worried the truth will still come out,' which contradicts the fact that the lie just succeeded and the grade is already in. If the truth hasn't come out by now, why would the player still be worried? — Suggested fix: Change to 'Admit quietly that you can't stop thinking about Priya's reaction' or 'Admit that the grade doesn't feel like a real win.' (location: scenes[17] (scene-7-shortcut-lie) and choice-final-lie.options[0])",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-3-integrity-brainstorm has dialogue showing Priya sketching an idea for a rotating base, and Marcus getting excited about it. However, there is no corresponding scene showing the team actually building this rotating base or encountering technical challenges. The story jumps from 'we have an idea' to 'two days before deadline' (scene-4-integrity-crisis) without showing the work in progress. This is a narrative gap, not a technical error, but it affects pacing. — Suggested fix: Add a brief narrative line in scene-4-integrity-crisis (e.g., 'Two days to deadline. The rotating base is almost done, but Marcus's part — the assembly — is nowhere close.') to bridge the gap. (location: scenes[3] (scene-3-integrity-brainstorm) to scenes[5] (scene-4-integrity-crisis))",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

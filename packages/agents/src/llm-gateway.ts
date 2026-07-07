@@ -40,8 +40,34 @@ export interface LLMUsageStats {
   inputTokens: number;
   outputTokens: number;
   totalTokens: number;
+  /**
+   * Prompt-cache accounting (Claude only, 0 if caching was never used).
+   * `cacheCreationInputTokens` is billed at a premium over normal input;
+   * `cacheReadInputTokens` at a steep discount (~10%). Both are already
+   * included in `inputTokens`/`totalTokens` above — these are for
+   * visibility into whether caching is actually paying off, not separate
+   * spend.
+   */
+  cacheCreationInputTokens: number;
+  cacheReadInputTokens: number;
   /** Per-model breakdown, since creation and review use different models. */
-  byModel: Record<string, { calls: number; inputTokens: number; outputTokens: number }>;
+  byModel: Record<string, { calls: number; inputTokens: number; outputTokens: number; cacheReadInputTokens: number }>;
+}
+
+/**
+ * One block of a structured system prompt. Plain strings remain the
+ * common case; use an array when part of the system prompt is large and
+ * stable enough to benefit from Anthropic prompt caching (e.g. content
+ * shared byte-for-byte across multiple agents/calls in the same run).
+ *
+ * Order matters: `cache_control` marks "cache everything up to and
+ * including this block" (tools -> system -> messages, in that order), so
+ * put the STABLE content first with `cache: true`, and anything that
+ * varies per call AFTER it.
+ */
+export interface LLMSystemBlock {
+  text: string;
+  cache?: boolean;
 }
 
 /** Thrown before an API call would exceed the configured token budget. */
@@ -66,7 +92,8 @@ export interface LLMCallOptions {
   temperature?: number;
   maxTokens?: number;
   stopSequences?: string[];
-  systemPrompt?: string;
+  /** Plain string (common case) or structured blocks for prompt caching — see LLMSystemBlock. */
+  systemPrompt?: string | LLMSystemBlock[];
 }
 
 export interface LLMResponse {
@@ -122,6 +149,8 @@ export class LLMGateway {
     inputTokens: 0,
     outputTokens: 0,
     totalTokens: 0,
+    cacheCreationInputTokens: 0,
+    cacheReadInputTokens: 0,
     byModel: {}
   };
   
@@ -188,17 +217,38 @@ export class LLMGateway {
     }
   }
   
-  private recordUsage(model: string, inputTokens: number, outputTokens: number): void {
+  private recordUsage(
+    model: string,
+    rawInputTokens: number,
+    outputTokens: number,
+    cacheCreationInputTokens = 0,
+    cacheReadInputTokens = 0
+  ): void {
+    // Anthropic's `input_tokens` is ONLY the tokens after the last cache
+    // breakpoint — cache_creation/cache_read tokens are accounted
+    // separately and are NOT included in it:
+    //   total_input_tokens = cache_read + cache_creation + input_tokens
+    // (confirmed live: a cached reviewer call reported input_tokens in the
+    // low thousands while cache_read_input_tokens carried the rest of the
+    // ~20k-token episode payload.) Summing them here so inputTokens/
+    // totalTokens — and the MAX_RUN_TOKENS budget check against
+    // totalTokens — reflect what was actually processed, not just the
+    // uncached remainder.
+    const inputTokens = rawInputTokens + cacheCreationInputTokens + cacheReadInputTokens;
+    
     this.usage.calls += 1;
     this.usage.inputTokens += inputTokens;
     this.usage.outputTokens += outputTokens;
     this.usage.totalTokens += inputTokens + outputTokens;
+    this.usage.cacheCreationInputTokens += cacheCreationInputTokens;
+    this.usage.cacheReadInputTokens += cacheReadInputTokens;
     
     const entry = this.usage.byModel[model] ||
-      (this.usage.byModel[model] = { calls: 0, inputTokens: 0, outputTokens: 0 });
+      (this.usage.byModel[model] = { calls: 0, inputTokens: 0, outputTokens: 0, cacheReadInputTokens: 0 });
     entry.calls += 1;
     entry.inputTokens += inputTokens;
     entry.outputTokens += outputTokens;
+    entry.cacheReadInputTokens += cacheReadInputTokens;
   }
 
   /**
@@ -259,7 +309,7 @@ export class LLMGateway {
         model,
         max_tokens: maxTokens,
         messages,
-        system: options.systemPrompt,
+        system: this.buildSystemParam(options.systemPrompt),
         stop_sequences: options.stopSequences
       };
       
@@ -279,7 +329,16 @@ export class LLMGateway {
 
       const response: Anthropic.Message = await this.anthropic.messages.create(requestParams);
       lastResponse = response;
-      this.recordUsage(model, response.usage.input_tokens, response.usage.output_tokens);
+      // cache_creation_input_tokens / cache_read_input_tokens aren't in this
+      // SDK version's stable Usage type (prompt caching predates it there),
+      // but the API returns them regardless — read them defensively.
+      const usageAny = response.usage as any;
+      const cacheCreationInputTokens = usageAny.cache_creation_input_tokens || 0;
+      const cacheReadInputTokens = usageAny.cache_read_input_tokens || 0;
+      this.recordUsage(model, response.usage.input_tokens, response.usage.output_tokens, cacheCreationInputTokens, cacheReadInputTokens);
+      if (cacheCreationInputTokens > 0 || cacheReadInputTokens > 0) {
+        console.log(`[LLM] Cache: ${cacheCreationInputTokens} tokens written, ${cacheReadInputTokens} tokens read (${model})`);
+      }
 
       // Claude 5+ with adaptive thinking returns thinking blocks + text blocks
       console.log(`[LLM] Response contains ${response.content.length} content blocks:`);
@@ -338,15 +397,34 @@ export class LLMGateway {
     );
   }
   
+  /**
+   * A plain string system prompt passes through unchanged. An array of
+   * LLMSystemBlock becomes Anthropic content blocks, with `cache_control`
+   * on any block marked `cache: true` (and everything before it, per
+   * Anthropic's "tools -> system -> messages" prefix rule).
+   */
+  private buildSystemParam(systemPrompt: string | LLMSystemBlock[] | undefined): any {
+    if (!Array.isArray(systemPrompt)) return systemPrompt;
+    return systemPrompt.map(block =>
+      block.cache
+        ? { type: 'text', text: block.text, cache_control: { type: 'ephemeral' } }
+        : { type: 'text', text: block.text }
+    );
+  }
+
   private toClaudeResponse(text: string, model: string, response: Anthropic.Message): LLMResponse {
+    // Same cache-token accounting as recordUsage() — input_tokens alone
+    // excludes cache_creation/cache_read tokens.
+    const usageAny = response.usage as any;
+    const inputTokens = response.usage.input_tokens + (usageAny.cache_creation_input_tokens || 0) + (usageAny.cache_read_input_tokens || 0);
     return {
       content: text,
       model,
       provider: 'claude',
       usage: {
-        inputTokens: response.usage.input_tokens,
+        inputTokens,
         outputTokens: response.usage.output_tokens,
-        totalTokens: response.usage.input_tokens + response.usage.output_tokens
+        totalTokens: inputTokens + response.usage.output_tokens
       },
       stopReason: response.stop_reason || 'end_turn'
     };
@@ -414,9 +492,14 @@ export class LLMGateway {
     const messages: OpenAI.ChatCompletionMessageParam[] = [];
     
     if (options.systemPrompt) {
+      // GPT has no equivalent of Anthropic's cache_control; blocks are
+      // just concatenated back into one system message.
+      const systemText = Array.isArray(options.systemPrompt)
+        ? options.systemPrompt.map(block => block.text).join('\n\n')
+        : options.systemPrompt;
       messages.push({
         role: 'system',
-        content: options.systemPrompt
+        content: systemText
       });
     }
 

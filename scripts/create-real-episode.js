@@ -368,8 +368,17 @@ function buildEpisodeForReview(outline, dialogueResult, roster) {
     const transition = choice
       ? { type: 'choice', choiceId: choice.id, nextScenes: (choice.options || []).map(o => o.nextScene) }
       : { type: 'default', nextScene: scene.defaultNextScene };
+    // A choice-scene transitions via `transition` above, not
+    // `defaultNextScene` — but the outline usually still carries a
+    // leftover `defaultNextScene` field (often null) on those scenes, and
+    // reviewers repeatedly misread its mere presence as "two transition
+    // mechanisms defined simultaneously" (a false BLOCKER/CRITICAL seen
+    // 6 times in a single live QA review). Drop it here so the only
+    // transition mechanism reviewers ever see for a choice-scene is the
+    // authoritative one.
+    const { defaultNextScene, ...sceneWithoutDefaultNextScene } = scene;
     return {
-      ...scene,
+      ...(choice ? sceneWithoutDefaultNextScene : scene),
       transition,
       dialogue: dialogueResult.dialogue?.find(d => d.sceneId === scene.id)?.lines || []
     };
@@ -409,7 +418,10 @@ const REVIEWERS = {
     label: 'Creative Director',
     run: (episode, roster) => agents.creativeDirector.process({
       type: 'EPISODE_REVIEW',
-      episodeReview: { episode, worldContext: TEST_WORLD, previousEpisodes: [] }
+      // `characters: roster` matches what the other 4 reviewers receive —
+      // needed so the shared, cacheable review context this reviewer
+      // builds is byte-identical to theirs (see buildSharedReviewContext).
+      episodeReview: { episode, worldContext: TEST_WORLD, previousEpisodes: [], characters: roster }
     }),
     verdict: r => r.decision
   },
@@ -500,6 +512,8 @@ function usageSummary(llm) {
     inputTokens: u.inputTokens,
     outputTokens: u.outputTokens,
     totalTokens: u.totalTokens,
+    cacheCreationInputTokens: u.cacheCreationInputTokens,
+    cacheReadInputTokens: u.cacheReadInputTokens,
     budget: MAX_RUN_TOKENS > 0 ? MAX_RUN_TOKENS : null,
     byModel: u.byModel
   };
@@ -508,6 +522,9 @@ function usageSummary(llm) {
 function printUsage(llm) {
   const u = llm.getUsageStats();
   console.log(`   🔢 Token usage: ${u.totalTokens.toLocaleString()} total (${u.inputTokens.toLocaleString()} in / ${u.outputTokens.toLocaleString()} out, ${u.calls} calls)`);
+  if (u.cacheCreationInputTokens > 0 || u.cacheReadInputTokens > 0) {
+    console.log(`      Prompt cache: ${u.cacheCreationInputTokens.toLocaleString()} tokens written, ${u.cacheReadInputTokens.toLocaleString()} tokens read (read is billed at ~10% of input price)`);
+  }
   for (const [model, m] of Object.entries(u.byModel)) {
     console.log(`      ${model}: ${m.calls} calls, ${(m.inputTokens + m.outputTokens).toLocaleString()} tokens`);
   }

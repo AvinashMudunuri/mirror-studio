@@ -1,0 +1,369 @@
+[
+  {
+    "character": {
+      "id": "Ms. Alvarez",
+      "name": "Ms. Alvarez",
+      "age": 34,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height, dark curly hair usually pulled back with a pencil stuck through the bun 'in case of emergencies.' Wears cardigans year-round over department-store blouses, sleeves pushed up when she's grading fast.",
+        "distinctiveFeatures": [
+          "A rotating collection of chipped mugs on her desk, each a gift from a past student ('Best Teacher,' 'World's Okayest Teacher,' one shaped like a cat)",
+          "Reading glasses she never actually wears — pushed up on her head, forgotten",
+          "A small corkboard by the door labeled 'Questions I Can't Answer Yet,' covered in sticky notes from students"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "exacting but warm",
+          "dry-humored",
+          "quietly perceptive",
+          "fair to a fault"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 9,
+          "extraversion": 5,
+          "agreeableness": 7,
+          "neuroticism": 4
+        },
+        "mannerisms": [
+          "Taps two fingers on the desk when she's deciding how direct to be with a kid",
+          "Answers a hard question with another question, letting silence do some of the work",
+          "Writes feedback in green pen, never red — 'red's for stop signs, not for you'"
+        ],
+        "speechPatterns": [
+          "Precise, unhurried phrasing — she rarely raises her voice, which makes it land harder when she goes quiet instead",
+          "Uses students' full first names when something matters ('Marcus.' not 'Hey, Marcus')",
+          "Dry, deadpan humor dropped mid-lecture to keep 12-year-olds from checking out"
+        ],
+        "emotionalTendencies": "Steady and controlled in front of the class, but genuinely rattled by dishonesty more than by mistakes — she reads plagiarism as a wound, not a crime, and it visibly costs her something to call it out gently instead of harshly."
+      },
+      "background": {
+        "family": "Oldest of four, grew up translating for her parents at parent-teacher conferences she now runs herself. No kids of her own yet — jokes that she has 130 of them every September.",
+        "interests": [
+          "regional science fairs (she used to judge them)",
+          "true crime podcasts she's embarrassed to admit she loves",
+          "reorganizing her classroom library by color when stressed"
+        ],
+        "strengths": [
+          "remembers small details about every student without seeming to try",
+          "can defuse a tense room with one dry line",
+          "genuinely believes kids can recover from a bad choice if given a real second chance"
+        ],
+        "struggles": [
+          "stretched across five periods and 150+ students, so she can't always catch problems early — she knows this and it bothers her",
+          "sometimes over-corrects toward fairness in a way that reads as coldness to kids who need warmth first"
+        ],
+        "secrets": [
+          "She recognized the recycled science-fair project almost instantly — she'd judged that regional fair herself two years ago — and spent a full day deciding whether to say something privately or publicly before choosing to ask the question in front of the class, on purpose, so the lesson would actually stick"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get every team through the showcase with a real, honest product",
+          "Catch academic dishonesty early enough that it becomes a lesson, not a permanent mark"
+        ],
+        "unconscious": [
+          "Prove that fairness and mercy aren't opposites — that you can hold a kid accountable without breaking them",
+          "Be the teacher she needed at 12, when a group-project shortcut of her own went unnoticed and unaddressed"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult, articulate, but never condescending — she talks to 12-year-olds like they're capable of understanding real reasoning, not just rules.",
+        "sentenceComplexity": "Measured and complete sentences; she rarely trails off. Uses pauses deliberately.",
+        "emotionalExpressiveness": "Restrained in front of the group, warmer one-on-one. Her care shows in follow-up questions and small gestures, not big declarations.",
+        "examples": [
+          "\"I'm not asking you to rat anyone out. I'm asking you to tell me what's true.\"",
+          "\"This looks a lot like a project from the regional fair a couple years back. Where did the idea come from?\"",
+          "\"A zero teaches you to hide better next time. A redo teaches you something else. I'd rather teach you the second thing.\"",
+          "\"Marcus, finish your part. Then we'll talk about the part you skipped.\""
+        ]
+      },
+      "storyRole": "The adult authority whose quiet, precise attention creates the conditions for the episode's central test — she doesn't lecture the kids into honesty, she simply asks one exact question at one exact moment and lets the truth do the rest of the work. Her offer of a redo (not a zero) is what makes 'Owning It' feel survivable instead of catastrophic, modeling that accountability and grace can coexist.",
+      "arcPotential": [
+        "Later episode: A student challenges her fairness directly, forcing her to confront whether her 'equal treatment for everyone' approach actually serves kids with unequal home situations",
+        "Later episode: Flashback/reveal of her own middle-school group project story, recontextualizing why the redo offer matters so much to her personally",
+        "Later episode: She becomes a recurring confidante for Theo specifically, someone who noticed his people-pleasing pattern before he did"
+      ]
+    },
+    "designNotes": "Ms. Alvarez is designed to avoid the 'wise all-knowing teacher' trope by giving her limits (150+ students, can't catch everything early) and a personal wound (her own unaddressed shortcut as a kid) that explains *why* she handles this particular moment the way she does — publicly asking the question, privately offering mercy. Her dry humor and specific objects (the mug collection, the questions corkboard) are there to make her feel lived-in rather than functional. Crucially, she is written to *already know* the project was copied before she asks — the public question isn't a gotcha, it's a chosen pedagogical risk, which gives her agency and interiority even though we only see her from the outside in this episode.",
+    "representationNotes": "Ms. Alvarez is a Latina educator in an urban public school, written to avoid the 'inspirational teacher who fixes the kid' trope — her impact is real but bounded, and the episode makes clear she can't be everywhere at once. Her identity is present in specific, unforced details (translating for her parents growing up) rather than as a lesson topic. She's given her own believable motive for teaching rooted in personal memory, not just professional duty, so she reads as a whole adult rather than an instrument of the plot."
+  },
+  {
+    "character": {
+      "id": "Marcus",
+      "name": "Marcus Brody",
+      "age": 12,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Tall for his age and a little gangly with it, like he's still catching up to his own limbs. Wears his older sister's hand-me-down varsity jacket even though he's not on any team. Has a gap-toothed grin that shows up before he's even finished the joke.",
+        "distinctiveFeatures": [
+          "Chews on pen caps until they're destroyed",
+          "Drums fingers on any flat surface when he's thinking (or avoiding thinking)",
+          "Wears one single beaded bracelet, faded, that he never takes off"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "charismatic",
+          "conflict-avoidant",
+          "quick-witted",
+          "quietly overwhelmed"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 3,
+          "extraversion": 9,
+          "agreeableness": 6,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Turns everything into a bit — voices, callbacks, running jokes — especially when a room gets tense",
+          "Physically leans back and away when someone asks him a direct, serious question",
+          "Taps out rhythms with his pen when he's stalling for an answer he doesn't have"
+        ],
+        "speechPatterns": [
+          "Uses 'basically' and 'honestly' as verbal warm-up before he's about to minimize something",
+          "Slides into a performer's cadence — pauses for laughs — even in casual conversation",
+          "Goes uncharacteristically monosyllabic when cornered about something real"
+        ],
+        "emotionalTendencies": "Marcus regulates his environment through humor — if people are laughing, nothing can be wrong. He genuinely likes making people feel good, but it's also a very effective smokescreen. When something's actually wrong, he doesn't lie exactly — he just quietly stops mentioning it, hoping it resolves itself or nobody notices. Shame makes him go still and small in a way that doesn't match the rest of him."
+      },
+      "background": {
+        "family": "Lives with his mom and older sister, Danielle (the 'ribbon' sister, now in high school). His parents split up over the summer — his dad moved two towns over, and the visitation schedule is still being figured out in real time, which means Marcus's home life has become unpredictable in a way it never used to be. Nobody's officially told him things are fine yet, so he's decided to act like they are.",
+        "interests": [
+          "stand-up comedy clips",
+          "designing elaborate handshakes with anyone who'll learn one",
+          "basketball he doesn't play competitively",
+          "drawing surprisingly detailed cartoon versions of his teachers"
+        ],
+        "strengths": [
+          "Can read a room instantly and adjust to keep the peace",
+          "Genuinely encouraging to teammates when he's present",
+          "Creative under pressure once he actually engages"
+        ],
+        "struggles": [
+          "Follow-through — starting things is easy, finishing them when no one's watching is hard",
+          "Naming his own problems out loud before someone else notices first",
+          "Sitting with quiet, serious moments without deflecting"
+        ],
+        "secrets": [
+          "He's been staying at his dad's most weeknights now, in a room that's still half-unpacked boxes, and hasn't told anyone at school",
+          "He didn't actually ask his sister if they could use her old project — he's pretty sure she'd say no",
+          "He's scared that if he tells someone he's struggling, it'll turn into A Conversation with adults, and he doesn't have room for one more Conversation right now"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get the project done with minimum friction and maximum laughs",
+          "Keep being 'the fun one' so nobody looks at him too closely"
+        ],
+        "unconscious": [
+          "Wants someone to notice he's struggling without him having to say it first",
+          "Needs to feel like he still has some control over something, anything, right now"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual, current-slang-adjacent without trying too hard; comfortable being the loudest voice in a room, quick with a callback joke.",
+        "sentenceComplexity": "Short, punchy, performance-timed when he's 'on.' Fragments and trailing-offs when he's not.",
+        "emotionalExpressiveness": "Big and visible on the surface — the whole hallway knows when Marcus finds something funny. Real feelings come out sideways, in jokes gone slightly too sharp, or in sudden quiet that doesn't match him.",
+        "examples": [
+          "'Okay, hear me out — what if the volcano also, like, talks. Just a little. Nobody said it couldn't.'",
+          "'It's fine, it's fine, I got it, I just — I got it.' (three days before it is, in fact, not gotten)",
+          "'...Yeah. Things have been kind of a lot at home. I didn't— I didn't know how to say that without it turning into a whole thing.'"
+        ]
+      },
+      "storyRole": "Marcus is the inciting pressure of 'Group Work' — his charisma is what makes the shortcut feel safe rather than sketchy, and his later disappearance from the project is what forces the player into a decision about confrontation vs. deflection. He's not a villain; he's a kid quietly drowning who happens to be very good at looking like he's fine. His arc runs parallel to Theo's: where Theo people-pleases to avoid rocking the boat, Marcus jokes to avoid being seen — and the episode's warmth comes from these two kids learning to actually ask each other what's going on instead of guessing.",
+      "arcPotential": [
+        "Episode 'Group Work': Establishes Marcus's pattern of charm-as-deflection and gives the player their first real test of empathy vs. assumption.",
+        "Future episode possibility: A storyline where Marcus's home situation resurfaces — maybe a group project or team sport where his unreliability triggers old frustration before the player (having learned from 'Group Work') checks in first instead of writing him off.",
+        "Longer arc potential: Marcus slowly becoming someone who can say 'I'm struggling' before it becomes a crisis — with visible, earned backsliding along the way, not a clean fix."
+      ]
+    },
+    "designNotes": "Marcus is built to be genuinely likable before he's understood — the goal is for players to laugh at his jokes in 'Team Assignments' the same way his in-fiction classmates do, so that his later unreliability lands as a betrayal of trust rather than a predictable plot beat. His core wound (a newly unstable home life he has no language for) is deliberately mundane and common among real 12-year-olds — not a dramatic tragedy, just the ordinary, disorienting grief of a family restructuring in real time. His defense mechanism (humor as smokescreen) is the same shape as Theo's defense mechanism (people-pleasing) but pointed outward instead of inward, which is why they're a good mirror for each other. The design deliberately avoids making him either 'the funny one' as a flat trait or 'the sad one' once his secret is revealed — he should still be funny after 'What's Going On,' just funny with the audience finally in on why.",
+    "representationNotes": "Marcus's family situation (recent parental separation, shifting custody, financial and emotional instability at home) is common enough among this age group to avoid feeling like an 'issue of the week,' and it's written to resist tidy resolution — the episode doesn't fix his home life, it just gives him one relationship at school where he doesn't have to perform. Care was taken not to code his unreliability as a character flaw needing correction so much as a survival strategy that's stopped working; the narrative's job is to make room for him to ask for help, not to punish him for not asking sooner. His race/ethnicity is left open to studio casting discretion but should be considered alongside Theo and Priya to ensure the trio reads as an authentically diverse, non-tokenized friend group typical of an urban public middle school."
+  },
+  {
+    "character": {
+      "id": "Priya",
+      "name": "Priya Shah",
+      "age": 12,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Small and neat, with dark hair usually in a low braid that she re-does when she's thinking. Wears her older cousin's hand-me-down denim jacket covered in small enamel pins from science fairs and a robotics club she helped start.",
+        "distinctiveFeatures": [
+          "Chews the end of her pencil down to splinters when concentrating",
+          "Carries a battered graph-paper notebook she calls her 'idea book' and almost never shows anyone",
+          "Has a habit of re-reading instructions twice, lips moving slightly, before anyone else finishes once"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "meticulous",
+          "quietly ambitious",
+          "conflict-avoidant in public, direct in private",
+          "fiercely fair-minded"
+        ],
+        "bigFiveProfile": {
+          "openness": 8,
+          "conscientiousness": 9,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 7
+        },
+        "mannerisms": [
+          "Taps a pen against the table in a steady four-count when she's holding back words",
+          "Re-braids or tightens her hair when nervous, like she's re-organizing herself",
+          "Goes very still and quiet — not sulky, just retreating — when she feels unheard"
+        ],
+        "speechPatterns": [
+          "Speaks in complete, ordered sentences even when upset ('First — this isn't ours. Second — you know that.')",
+          "Uses precise, slightly formal vocabulary picked up from reading way above grade level",
+          "When hurt, answers in clipped one-liners instead of her usual detail — the shortness IS the tell",
+          "Rarely raises her voice; drops it lower and slower instead, which somehow lands harder"
+        ],
+        "emotionalTendencies": "Priya processes stress by controlling what she can — schedules, checklists, shared folders — and goes quiet when she can't control the thing that actually scares her (being ignored, being wrong about people). She isn't a pushover; she's someone who has learned that raising her voice rarely worked in the rooms she grew up in, so she's built an arsenal of quieter tools instead: withdrawal, precision, and picking her moment. When she finally does speak plainly, it costs her something, which is exactly why it lands."
+      },
+      "background": {
+        "family": "Oldest of three, daughter of parents who run a small pharmacy near Ridgemont — long hours, tight margins, high expectations. Priya translates paperwork and insurance calls for her parents most weekends and has been 'the responsible one' since she could talk. Nobody in her family has ever told her to relax, and it hasn't occurred to her to ask them to.",
+        "interests": [
+          "architectural model-building",
+          "robotics club (she co-founded the school's team)",
+          "filling notebooks with elaborate, half-finished invention sketches",
+          "K-dramas she watches too late on school nights and never admits to"
+        ],
+        "strengths": [
+          "sees structural problems before anyone else does",
+          "genuinely original ideas once she trusts the room enough to share them",
+          "unshakeable sense of fairness",
+          "follows through on everything she commits to"
+        ],
+        "struggles": [
+          "equates her worth with being useful/correct, so admitting uncertainty feels dangerous",
+          "avoids confrontation with people she perceives as more socially powerful than her, even when she's right",
+          "has almost no practice asking for help — only giving it"
+        ],
+        "secrets": [
+          "Her 'idea book' is full of ambitious, weird, half-embarrassing invention concepts she's never shown anyone because she's terrified of being told they're impractical",
+          "She actually liked Marcus's jokes and being on his team excited her — which made the shortcut sting worse, because it felt like losing something before she'd even gotten to keep it"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get a top grade on the project without cutting corners",
+          "Be seen as someone whose work — and ideas — can be trusted"
+        ],
+        "unconscious": [
+          "To matter for something other than being reliable — to have an idea celebrated instead of just a checklist completed",
+          "To find out if speaking up costs her the friendships she's worked so hard to build"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Advanced for her age but not showy — precise word choices, occasional dry understatement, never slang-heavy.",
+        "sentenceComplexity": "Full, ordered sentences with clear logical structure ('first,' 'also,' 'actually'); shortens dramatically to single words or fragments when emotionally guarded.",
+        "emotionalExpressiveness": "Restrained on the surface, intense underneath — she signals distress through withdrawal and precision rather than tears or shouting; when she finally opens up, it's in one careful, rehearsed-sounding burst.",
+        "examples": [
+          "\"This is basically his sister's project with a new title slide. Doesn't that feel wrong to you?\"",
+          "\"I already checked the folder. Twice. It says 'last edited two days ago,' which means nothing has happened in two days.\"",
+          "\"It's fine.\" (said in a tone that makes clear it is not, in fact, fine)",
+          "\"I had an idea. It's probably stupid.\" — *(then, only if pushed, in a rush)* \"Okay, so what if the base rotated —\""
+        ]
+      },
+      "storyRole": "Priya is the episode's conscience and its quietest casualty. She sees the ethical line first, names it earliest, and is the one who pays the real relational cost of how Theo responds — her arc tracks whether Theo's choices make her feel safe enough to keep contributing, or teach her (again) that speaking up just gets her sidelined. Her hidden creative spark (the idea that saves the 'honest' version of the project) is the story's proof that doing it the hard way was never a consolation prize — it was the better path all along.",
+      "arcPotential": [
+        "Group Work: Learns whether honesty in her group actually gets rewarded by the people she trusted, or just costs her — this becomes a formative data point for how much of herself she risks showing at school going forward.",
+        "Future episode potential: A storyline where Priya's 'idea book' gets discovered or she's pushed into presenting her own original work publicly for the first time, forcing her to risk being wrong in front of people instead of just being right and quiet.",
+        "Future episode potential: Priya and Marcus's dynamic — the over-functioner and the avoider — could anchor a later episode about learning to ask for help instead of either controlling everything or disappearing."
+      ]
+    },
+    "designNotes": "Priya was built to avoid the 'moral compass' trap — a character who exists only to say the right thing at the right time. Her conscientiousness and precision are given a real psychological engine (over-functioning as a survival strategy in her family, not innate virtue), and her caution about conflict is treated as learned and costly, not a character flaw to be fixed by episode's end. The hidden idea book and her genuine excitement about Marcus's jokes are the key contradictions: she's not just the responsible one, she's a kid with real ambition and real longing to be liked who has decided caution is safer than being seen. Her withdrawal arc (going quiet, going to Marcus instead of confronting Theo directly) is written as an active choice with logic behind it, not passive sulking — she's protecting herself using the only tools she's practiced. The two branch endings ('Owning It' vs 'Getting Away With It') hinge entirely on her emotional state because she's the one who actually has something to lose either way.",
+    "representationNotes": "Priya's background (child of small-business-owning immigrant parents, informal household translator, high performance expectations) is written specifically rather than generically — the goal is to avoid 'model minority overachiever' as a flattening stereotype by grounding her perfectionism in a clear emotional cause (fear that usefulness is the price of belonging) and by giving her an interior life the plot doesn't fully use: a hidden creative ambition, a secret guilty-pleasure interest, real anger she's allowed to feel and rarely allowed to show. Care was taken to make her conflict-avoidance a specific, earned trait rather than a cultural essentialism — it's framed as a strategy she's built, not something inherent to who she is, and the story explicitly leaves room for her to unlearn it in future episodes."
+  },
+  {
+    "character": {
+      "id": "Sam",
+      "name": "Sam Delgado",
+      "age": 12,
+      "pronouns": "they/them",
+      "appearance": {
+        "brief": "Medium height, a little soft around the middle, wears the same three hoodies in rotation (one has a fraying thumbhole they've never fixed). Hair's always a little flat on one side like they just took off a beanie, even indoors.",
+        "distinctiveFeatures": [
+          "A rotating collection of enamel pins on their backpack strap, mostly from a card game nobody else at the table plays",
+          "Chews on pen caps until they crack, then loses the pen entirely"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "scattered but sincere",
+          "info-dump prone",
+          "loyal in a low-key way",
+          "surprisingly good listener once you get past the first two minutes"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 4,
+          "extraversion": 7,
+          "agreeableness": 8,
+          "neuroticism": 4
+        },
+        "mannerisms": [
+          "Taps a rhythm on the table when excited, stops immediately when actually listening",
+          "Says 'okay but' before pivoting a conversation back to something they care about, then catches themselves and says 'wait no, you first'"
+        ],
+        "speechPatterns": [
+          "Talks in run-on bursts when hyped, then short and blunt when being serious",
+          "Uses 'lowkey' and 'deadass' unironically and a little too often",
+          "Asks follow-up questions that are genuinely curious but sometimes miss the emotional weight of what was just said"
+        ],
+        "emotionalTendencies": "Sam runs warm and a little oblivious — not because they don't care, but because their brain is usually three topics ahead. When they do slow down and actually notice something's wrong, they get quiet and direct fast, which is almost more startling than if they'd made a big deal of it."
+      },
+      "background": {
+        "family": "Lives with mom and an older half-sister in high school who Sam simultaneously worships and is embarrassed by. Dad's around but works nights, so dinner conversations mostly happen over text.",
+        "interests": [
+          "a trading card game called Skyfall Tactics that no one else at the lunch table plays",
+          "true crime podcasts they're definitely too young for",
+          "drawing tiny comics in the margins of worksheets"
+        ],
+        "strengths": [
+          "makes people feel normal after something intense happens",
+          "genuinely doesn't hold grudges",
+          "great at defusing tension without even trying, just by changing the subject at the right moment"
+        ],
+        "struggles": [
+          "homework, chronically, in a low-grade unbothered way",
+          "trouble sitting with heavy emotional moments — tends to want to fix the mood rather than sit in it"
+        ],
+        "secrets": [
+          "actually studies Skyfall Tactics deck-building way harder than any actual schoolwork, and is a little ashamed of how much that says about their priorities"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "keep the lunch table fun and drama-light",
+          "get Theo to finally try Skyfall Tactics"
+        ],
+        "unconscious": [
+          "wants to feel like the steady, easy friendship in Theo's life — the place where nothing has to be complicated"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual middle-school slang, current but not try-hard; comfortable with tangents",
+        "sentenceComplexity": "Short bursts when excited, run-ons when info-dumping, blunt one-liners when being real",
+        "emotionalExpressiveness": "Warm and immediate but sometimes surface-level — doesn't push past a vague answer unless something in Theo's tone stops them",
+        "examples": [
+          "\"Okay but did you guys actually finish it or is Marcus still 'working on his part' in the metaphysical sense\"",
+          "\"Wait— you good? You've got the face. The face you get.\"",
+          "\"Lowkey I don't even care what grade you got, I just want to know if it was chaos. Was it chaos.\""
+        ]
+      },
+      "storyRole": "The low-stakes outside friend whose recurring 'how'd it go?' question gives the player a beat to reflect on and narrate their own choice — a mirror that isn't trying to be one. Sam's obliviousness or perceptiveness in each variant scales with how well things actually went, making their reaction a quiet gauge for the player's own read on what just happened.",
+      "arcPotential": [
+        "Later episode: Sam finally convinces Theo to play Skyfall Tactics, and the low-stakes friendship becomes a place Theo can decompress from higher-pressure relationships like Marcus and Priya",
+        "Later episode: a moment where Sam's own scattered avoidance of heavy topics gets gently called out, showing their cheerfulness has its own defensive function"
+      ]
+    },
+    "designNotes": "Sam is functionally a check-in device across four near-identical beats, so the risk is flatness — the fix was giving them a strong, specific personality (info-dumpy, card-game-obsessed, a little emotionally oblivious but not unkind) so their reaction to Theo's answer feels like an actual person hearing news, not a prompt firing. Their surface-level curiosity ('was it chaos?') creates useful friction in the 'Getting Away With It' and 'Owning It' scenes — Sam wants the fun version of the story, which puts subtle pressure on Theo to perform rather than reflect, deepening the episode's theme of public performance vs. private truth even in a 'low stakes' friendship. Their occasional moment of unexpected perceptiveness ('you've got the face') keeps them from being purely comic relief.",
+    "representationNotes": "Sam is written as a light, non-defining presence for a kid who's clearly not white-default-coded in a diverse urban school (Delgado surname, unspecified but implied Latino heritage) without making that the point of any scene — it's just part of who they are, same as their family's after-hours dinner schedule due to a parent's night shift, a common and rarely-depicted middle-class working reality. Using they/them pronouns for a minor supporting character normalizes it without making Sam's arc 'about' gender — it's simply how they refer to themselves, unremarked upon by anyone in dialogue, modeling low-key acceptance rather than a teaching moment."
+  }
+]

@@ -2,6 +2,7 @@ import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 import { requireEnum, requireScore } from './errors';
 import { parseReviewJson } from './json-parsing';
+import { buildSharedReviewContext } from './review-context';
 import type { Episode, Character, World } from '@mirror/schemas';
 
 // ============================================================================
@@ -258,18 +259,22 @@ Remember: Your role is to ensure content is SAFE, INCLUSIVE, and RESPECTFUL whil
     const { episode, characters, world } = review;
     
     // Scripts may pass partially-assembled episodes; fall back to the world's
-    // target age and tolerate missing summary fields (full JSON is below).
+    // target age and tolerate missing summary fields (full data is in the
+    // shared cached block below).
     const targetAge = episode.targetAge || world.targetAge;
     
-    const prompt = `REVIEW EPISODE FOR ETHICAL CONTENT, BIAS, AND REPRESENTATION:
+    const systemPrompt = [
+      { text: buildSharedReviewContext({ episode, characters, world }), cache: true },
+      { text: this.systemPrompt }
+    ];
+    
+    const prompt = `REVIEW EPISODE FOR ETHICAL CONTENT, BIAS, AND REPRESENTATION (see the shared episode data above for full content):
 
-EPISODE:
+EPISODE SUMMARY:
 Title: ${episode.title}
 Synopsis: ${episode.synopsis}
 Themes: ${episode.themes?.join(', ') || 'Not specified'}
 Target Age: ${targetAge ? `${targetAge[0]}-${targetAge[1]}` : 'Not specified'}
-
-Full Episode Data: ${JSON.stringify(episode, null, 2)}
 
 CHARACTERS:
 ${characters.map(c => `
@@ -340,7 +345,7 @@ Rate each dimension 1-10, identify readiness for publication.
 
 Return your assessment as JSON in the format specified in your system prompt.`;
 
-    const response = await this.callLLM(this.systemPrompt, prompt);
+    const response = await this.callLLM(systemPrompt, prompt);
     const result = this.parseReview(response);
     
     // Store in memory

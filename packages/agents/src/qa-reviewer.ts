@@ -2,6 +2,7 @@ import { BaseAgent, AgentConfig } from './base-agent-v2';
 import { getAgentModel, getAgentTemperature, getAgentMaxTokens } from './config';
 import { requireEnum } from './errors';
 import { parseReviewJson } from './json-parsing';
+import { buildSharedReviewContext } from './review-context';
 import type { Episode, Character, World } from '@mirror/schemas';
 
 // ============================================================================
@@ -184,16 +185,14 @@ Remember: Players trust us to deliver polished, bug-free experiences.`;
   ): Promise<QAReviewerOutput> {
     const { episode, characters, world, previousEpisodes } = review;
     
-    const prompt = `REVIEW EPISODE FOR TECHNICAL QUALITY:
-
-EPISODE:
-${JSON.stringify(episode, null, 2)}
-
-CHARACTERS IN EPISODE:
-${JSON.stringify(characters, null, 2)}
-
-WORLD CONTEXT:
-${JSON.stringify(world, null, 2)}
+    // Same episode/character/world payload every reviewer gets on this
+    // episode — cached so only the first reviewer to run pays full price.
+    const systemPrompt = [
+      { text: buildSharedReviewContext({ episode, characters, world }), cache: true },
+      { text: this.systemPrompt }
+    ];
+    
+    const prompt = `REVIEW EPISODE FOR TECHNICAL QUALITY (see the shared episode data above for full content):
 
 ${previousEpisodes ? `PREVIOUS EPISODES: ${previousEpisodes.length} episodes for continuity checking` : ''}
 
@@ -244,7 +243,7 @@ Perform a comprehensive QA review of this episode. Check:
 
 Return comprehensive results in JSON format as specified in your system prompt.`;
 
-    const response = await this.callLLM(this.systemPrompt, prompt);
+    const response = await this.callLLM(systemPrompt, prompt);
     const result = this.parseQAResponse(response);
     
     // Store in memory

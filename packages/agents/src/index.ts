@@ -4,6 +4,7 @@ export * from './llm-gateway';
 export * from './config';
 export * from './errors';
 export * from './json-parsing';
+export * from './review-context';
 
 // Content Creation Agents
 export * from './ceo-agent';

@@ -283,7 +283,9 @@ FORMAT YOUR RESPONSE AS JSON:
       prompt
     );
     
-    const result = this.parseDialogueFromResponse(response);
+    let result = this.sanitizeDialogue(this.parseDialogueFromResponse(response));
+    result = await this.ensureCompleteChoiceDialogue(result, choicePoints);
+    this.validateDialogue(result, characters);
     
     // Store in memory
     await this.remember(`episode-dialogue:${episodeOutline.title}`, {
@@ -335,7 +337,7 @@ Only include the scenes you actually revised.`;
       prompt
     );
     
-    const result = this.parseDialogueFromResponse(response);
+    const result = this.sanitizeDialogue(this.parseDialogueFromResponse(response));
     
     // Store revision
     await this.remember('dialogue-revision', {
@@ -520,6 +522,151 @@ BRANCH-AWARE ENDINGS (MANDATORY):
     
     console.log('[Dialogue Writer] Successfully parsed dialogue:', parsed.dialogue.length, 'scenes');
     return parsed as DialogueWriterOutput;
+  }
+  
+  // ==================== Deterministic Cleanup & Validation ====================
+  
+  /** Matches a literal choice-point marker the model sometimes echoes as if it were spoken dialogue. */
+  private static readonly PLACEHOLDER_LINE_PATTERN = /\[\s*CHOICE\s*POINT\b/i;
+  
+  /**
+   * Strip lines like `[CHOICE POINT: choice-1]` that the model occasionally
+   * writes into the dialogue array instead of leaving the choice point to
+   * the scene's `choicePointId`/`transition` field. Recurred 4 times in a
+   * single live QA review (each one a CRITICAL finding that would
+   * otherwise cost a full revision round trip) — always wrong, never a
+   * legitimate design choice, so this is safe to fix deterministically
+   * rather than asking the model to self-repair.
+   */
+  private sanitizeDialogue(output: DialogueWriterOutput): DialogueWriterOutput {
+    let stripped = 0;
+    const dialogue = output.dialogue.map(sceneDialogue => {
+      const lines = sceneDialogue.lines.filter(line => {
+        const isPlaceholder = DialogueWriterAgent.PLACEHOLDER_LINE_PATTERN.test(line.text);
+        if (isPlaceholder) stripped += 1;
+        return !isPlaceholder;
+      });
+      return lines.length === sceneDialogue.lines.length ? sceneDialogue : { ...sceneDialogue, lines };
+    });
+    
+    if (stripped === 0) return output;
+    console.warn(`[Echo] Stripped ${stripped} choice-point placeholder line(s) from dialogue (model echoed a structural marker as spoken text)`);
+    return { ...output, dialogue };
+  }
+  
+  /**
+   * Every option a choicePoint offers needs a spoken reaction in
+   * choiceDialogue.responseDialogue. Missing coverage for one or more
+   * options was the single most-recurring QA BLOCKER/CRITICAL finding
+   * across live runs (e.g. options b/c silently missing a reaction line) —
+   * always a defect, never intentional. Returns one entry per choice with
+   * a gap (empty = complete).
+   */
+  private findMissingResponseDialogue(
+    output: DialogueWriterOutput,
+    choicePoints: ChoicePoint[]
+  ): Array<{ choiceId: string; missingOptionIds: string[] }> {
+    const byChoiceId = new Map(output.choiceDialogue.map(cd => [cd.choiceId, cd]));
+    const gaps: Array<{ choiceId: string; missingOptionIds: string[] }> = [];
+    
+    for (const cp of choicePoints || []) {
+      const optionIds = (cp.options || []).map(o => o.id);
+      if (optionIds.length === 0) continue;
+      const covered = new Set(Object.keys(byChoiceId.get(cp.id)?.responseDialogue || {}));
+      const missingOptionIds = optionIds.filter(id => !covered.has(id));
+      if (missingOptionIds.length > 0) gaps.push({ choiceId: cp.id, missingOptionIds });
+    }
+    
+    return gaps;
+  }
+  
+  /**
+   * Give the model ONE targeted self-repair pass for missing response
+   * dialogue before the output ever reaches a reviewer. This replaces a
+   * costly [QA finds it -> full revision iteration -> re-review] round
+   * trip with a single cheap, surgical call — and it's mechanical (every
+   * option needs a reaction), so there's no risk of "fixing" a legitimate
+   * design choice the way a duplicate-nextScene check would be.
+   */
+  private async ensureCompleteChoiceDialogue(
+    result: DialogueWriterOutput,
+    choicePoints: ChoicePoint[]
+  ): Promise<DialogueWriterOutput> {
+    let gaps = this.findMissingResponseDialogue(result, choicePoints);
+    if (gaps.length === 0) return result;
+    
+    console.warn(`[Echo] ${gaps.length} choice(s) missing response dialogue for some options; requesting a targeted self-repair...`);
+    gaps.forEach(g => console.warn(`[Echo]   - ${g.choiceId}: missing option(s) ${g.missingOptionIds.join(', ')}`));
+    
+    const repairResponse = await this.callLLM(
+      this.systemPrompt,
+      this.buildResponseDialogueRepairPrompt(result, gaps, choicePoints)
+    );
+    const repaired = this.sanitizeDialogue(this.parseDialogueFromResponse(repairResponse));
+    const merged = this.mergeChoiceDialogueFix(result, repaired.choiceDialogue);
+    
+    gaps = this.findMissingResponseDialogue(merged, choicePoints);
+    if (gaps.length > 0) {
+      // Non-fatal: missing reaction dialogue is a real defect but not an
+      // unplayable one (unlike a broken scene graph) — leave it for QA
+      // rather than looping indefinitely on a self-repair that isn't landing.
+      console.warn(`[Echo] Still missing response dialogue after self-repair (leaving for QA to catch): ${gaps.map(g => `${g.choiceId}[${g.missingOptionIds.join(',')}]`).join('; ')}`);
+    } else {
+      console.log('[Echo] Self-repair filled all missing response dialogue');
+    }
+    return merged;
+  }
+  
+  private buildResponseDialogueRepairPrompt(
+    result: DialogueWriterOutput,
+    gaps: Array<{ choiceId: string; missingOptionIds: string[] }>,
+    choicePoints: ChoicePoint[]
+  ): string {
+    const choicePointById = new Map(choicePoints.map(cp => [cp.id, cp]));
+    const sections = gaps.map(gap => {
+      const cp = choicePointById.get(gap.choiceId);
+      const existing = result.choiceDialogue.find(cd => cd.choiceId === gap.choiceId);
+      return `Choice "${gap.choiceId}"${cp?.prompt ? ` (${cp.prompt})` : ''}:
+${(cp?.options || []).map(o => `  - option "${o.id}": "${o.text}"`).join('\n')}
+Missing responseDialogue for option(s): ${gap.missingOptionIds.join(', ')}.
+Existing responses for this choice (match their tone/length):
+${JSON.stringify(existing?.responseDialogue || {}, null, 2)}`;
+    }).join('\n\n');
+    
+    return `Your dialogue output is missing response dialogue for some choice options:
+
+${sections}
+
+YOUR TASK: write ONLY the missing response dialogue line(s) listed above, matching the tone and length of the existing responses for the same choice.
+
+Return ONLY this JSON, wrapped in a \`\`\`json code block:
+{
+  "dialogue": [],
+  "choiceDialogue": [
+    { "choiceId": "${gaps[0]?.choiceId || '...'}", "options": [], "responseDialogue": { "<missing option id>": [ { "id": "...", "character": "...", "text": "..." } ] } }
+  ]
+}
+Include exactly one choiceDialogue entry per choice listed above, with responseDialogue keyed ONLY by the missing option id(s) — do not repeat options that already have dialogue.`;
+  }
+  
+  /** Merge repaired responseDialogue keys into the existing choiceDialogue entries (new keys win, existing untouched keys are kept). */
+  private mergeChoiceDialogueFix(
+    result: DialogueWriterOutput,
+    fixes: DialogueWriterOutput['choiceDialogue']
+  ): DialogueWriterOutput {
+    const byChoiceId = new Map(result.choiceDialogue.map(cd => [cd.choiceId, cd]));
+    for (const fix of fixes || []) {
+      const existing = byChoiceId.get(fix.choiceId);
+      if (!existing) {
+        byChoiceId.set(fix.choiceId, fix);
+        continue;
+      }
+      byChoiceId.set(fix.choiceId, {
+        ...existing,
+        responseDialogue: { ...existing.responseDialogue, ...(fix.responseDialogue || {}) }
+      });
+    }
+    return { ...result, choiceDialogue: [...byChoiceId.values()] };
   }
   
   // ==================== Validation ====================
