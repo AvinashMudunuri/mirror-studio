@@ -271,40 +271,14 @@ The platform tracks 10 core emotional intelligence traits:
 
 ## Development Roadmap
 
-### Phase 1: Foundation (Weeks 1-2) ✅
-- ✅ Repository structure
-- ✅ Core type definitions (schemas)
-- ✅ Agent framework foundation
-- ⏳ Message bus system
-- ⏳ Memory systems
+See **[Roadmap](docs/ROADMAP.md)** for the current, evidence-based phase-by-phase status (last rewritten 2026-07-07 — this section used to duplicate it with a stale week-numbered plan). Summary:
 
-### Phase 2: Core Agents (Weeks 3-4)
-- CEO, Creative Director, Story Architect
-- Character Designer, Dialogue Writer
-- Basic workflow (creation → approval)
-
-### Phase 3: Review Agents (Weeks 5-6)
-- Psychologist, Game Designer, Ethics Reviewer
-- QA, Teen Reviewer
-- Complete review pipeline
-
-### Phase 4: Production (Weeks 7-8)
-- Publisher Agent
-- Analytics Agent
-- JSON Export
-- API integration
-
-### Phase 5: Frontend (Weeks 9-10)
-- Episode player UI
-- Choice interface
-- Reflection display
-- Netflix-style experience
-
-### Phase 6: Scaling (Weeks 11-12)
-- Performance optimization
-- Monitoring and observability
-- Production deployment
-- First episode published
+- **Phase 1 (Foundation)**: ✅ done, on a different architecture than originally planned — message bus built but deliberately kept out of the runtime (ADR 001); Postgres memory live-verified.
+- **Phase 2 (Core Agents)**: ✅ done, exceeded the original milestone — full episodes generated end-to-end, not just outlines.
+- **Phase 3 (Review Agents)**: ⚠️ mostly done — 4 of 5 reviewers built (no Teen Reviewer); no agent-to-agent debate system (orchestrator-routed feedback instead).
+- **Phase 4 (Production Agents)**: ❌ not started — no Publisher/Analytics/JSON Export agents, no API.
+- **Phase 5 (Frontend)**: ❌ not started — `apps/admin` is an internal read-only dashboard, not a player-facing app.
+- **Phase 6 (Polish & Launch)**: ❌ not started — no monitoring, no CI configured in this repo.
 
 ---
 

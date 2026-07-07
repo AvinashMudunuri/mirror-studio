@@ -200,6 +200,18 @@ Zod validation at the `json-parsing.ts` hook (item 6), structured
 per-step events for the admin UI (item 1), and the bounded
 rebuttal/CEO-debate round in the revision loop (relates to item 4).
 
+**`docs/ROADMAP.md` rewritten (2026-07-07, v2.0)**: v1.0 described a
+12-week, week-numbered plan and was accurate for about half a day before
+ADR 001 superseded its core premise (LangGraph + message-bus
+orchestration). v2.0 reports actual per-phase status instead of a
+calendar: Phases 1-2 done (differently than planned — see ADR 001),
+Phase 3 mostly done (no Teen Reviewer, no debate system), Phases 4-7
+(publish/API, player frontend, launch, growth) not started at all. Also
+surfaces two things v1.0 didn't mention: no CI is configured anywhere in
+the repo, and roughly half of full-board episode runs land
+`NEEDS_HUMAN_REVIEW` rather than a clean pass (verdict variance, item 4)
+— i.e. nothing has actually been "published" in the Phase 4 sense.
+
 Still stale: the PHASE-* files and several root-level summaries describe pre-PR-#9
 architecture (bus-driven orchestration, 4-agent pipeline, broken sample
 scripts as entry points). `INTEGRATION-TESTING-COMPLETE.md`,
