@@ -1,0 +1,1622 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1-announcement",
+      "lines": [
+        {
+          "id": "s1-1",
+          "character": "NARRATOR",
+          "text": "Mr. Okafor stands at the front of the room with a stack of papers, like it's already given him a headache."
+        },
+        {
+          "id": "s1-2",
+          "character": "mr-okafor",
+          "text": "Alright. Settle. This one's actually worth listening to.",
+          "action": "taps two fingers on the desk"
+        },
+        {
+          "id": "s1-3",
+          "character": "mr-okafor",
+          "text": "Semester project. Twenty percent of your grade. Presentation in front of the whole grade, plus a panel, in three weeks."
+        },
+        {
+          "id": "s1-4",
+          "character": "dez",
+          "text": "Three weeks? Easy.",
+          "action": "leans his chair back on two legs"
+        },
+        {
+          "id": "s1-5",
+          "character": "priya",
+          "text": "That's fifteen school days. Fourteen if you don't count the pep rally, which you shouldn't, because nothing gets done that day.",
+          "action": "already writing"
+        },
+        {
+          "id": "s1-6",
+          "character": "dez",
+          "text": "...See, this is why I like being near Priya."
+        },
+        {
+          "id": "s1-7",
+          "character": "mr-okafor",
+          "text": "Groups are groups. Nobody gets to pick their favorite people — that's not what this is for."
+        },
+        {
+          "id": "s1-8",
+          "character": "mr-okafor",
+          "text": "Table four. Dez Bellamy. Priya Chen. Mo Alvarez. Charlie Osei."
+        },
+        {
+          "id": "s1-9",
+          "character": "player",
+          "text": "Okay. That's... a combination.",
+          "emotion": "internal"
+        },
+        {
+          "id": "s1-10",
+          "character": "NARRATOR",
+          "text": "Across the room, Mo looks up. Just for a second. Like he's checking whether she remembers."
+        },
+        {
+          "id": "s1-11",
+          "character": "mo",
+          "text": "...Great.",
+          "emotion": "flat",
+          "action": "barely audible"
+        },
+        {
+          "id": "s1-12",
+          "character": "dez",
+          "text": "Alright, table four, let's go — teamwork makes the dream work, I don't make the rules.",
+          "action": "already turning his chair around"
+        },
+        {
+          "id": "s1-13",
+          "character": "priya",
+          "text": "You say that like it's not the single most annoying sentence in the English language."
+        },
+        {
+          "id": "s1-14",
+          "character": "dez",
+          "text": "It's a classic."
+        },
+        {
+          "id": "s1-15",
+          "character": "player",
+          "text": "This is gonna be interesting.",
+          "action": "laughs a beat too fast"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2-group-meeting",
+      "lines": [
+        {
+          "id": "s2-1",
+          "character": "NARRATOR",
+          "text": "Library study room. Four chairs, one whiteboard, and a very optimistic amount of silence."
+        },
+        {
+          "id": "s2-2",
+          "character": "dez",
+          "text": "Okay, so — hot take. I don't think we need to start from zero."
+        },
+        {
+          "id": "s2-3",
+          "character": "priya",
+          "text": "We haven't started at all yet, so that's not really a hot take, that's just—"
+        },
+        {
+          "id": "s2-4",
+          "character": "dez",
+          "text": "My sister did basically this exact project last year. Same rubric and everything. I'm, like, ninety percent sure I still have the files."
+        },
+        {
+          "id": "s2-5",
+          "character": "priya",
+          "text": "...Ninety percent.",
+          "action": "pen stops moving"
+        },
+        {
+          "id": "s2-6",
+          "character": "dez",
+          "text": "We just tweak some words. Swap a few slides around. Boom, done, and we're not spending our whole week in here."
+        },
+        {
+          "id": "s2-7",
+          "character": "mo",
+          "text": "",
+          "action": "says nothing, arms crossed, watching"
+        },
+        {
+          "id": "s2-8",
+          "character": "priya",
+          "text": "I mean — if it's just for structure, that's not the worst— I don't know. I don't love it."
+        },
+        {
+          "id": "s2-9",
+          "character": "dez",
+          "text": "It's not that deep, Priya."
+        },
+        {
+          "id": "s2-10",
+          "character": "dez",
+          "text": "What do you think? You're quiet over there."
+        },
+        {
+          "id": "s2-11",
+          "character": "NARRATOR",
+          "text": "Everyone looks at Charlie. Mo included, though he'd never admit he's waiting for anything."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3a-standing-ground",
+      "lines": [
+        {
+          "id": "s3a-1",
+          "character": "NARRATOR",
+          "text": "Dez blinks, clearly not expecting that answer."
+        },
+        {
+          "id": "s3a-2",
+          "character": "dez",
+          "text": "It's not that deep, man. Nobody's gonna know."
+        },
+        {
+          "id": "s3a-3",
+          "character": "priya",
+          "text": "...I mean, she's kind of right, though. If we get caught it's not just a bad grade, it's a whole meeting-with-parents thing.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s3a-4",
+          "character": "dez",
+          "text": "Okay, okay. Fine. We do it ourselves. Geez.",
+          "action": "leans back, considering"
+        },
+        {
+          "id": "s3a-5",
+          "character": "mo",
+          "text": "...Cool.",
+          "action": "glances at player, something shifting in his posture"
+        },
+        {
+          "id": "s3a-6",
+          "character": "priya",
+          "text": "Okay. Good. I can work with 'own work.' I like 'own work.'",
+          "action": "small breath out"
+        },
+        {
+          "id": "s3a-7",
+          "character": "player",
+          "text": "See, panic was step four. We didn't even need it.",
+          "emotion": "small smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3b-going-along",
+      "lines": [
+        {
+          "id": "s3b-1",
+          "character": "NARRATOR",
+          "text": "Dez grins like he already won this conversation before it started."
+        },
+        {
+          "id": "s3b-2",
+          "character": "dez",
+          "text": "See? Told you it's not that deep.",
+          "action": "already pulling out his phone"
+        },
+        {
+          "id": "s3b-3",
+          "character": "dez",
+          "text": "I'll text my sister, tell her thanks in advance."
+        },
+        {
+          "id": "s3b-4",
+          "character": "priya",
+          "text": "...Okay.",
+          "action": "stares at her notebook"
+        },
+        {
+          "id": "s3b-5",
+          "character": "mo",
+          "text": "",
+          "action": "something in his face closes off, looks down at his own notebook"
+        },
+        {
+          "id": "s3b-6",
+          "character": "dez",
+          "text": "Relax, everybody. This is gonna be the easiest twenty percent of your life."
+        },
+        {
+          "id": "s3b-7",
+          "character": "player",
+          "text": "It's fine. It's just a starting point. ...Right?",
+          "emotion": "internal"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3c-middle-path",
+      "lines": [
+        {
+          "id": "s3c-1",
+          "character": "dez",
+          "text": "...Fine. Whatever's faster.",
+          "action": "shrugs"
+        },
+        {
+          "id": "s3c-2",
+          "character": "priya",
+          "text": "Okay — that actually works. We use her outline for structure and formatting, but every fact, every source, is ours.",
+          "action": "visibly relaxes"
+        },
+        {
+          "id": "s3c-3",
+          "character": "mo",
+          "text": "...That's the first thing today that made sense.",
+          "action": "small nod"
+        },
+        {
+          "id": "s3c-4",
+          "character": "dez",
+          "text": "Wow. High praise from the guy who's said four words."
+        },
+        {
+          "id": "s3c-5",
+          "character": "mo",
+          "text": "I'm rationing them.",
+          "action": "half-smile"
+        },
+        {
+          "id": "s3c-6",
+          "character": "priya",
+          "text": "",
+          "action": "laughs, surprised"
+        },
+        {
+          "id": "s3c-7",
+          "character": "player",
+          "text": "Okay. Maybe this group's gonna be fine.",
+          "emotion": "internal"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4-work-session",
+      "lines": [
+        {
+          "id": "s4-1",
+          "character": "NARRATOR",
+          "text": "Priya's kitchen table, days later. Papers everywhere. Dez's phone is very interesting to him right now."
+        },
+        {
+          "id": "s4-2",
+          "character": "priya",
+          "text": "No, that's not — MLA doesn't work like that, why does it keep—",
+          "action": "muttering, crosses something out"
+        },
+        {
+          "id": "s4-3",
+          "character": "dez",
+          "text": "You good?",
+          "action": "not looking up from his phone"
+        },
+        {
+          "id": "s4-4",
+          "character": "priya",
+          "text": "No, but that's not new information."
+        },
+        {
+          "id": "s4-5",
+          "character": "player",
+          "text": "Need a hand?"
+        },
+        {
+          "id": "s4-6",
+          "character": "priya",
+          "text": "I need you to invent a ninth day of the week, but sure. You can check the works cited page."
+        },
+        {
+          "id": "s4-7",
+          "character": "NARRATOR",
+          "text": "Mo's been quiet for a while, doodling in the margin of his notes. Small, careful robot shapes."
+        },
+        {
+          "id": "s4-8",
+          "character": "mo",
+          "text": "...Hey. Uh.",
+          "action": "not looking up"
+        },
+        {
+          "id": "s4-9",
+          "character": "mo",
+          "text": "I don't really get this part. The whole second half of my section."
+        },
+        {
+          "id": "s4-10",
+          "character": "player",
+          "text": "Wait, since when?"
+        },
+        {
+          "id": "s4-11",
+          "character": "mo",
+          "text": "Since the beginning. I've just been writing stuff down that sounds right.",
+          "action": "still not looking up"
+        },
+        {
+          "id": "s4-12",
+          "character": "priya",
+          "text": "Mo.",
+          "action": "head snaps up"
+        },
+        {
+          "id": "s4-13",
+          "character": "mo",
+          "text": "I mean — it's fine. I'll figure it out."
+        },
+        {
+          "id": "s4-14",
+          "character": "player",
+          "text": "He will not, in fact, figure it out on his own.",
+          "emotion": "internal"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5a-teaching-mo",
+      "lines": [
+        {
+          "id": "s5a-1",
+          "character": "NARRATOR",
+          "text": "Charlie pulls her chair over, notebook between them."
+        },
+        {
+          "id": "s5a-2",
+          "character": "player",
+          "text": "Okay, walk me through what you do get. We'll work backwards from there."
+        },
+        {
+          "id": "s5a-3",
+          "character": "mo",
+          "text": "I mean — I get the first part. It's the cause-and-effect part that loses me. Like why B happens because of A instead of just... also happening."
+        },
+        {
+          "id": "s5a-4",
+          "character": "player",
+          "text": "That's actually a really specific thing to get stuck on. That's good — means you're close."
+        },
+        {
+          "id": "s5a-5",
+          "character": "mo",
+          "text": "That supposed to make me feel better?",
+          "action": "side-eye"
+        },
+        {
+          "id": "s5a-6",
+          "character": "player",
+          "text": "Kind of, yeah. Is it working?"
+        },
+        {
+          "id": "s5a-7",
+          "character": "mo",
+          "text": "...A little.",
+          "action": "almost a laugh"
+        },
+        {
+          "id": "s5a-8",
+          "character": "NARRATOR",
+          "text": "They go slow. No shortcuts, no rushing. Somewhere around the third example, something clicks."
+        },
+        {
+          "id": "s5a-9",
+          "character": "mo",
+          "text": "Oh — oh wait. So it's not that A causes B, it's that A causes the thing that causes B."
+        },
+        {
+          "id": "s5a-10",
+          "character": "player",
+          "text": "Yes! Okay, see, you got it."
+        },
+        {
+          "id": "s5a-11",
+          "character": "mo",
+          "text": "Huh. Look at that.",
+          "emotion": "small, real smile"
+        },
+        {
+          "id": "s5a-12",
+          "character": "priya",
+          "text": "...You draw robots too?",
+          "action": "watching from across the table"
+        },
+        {
+          "id": "s5a-13",
+          "character": "mo",
+          "text": "That's — yeah. That's a me thing.",
+          "action": "half-smile"
+        },
+        {
+          "id": "s5a-14",
+          "character": "priya",
+          "text": "Fair enough. Just checking.",
+          "emotion": "small smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5b-brush-off",
+      "lines": [
+        {
+          "id": "s5b-1",
+          "character": "player",
+          "text": "Just copy the summary from the textbook. Change a couple words so it's not identical. Nobody's gonna quiz you line by line."
+        },
+        {
+          "id": "s5b-2",
+          "character": "mo",
+          "text": "...Okay.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s5b-3",
+          "character": "NARRATOR",
+          "text": "Mo copies it down, word by word, careful and small."
+        },
+        {
+          "id": "s5b-4",
+          "character": "priya",
+          "text": "",
+          "action": "watches, says nothing, jaw tightens"
+        },
+        {
+          "id": "s5b-5",
+          "character": "mo",
+          "text": "Yeah. This is fine.",
+          "action": "not looking up"
+        },
+        {
+          "id": "s5b-6",
+          "character": "priya",
+          "text": "...You want me to look over it after?",
+          "emotion": "carefully neutral"
+        },
+        {
+          "id": "s5b-7",
+          "character": "mo",
+          "text": "Sure. Whatever.",
+          "action": "shrug"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5c-pass-buck",
+      "lines": [
+        {
+          "id": "s5c-1",
+          "character": "player",
+          "text": "You should probably just ask Mr. Okafor tomorrow before class. He'll explain it better than I can."
+        },
+        {
+          "id": "s5c-2",
+          "character": "mo",
+          "text": "...Yeah. Probably.",
+          "action": "small nod, face falling slightly"
+        },
+        {
+          "id": "s5c-3",
+          "character": "mo",
+          "text": "I mean — I don't love the idea of, like, announcing I'm behind. But sure."
+        },
+        {
+          "id": "s5c-4",
+          "character": "player",
+          "text": "It's not announcing. It's just asking a question."
+        },
+        {
+          "id": "s5c-5",
+          "character": "mo",
+          "text": "Yeah. No, I know.",
+          "action": "goes back to his notebook, doesn't bring it up again"
+        },
+        {
+          "id": "s5c-6",
+          "character": "priya",
+          "text": "...He's not gonna ask.",
+          "emotion": "quiet, almost to herself"
+        },
+        {
+          "id": "s5c-7",
+          "character": "player",
+          "text": "What?"
+        },
+        {
+          "id": "s5c-8",
+          "character": "priya",
+          "text": "Nothing. Never mind."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-discovery",
+      "lines": [
+        {
+          "id": "s6-1",
+          "character": "NARRATOR",
+          "text": "Group chat, 9:47 PM. Priya sends Dez's slides for review."
+        },
+        {
+          "id": "s6-2",
+          "character": "priya",
+          "text": "dez sent his slides finally, can everyone look before tmrw"
+        },
+        {
+          "id": "s6-3",
+          "character": "NARRATOR",
+          "text": "Charlie scrolls through. Something's off — the phrasing is too smooth, too clean, in a way none of Dez's texts ever are."
+        },
+        {
+          "id": "s6-4",
+          "character": "player",
+          "text": "Wait. I've read this sentence before. Word for word.",
+          "emotion": "internal"
+        },
+        {
+          "id": "s6-5",
+          "character": "player",
+          "text": "dez did you copy this from somewhere"
+        },
+        {
+          "id": "s6-6",
+          "character": "dez",
+          "text": "??? no. I mean — I looked stuff up, that's not the same thing"
+        },
+        {
+          "id": "s6-7",
+          "character": "priya",
+          "text": "charlie what do you mean"
+        },
+        {
+          "id": "s6-8",
+          "character": "player",
+          "text": "like literally paste this sentence into a search bar. it's word for word from a site."
+        },
+        {
+          "id": "s6-9",
+          "character": "NARRATOR",
+          "text": "A long pause. The typing bubble appears. Disappears. Appears again."
+        },
+        {
+          "id": "s6-10",
+          "character": "dez",
+          "text": "okay maybe I didn't change enough of it. it's basically the same info, who cares"
+        },
+        {
+          "id": "s6-11",
+          "character": "dez",
+          "text": "we're not gonna get caught. it's a middle school project not the news"
+        },
+        {
+          "id": "s6-12",
+          "character": "priya",
+          "text": "that's not really the point though"
+        },
+        {
+          "id": "s6-13",
+          "character": "mo",
+          "text": "...",
+          "emotion": "first message all night"
+        },
+        {
+          "id": "s6-14",
+          "character": "NARRATOR",
+          "text": "Just three dots. No words. Somehow that says the most."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7a-redo-together",
+      "lines": [
+        {
+          "id": "s7a-1",
+          "character": "NARRATOR",
+          "text": "Video call, past 10 PM. Everyone looks tired. Dez looks cornered."
+        },
+        {
+          "id": "s7a-2",
+          "character": "player",
+          "text": "I'm not trying to get you in trouble. I just — we can't turn this in like this. It's not fair to the rest of us either."
+        },
+        {
+          "id": "s7a-3",
+          "character": "dez",
+          "text": "It's fine. I'll just... reword it more.",
+          "emotion": "clipped, arms crossed"
+        },
+        {
+          "id": "s7a-4",
+          "character": "player",
+          "text": "That's not really fixing it, though. You still don't actually know the material if it's just reworded."
+        },
+        {
+          "id": "s7a-5",
+          "character": "dez",
+          "text": "...Yeah. I know.",
+          "action": "long pause, quieter"
+        },
+        {
+          "id": "s7a-6",
+          "character": "dez",
+          "text": "I just — I didn't get it as fast as everyone else. Figured it was easier to find something that already sounded smart."
+        },
+        {
+          "id": "s7a-7",
+          "character": "priya",
+          "text": "You could've just said that.",
+          "emotion": "gentler than usual"
+        },
+        {
+          "id": "s7a-8",
+          "character": "dez",
+          "text": "Yeah, well. Kind of hard to say the smart group thinks you're not smart enough.",
+          "action": "shrugs"
+        },
+        {
+          "id": "s7a-9",
+          "character": "mo",
+          "text": "...Nobody thinks that.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s7a-10",
+          "character": "NARRATOR",
+          "text": "It's the most Mo's said all week. Dez doesn't quite know what to do with it."
+        },
+        {
+          "id": "s7a-11",
+          "character": "player",
+          "text": "Okay. So let's just — go through it. Together. Right now. It's ugly, but it's ours."
+        },
+        {
+          "id": "s7a-12",
+          "character": "dez",
+          "text": "...Fine. Let's just get it over with.",
+          "action": "exhales"
+        },
+        {
+          "id": "s7a-13",
+          "character": "NARRATOR",
+          "text": "It takes two more hours. Nobody complains, exactly. By the end, the slides are messier, less polished — and completely theirs."
+        },
+        {
+          "id": "s7a-14",
+          "character": "priya",
+          "text": "I hate that I'm gonna remember this part of the project more than any other part.",
+          "action": "yawning"
+        },
+        {
+          "id": "s7a-15",
+          "character": "dez",
+          "text": "...Thanks. For not just, like, telling everyone.",
+          "emotion": "small, real"
+        },
+        {
+          "id": "s7a-16",
+          "character": "player",
+          "text": "Wasn't gonna."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7b-tell-teacher",
+      "lines": [
+        {
+          "id": "s7b-1",
+          "character": "NARRATOR",
+          "text": "Hallway, before first bell. Mr. Okafor's unlocking his classroom door."
+        },
+        {
+          "id": "s7b-2",
+          "character": "player",
+          "text": "Mr. Okafor? Can I talk to you for a sec?"
+        },
+        {
+          "id": "s7b-3",
+          "character": "mr-okafor",
+          "text": "Charlie Osei. That's a full-name kind of walk-up. What's going on?",
+          "action": "turns, key still in the lock"
+        },
+        {
+          "id": "s7b-4",
+          "character": "player",
+          "text": "It's about the group project. Dez's section — some of it's copied. Word-for-word from a website. We just found out last night."
+        },
+        {
+          "id": "s7b-5",
+          "character": "mr-okafor",
+          "text": "I appreciate you telling me. That's not nothing, coming here before class.",
+          "action": "taps two fingers against the door"
+        },
+        {
+          "id": "s7b-6",
+          "character": "player",
+          "text": "I'm not trying to get him in trouble. I just — we need time to actually fix it right, and there's not much time left."
+        },
+        {
+          "id": "s7b-7",
+          "character": "mr-okafor",
+          "text": "Anyone else know you're telling me this?"
+        },
+        {
+          "id": "s7b-8",
+          "character": "player",
+          "text": "No. Just me."
+        },
+        {
+          "id": "s7b-9",
+          "character": "mr-okafor",
+          "text": "Okay. I'll give the group an extra evening. And I'll have a word with Dez — not about you. About the work.",
+          "emotion": "considering"
+        },
+        {
+          "id": "s7b-10",
+          "character": "player",
+          "text": "Okay. Thank you."
+        },
+        {
+          "id": "s7b-11",
+          "character": "mr-okafor",
+          "text": "Nice recovery, by the way. Most groups just would've bluffed and hoped nobody noticed. You noticed the difference. Good."
+        },
+        {
+          "id": "s7b-12",
+          "character": "player",
+          "text": "We'll see if Dez agrees with you.",
+          "emotion": "uneasy smile"
+        },
+        {
+          "id": "s7b-13",
+          "character": "mr-okafor",
+          "text": "That's not really the part you can control.",
+          "action": "almost smiles"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7c-let-it-go",
+      "lines": [
+        {
+          "id": "s7c-1",
+          "character": "NARRATOR",
+          "text": "11:58 PM. The chat's gone quiet."
+        },
+        {
+          "id": "s7c-2",
+          "character": "priya",
+          "text": "so are we just... doing this? like this?"
+        },
+        {
+          "id": "s7c-3",
+          "character": "NARRATOR",
+          "text": "No response from Charlie. The message just sits there, the little 'delivered' under it feeling louder than it should."
+        },
+        {
+          "id": "s7c-4",
+          "character": "priya",
+          "text": "ok"
+        },
+        {
+          "id": "s7c-5",
+          "character": "NARRATOR",
+          "text": "Mo doesn't respond at all. Not even three dots this time."
+        },
+        {
+          "id": "s7c-6",
+          "character": "player",
+          "text": "It's late. Everyone's tired. Maybe it'll be fine. Maybe.",
+          "emotion": "internal"
+        },
+        {
+          "id": "s7c-7",
+          "character": "NARRATOR",
+          "text": "The slides stay exactly as they are."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8-presentation-day",
+      "lines": [
+        {
+          "id": "s8-1",
+          "character": "NARRATOR",
+          "text": "The auditorium. Whole grade, plus a panel of teachers at a folding table up front. Priya's practically vibrating; Dez looks weirdly calm for once."
+        },
+        {
+          "id": "s8-2",
+          "character": "priya",
+          "text": "Okay, remember, we breathe between slides, we do not talk over each other, we—",
+          "emotion": "whispering"
+        },
+        {
+          "id": "s8-3",
+          "character": "dez",
+          "text": "Priya. We got this.",
+          "emotion": "whispering back"
+        },
+        {
+          "id": "s8-4",
+          "character": "priya",
+          "text": "Don't — don't say it'll be fine."
+        },
+        {
+          "id": "s8-5",
+          "character": "NARRATOR",
+          "text": "The presentation goes smoothly, slide after slide. Then Dez's section comes up."
+        },
+        {
+          "id": "s8-6",
+          "character": "mr-okafor",
+          "text": "Quick follow-up on that middle slide — can you walk us through why that cause leads to that effect? Not just what happens, but why.",
+          "action": "leans forward from the panel table"
+        },
+        {
+          "id": "s8-7",
+          "character": "NARRATOR",
+          "text": "Dez freezes for half a second. Just half a second. But it's there."
+        },
+        {
+          "id": "s8-8",
+          "character": "dez",
+          "text": "Right, so, basically — it's kind of a direct... result. Of the, uh—",
+          "action": "recovering too fast, too smooth"
+        },
+        {
+          "id": "s8-9",
+          "character": "NARRATOR",
+          "text": "He trails off. The panel waits. Priya's pen has stopped tapping entirely."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9a-honest-answer",
+      "lines": [
+        {
+          "id": "s9a-1",
+          "character": "player",
+          "text": "So, honestly — this was the part that gave us the most trouble as a group. We understand that A sets off a chain, but the exact mechanism between A and B, we're still not a hundred percent solid on."
+        },
+        {
+          "id": "s9a-2",
+          "character": "player",
+          "text": "Based on what we did find, it's probably related to the timing difference — but we didn't have a source solid enough to say it for sure, so we didn't want to present it like we did."
+        },
+        {
+          "id": "s9a-3",
+          "character": "NARRATOR",
+          "text": "The panel exchanges a look. One of them actually smiles."
+        },
+        {
+          "id": "s9a-4",
+          "character": "mr-okafor",
+          "text": "That's a more honest answer than half the projects I've seen today. Good."
+        },
+        {
+          "id": "s9a-5",
+          "character": "dez",
+          "text": "...Yeah. What she said.",
+          "emotion": "quiet, a little embarrassed"
+        },
+        {
+          "id": "s9a-6",
+          "character": "NARRATOR",
+          "text": "It's not a smooth save. But it's a real one, and somehow that lands better."
+        },
+        {
+          "id": "s9a-7",
+          "character": "priya",
+          "text": "Okay. Okay, that was — good. That was good.",
+          "emotion": "whispering, relieved"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9b-bluff",
+      "lines": [
+        {
+          "id": "s9b-1",
+          "character": "dez",
+          "text": "—so, structurally, it's basically the backbone of the whole argument, which is why—",
+          "action": "still talking, digging deeper"
+        },
+        {
+          "id": "s9b-2",
+          "character": "mr-okafor",
+          "text": "Mm. Interesting. Thank you.",
+          "emotion": "mild, unreadable",
+          "action": "writes something down"
+        },
+        {
+          "id": "s9b-3",
+          "character": "NARRATOR",
+          "text": "The moment passes. The presentation moves on. But something about it doesn't sit right."
+        },
+        {
+          "id": "s9b-4",
+          "character": "NARRATOR",
+          "text": "After, Priya won't quite meet Charlie's eyes. Mo stares at the floor, hands in his pockets."
+        },
+        {
+          "id": "s9b-5",
+          "character": "player",
+          "text": "We didn't get caught. Why doesn't that feel like winning?",
+          "emotion": "internal"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10-aftermath",
+      "lines": [
+        {
+          "id": "s10-1",
+          "character": "NARRATOR",
+          "text": "Grades posted. The group did fine — 'fine' meaning something different depending on how the last three weeks went."
+        },
+        {
+          "id": "s10-2",
+          "character": "NARRATOR",
+          "text": "Mo catches up to Charlie at her locker, hands shoved in his pockets."
+        },
+        {
+          "id": "s10-3",
+          "character": "mo",
+          "text": "Hey. Uh — got a sec?"
+        },
+        {
+          "id": "s10-4",
+          "character": "player",
+          "text": "Yeah, of course."
+        },
+        {
+          "id": "s10-5",
+          "character": "mo",
+          "text": "I mean — I don't really know how to say this without it sounding weird. So I'm just gonna say it weird."
+        },
+        {
+          "id": "s10-6",
+          "character": "player",
+          "text": "That's usually how I do it too.",
+          "emotion": "small laugh"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-integrity",
+      "lines": [
+        {
+          "id": "s11i-1",
+          "character": "NARRATOR",
+          "text": "Hallway, after the last bell. Lockers slamming, the ordinary noise of everyone else's day."
+        },
+        {
+          "id": "s11i-2",
+          "character": "player",
+          "text": "It was messy. Actually messy, more than once. People almost took the easy way out. I almost did too."
+        },
+        {
+          "id": "s11i-3",
+          "character": "mo",
+          "text": "But you didn't."
+        },
+        {
+          "id": "s11i-4",
+          "character": "player",
+          "text": "Not the whole way, no."
+        },
+        {
+          "id": "s11i-5",
+          "character": "mo",
+          "text": "Yeah. I noticed.",
+          "emotion": "small, real smile"
+        },
+        {
+          "id": "s11i-6",
+          "character": "priya",
+          "text": "Okay, I'm adding you to the group chat for next semester's project. Before you even ask. Don't read too much into it.",
+          "action": "already texting"
+        },
+        {
+          "id": "s11i-7",
+          "character": "player",
+          "text": "Wouldn't dream of it.",
+          "emotion": "smiling"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-growth",
+      "lines": [
+        {
+          "id": "s11g-1",
+          "character": "NARRATOR",
+          "text": "Hallway, after the last bell. The kind of quiet that only happens right after everyone else has gone home."
+        },
+        {
+          "id": "s11g-2",
+          "character": "player",
+          "text": "It wasn't perfect. There's stuff I'd do differently if we did it again."
+        },
+        {
+          "id": "s11g-3",
+          "character": "mo",
+          "text": "Like what?"
+        },
+        {
+          "id": "s11g-4",
+          "character": "player",
+          "text": "I don't know. Said things sooner, maybe. Instead of waiting until it was already a problem."
+        },
+        {
+          "id": "s11g-5",
+          "character": "mo",
+          "text": "At least you're saying it.",
+          "emotion": "shrug, appreciative"
+        },
+        {
+          "id": "s11g-6",
+          "character": "priya",
+          "text": "That's more self-awareness than most eighth graders manage in a whole year, for the record."
+        },
+        {
+          "id": "s11g-7",
+          "character": "player",
+          "text": "I'll take it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-uneasy",
+      "lines": [
+        {
+          "id": "s11u-1",
+          "character": "NARRATOR",
+          "text": "Hallway, after the last bell. Charlie keeps her voice light, easy — the way she always does when she'd rather not."
+        },
+        {
+          "id": "s11u-2",
+          "character": "player",
+          "text": "Grade turned out fine, though. That's the main thing, right?"
+        },
+        {
+          "id": "s11u-3",
+          "character": "mo",
+          "text": "...Yeah. Sure.",
+          "emotion": "slow nod, unreadable"
+        },
+        {
+          "id": "s11u-4",
+          "character": "NARRATOR",
+          "text": "He starts to walk off, then stops, like he almost said something else. He doesn't."
+        },
+        {
+          "id": "s11u-5",
+          "character": "player",
+          "text": "He wanted to talk about it. Actually talk. And I changed the subject.",
+          "emotion": "internal"
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"I mean... I think we should just do our own thing. Actually write it ourselves.\""
+        },
+        {
+          "id": "b",
+          "text": "\"Whatever's faster, I guess. It's not that deep.\""
+        },
+        {
+          "id": "c",
+          "text": "\"What if we just use hers for structure, but do the actual research ourselves?\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c1-a-1",
+            "character": "player",
+            "text": "I mean... I think we should just do our own thing. Actually write it ourselves."
+          },
+          {
+            "id": "c1-a-2",
+            "character": "dez",
+            "text": "Bold. Okay.",
+            "emotion": "eyebrows up"
+          }
+        ],
+        "b": [
+          {
+            "id": "c1-b-1",
+            "character": "player",
+            "text": "Whatever's faster, I guess.",
+            "action": "shrugs"
+          },
+          {
+            "id": "c1-b-2",
+            "character": "dez",
+            "text": "See, this is why I like this group.",
+            "action": "already pulling out his phone"
+          }
+        ],
+        "c": [
+          {
+            "id": "c1-c-1",
+            "character": "player",
+            "text": "What if we just use hers for, like, the structure? But we actually do the research part ourselves."
+          },
+          {
+            "id": "c1-c-2",
+            "character": "dez",
+            "text": "...Fine. Whatever's faster.",
+            "action": "considers, shrugs"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Okay, no — show me what you've got. We'll go through it together.\""
+        },
+        {
+          "id": "b",
+          "text": "\"Just copy the summary from the textbook, tweak a few words. Easier for everyone.\""
+        },
+        {
+          "id": "c",
+          "text": "\"You should just ask Mr. Okafor tomorrow. He'll explain it better than us.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2-a-1",
+            "character": "player",
+            "text": "Okay, no — show me what you've got. We'll go through it together."
+          },
+          {
+            "id": "c2-a-2",
+            "character": "mo",
+            "text": "...Yeah? Okay.",
+            "emotion": "surprised pause"
+          }
+        ],
+        "b": [
+          {
+            "id": "c2-b-1",
+            "character": "player",
+            "text": "Honestly? Just copy the summary from the textbook, tweak a couple words. Nobody's gonna dig that deep."
+          },
+          {
+            "id": "c2-b-2",
+            "character": "mo",
+            "text": "...Yeah. Okay.",
+            "action": "writes it down, doesn't look up"
+          }
+        ],
+        "c": [
+          {
+            "id": "c2-c-1",
+            "character": "player",
+            "text": "You should probably just ask Mr. Okafor tomorrow. He'll explain it better than any of us."
+          },
+          {
+            "id": "c2-c-2",
+            "character": "mo",
+            "text": "...Yeah. Probably.",
+            "emotion": "small, controlled"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"dez call me. just us.\""
+        },
+        {
+          "id": "b",
+          "text": "\"I'm gonna talk to Okafor before class — not to get you in trouble, just so we have time to fix it.\""
+        },
+        {
+          "id": "c",
+          "text": "\"It's late. Let's just... deal with it tomorrow.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3-a-1",
+            "character": "player",
+            "text": "dez call me. just us."
+          },
+          {
+            "id": "c3-a-2",
+            "character": "dez",
+            "text": "...fine"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3-b-1",
+            "character": "player",
+            "text": "I'm gonna talk to Okafor before class. not to get you in trouble, just — we need more time to fix it right."
+          },
+          {
+            "id": "c3-b-2",
+            "character": "dez",
+            "text": "seriously?"
+          },
+          {
+            "id": "c3-b-3",
+            "character": "player",
+            "text": "seriously."
+          }
+        ],
+        "c": [
+          {
+            "id": "c3-c-1",
+            "character": "player",
+            "text": "it's late. let's just... deal with it tomorrow"
+          },
+          {
+            "id": "c3-c-2",
+            "character": "priya",
+            "text": "charlie"
+          },
+          {
+            "id": "c3-c-3",
+            "character": "NARRATOR",
+            "text": "The message sits there, unanswered. Mo doesn't respond at all."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Actually, can I jump in? That part gave our whole group trouble — I can walk through what we do understand.\""
+        },
+        {
+          "id": "b",
+          "text": "Say nothing. Let Dez keep talking."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4-a-1",
+            "character": "player",
+            "text": "Actually, can I jump in? That part gave our whole group some trouble — I can walk through what we do understand, and where we got stuck."
+          },
+          {
+            "id": "c4-a-2",
+            "character": "mr-okafor",
+            "text": "Go ahead.",
+            "action": "small nod"
+          }
+        ],
+        "b": [
+          {
+            "id": "c4-b-1",
+            "character": "player",
+            "text": "",
+            "action": "says nothing, stays still"
+          },
+          {
+            "id": "c4-b-2",
+            "character": "dez",
+            "text": "—so it's basically a direct cause, like a one-to-one thing, and that's why it's significant, structurally speaking—",
+            "action": "keeps talking, faster"
+          },
+          {
+            "id": "c4-b-3",
+            "character": "NARRATOR",
+            "text": "A teacher's eyebrow lifts. Just slightly."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"There were, like, three points where this could've gone really wrong. Doing it right actually mattered.\""
+        },
+        {
+          "id": "b",
+          "text": "\"We got a good grade, right? That's what matters.\""
+        },
+        {
+          "id": "c",
+          "text": "\"It wasn't perfect. There's stuff I'd do differently.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c5-a-1",
+            "character": "player",
+            "text": "Honestly? There were, like, three different points where this could've gone really wrong. And it mattered a lot that it didn't — not just for the grade."
+          },
+          {
+            "id": "c5-a-2",
+            "character": "mo",
+            "text": "...Yeah. I noticed.",
+            "emotion": "quiet"
+          }
+        ],
+        "b": [
+          {
+            "id": "c5-b-1",
+            "character": "player",
+            "text": "I mean, we got a good grade, right? That's what matters."
+          },
+          {
+            "id": "c5-b-2",
+            "character": "mo",
+            "text": "...Yeah. Sure.",
+            "emotion": "slow nod, unreadable"
+          }
+        ],
+        "c": [
+          {
+            "id": "c5-c-1",
+            "character": "player",
+            "text": "It wasn't perfect. There's stuff I'd do differently if we did it again."
+          },
+          {
+            "id": "c5-c-2",
+            "character": "mo",
+            "text": "...At least you're saying it.",
+            "emotion": "small, almost surprised"
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-11-epilogue-integrity",
+      "branchId": "branch-integrity",
+      "lines": [
+        {
+          "id": "bi-int-1",
+          "character": "mo",
+          "text": "You told Okafor. About Dez's slides. That's not nothing, doing that when you knew he'd be mad."
+        },
+        {
+          "id": "bi-int-2",
+          "character": "player",
+          "text": "He's still kind of weird with me. But it got fixed. That's what mattered."
+        },
+        {
+          "id": "bi-int-3",
+          "character": "priya",
+          "text": "For the record — I was terrified you'd told him and it would blow up the whole group. It didn't. So. Thank you."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-integrity",
+      "branchId": "branch-negotiated",
+      "lines": [
+        {
+          "id": "bi-neg-1",
+          "character": "mo",
+          "text": "I mean, you didn't rat anyone out. You just... made us actually fix it. Together."
+        },
+        {
+          "id": "bi-neg-2",
+          "character": "player",
+          "text": "Two AM, rewriting Dez's slides together. Never doing that again. Probably."
+        },
+        {
+          "id": "bi-neg-3",
+          "character": "priya",
+          "text": "It worked, though. That's the annoying part. The middle way actually worked."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-integrity",
+      "branchId": "branch-peer-pressure",
+      "lines": [
+        {
+          "id": "bi-pp-1",
+          "character": "mo",
+          "text": "You didn't say much, most of the project. Kind of surprised you're saying all this now."
+        },
+        {
+          "id": "bi-pp-2",
+          "character": "player",
+          "text": "Yeah. I know. I'm working on it."
+        },
+        {
+          "id": "bi-pp-3",
+          "character": "priya",
+          "text": "It's a start.",
+          "emotion": "careful"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-growth",
+      "branchId": "branch-integrity",
+      "lines": [
+        {
+          "id": "bg-int-1",
+          "character": "mo",
+          "text": "You told Okafor, you covered for Dez in front of the whole panel — and you're still saying you'd do it differently?"
+        },
+        {
+          "id": "bg-int-2",
+          "character": "player",
+          "text": "There's always something. I could've said something to Dez sooner. Before it got to the plagiarism part."
+        },
+        {
+          "id": "bg-int-3",
+          "character": "priya",
+          "text": "Nobody's perfect at this. You were pretty close, though."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-growth",
+      "branchId": "branch-negotiated",
+      "lines": [
+        {
+          "id": "bg-neg-1",
+          "character": "mo",
+          "text": "I mean, you kept trying to find the middle of everything. That's basically the whole story."
+        },
+        {
+          "id": "bg-neg-2",
+          "character": "player",
+          "text": "Yeah. Didn't always land, though."
+        },
+        {
+          "id": "bg-neg-3",
+          "character": "priya",
+          "text": "It landed enough."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-growth",
+      "branchId": "branch-peer-pressure",
+      "lines": [
+        {
+          "id": "bg-pp-1",
+          "character": "mo",
+          "text": "...Yeah. I mean, there were a couple points where it felt like nobody wanted to say anything. Including you."
+        },
+        {
+          "id": "bg-pp-2",
+          "character": "player",
+          "text": "I know. I noticed that too. Kind of late."
+        },
+        {
+          "id": "bg-pp-3",
+          "character": "priya",
+          "text": "At least you're noticing now.",
+          "emotion": "quiet"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-uneasy",
+      "branchId": "branch-integrity",
+      "lines": [
+        {
+          "id": "bu-int-1",
+          "character": "mo",
+          "text": "...Yeah. Sure.",
+          "emotion": "nods slowly"
+        },
+        {
+          "id": "bu-int-2",
+          "character": "NARRATOR",
+          "text": "He starts to walk off, then stops, like he almost said something else — something about how the two of them actually got Dez to redo it right."
+        },
+        {
+          "id": "bu-int-3",
+          "character": "player",
+          "text": "He wanted to talk about it. The real part. And I changed the subject anyway.",
+          "emotion": "internal"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-uneasy",
+      "branchId": "branch-negotiated",
+      "lines": [
+        {
+          "id": "bu-neg-1",
+          "character": "mo",
+          "text": "Cool. Yeah. Grade's good.",
+          "action": "starts to walk off"
+        },
+        {
+          "id": "bu-neg-2",
+          "character": "player",
+          "text": "We did the hard part right, in the middle of all that. Feels weird not saying that out loud.",
+          "emotion": "internal"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11-epilogue-uneasy",
+      "branchId": "branch-peer-pressure",
+      "lines": [
+        {
+          "id": "bu-pp-1",
+          "character": "mo",
+          "text": "...Yeah. Guess it worked out.",
+          "emotion": "quiet, unreadable"
+        },
+        {
+          "id": "bu-pp-2",
+          "character": "NARRATOR",
+          "text": "He walks off before she can find anything else to say."
+        },
+        {
+          "id": "bu-pp-3",
+          "character": "player",
+          "text": "It worked out. So why does it feel like something's missing.",
+          "emotion": "internal"
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Charlie deflects with humor and hedges ('I mean, maybe it's just me') right up until she has to actually commit to a choice — her choice-point lines are noticeably more direct than her ambient dialogue, which is intentional; the moments she can't soften are the moments that matter. Dez's confidence is loudest right before he's cornered — his lines get shorter and less punctuated ('...Yeah. I know.') the closer he gets to an honest admission. Priya's speech speeds up under stress (run-on sentences, precise vocab like 'that's not an insignificant risk' energy) and then she catches herself and clips it short. Mo almost never initiates dialogue with full sentences — his lines trail off or hedge ('I don't really get this part' instead of asking for help) until he's earned enough trust to make a joke, at which point his humor is drier and more confident than his silence suggested. Mr. Okafor never over-explains; his approval is always understated ('Good.') and his questions do the work his statements could've done. NARRATOR lines are used sparingly, only to carry physical/scene information that can't be shown through dialogue, keeping focus on voice.",
+  "alternativeLines": [
+    {
+      "lineId": "s9a-2",
+      "alternatives": [
+        "We think it might be about timing, but we couldn't find a source solid enough to say that for sure, so we didn't want to just guess out loud.",
+        "Honestly, we ran out of time to nail that part down completely, and I'd rather say that than make something up."
+      ],
+      "reasoning": "Keeps the honest-answer moment specific and age-appropriate without requiring the writer to invent believable in-universe science content that might date the script."
+    },
+    {
+      "lineId": "s7a-8",
+      "alternatives": [
+        "Yeah, well. Try telling the smart group you're not smart enough and see how that goes.",
+        "Yeah. It's easier to fake it than to say I didn't get it as fast as everybody else."
+      ],
+      "reasoning": "Dez's insecurity needs to land as a genuine crack in his bravado, not a speech — these alternatives keep it clipped and defensive rather than eloquent, which fits his established pattern of getting 'short and clipped' when cornered."
+    },
+    {
+      "lineId": "s11u-2",
+      "alternatives": [
+        "So, we're good, right? Grade came back fine.",
+        "Anyway — decent grade. Can't complain."
+      ],
+      "reasoning": "Alternative phrasing for the deflection in the uneasy ending, in case 'that's the main thing, right?' reads too on-the-nose about the theme rather than sounding like natural subject-changing."
+    }
+  ]
+}

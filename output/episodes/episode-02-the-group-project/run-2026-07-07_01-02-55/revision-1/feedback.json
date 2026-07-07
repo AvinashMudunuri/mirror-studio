@@ -1,0 +1,56 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome branch 'branch-integrity' has incomplete triggeredBy coverage. It lists ['choice-1:a','choice-3:b','choice-4:a'] but does not include any choice-2 or choice-5 options. This creates ambiguity about which branch is active if a player chooses choice-1:a, then choice-2:a, then choice-3:b, then choice-4:a, then choice-5:a. — Suggested fix: Update to: ['choice-1:a','choice-2:a','choice-3:b','choice-4:a','choice-5:a'] to fully specify the integrity path (location: outcomes[0].triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome branch 'branch-negotiated-teamwork' has incomplete triggeredBy coverage. It lists ['choice-1:c','choice-2:a','choice-3:a'] but does not include any choice-4 or choice-5 options. This creates ambiguity about which branch is active if a player reaches choice-4 or choice-5 via this path. — Suggested fix: Update to: ['choice-1:c','choice-2:a','choice-3:a','choice-4:a','choice-5:c'] to fully specify the negotiated teamwork path (location: outcomes[2].triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Unreachable outcome branch state. If a player chooses choice-1:a, choice-2:a, choice-3:b, choice-4:b, choice-5:b, no outcome branch in the outcomes array will be active. The branch-integrity branch requires choice-3:b and choice-4:a, but the player chose choice-4:b. The branch-peer-pressure branch requires choice-1:b, but the player chose choice-1:a. — Suggested fix: Either: (1) Expand the triggeredBy arrays to cover all possible choice combinations, or (2) Implement a fallback logic where the most recently triggered branch remains active if a new choice doesn't match any branch's triggeredBy conditions. (location: outcomes array, choice path analysis)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-11-epilogue-uneasy has no valid exit path. It transitions to END via defaultNextScene, but branchDialogue entries reference it with branch conditions that never resolve to a playable state. — Suggested fix: Either: (1) Add branchDialogue entries only for scenes that are actually reachable via outcome branches, or (2) Ensure at least one outcome branch includes choice paths that lead to scene-11-epilogue-uneasy. Currently, choice-5 option 'b' leads to scene-11-epilogue-uneasy, but no outcome branch is triggered by the path that includes choice-5:b. (location: scenes[10].id, branchDialogue entries for scene-11-epilogue-uneasy)",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome branch triggering logic is incomplete. The 'branch-peer-pressure' outcome lists triggeredBy: ['choice-1:b','choice-2:b','choice-3:c','choice-4:b'], but this path does not include choice-5. If a player follows this path and reaches choice-5, no outcome branch will be active to select branchDialogue variants. — Suggested fix: Add choice-5 options to each outcome's triggeredBy array. For example, branch-peer-pressure should include 'choice-5:b' in its triggeredBy list if it's meant to handle the 'keep it light' path. (location: outcomes[1].triggeredBy, choice-5 resolution)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Unreachable scene detected. Scene scene-11-epilogue-uneasy can only be reached via choice-5 option 'b' (nextScene: 'scene-11-epilogue-uneasy'), but the branchDialogue for this scene references outcome branches (branch-integrity, branch-peer-pressure, branch-negotiated-teamwork) that may not be active when this scene is reached, depending on earlier choices. — Suggested fix: This is actually correct behavior — branchDialogue should have variants for all possible active branches. However, ensure that the rendering pipeline correctly selects the active branch variant based on the player's choice history. If the pipeline does not support this, simplify branchDialogue to only include the most likely branch variant. (location: choice-5.options[1].nextScene, branchDialogue[scene-11-epilogue-uneasy])",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Missing branchDialogue coverage. Scene scene-11-epilogue-growth has branchDialogue entries, but the triggeredBy conditions in the outcomes array do not guarantee that all three outcome branches can reach this scene. — Suggested fix: Clarify the mapping: choice-5 option 'c' leads to scene-11-epilogue-growth. Ensure that all outcome branches that can reach choice-5 are documented. Add explicit documentation or update outcomes to clarify which branches reach which ending scenes. (location: outcomes array, branchDialogue[scene-11-epilogue-growth])",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice-5 branchDialogue references are incomplete. The choiceDialogue array for choice-5 has responseDialogue for options a, b, and c, but branchDialogue entries for the resulting scenes (scene-11-epilogue-integrity, scene-11-epilogue-uneasy, scene-11-epilogue-growth) do not have variants for all possible outcome branches. — Suggested fix: Add explicit documentation in the outcomes array or in a separate mapping document that clarifies: 'branch-integrity reaches scene-11-epilogue-integrity', 'branch-peer-pressure reaches scene-11-epilogue-uneasy', 'branch-negotiated-teamwork reaches scene-11-epilogue-growth'. Alternatively, update branchDialogue to only include variants for branches that actually reach each scene. (location: choiceDialogue[choice-5].responseDialogue vs branchDialogue entries)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome branch 'branch-peer-pressure' has incomplete triggeredBy coverage. It lists ['choice-1:b','choice-2:b','choice-3:c','choice-4:b'] but does not include any choice-5 option. If a player reaches choice-5 via this path, the active branch will still be 'branch-peer-pressure', but branchDialogue for the ending scenes may not have variants for this branch. — Suggested fix: Update to: ['choice-1:b','choice-2:b','choice-3:c','choice-4:b','choice-5:b'] (location: outcomes[1].triggeredBy)",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

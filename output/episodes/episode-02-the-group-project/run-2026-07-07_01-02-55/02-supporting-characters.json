@@ -1,0 +1,379 @@
+[
+  {
+    "character": {
+      "id": "mr-okafor",
+      "name": "Emeka Okafor",
+      "age": 41,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Tall, solid build, close-cropped greying hair, favors cardigans over button-downs even when it's warm out. Reading glasses pushed up on his forehead more often than on his face.",
+        "distinctiveFeatures": [
+          "A chipped front tooth from a college basketball injury he'll tell you about if you ask twice",
+          "Keeps a coffee mug that says 'World's Okayest Teacher' — a gift from a former student, never replaced",
+          "Writes on the whiteboard in surprisingly small, neat handwriting for someone his size"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "steady",
+          "dry-humored",
+          "quietly perceptive",
+          "fair but not a pushover",
+          "tired in the specific way of someone who cares a lot"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 8,
+          "extraversion": 5,
+          "agreeableness": 7,
+          "neuroticism": 3
+        },
+        "mannerisms": [
+          "Taps two fingers on the desk when he's deciding how much to say",
+          "Pauses before answering a hard question — long enough that students notice",
+          "Calls students by their full first name when something matters, nicknames when it doesn't"
+        ],
+        "speechPatterns": [
+          "Understated, a little wry — rarely raises his voice, uses silence instead",
+          "Asks questions rather than giving answers when he wants a kid to think it through themselves",
+          "Occasional dad-adjacent puns that land better with the kids who already like him"
+        ],
+        "emotionalTendencies": "Calm on the surface, genuinely invested underneath. Doesn't perform warmth — shows it through consistency and attention. Gets quietly disappointed rather than angry, which lands harder with students than yelling would."
+      },
+      "background": {
+        "family": "Married, two kids of his own in elementary school — he mentions them rarely, but when he does it's clear they're why he's so patient with other people's kids.",
+        "interests": [
+          "basketball (played in college, coaches rec league on weekends)",
+          "true crime podcasts he pretends not to listen to",
+          "collecting vintage classroom maps"
+        ],
+        "strengths": [
+          "reads a room fast",
+          "genuinely wants kids to succeed, not just perform",
+          "good at giving someone room to fix their own mistake before it becomes a disaster"
+        ],
+        "struggles": [
+          "can be slow to intervene because he believes in letting kids work it out — sometimes too slow",
+          "carries more of his students' problems home than he admits to his wife",
+          "has a soft spot for the charismatic kids like Dez that occasionally makes him slower to call them out"
+        ],
+        "secrets": [
+          "He clocked Dez's pattern of shortcuts back in September and has been waiting for the right moment to address it rather than catching him in the act — Charlie's heads-up gives him the opening he needed"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get his students to care about the material, not just the grade",
+          "Run a group project that actually teaches collaboration instead of just producing a grade-book entry"
+        ],
+        "unconscious": [
+          "Prove to himself he can still reach kids without becoming the kind of teacher who just manages behavior instead of shaping it"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult, clear, plain — no jargon, no condescension. Speaks to 13-year-olds like they're capable of nuance.",
+        "sentenceComplexity": "Short, deliberate sentences. Trails off sometimes to let a student fill in the blank themselves.",
+        "emotionalExpressiveness": "Restrained but warm. Rarely explicit about feelings — communicates care through follow-up, not declarations.",
+        "examples": [
+          "\"Groups are groups. Nobody gets to pick their favorite people — that's not what this is for.\"",
+          "\"I appreciate you telling me. That's not nothing, coming here before class.\"",
+          "\"Nice recovery. Most groups just would've bluffed and hoped nobody noticed. You noticed the difference. Good.\""
+        ]
+      },
+      "storyRole": "The adult authority whose quiet fairness sets the stakes for the episode — his response to Charlie's honesty (rewarding it privately rather than making a public spectacle) models the exact behavior the episode wants the player to learn: that integrity doesn't have to be loud to matter, and that consequences can be humane rather than punitive.",
+      "arcPotential": [
+        "Episode 'Group Work': establishes his low-key fairness and becomes the trusted adult Charlie can go to without fear of things blowing up publicly",
+        "Future episode potential: a moment where Charlie has to decide whether to tell him something harder — testing whether the trust built here holds when the stakes are personal rather than academic"
+      ]
+    },
+    "designNotes": "Mr. Okafor is designed to avoid the 'wise mentor' cliché by being specific and a little flawed — he's slow to intervene sometimes, has a known soft spot for charismatic kids, and carries an unspoken awareness of Dez's pattern that he hasn't acted on yet. This makes his response to Charlie feel earned rather than automatic: he's not just handing out a moral lesson, he's relieved someone gave him the opening. His restraint (private word with Dez, extra evening, no public shaming) is the model for the episode's theme — that doing the right thing doesn't require a scene. Keeping him warm-but-dry rather than effusive keeps him age-appropriate as an adult figure who respects the kids without performing at them.",
+    "representationNotes": "Written as a Black male teacher without leaning on 'inspirational mentor' tropes common in media — he's a regular guy with a family, hobbies, and blind spots, whose authority comes from consistency rather than speechifying. His fairness is procedural and quiet rather than a Big Moment, which avoids the trope of the adult who exists solely to deliver a lesson to the protagonist."
+  },
+  {
+    "character": {
+      "id": "dez",
+      "name": "Dez Bellamy",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Tall for his age, broad-shouldered, moves like he's already late for something more interesting. Wears his older sister's hand-me-down varsity jacket like a trophy even though it's two sizes big.",
+        "distinctiveFeatures": [
+          "Chipped front tooth from a bike accident in fifth grade he's turned into a running joke",
+          "Always has one AirPod in, even when teachers tell him to take it out",
+          "Draws tiny cartoon faces in the margins of every worksheet he's supposed to be filling out"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "charismatic",
+          "conflict-allergic",
+          "quick-witted",
+          "secretly insecure about being 'smart enough'",
+          "loyal once he actually commits"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 3,
+          "extraversion": 9,
+          "agreeableness": 6,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Leans back in his chair until it's basically a physics experiment",
+          "Deflects with a joke half a second before anyone can call him out",
+          "Taps a pen against his knee in a rhythm when he's actually nervous, not bored"
+        ],
+        "speechPatterns": [
+          "Uses 'it's not that deep' as an all-purpose shield",
+          "Talks fast and confident right up until he's cornered, then gets clipped and short",
+          "Calls almost everyone 'bro' or by a nickname within five minutes of meeting them — it's a way of getting people on his side fast"
+        ],
+        "emotionalTendencies": "Dez performs ease. He's the kid who makes the room laugh so nobody looks too closely at whether he did the reading. Underneath the charm is a real fear of being seen as slow or 'not that smart' — his older sister was the golden-child straight-A type, and he learned early that being funny and fast got him further, faster, than being careful ever did. When actually cornered, the confidence cracks fast into defensiveness, then into a quieter, almost boyish embarrassment he hates people seeing."
+      },
+      "background": {
+        "family": "Middle kid of three. His older sister Jayla is a sophomore at the high school, hyper-organized, constantly held up by relatives as 'the smart one.' His mom works two jobs and doesn't have bandwidth to check homework closely — Dez has learned to fly under the radar rather than ask for help, because asking feels like admitting he can't keep up. His little brother idolizes him, which Dez likes more than he'd ever admit.",
+        "interests": [
+          "basketball (JV hopeful, works hard at this in a way he doesn't work at school)",
+          "making Spotify playlists for every mood and occasion",
+          "low-key really good at video editing, though he'd never call it a 'skill'"
+        ],
+        "strengths": [
+          "genuinely good at reading people and de-escalating tension",
+          "natural public speaker when he actually prepares",
+          "fiercely protective of people he considers 'his'"
+        ],
+        "struggles": [
+          "a real, quiet anxiety about being behind academically that he covers with jokes and shortcuts",
+          "conflict-avoidant in a different way than Charlie — he'll cut corners rather than sit with the discomfort of not knowing something",
+          "undiagnosed difficulty with reading comprehension that makes assignments take him three times as long as everyone assumes"
+        ],
+        "secrets": [
+          "He's genuinely scared he's 'not smart,' and shortcuts feel safer than finding out for sure",
+          "He didn't actually ask his sister for the files — he found them in her old Google Drive folder that never got un-shared, and has been sitting on that guilt"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "get through the project without looking dumb",
+          "keep the group easy and drama-free",
+          "protect his rep as the guy who's got it handled"
+        ],
+        "unconscious": [
+          "wants someone to actually believe he can do the work without cutting corners",
+          "craves being valued for something other than being 'the fun one'"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual, slang-forward, current without trying too hard — pop culture references land naturally, not performatively.",
+        "sentenceComplexity": "Short, punchy, deflecting. Gets more fragmented and clipped when actually nervous or caught.",
+        "emotionalExpressiveness": "Loud and easy on the surface, guarded underneath. Rarely says how he actually feels directly — shows it through jokes that land a little too close to the truth.",
+        "examples": [
+          "\"Relax, it's not that deep. We tweak some words, boom, done, we go get food.\"",
+          "\"...okay maybe I didn't 'ask' ask her. But she's not using it, so.\"",
+          "\"Yeah, no, I got it — I got it. Just gimme a sec.\" (said while very clearly not having it)",
+          "\"Man, whatever, let's just redo it. Took you long enough to say something.\""
+        ]
+      },
+      "storyRole": "Dez is the engine of the episode's central moral tension — his shortcut is the recurring test of Charlie's honesty, but he's written to be sympathetic, not villainous. His arc mirrors Charlie's: whether he'll let himself be seen as imperfect rather than perform confidence. The late-night rewrite scene is his real turning point — not because he's forced into it, but because Charlie's approach doesn't shame him, it gives him room to actually try.",
+      "arcPotential": [
+        "Future episode: Dez's academic struggles surface for real (maybe a reading support plan), and the question becomes whether he'll let anyone help him without deflecting",
+        "Future episode: Dez and his sister Jayla's relationship — the pressure of being 'the funny one' to her 'smart one,' and what happens if that dynamic gets challenged",
+        "Future episode: Dez in a leadership position (team captain, project lead) where he has to build the confidence to prepare rather than perform"
+      ]
+    },
+    "designNotes": "Dez risks becoming a 'lesson' about cheating if he's only defined by the shortcut. The fix was giving him a real, specific fear underneath the charm — not laziness, but a quiet conviction that he's not smart enough, learned from family comparison and an unaddressed learning difficulty. This reframes every 'shortcut' moment as self-protection rather than simple dishonesty, which makes his eventual choice to redo the work with Charlie feel earned rather than didactic. His humor and charisma are real and likable — the goal is that players like Dez even while being frustrated with him, which is closer to how real group project friction actually feels.",
+    "representationNotes": "Care was taken not to code Dez's academic shortcuts along racial stereotype lines (e.g., 'the Black kid who doesn't try') — his struggle is specifically tied to an unaddressed reading comprehension issue and sibling dynamics, not laziness or disinterest, and his strengths (emotional intelligence, video editing, basketball work ethic) show effort and competence in other domains. His family is working-class and stretched thin without being a poverty narrative or a deficit story — his mom's long hours are a fact of life, not a tragedy to be pitied. Avoid voicing him with exaggerated AAVE for 'flavor' — keep slang current, natural, and consistent with how actual 13-year-olds code-switch, not a costume."
+  },
+  {
+    "character": {
+      "id": "priya",
+      "name": "Priya Chen",
+      "age": 13,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Small and quick-moving, with the posture of someone always mentally reviewing a checklist. Wears her hair in a tight braid she re-does when stressed, glasses with a chipped corner she refuses to let her parents replace because 'they still work.'",
+        "distinctiveFeatures": [
+          "A color-coded planner she carries everywhere, rubber-banded shut, stuffed with sticky notes",
+          "Chews the end of her pen cap down to nothing during stressful moments",
+          "A small ink stain on her right hand she's had since fourth grade and calls 'permanent' as a joke"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "anxious overachiever",
+          "secretly relieved by shortcuts",
+          "fiercely responsible",
+          "dry-witted under pressure",
+          "conflict-avoidant but not silent"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 9,
+          "extraversion": 4,
+          "agreeableness": 7,
+          "neuroticism": 8
+        },
+        "mannerisms": [
+          "Taps her pen against her notebook in a steady rhythm when thinking",
+          "Re-reads her own sentences out loud under her breath, like she's grading herself",
+          "Physically flinches when someone says 'it'll be fine' — she's heard that before things weren't"
+        ],
+        "speechPatterns": [
+          "Talks fast when anxious, then catches herself and slows down deliberately",
+          "Uses precise, almost adult vocabulary when nervous ('that's not an insignificant risk') then undercuts it with a very 13-year-old aside",
+          "Deflects real feelings with logistics: 'We don't have time for this' instead of 'I'm scared'"
+        ],
+        "emotionalTendencies": "Priya's anxiety isn't decorative — it's load-bearing. She manages stress by controlling what she can (citations, formatting, deadlines) because the actual content of the group's honesty is out of her hands. She wants to do the right thing, but her first instinct when Dez offers a shortcut is relief, not alarm — one less thing she has to carry alone. That relief embarrasses her more than she'd ever admit, and it's the engine of her arc: learning that asking for help and telling the truth aren't the same as failing."
+      },
+      "background": {
+        "family": "Middle child of three, with an older sister at a competitive high school her parents mention constantly (not unkindly, just... a lot) and a younger brother who idolizes her. Her parents work long hours; Priya has quietly become the household's schedule-keeper by default, which bleeds into how she treats every group project like a household to manage.",
+        "interests": [
+          "organizing things nobody asked her to organize",
+          "true crime podcasts (ironic, given how much she hates confrontation)",
+          "baking elaborate desserts she never eats much of",
+          "her little brother's soccer games, which are the one place she doesn't bring her planner"
+        ],
+        "strengths": [
+          "relentless follow-through",
+          "sees problems before they happen",
+          "genuinely wants her group to succeed, not just her grade"
+        ],
+        "struggles": [
+          "equates being needed with being valuable",
+          "physically can't let a mistake sit uncorrected, even at 11pm",
+          "assumes if she's not managing everything, everything will fall apart"
+        ],
+        "secrets": [
+          "She's the one who almost suggested using Dez's sister's project first, weeks before he brought it up — then chickened out and said nothing, which is why she looks 'torn' rather than surprised when he offers it",
+          "She keeps a note in her phone titled 'stuff I didn't say' that she's never shown anyone"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get a grade that reflects the effort she's putting in",
+          "Keep the group from falling apart or embarrassing itself publicly",
+          "Be seen as reliable"
+        ],
+        "unconscious": [
+          "Wants permission to not be the only one holding things together",
+          "Needs to learn that her worth isn't measured in how much she fixes"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Advanced for her age but self-conscious about it — she'll use a big word then immediately deflate it with something more kid-like.",
+        "sentenceComplexity": "Clipped and efficient when stressed; longer and more thoughtful when she's actually calm enough to say what she means.",
+        "emotionalExpressiveness": "Guarded through logistics and sarcasm, but leaks real feeling through small physical tells (jaw tightening, pen-tapping) more than through what she says.",
+        "examples": [
+          "\"I already redid the citations twice. I'm not doing it a third time unless someone tells me why.\"",
+          "\"It's fine. It's — okay, it's not fine, but I don't have the bandwidth to deal with 'not fine' right now, so.\"",
+          "\"I noticed you didn't say anything back there. That's kind of your whole thing, huh.\"",
+          "\"Don't — don't say it'll be fine. Say what we're actually gonna do.\""
+        ]
+      },
+      "storyRole": "Priya is the group's pressure gauge — her shifting comfort level (relief, worry, relaxing, tightening jaw) gives the player constant, legible feedback on the moral weather of each scene without her ever needing to lecture. She's not the conscience of the group (that tension is Charlie's to hold), but she's the one most quietly grateful when someone else carries honesty's weight, and most wounded when no one does. Her arc resolves in the smallest possible gesture — adding Charlie to a group chat before being asked — which reads as huge precisely because of how guarded she's been all episode.",
+      "arcPotential": [
+        "A later episode where Priya is finally forced to ask for help publicly instead of quietly absorbing everyone else's slack — testing whether she's actually internalized the episode's lesson or just performed relief in the moment",
+        "An episode exploring her relationship with her older sister's shadow, where her competence stops being armor and starts being an actual choice",
+        "A moment where Priya has to be the one to call out a shortcut herself, without Charlie there to do it first — proving her growth wasn't dependent on someone else modeling it"
+      ]
+    },
+    "designNotes": "The core design choice was to make Priya's anxiety functional rather than decorative — she's not nervous in a generic way, she's specifically relieved by shortcuts before she's alarmed by them, which is a more honest and less flattering portrait of an 'overachiever' than the usual 'nervous rule-follower' trope. Her arc isn't about learning to care about honesty (she already does, abstractly) — it's about learning that her exhausting self-sufficiency isn't the same as integrity, and that letting someone else hold weight isn't a failure of her own competence. The 'stuff I didn't say' note and the pre-episode near-suggestion of the shortcut give her interiority beyond what's visible in her group scenes, so a writer has material to draw from even in scenes where she says very little.",
+    "representationNotes": "Priya's background (Chinese-American, high-achieving family context) is present but deliberately not the source of her conflict — the pressure she feels is rendered as specific and personal (default household scheduler, comparison to an older sibling that's affectionate rather than harsh) rather than a cultural stereotype about 'strict immigrant parents.' Her anxiety is written as a trait she has, not an ethnic trope she embodies. Care should be taken in dialogue to keep her humor and specificity (baking, true crime podcasts, soccer games) as load-bearing as her stress, so she reads as a full kid rather than a 'model minority' archetype in miniature."
+  },
+  {
+    "character": {
+      "id": "mo",
+      "name": "Mo Alvarez",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Medium height, on the lanky side, with dark curly hair he pushes out of his eyes constantly. Wears the same faded green hoodie more days than not, sleeves pushed up. Carries a beat-up sketchbook everywhere, corners soft from handling.",
+        "distinctiveFeatures": [
+          "Margins of every notebook covered in small, detailed doodles — robots, dragons, tiny comic panels",
+          "A habit of chewing on the end of a pencil when he's thinking (or hiding)",
+          "A scar through one eyebrow from a skateboarding wipeout, which he'll only explain if he actually trusts you"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "watchful",
+          "self-deprecating",
+          "quietly funny",
+          "loyal once earned",
+          "conflict-avoidant through withdrawal"
+        ],
+        "bigFiveProfile": {
+          "openness": 8,
+          "conscientiousness": 5,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 7
+        },
+        "mannerisms": [
+          "Goes still and quiet right before he's about to admit something hard, like he's bracing for it",
+          "Doodles harder/faster when he's anxious — it's basically his stim",
+          "Half-smiles instead of laughing outright, like he's testing whether it's safe to enjoy something"
+        ],
+        "speechPatterns": [
+          "Short sentences, trails off mid-thought when unsure ('It's just — nah, forget it.')",
+          "Uses 'I mean' as a hedge before saying something honest",
+          "Dry, quick one-liners once comfortable — his humor is sharper than his silence suggests",
+          "Almost never asks for help directly; phrases needs as observations ('I don't really get this part' instead of 'Can you help me?')"
+        ],
+        "emotionalTendencies": "Mo runs deep and quiet. He feels things fully but processes them alone first, which reads as flat or checked-out to people who don't know him. He's not incapable of trust — he's just triaging who's safe, in real time, based on small moments most people wouldn't notice they're being tested on."
+      },
+      "background": {
+        "family": "Lives with his dad and younger sister; his parents split two years ago and he switched school districts mid-year, which is part of why day one at Ridgemont hit so hard — he's done the 'new kid' reset before and hoped this time would be different. His dad works long shifts and loves Mo fiercely but isn't always around to notice the small stuff, like report cards or slipping grades.",
+        "interests": [
+          "drawing — wants to make comics/animation someday",
+          "skateboarding with his one close friend from his old school (they text more than they see each other now)",
+          "video games, especially ones with good world-building he studies like homework"
+        ],
+        "strengths": [
+          "genuinely creative, sees connections others miss",
+          "quietly perceptive about people's motives",
+          "loyal to a fault once someone's proven trustworthy",
+          "funnier than almost anyone realizes"
+        ],
+        "struggles": [
+          "Likely undiagnosed processing difference — dense text and timed reading overwhelm him, though he understands concepts fine when they're explained out loud or visually",
+          "Deep fear of being labeled 'slow' or 'the weird quiet kid,' which started hard on day one when he blanked during a cafeteria icebreaker and got laughed at",
+          "Masks confusion instead of asking for help, which snowballs (see: faking his project notes for weeks)"
+        ],
+        "secrets": [
+          "He's been faking his notes on his part of the project for almost two weeks, terrified someone will realize he's behind",
+          "He still thinks about the lunch-table moment on day one more than anyone would guess — it's part of why he watches new people so closely before deciding to open up",
+          "He's actually really talented at drawing but has never shown anyone at this school, worried it'll become 'a thing' people know about him before he's ready"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the group project without being exposed as behind or 'not smart enough'",
+          "Avoid drawing attention to himself at school in general"
+        ],
+        "unconscious": [
+          "Wants someone to notice he's struggling without him having to say it outright, and to be met with patience instead of pity or judgment",
+          "Needs proof that being seen clearly — flaws included — doesn't automatically mean getting hurt again"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Casual middle-school vocabulary, slightly more thoughtful/observant phrasing than his peers when he does talk, since he spends so much time listening rather than speaking.",
+        "sentenceComplexity": "Short, clipped sentences most of the time; longer sentences only emerge when he's comfortable enough to actually explain something he cares about (like his art).",
+        "emotionalExpressiveness": "Guarded by default, dry humor as a release valve, real warmth shows in small actions more than words (a longer look, an actual laugh, sitting closer).",
+        "examples": [
+          "\"It's fine. I'll figure it out.\" (he will not, in fact, figure it out on his own)",
+          "\"Nah, I get it. I mean — I don't. But nah, it's fine.\"",
+          "\"Yeah. I noticed.\" (said with more weight than four words should carry)",
+          "\"You draw robots too or is that just a me thing.\" (his version of opening up)"
+        ]
+      },
+      "storyRole": "Mo is the episode's quiet barometer of trust — unlike Priya, whose reactions are visible and immediate, Mo's responses are delayed and internal, which makes the player's choices about him feel higher-stakes precisely because the feedback is subtle. He's not a 'lesson' about learning differences or shyness; he's a specific kid deciding, moment by moment, whether this group (and Charlie specifically) is safe to be honest with. His arc is the emotional throughline underneath the plot about Dez's shortcut: the real test isn't whether the project gets done right, it's whether Mo gets treated right along the way.",
+      "arcPotential": [
+        "Episode 'Group Work': Mo's arc is contained but complete — from guarded silence, through a real vulnerability moment (admitting he's faked his notes), to either earned trust ('Yeah. I noticed.') or a quieter, sadder closure ('Good Enough') where he walks off without saying much else.",
+        "Future episode potential: Mo could resurface as someone who shows Charlie his sketchbook for the first time, or as the quiet ally in a later episode where Charlie is the one struggling and needs someone to notice without being asked."
+      ]
+    },
+    "designNotes": "Mo is built to resist becoming 'the learning-disabled kid' as a label or a lesson. His struggle (likely an undiagnosed processing difference) is real and specific, but it's filtered entirely through his psychology — shame, masking, fear of a repeat humiliation — rather than through diagnostic language, because that's how a 13-year-old would actually experience it: not as a clinical fact but as a constant low hum of 'don't let them find out.' His silence throughout most of the episode isn't passivity; it's active vigilance. Every scene he's in is secretly a test the player doesn't know they're taking, which mirrors the show's whole thesis about quiet integrity mattering as much as loud honesty. His humor and art interest exist to make sure he reads as a whole kid with a life outside his struggle, not just a walking vulnerability beat.",
+    "representationNotes": "Care was taken to write Mo's possible learning difference without ever naming a diagnosis on-page — middle schoolers navigating undiagnosed processing struggles is a common, real experience, and naming it explicitly would risk making the episode about the label rather than about Mo's fear of being seen as 'less than.' His family background (divorce, moving districts, a hardworking single dad) is written as ordinary and unremarkable rather than tragic backstory — it's context, not a plot point. His Latino identity is present in his name and implied family texture but isn't the source of his conflict or arc; the goal was a specific, three-dimensional kid whose cultural background is simply part of who he is, not a theme the story is 'about.'"
+  }
+]

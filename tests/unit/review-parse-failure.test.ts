@@ -174,3 +174,80 @@ describe('jsonrepair still recovers malformed-but-salvageable JSON', () => {
     expect(() => agent['parseReview'](BROKEN_JSON_RESPONSE)).toThrow(ReviewParseError);
   });
 });
+
+describe('orchestrator escalation end-to-end (create-real-episode.js runReviewers)', () => {
+  // scripts/create-real-episode.js can't be required directly (it runs
+  // main() as a module-load side effect), so this reproduces its exact
+  // catch block against a REAL agent + REAL thrown ReviewParseError,
+  // rather than only exercising the pure pipeline-helpers functions in
+  // isolation. See tests/unit/pipeline-helpers.test.ts for the pure-logic
+  // coverage of unreadableResult/failingReviewers this depends on.
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { unreadableResult, failingReviewers } = require('../../scripts/lib/pipeline-helpers');
+
+  async function runReviewerLikeThePipelineDoes(agent: any, input: any, verdictField: string) {
+    try {
+      return await agent.process(input);
+    } catch (error) {
+      if (!(error instanceof ReviewParseError)) throw error;
+      return unreadableResult(verdictField, error);
+    }
+  }
+
+  it('an unparseable QA response becomes an UNREADABLE verdict instead of crashing the run', async () => {
+    const agent = new QAReviewerAgent();
+    await agent.initialize({
+      workflowId: 'wf', threadId: 'th',
+      messageBus: { publish: async () => {}, subscribe: async () => {}, unsubscribe: async () => {} },
+      memory: { store: async () => {}, retrieve: async () => null, search: async () => [] },
+      llm: { call: async () => ({ content: NO_JSON_RESPONSE, model: 'claude-haiku-4-5-20251001', provider: 'claude', usage: { inputTokens: 1, outputTokens: 1, totalTokens: 2 }, stopReason: 'end_turn' }) }
+    } as any);
+
+    const result = await runReviewerLikeThePipelineDoes(
+      agent,
+      { type: 'REVIEW_EPISODE', episodeReview: { episode: {} as any, characters: [], world: {} as any } },
+      'status'
+    );
+
+    expect(result.status).toBe('UNREADABLE');
+    expect(result.rawResponse).toBe(NO_JSON_RESPONSE);
+    expect(failingReviewers({ qaReviewer: result })).toEqual(['qaReviewer']);
+  });
+
+  it('a normal, parseable response is unaffected by the escalation wrapper', async () => {
+    const agent = new QAReviewerAgent();
+    await agent.initialize({
+      workflowId: 'wf', threadId: 'th',
+      messageBus: { publish: async () => {}, subscribe: async () => {}, unsubscribe: async () => {} },
+      memory: { store: async () => {}, retrieve: async () => null, search: async () => [] },
+      llm: { call: async () => ({ content: JSON.stringify({ status: 'PASS', errors: [], warnings: [] }), model: 'claude-haiku-4-5-20251001', provider: 'claude', usage: { inputTokens: 1, outputTokens: 1, totalTokens: 2 }, stopReason: 'end_turn' }) }
+    } as any);
+
+    const result = await runReviewerLikeThePipelineDoes(
+      agent,
+      { type: 'REVIEW_EPISODE', episodeReview: { episode: {} as any, characters: [], world: {} as any } },
+      'status'
+    );
+
+    expect(result.status).toBe('PASS');
+    expect(failingReviewers({ qaReviewer: result })).toEqual([]);
+  });
+
+  it('a non-parse error (e.g. a real bug or network failure) still propagates instead of being swallowed', async () => {
+    const agent = new QAReviewerAgent();
+    await agent.initialize({
+      workflowId: 'wf', threadId: 'th',
+      messageBus: { publish: async () => {}, subscribe: async () => {}, unsubscribe: async () => {} },
+      memory: { store: async () => {}, retrieve: async () => null, search: async () => [] },
+      llm: { call: async () => { throw new Error('connection reset'); } }
+    } as any);
+
+    await expect(
+      runReviewerLikeThePipelineDoes(
+        agent,
+        { type: 'REVIEW_EPISODE', episodeReview: { episode: {} as any, characters: [], world: {} as any } },
+        'status'
+      )
+    ).rejects.toThrow('connection reset');
+  });
+});

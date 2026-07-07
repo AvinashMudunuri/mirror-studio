@@ -24,7 +24,8 @@ const {
   collectRevisionFeedback,
   mergeSceneDialogue,
   mergeChoiceDialogue,
-  mergeBranchDialogue
+  mergeBranchDialogue,
+  unreadableResult
 } = require('./lib/pipeline-helpers');
 const { compileScreenplay } = require('./lib/compile-screenplay');
 const { buildEpisodeRow, persistEpisode } = require('./lib/persist-episode');
@@ -80,7 +81,8 @@ const {
   ChildPsychologistAgent,
   GameDesignerAgent,
   EthicsReviewerAgent,
-  createLLMGateway
+  createLLMGateway,
+  ReviewParseError
 } = agentsModule;
 
 const { v4: uuidv4 } = require('uuid');
@@ -416,22 +418,31 @@ function buildEpisodeForReview(outline, dialogueResult, roster) {
 const REVIEWERS = {
   creativeDirector: {
     label: 'Creative Director',
-    run: (episode, roster) => agents.creativeDirector.process({
+    // `characters: roster` matches what the other 4 reviewers receive —
+    // needed so the shared, cacheable review context this reviewer builds
+    // is byte-identical to theirs (see buildSharedReviewContext).
+    // `previousEpisodes` feeds its continuity/tone checks directly
+    // (EpisodeReference[]: id/title/synopsis/themes — the exact shape
+    // loadPreviousEpisodes() already produces).
+    run: (episode, roster, previousEpisodes) => agents.creativeDirector.process({
       type: 'EPISODE_REVIEW',
-      // `characters: roster` matches what the other 4 reviewers receive —
-      // needed so the shared, cacheable review context this reviewer
-      // builds is byte-identical to theirs (see buildSharedReviewContext).
-      episodeReview: { episode, worldContext: TEST_WORLD, previousEpisodes: [], characters: roster }
+      episodeReview: { episode, worldContext: TEST_WORLD, previousEpisodes: previousEpisodes || [], characters: roster }
     }),
-    verdict: r => r.decision
+    verdict: r => r.decision,
+    verdictField: 'decision'
   },
   qaReviewer: {
     label: 'QA Reviewer',
-    run: (episode, roster) => agents.qaReviewer.process({
+    // QA's prompt only ever reads previousEpisodes.length (continuity
+    // *count*, not content) — the lighter {id,title,synopsis,themes}
+    // shape from loadPreviousEpisodes() is fine even though the type
+    // declares Episode[].
+    run: (episode, roster, previousEpisodes) => agents.qaReviewer.process({
       type: 'REVIEW_EPISODE',
-      episodeReview: { episode, characters: roster, world: TEST_WORLD, previousEpisodes: [] }
+      episodeReview: { episode, characters: roster, world: TEST_WORLD, previousEpisodes: previousEpisodes || [] }
     }),
-    verdict: r => r.status
+    verdict: r => r.status,
+    verdictField: 'status'
   },
   childPsychologist: {
     label: 'Child Psychologist',
@@ -439,7 +450,8 @@ const REVIEWERS = {
       type: 'REVIEW_EPISODE',
       episodeReview: { episode, characters: roster, world: TEST_WORLD }
     }),
-    verdict: r => r.status
+    verdict: r => r.status,
+    verdictField: 'status'
   },
   gameDesigner: {
     label: 'Game Designer',
@@ -447,7 +459,8 @@ const REVIEWERS = {
       type: 'REVIEW_EPISODE',
       episodeReview: { episode, characters: roster, world: TEST_WORLD }
     }),
-    verdict: r => r.status
+    verdict: r => r.status,
+    verdictField: 'status'
   },
   ethicsReviewer: {
     label: 'Ethics Reviewer',
@@ -455,7 +468,8 @@ const REVIEWERS = {
       type: 'REVIEW_EPISODE',
       episodeReview: { episode, characters: roster, world: TEST_WORLD }
     }),
-    verdict: r => r.status
+    verdict: r => r.status,
+    verdictField: 'status'
   }
 };
 
@@ -477,13 +491,25 @@ const INITIAL_REVIEW_FILES = {
   ethicsReviewer: '08-ethics-review.json'
 };
 
-async function runReviewers(keys, episode, roster, filenameFor) {
+async function runReviewers(keys, episode, roster, filenameFor, previousEpisodes) {
   const results = {};
   for (const key of keys) {
     const reviewer = REVIEWERS[key];
     console.log(`   🔎 ${reviewer.label} reviewing...`);
     const startTime = Date.now();
-    const result = await reviewer.run(episode, roster);
+    let result;
+    try {
+      result = await reviewer.run(episode, roster, previousEpisodes);
+    } catch (error) {
+      // A reviewer whose response can't be parsed throws ReviewParseError
+      // (deliberate — a fabricated review is worse than a crash, see
+      // packages/agents/src/errors.ts). Mark it UNREADABLE and keep going
+      // instead of losing every token this run has spent so far; any
+      // other error (network, auth, budget) still propagates and crashes.
+      if (!(error instanceof ReviewParseError)) throw error;
+      console.warn(`   ⚠️ ${reviewer.label} returned an unreadable response — marking UNREADABLE and continuing (raw response saved, run will need human review): ${error.message}`);
+      result = unreadableResult(reviewer.verdictField, error);
+    }
     results[key] = result;
     console.log(`   ✅ ${reviewer.label}: ${reviewer.verdict(result)} (${((Date.now() - startTime) / 1000).toFixed(1)}s)\n`);
     saveToFile(filenameFor(key), result);
@@ -694,7 +720,8 @@ async function main() {
       enabledReviewerKeys(),
       episodeForReview,
       cast,
-      key => INITIAL_REVIEW_FILES[key]
+      key => INITIAL_REVIEW_FILES[key],
+      previousEpisodes
     );
 
     console.log('   📊 Initial verdicts:', JSON.stringify(verdicts(reviews)), '\n');
@@ -785,7 +812,7 @@ async function main() {
       // Re-review with only the reviewers that were failing.
       console.log(`   🔎 Re-running ${failing.length} failing reviewer(s)...\n`);
       episodeForReview = buildEpisodeForReview(outline, dialogueResult, cast);
-      const newReviews = await runReviewers(failing, episodeForReview, cast, key => `${prefix}${REVIEW_FILES[key]}`);
+      const newReviews = await runReviewers(failing, episodeForReview, cast, key => `${prefix}${REVIEW_FILES[key]}`, previousEpisodes);
       reviews = { ...reviews, ...newReviews };
 
       revisionHistory.push({

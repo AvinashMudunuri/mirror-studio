@@ -1,0 +1,133 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-11-epilogue-uneasy has no valid exit path. Its defaultNextScene is 'END', but it also references branchDialogue that should vary the ending based on player choices. The scene structure is ambiguous about whether it terminates or continues.",
+      "location": "scenes[19].defaultNextScene and branchDialogue entries keyed 'scene-11-epilogue-uneasy'",
+      "expectedValue": "Either defaultNextScene should be omitted (allowing branchDialogue to drive the outcome), or branchDialogue should not exist for this scene",
+      "actualValue": "defaultNextScene: 'END' AND branchDialogue entries for 'scene-11-epilogue-uneasy' with three branches",
+      "fix": "Remove defaultNextScene from scene-11-epilogue-uneasy, or remove the branchDialogue entries for that scene. Clarify whether this scene terminates the episode or continues based on branch."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-5 (scene-10-aftermath) has three options, but only two of them (options a and c) map to scenes with branchDialogue support. Option b (scene-11-epilogue-uneasy) leads to a scene that has branchDialogue entries, but the branch 'branch-peer-pressure' is triggered by choice-5:b, yet the scene itself defaults to END without conditional branching logic.",
+      "location": "choices[4].options[1] and scenes[19]",
+      "expectedValue": "All three options should lead to scenes with consistent branch resolution logic, or branchDialogue should not reference outcomes triggered by choice-5:b",
+      "actualValue": "choice-5:b → scene-11-epilogue-uneasy, which has defaultNextScene: 'END' and branchDialogue keyed by branch-peer-pressure",
+      "fix": "Either (1) ensure scene-11-epilogue-uneasy uses conditional branching instead of defaultNextScene, or (2) remove branch-peer-pressure from branchDialogue and clarify that this path always ends the same way."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Outcomes array references branch IDs that do not align cleanly with the choice paths. Specifically, 'branch-peer-pressure' is triggered by choice-1:b, choice-2:b, choice-2:c, choice-3:c, choice-4:b, choice-5:b — but the triggeredBy logic does not account for mixed paths (e.g., a player who chooses integrity on choice-1 but peer-pressure on choice-2).",
+      "location": "outcomes[1].triggeredBy",
+      "expectedValue": "Either outcomes should define branches for all possible mixed-path combinations, or the episode should enforce a single-path model where early choices lock later options",
+      "actualValue": "outcomes[1].triggeredBy lists discrete choice combinations, but does not specify how mixed paths resolve",
+      "fix": "Add a branchResolutionLogic field to the episode metadata that clarifies: (1) Are branches determined by majority-vote across all choices? (2) Do early choices lock later ones? (3) Is there a priority order (e.g., integrity > negotiated > peer-pressure)? Then update triggeredBy lists to match that logic, or add a note that mixed paths default to the 'negotiated' branch."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-11-epilogue-uneasy references branchDialogue with three branches (branch-integrity, branch-negotiated, branch-peer-pressure), but the scene's defaultNextScene is 'END'. This means the scene will always terminate without evaluating which branch applies. The branchDialogue is unreachable.",
+      "location": "scenes[19] and branchDialogue entries keyed 'scene-11-epilogue-uneasy'",
+      "expectedValue": "If branchDialogue is present, the scene must NOT have a defaultNextScene; instead, the rendering engine should select dialogue based on the player's branch and render it before terminating.",
+      "actualValue": "defaultNextScene: 'END' prevents branchDialogue evaluation",
+      "fix": "Remove defaultNextScene from scene-11-epilogue-uneasy. Ensure the rendering pipeline knows to evaluate branchDialogue for this scene before terminating. Alternatively, if the scene should always end the same way, remove all branchDialogue entries for this scene."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'INTERNAL' is used as a speaker in dialogue (e.g., scene-3b, line s3b-7: player emotion 'internal'), but 'INTERNAL' is not a valid character ID in the character roster. The system prompt specifies 'INTERNAL' as a reserved speaker ID, but it is being used as an emotion/action tag, not a speaker.",
+      "location": "scenes[2].dialogue[6].emotion and similar entries",
+      "expectedValue": "Either use 'NARRATOR' for internal monologue, or use the 'emotion' field without a speaker override",
+      "actualValue": "emotion: 'internal' is used as a tag, not a speaker ID",
+      "fix": "This is actually correct usage — 'emotion' is a field, not a speaker. No fix needed; this is a false alarm. Disregard this error."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-3c-middle-path (the 'negotiated' path for choice-1) has dialogue but no corresponding choiceDialogue entry in the top-level choiceDialogue array. Scenes scene-3a-standing-ground and scene-3b-going-along both have choiceDialogue entries, but scene-3c-middle-path does not.",
+      "location": "choiceDialogue array, missing entry for choice-1 option c",
+      "expectedValue": "A choiceDialogue entry with choiceId: 'choice-1' and options[2] (the 'c' option) should have responseDialogue for scene-3c-middle-path",
+      "actualValue": "choiceDialogue[0] (choice-1) has responseDialogue for options a and b only; option c is missing",
+      "fix": "Add responseDialogue for option c in choiceDialogue[0]. Example: { id: 'c1-c-1', character: 'player', text: '...' }, { id: 'c1-c-2', character: 'dez', text: '...' }"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-2 (scene-4-work-session) has three options, but the traitMapping includes entries for 'a', 'b', and 'c'. However, option 'c' (pass-buck) has traitMapping { JUDGMENT: -1, COMMUNICATION: -1 }, which suggests a negative outcome. The dialogue in scene-5c-pass-buck shows Mo saying 'Yeah. Probably.' and Priya saying 'He's not gonna ask.' — implying the player's suggestion is ineffective. This is consistent, but the trait penalty is very light for what is essentially abandoning a teammate.",
+      "location": "choices[1].traitMapping['c']",
+      "expectedValue": "Trait penalties should reflect the severity of the choice. Passing the buck to a teacher when a teammate is struggling should have a larger COMMUNICATION penalty (e.g., -2) or a JUDGMENT penalty (e.g., -2)",
+      "actualValue": "traitMapping['c']: { JUDGMENT: -1, COMMUNICATION: -1 }",
+      "fix": "Consider increasing the penalty to { JUDGMENT: -2, COMMUNICATION: -2 } to better reflect the choice's impact on team dynamics."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcomes array specifies triggeredBy conditions, but the logic for determining which outcome fires is not documented in the episode metadata. For example, outcome 'branch-negotiated' is triggered by ['choice-1:c', 'choice-2:a', 'choice-3:a', 'choice-4:a', 'choice-5:c'], but what happens if a player chooses choice-1:c, choice-2:b, choice-3:a, choice-4:a, choice-5:c? Does the episode default to 'branch-peer-pressure' because of choice-2:b, or does it stay 'branch-negotiated' because the majority are negotiated?",
+      "location": "outcomes array and branchResolutionLogic (missing)",
+      "expectedValue": "A branchResolutionLogic field should specify: (1) majority-vote, (2) first-choice-locks, (3) last-choice-wins, or (4) priority-order (e.g., integrity > negotiated > peer-pressure)",
+      "actualValue": "No branchResolutionLogic field present",
+      "fix": "Add a branchResolutionLogic field to the episode root. Example: { type: 'priority-order', priority: ['integrity', 'negotiated', 'peer-pressure'] }. Then update the rendering pipeline to use this logic when evaluating which branchDialogue to display."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-7b-tell-teacher (the 'integrity' path for choice-3) leads to scene-8-presentation-day via defaultNextScene. However, scene-7a-redo-together (the 'negotiated' path) also leads to scene-8-presentation-day. Both paths converge at the same scene, but the dialogue in scene-8-presentation-day does not account for the different states the group might be in (e.g., if the player told the teacher, Dez might be more defensive; if the group rewrote together, Dez might be more confident). The scene should have branchDialogue to reflect this, but it does not.",
+      "location": "scenes[15] (scene-8-presentation-day)",
+      "expectedValue": "Scene-8-presentation-day should have branchDialogue entries that vary Dez's demeanor based on whether the player chose to tell the teacher or redo together",
+      "actualValue": "Scene-8-presentation-day has no branchDialogue; dialogue is identical regardless of path",
+      "fix": "Add branchDialogue entries to scene-8-presentation-day keyed by 'branch-integrity' and 'branch-negotiated' (and 'branch-peer-pressure' if applicable). Vary Dez's emotional state and dialogue to reflect the different paths."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-4 (scene-8-presentation-day) has only two options (a: honest-answer, b: bluff), but the outcomes array specifies three branches (integrity, negotiated, peer-pressure). If a player has been on the 'negotiated' path up to this point, choice-4 option a (honest-answer) should trigger 'branch-negotiated', not 'branch-integrity'. However, the traitMapping for choice-4 does not distinguish between the two; both options a and b have the same trait changes regardless of prior path.",
+      "location": "choices[3].traitMapping",
+      "expectedValue": "Either (1) choice-4 should have three options (honest-integrity, honest-negotiated, bluff), or (2) the traitMapping should be context-aware, or (3) the outcomes should be determined by the full choice history, not individual choices",
+      "actualValue": "choice-4 has two options; traitMapping['a']: { INTEGRITY: 2, COMMUNICATION: 2, JUDGMENT: 1 } applies regardless of prior path",
+      "fix": "Clarify the branch resolution logic (see earlier error). If using priority-order, then choice-4:a always triggers 'branch-integrity' if any prior choice was integrity, otherwise 'branch-negotiated' if any prior choice was negotiated, otherwise 'branch-peer-pressure'. Update the rendering pipeline to implement this logic."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-9b-bluff (the 'peer-pressure' path for choice-4) has dialogue but no corresponding branchDialogue entries in the top-level branchDialogue array. The scene describes the moment where the player lets Dez bluff, but there is no variant dialogue for how this moment plays out differently depending on prior choices (e.g., if the player has been honest up to this point, this moment should feel more jarring).",
+      "location": "scenes[17] and branchDialogue array",
+      "expectedValue": "branchDialogue entries should exist for scene-9b-bluff, keyed by branch (e.g., 'branch-peer-pressure', 'branch-negotiated')",
+      "actualValue": "No branchDialogue entries for scene-9b-bluff",
+      "fix": "Add branchDialogue entries for scene-9b-bluff. At minimum, add a 'branch-peer-pressure' entry. Consider adding 'branch-negotiated' to show how this moment feels different if the player has been mostly honest up to this point."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The episode has three ending scenes (scene-11-epilogue-integrity, scene-11-epilogue-growth, scene-11-epilogue-uneasy), each with defaultNextScene: 'END'. However, the branchDialogue entries for these scenes suggest that the dialogue should vary based on the player's branch. This creates a contradiction: if the scene terminates immediately (defaultNextScene: 'END'), the branchDialogue is never evaluated. The rendering pipeline must know to evaluate branchDialogue before terminating, but this is not documented.",
+      "location": "scenes[18], scenes[19], scenes[20] and branchDialogue entries",
+      "expectedValue": "Either (1) the rendering pipeline should evaluate branchDialogue before terminating, or (2) the scenes should not have defaultNextScene: 'END' and should instead have conditional logic to select which dialogue to display",
+      "actualValue": "All three ending scenes have defaultNextScene: 'END' AND branchDialogue entries",
+      "fix": "Document in the episode metadata that branchDialogue should be evaluated before terminating. Alternatively, remove defaultNextScene from the ending scenes and ensure the rendering pipeline knows to evaluate branchDialogue and then terminate."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene scene-2-group-meeting (the initial choice point) has dialogue that sets up three options, but the dialogue does not explicitly preview all three options. The player might not realize that a 'middle ground' option exists (choice-1:c). Consider adding a line of dialogue that hints at the possibility of compromise.",
+      "location": "scenes[1].dialogue",
+      "suggestion": "Add a line from Priya or another character that suggests a middle-ground approach, e.g., 'We could use her outline for structure and do the research ourselves.' This would make the choice-1:c option feel more natural."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has a complex branching structure with three outcomes (integrity, negotiated, peer-pressure), but the branchResolutionLogic is not documented. This makes it difficult for the rendering pipeline to determine which branch applies when the player's choices are mixed (e.g., integrity on choice-1, peer-pressure on choice-2).",
+      "location": "episode root",
+      "suggestion": "Add a branchResolutionLogic field that specifies how branches are determined. Example: { type: 'priority-order', priority: ['integrity', 'negotiated', 'peer-pressure'], description: 'The highest-priority branch that matches any choice in the player\\'s history is selected.' }"
+    }
+  ],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 12,
+    "warningCount": 2
+  }
+}

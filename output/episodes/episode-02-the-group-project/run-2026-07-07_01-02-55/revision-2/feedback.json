@@ -1,0 +1,46 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-11-epilogue-uneasy has no defaultNextScene and is not referenced by any choice option, making it unreachable via normal branching. — Suggested fix: Verify choice-5 option[1] correctly references scene-11-epilogue-uneasy (it does). No fix needed; this was a false positive. (location: scenes[].id === 'scene-11-epilogue-uneasy')",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome 'branch-integrity' has triggeredBy list that includes choice-3:b (tell teacher), but choice-3 option[1] (the 'tell teacher' option) has pathTag 'integrity' and points to scene-7b-tell-teacher. However, the triggeredBy for branch-integrity lists 'choice-3:b', which is correct. But the issue is: if a player chooses choice-5:b (keep it light, steer toward grade), they would NOT be on the integrity branch, yet the triggeredBy includes choice-5:a. This is correct. Upon re-examination: the triggeredBy logic is actually sound. Retracted. — Suggested fix: No fix needed; the triggeredBy logic is correct. (location: outcomes[0].triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice-3 (scene-6-discovery) has three options with pathTags 'negotiated', 'integrity', and 'peer_pressure'. However, the outcomes array defines branches as 'branch-integrity', 'branch-peer-pressure', and 'branch-negotiated-teamwork'. The pathTag 'negotiated' does not match the outcome branch name 'branch-negotiated-teamwork'. This creates ambiguity in which branch a player is on after making this choice. — Suggested fix: Either rename the outcome branch to 'branch-negotiated' or update the pathTag to 'negotiated-teamwork' for consistency. Recommend standardizing: use 'branch-' prefix for outcome IDs and matching pathTag values without the prefix. (location: choices[2].options[2].pathTag vs outcomes[0].id)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "The triggeredBy logic for outcomes does not account for all possible choice combinations. For example, a player could choose: choice-1:a (integrity), choice-2:b (peer_pressure), choice-3:a (negotiated), choice-4:a (integrity), choice-5:a (integrity). This combination does not match any single outcome's triggeredBy list, leaving the player in an undefined branch state. — Suggested fix: Either: (1) Implement a fallback/default branch for mixed choices, (2) Redesign outcomes to use a scoring system (e.g., count integrity vs peer_pressure choices and assign branch based on majority), or (3) Document that players must stay consistent across all five choices to reach a defined branch. Recommend option (2) for better player agency. (location: outcomes[].triggeredBy)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Character 'player' is referenced in dialogue but has no explicit speaker name in the character roster — it uses 'player' as the ID. All dialogue attribution uses 'player' as the character reference, which is correct, but the character object itself uses id 'player' and name 'Charlie Osei'. This is internally consistent but creates ambiguity in dialogue rendering. — Suggested fix: This is actually correct per the data model. The player character is identified by id 'player' in the roster and referenced as 'player' in dialogue. No fix needed — this is a false positive. (location: characters[0].id vs dialogue speaker references)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice-5 (scene-10-aftermath) has three options, but branchDialogue entries reference branch IDs that do not all match the outcomes array. Specifically, branchDialogue contains entries for 'branch-integrity', 'branch-peer-pressure', and 'branch-negotiated-teamwork', but the outcomes array also contains these exact IDs. However, the triggeredBy logic does not guarantee all three branches are reachable from all three ending scenes. — Suggested fix: Add branchDialogue entry for scene-11-epilogue-uneasy with branchId 'branch-integrity' to ensure all three branches have dialogue variants for all three ending scenes. (location: branchDialogue[].branchId vs outcomes[].id)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-11-epilogue-uneasy is missing branchDialogue coverage for the 'branch-integrity' outcome path. If a player takes all integrity choices (choice-1:a, choice-2:a, choice-3:b, choice-4:a, choice-5:b), they would reach scene-11-epilogue-uneasy but there is no 'branch-integrity' dialogue variant for that scene. — Suggested fix: Add a branchDialogue entry with sceneId='scene-11-epilogue-uneasy', branchId='branch-integrity', and appropriate dialogue lines showing how an integrity-focused player would experience the 'uneasy' ending. (location: branchDialogue entries for scene-11-epilogue-uneasy)",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

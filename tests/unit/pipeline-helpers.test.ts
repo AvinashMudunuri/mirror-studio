@@ -22,7 +22,8 @@ const {
   collectRevisionFeedback,
   mergeSceneDialogue,
   mergeChoiceDialogue,
-  mergeBranchDialogue
+  mergeBranchDialogue,
+  unreadableResult
 } = require('../../scripts/lib/pipeline-helpers');
 
 // ---------- roster collection ----------
@@ -111,6 +112,30 @@ describe('failingReviewers', () => {
 
   it('ignores reviewers that have not run', () => {
     expect(failingReviewers({ qaReviewer: { status: 'FAIL' } })).toEqual(['qaReviewer']);
+  });
+
+  it('treats an UNREADABLE verdict (unparseable reviewer response) as failing, not passing', () => {
+    expect(failingReviewers({
+      qaReviewer: unreadableResult('status', { message: 'bad json', rawResponse: 'garbage' }),
+      creativeDirector: unreadableResult('decision', { message: 'bad json', rawResponse: 'garbage' })
+    })).toEqual(['creativeDirector', 'qaReviewer']);
+  });
+});
+
+describe('unreadableResult', () => {
+  it('sets the given verdict field to UNREADABLE and preserves the parse error for debugging', () => {
+    const error = { message: '[QA_REVIEWER] missing status', rawResponse: 'not json at all' };
+    expect(unreadableResult('status', error)).toEqual({
+      status: 'UNREADABLE',
+      parseError: '[QA_REVIEWER] missing status',
+      rawResponse: 'not json at all'
+    });
+  });
+
+  it('uses whichever field name the reviewer keys its verdict on', () => {
+    const error = { message: 'bad', rawResponse: 'raw' };
+    expect(unreadableResult('decision', error).decision).toBe('UNREADABLE');
+    expect(unreadableResult('status', error).status).toBe('UNREADABLE');
   });
 });
 

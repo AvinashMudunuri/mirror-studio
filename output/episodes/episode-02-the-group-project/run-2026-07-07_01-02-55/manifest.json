@@ -1,0 +1,149 @@
+{
+  "episode": {
+    "number": 2,
+    "title": "Group Work",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "ff19891a-69f0-4c61-87b5-665d201de733",
+    "threadId": "987a651f-d285-41e5-91b5-9a8ed71a1a7f",
+    "startedAt": "2026-07-07T01:02:55.833Z",
+    "completedAt": "2026-07-07T01:28:46.201Z",
+    "totalSeconds": 1550.3,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [
+      "childPsychologist",
+      "gameDesigner",
+      "ethicsReviewer"
+    ],
+    "previousEpisodes": [
+      {
+        "id": "ep-1",
+        "title": "First Bell"
+      }
+    ],
+    "previousEpisodesSource": "postgres",
+    "usage": {
+      "calls": 15,
+      "inputTokens": 155151,
+      "outputTokens": 162507,
+      "totalTokens": 317658,
+      "cacheCreationInputTokens": 61678,
+      "cacheReadInputTokens": 20166,
+      "budget": 400000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 11,
+          "inputTokens": 67906,
+          "outputTokens": 146123,
+          "cacheReadInputTokens": 0
+        },
+        "claude-haiku-4-5-20251001": {
+          "calls": 4,
+          "inputTokens": 87245,
+          "outputTokens": 16384,
+          "cacheReadInputTokens": 20166
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Charlie Osei",
+      "role": "Player character — the emotional barometer of the group, whose choices about honesty and confrontation directly shape how the project (and the friendships) survive.",
+      "active": true
+    },
+    {
+      "id": "mr-okafor",
+      "name": "Emeka Okafor",
+      "role": "The adult authority whose quiet fairness sets the stakes for the episode — his response to Charlie's honesty (rewarding it privately rather than making a public spectacle) models the exact behavior the episode wants the player to learn: that integrity doesn't have to be loud to matter, and that consequences can be humane rather than punitive.",
+      "active": true
+    },
+    {
+      "id": "dez",
+      "name": "Dez Bellamy",
+      "role": "Dez is the engine of the episode's central moral tension — his shortcut is the recurring test of Charlie's honesty, but he's written to be sympathetic, not villainous. His arc mirrors Charlie's: whether he'll let himself be seen as imperfect rather than perform confidence. The late-night rewrite scene is his real turning point — not because he's forced into it, but because Charlie's approach doesn't shame him, it gives him room to actually try.",
+      "active": true
+    },
+    {
+      "id": "priya",
+      "name": "Priya Chen",
+      "role": "Priya is the group's pressure gauge — her shifting comfort level (relief, worry, relaxing, tightening jaw) gives the player constant, legible feedback on the moral weather of each scene without her ever needing to lecture. She's not the conscience of the group (that tension is Charlie's to hold), but she's the one most quietly grateful when someone else carries honesty's weight, and most wounded when no one does. Her arc resolves in the smallest possible gesture — adding Charlie to a group chat before being asked — which reads as huge precisely because of how guarded she's been all episode.",
+      "active": true
+    },
+    {
+      "id": "mo",
+      "name": "Mo Alvarez",
+      "role": "Mo is the episode's quiet barometer of trust — unlike Priya, whose reactions are visible and immediate, Mo's responses are delayed and internal, which makes the player's choices about him feel higher-stakes precisely because the feedback is subtle. He's not a 'lesson' about learning differences or shyness; he's a specific kid deciding, moment by moment, whether this group (and Charlie specifically) is safe to be honest with. His arc is the emotional throughline underneath the plot about Dez's shortcut: the real test isn't whether the project gets done right, it's whether Mo gets treated right along the way.",
+      "active": true
+    }
+  ],
+  "finalStatus": "NEEDS_HUMAN_REVIEW",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "FAIL",
+    "childPsychologist": "SKIPPED",
+    "gameDesigner": "SKIPPED",
+    "ethicsReviewer": "SKIPPED"
+  },
+  "revisions": [
+    {
+      "iteration": 1,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 3,
+      "dialogueFeedbackCount": 6,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "SKIPPED",
+        "gameDesigner": "SKIPPED",
+        "ethicsReviewer": "SKIPPED"
+      }
+    },
+    {
+      "iteration": 2,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 4,
+      "dialogueFeedbackCount": 3,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "SKIPPED",
+        "gameDesigner": "SKIPPED",
+        "ethicsReviewer": "SKIPPED"
+      }
+    }
+  ],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "revision-1/feedback.json",
+    "revision-1/story-outline.json",
+    "revision-1/dialogue.json",
+    "revision-1/qa-review.json",
+    "revision-2/feedback.json",
+    "revision-2/story-outline.json",
+    "revision-2/dialogue.json",
+    "revision-2/qa-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}
