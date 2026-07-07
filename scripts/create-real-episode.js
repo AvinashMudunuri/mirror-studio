@@ -25,11 +25,12 @@ const {
   mergeSceneDialogue,
   mergeChoiceDialogue,
   mergeBranchDialogue,
-  unreadableResult
+  unreadableResult,
+  reusedProtagonistResult
 } = require('./lib/pipeline-helpers');
 const { compileScreenplay } = require('./lib/compile-screenplay');
 const { buildEpisodeRow, persistEpisode } = require('./lib/persist-episode');
-const { loadPreviousEpisodes } = require('./lib/load-previous-episodes');
+const { loadPreviousEpisodes, loadPreviousProtagonist } = require('./lib/load-previous-episodes');
 
 // Import from built packages (resolve from script location)
 const packageRoot = path.resolve(__dirname, '..');
@@ -268,7 +269,21 @@ function worldBrief() {
   return `${TEST_WORLD.name} — ${TEST_WORLD.description}. Setting: ${TEST_WORLD.setting}. Tone: ${TEST_WORLD.tone}. Target age: ${TEST_WORLD.targetAge.join('-')}.`;
 }
 
-async function generateProtagonist(outline) {
+/**
+ * @param {object} outline - current episode's outline
+ * @param {object|null} existingProtagonist - protagonist profile carried
+ *   over from a previous episode (loadPreviousProtagonist()), if any.
+ *   Reusing it verbatim is what makes "episode 2" actually the same
+ *   person as episode 1's, instead of a different character who happens
+ *   to be called "player" — Character Designer previously invented a
+ *   brand new protagonist every single run regardless of continuity.
+ */
+async function generateProtagonist(outline, existingProtagonist) {
+  if (existingProtagonist) {
+    console.log(`   ♻️  Continuity: reusing protagonist "${existingProtagonist.name}" from a previous episode (no Character Designer call)`);
+    return reusedProtagonistResult(existingProtagonist);
+  }
+
   // NPC ids come from the outline (e.g. "maya", "jordan"). A protagonist
   // whose first name matches one of them reads as the same person to
   // reviewers — QA flagged exactly this collision on a live run.
@@ -636,14 +651,25 @@ async function main() {
     console.log(`   Episode: "${EPISODE_BRIEF.title}"`);
     console.log(`   Synopsis: ${EPISODE_BRIEF.synopsis}\n`);
 
+    const episodesRootForContinuity = path.join(__dirname, '..', 'output', 'episodes');
     const { episodes: previousEpisodes, source: previousEpisodesSource } = await loadPreviousEpisodes({
       databaseUrl: DATABASE_URL,
       worldId: TEST_WORLD.id,
       beforeEpisodeNumber: EPISODE_BRIEF.episodeNumber,
-      episodesRoot: path.join(__dirname, '..', 'output', 'episodes')
+      episodesRoot: episodesRootForContinuity
     });
     if (previousEpisodes.length > 0) {
       console.log(`   📚 Continuity: ${previousEpisodes.length} previous episode(s) loaded from ${previousEpisodesSource} — ${previousEpisodes.map(e => `"${e.title}"`).join(', ')}\n`);
+    }
+
+    const { character: previousProtagonist, source: previousProtagonistSource } = await loadPreviousProtagonist({
+      databaseUrl: DATABASE_URL,
+      worldId: TEST_WORLD.id,
+      beforeEpisodeNumber: EPISODE_BRIEF.episodeNumber,
+      episodesRoot: episodesRootForContinuity
+    });
+    if (previousProtagonist) {
+      console.log(`   👤 Continuity: protagonist "${previousProtagonist.name}" carries over from ${previousProtagonistSource} (Story Architect informed, Character Designer skipped)\n`);
     }
 
     console.log('   🔄 Calling Claude API to generate story structure...\n');
@@ -657,7 +683,12 @@ async function main() {
         episodeNumber: EPISODE_BRIEF.episodeNumber,
         themes: EPISODE_BRIEF.themes,
         targetTraits: EPISODE_BRIEF.targetTraits,
-        characters: [],
+        // The returning protagonist (if any) is given to the Story
+        // Architect BEFORE the outline is written, so scene descriptions
+        // and dialogue naturally use their established name/traits from
+        // the start, instead of a generic "player" placeholder that later
+        // steps have to reconcile with a reused profile.
+        characters: previousProtagonist ? [previousProtagonist] : [],
         previousEpisodes
       }
     });
@@ -676,9 +707,11 @@ async function main() {
     console.log('   🔄 Calling Claude API to design the protagonist...\n');
 
     const charStart = Date.now();
-    const protagonistResult = await generateProtagonist(outline);
+    const protagonistResult = await generateProtagonist(outline, previousProtagonist);
 
-    console.log(`✅ Protagonist created! (${((Date.now() - charStart) / 1000).toFixed(1)}s)`);
+    console.log(previousProtagonist
+      ? `✅ Protagonist carried over (${((Date.now() - charStart) / 1000).toFixed(1)}s)`
+      : `✅ Protagonist created! (${((Date.now() - charStart) / 1000).toFixed(1)}s)`);
     console.log(`   Name: ${protagonistResult.character?.name} [id: player]`);
     console.log(`   Age: ${protagonistResult.character?.age}`);
     console.log(`   Core Traits: ${protagonistResult.character?.personality.coreTraits.join(', ')}\n`);
@@ -850,6 +883,7 @@ async function main() {
         skippedReviewers: SKIP_REVIEWERS,
         previousEpisodes: previousEpisodes.map(e => ({ id: e.id, title: e.title })),
         previousEpisodesSource: previousEpisodes.length > 0 ? previousEpisodesSource : null,
+        previousProtagonist: previousProtagonist ? { name: previousProtagonist.name, source: previousProtagonistSource } : null,
         usage: usageSummary(llm)
       },
       roster: roster.map(c => ({

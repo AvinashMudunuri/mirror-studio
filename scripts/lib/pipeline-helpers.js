@@ -73,6 +73,21 @@ function unreadableResult(verdictField, error) {
   };
 }
 
+/**
+ * Character-Designer-shaped output for a protagonist carried over from a
+ * previous episode (loadPreviousProtagonist()), instead of generating a
+ * brand new one. `id` is forced to "player" defensively — the loader
+ * should already have it, since every persisted protagonist went through
+ * this same id assignment on the run that originally created it.
+ */
+function reusedProtagonistResult(existingProtagonist) {
+  return {
+    character: { ...existingProtagonist, id: 'player' },
+    designNotes: 'Continuity: reused the established protagonist from a previous episode rather than designing a new one.',
+    uncertainties: []
+  };
+}
+
 function isDialogueLocated(text) {
   return /dialogue|line|speech|says|spoken/i.test(text);
 }
@@ -194,6 +209,7 @@ module.exports = {
   REVIEWER_PASSES,
   failingReviewers,
   unreadableResult,
+  reusedProtagonistResult,
   collectRevisionFeedback,
   mergeSceneDialogue,
   mergeChoiceDialogue,

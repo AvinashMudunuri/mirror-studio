@@ -1,0 +1,145 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-11c references character 'Dez Okafor' but choice-5 option 'c' leads to scene-11c after a walking scene with Priya. The narrative context (scene-10) establishes Wren and Priya walking together; scene-11c should occur separately but the transition is unclear and potentially breaks narrative continuity.",
+      "location": "scenes[10].dialogue, choice-5.options[2].nextScene",
+      "expectedValue": "Either scene-11c should be a separate scene that explicitly transitions away from Priya, or the choice should clarify the narrative break",
+      "actualValue": "scene-10 ends with Priya and Wren on the sidewalk; choice-5 option 'c' jumps to scene-11c with Dez at the bike rack without explicit transition",
+      "fix": "Add a transition scene or clarify in scene-11c's description that this occurs at a different time/location. Alternatively, add explicit dialogue in scene-10 showing Wren leaving Priya to find Dez."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-3a and scene-3b both have defaultNextScene='scene-4', but they represent mutually exclusive paths from choice-1. Only one should execute per playthrough, yet both reference the same next scene. This is correct for the data model, but the issue is that scene-4 ('Whose Idea Is It Anyway') occurs 'days later' and should reflect the state set by the prior choice (whether they used the flash drive or did real research). Scene-4's dialogue does not differentiate based on which path was taken.",
+      "location": "scenes[2], scenes[3], scenes[4]",
+      "expectedValue": "Scene-4 dialogue should acknowledge whether the group is working from the flash drive data or original research",
+      "actualValue": "Scene-4 dialogue is identical regardless of choice-1 outcome; Priya's suggestion treats the project as if it's in early stages, but if choice-1b was taken, they'd already be committed to the flash drive approach",
+      "fix": "Either: (a) Create separate scene-4a and scene-4b variants, or (b) Add conditional dialogue in scene-4 that references the prior choice (e.g., 'Priya suggests simplifying the design' vs. 'Priya suggests we actually validate the data we borrowed'). Use branchDialogue to handle this."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice-2 (scene-4) has three options leading to scene-5a, scene-5b, and scene-5c. However, all three scenes have defaultNextScene='scene-6'. This means regardless of which path Wren takes (speaking up, staying silent, or checking in privately), the narrative converges at scene-6 without differentiation. Scene-6 dialogue does not reflect the emotional or relational state set by choice-2.",
+      "location": "choice-2.options, scenes[4], scenes[5], scenes[6]",
+      "expectedValue": "Scene-6 should have conditional dialogue or separate variants reflecting whether Priya was publicly supported, publicly abandoned, or privately validated",
+      "actualValue": "Scene-6 opens identically: 'Video call, kitchen table, project due tomorrow morning. On screen, three tired faces and one botched data set.' This ignores the relational dynamics established in choice-2.",
+      "fix": "Add branchDialogue entries keyed to choice-2 outcomes, or create scene-6a/6b/6c variants. At minimum, Priya's demeanor and dialogue should reflect whether she was defended or thrown under the bus earlier."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice-3 (scene-6) branches to scene-7a (redo the experiment) or scene-7b (smooth the data). Both have defaultNextScene='scene-8'. However, scene-8 dialogue does not differentiate based on which path was taken. Ms. Alvarez's question 'These results are unusually clean' makes sense only if choice-3b (smoothing) was taken. If choice-3a (redoing) was taken, the results should not be 'unusually clean' — they should be legitimately earned.",
+      "location": "choice-3.options, scenes[6], scenes[7], scenes[8]",
+      "expectedValue": "Scene-8 should have two variants: one where Ms. Alvarez praises clean results (choice-3b path), one where she acknowledges hard work (choice-3a path)",
+      "actualValue": "Scene-8 dialogue is identical: Ms. Alvarez questions the cleanliness of the results regardless of whether they were faked or earned",
+      "fix": "Create scene-8a and scene-8b, or use branchDialogue to vary Ms. Alvarez's opening line and the emotional weight of her question based on choice-3 outcome."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice-4 (scene-8) has three options: scene-9a (honest), scene-9b (blame Priya), scene-9c (vague). All three have defaultNextScene='scene-10'. However, scene-10 dialogue opens with 'Priya and Wren end up walking the same direction after school' without acknowledging the prior choice. If choice-4b was taken (Wren blamed Priya), Priya's emotional state and willingness to walk with Wren should be dramatically different.",
+      "location": "choice-4.options, scenes[8], scenes[9], scenes[10]",
+      "expectedValue": "Scene-10 should have conditional dialogue reflecting whether Priya was betrayed (choice-4b), protected (choice-4a), or ambiguously handled (choice-4c)",
+      "actualValue": "Scene-10 opens identically and Priya initiates conversation: 'you didn't have to say anything in there. Earlier.' This assumes a specific emotional state that doesn't match all choice-4 outcomes.",
+      "fix": "Create scene-10a/10b/10c variants, or use branchDialogue to vary Priya's opening line and demeanor. If choice-4b was taken, Priya might not walk with Wren at all, or might be visibly hurt."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Dialogue in scene-10 (s10-2) has Priya say 'you didn't have to say anything in there. Earlier.' This phrasing assumes Wren said something honest (choice-4a). If choice-4b was taken (Wren blamed Priya), this line is nonsensical — Priya would be reacting to being thrown under the bus, not to Wren's honesty.",
+      "location": "scenes[9].dialogue[s10-2]",
+      "expectedValue": "Dialogue should vary based on choice-4 outcome",
+      "actualValue": "Dialogue assumes choice-4a was taken",
+      "fix": "Use branchDialogue or create separate scene-10 variants with appropriate opening lines for each choice-4 outcome."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice-5 (scene-10) has three options: scene-11a (apologize to Priya), scene-11b (let it go), scene-11c (confront Dez). However, scene-11c is described as occurring 'at the bike rack' with Dez, while the prior scene (scene-10) explicitly establishes Wren and Priya walking together. The transition from scene-10 to scene-11c breaks the established narrative flow without explanation.",
+      "location": "choice-5.options[2], scenes[10], scenes[10]",
+      "expectedValue": "Scene-11c should either be a separate, clearly-marked scene transition, or the choice should be presented differently (e.g., as a 'later that day' option)",
+      "actualValue": "Choice-5 option 'c' leads directly from the Priya-Wren walking scene to a Dez-Wren bike rack scene without narrative bridge",
+      "fix": "Add a transition line in scene-11c's description: 'Later that day, at the bike rack...' or create an intermediate transition scene."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Outcomes array references branch IDs that are used in branchDialogue, but the outcomes array does not contain entries for all possible branch paths. Specifically, 'branch-integrity-path' appears in branchDialogue for both scene-11a and scene-11c, but the outcomes array only lists four outcomes. This creates ambiguity about which dialogue variant fires when multiple scenes share the same branch ID.",
+      "location": "outcomes array, branchDialogue entries",
+      "expectedValue": "Each unique branch ID should appear exactly once in the outcomes array, or branchDialogue should use unique identifiers per scene",
+      "actualValue": "branch-integrity-path and branch-advocate-path are reused across multiple scenes (scene-11a and scene-11c both use branch-integrity-path)",
+      "fix": "Either: (a) Rename branchDialogue entries to be scene-specific (e.g., 'scene-11a-integrity-path'), or (b) Clarify in the outcomes array that these branches apply globally and branchDialogue is keyed by scene+branch combination."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The outcomes array defines four branches with 'triggeredBy' lists, but the logic for determining which branch fires is unclear. For example, 'branch-integrity-path' is triggered by ['choice-1:a', 'choice-3:a', 'choice-4:a'], but a player could take choice-1:a, then choice-3:b, then choice-4:a. Does this still trigger 'branch-integrity-path'? The current specification suggests it does (all three choices are in the list), but this creates a branch that doesn't reflect the player's actual path.",
+      "location": "outcomes array, triggeredBy logic",
+      "expectedValue": "Clarify whether branches require ALL listed choices, ANY listed choice, or a specific sequence",
+      "actualValue": "Ambiguous: 'triggeredBy' lists appear to use OR logic (any choice in the list triggers the branch), but this doesn't account for mixed paths",
+      "fix": "Specify the branch-triggering logic explicitly. If it's 'any of these choices', rename to 'includesAnyOf'. If it's 'all of these choices', rename to 'includesAllOf'. If it's sequence-dependent, restructure to track choice sequences."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene-11b has two branchDialogue entries ('branch-compliance-path' and 'branch-avoidant-path'), but the outcomes array only defines these as separate branches. However, choice-5 option 'b' (Let it go) leads to scene-11b, and there's no mechanism to determine which branchDialogue variant fires. Both branches could be triggered by different choice histories, but the scene itself doesn't differentiate.",
+      "location": "scenes[10], choice-5.options[1], branchDialogue[scene-11b]",
+      "expectedValue": "Either: (a) scene-11b should have conditional logic to select the correct branchDialogue, or (b) scene-11b should be split into scene-11b-compliance and scene-11b-avoidant",
+      "actualValue": "Single scene-11b with two possible branchDialogue variants, no clear selection mechanism",
+      "fix": "Add a condition in the rendering logic: if player took choice-1:b or choice-3:b, use 'branch-compliance-path'; otherwise use 'branch-avoidant-path'. Or split the scene."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'Priya Nassar' is listed in the characters array with id 'Priya Nassar' (using full name as ID), but throughout the episode JSON, dialogue attributes use 'Priya Nassar' as the character ID. However, the CHARACTERS section at the top uses 'id':'Priya Nassar' (not a typical ID format). This is inconsistent with the 'player', 'Ms. Alvarez', and 'Dez Okafor' IDs, which use first name or nickname. Verify that all character references match the actual character IDs.",
+      "location": "CHARACTERS array, dialogue throughout",
+      "expectedValue": "Character IDs should be consistent and match dialogue attribution exactly",
+      "actualValue": "Character ID is 'Priya Nassar' (full name), which is inconsistent with other ID formats",
+      "fix": "Either: (a) Rename character ID to 'priya' for consistency, and update all dialogue references, or (b) Document that full names are acceptable IDs and verify all references match."
+    },
+    {
+      "severity": "WARNING",
+      "category": "LOGIC",
+      "message": "Scene-3a and scene-3b represent mutually exclusive outcomes of choice-1, but both are titled 'Doing It Right' and 'A Peek Won't Hurt' respectively. However, the episode synopsis and educational goals emphasize 'honesty' and 'integrity', which suggests scene-3a is the 'correct' path. This framing could bias players toward one choice. Verify this is intentional.",
+      "location": "scenes[2], scenes[3], educationalGoals",
+      "expectedValue": "Both paths should be presented as equally valid choices with different consequences",
+      "actualValue": "Scene titles and educational goals suggest one path is 'right' and the other is 'wrong'",
+      "fix": "Ensure both paths are presented neutrally, or clarify in the episode design that this is intentional moral framing."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-4 ('Whose Idea Is It Anyway') occurs 'days later' but doesn't explicitly reference the state set by choice-1. If players took choice-1b (using the flash drive), Priya's suggestion to 'simplify the design' seems to ignore that they're already committed to a pre-built project. Consider adding dialogue that acknowledges the prior choice.",
+      "location": "scenes[4]",
+      "suggestion": "Add conditional dialogue in scene-4 that references whether the group is working from original research or adapted data."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice-2 has three options with very different emotional outcomes (speaking up, staying silent, checking in privately), but all converge at scene-6 without differentiation. This reduces the perceived impact of the choice. Consider creating scene-6 variants or using branchDialogue to reflect the relational state.",
+      "location": "choice-2, scenes[4], scenes[5], scenes[6]",
+      "suggestion": "Add branchDialogue entries for scene-6 that vary Priya's demeanor and dialogue based on choice-2 outcome."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-8 ('Under the Lights') has Ms. Alvarez question the cleanliness of results, but this only makes sense if choice-3b (smoothing data) was taken. If choice-3a (redoing the experiment) was taken, the results should be legitimately clean. Consider creating scene-8 variants.",
+      "location": "scenes[8]",
+      "suggestion": "Create scene-8a (honest results) and scene-8b (suspicious results) variants, or use branchDialogue to vary Ms. Alvarez's opening line."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-10 opens with Priya initiating conversation, but if choice-4b was taken (Wren blamed Priya), Priya might not walk with Wren or might be visibly hurt. The current dialogue assumes a specific emotional state. Consider creating scene-10 variants.",
+      "location": "scenes[10]",
+      "suggestion": "Create scene-10a/10b/10c variants reflecting choice-4 outcomes, or use branchDialogue to vary Priya's opening line and demeanor."
+    }
+  ],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 12,
+    "warningCount": 4
+  }
+}

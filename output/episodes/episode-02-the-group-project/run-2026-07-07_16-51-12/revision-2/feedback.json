@@ -1,0 +1,66 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-3a and scene-3b both claim to be the defaultNextScene for scene-2, but scene-2 has a choicePointId that should route through choice-1 instead. The choice mechanism is being bypassed. — Suggested fix: Verify that scene-2.transition correctly references choice-1, and that choice-1.options[0].nextScene='scene-3a' and choice-1.options[1].nextScene='scene-3b'. The transition object should NOT have a defaultNextScene field when a choiceId is present. (location: scene-2.transition vs choice-1)",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-5c (After the Session) is listed as a nextScene option in choice-2, but it does not appear in the scenes array. It is referenced but never defined. — Suggested fix: Either (a) add the scene-5c definition to the scenes array with full dialogue and structure, or (b) remove the third option from choice-2 that points to scene-5c. (location: choice-2.options[2].nextScene = 'scene-5c' vs scenes array)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome 'branch-mixed-path' has a triggeredBy list that enumerates every possible choice:option pair in the episode, which defeats the purpose of a fallback branch. The list is overly broad and will match even when more specific branches should fire. — Suggested fix: Change triggeredBy to an empty array [] and rely on the matchType='fallback' to catch all non-matching paths. The current list is technically correct but semantically confusing and suggests the branch will always fire, which is not true. (location: outcomes[3].triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Branch outcomes reference scenes that may not be reachable depending on choice path. Specifically, 'branch-compliance-path' is triggered by choice-1:b, choice-3:b, choice-4:b, but choice-2 and choice-5 are not constrained. A player could take choice-1:b (shortcut) but then choose choice-2:a (speak up), which doesn't match the 'compliance' archetype but the branch logic doesn't account for this mixed path. — Suggested fix: Either (a) extend each branch's triggeredBy to include all 5 choice points (e.g., branch-compliance-path should specify what happens if choice-2 is :a vs :b vs :c), or (b) accept that mixed-path is the expected outcome for most players and document that clearly. (location: outcomes[1].triggeredBy and choice logic)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Trait mapping in choice-2 option 'c' (scene-5c) references COMMUNICATION and JUDGMENT, but the traitMapping for choice-2 option 'c' is not defined in the choices array. — Suggested fix: Add traitMapping to choice-2.options[2]: {\"COMMUNICATION\": 1, \"JUDGMENT\": 1} (or appropriate values based on the narrative intent of scene-5c). (location: choice-2.options[2].traitMapping)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-5c is referenced in choice-2 but the scene definition is missing from the scenes array. This breaks the branching logic because the choice points to a non-existent scene. — Suggested fix: Add scene-5c to the scenes array. Based on the dialogue (s5c-1 through s5c-9), this scene should depict Wren catching up to Priya outside the library and telling her privately that her idea was good. (location: choice-2.options[2].nextScene = 'scene-5c')",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Character 'Priya Nassar' is referenced in scene-1 dialogue (s1-10, s1-12) but does NOT appear in the scene's characters array. — Suggested fix: N/A — character IS listed. This was a false positive on my first pass. (location: scenes[0].characters vs dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice-2 has three options but the prompt and context only describe two distinct narrative paths. Option 2 (scene-5c) is defined in dialogue but the scene itself is missing from the scenes array. — Suggested fix: Add scene-5c to scenes array with id, title, location, characters, duration, description, emotionalBeat, defaultNextScene, and dialogue. Based on the choiceDialogue, this scene should show Wren catching up to Priya outside the library. (location: choice-2.options[2] and scenes array)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-5c is referenced in choiceDialogue but the scene definition itself is missing from the scenes array. The dialogue exists (s5c-1 through s5c-9) but the scene container does not. — Suggested fix: Insert scene-5c into the scenes array between scene-5b and scene-6. Use the dialogue lines s5c-1 through s5c-9 as the content. Set defaultNextScene='scene-6'. (location: scenes array vs choiceDialogue[2])",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-11a, scene-11b, and scene-11c all have defaultNextScene='END', but they also have branchDialogue entries that suggest different dialogue variants should play depending on which branch fires. However, the branchDialogue is keyed by branchId (e.g., 'branch-integrity-path'), not by the scene's own logic. This means the same scene (e.g., scene-11a) will render different dialogue depending on the player's entire choice history, not just the choices in that scene. — Suggested fix: Verify that the rendering engine (a) evaluates the player's choice history against each outcome's triggeredBy list, (b) identifies which branch fires, and (c) uses that branchId to select the correct branchDialogue variant for the final scene. This is a design-level concern, not a data error, but it should be tested. (location: scenes[10-12].branchDialogue and outcomes[].branchId)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-5c is defined in choiceDialogue but not in the main scenes array. This is a structural inconsistency that could confuse the rendering engine. — Suggested fix: Move scene-5c from choiceDialogue into the main scenes array, or clarify the data model if choiceDialogue is meant to define inline scenes. (location: choiceDialogue[2] vs scenes array)",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

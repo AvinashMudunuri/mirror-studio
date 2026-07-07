@@ -86,15 +86,39 @@ a `previousEpisodes` field in their input types at all — not wired,
 lower value since QA/Creative Director are the two that reason about
 narrative continuity across episodes.
 
+**Protagonist continuity — DONE (2026-07-07).** `loadPreviousProtagonist()`
+(`scripts/lib/load-previous-episodes.js`) fetches the full protagonist
+("player") character profile from the single most recent APPROVED
+episode before the target one — Postgres `episodes.content->'cast'` when
+`DATABASE_URL` is set, else the newest APPROVED run folder's
+`02-protagonist.json` (protagonist is never touched by a run's revision
+loop, so the base file is always definitive — no revision-awareness
+needed, unlike the episode-reference loader). Two effects:
+1. `create-real-episode.js` skips Character Designer entirely for the
+   protagonist when one carries over (`reusedProtagonistResult()` in
+   `pipeline-helpers.js` — zero extra tokens, exact same profile).
+2. The carried-over character is also given to the Story Architect's
+   `brief.characters` BEFORE the outline is written (previously always
+   `[]`), so scene descriptions and the synopsis use the established
+   name/pronouns/traits from the start instead of a generic "player"
+   placeholder some other step has to reconcile later.
+
+Live-verified (`run-2026-07-07_16-51-12`): log line `👤 Continuity:
+protagonist "Wren Castillo" carries over from postgres`, `✅ Protagonist
+carried over (0.0s)` (confirming zero Character Designer calls for it),
+and — the strongest evidence — the Story Architect's own output used
+"Wren" 44 times unprompted throughout the synopsis and scene descriptions,
+correctly used her established pronouns, and referenced "since day one"
+tying back to episode 1's events. `manifest.run.previousProtagonist:
+{name: "Wren Castillo", source: "postgres"}`.
+
 Still open:
-- **Protagonist continuity.** Each run still calls Character Designer for
-  a brand-new protagonist regardless of `previousEpisodes` — episode 2's
-  protagonist is a different person (name, look, everything) from episode
-  1's, even though the outline treats it as the same ongoing story. Fixing
-  this needs the Character Designer (or the orchestrator) to accept an
-  existing protagonist profile instead of always generating one; NPC ids
-  the outline reuses (e.g. "jordan") already get regenerated per-run
-  rather than reusing the prior profile, for the same reason.
+- NPC ids the outline reuses (e.g. "jordan") still get a brand-new
+  Character Designer profile every run rather than reusing the prior
+  episode's version of that same id — same underlying gap, deliberately
+  not extended to NPCs here (narrower, lower-value than the protagonist,
+  and multiplies the "does this id mean the same person as last episode"
+  ambiguity across however many NPCs an outline reuses).
 - Semantic search needs `OPENAI_API_KEY` for embeddings and is untested live.
 
 ## 3. Message bus (decided: out of runtime — ADR 001)

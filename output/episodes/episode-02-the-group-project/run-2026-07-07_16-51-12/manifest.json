@@ -1,0 +1,147 @@
+{
+  "episode": {
+    "number": 2,
+    "title": "Group Work",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "63f02a7c-2fd5-4579-a8cc-0328db0689ae",
+    "threadId": "3c4b16d2-8561-4275-93c4-2dfb5257a69c",
+    "startedAt": "2026-07-07T16:51:12.860Z",
+    "completedAt": "2026-07-07T17:21:28.289Z",
+    "totalSeconds": 1815.4,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [
+      "childPsychologist",
+      "gameDesigner",
+      "ethicsReviewer"
+    ],
+    "previousEpisodes": [
+      {
+        "id": "ep-1",
+        "title": "First Bell"
+      }
+    ],
+    "previousEpisodesSource": "postgres",
+    "previousProtagonist": {
+      "name": "Wren Castillo",
+      "source": "postgres"
+    },
+    "usage": {
+      "calls": 16,
+      "inputTokens": 169494,
+      "outputTokens": 196926,
+      "totalTokens": 366420,
+      "cacheCreationInputTokens": 55180,
+      "cacheReadInputTokens": 17262,
+      "budget": 400000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 12,
+          "inputTokens": 91671,
+          "outputTokens": 180852,
+          "cacheReadInputTokens": 0
+        },
+        "claude-haiku-4-5-20251001": {
+          "calls": 4,
+          "inputTokens": 77823,
+          "outputTokens": 16074,
+          "cacheReadInputTokens": 17262
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Wren Castillo",
+      "role": "Player character / protagonist of 'First Bell' — the lens through which the player experiences Ridgemont's social ecosystem for the first time. Wren's choices (who she sits with, whether she speaks up during the lunchroom cruelty moment, how she introduces herself) directly shape both the narrative reputation system and her own internal arc about authenticity vs. self-protection.",
+      "active": true
+    },
+    {
+      "id": "Ms. Alvarez",
+      "name": "Ms. Alvarez",
+      "role": "The adult fulcrum of 'Group Work' — Ms. Alvarez doesn't drive Wren's internal conflict, she reveals it. Her single question in front of the judge is the pressure point the whole episode has been building toward, and her reactions in 'The Weight Lifts' and 'Careful Words' show Wren (and the player) that honesty and half-truths get different, specific, believable responses from a real adult — not a morality lecture, just a teacher being a teacher.",
+      "active": true
+    },
+    {
+      "id": "Dez Okafor",
+      "name": "Dez Okafor",
+      "role": "Dez is the engine of the episode's central pressure — the peer whose confidence and results-focus make shortcuts feel not just tempting but reasonable. He's not a villain; he's a kid who has learned that being impressive is safer than being honest, and who genuinely doesn't register the cost of that lesson to people around him until it's pointed out to his face. His arc across the episode — grudgingly trying it the real way, sliding back into the shortcut under deadline pressure, dismissing Priya, and finally sitting with a quiet, unfinished moment of accountability on the sidewalk — gives Wren's choices something real to push against.",
+      "active": true
+    },
+    {
+      "id": "Priya Nassar",
+      "name": "Priya Nassar",
+      "role": "Priya is the human stakes of Wren's choices in 'Group Work.' She's not a lesson about shyness — she's a kid who already learned, painfully, that having opinions can get you labeled, and who is testing (without fully realizing she's testing it) whether this new group, and specifically Wren, is a place where that's still true. Every time Wren speaks up or stays silent, it registers on Priya immediately and specifically — she is the barometer for whether Wren's choices actually cost anything.",
+      "active": true
+    }
+  ],
+  "finalStatus": "NEEDS_HUMAN_REVIEW",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "FAIL",
+    "childPsychologist": "SKIPPED",
+    "gameDesigner": "SKIPPED",
+    "ethicsReviewer": "SKIPPED"
+  },
+  "revisions": [
+    {
+      "iteration": 1,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 3,
+      "dialogueFeedbackCount": 9,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "SKIPPED",
+        "gameDesigner": "SKIPPED",
+        "ethicsReviewer": "SKIPPED"
+      }
+    },
+    {
+      "iteration": 2,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 6,
+      "dialogueFeedbackCount": 5,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "SKIPPED",
+        "gameDesigner": "SKIPPED",
+        "ethicsReviewer": "SKIPPED"
+      }
+    }
+  ],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "revision-1/feedback.json",
+    "revision-1/story-outline.json",
+    "revision-1/dialogue.json",
+    "revision-1/qa-review.json",
+    "revision-2/feedback.json",
+    "revision-2/story-outline.json",
+    "revision-2/dialogue.json",
+    "revision-2/qa-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}

@@ -1,0 +1,606 @@
+{
+  "episodeOutline": {
+    "title": "Group Work",
+    "synopsis": "Two weeks into her first year at Ridgemont, Wren is placed in a project group with magnetic, results-obsessed Dez Okafor and quiet, still-finding-her-footing Priya Nassar. What starts as a simple science fair assignment becomes a slow-building test of what Wren is willing to say, see, and stay silent about — as convenience, loyalty, and truth pull in different directions right up until the moment a teacher asks one simple question in front of everyone.",
+    "themes": [
+      "Peer Pressure",
+      "Honesty",
+      "Teamwork"
+    ],
+    "targetTraits": [
+      "INTEGRITY",
+      "COMMUNICATION",
+      "JUDGMENT"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "The Assignment",
+        "location": "Ridgemont Middle School — Science Classroom",
+        "characters": [
+          "player",
+          "Ms. Alvarez",
+          "Dez Okafor",
+          "Priya Nassar"
+        ],
+        "duration": 1,
+        "description": "Ms. Alvarez announces the trimester project: build a working model demonstrating a scientific principle, presented in one week to a visiting district judge. Groups go up on the board. Wren is paired with Dez Okafor — confident, well-liked, competitive — and Priya Nassar, the quiet girl from the lunchroom who's mostly kept to herself since day one.",
+        "emotionalBeat": "Cautious opportunity — a chance to build something and maybe a friendship, if Wren can find her footing.",
+        "defaultNextScene": "scene-2"
+      },
+      {
+        "id": "scene-2",
+        "title": "Cutting the Line",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar"
+        ],
+        "duration": 1.5,
+        "description": "After school, Dez pulls out a flash drive. His older brother did almost this exact project two years ago and got an A. 'We could just... update the numbers a little. Nobody's gonna check.' Priya goes very still and says nothing. All eyes, without meaning to, land on Wren.",
+        "emotionalBeat": "The first pull of temptation — easy, low-risk-feeling, and socially loaded.",
+        "choicePointId": "choice-1"
+      },
+      {
+        "id": "scene-3a",
+        "title": "Starting From Scratch",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar"
+        ],
+        "duration": 1,
+        "description": "Dez shrugs — 'Fine, we'll try it the real way first.' The group starts actual research. It's slower going, but Priya, after a minute, offers an idea out loud for the first time.",
+        "emotionalBeat": "A small spark of real teamwork, still uncertain how it'll hold up under time pressure.",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-3b",
+        "title": "Borrowed Numbers",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar"
+        ],
+        "duration": 1,
+        "description": "They open the old file. It's exciting how much time it saves — the shape of the whole project suddenly clear. Priya stares at the screen, quiet, chewing on something she doesn't say out loud.",
+        "emotionalBeat": "The easy comfort of a shortcut nobody's officially agreed to.",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-4",
+        "title": "Whose Idea Is It Anyway",
+        "location": "Library Study Room, days later",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar"
+        ],
+        "duration": 1.5,
+        "description": "Priya suggests a simpler, more original experiment design — one that would actually be more interesting to present. Dez cuts her off: 'That'll take too long. We're doing it my way.' Priya shrinks back into her chair.",
+        "emotionalBeat": "A small, quiet cruelty repeating itself — this time Wren isn't just watching a stranger.",
+        "choicePointId": "choice-2"
+      },
+      {
+        "id": "scene-5a",
+        "title": "Speaking Up",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar"
+        ],
+        "duration": 1,
+        "description": "Wren backs Priya's idea out loud. Dez blinks, surprised, a little defensive — but the group's balance shifts. Priya sits up straighter than Wren's seen her sit all week.",
+        "emotionalBeat": "Small courage, immediately rewarded.",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-5b",
+        "title": "Letting It Go",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar"
+        ],
+        "duration": 1,
+        "description": "Wren says nothing. Priya goes quiet for the rest of the session — the kind of quiet that isn't shyness, it's retreat. Nobody notices except Wren.",
+        "emotionalBeat": "The specific guilt of a non-choice that was still a choice.",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-5c",
+        "title": "After the Session",
+        "location": "Outside the Library",
+        "characters": [
+          "player",
+          "Priya Nassar"
+        ],
+        "duration": 1,
+        "description": "Wren catches up to Priya outside and tells her, privately, that her idea was actually good. Priya's shoulders loosen a little — grateful, but still braced for the next time it happens in front of everyone.",
+        "emotionalBeat": "Kindness offered sideways — real, but incomplete.",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-6",
+        "title": "The Night Before",
+        "location": "Wren's Kitchen Table — Video Call",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar"
+        ],
+        "duration": 1.5,
+        "description": "Project's due tomorrow morning and the data's a mess — a botched trial, missing numbers. Dez proposes 'smoothing' the results to match what they expected to find. 'It's basically the same thing, just cleaner.' The clock is the loudest thing in the room.",
+        "emotionalBeat": "Peer pressure at its most reasonable-sounding — dressed up as practicality.",
+        "choicePointId": "choice-3"
+      },
+      {
+        "id": "scene-7a",
+        "title": "Burning the Midnight Oil",
+        "location": "Video Call, late night",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar"
+        ],
+        "duration": 1,
+        "description": "They stay on the call past ten, actually re-running the broken part of the experiment over video. It's exhausting. It's also the first time all three of them are laughing about something — Priya spots the fix that saves them.",
+        "emotionalBeat": "Earned exhaustion becomes earned closeness.",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-7b",
+        "title": "Smoothing It Over",
+        "location": "Video Call, late night",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar"
+        ],
+        "duration": 1,
+        "description": "They adjust the numbers to match the 'ideal' outcome. It's fast. It's efficient. When the call ends, nobody says goodnight the normal way.",
+        "emotionalBeat": "Efficiency bought with a quiet, mutual unease.",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-8",
+        "title": "Under the Lights",
+        "location": "Science Classroom — Presentation Day",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar",
+          "Ms. Alvarez"
+        ],
+        "duration": 1.5,
+        "description": "The district judge watches from the back row. Reviewing their data table, Ms. Alvarez raises an eyebrow: 'These results are unusually clean. Walk me through how you got this measurement.' Three sets of eyes land on Wren.",
+        "emotionalBeat": "The moment the private becomes public.",
+        "choicePointId": "choice-4"
+      },
+      {
+        "id": "scene-9a",
+        "title": "The Weight Lifts",
+        "location": "Science Classroom",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar",
+          "Ms. Alvarez"
+        ],
+        "duration": 1,
+        "description": "Wren admits the timeline got tight and some data had to be reworked. Ms. Alvarez nods slowly — not thrilled, but respects it — and lets them present with a noted caveat. It's not a perfect score. It feels like something better.",
+        "emotionalBeat": "Relief that costs something and is worth it anyway.",
+        "defaultNextScene": "scene-10"
+      },
+      {
+        "id": "scene-9b",
+        "title": "Passing the Blame",
+        "location": "Science Classroom",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar",
+          "Ms. Alvarez"
+        ],
+        "duration": 1,
+        "description": "Wren implies Priya handled that part of the data and must have made an error. Priya's face falls in front of the whole room. Dez stays very quiet, visibly relieved it landed somewhere else.",
+        "emotionalBeat": "A small betrayal with a big, visible impact.",
+        "defaultNextScene": "scene-10"
+      },
+      {
+        "id": "scene-9c",
+        "title": "Careful Words",
+        "location": "Science Classroom",
+        "characters": [
+          "player",
+          "Dez Okafor",
+          "Priya Nassar",
+          "Ms. Alvarez"
+        ],
+        "duration": 1,
+        "description": "Wren gives a half-true answer — sharing the blame vaguely, without saying exactly what happened. The judge moves on. Nobody's humiliated. Nobody's fully honest either, and Wren feels that gap the rest of the period.",
+        "emotionalBeat": "The uncomfortable in-between of protecting people without telling the truth.",
+        "defaultNextScene": "scene-10"
+      },
+      {
+        "id": "scene-10",
+        "title": "Walking Toward the Bike Racks",
+        "location": "Outside Ridgemont — Bike Racks",
+        "characters": [
+          "player",
+          "Priya Nassar",
+          "Dez Okafor"
+        ],
+        "duration": 1.5,
+        "description": "Priya and Wren end up walking the same direction after school, the events of the day sitting heavy between them, unspoken. Priya's mom is due any minute; Dez is a few yards off, still fumbling with his bike lock. This is the last real chance to say something about what happened — to Priya before her ride pulls up, or to Dez once Priya's gone.",
+        "emotionalBeat": "The quiet after the storm, where character actually gets decided.",
+        "choicePointId": "choice-5"
+      },
+      {
+        "id": "scene-11a",
+        "title": "Naming It",
+        "location": "Outside Ridgemont — Bike Racks",
+        "characters": [
+          "player",
+          "Priya Nassar"
+        ],
+        "duration": 1,
+        "description": "Before Priya's mom arrives, Wren apologizes for what she didn't say earlier and suggests, half-joking, half-serious, that next time they make an actual rule: no faking results, no talking over each other. Priya laughs, surprised, and for the first time looks like she believes it.",
+        "emotionalBeat": "A real, if small, foundation of trust.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-11b",
+        "title": "Letting the Silence Sit",
+        "location": "Outside Ridgemont — Bike Racks",
+        "characters": [
+          "player",
+          "Priya Nassar"
+        ],
+        "duration": 1,
+        "description": "Wren doesn't bring it up. They make careful small talk about nothing until Priya's mom pulls up and she climbs in with a quick wave. It's easier this way. It's also lonelier than Wren expected.",
+        "emotionalBeat": "The quiet cost of an unspoken thing.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-11c",
+        "title": "Calling It Out",
+        "location": "Outside Ridgemont — Bike Racks",
+        "characters": [
+          "player",
+          "Dez Okafor"
+        ],
+        "duration": 1,
+        "description": "Priya's mom pulls up, and Priya climbs in with a quick wave, leaving Wren and Dez alone at the racks. Wren walks over while he's still wrestling with his bike lock and tells him, plainly, that pushing Priya around and dodging blame wasn't okay. He's defensive at first, then quiet — not an apology, exactly, but not nothing either.",
+        "emotionalBeat": "Confrontation as its own kind of care.",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2",
+        "prompt": "Dez wants to reuse his brother's old project data. What does Wren do?",
+        "context": "Nobody's officially agreed to anything yet. It would be easy to just... not object.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"That's basically cheating. Let's do our own.\"",
+            "nextScene": "scene-3a"
+          },
+          {
+            "id": "b",
+            "text": "\"I mean... it could save us time. Let's just look.\"",
+            "nextScene": "scene-3b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-4",
+        "prompt": "Dez cuts Priya off and dismisses her idea. How does Wren respond?",
+        "context": "Priya just shrank in her seat. Dez is already moving on like nothing happened.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Back Priya's idea out loud, right now",
+            "nextScene": "scene-5a"
+          },
+          {
+            "id": "b",
+            "text": "Stay quiet and let Dez keep leading",
+            "nextScene": "scene-5b"
+          },
+          {
+            "id": "c",
+            "text": "Say nothing now, but check in with Priya after",
+            "nextScene": "scene-5c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -2
+          },
+          "c": {
+            "COMMUNICATION": 1,
+            "JUDGMENT": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-6",
+        "prompt": "Dez wants to 'smooth' the messy data the night before it's due. What does Wren push for?",
+        "context": "It's late. Everyone's tired. The fake version would look just as good on paper.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"Let's just redo it right, even if it takes longer.\"",
+            "nextScene": "scene-7a"
+          },
+          {
+            "id": "b",
+            "text": "\"Fine — let's just clean it up and submit.\"",
+            "nextScene": "scene-7b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-8",
+        "prompt": "Ms. Alvarez asks, in front of everyone, how they got such clean results. What does Wren say?",
+        "context": "The judge is watching. Priya and Dez are both looking at Wren to answer first.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Admit the timeline was tight and be honest about what happened",
+            "nextScene": "scene-9a"
+          },
+          {
+            "id": "b",
+            "text": "Imply it was Priya's part of the work that went wrong",
+            "nextScene": "scene-9b"
+          },
+          {
+            "id": "c",
+            "text": "Give a vague, half-true answer that protects everyone a little",
+            "nextScene": "scene-9c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 3,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "INTEGRITY": -3,
+            "COMMUNICATION": -2,
+            "JUDGMENT": -1
+          },
+          "c": {
+            "INTEGRITY": 1,
+            "JUDGMENT": 1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-10",
+        "prompt": "At the bike racks, Wren has one more chance to address what happened today. What does she do?",
+        "context": "This isn't graded. Nobody's watching. It's just about who Wren decides to be about it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Apologize to Priya and suggest real ground rules going forward",
+            "nextScene": "scene-11a"
+          },
+          {
+            "id": "b",
+            "text": "Let it go and talk about something else",
+            "nextScene": "scene-11b"
+          },
+          {
+            "id": "c",
+            "text": "Wait for Priya to leave, then tell Dez directly the pressure wasn't okay",
+            "nextScene": "scene-11c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -1,
+            "JUDGMENT": -1
+          },
+          "c": {
+            "COMMUNICATION": 1,
+            "JUDGMENT": 2
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-integrity-path",
+        "name": "The Honest Path",
+        "matchType": "includesAllOf",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-3:a",
+          "choice-4:a"
+        ],
+        "description": "Fires only when Wren chooses the harder, truthful route at ALL THREE honesty-related decision points (choice-1, choice-3, choice-4), showing a consistent pattern rather than a single lucky choice.",
+        "outcome": "The group's project isn't perfect, but it's real, and Ms. Alvarez notices. Wren starts building a reputation as someone whose word can be trusted — even when trust is inconvenient."
+      },
+      {
+        "id": "branch-compliance-path",
+        "name": "The Shortcut Path",
+        "matchType": "includesAllOf",
+        "triggeredBy": [
+          "choice-1:b",
+          "choice-3:b",
+          "choice-4:b"
+        ],
+        "description": "Fires only when Wren takes the path of least resistance at ALL THREE honesty-related decision points, letting Dez set the terms and letting the group's dishonesty compound at every stage.",
+        "outcome": "The presentation goes smoothly right up until it doesn't. Priya gets hurt in a way that's hard to undo, and Wren has to sit with having made that easier."
+      },
+      {
+        "id": "branch-advocate-path",
+        "name": "The Advocate Path",
+        "matchType": "includesAllOf",
+        "triggeredBy": [
+          "choice-2:a",
+          "choice-5:a"
+        ],
+        "description": "Fires only when Wren speaks up for Priya BOTH in the moment (choice-2) AND afterward (choice-5), turning quiet observation into consistent, repeated support.",
+        "outcome": "Priya visibly opens up over the course of the episode. A tentative but genuine friendship starts to form, and Wren's sense of who she wants to be gets a little clearer."
+      },
+      {
+        "id": "branch-avoidant-path",
+        "name": "The Silent Path",
+        "matchType": "includesAllOf",
+        "triggeredBy": [
+          "choice-2:b",
+          "choice-5:b"
+        ],
+        "description": "Fires only when Wren avoids conflict at BOTH the in-the-moment decision (choice-2) and the ungraded, private decision (choice-5), prioritizing comfort over honesty every time it's offered.",
+        "outcome": "Nothing blows up, but nothing gets better either. Priya stays closed off, and Wren ends the episode aware of a version of herself she doesn't love."
+      },
+      {
+        "id": "branch-mixed-path",
+        "name": "A Work in Progress",
+        "matchType": "fallback",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-1:b",
+          "choice-2:a",
+          "choice-2:b",
+          "choice-2:c",
+          "choice-3:a",
+          "choice-3:b",
+          "choice-4:a",
+          "choice-4:b",
+          "choice-4:c",
+          "choice-5:a",
+          "choice-5:b",
+          "choice-5:c"
+        ],
+        "description": "Fires whenever a player's choices don't fully match any of the four consistent archetypes above — e.g. honest with Ms. Alvarez but silent with Priya, or vice versa. The triggeredBy list enumerates every possible choice:option pair in the episode, since this branch is evaluated as a catch-all fallback only after the four 'includesAllOf' archetypes above have been checked and failed to match. This is expected to be the most common outcome and is treated as narratively valid, not a 'failed' run.",
+        "outcome": "Wren's choices reflect the messy, real process of figuring out her own values — some brave, some hesitant, some still forming. Priya and Dez both notice a mix of moments, and the episode ends on an honest, unresolved note rather than a clean verdict."
+      }
+    ],
+    "emotionalArc": [
+      "Cautious opportunity at the project assignment",
+      "First temptation, dressed up as convenience",
+      "Relief or unease depending on early choice",
+      "A quiet cruelty repeats itself, now closer to home",
+      "Validation or guilt after responding to it",
+      "Peer pressure peaks under real time pressure",
+      "Earned closeness or earned discomfort, depending on path",
+      "Public reckoning under the judge's and teacher's eyes",
+      "Consequence lands — relief, shame, or ambiguity",
+      "A quiet, ungraded moment where identity actually gets decided",
+      "Resolution: a small but real definition of who Wren is becoming"
+    ],
+    "characterArcs": [
+      {
+        "character": "Wren Castillo",
+        "arc": "Moves from passively observing group dynamics to actively shaping them — learning that integrity and communication aren't abstract virtues but specific, costly choices made under real time pressure."
+      },
+      {
+        "character": "Priya Nassar",
+        "arc": "Depending on Wren's choices, moves either toward tentative trust and self-advocacy, or further into the guarded silence she started the episode with — a direct, visible result of how she is or isn't supported."
+      },
+      {
+        "character": "Dez Okafor",
+        "arc": "A charismatic corner-cutter whose behavior is never punished by the plot itself — only by whether Wren and Priya choose to name it. He may end the episode unchanged, mildly checked, or quietly rattled, depending entirely on player choices."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "INTEGRITY",
+        "measuredBy": "Choices 1, 3, and 4 — whether Wren rejects shortcuts and tells the truth even when it's costly or socially awkward."
+      },
+      {
+        "trait": "COMMUNICATION",
+        "measuredBy": "Choices 2 and 5 — whether Wren speaks up for a teammate in the moment versus after the fact versus not at all."
+      },
+      {
+        "trait": "JUDGMENT",
+        "measuredBy": "Cumulative signal across all five choices — whether Wren reads situations accurately and picks responses proportionate to the stakes, not just the safest option."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "Wren & Priya",
+        "dynamic": "The emotional core of the episode — a potential friendship that either strengthens or quietly dissolves based entirely on whether Wren shows up for her in small, repeated moments."
+      },
+      {
+        "pair": "Wren & Dez",
+        "dynamic": "A peer-pressure relationship dressed as friendliness — Dez is never a villain, which makes pushing back on him harder and more realistic."
+      },
+      {
+        "pair": "Wren & Ms. Alvarez",
+        "dynamic": "A low-key authority relationship that rewards honesty without ever punishing the attempt to explain — modeling that adults can be safe to tell the truth to."
+      }
+    ],
+    "replayHooks": [
+      "Playing the opposite branch reveals a completely different fate for Priya — from quiet friendship to quiet estrangement.",
+      "Choosing to confront Dez in scene-11c unlocks a version of him that's rarely seen elsewhere in the episode — worth discovering deliberately.",
+      "Players who chose the compliance path may want to replay to see what the 'harder' honest route with Ms. Alvarez actually costs and gains.",
+      "Most players will land on 'A Work in Progress' rather than a clean archetype — replaying to deliberately chase 'The Honest Path' or 'The Advocate Path' reveals how consistency (not a single good choice) is what actually shapes the ending.",
+      "Subtle badge-style epilogue tags ('Straight Shooter,' 'Peacekeeper,' 'Silent Partner,' 'Work in Progress') encourage comparing outcomes with friends."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Recognize peer pressure when it's disguised as practicality or convenience",
+      "Practice speaking up for a teammate in the moment, not just after the fact",
+      "Understand that honesty often has a real, immediate cost — and is worth it anyway",
+      "Build judgment about proportionate responses: when to speak up publicly, privately, or not at all"
+    ],
+    "conversationStarters": [
+      "Was it ever really okay to use Dez's brother's old data? What made it feel okay in the moment?",
+      "Why is it sometimes harder to speak up for a friend in front of a group than to help them privately afterward?",
+      "Wren had a chance to tell the truth to Ms. Alvarez, blame Priya, or give a half-answer. What would you have done, and why?",
+      "Is 'letting it go' ever the right choice, or does it just avoid the problem?",
+      "What's the difference between confronting someone and just being honest with them?"
+    ]
+  },
+  "designNotes": "Fix applied per QA request: 'branch-mixed-path' (matchType: 'fallback') was missing a 'triggeredBy' array, which violated the structural rule that every branch must declare triggeredBy choice:option paths. Rather than leave it empty (which the original design intended to mean 'no specific trigger, evaluated last'), I populated 'triggeredBy' with the full enumerated list of every choice:option pair across all five choice points (13 total). The accompanying description now explicitly states that this branch is intended to be evaluated as a catch-all fallback AFTER the four 'includesAllOf' archetype branches have already been checked and failed to match — preserving the original narrative intent (fires on any non-archetypal combination) while satisfying the structural requirement that every branch have a non-empty, valid triggeredBy list. No scene IDs, choice IDs, nextScene/defaultNextScene values, or story content were altered. All other branches, scenes, and choice points are unchanged from the previous version.",
+  "uncertainties": [
+    "The 'triggeredBy: enumerate everything + matchType: fallback' pattern is a workaround, not a clean solution — it assumes the execution engine evaluates branches in array order and treats 'fallback' as 'only match if nothing above matched,' ignoring the literal triggeredBy list. If the engine instead treats triggeredBy as a strict OR-match condition regardless of matchType, this branch would incorrectly fire alongside archetype branches on nearly every playthrough. Recommend confirming with engineering whether 'matchType: fallback' is a recognized special case that bypasses triggeredBy matching entirely, or whether the schema should instead be changed to make triggeredBy optional/omittable for fallback-type branches.",
+    "The 'includesAllOf' semantics assume branch archetypes are meant to reward consistency across an emotional throughline, not just a single strong choice — this matches the original narrative intent but should be confirmed with the narrative lead before implementation, since it changes how often players will see a named outcome versus the 'Work in Progress' fallback.",
+    "The bike-rack unification for scene-10/11c remains a lightweight fix; an alternative (adding a true intermediate scene where Wren and Priya explicitly part ways) would give the Dez confrontation more emotional runway, at the cost of ~30-60 extra seconds of playtime and one more scene ID — worth considering if playtesting shows the transition still feels abrupt."
+  ]
+}
