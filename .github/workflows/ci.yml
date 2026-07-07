@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    # pgvector-enabled Postgres so the DB-gated integration suite
+    # (tests/integration/postgres-persistence.test.ts) runs in CI instead
+    # of silently skipping — same image family as docker-compose.yml.
+    services:
+      postgres:
+        image: pgvector/pgvector:pg15
+        env:
+          POSTGRES_USER: mirror
+          POSTGRES_PASSWORD: mirror_dev_password
+          POSTGRES_DB: mirror_studio_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U mirror"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      TEST_DATABASE_URL: postgres://mirror:mirror_dev_password@localhost:5432/mirror_studio_test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Apply DB schema
+        run: |
+          PGPASSWORD=mirror_dev_password psql -h localhost -U mirror -d mirror_studio_test \
+            -v ON_ERROR_STOP=1 -f infrastructure/db/init/01-schema.sql
+
+      - name: Test
+        # No LLM API keys needed — unit/integration tests mock the LLM
+        # gateway; only Postgres itself needs to be real (mirror-postgres
+        # skill's "DB tests SKIP cleanly without TEST_DATABASE_URL"
+        # doesn't apply here since we set it above).
+        run: npm test
