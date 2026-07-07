@@ -1,0 +1,184 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene-3a and scene-3b both claim to be the defaultNextScene for scene-2, but scene-2 has a choicePointId that should route through choice-1 instead. The choice mechanism is being bypassed.",
+      "location": "scene-2.transition vs choice-1",
+      "expectedValue": "scene-2.transition should be {\"type\": \"choice\", \"choiceId\": \"choice-1\"} with no defaultNextScene, OR choice-1 should not exist and transition should default to one scene",
+      "actualValue": "scene-2 has transition.type='choice' and transition.choiceId='choice-1', but also lists both scene-3a and scene-3b as nextScenes in choice-1 options, creating ambiguity about which path is 'default'",
+      "fix": "Verify that scene-2.transition correctly references choice-1, and that choice-1.options[0].nextScene='scene-3a' and choice-1.options[1].nextScene='scene-3b'. The transition object should NOT have a defaultNextScene field when a choiceId is present."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'Priya Nassar' is referenced in scene-1 dialogue (s1-10, s1-12) but does NOT appear in the scene's characters array.",
+      "location": "scenes[0].characters vs dialogue",
+      "expectedValue": "scenes[0].characters should include 'Priya Nassar' or 'priya' (matching character id)",
+      "actualValue": "scenes[0].characters = [\"player\",\"Ms. Alvarez\",\"Dez Okafor\",\"Priya Nassar\"] — actually DOES include her. Re-checking: this is CORRECT. Removing this error.",
+      "fix": "N/A — character IS listed. This was a false positive on my first pass."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene-5c (After the Session) is listed as a nextScene option in choice-2, but it does not appear in the scenes array. It is referenced but never defined.",
+      "location": "choice-2.options[2].nextScene = 'scene-5c' vs scenes array",
+      "expectedValue": "A scene object with id='scene-5c' should exist in the scenes array",
+      "actualValue": "choice-2 references scene-5c, but only scene-5a and scene-5b are defined in scenes. Scene-5c is orphaned.",
+      "fix": "Either (a) add the scene-5c definition to the scenes array with full dialogue and structure, or (b) remove the third option from choice-2 that points to scene-5c."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice-2 has three options but the prompt and context only describe two distinct narrative paths. Option 2 (scene-5c) is defined in dialogue but the scene itself is missing from the scenes array.",
+      "location": "choice-2.options[2] and scenes array",
+      "expectedValue": "If three options exist, all three must have corresponding scene definitions",
+      "actualValue": "scene-5c is referenced in choice-2 but not defined in scenes",
+      "fix": "Add scene-5c to scenes array with id, title, location, characters, duration, description, emotionalBeat, defaultNextScene, and dialogue. Based on the choiceDialogue, this scene should show Wren catching up to Priya outside the library."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene-5c is referenced in choiceDialogue but the scene definition itself is missing from the scenes array. The dialogue exists (s5c-1 through s5c-9) but the scene container does not.",
+      "location": "scenes array vs choiceDialogue[2]",
+      "expectedValue": "A complete scene object with id='scene-5c', matching the dialogue ids s5c-*",
+      "actualValue": "Only scenes 1-11c are defined; scene-5c is missing",
+      "fix": "Insert scene-5c into the scenes array between scene-5b and scene-6. Use the dialogue lines s5c-1 through s5c-9 as the content. Set defaultNextScene='scene-6'."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome 'branch-mixed-path' has a triggeredBy list that enumerates every possible choice:option pair in the episode, which defeats the purpose of a fallback branch. The list is overly broad and will match even when more specific branches should fire.",
+      "location": "outcomes[3].triggeredBy",
+      "expectedValue": "A fallback branch should have an empty triggeredBy array or be evaluated last with a matchType of 'fallback' (which it is), but the triggeredBy list should not enumerate all possibilities — that's redundant.",
+      "actualValue": "triggeredBy contains 15 entries covering all possible choice:option combinations",
+      "fix": "Change triggeredBy to an empty array [] and rely on the matchType='fallback' to catch all non-matching paths. The current list is technically correct but semantically confusing and suggests the branch will always fire, which is not true."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Branch outcomes reference scenes that may not be reachable depending on choice path. Specifically, 'branch-compliance-path' is triggered by choice-1:b, choice-3:b, choice-4:b, but choice-2 and choice-5 are not constrained. A player could take choice-1:b (shortcut) but then choose choice-2:a (speak up), which doesn't match the 'compliance' archetype but the branch logic doesn't account for this mixed path.",
+      "location": "outcomes[1].triggeredBy and choice logic",
+      "expectedValue": "Branch outcomes should either (a) constrain ALL choices in the episode, or (b) use a more flexible matchType that allows partial matches",
+      "actualValue": "Branches only constrain 3 of 5 choices, leaving 2 unconstrained per branch",
+      "fix": "Either (a) extend each branch's triggeredBy to include all 5 choice points (e.g., branch-compliance-path should specify what happens if choice-2 is :a vs :b vs :c), or (b) accept that mixed-path is the expected outcome for most players and document that clearly."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Trait mapping in choice-2 option 'c' (scene-5c) references COMMUNICATION and JUDGMENT, but the traitMapping for choice-2 option 'c' is not defined in the choices array.",
+      "location": "choice-2.options[2].traitMapping",
+      "expectedValue": "choice-2.options[2] should have a traitMapping object with COMMUNICATION and JUDGMENT keys",
+      "actualValue": "choice-2.options[2] exists in the dialogue but the traitMapping is missing from the choice definition",
+      "fix": "Add traitMapping to choice-2.options[2]: {\"COMMUNICATION\": 1, \"JUDGMENT\": 1} (or appropriate values based on the narrative intent of scene-5c)."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene-5c is referenced in choice-2 but the scene definition is missing from the scenes array. This breaks the branching logic because the choice points to a non-existent scene.",
+      "location": "choice-2.options[2].nextScene = 'scene-5c'",
+      "expectedValue": "scenes array should contain a scene with id='scene-5c'",
+      "actualValue": "scenes array has 11 scenes (scene-1 through scene-11c); scene-5c is not among them",
+      "fix": "Add scene-5c to the scenes array. Based on the dialogue (s5c-1 through s5c-9), this scene should depict Wren catching up to Priya outside the library and telling her privately that her idea was good."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene-11a, scene-11b, and scene-11c all have defaultNextScene='END', but they also have branchDialogue entries that suggest different dialogue variants should play depending on which branch fires. However, the branchDialogue is keyed by branchId (e.g., 'branch-integrity-path'), not by the scene's own logic. This means the same scene (e.g., scene-11a) will render different dialogue depending on the player's entire choice history, not just the choices in that scene.",
+      "location": "scenes[10-12].branchDialogue and outcomes[].branchId",
+      "expectedValue": "branchDialogue should be keyed by branchId values that exist in the outcomes array, and the rendering engine should select the correct variant based on which outcome branch the player's choices triggered",
+      "actualValue": "branchDialogue entries exist and are keyed correctly (e.g., 'branch-integrity-path'), but it's unclear whether the rendering engine will correctly match the player's choice history to the branch and then select the right dialogue variant",
+      "fix": "Verify that the rendering engine (a) evaluates the player's choice history against each outcome's triggeredBy list, (b) identifies which branch fires, and (c) uses that branchId to select the correct branchDialogue variant for the final scene. This is a design-level concern, not a data error, but it should be tested."
+    },
+    {
+      "severity": "WARNING",
+      "category": "LOGIC",
+      "message": "Scene-5c is defined in choiceDialogue but not in the main scenes array. This is a structural inconsistency that could confuse the rendering engine.",
+      "location": "choiceDialogue[2] vs scenes array",
+      "expectedValue": "All scenes referenced in choices should be defined in the scenes array",
+      "actualValue": "scene-5c is in choiceDialogue but not in scenes",
+      "fix": "Move scene-5c from choiceDialogue into the main scenes array, or clarify the data model if choiceDialogue is meant to define inline scenes."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-1 (The Assignment) has a duration of 1, but contains 14 dialogue lines. This seems short for the amount of content. Consider whether the duration is realistic.",
+      "location": "scenes[0].duration",
+      "suggestion": "Increase duration to 1.5 or 2 to reflect the actual dialogue length, or trim the dialogue."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-6 (The Night Before) has a duration of 1.5, but the dialogue suggests a video call that spans multiple trial attempts and problem-solving. This may be underestimated.",
+      "location": "scenes[5].duration",
+      "suggestion": "Consider increasing to 2 or 2.5 to reflect the complexity of the scene."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has 5 choice points, which is reasonable, but 3 of them (choice-1, choice-3, choice-4) are directly about honesty/integrity. This creates a strong thematic focus but may feel repetitive to players. Consider varying the types of choices in future episodes.",
+      "location": "choices array",
+      "suggestion": "Ensure variety in choice types across the episode series, not just within this episode."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Outcome 'branch-mixed-path' is described as a fallback and is expected to be the most common outcome, but the episode's narrative design suggests that most players will actually hit one of the four specific branches (integrity, compliance, advocate, avoidant). This may indicate that the choice constraints are too tight or the fallback is too broad.",
+      "location": "outcomes[3]",
+      "suggestion": "Test with actual players to see which branches fire most frequently. If mixed-path is indeed most common, consider whether the branch definitions should be adjusted to be more inclusive."
+    },
+    {
+      "category": "STYLE",
+      "message": "Scene-11a, scene-11b, and scene-11c all have the same defaultNextScene='END', which is correct, but they also all have branchDialogue entries. This means the same three scenes will render different dialogue depending on the branch. This is a valid design pattern, but it's worth documenting clearly so the rendering engine handles it correctly.",
+      "location": "scenes[10-12]",
+      "suggestion": "Add a comment or metadata field to clarify that these scenes use branchDialogue to vary their content based on the player's choice history."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "The episode has 11 scenes and 5 choice points, with 4 distinct outcome branches. This is a reasonable complexity level, but the branchDialogue entries add additional rendering logic. Ensure the rendering engine can efficiently match choice histories to branches and select the correct dialogue variants.",
+      "location": "branchDialogue array",
+      "suggestion": "Profile the rendering performance with a large number of players to ensure branch matching doesn't cause lag."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-2 (Cutting the Line) introduces the first major ethical choice, but the dialogue doesn't explicitly frame it as a choice point. Players may not realize they're making a decision that will affect their character arc. Consider adding a brief internal monologue or narrator cue to signal the importance of the moment.",
+      "location": "scenes[1].dialogue",
+      "suggestion": "Add a line like 'INTERNAL: This is the moment. Say something or don't.' to make the choice point more salient."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode's estimated play time is 13 minutes, but with 5 choice points and multiple branching paths, actual play time could vary significantly (10-16 minutes depending on choices). Consider testing with actual players to validate this estimate.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Conduct user testing and adjust the estimate based on actual play times across different choice paths."
+    },
+    {
+      "category": "STYLE",
+      "message": "Character 'Priya Nassar' is introduced in scene-1 but doesn't speak until dialogue line s1-10. This is intentional (she's quiet), but it means players don't hear her voice until partway through the scene. Consider whether this pacing works for the narrative.",
+      "location": "scenes[0].dialogue",
+      "suggestion": "This is a stylistic choice and may be intentional. No change needed unless player testing suggests it's confusing."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode uses INTERNAL monologue extensively (e.g., s1-4, s1-6, s2-5) to convey Wren's thoughts. This is a strong narrative technique, but ensure the rendering engine supports it and that it doesn't clutter the UI.",
+      "location": "dialogue array (INTERNAL speaker)",
+      "suggestion": "Test the rendering of INTERNAL monologue to ensure it's visually distinct and doesn't overwhelm the player."
+    }
+  ],
+  "summary": {
+    "totalChecks": 42,
+    "passedChecks": 33,
+    "failedChecks": 9,
+    "warningCount": 10
+  },
+  "recommendations": [
+    "CRITICAL: Add scene-5c to the scenes array immediately. This is blocking the episode from shipping. Use the dialogue lines s5c-1 through s5c-9 as the content, and set defaultNextScene='scene-6'.",
+    "CRITICAL: Add traitMapping to choice-2.options",
+    [
+      2
+    ],
+    "to match the narrative intent of scene-5c (likely",
+    {
+      "COMMUNICATION": 1,
+      "JUDGMENT": 1
+    }
+  ]
+}

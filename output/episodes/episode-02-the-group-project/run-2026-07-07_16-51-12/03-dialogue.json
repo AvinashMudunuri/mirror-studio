@@ -1,0 +1,1213 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1",
+      "lines": [
+        {
+          "id": "s1-1",
+          "character": "NARRATOR",
+          "text": "The classroom hums with the specific chaos of two weeks into the school year — everyone almost knows where they belong."
+        },
+        {
+          "id": "s1-2",
+          "character": "Ms. Alvarez",
+          "text": "Settle down. Trimester project — one week, working model of a scientific principle. A district judge is coming to look at your genius up close, so let's actually have some.",
+          "action": "taps pen twice on the desk"
+        },
+        {
+          "id": "s1-3",
+          "character": "INTERNAL",
+          "text": "New school, new project, new ways to disappear into the wallpaper. Cool. Love it here already."
+        },
+        {
+          "id": "s1-4",
+          "character": "Ms. Alvarez",
+          "text": "Groups are on the board. Find your name, find your people, don't find a reason to complain to me about either."
+        },
+        {
+          "id": "s1-5",
+          "character": "NARRATOR",
+          "text": "Chairs scrape. Wren scans the board — finds her name wedged between two others."
+        },
+        {
+          "id": "s1-6",
+          "character": "INTERNAL",
+          "text": "Castillo... Okafor... Nassar. A name everyone knows, a name I don't, and me in the middle. Very balanced sandwich."
+        },
+        {
+          "id": "s1-7",
+          "character": "Dez Okafor",
+          "text": "Castillo, right? You're with me. Good.",
+          "emotion": "already grinning, turning around in his chair"
+        },
+        {
+          "id": "s1-8",
+          "character": "Dez Okafor",
+          "text": "I don't lose."
+        },
+        {
+          "id": "s1-9",
+          "character": "player",
+          "text": "Cool, cool. No pressure then."
+        },
+        {
+          "id": "s1-10",
+          "character": "Dez Okafor",
+          "text": "That's the spirit. Kind of.",
+          "emotion": "laughing"
+        },
+        {
+          "id": "s1-11",
+          "character": "Priya Nassar",
+          "text": "...hi.",
+          "emotion": "barely looking up from her notebook"
+        },
+        {
+          "id": "s1-12",
+          "character": "player",
+          "text": "Hi. I'm Wren."
+        },
+        {
+          "id": "s1-13",
+          "character": "Priya Nassar",
+          "text": "I know. It's on the board.",
+          "emotion": "dry, doesn't look up"
+        },
+        {
+          "id": "s1-14",
+          "character": "player",
+          "text": "Right. Yeah.",
+          "emotion": "laughs half a second too late"
+        },
+        {
+          "id": "s1-15",
+          "character": "Ms. Alvarez",
+          "text": "One week, people. Show me the work, not just the answer."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2",
+      "lines": [
+        {
+          "id": "s2-1",
+          "character": "NARRATOR",
+          "text": "Library study room, after school. Books unopened. Dez already has something else in mind."
+        },
+        {
+          "id": "s2-2",
+          "character": "Dez Okafor",
+          "text": "Okay so — don't freak out — but I think I just saved us a week.",
+          "action": "spins a flash drive on the table"
+        },
+        {
+          "id": "s2-3",
+          "character": "player",
+          "text": "That's either really good or really illegal."
+        },
+        {
+          "id": "s2-4",
+          "character": "Dez Okafor",
+          "text": "Neither. My brother did basically this exact project two years ago. Got an A. Data's all here. We just... update the numbers a little. Nobody's gonna check."
+        },
+        {
+          "id": "s2-5",
+          "character": "NARRATOR",
+          "text": "Priya's pen stops tapping. She goes very still."
+        },
+        {
+          "id": "s2-6",
+          "character": "Dez Okafor",
+          "text": "It's not cheating, it's efficiency. There's a difference — look it up."
+        },
+        {
+          "id": "s2-7",
+          "character": "NARRATOR",
+          "text": "Priya says nothing. Her eyes flick to Wren and stay there."
+        },
+        {
+          "id": "s2-8",
+          "character": "INTERNAL",
+          "text": "Cool. Cool. Love being the deciding vote nobody asked me to cast."
+        },
+        {
+          "id": "s2-9",
+          "character": "Dez Okafor",
+          "text": "So? Easy way or hard way?"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3a",
+      "lines": [
+        {
+          "id": "s3a-1",
+          "character": "NARRATOR",
+          "text": "The flash drive goes back in Dez's pocket. Actual books come out. It's slower. It's also actually theirs."
+        },
+        {
+          "id": "s3a-2",
+          "character": "Dez Okafor",
+          "text": "Okay, real research. Whatever. What are we even measuring?"
+        },
+        {
+          "id": "s3a-3",
+          "character": "Priya Nassar",
+          "text": "...I mean — we could do something with plant growth and light color? It's simple, but nobody actually does it right.",
+          "emotion": "quiet, testing the water"
+        },
+        {
+          "id": "s3a-4",
+          "character": "Dez Okafor",
+          "text": "...Huh. Okay. That's not bad.",
+          "emotion": "leaning forward, surprised"
+        },
+        {
+          "id": "s3a-5",
+          "character": "Priya Nassar",
+          "text": "Oh. Um. Cool.",
+          "emotion": "trying to hide that she's surprised to be heard"
+        },
+        {
+          "id": "s3a-6",
+          "character": "player",
+          "text": "See, this is way better than stolen data and a guilty conscience."
+        },
+        {
+          "id": "s3a-7",
+          "character": "Dez Okafor",
+          "text": "Don't push it."
+        },
+        {
+          "id": "s3a-8",
+          "character": "NARRATOR",
+          "text": "Priya sits a little taller. It's a start."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3b",
+      "lines": [
+        {
+          "id": "s3b-1",
+          "character": "NARRATOR",
+          "text": "The old file opens easier than it should. Charts, numbers, a whole project already finished two years ago."
+        },
+        {
+          "id": "s3b-2",
+          "character": "Dez Okafor",
+          "text": "See? Look at this. This is basically done. We just gotta make it ours.",
+          "action": "scrolling fast"
+        },
+        {
+          "id": "s3b-3",
+          "character": "player",
+          "text": "It's definitely somebody's."
+        },
+        {
+          "id": "s3b-4",
+          "character": "Dez Okafor",
+          "text": "Details."
+        },
+        {
+          "id": "s3b-5",
+          "character": "Priya Nassar",
+          "text": "...it's fine.",
+          "emotion": "staring at the screen, chewing on her pen cap — the tone that means it is not fine"
+        },
+        {
+          "id": "s3b-6",
+          "character": "player",
+          "text": "You good?"
+        },
+        {
+          "id": "s3b-7",
+          "character": "Dez Okafor",
+          "text": "This is gonna save us so much time it's actually insane."
+        },
+        {
+          "id": "s3b-8",
+          "character": "NARRATOR",
+          "text": "It is easier this way. Nobody says out loud why that feels like a problem."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4",
+      "lines": [
+        {
+          "id": "s4-1",
+          "character": "NARRATOR",
+          "text": "Days later. Whatever path they took, the project's taking shape — and starting to show cracks."
+        },
+        {
+          "id": "s4-2",
+          "character": "Priya Nassar",
+          "text": "...I mean, it's probably not a big deal, but — what if we simplified the whole design? Fewer variables. It'd actually be more interesting to present, I think.",
+          "emotion": "quiet, testing"
+        },
+        {
+          "id": "s4-3",
+          "character": "Dez Okafor",
+          "text": "That'll take too long. We're doing it my way."
+        },
+        {
+          "id": "s4-4",
+          "character": "NARRATOR",
+          "text": "Priya goes very still. Shrinks back into her chair. The pen tapping stops mid-rhythm."
+        },
+        {
+          "id": "s4-5",
+          "character": "Dez Okafor",
+          "text": "We've got five days. Not five weeks."
+        },
+        {
+          "id": "s4-6",
+          "character": "INTERNAL",
+          "text": "There it is again. Same move, different day. Guess it's my turn to decide if I'm watching or doing something about it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5a",
+      "lines": [
+        {
+          "id": "s5a-1",
+          "character": "player",
+          "text": "Wait — actually, I think Priya's idea is better. Fewer variables means less that can go wrong presenting it live."
+        },
+        {
+          "id": "s5a-2",
+          "character": "Dez Okafor",
+          "text": "...I mean — okay. I didn't say it was bad, I said —",
+          "emotion": "blinking, caught off guard"
+        },
+        {
+          "id": "s5a-3",
+          "character": "player",
+          "text": "You said 'my way.' That's not the same as 'the better way.'"
+        },
+        {
+          "id": "s5a-4",
+          "character": "Dez Okafor",
+          "text": "...Fine. Fine. We'll try it her way. If it tanks, I'm saying I told you so.",
+          "action": "leans back, cracks his knuckles"
+        },
+        {
+          "id": "s5a-5",
+          "character": "Priya Nassar",
+          "text": "...it won't tank.",
+          "emotion": "sits up straighter than all week, quick sharp glance at Wren, then away"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5b",
+      "lines": [
+        {
+          "id": "s5b-1",
+          "character": "NARRATOR",
+          "text": "Wren doesn't say anything. The moment passes like it was never going to go any other way."
+        },
+        {
+          "id": "s5b-2",
+          "character": "Dez Okafor",
+          "text": "Okay. My way it is. Moving on."
+        },
+        {
+          "id": "s5b-3",
+          "character": "NARRATOR",
+          "text": "Priya doesn't argue. She also doesn't really talk again for the rest of the session — not sulking. Just gone somewhere quieter."
+        },
+        {
+          "id": "s5b-4",
+          "character": "INTERNAL",
+          "text": "Nobody else notices. That's almost the worst part."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5c",
+      "lines": [
+        {
+          "id": "s5c-1",
+          "character": "NARRATOR",
+          "text": "Outside the library, Wren catches up before Priya disappears toward the buses."
+        },
+        {
+          "id": "s5c-2",
+          "character": "player",
+          "text": "Hey — Priya. Wait up a sec."
+        },
+        {
+          "id": "s5c-3",
+          "character": "Priya Nassar",
+          "text": "...hey.",
+          "emotion": "guarded"
+        },
+        {
+          "id": "s5c-4",
+          "character": "player",
+          "text": "Your idea, earlier. The simpler design. That was actually good. Better than what we're doing."
+        },
+        {
+          "id": "s5c-5",
+          "character": "Priya Nassar",
+          "text": "...you didn't say that in there.",
+          "emotion": "sizing up if this is real"
+        },
+        {
+          "id": "s5c-6",
+          "character": "player",
+          "text": "...yeah. I know. I'm saying it now."
+        },
+        {
+          "id": "s5c-7",
+          "character": "Priya Nassar",
+          "text": "...it's fine. You don't have to—",
+          "emotion": "shoulders loosen slightly"
+        },
+        {
+          "id": "s5c-8",
+          "character": "player",
+          "text": "I'm not saying it because I have to."
+        },
+        {
+          "id": "s5c-9",
+          "character": "Priya Nassar",
+          "text": "...okay.",
+          "emotion": "almost a smile, still braced, but a little less"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6",
+      "lines": [
+        {
+          "id": "s6-1",
+          "character": "NARRATOR",
+          "text": "Video call, kitchen table, project due tomorrow morning. On screen, three tired faces and one botched data set."
+        },
+        {
+          "id": "s6-2",
+          "character": "Dez Okafor",
+          "text": "Okay, so trial four's a disaster, we're missing half of trial two, and the judge is here in —",
+          "action": "checks watch"
+        },
+        {
+          "id": "s6-3",
+          "character": "Dez Okafor",
+          "text": "—way less time than I want to think about."
+        },
+        {
+          "id": "s6-4",
+          "character": "Priya Nassar",
+          "text": "...we could just rerun trial four. It's not that late."
+        },
+        {
+          "id": "s6-5",
+          "character": "Dez Okafor",
+          "text": "It's ten PM on a school night, Priya. We are not 'just rerunning' anything."
+        },
+        {
+          "id": "s6-6",
+          "character": "player",
+          "text": "So what's the move?"
+        },
+        {
+          "id": "s6-7",
+          "character": "Dez Okafor",
+          "text": "We smooth it. Fill in what the numbers should've been if trial four hadn't glitched. It's basically the same thing, just cleaner."
+        },
+        {
+          "id": "s6-8",
+          "character": "NARRATOR",
+          "text": "Priya's pen taps out its specific, careful rhythm against her sketchbook."
+        },
+        {
+          "id": "s6-9",
+          "character": "Dez Okafor",
+          "text": "Nobody's gonna know the difference. We know what the pattern is. We're just... finishing it early."
+        },
+        {
+          "id": "s6-10",
+          "character": "NARRATOR",
+          "text": "The clock on Wren's kitchen wall is suddenly the loudest thing in the room."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7a",
+      "lines": [
+        {
+          "id": "s7a-1",
+          "character": "NARRATOR",
+          "text": "Ten fifteen. Ten thirty. They're still on the call, actually rerunning trial four together, camera propped against a water glass."
+        },
+        {
+          "id": "s7a-2",
+          "character": "Dez Okafor",
+          "text": "I hate this. I hate this so much. Why is science like this.",
+          "action": "rubbing his eyes"
+        },
+        {
+          "id": "s7a-3",
+          "character": "player",
+          "text": "Science is just homework that fights back."
+        },
+        {
+          "id": "s7a-4",
+          "character": "Priya Nassar",
+          "text": "",
+          "emotion": "small laugh, surprising even herself",
+          "action": "laughs"
+        },
+        {
+          "id": "s7a-5",
+          "character": "Dez Okafor",
+          "text": "Wait — did Priya just laugh? Somebody clip that."
+        },
+        {
+          "id": "s7a-6",
+          "character": "Priya Nassar",
+          "text": "...shut up.",
+          "emotion": "still smiling"
+        },
+        {
+          "id": "s7a-7",
+          "character": "NARRATOR",
+          "text": "Ten forty-five. Priya suddenly sits forward."
+        },
+        {
+          "id": "s7a-8",
+          "character": "Priya Nassar",
+          "text": "Wait. Wait — the thermometer's reading room temp, not the actual sample. That's the whole error. It's not the experiment, it's the tool."
+        },
+        {
+          "id": "s7a-9",
+          "character": "Dez Okafor",
+          "text": "...Priya. Priya. You just saved the entire project.",
+          "action": "staring at the screen"
+        },
+        {
+          "id": "s7a-10",
+          "character": "Priya Nassar",
+          "text": "...I mean. Yeah. I did.",
+          "emotion": "quiet, pleased despite herself"
+        },
+        {
+          "id": "s7a-11",
+          "character": "player",
+          "text": "There she is.",
+          "emotion": "grinning"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7b",
+      "lines": [
+        {
+          "id": "s7b-1",
+          "character": "NARRATOR",
+          "text": "It takes twenty minutes. The spreadsheet fills in clean, expected, exactly what a judge would want to see."
+        },
+        {
+          "id": "s7b-2",
+          "character": "Dez Okafor",
+          "text": "See? Told you. Efficient."
+        },
+        {
+          "id": "s7b-3",
+          "character": "player",
+          "text": "Efficient."
+        },
+        {
+          "id": "s7b-4",
+          "character": "Priya Nassar",
+          "text": "",
+          "emotion": "quiet, staring at the numbers like they might argue back"
+        },
+        {
+          "id": "s7b-5",
+          "character": "Dez Okafor",
+          "text": "Okay. We're done. Everybody get some sleep."
+        },
+        {
+          "id": "s7b-6",
+          "character": "NARRATOR",
+          "text": "The call ends. Nobody says goodnight the normal way — no jokes, no 'see you tomorrow.' Just three clicks, one after another, and silence."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8",
+      "lines": [
+        {
+          "id": "s8-1",
+          "character": "NARRATOR",
+          "text": "Presentation day. The district judge sits in the back row with a clipboard and an unreadable face. Ms. Alvarez circles the room, pen tapping twice at their table."
+        },
+        {
+          "id": "s8-2",
+          "character": "Ms. Alvarez",
+          "text": "These results are unusually clean.",
+          "action": "studies their data table"
+        },
+        {
+          "id": "s8-3",
+          "character": "Ms. Alvarez",
+          "text": "Walk me through how you got this measurement."
+        },
+        {
+          "id": "s8-4",
+          "character": "NARRATOR",
+          "text": "Three sets of eyes land on Wren, without meaning to."
+        },
+        {
+          "id": "s8-5",
+          "character": "INTERNAL",
+          "text": "New school, new me. Except apparently the me who has to answer this."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9a",
+      "lines": [
+        {
+          "id": "s9a-1",
+          "character": "player",
+          "text": "Our timeline got tight — one of our trials didn't run clean, so we had to rework some of the data to finish on time. It's not perfect. I wanted to say that up front."
+        },
+        {
+          "id": "s9a-2",
+          "character": "Ms. Alvarez",
+          "text": "...I appreciate you telling me that instead of me finding it myself.",
+          "emotion": "still, considering"
+        },
+        {
+          "id": "s9a-3",
+          "character": "Ms. Alvarez",
+          "text": "You'll present with a noted caveat. That's not nothing."
+        },
+        {
+          "id": "s9a-4",
+          "character": "NARRATOR",
+          "text": "It's not a perfect score. Dez looks a little pale. Priya looks... relieved."
+        },
+        {
+          "id": "s9a-5",
+          "character": "Ms. Alvarez",
+          "text": "Nobody in this room is in trouble for telling me the truth late. They're in trouble for telling me a story instead."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9b",
+      "lines": [
+        {
+          "id": "s9b-1",
+          "character": "player",
+          "text": "That was, um — that was Priya's part of the data set. I think there might've been an error somewhere in there."
+        },
+        {
+          "id": "s9b-2",
+          "character": "NARRATOR",
+          "text": "Priya's face falls in front of the whole room — quick, then carefully blank."
+        },
+        {
+          "id": "s9b-3",
+          "character": "Priya Nassar",
+          "text": "...I can check it again.",
+          "emotion": "quiet, doesn't argue"
+        },
+        {
+          "id": "s9b-4",
+          "character": "Ms. Alvarez",
+          "text": "...Do that.",
+          "emotion": "looking between them, unreadable"
+        },
+        {
+          "id": "s9b-5",
+          "character": "NARRATOR",
+          "text": "Dez stays very quiet. Visibly relieved it landed somewhere else."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9c",
+      "lines": [
+        {
+          "id": "s9c-1",
+          "character": "player",
+          "text": "There was a mix-up with one of the trials near the end — we all kind of scrambled to fix it last minute. It's on all of us, honestly."
+        },
+        {
+          "id": "s9c-2",
+          "character": "Ms. Alvarez",
+          "text": "...Walk me through it sometime this week. In detail.",
+          "action": "taps pen twice, studying Wren"
+        },
+        {
+          "id": "s9c-3",
+          "character": "NARRATOR",
+          "text": "The judge moves on to the next table. Nobody's humiliated. Nobody's fully off the hook, either."
+        },
+        {
+          "id": "s9c-4",
+          "character": "INTERNAL",
+          "text": "That's not a lie. It's also not the whole truth. Feels like standing on a step that isn't quite there."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10",
+      "lines": [
+        {
+          "id": "s10-1",
+          "character": "NARRATOR",
+          "text": "Same direction, same sidewalk, same silence that's been sitting since third period."
+        },
+        {
+          "id": "s10-2",
+          "character": "Priya Nassar",
+          "text": "...you didn't have to say anything in there. Earlier."
+        },
+        {
+          "id": "s10-3",
+          "character": "player",
+          "text": "I know."
+        },
+        {
+          "id": "s10-4",
+          "character": "NARRATOR",
+          "text": "A block passes. Just footsteps."
+        },
+        {
+          "id": "s10-5",
+          "character": "Priya Nassar",
+          "text": "...it's fine."
+        },
+        {
+          "id": "s10-6",
+          "character": "player",
+          "text": "...Priya.",
+          "emotion": "catching the tone, the one that means it's not fine"
+        },
+        {
+          "id": "s10-7",
+          "character": "Priya Nassar",
+          "text": "...what.",
+          "action": "stops walking"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11a",
+      "lines": [
+        {
+          "id": "s11a-1",
+          "character": "player",
+          "text": "I should've said something sooner. Not just today — the other stuff too. With Dez."
+        },
+        {
+          "id": "s11a-2",
+          "character": "Priya Nassar",
+          "text": "...you don't have to—",
+          "emotion": "guarded"
+        },
+        {
+          "id": "s11a-3",
+          "character": "player",
+          "text": "I'm not doing the thing where I say sorry and then don't change anything. New rule, for next time: no faking results, no talking over each other. I'll actually enforce it. Badly, probably, but I'll try."
+        },
+        {
+          "id": "s11a-4",
+          "character": "Priya Nassar",
+          "text": "...you'll 'badly enforce' it.",
+          "emotion": "surprised laugh, real one"
+        },
+        {
+          "id": "s11a-5",
+          "character": "player",
+          "text": "Aggressively. Very aggressively."
+        },
+        {
+          "id": "s11a-6",
+          "character": "Priya Nassar",
+          "text": "...okay. Deal.",
+          "emotion": "small, genuine smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "lines": [
+        {
+          "id": "s11b-1",
+          "character": "NARRATOR",
+          "text": "Wren opens her mouth. Closes it. The moment passes like a bus she didn't run for."
+        },
+        {
+          "id": "s11b-2",
+          "character": "player",
+          "text": "...so, um. You have a good weekend planned?"
+        },
+        {
+          "id": "s11b-3",
+          "character": "Priya Nassar",
+          "text": "...not really. You?"
+        },
+        {
+          "id": "s11b-4",
+          "character": "player",
+          "text": "Not really."
+        },
+        {
+          "id": "s11b-5",
+          "character": "NARRATOR",
+          "text": "They talk about nothing the rest of the way. It's easier. It's also quieter than it should be."
+        },
+        {
+          "id": "s11b-6",
+          "character": "INTERNAL",
+          "text": "Cool. Cool. Very normal amount of nothing being said right now."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "lines": [
+        {
+          "id": "s11c-1",
+          "character": "NARRATOR",
+          "text": "Wren catches Dez by the bike rack before he can disappear into his afternoon."
+        },
+        {
+          "id": "s11c-2",
+          "character": "player",
+          "text": "Hey. Can I say something and you not turn it into a joke for once?"
+        },
+        {
+          "id": "s11c-3",
+          "character": "Dez Okafor",
+          "text": "...that's a lot to ask, but go ahead.",
+          "emotion": "wary"
+        },
+        {
+          "id": "s11c-4",
+          "character": "player",
+          "text": "The way you talk over Priya — cutting her off, deciding for everyone, all of it. It's not okay. And today, letting it land on her instead of you — that wasn't okay either."
+        },
+        {
+          "id": "s11c-5",
+          "character": "Dez Okafor",
+          "text": "I didn't 'let' anything, you're the one who—",
+          "emotion": "defensive, then stopping himself"
+        },
+        {
+          "id": "s11c-6",
+          "character": "Dez Okafor",
+          "text": "...yeah. Okay. That wasn't — I shouldn't have talked to her like that. Whatever. It's not a big deal."
+        },
+        {
+          "id": "s11c-7",
+          "character": "player",
+          "text": "It kind of is, though."
+        },
+        {
+          "id": "s11c-8",
+          "character": "Dez Okafor",
+          "text": "",
+          "emotion": "doesn't argue this time, just nods once, looking somewhere else",
+          "action": "nods"
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "That's basically cheating. Let's do our own."
+        },
+        {
+          "id": "b",
+          "text": "I mean... it could save us time. Let's just look."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c1-a-1",
+            "character": "Dez Okafor",
+            "text": "...Fine. Fine! We'll do it the boring way first, see how far that gets us.",
+            "action": "cracks his knuckles"
+          },
+          {
+            "id": "c1-a-2",
+            "character": "Priya Nassar",
+            "text": "",
+            "emotion": "quiet exhale, like she'd been holding it"
+          }
+        ],
+        "b": [
+          {
+            "id": "c1-b-1",
+            "character": "Dez Okafor",
+            "text": "See, this is why you're my favorite so far.",
+            "emotion": "already opening the file"
+          },
+          {
+            "id": "c1-b-2",
+            "character": "Priya Nassar",
+            "text": "",
+            "emotion": "doesn't say anything, just watches the screen"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Back Priya's idea out loud, right now."
+        },
+        {
+          "id": "b",
+          "text": "Stay quiet and let Dez keep leading."
+        },
+        {
+          "id": "c",
+          "text": "Say nothing now, but check in with Priya after."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2-a-1",
+            "character": "Dez Okafor",
+            "text": "...Wait, what?"
+          },
+          {
+            "id": "c2-a-2",
+            "character": "Priya Nassar",
+            "text": "",
+            "emotion": "looks up, surprised"
+          }
+        ],
+        "b": [
+          {
+            "id": "c2-b-1",
+            "character": "NARRATOR",
+            "text": "The moment passes. Dez keeps talking like it already settled itself."
+          }
+        ],
+        "c": [
+          {
+            "id": "c2-c-1",
+            "character": "INTERNAL",
+            "text": "Not now. Later. I'll say something later."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "Let's just redo it right, even if it takes longer."
+        },
+        {
+          "id": "b",
+          "text": "Fine — let's just clean it up and submit."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3-a-1",
+            "character": "Dez Okafor",
+            "text": "...Fine. FINE. But if we're up till midnight, you're buying breakfast.",
+            "emotion": "groans"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3-b-1",
+            "character": "Dez Okafor",
+            "text": "See, this is why I like working with you.",
+            "emotion": "a little too pleased"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Admit the timeline was tight and be honest about what happened."
+        },
+        {
+          "id": "b",
+          "text": "Imply it was Priya's part of the work that went wrong."
+        },
+        {
+          "id": "c",
+          "text": "Give a vague, half-true answer that protects everyone a little."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4-a-1",
+            "character": "Ms. Alvarez",
+            "text": "...Go on.",
+            "emotion": "small nod"
+          }
+        ],
+        "b": [
+          {
+            "id": "c4-b-1",
+            "character": "Priya Nassar",
+            "text": "...wait, what?",
+            "emotion": "quick, quiet"
+          }
+        ],
+        "c": [
+          {
+            "id": "c4-c-1",
+            "character": "Ms. Alvarez",
+            "text": "...We'll talk after class.",
+            "action": "taps pen twice, unconvinced but moving on"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "Apologize to Priya and suggest real ground rules going forward."
+        },
+        {
+          "id": "b",
+          "text": "Let it go and talk about something else."
+        },
+        {
+          "id": "c",
+          "text": "Find Dez and tell him directly the pressure wasn't okay."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c5-a-1",
+            "character": "Priya Nassar",
+            "text": "...oh. Okay. Um.",
+            "emotion": "surprised, guarded softening"
+          }
+        ],
+        "b": [
+          {
+            "id": "c5-b-1",
+            "character": "NARRATOR",
+            "text": "The block keeps going. So does the quiet."
+          }
+        ],
+        "c": [
+          {
+            "id": "c5-c-1",
+            "character": "NARRATOR",
+            "text": "Priya's already gone, headed the other way. This one's for Dez."
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-11a",
+      "branchId": "branch-integrity-path",
+      "lines": [
+        {
+          "id": "b-int-11a-1",
+          "character": "INTERNAL",
+          "text": "Telling Ms. Alvarez the truth cost us half a letter grade. Standing here, it doesn't feel like it cost us anything at all."
+        },
+        {
+          "id": "b-int-11a-2",
+          "character": "player",
+          "text": "For what it's worth — I'd rather have the caveat and the truth than the clean grade and the guilt."
+        },
+        {
+          "id": "b-int-11a-3",
+          "character": "Priya Nassar",
+          "text": "...yeah. Same, actually."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11a",
+      "branchId": "branch-advocate-path",
+      "lines": [
+        {
+          "id": "b-adv-11a-1",
+          "character": "Priya Nassar",
+          "text": "...you've had my back a lot this week. I noticed."
+        },
+        {
+          "id": "b-adv-11a-2",
+          "character": "player",
+          "text": "Yeah, well. Somebody had to be annoying about it."
+        },
+        {
+          "id": "b-adv-11a-3",
+          "character": "Priya Nassar",
+          "text": "...you're not that annoying.",
+          "emotion": "real laugh"
+        },
+        {
+          "id": "b-adv-11a-4",
+          "character": "player",
+          "text": "Give it time."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "branchId": "branch-compliance-path",
+      "lines": [
+        {
+          "id": "b-comp-11b-1",
+          "character": "INTERNAL",
+          "text": "Priya's part of the data was never actually wrong. I know that. She knows I know that."
+        },
+        {
+          "id": "b-comp-11b-2",
+          "character": "Priya Nassar",
+          "text": "...see you tomorrow, I guess.",
+          "emotion": "quieter than usual, careful"
+        },
+        {
+          "id": "b-comp-11b-3",
+          "character": "player",
+          "text": "...yeah. See you."
+        },
+        {
+          "id": "b-comp-11b-4",
+          "character": "INTERNAL",
+          "text": "That's not nothing. It's also not enough."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "branchId": "branch-avoidant-path",
+      "lines": [
+        {
+          "id": "b-avoid-11b-1",
+          "character": "INTERNAL",
+          "text": "Nothing bad happened today. That's not the same as something good happening."
+        },
+        {
+          "id": "b-avoid-11b-2",
+          "character": "Priya Nassar",
+          "text": "...it's fine, really.",
+          "emotion": "the tone. always the tone."
+        },
+        {
+          "id": "b-avoid-11b-3",
+          "character": "player",
+          "text": "...yeah. I know."
+        },
+        {
+          "id": "b-avoid-11b-4",
+          "character": "INTERNAL",
+          "text": "I keep telling myself that's an answer."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "branchId": "branch-integrity-path",
+      "lines": [
+        {
+          "id": "b-int-11c-1",
+          "character": "Dez Okafor",
+          "text": "...you tell everybody the truth whether they want it or not, huh."
+        },
+        {
+          "id": "b-int-11c-2",
+          "character": "player",
+          "text": "Pretty much. Ask Ms. Alvarez."
+        },
+        {
+          "id": "b-int-11c-3",
+          "character": "Dez Okafor",
+          "text": "...yeah. I heard about that.",
+          "emotion": "almost smiles despite himself"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "branchId": "branch-advocate-path",
+      "lines": [
+        {
+          "id": "b-adv-11c-1",
+          "character": "INTERNAL",
+          "text": "I've been picking Priya's side all week. Might as well finish the job."
+        },
+        {
+          "id": "b-adv-11c-2",
+          "character": "Dez Okafor",
+          "text": "...she tell you to say this?"
+        },
+        {
+          "id": "b-adv-11c-3",
+          "character": "player",
+          "text": "No. She doesn't know I'm saying it. That's kind of the point."
+        },
+        {
+          "id": "b-adv-11c-4",
+          "character": "Dez Okafor",
+          "text": "...noted.",
+          "emotion": "quiet beat"
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Wren: fast and joke-armored when nervous, slower and blunter when something actually matters — the shift between s2-3 (quip) and s11a-3 (plain, no hedge) marks growth. Dez: outcome-language ('we win,' 'efficiency'), leans back when confident, cracks knuckles right before he says something he half-knows is wrong, and gets quiet instead of loud when actually rattled (s11c-6). Priya: hedges ('I mean, it's probably not a big deal') until she trusts the room, drops it entirely once she does (s7a-8, s11a-4 — no hedge left). Her 'it's fine' is a tell, not a fact, every time. Ms. Alvarez never says 'you're lying' — she asks a question she already knows the answer to and lets the silence do the accusing.",
+  "alternativeLines": [
+    {
+      "lineId": "s5a-3",
+      "alternatives": [
+        "You said 'my way.' Since when is that the same as 'the right way'?",
+        "'My way' isn't an argument, Dez."
+      ],
+      "reasoning": "Slightly sharper alternative if the tone should read more confrontational than dry; current version keeps Wren's dry-understated register intact."
+    },
+    {
+      "lineId": "s11a-3",
+      "alternatives": [
+        "Next time we make an actual rule — no faking numbers, no talking over each other. I mean it.",
+        "I want an actual rule this time. No fake data, nobody talked over. Deal?"
+      ],
+      "reasoning": "Current version keeps the half-joking hedge ('badly, probably') that fits Wren's defusing-humor pattern while still landing the sincerity; alternatives are more direct if the scene needs less deflection."
+    },
+    {
+      "lineId": "s9c-1",
+      "alternatives": [
+        "There was some confusion with a trial near the end — we fixed what we could in time.",
+        "One of our trials ran into problems and we adjusted the numbers to compensate."
+      ],
+      "reasoning": "Keeps the half-true quality without tipping into either full confession or outright blame-shift; wording can be tuned for how evasive vs. technical it should sound."
+    }
+  ]
+}

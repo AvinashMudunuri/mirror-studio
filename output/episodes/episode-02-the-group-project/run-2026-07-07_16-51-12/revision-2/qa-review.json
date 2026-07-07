@@ -1,0 +1,141 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-3a and scene-3b both have defaultNextScene pointing to scene-4, but they represent mutually exclusive branches from choice-1. Only one should execute per playthrough, yet both are reachable and lead to the same next scene without differentiation.",
+      "location": "scenes[2] and scenes[3]",
+      "expectedValue": "choice-1 should have options[0].nextScene='scene-3a' and options[1].nextScene='scene-3b', with both scenes having defaultNextScene='scene-4'",
+      "actualValue": "Both scene-3a and scene-3b correctly point to scene-4, but the choice mechanism is properly set up — this is actually VALID. Retracted.",
+      "fix": "No fix needed; this is correct branching."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'Priya Nassar' is referenced in scene-1 dialogue (s1-7, s1-9) but the character roster lists her id as 'Priya Nassar' (with space). All other references use 'Priya Nassar' consistently, but dialogue attribution must match character id exactly for rendering.",
+      "location": "scenes[0].dialogue[6-9] character field",
+      "expectedValue": "character: 'Priya Nassar' (matching roster id)",
+      "actualValue": "character: 'Priya Nassar'",
+      "fix": "Verify character id in roster matches all dialogue attributions. Currently appears consistent, but confirm id field in CHARACTERS array is exactly 'Priya Nassar' with no extra whitespace."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-2 (scene-4) has three options but only two are explicitly mapped in traitMapping: options a, b, c exist, but traitMapping only contains keys 'a' and 'b'. Option 'c' has no trait impact defined.",
+      "location": "choices[1].traitMapping",
+      "expectedValue": "traitMapping should have entries for 'a', 'b', and 'c'",
+      "actualValue": "traitMapping has only 'a' and 'b'",
+      "fix": "Add traitMapping entry for option 'c': {\"c\": {\"COMMUNICATION\": 1, \"JUDGMENT\": 1}} (or appropriate values based on narrative intent)"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Choice choice-5 (scene-10) has three options (a, b, c) but choiceDialogue.responseDialogue only defines responses for options 'a' and 'b'. Option 'c' has no response dialogue defined.",
+      "location": "choiceDialogue[4].responseDialogue",
+      "expectedValue": "responseDialogue should have entries for 'a', 'b', and 'c'",
+      "actualValue": "responseDialogue has only 'a' and 'b'",
+      "fix": "Add responseDialogue for option 'c' with appropriate dialogue lines reflecting Wren's confrontation with Dez"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-mixed-path' has triggeredBy list that enumerates every possible choice:option combination (25 entries), making it a true fallback. However, the four archetype branches (integrity, compliance, advocate, avoidant) have overlapping triggeredBy conditions that could theoretically match the same playthrough. No explicit precedence/priority order is defined for branch evaluation.",
+      "location": "outcomes[4].triggeredBy and outcomes[0-3]",
+      "expectedValue": "Either: (1) archetype branches have mutually exclusive triggeredBy sets, OR (2) evaluation order is explicitly documented",
+      "actualValue": "Archetype branches test partial consistency (e.g., branch-integrity-path requires choice-1:a AND choice-3:a AND choice-4:a, but does not constrain choice-2 or choice-5), meaning a playthrough with choice-1:a, choice-2:a, choice-3:a, choice-4:a, choice-5:b would match branch-integrity-path but NOT branch-advocate-path (which requires choice-5:a). This is actually correct by design.",
+      "fix": "No fix needed; the design is intentional. Document in code comments that archetype branches test dimension-specific consistency, not full profiles, and that mixed-path is the expected common case."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-11a has branchDialogue entries for four different branches (branch-integrity-path, branch-compliance-path, branch-advocate-path, branch-mixed-path), but scene-11b and scene-11c also have branchDialogue entries. No scene has a single, unified dialogue path — every ending scene is branch-dependent. This is valid, but the episode structure assumes the rendering engine can select dialogue variants by branch id at runtime.",
+      "location": "branchDialogue array",
+      "expectedValue": "Rendering engine must support branch-aware dialogue selection at scene render time",
+      "actualValue": "branchDialogue keyed by sceneId and branchId, requiring runtime branch context",
+      "fix": "Ensure rendering pipeline has access to the active branch id when rendering scenes scene-11a, scene-11b, scene-11c. If not, dialogue will not render correctly."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-5c (After the Session) has no choice attached and defaultNextScene='scene-6'. However, scene-5c is only reachable via choice-2 option 'c' (nextScene='scene-5c'). This creates a valid path, but scene-5c is a private moment between Wren and Priya that occurs AFTER the group session, yet scene-6 (The Night Before) is described as 'days later' and involves all three characters on a video call. The narrative continuity is unclear: does scene-5c happen immediately after scene-4, or is there a time skip?",
+      "location": "scenes[7] description and transition to scenes[8]",
+      "expectedValue": "Scene descriptions should clarify temporal relationship, or scene-5c should transition to a bridging scene before scene-6",
+      "actualValue": "scene-5c description says 'Outside the Library' (same day), scene-6 says 'days later' — no explicit time bridge",
+      "fix": "Either: (1) Update scene-6 description to clarify it's 'days later' after the private conversation in scene-5c, OR (2) Add a brief bridging narrative line in scene-5c's transition explaining the time skip"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Choice choice-4 (scene-8, the presentation moment) has option 'b' (Passing the Blame) with nextScene='scene-9b'. Scene-9b dialogue includes Ms. Alvarez asking 'Nassar? Anything to add?' and Priya responding 'No. It's fine.' However, if the player chose option 'a' (The Weight Lifts) or 'c' (Careful Words), Priya would have a different emotional state and might respond differently. The scene-9b dialogue assumes Wren blamed Priya, but the dialogue is hardcoded and does not branch.",
+      "location": "scenes[11].dialogue (scene-9b)",
+      "expectedValue": "Either scene-9b dialogue should be branch-aware, OR the narrative should acknowledge that Priya's response is the same regardless of Wren's answer",
+      "actualValue": "scene-9b has fixed dialogue that assumes Wren blamed Priya",
+      "fix": "This is actually acceptable if the intent is that Priya's retreat is the same regardless — she goes quiet and doesn't correct Wren in front of everyone. However, if different branches should have different dialogue, add branchDialogue entries for scene-9b keyed by the choice-4 option that led there."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-advocate-path' is triggered by choice-2:a AND choice-5:a, but does not constrain choice-1, choice-3, or choice-4. This means a player who advocates for Priya but fakes data (choice-1:b, choice-3:b) would still match branch-advocate-path. The narrative description says 'Priya visibly opens up' and 'A tentative but genuine friendship starts to form,' but if the player faked data, Priya would have been complicit and would likely not open up as fully. The outcome description does not account for this mixed scenario.",
+      "location": "outcomes[2]",
+      "expectedValue": "Either: (1) branch-advocate-path should also constrain choice-1 and choice-3 to integrity options, OR (2) outcome description should acknowledge mixed scenarios",
+      "actualValue": "branch-advocate-path outcome assumes full integrity but does not require it",
+      "fix": "Update outcome description to note: 'Priya visibly opens up over the course of the episode, though the depth of her trust may depend on whether the group's work was fully honest.' OR add choice-1:a and choice-3:a to triggeredBy to ensure integrity on data."
+    },
+    {
+      "severity": "WARNING",
+      "category": "LOGIC",
+      "message": "Scene scene-11c (Calling It Out) is only reachable via choice-5 option 'c', which means it can only occur if Priya's mom has already picked her up (per scene-10 narrative: 'Priya's mom pulls up'). However, scene-11c dialogue shows Wren and Dez alone at the bike racks, which is consistent. But the narrative flow is: Wren either talks to Priya (11a), lets silence sit (11b), or waits for Priya to leave then talks to Dez (11c). This is logically sound, but it means Priya never hears Wren's confrontation with Dez in the 11c path.",
+      "location": "scenes[15-17] narrative flow",
+      "expectedValue": "Narrative should be clear that in path 11c, Priya leaves before Wren addresses Dez",
+      "actualValue": "Scene-10 description says 'Priya's mom pulls up, and Priya climbs in with a quick wave, leaving Wren and Dez alone' — this is already clear",
+      "fix": "No fix needed; the narrative is clear. This is a valid design choice."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene scene-1 (The Assignment) has 10 dialogue lines but no choice attached. The scene is purely expository and transitions via defaultNextScene to scene-2. This is valid, but consider whether players should have any agency in how Wren reacts to the group assignment (e.g., internal monologue choice about her feelings).",
+      "location": "scenes[0]",
+      "suggestion": "Optional: Add a choice at the end of scene-1 allowing players to set Wren's initial attitude (optimistic, anxious, neutral) toward the group, which could affect early dialogue tone."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has 5 major choice points, each with 2-3 options. This is a reasonable branching structure, but the outcome branches (integrity, compliance, advocate, avoidant, mixed) are defined by partial consistency across specific choices, not full profiles. This means most playthroughs will land in 'mixed-path' (the fallback), which is intentional but may feel less rewarding to players who expect their choices to lead to distinct endings.",
+      "location": "outcomes array",
+      "suggestion": "Consider adding a brief 'epilogue' scene that acknowledges the player's specific choice pattern (e.g., 'You were honest about data but quiet about Priya' or 'You advocated for Priya but cut corners on the project'). This would make the mixed-path outcome feel more personalized."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Character Dez Okafor has a complex emotional arc (confident → defensive → quiet → deflecting apology), but his dialogue in scene-11c ('...Yeah, okay. That wasn't — I shouldn't have talked to her like that. Whatever. It's not a big deal.') ends with a deflection that suggests he hasn't fully processed the confrontation. This is realistic but may leave players unsure if their confrontation 'worked.' Consider adding a brief follow-up line or internal monologue clarifying Dez's state.",
+      "location": "scenes[17].dialogue (scene-11c)",
+      "suggestion": "Add a final INTERNAL line after Dez's response: 'He's not apologizing. Not really. But he's not arguing either. That's something.' This would clarify that the confrontation had an impact, even if incomplete."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "The episode has 11 scenes and 5 choice points, with a branching factor of 2-3 per choice. This creates 2×3×2×3×3 = 108 theoretical paths, but the outcome branches collapse these into 5 distinct narrative endings. The branchDialogue array has 12 entries (3 scenes × 4 branches), which is manageable. However, if future episodes add more choice points or scenes, the branchDialogue maintenance could become complex.",
+      "location": "branchDialogue array",
+      "suggestion": "Document the branch evaluation logic clearly in code comments. Consider a helper function that maps choice history to branch id, so branchDialogue selection is deterministic and testable."
+    },
+    {
+      "category": "STYLE",
+      "message": "Scene scene-6 (The Night Before) is described as occurring 'days later' and involves a video call between three characters. However, the dialogue and emotional tone suggest this is the night immediately before the presentation (choice-3 is about 'the night before' and the clock is 'the loudest thing in the room'). The 'days later' phrasing is misleading.",
+      "location": "scenes[8].description",
+      "expectedValue": "Scene description should say 'The night before the presentation' or 'Late night, hours before the presentation'",
+      "actualValue": "Scene description says 'days later'",
+      "fix": "Update scene-6 description: 'Project's due tomorrow morning and the data's a mess — a botched trial, missing numbers. Dez proposes 'smoothing' the results to match what they expected to find. 'It's basically the same thing, just cleaner.' The clock is the loudest thing in the room.' (Remove 'days later' phrasing.)"
+    },
+    {
+      "category": "CONSISTENCY",
+      "message": "In choice-1 (scene-2), Dez says 'It's not cheating, it's efficiency. There's a difference — look it up.' This is a deflection/rationalization. However, in the character description for Dez, it notes he 'equates being liked with being useful/impressive' and 'conflict-avoidant about his own mistakes specifically.' The dialogue is consistent with this, but the phrasing 'look it up' feels slightly out of character — it's more of a dismissive, confident move than a conflict-avoidant one. Minor inconsistency.",
+      "location": "scenes[1].dialogue[s2-7]",
+      "suggestion": "Consider rephrasing to: 'It's not cheating, it's efficiency. There's a difference.' (Remove 'look it up' to avoid the dismissive tone that contradicts his conflict-avoidance.)"
+    }
+  ],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 10,
+    "warningCount": 6
+  }
+}

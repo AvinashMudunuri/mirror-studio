@@ -1,0 +1,277 @@
+[
+  {
+    "character": {
+      "id": "Ms. Alvarez",
+      "name": "Ms. Alvarez",
+      "age": 34,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Compact and energetic, usually in practical clothes that can survive spilled vinegar and baking soda — cardigans with the sleeves pushed up, sneakers instead of flats. Curly dark hair pulled back with whatever's on hand, often a pencil.",
+        "distinctiveFeatures": [
+          "A thin scar on her left thumb from 'a chemistry incident in college' she references but never fully explains",
+          "Reading glasses she wears low and looks over rather than through",
+          "A rotating cast of novelty lanyards from students (this year's is a cartoon beaker)"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "exacting but warm",
+          "dry-humored",
+          "fair to a fault",
+          "quietly perceptive",
+          "impatient with excuses, patient with people"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 9,
+          "extraversion": 6,
+          "agreeableness": 6,
+          "neuroticism": 3
+        },
+        "mannerisms": [
+          "Taps a pen twice against the desk before asking a question she already suspects the answer to",
+          "Goes very still and quiet when she's disappointed, rather than raising her voice",
+          "Writes 'Show me the work' in the margins so often students mouth it along with her"
+        ],
+        "speechPatterns": [
+          "Asks short, precise questions rather than long lectures — makes students do the explaining",
+          "Uses dry understatement ('These results are unusually clean' instead of 'I think you're lying')",
+          "Rarely says 'wrong' — says 'walk me through it' instead"
+        ],
+        "emotionalTendencies": "Alvarez runs on steady, unshowy fairness. She doesn't perform disappointment or anger — she gets quieter and more precise, which middle schoolers find scarier than yelling. She genuinely likes her students, including the ones who frustrate her, and she remembers being thirteen well enough to know when a kid is protecting someone versus protecting themselves."
+      },
+      "background": {
+        "family": "Second-generation Mexican-American; grew up the oldest of four in a house where nobody's problems got to be the only problem being solved that week. Puts herself through the same 'sort it out yourself first' expectations she sets for her class — sometimes unfairly.",
+        "interests": [
+          "forensic science podcasts",
+          "actually good coffee (mocks the teacher's lounge pot daily)",
+          "running a low-key 'strange but true' science fact of the day on the whiteboard"
+        ],
+        "strengths": [
+          "reads a room instantly",
+          "gives kids room to fix their own mistakes before she steps in",
+          "genuinely fair — doesn't play favorites even with the easy, likable kids"
+        ],
+        "struggles": [
+          "can be too hands-off, waiting for students to self-correct when some need more direct help",
+          "occasionally lets a kid off with a caveat when the harder, fuller truth might've served them better long-term"
+        ],
+        "secrets": [
+          "She clocked exactly what happened with Wren's group well before the judge asked her question — the 'unusually clean' comment wasn't curiosity, it was a door being held open on purpose."
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "get her students through the science fair with real, defensible work",
+          "prepare them for a judge who won't be gentle"
+        ],
+        "unconscious": [
+          "wants to be the adult who catches kids before they fully commit to a lie, not after — she'd rather teach the recovery than punish the mistake"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Clear, competent adult vocabulary without being clinical — she talks to 13-year-olds like they're capable of handling real questions, not like they're fragile.",
+        "sentenceComplexity": "Short, deliberate sentences when addressing behavior; slightly more technical/precise when talking science.",
+        "emotionalExpressiveness": "Understated. She signals emotion through timing and stillness more than words — a pause is doing more work than volume ever would.",
+        "examples": [
+          "\"These results are unusually clean. Walk me through how you got this measurement.\"",
+          "\"I'm not thrilled. I'm also not going to pretend I didn't hear you say that.\"",
+          "\"Nobody in this room is in trouble for telling me the truth late. They're in trouble for telling me a story instead.\""
+        ]
+      },
+      "storyRole": "The adult fulcrum of 'Group Work' — Ms. Alvarez doesn't drive Wren's internal conflict, she reveals it. Her single question in front of the judge is the pressure point the whole episode has been building toward, and her reactions in 'The Weight Lifts' and 'Careful Words' show Wren (and the player) that honesty and half-truths get different, specific, believable responses from a real adult — not a morality lecture, just a teacher being a teacher.",
+      "arcPotential": [
+        "Later episode: A student (possibly Priya) goes to Ms. Alvarez privately after being scapegoated, and the player sees how Alvarez handles it — did she already suspect, and what does she do with that now?",
+        "Future trimester: Alvarez becomes the teacher who pairs Wren with harder group dynamics on purpose, having noticed exactly how Wren handles pressure and wanting to see if the lesson stuck",
+        "Optional: A quieter scene where Alvarez admits (to another teacher, overheard by a player exploring the halls) that she let the caveat stand because she remembers being thirteen and cornered, too — humanizing her 'fairness' as something hard-won, not innate"
+      ]
+    },
+    "designNotes": "Ms. Alvarez is built to do a lot of narrative work in very few lines, so every beat has to be efficient and distinct. Her core trait is *precision as kindness* — she doesn't yell, she doesn't lecture, she asks exactly the right small question and lets the silence do the rest. This makes her simultaneously safe (kids aren't publicly destroyed) and unnerving (you can't hide from her). The 'already knew' secret is important: it reframes her question in 'Under the Lights' from a neutral inquiry to a quiet test, which changes how a replaying player reads the whole episode. She's given enough personal texture (family background, the scar, the coffee complaints) that she's clearly a person with a life, not a walking rubric, but none of it distracts from her narrative function.",
+    "representationNotes": "Written as a second-gen Mexican-American teacher without making her ethnicity a plot point — it's part of her texture (family background shaping her 'fairness' ethic) rather than a lesson. She's also an example of an authority figure who models emotional regulation without being a pushover or a saint — a useful, realistic adult figure for the age group who deals with real ambiguity (letting the caveat stand) rather than issuing tidy moral verdicts."
+  },
+  {
+    "character": {
+      "id": "Dez Okafor",
+      "name": "Dez Okafor",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Tall for his grade, broad-shouldered, moves like he's always got somewhere important to be. Wears his older brother's hand-me-down varsity jacket even though he's not on varsity anything yet.",
+        "distinctiveFeatures": [
+          "a scar through one eyebrow from a bike accident he's turned into three different exaggerated stories",
+          "taps a pen against his knee in a constant rhythm when he's thinking",
+          "gap-toothed grin that shows up fast and disappears just as fast when he's caught off guard"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "charismatic",
+          "competitive",
+          "impatient",
+          "secretly anxious",
+          "surprisingly loyal once trust is earned"
+        ],
+        "bigFiveProfile": {
+          "openness": 5,
+          "conscientiousness": 6,
+          "extraversion": 9,
+          "agreeableness": 4,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "leans back in his chair like he owns the room, then leans forward fast when something actually interests him",
+          "cracks his knuckles before saying something he knows is a little bit wrong",
+          "deflects criticism with a joke first, a real answer second — if you're lucky"
+        ],
+        "speechPatterns": [
+          "talks in outcomes — 'we win this' not 'we finish this'",
+          "uses sports and gaming metaphors to explain basically everything",
+          "gets quieter, not louder, when he's actually rattled"
+        ],
+        "emotionalTendencies": "Dez runs hot and fast on the surface — quick to laugh, quick to argue, quick to move on — but he does not like sitting still with a feeling that makes him look anything less than in control. Being wrong in front of people isn't just embarrassing to him, it's dangerous, in a way he couldn't fully explain if you asked him. So he doesn't let himself sit with it. He redirects, jokes, or gets busy fixing the actual problem instead of the feeling underneath it."
+      },
+      "background": {
+        "family": "Second of three kids. His older brother Femi is a junior at the high school Dez will feed into — captain of the debate team, 4.0, the kind of golden-kid reputation that precedes you into every room whether you want it to or not. Dez's parents don't compare the brothers out loud, but they don't have to; Dez has been doing the math himself since third grade.",
+        "interests": [
+          "basketball (plays, not great, cares a lot)",
+          "strategy games — chess app on his phone, deck-building card games at lunch",
+          "taking anything apart to see how it works, less interested in putting it back together"
+        ],
+        "strengths": [
+          "genuinely sharp problem-solver under pressure",
+          "can rally a group and make people want to work harder",
+          "notices when he's lost the room, even if he's slow to fix it"
+        ],
+        "struggles": [
+          "equates being liked with being useful/impressive — struggles to believe people would want him around if he weren't winning something",
+          "conflict-avoidant about his own mistakes specifically, blunt about everyone else's",
+          "genuinely doesn't clock, in the moment, how much weight his dismissiveness carries for someone like Priya"
+        ],
+        "secrets": [
+          "the flash drive project actually got Femi a B-plus, not the A Dez claims — Dez rounded up because the real number felt like losing",
+          "he's a little bit scared of Ms. Alvarez specifically, because she's one of the only adults who doesn't seem impressed by him and he can't figure out how to fix that"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "get the best possible grade with the least possible risk",
+          "be seen as the guy who gets things done"
+        ],
+        "unconscious": [
+          "prove he's not just 'Femi's little brother'",
+          "be valued for something other than winning, without having to find out if that's true"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Confident, casual middle-school vernacular; peppers in competitive/gaming slang ('easy win,' 'we're not losing points over this'); articulate when explaining ideas, clipped and short when defensive.",
+        "sentenceComplexity": "Fast, declarative, rarely hedges. Sentences get shorter and more clipped the more cornered he feels.",
+        "emotionalExpressiveness": "Loud and easy with enthusiasm and frustration; guarded and deflective with anything resembling shame or hurt. Jokes are armor.",
+        "examples": [
+          "\"It's not cheating, it's efficiency. There's a difference — look it up.\"",
+          "\"My brother did this exact project. Got an A. We're not reinventing the wheel here, we're just... rolling the same one.\"",
+          "\"Fine. Fine! We'll do it the boring way first, see how far that gets us.\"",
+          "\"...yeah, okay. That wasn't — I shouldn't have talked to her like that. Whatever. It's not a big deal.\""
+        ]
+      },
+      "storyRole": "Dez is the engine of the episode's central pressure — the peer whose confidence and results-focus make shortcuts feel not just tempting but reasonable. He's not a villain; he's a kid who has learned that being impressive is safer than being honest, and who genuinely doesn't register the cost of that lesson to people around him until it's pointed out to his face. His arc across the episode — grudgingly trying it the real way, sliding back into the shortcut under deadline pressure, dismissing Priya, and finally sitting with a quiet, unfinished moment of accountability on the sidewalk — gives Wren's choices something real to push against.",
+      "arcPotential": [
+        "A later episode where Dez is paired with someone who calls him on his need to win in a lower-stakes setting, letting him actually sit with the feeling instead of deflecting",
+        "An episode touching on the Femi comparison directly — maybe Femi shows up and the golden-kid myth cracks a little",
+        "A moment where Dez has to rely on a group with no 'win' available, testing whether he can show up for people without an outcome attached"
+      ]
+    },
+    "designNotes": "Dez is designed to resist the easy read of 'bad kid who tempts the good protagonist.' His shortcut-seeking behavior is rooted in a specific, legible fear (being ordinary next to his brother) rather than laziness or malice, which makes his choices understandable even when they're wrong. Crucially, he's given real moments of positive turn — agreeing to try it the honest way, genuine late-night bonding, laughing with the group — so that his dismissiveness toward Priya reads as a character flaw under pressure, not his whole identity. The ending beat (defensive, then quiet, 'not an apology exactly but not nothing') is deliberately incomplete: middle schoolers don't have tidy character growth, and giving Dez a full apology would flatten him into a moral lesson rather than a person still figuring out how to be wrong about something.",
+    "representationNotes": "Dez is a confident, high-achieving Black middle schooler, and care was taken to root his flaws in specific psychology (sibling comparison, fear of ordinariness) rather than trope-driven traits like aggression or bravado-for-its-own-sake. His charisma and intelligence are real and are not undercut by his mistakes; he's written to be someone players can like, root for, and be frustrated by in the same scene — the goal is a full person, not a cautionary type. His family is depicted as loving and non-abusive; the pressure he feels is self-generated from ordinary sibling dynamics, not written as a broader statement about any community or family structure."
+  },
+  {
+    "character": {
+      "id": "Priya Nassar",
+      "name": "Priya Nassar",
+      "age": 13,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Slight build, dark hair usually in a low braid she fidgets with when nervous, wears the same three hoodies in rotation, carries a beat-up sketchbook covered in doodles she angles away from view.",
+        "distinctiveFeatures": [
+          "A thin scar through one eyebrow from a childhood bike accident that she'll only explain if you ask twice",
+          "Draws tiny, intricate margin comics during class — teachers have stopped confiscating them because they're actually good"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "watchful",
+          "dry-witted (in private)",
+          "conflict-avoidant",
+          "quietly stubborn",
+          "loyal once trust is earned"
+        ],
+        "bigFiveProfile": {
+          "openness": 8,
+          "conscientiousness": 8,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 7
+        },
+        "mannerisms": [
+          "Goes very still and quiet right before she's about to disagree with someone, like she's bracing for impact",
+          "Taps her pen against her sketchbook in a specific rhythm when she's holding back a comment",
+          "Makes brief, sharp eye contact when she finally does speak, then looks away immediately after"
+        ],
+        "speechPatterns": [
+          "Says very little, but when she talks it's precise and often funnier or sharper than people expect",
+          "Hedges her opinions with 'I mean, it's probably not a big deal, but—' even when it clearly is",
+          "Drops the hedging entirely in the rare moments she feels safe, and just says the thing directly"
+        ],
+        "emotionalTendencies": "Priya feels things intensely but processes them privately — she's not naturally shy, she's strategically quiet. She reads rooms fast and accurately, and she's learned that being right out loud has cost her before, so she filters almost everything through 'is this worth the fallout.' When someone finally listens to her without cutting her off, it visibly recalibrates her whole posture — she's starving for exactly that and doesn't quite believe it when it happens."
+      },
+      "background": {
+        "family": "Middle child of three. Dad's an electrical engineer who moved the family to the city two years ago for work; mom's a pediatric nurse who works long, unpredictable shifts. Loving household, but a busy one — nobody's unkind to Priya, but nobody has a lot of bandwidth to notice when she goes quiet, because she's 'the easy one.'",
+        "interests": [
+          "writing and drawing an ongoing comic series she posts online under a pseudonym",
+          "insects and small animals — she has a running mental list of 'objectively cool bugs'",
+          "puzzle games, the kind with no time pressure"
+        ],
+        "strengths": [
+          "sharp observational thinking",
+          "genuinely creative problem-solving",
+          "quiet reliability — she does what she says she'll do"
+        ],
+        "struggles": [
+          "freezes up in group dynamics where someone louder claims the room first",
+          "internalized belief that pushing back = being 'difficult'",
+          "tends to disappear emotionally rather than escalate, which reads as fine when it isn't"
+        ],
+        "secrets": [
+          "At her old school, she got publicly labeled 'bossy' and 'a know-it-all' by a teacher for correcting a group project out loud — it's the actual reason she's gone quiet at Ridgemont, not shyness",
+          "Her online comic has a small but real following, and it's the only place she says exactly what she thinks without editing it first"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the group project without becoming 'a problem'",
+          "Get a good grade without having to fight for it"
+        ],
+        "unconscious": [
+          "Wants proof that speaking up won't cost her the group's approval",
+          "Needs at least one person to notice her retreat and not let it just slide"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Articulate for her age, but economical — she doesn't waste words. Occasional dry, deadpan humor that surprises people who've written her off as just quiet.",
+        "sentenceComplexity": "Short, careful sentences in group settings; longer, more natural and specific ones one-on-one or when she forgets to self-edit.",
+        "emotionalExpressiveness": "Restrained on the surface, sharp underneath. Her real feelings show more in what she stops doing (stops offering ideas, stops making eye contact) than in what she says.",
+        "examples": [
+          "\"I mean — it's just an idea. We don't have to do it that way.\" (retreating before she's even finished the sentence)",
+          "\"That's a really specific way to be wrong about something,\" (dry, only said once she trusts you)",
+          "\"It's fine.\" (said in the exact tone that means it is not fine, and everyone who knows her can hear it)"
+        ]
+      },
+      "storyRole": "Priya is the human stakes of Wren's choices in 'Group Work.' She's not a lesson about shyness — she's a kid who already learned, painfully, that having opinions can get you labeled, and who is testing (without fully realizing she's testing it) whether this new group, and specifically Wren, is a place where that's still true. Every time Wren speaks up or stays silent, it registers on Priya immediately and specifically — she is the barometer for whether Wren's choices actually cost anything.",
+      "arcPotential": [
+        "Group Work: Priya moves from guarded silence to one moment of real trust (Speaking Up) to a relapse into retreat (Letting It Go) to a fragile, real repair (Naming It) — her arc tracks almost exactly opposite to Wren's courage, which is the point.",
+        "Future episode potential: A storyline where Priya's online comic gets discovered by classmates, forcing her to reconcile her private, unfiltered voice with her cautious real-world one — with Wren possibly being the one who already knows and has kept it to herself."
+      ]
+    },
+    "designNotes": "Priya is built to resist the 'shy quiet girl' cliché by giving her a clear causal reason for her silence (a specific past humiliation, not innate temperament) and a private space where she's fully herself (the comic). This lets her retreat in scenes like 'Whose Idea Is It Anyway' read as a learned, self-protective reflex rather than a personality trait — which makes her small moments of sitting up straighter or laughing land as real character movement, not just relief. Her dry humor and precision when she does talk are deliberately calibrated to surprise both the player and Dez, underlining that her quiet is a choice under pressure, not a lack of substance. Keeping her family loving but distracted (rather than neglectful or harsh) avoids a tidy 'sad home life' explanation and keeps the focus on the peer dynamic, which is where the episode's actual tension lives.",
+    "representationNotes": "Priya Nassar's surname suggests a mixed or blended cultural background (South Asian/Arab), which is left specific but not over-explained in dialogue — she's written as a full character first, with cultural identity present in texture (family structure, don't-rock-the-boat pressure she's internalized) rather than as an issue-of-the-week. Care was taken not to make her silence a stand-in for a cultural stereotype about 'quiet girls'; her reticence is explicitly given an individual, situational cause (the old-school incident) so it reads as personal history, not identity-based generalization. Her assertiveness in her private creative work is included specifically to push back against any reading of her as simply passive."
+  }
+]

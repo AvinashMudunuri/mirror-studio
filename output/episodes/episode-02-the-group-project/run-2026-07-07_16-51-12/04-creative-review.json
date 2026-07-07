@@ -1,0 +1,81 @@
+{
+  "decision": "APPROVED",
+  "creativeNotes": "Group Work is a strong, character-driven episode that understands peer pressure as a series of small, reasonable-sounding compromises rather than a single dramatic moment. The structure is elegant: each scene escalates the stakes incrementally while keeping the core conflict internal to Wren rather than external. The dialogue sounds genuinely like middle schoolers — clipped, self-protective, funny in ways that deflect from real stakes. What's most impressive is how the episode refuses easy answers: there's no villain, just kids making different choices under different pressures, and Wren has to decide who she wants to be in the middle of that. The branching structure serves character rather than feeling gimmicky — each choice path shows a different facet of how peer pressure operates (convenience, loyalty, social cost, self-protection). Ms. Alvarez is a particularly strong addition: her quiet fairness and that single question ('These results are unusually clean') is the kind of adult moment that actually lands with teenagers because it's not a lecture. The episode earns its emotional beats through specificity — Priya's pen tapping, Dez's deflection through jokes, Wren's internal narration that contradicts her external performance. This is what middle school actually feels like.",
+  "specificFeedback": {
+    "story": [
+      "The pacing across 11 scenes is well-calibrated — each scene advances both plot and internal conflict. The escalation from 'just look at the file' to 'smooth the data' to 'answer the teacher's question' feels inevitable rather than contrived.",
+      "The choice architecture is strong: each decision point has real consequences that ripple forward. Choice-4 (what to tell Ms. Alvarez) is particularly effective because the player has been building toward it through earlier choices, making it feel earned rather than sudden.",
+      "One minor structural note: the time jump between scene-4 and scene-6 ('days later' to 'night before') works, but you might consider adding a single line of dialogue in scene-5 or 5c that acknowledges the project has been moving forward. This keeps the timeline transparent and prevents the jump from feeling abrupt. Example: Dez could say something like 'Okay, so we've been running trials all week, and...' in the opening of scene-6. Not essential, but it tightens continuity.",
+      "The ending structure (scene-10 branching to scene-11a/b/c) is smart — it gives the player agency over how to process what happened, not just what happened itself. This honors the episode's core theme: what you do about what you see matters as much as what you see."
+    ],
+    "character": [
+      "Wren's characterization is consistent and nuanced. Her internal monologue (the INTERNAL lines) captures the specific anxiety of being new: she's reading the room constantly, performing confidence while feeling uncertain, and caught between loyalty and integrity. The detail about her tugging her backpack strap 'like a seatbelt when overwhelmed' could be woven into the scenes more explicitly — maybe once during scene-6 or scene-8 when pressure peaks. Small physical tells make characters real.",
+      "Dez is the most complex character work here. He's not a bully — he's a kid who's learned that winning is safer than being wrong, and his dismissal of Priya isn't malice, it's self-protection dressed as efficiency. The moment in scene-11c where he gets quiet instead of joking is earned because we've seen him deflect all episode. This is strong character writing.",
+      "Priya's arc is the emotional spine of the episode, and it's handled with real care. Her silence isn't shyness — it's strategic retreat based on past hurt (the lunchroom moment from First Bell, plus her backstory about being labeled 'bossy'). The moment where she actually speaks up in scene-3a (or her relief in scene-3b) should be a small but visible physical shift. You've noted this in the stage directions ('sits up straighter'), which is good. Lean into these moments — they're the proof that Wren's choices matter.",
+      "Ms. Alvarez works because she's not a savior figure. She's a teacher doing her job fairly, and her 'unusually clean' comment is a door being held open, not a trap. The note in her character background that she 'clocked exactly what happened well before the judge asked her question' is important — it means her question in scene-8 is intentional, not accidental. Consider a single line in scene-9a where she acknowledges this: 'I appreciate you telling me that instead of me finding it myself' already does this, actually. Good."
+    ],
+    "dialogue": [
+      "Dialogue is a consistent strength. It sounds like actual middle schoolers: clipped, self-aware, funny in ways that deflect from vulnerability. Examples: Dez's 'I don't lose' followed by Wren's 'Cool, cool. No pressure then' — the rhythm is perfect. Priya's 'It's on the board' has exactly the right amount of dry dismissal.",
+      "One area to strengthen: Dez's speech patterns could be slightly more specific to his competitive mindset. He uses sports/gaming metaphors ('easy win,' 'we're not losing points'), but in scene-2, his pitch for using the old file could land harder with one more competitive frame. Current: 'It's not cheating, it's efficiency.' Stronger: 'It's not cheating, it's efficiency. We're not reinventing the wheel here, we're just rolling the same one.' (This is actually in his character voice guidelines — consider using it in the scene itself.)",
+      "Priya's dialogue in scene-4 ('...I mean, it's probably not a big deal, but—') perfectly captures her hedging pattern. The ellipses throughout her dialogue work well to show her hesitation. One small note: in scene-7a, when she laughs, consider giving her one more line of dialogue before Dez calls her out on it. Right now it's just an action. Example: 'What? It's funny.' This would make her laugh feel more like a real moment of connection rather than just a beat.",
+      "Ms. Alvarez's dialogue is spare and precise, which is exactly right. 'Walk me through it' instead of 'explain yourself' — this is the kind of specificity that makes her feel real. The line 'Nobody in this room is in trouble for telling me the truth late. They're in trouble for telling me a story instead' is strong, but it might land even harder if it's split across two moments: the first part after Wren admits the truth (scene-9a), and the second part later in a follow-up conversation. This would give the episode's moral weight more room to breathe.",
+      "Wren's internal monologue is strong, but watch for overuse. Lines like 'Cool, cool, love it here already' work because they're rare and specific. Make sure the INTERNAL lines aren't becoming a crutch for explaining what we should already feel from the scene itself. Most of them work, but scene-8's 'New school, new me. Except it's still just me. Great plan, Wren' is slightly on-the-nose for a moment where the tension should speak for itself. Consider cutting this one or making it more specific to the moment: 'New school, new project, new ways to get caught.' (Tighter, more specific to what's actually happening.)"
+    ],
+    "tone": [
+      "The tonal balance is excellent throughout. The episode sits in 'grounded realism with moments of humor and warmth' — it doesn't tip into melodrama or comedy. Scenes like the late-night video call (scene-7a) earn their warmth because the group has actually worked for it. This is the right tone for the target age.",
+      "One tonal consideration: the branch outcomes (Honest Path, Shortcut Path, Advocate Path, Silent Path) feel slightly didactic in their naming. The actual scenes handle the moral complexity beautifully — the player doesn't need the outcome labels to understand what happened. These labels work for backend tracking, but if they appear in-game, consider making them less explicitly moral. Example: 'The Honest Path' → 'The Reckoning' or 'The Truth Costs.' This is a minor note — the scenes themselves are never preachy.",
+      "Scene-8 (Under the Lights) has the right amount of tension without being overdramatic. Ms. Alvarez's question is simple, which makes it more powerful than if it were accusatory. The silence that follows is doing the work. Good restraint here.",
+      "The ending scenes (11a/b/c) have different emotional temperatures depending on the path, which is exactly right. 11a (Naming It) feels earned and warm. 11b (Letting the Silence Sit) is appropriately melancholic without being punitive. 11c (Calling It Out) has the right confrontational tone — direct but not cruel. Each ending respects the player's choices without making them feel bad for taking a different path."
+    ]
+  },
+  "inspirationReferences": [
+    {
+      "type": "TV",
+      "title": "The Breakfast Club (1985)",
+      "reasoning": "Not in tone, but in structure: a group of different teenagers forced together, learning that each person's pressures are real and understandable. Group Work captures that same empathy — Dez isn't a villain, Priya isn't a victim, Wren isn't a hero. They're all just kids under pressure."
+    },
+    {
+      "type": "TV",
+      "title": "Atypical (Season 1-2)",
+      "reasoning": "The way Atypical handles peer pressure and social dynamics among middle/high schoolers feels authentic to this episode. Characters make choices that are understandable but not always right, and the show doesn't punish them for it — it just shows the consequences."
+    },
+    {
+      "type": "BOOK",
+      "title": "The Outsiders by S.E. Hinton",
+      "reasoning": "The core theme of 'what you do about what you see' — standing up or staying silent — runs through this novel. Group Work captures that same moral complexity without being heavy-handed."
+    },
+    {
+      "type": "GAME",
+      "title": "Life is Strange series",
+      "reasoning": "The branching dialogue structure and the way small choices ripple forward mirrors this game's approach. But Group Work is tighter — the branches matter because they're about character, not just plot."
+    },
+    {
+      "type": "OTHER",
+      "title": "Actual middle school social dynamics",
+      "reasoning": "The strongest reference point: this episode understands that peer pressure isn't usually dramatic. It's Dez saying 'That'll take too long' and Priya going quiet. It's convenience dressed up as practicality. It's the specific anxiety of being new and not wanting to rock the boat. This is real."
+    }
+  ],
+  "revisionPriority": "LOW",
+  "detailedNotes": {
+    "whatWorks": [
+      "The core premise is strong: a science project becomes a moral reckoning. This is the right scale for the target age — not life-or-death, but genuinely meaningful.",
+      "Character consistency is excellent. Every character makes choices that align with their established personality and pressures. Dez doesn't suddenly become self-aware; he just gets quieter when cornered, which is true to his character.",
+      "The dialogue authenticity is a major strength. These sound like actual teenagers: self-protective, funny, filtering their real thoughts through what's socially safe.",
+      "The choice architecture matters. Each branch leads to different emotional outcomes that feel earned rather than punitive. The player isn't being moralized at; they're being shown consequences.",
+      "Ms. Alvarez is a particularly strong addition. She's not a savior — she's a fair adult who creates space for truth without demanding it. This is how real teachers actually work.",
+      "The emotional beats are earned. The moment where Priya sits up straighter after being heard (scene-3a) lands because we've seen her shrink all episode. The late-night video call (scene-7a) feels like real connection because the group actually worked for it.",
+      "Wren's internal conflict is the spine of the episode. She's not choosing between good and bad — she's choosing between different kinds of loyalty and different versions of herself. This is sophisticated storytelling for the target age."
+    ],
+    "areasForPolish": [
+      "Timeline clarity: Consider adding one line of dialogue in scene-6 that acknowledges the project has been running for several days. This keeps the time jump transparent.",
+      "Physical tells: Wren's backpack-strap tugging is mentioned in her character description but doesn't appear in the scenes. Weave this into scene-6 or scene-8 when pressure peaks — small physical details make characters real.",
+      "Priya's laugh in scene-7a: Give her one more line of dialogue to make the moment of connection feel more real. Right now it's just an action.",
+      "Internal monologue in scene-8: The line 'New school, new me. Except it's still just me. Great plan, Wren' is slightly on-the-nose. Consider making it more specific to the moment.",
+      "Ms. Alvarez's moral statement: The line 'Nobody in this room is in trouble for telling me the truth late. They're in trouble for telling me a story instead' is strong, but consider splitting it across two moments to give the weight more room to breathe.",
+      "Outcome labels: If these appear in-game, consider making them less explicitly moral. 'The Honest Path' → 'The Reckoning' would be slightly more sophisticated.",
+      "Dez's pitch in scene-2: Consider using one of his competitive metaphors from his character guidelines to make his argument land harder. Example: 'We're not reinventing the wheel here, we're just rolling the same one.'"
+    ],
+    "thematicStrength": "The episode understands peer pressure as a series of small, reasonable-sounding compromises rather than a single dramatic moment. This is sophisticated and true to how teenagers actually experience social pressure. The episode also understands that standing up for someone (Priya) is harder than it looks, and that silence is also a choice. These are important lessons without being preachy.",
+    "targetAudienceResonance": "Teenagers will recognize themselves in this episode. Wren's anxiety about being new, Dez's need to win, Priya's strategic silence — these are real. The episode doesn't mock these characters or make them feel bad for their choices; it just shows what happens when you make them. This is the kind of story that makes teenagers feel seen rather than lectured."
+  }
+}
