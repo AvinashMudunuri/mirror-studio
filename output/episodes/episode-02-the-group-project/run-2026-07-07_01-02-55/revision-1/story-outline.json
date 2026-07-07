@@ -1,0 +1,683 @@
+{
+  "episodeOutline": {
+    "title": "Group Work",
+    "synopsis": "Three weeks into the school year, the player is placed in a group project with Dez Bellamy (charismatic, used to shortcuts), Priya Chen (anxious overachiever), and Mo Alvarez (the quiet kid from the lunchroom on day one). What starts as a simple assignment becomes a slow-building test of honesty and nerve when Dez suggests 'borrowing' work, a teammate falls behind, and a shortcut threatens to blow up in front of the whole grade. The player must decide, again and again, whether keeping the peace is worth the cost of the truth.",
+    "themes": [
+      "Peer Pressure",
+      "Honesty",
+      "Teamwork"
+    ],
+    "targetTraits": [
+      "INTEGRITY",
+      "COMMUNICATION",
+      "JUDGMENT"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1-announcement",
+        "title": "The Assignment",
+        "location": "Homeroom, Ridgemont Middle School",
+        "characters": [
+          "player",
+          "mr-okafor",
+          "dez",
+          "priya",
+          "mo"
+        ],
+        "duration": 1,
+        "description": "Mr. Okafor announces the semester's big group project: a presentation for the whole grade, worth a real chunk of the grade. He reads out groups. The player is paired with Dez Bellamy, Priya Chen, and Mo Alvarez — the same kid who got quietly humiliated at lunch on the first day. Mo catches the player's eye for half a second, unreadable.",
+        "emotionalBeat": "Anticipation with an undertone of old, unresolved history",
+        "defaultNextScene": "scene-2-group-meeting"
+      },
+      {
+        "id": "scene-2-group-meeting",
+        "title": "First Meeting",
+        "location": "Library study room",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo"
+        ],
+        "duration": 1,
+        "description": "The group meets to divide up the work. Dez, relaxed and confident, mentions his older sister did almost this exact project last year and he's 'pretty sure' he still has the files. 'We just tweak it a little. Nobody's gonna know.' Priya looks torn between relief and worry. Mo says nothing, waiting to see what the group decides.",
+        "emotionalBeat": "The first quiet test — does the player go along to keep things easy?",
+        "choicePointId": "choice-1"
+      },
+      {
+        "id": "scene-3a-standing-ground",
+        "title": "Pushing Back",
+        "location": "Library study room",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo"
+        ],
+        "duration": 1,
+        "description": "The player says it plainly: they should do their own work. Dez rolls his eyes — 'It's not that deep' — but backs off when Priya quietly agrees. Mo glances at the player, something shifting in his posture. Small, but real.",
+        "emotionalBeat": "Tense relief; a small alliance forms",
+        "defaultNextScene": "scene-4-work-session"
+      },
+      {
+        "id": "scene-3b-going-along",
+        "title": "Letting It Slide",
+        "location": "Library study room",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo"
+        ],
+        "duration": 1,
+        "description": "The player shrugs it off — easier not to make it a thing. Dez grins, already pulling up his sister's old files. Priya stares at her notebook, unsure whether to protest now that the player didn't. Mo says nothing, but something closes off in his expression.",
+        "emotionalBeat": "A quiet compromise that doesn't feel as harmless as it should",
+        "defaultNextScene": "scene-4-work-session"
+      },
+      {
+        "id": "scene-3c-middle-path",
+        "title": "Finding a Middle Ground",
+        "location": "Library study room",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo"
+        ],
+        "duration": 1,
+        "description": "The player suggests using Dez's sister's project only as inspiration for structure — but doing the actual research fresh. Dez considers it, shrugs, 'Fine, whatever's faster.' Priya visibly relaxes. Mo nods slightly, like it's the first thing today that made sense.",
+        "emotionalBeat": "A tentative, negotiated compromise",
+        "defaultNextScene": "scene-4-work-session"
+      },
+      {
+        "id": "scene-4-work-session",
+        "title": "The Work Session",
+        "location": "Priya's kitchen table, after school",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo"
+        ],
+        "duration": 1,
+        "description": "Days later, the group is deep in it. Dez has drifted off to his phone. Priya is stressed, redoing everyone's citations. Mo quietly admits he doesn't understand the part he's supposed to present — he's been faking it in his notes so no one would notice.",
+        "emotionalBeat": "Vulnerability breaks through the group's surface calm",
+        "choicePointId": "choice-2"
+      },
+      {
+        "id": "scene-5a-teaching-mo",
+        "title": "Walking It Through",
+        "location": "Priya's kitchen table",
+        "characters": [
+          "player",
+          "mo",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player sits with Mo and walks through the confusing part, slowly, without making him feel small about it. Mo starts to relax, even cracks a joke. Priya watches, quietly grateful someone else is carrying weight too.",
+        "emotionalBeat": "Trust forming through patience",
+        "defaultNextScene": "scene-6-discovery"
+      },
+      {
+        "id": "scene-5b-brush-off",
+        "title": "Not My Problem",
+        "location": "Priya's kitchen table",
+        "characters": [
+          "player",
+          "mo",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player tells Mo to just copy the summary from the textbook and move on — easier for everyone. Mo copies it down, but he looks smaller than before. Priya notices, says nothing, but her jaw tightens.",
+        "emotionalBeat": "A small unkindness dressed as efficiency",
+        "defaultNextScene": "scene-6-discovery"
+      },
+      {
+        "id": "scene-5c-pass-buck",
+        "title": "Someone Else's Job",
+        "location": "Priya's kitchen table",
+        "characters": [
+          "player",
+          "mo",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player tells Mo to just ask Mr. Okafor for help tomorrow. Technically reasonable, but Mo's face falls slightly — he doesn't want to be the one who admits he's behind. He nods anyway, and doesn't bring it up again.",
+        "emotionalBeat": "Well-meaning avoidance that leaves someone alone with a problem",
+        "defaultNextScene": "scene-6-discovery"
+      },
+      {
+        "id": "scene-6-discovery",
+        "title": "The Night Before",
+        "location": "Group chat / Priya's kitchen table, night before presentation",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo"
+        ],
+        "duration": 1,
+        "description": "The night before the presentation, Priya sends the group Dez's slides to review — and the player immediately recognizes whole paragraphs lifted almost word-for-word from a website, barely reworded. Dez, when confronted in the chat, gets defensive: 'It's basically the same info, who cares. We're not gonna get caught.'",
+        "emotionalBeat": "The crisis point — quiet complicity becomes impossible to ignore",
+        "choicePointId": "choice-3"
+      },
+      {
+        "id": "scene-7a-redo-together",
+        "title": "Fixing It Together",
+        "location": "Video call, late night",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo"
+        ],
+        "duration": 1,
+        "description": "The player pushes Dez, one-on-one, to redo his part honestly — not to shame him, just to get it right. Grumbling, Dez agrees, and the group stays up late rewriting his section together. It's messy and tired, but it's theirs.",
+        "emotionalBeat": "Hard-won teamwork born from an uncomfortable conversation",
+        "defaultNextScene": "scene-8-presentation-day"
+      },
+      {
+        "id": "scene-7b-tell-teacher",
+        "title": "Telling Mr. Okafor",
+        "location": "Hallway, before school",
+        "characters": [
+          "player",
+          "mr-okafor"
+        ],
+        "duration": 1,
+        "description": "The player goes to Mr. Okafor before class and explains the situation honestly, without throwing Dez fully under the bus. Mr. Okafor thanks the player for the heads-up, quietly gives the group an extra evening, and has a private word with Dez. Dez is cold to the player afterward, but the project itself gets fixed.",
+        "emotionalBeat": "Integrity that costs something socially",
+        "defaultNextScene": "scene-8-presentation-day"
+      },
+      {
+        "id": "scene-7c-let-it-go",
+        "title": "Hoping for the Best",
+        "location": "Group chat, night before",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo"
+        ],
+        "duration": 1,
+        "description": "The player decides not to push it — it's late, everyone's tired, and maybe it'll be fine. Priya sends a worried message that goes unanswered. Mo doesn't respond at all. The slides stay exactly as they are.",
+        "emotionalBeat": "Uneasy quiet, the risk of the unspoken",
+        "defaultNextScene": "scene-8-presentation-day"
+      },
+      {
+        "id": "scene-8-presentation-day",
+        "title": "Presentation Day",
+        "location": "School auditorium",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo",
+          "mr-okafor"
+        ],
+        "duration": 1,
+        "description": "The group presents in front of the whole grade and a panel of teachers. It goes smoothly until a teacher on the panel asks a pointed follow-up question about Dez's section — one that would expose exactly how shaky that part really is.",
+        "emotionalBeat": "Public pressure, nowhere left to hide",
+        "choicePointId": "choice-4"
+      },
+      {
+        "id": "scene-9a-honest-answer",
+        "title": "Owning It",
+        "location": "School auditorium",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo",
+          "mr-okafor"
+        ],
+        "duration": 1,
+        "description": "The player steps in and honestly admits the group didn't fully nail that part, then explains what they *do* understand and how they'd improve it. The panel nods, clearly more impressed by the honesty than they would have been by a smooth lie. Dez looks embarrassed but doesn't argue.",
+        "emotionalBeat": "Vulnerability rewarded, quiet pride",
+        "defaultNextScene": "scene-10-aftermath"
+      },
+      {
+        "id": "scene-9b-bluff",
+        "title": "Faking It",
+        "location": "School auditorium",
+        "characters": [
+          "player",
+          "dez",
+          "priya",
+          "mo",
+          "mr-okafor"
+        ],
+        "duration": 1,
+        "description": "The player lets Dez bluff through an answer that doesn't quite hold up. A teacher's eyebrow raises. The moment passes, but it lingers — Priya won't meet the player's eyes afterward, and Mo stares at the floor.",
+        "emotionalBeat": "A hollow relief that doesn't feel like getting away with it",
+        "defaultNextScene": "scene-10-aftermath"
+      },
+      {
+        "id": "scene-10-aftermath",
+        "title": "After the Bell",
+        "location": "Hallway, end of day",
+        "characters": [
+          "player",
+          "mo",
+          "priya",
+          "dez"
+        ],
+        "duration": 1,
+        "description": "Grades are posted. The group did fine — better or worse depending on what happened along the way. Mo catches up to the player at the lockers, hesitant, clearly wanting to say something about how the whole project went.",
+        "emotionalBeat": "The quiet moment where the real grade — trust — gets decided",
+        "choicePointId": "choice-5"
+      },
+      {
+        "id": "scene-11-epilogue-integrity",
+        "title": "What Got Built",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "mo",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player tells Mo the truth — that it was messy, that people almost took shortcuts, and that doing it right mattered more than doing it easy. Mo smiles, actually smiles, and says, 'Yeah. I noticed.' Priya, overhearing, adds the player to a group chat for next semester's project before anyone even asks.",
+        "emotionalBeat": "Earned trust and quiet belonging",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-11-epilogue-growth",
+        "title": "Still Figuring It Out",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "mo",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player admits it wasn't perfect — some parts they'd do differently next time. Mo shrugs, appreciating the honesty more than a clean story. 'At least you're saying it,' he says. It's not a triumphant ending, but it's a real one.",
+        "emotionalBeat": "Humble, honest growth",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-11-epilogue-uneasy",
+        "title": "Good Enough",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "mo",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The player keeps it light, focuses on the grade, changes the subject. Mo nods slowly and walks off without saying much else. The player got through it — but something about Mo's quiet exit doesn't sit right.",
+        "emotionalBeat": "Relief undercut by a lingering discomfort",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2-group-meeting",
+        "prompt": "Dez wants to reuse his sister's old project instead of starting fresh. What do you do?",
+        "context": "The group is deciding how to approach the project for the first time. Dez is confident and casual about it; Priya seems uneasy but isn't saying anything.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Say plainly that you think the group should do its own original work.",
+            "nextScene": "scene-3a-standing-ground",
+            "pathTag": "integrity"
+          },
+          {
+            "id": "b",
+            "text": "Shrug and go along with it — it's easier not to make it a thing.",
+            "nextScene": "scene-3b-going-along",
+            "pathTag": "peer_pressure"
+          },
+          {
+            "id": "c",
+            "text": "Suggest using it only as inspiration, but doing real research yourselves.",
+            "nextScene": "scene-3c-middle-path",
+            "pathTag": "negotiated"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "JUDGMENT": -1
+          },
+          "c": {
+            "COMMUNICATION": 2,
+            "JUDGMENT": 2,
+            "INTEGRITY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-4-work-session",
+        "prompt": "Mo quietly admits he's been faking his notes because he doesn't understand his part. How do you respond?",
+        "context": "The group is mid-project. Dez is distracted, Priya is overloaded, and Mo has just admitted something he clearly found hard to say.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Mo and actually walk him through it.",
+            "nextScene": "scene-5a-teaching-mo",
+            "pathTag": "negotiated"
+          },
+          {
+            "id": "b",
+            "text": "Tell him to just copy a summary and move on.",
+            "nextScene": "scene-5b-brush-off",
+            "pathTag": "peer_pressure"
+          },
+          {
+            "id": "c",
+            "text": "Tell him to ask Mr. Okafor for help tomorrow.",
+            "nextScene": "scene-5c-pass-buck",
+            "pathTag": "peer_pressure"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1
+          },
+          "c": {
+            "JUDGMENT": -1,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-6-discovery",
+        "prompt": "You realize Dez's slides are copied almost word-for-word from a website. What do you do the night before the presentation?",
+        "context": "It's late, everyone's tired, and Dez is defensive and dismissive about the plagiarism when it's brought up in the group chat.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Push Dez, one-on-one, to redo his part honestly with the group's help.",
+            "nextScene": "scene-7a-redo-together",
+            "pathTag": "negotiated"
+          },
+          {
+            "id": "b",
+            "text": "Tell Mr. Okafor before class, honestly explaining the situation.",
+            "nextScene": "scene-7b-tell-teacher",
+            "pathTag": "integrity"
+          },
+          {
+            "id": "c",
+            "text": "Let it go for tonight and hope it's fine.",
+            "nextScene": "scene-7c-let-it-go",
+            "pathTag": "peer_pressure"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": 3,
+            "JUDGMENT": 1,
+            "COMMUNICATION": 1
+          },
+          "c": {
+            "INTEGRITY": -3,
+            "JUDGMENT": -2
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-8-presentation-day",
+        "prompt": "A teacher asks a pointed question that exposes how shaky Dez's section really is. Do you step in?",
+        "context": "The whole grade is watching. Dez is stumbling for an answer. There's a real chance of embarrassment either way.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Step in and honestly admit the gap, then explain what you do understand.",
+            "nextScene": "scene-9a-honest-answer",
+            "pathTag": "integrity"
+          },
+          {
+            "id": "b",
+            "text": "Let Dez bluff through it and hope no one notices.",
+            "nextScene": "scene-9b-bluff",
+            "pathTag": "peer_pressure"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "JUDGMENT": -2
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-10-aftermath",
+        "prompt": "Mo wants to talk about how the whole project went. What do you tell him?",
+        "context": "This is the moment the player decides how honestly to reflect on the experience — with the person who was most affected by it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Be honest about what almost went wrong and why doing it right mattered.",
+            "nextScene": "scene-11-epilogue-integrity",
+            "pathTag": "integrity"
+          },
+          {
+            "id": "b",
+            "text": "Keep it light and steer the conversation toward the grade instead.",
+            "nextScene": "scene-11-epilogue-uneasy",
+            "pathTag": "peer_pressure"
+          },
+          {
+            "id": "c",
+            "text": "Admit it wasn't perfect and that you'd do some things differently.",
+            "nextScene": "scene-11-epilogue-growth",
+            "pathTag": "negotiated"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 2
+          },
+          "b": {
+            "JUDGMENT": -1,
+            "COMMUNICATION": -1
+          },
+          "c": {
+            "COMMUNICATION": 1,
+            "JUDGMENT": 1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-integrity",
+        "name": "The Integrity Path",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-2:a",
+          "choice-3:b",
+          "choice-4:a",
+          "choice-5:a"
+        ],
+        "description": "The player consistently chooses honesty over ease, even when it costs social comfort — pushing back on Dez, escalating the plagiarism to a teacher, owning the group's gaps publicly, and reflecting on it honestly with Mo afterward.",
+        "outcome": "The project succeeds on its own honest merits. Dez is cooler toward the player at first, but Mo and Priya's trust deepens significantly, setting up a stronger, more genuine friend group going forward."
+      },
+      {
+        "id": "branch-peer-pressure",
+        "name": "The Peer Pressure Path",
+        "triggeredBy": [
+          "choice-1:b",
+          "choice-2:b",
+          "choice-3:c",
+          "choice-4:b",
+          "choice-5:b"
+        ],
+        "description": "The player repeatedly avoids friction — going along with Dez, brushing off Mo, letting the plagiarism slide, bluffing through the panel question, and keeping the aftermath conversation light rather than honest.",
+        "outcome": "The group 'gets away with it' on paper, but the player ends the episode aware that Mo has quietly pulled away, and that the win didn't feel like one."
+      },
+      {
+        "id": "branch-negotiated-teamwork",
+        "name": "The Negotiated Teamwork Path",
+        "triggeredBy": [
+          "choice-1:c",
+          "choice-2:a",
+          "choice-3:a",
+          "choice-4:a",
+          "choice-5:c"
+        ],
+        "description": "The player consistently seeks middle-ground solutions — compromising with Dez, actively helping Mo, fixing problems within the group rather than escalating or ignoring them, and reflecting on the experience with honest humility rather than either full confrontation or avoidance.",
+        "outcome": "The group grows into an actual team through friction and repair rather than avoidance or confrontation, modeling collaborative conflict resolution."
+      }
+    ],
+    "branchResolutionLogic": {
+      "description": "Because 5 sequential choices (with 3, 3, 3, 2, and 3 options respectively) produce far more combinations than three named branches can literally enumerate, the 'triggeredBy' arrays above list each branch's canonical/purest path for narrative reference only. The ACTUAL branch shown to a player (used for analytics, replay summaries, and any end-of-episode reflection copy) is computed deterministically from every choice made, so no path is ever ambiguous or unresolved.",
+      "algorithm": [
+        "1. Every choicePoint option carries a 'pathTag' of exactly one of: 'integrity', 'negotiated', or 'peer_pressure' (see choicePoints[*].options[*].pathTag).",
+        "2. After choice-5 is made, count how many of the 5 selected options carry each tag.",
+        "3. The branch with the highest count wins.",
+        "4. Ties are broken using fixed priority order: integrity > negotiated > peer_pressure (a tie always resolves toward the more effortful/honest reading, since attempting honesty — even inconsistently — is treated as meaningfully different from consistent avoidance)."
+      ],
+      "workedExamples": [
+        {
+          "path": [
+            "choice-1:a",
+            "choice-2:a",
+            "choice-3:b",
+            "choice-4:b",
+            "choice-5:b"
+          ],
+          "tagCounts": {
+            "integrity": 2,
+            "negotiated": 1,
+            "peer_pressure": 2
+          },
+          "result": "branch-integrity (tie broken by priority order)"
+        },
+        {
+          "path": [
+            "choice-1:c",
+            "choice-2:c",
+            "choice-3:a",
+            "choice-4:a",
+            "choice-5:c"
+          ],
+          "tagCounts": {
+            "integrity": 1,
+            "negotiated": 3,
+            "peer_pressure": 1
+          },
+          "result": "branch-negotiated-teamwork"
+        }
+      ]
+    },
+    "emotionalArc": [
+      "Anticipation - a new project, an old face (Mo) resurfaces",
+      "Quiet pressure - the first small ask to cut a corner",
+      "Vulnerability - a teammate's struggle surfaces beneath the group's surface calm",
+      "Crisis - the shortcut is undeniable and can't be unseen",
+      "Public risk - the consequences play out in front of an audience",
+      "Reflection - honesty (or its absence) settles into how the player is known"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from passively accommodating group dynamics to actively shaping them — learning that honesty and teamwork aren't opposites, and that speaking up early is easier than fixing things late."
+      },
+      {
+        "character": "dez",
+        "arc": "A charismatic shortcut-taker who either gets quietly called in by a peer he respects, formally checked by a teacher, or reinforced in his belief that cutting corners works — depending entirely on the player's choices."
+      },
+      {
+        "character": "mo",
+        "arc": "Carries forward his day-one vulnerability from Episode 1; this episode is his real test of whether Ridgemont — and the player specifically — is a place where he can be honest about struggling without being shamed for it."
+      },
+      {
+        "character": "priya",
+        "arc": "An anxious rule-follower who needs to see someone else take the honesty risk first before she'll speak up herself — a quiet reflection of the player's own choices back at them."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "INTEGRITY",
+        "description": "Measured through willingness to do original work, name the plagiarism issue, and admit gaps publicly rather than bluff — tested repeatedly under increasing social and public pressure."
+      },
+      {
+        "trait": "COMMUNICATION",
+        "description": "Measured through how the player raises disagreement, whether they actually help a struggling teammate versus deflecting, and how honestly they reflect on the experience afterward."
+      },
+      {
+        "trait": "JUDGMENT",
+        "description": "Measured through when and how the player chooses to escalate problems (privately vs. to an authority vs. not at all) and whether their approach matches the actual stakes of each moment."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "characters": [
+          "player",
+          "dez"
+        ],
+        "dynamic": "A push-pull between social ease and honest friction; Dez respects directness more than he initially lets on, but only if it's handled without public humiliation."
+      },
+      {
+        "characters": [
+          "player",
+          "mo"
+        ],
+        "dynamic": "The emotional throughline of the episode — a callback to Episode 1's lunchroom moment, testing whether the player's kindness was situational or consistent."
+      },
+      {
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "dynamic": "Priya mirrors the player's choices back at a smaller scale, showing how one person's honesty (or silence) gives others permission to do the same."
+      }
+    ],
+    "replayHooks": [
+      "What if you'd reported Dez to Mr. Okafor immediately instead of confronting him directly — does the friendship survive differently?",
+      "What if you'd brushed Mo off at the work session — does he still open up to you by the end, or has that door closed for good?",
+      "What if you bluffed through the presentation — does anyone ever find out, and does it change how Dez treats the player going forward?",
+      "Does choosing the 'middle path' compromise consistently lead to a smoother but less transformative group dynamic than fully standing your ground?",
+      "How does Priya's arc change if she's the one who ends up carrying the honest choice instead of the player?",
+      "Can you 'earn' the integrity ending even after a rocky start, or does one early shortcut always tip the balance toward peer pressure?"
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Model the difference between avoiding conflict and genuinely resolving it",
+      "Show that honesty has real, sometimes uncomfortable social costs — and is still worth it",
+      "Illustrate that teamwork requires noticing and addressing struggling teammates, not just completing tasks",
+      "Demonstrate that judgment isn't about following a rule rigidly, but calibrating a response to the actual stakes of a situation"
+    ],
+    "conversationStarters": [
+      "Have you ever been in a group where someone wanted to take a shortcut? What did you do?",
+      "Was there a moment in the episode where you disagreed with the choice you had to make? What would you have done instead?",
+      "Do you think telling a teacher was 'snitching' or something else? Why?",
+      "How did it feel when Mo opened up about being confused? Have you ever felt like Mo in a group project?",
+      "What's the difference between being 'nice' and being honest, in this story?"
+    ]
+  },
+  "designNotes": "Fixed all three MAJOR issues by treating the 'branches' array as a narrative/analytics overlay rather than a literal gameplay switch (the actual game logic was already fully playable via nextScene/defaultNextScene, which I left untouched). Concretely: (1) Expanded triggeredBy for branch-integrity and branch-negotiated-teamwork to full 5-choice canonical paths, per QA's suggested fixes. (2) Added a 'pathTag' field ('integrity' | 'negotiated' | 'peer_pressure') to every single choice option across all 5 choicePoints. (3) Added a new top-level 'branchResolutionLogic' object that defines a deterministic majority-vote-with-tiebreak algorithm over those pathTags, so that literally every one of the 162 possible 5-choice combinations resolves to exactly one branch — closing the 'unreachable/ambiguous state' hole QA flagged, without requiring an unmanageable combinatorial enumeration of triggeredBy arrays. Worked examples are included so implementers/QA can verify the algorithm directly against the reported ambiguous case. No scene ids, choice ids, or transition graph were changed, so existing playability guarantees (reachability, no dead ends, END reachable) are preserved unmodified.",
+  "uncertainties": [
+    "The tie-break priority (integrity > negotiated > peer_pressure) is a design judgment call — it means a player who wavers evenly between honesty and avoidance is read as 'trying,' which is a defensible but not the only reasonable interpretation. An alternative would be to weight later choices (closer to the presentation/aftermath) more heavily than earlier ones, since later choices happen under more pressure and may be more revealing of true character. Happy to switch to a recency-weighted model if that's preferred.",
+    "choice-2:c ('pass the buck to the teacher') was tagged 'peer_pressure' rather than a neutral/fourth category, since it still leaves Mo unsupported — but it's genuinely a softer failure than actively brushing him off, and some reviewers may want a distinct 'avoidant-but-not-malicious' tag with its own tie-break weight rather than folding it into peer_pressure.",
+    "This resolution system determines which of 3 branches is narratively reported, but doesn't change which epilogue scene plays (that's still directly determined by the choice-5 option chosen). It's worth confirming with engineering whether 'branch' is only used for post-episode analytics/parent-facing summaries, or whether it also needs to alter mid-episode content — if the latter, the resolution logic would need to run earlier (e.g., after choice-3) rather than only at the end."
+  ]
+}

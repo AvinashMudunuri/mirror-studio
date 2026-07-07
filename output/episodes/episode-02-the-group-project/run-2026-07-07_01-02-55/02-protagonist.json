@@ -1,0 +1,95 @@
+{
+  "character": {
+    "id": "player",
+    "name": "Charlie Osei",
+    "age": 13,
+    "pronouns": "she/her",
+    "appearance": {
+      "brief": "Medium height, sturdy build, dark brown skin, hair in box braids she re-does herself (badly, on purpose) every few weeks. Wears her older cousin's hand-me-down hoodies even in warm weather.",
+      "distinctiveFeatures": [
+        "A chipped front tooth from a bike accident she tells three different stories about",
+        "Draws tiny doodles in the margins of every worksheet — mostly weird little monsters",
+        "Wears a friendship bracelet from her old school that's fraying but she won't take off"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "peacekeeper",
+        "observant",
+        "loyal",
+        "conflict-avoidant",
+        "quietly stubborn"
+      ],
+      "bigFiveProfile": {
+        "openness": 6,
+        "conscientiousness": 6,
+        "extraversion": 5,
+        "agreeableness": 8,
+        "neuroticism": 6
+      },
+      "mannerisms": [
+        "Taps a pencil against her knee when she's holding back what she wants to say",
+        "Laughs a beat too fast to smooth over awkward silences",
+        "Picks at the fraying bracelet when nervous"
+      ],
+      "speechPatterns": [
+        "Softens hard truths with 'I mean, maybe it's just me, but—'",
+        "Uses humor to defuse tension before it gets serious",
+        "Goes quiet and short-answered when she's actually upset, instead of loud"
+      ],
+      "emotionalTendencies": "Charlie feels things intensely but processes them privately first — she'll crack a joke in the moment and cry about it later, alone. She over-monitors the emotional temperature of a room and will bend her own opinions to keep things calm, even when it costs her."
+    },
+    "background": {
+      "family": "Moved three months ago from Cleveland after her mom, an ESL teacher, got a new job; dad's a night-shift nurse, often exhausted, loving but distracted. Charlie is the oldest of three and has always been the built-in mediator between her younger siblings' fights.",
+      "interests": [
+        "comic book art",
+        "basketball (bench player, plays for the team not the stardom)",
+        "true crime podcasts she's not supposed to listen to yet"
+      ],
+      "strengths": [
+        "reading people accurately",
+        "de-escalating conflict",
+        "making people feel included"
+      ],
+      "struggles": [
+        "saying what she actually thinks when it might upset someone",
+        "still doesn't have a real friend group at the new school",
+        "internal guilt that she's 'too agreeable,' a pushover"
+      ],
+      "secrets": [
+        "She already lied once this year to avoid a fight with a girl at her lunch table, and it's been eating at her since",
+        "She actually really likes Priya's intensity and wishes she had the guts to care that openly about something"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Make it through the group project without drama",
+        "Find a real friend group before the year gets worse",
+        "Not get on anyone's bad side three weeks into a new school"
+      ],
+      "unconscious": [
+        "Needs to learn her voice matters even when it creates friction",
+        "Needs to trust that telling the truth won't destroy her relationships"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Casual middle-school vernacular, some self-aware humor, occasional overly formal phrasing she picked up from her mom ('per se,' 'technically') that she uses ironically",
+      "sentenceComplexity": "Short, quick sentences when nervous; rambles a little when trying to talk herself into something",
+      "emotionalExpressiveness": "Indirect at first — deflects with jokes — but capable of sudden bursts of honesty when pushed too far",
+      "examples": [
+        "\"Okay but hear me out — what if we just... don't panic yet? Panicking is, like, step four.\"",
+        "\"I'm not mad. I'm just going to think extremely loudly about this for the rest of the day.\"",
+        "\"Dez, I love your confidence, I really do, but that is not how bibliographies work.\"",
+        "\"I keep telling myself it's not my job to fix it. Then I fix it anyway. It's a whole thing.\""
+      ]
+    },
+    "storyRole": "Player character — the emotional barometer of the group, whose choices about honesty and confrontation directly shape how the project (and the friendships) survive.",
+    "arcPotential": [
+      "Episode 'Group Work': Learns that keeping the peace by staying silent about Dez's shortcut isn't actually kindness — it's abandonment of Mo and Priya, and of her own integrity.",
+      "Future episode potential: Charlie starts a school newspaper/art zine and has to publish something true that upsets a friend, testing whether she's really internalized the lesson.",
+      "Future episode potential: Charlie's own group of friends forms partly from the fallout of 'Group Work,' giving her the first real belonging she's had since the move."
+    ]
+  },
+  "designNotes": "Charlie is built specifically to make the episode's central dilemma feel personal rather than abstract. Because she's new to the school, she has an organic, high-stakes reason to avoid conflict — she doesn't have social capital yet and is terrified of spending it wrong. This makes Dez's shortcut, Priya's anxiety, and Mo's silence each land as a distinct pressure test: appeasing the charismatic kid, managing the anxious kid, and reaching out to the isolated kid all require Charlie to risk the exact thing she's afraid of losing — an easy, drama-free landing in a new place. Her defense mechanism (humor + agreeableness) is designed to be sympathetic, not annoying, and her arc isn't 'learn to be honest' as a moral lesson bolted on, but a natural extension of a wound she already carries (the guilt over an earlier lie). Keeping her gender/orientation unspecified beyond she/her and not centering her race as a plot point allows broad player identification while still grounding her in specific, textured details (braids, hoodie, bracelet, doodles) that make her feel like a real kid instead of a blank self-insert.",
+  "representationNotes": "Charlie is a Black American girl from a working-class family, but her race isn't the source of her conflict — her story is about honesty and peer pressure, universal middle-school terrain, and she gets to just be a kid dealing with kid problems. Her family structure (nurse dad, ESL-teacher mom, two younger siblings) reflects a stable but stretched-thin household common to many players' real lives without being reduced to a 'struggling family' trope. Her conflict-avoidant personality is written with care to avoid the 'sassy Black best friend' stereotype — she's the lead, complex and internally conflicted, and her humor is a coping mechanism rather than comic relief for others."
+}

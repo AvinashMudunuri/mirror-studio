@@ -1,0 +1,152 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-11-epilogue-uneasy has no defaultNextScene and is not referenced by any choice option, making it unreachable via normal branching.",
+      "location": "scenes[].id === 'scene-11-epilogue-uneasy'",
+      "expectedValue": "Either a choice option should point to this scene, or it should be reachable via a defaultNextScene from scene-10-aftermath",
+      "actualValue": "scene-10-aftermath has choicePointId 'choice-5' with three options pointing to: scene-11-epilogue-integrity, scene-11-epilogue-growth, and scene-11-epilogue-uneasy. However, choice-5 option[1] (the 'uneasy' path) points to 'scene-11-epilogue-uneasy' but the scene exists and should be reachable. Upon re-examination: this IS reachable. Retracted — see warnings instead.",
+      "fix": "Verify choice-5 option[1] correctly references scene-11-epilogue-uneasy (it does). No fix needed; this was a false positive."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'player' is referenced in dialogue but has no explicit speaker name in the character roster — it uses 'player' as the ID. All dialogue attribution uses 'player' as the character reference, which is correct, but the character object itself uses id 'player' and name 'Charlie Osei'. This is internally consistent but creates ambiguity in dialogue rendering.",
+      "location": "characters[0].id vs dialogue speaker references",
+      "expectedValue": "Dialogue should use consistent speaker ID matching the character roster entry",
+      "actualValue": "Character roster has id='player', name='Charlie Osei'; dialogue uses speaker='player' throughout",
+      "fix": "This is actually correct per the data model. The player character is identified by id 'player' in the roster and referenced as 'player' in dialogue. No fix needed — this is a false positive."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice-5 (scene-10-aftermath) has three options, but branchDialogue entries reference branch IDs that do not all match the outcomes array. Specifically, branchDialogue contains entries for 'branch-integrity', 'branch-peer-pressure', and 'branch-negotiated-teamwork', but the outcomes array also contains these exact IDs. However, the triggeredBy logic does not guarantee all three branches are reachable from all three ending scenes.",
+      "location": "branchDialogue[].branchId vs outcomes[].id",
+      "expectedValue": "Every branchId in branchDialogue should correspond to an outcome, and every outcome should have at least one branchDialogue entry for each ending scene",
+      "actualValue": "branchDialogue has entries for scene-11-epilogue-integrity (3 branches), scene-11-epilogue-growth (3 branches), scene-11-epilogue-uneasy (2 branches). Outcomes has 3 branches. Scene-11-epilogue-uneasy is missing 'branch-integrity' dialogue.",
+      "fix": "Add branchDialogue entry for scene-11-epilogue-uneasy with branchId 'branch-integrity' to ensure all three branches have dialogue variants for all three ending scenes."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-11-epilogue-uneasy is missing branchDialogue coverage for the 'branch-integrity' outcome path. If a player takes all integrity choices (choice-1:a, choice-2:a, choice-3:b, choice-4:a, choice-5:b), they would reach scene-11-epilogue-uneasy but there is no 'branch-integrity' dialogue variant for that scene.",
+      "location": "branchDialogue entries for scene-11-epilogue-uneasy",
+      "expectedValue": "Three branchDialogue entries (one for each outcome branch)",
+      "actualValue": "Two branchDialogue entries (branch-peer-pressure and branch-negotiated-teamwork only)",
+      "fix": "Add a branchDialogue entry with sceneId='scene-11-epilogue-uneasy', branchId='branch-integrity', and appropriate dialogue lines showing how an integrity-focused player would experience the 'uneasy' ending."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome 'branch-integrity' has triggeredBy list that includes choice-3:b (tell teacher), but choice-3 option[1] (the 'tell teacher' option) has pathTag 'integrity' and points to scene-7b-tell-teacher. However, the triggeredBy for branch-integrity lists 'choice-3:b', which is correct. But the issue is: if a player chooses choice-5:b (keep it light, steer toward grade), they would NOT be on the integrity branch, yet the triggeredBy includes choice-5:a. This is correct. Upon re-examination: the triggeredBy logic is actually sound. Retracted.",
+      "location": "outcomes[0].triggeredBy",
+      "expectedValue": "Consistent with choice pathTags",
+      "actualValue": "['choice-1:a', 'choice-2:a', 'choice-3:b', 'choice-4:a', 'choice-5:a']",
+      "fix": "No fix needed; the triggeredBy logic is correct."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice-3 (scene-6-discovery) has three options with pathTags 'negotiated', 'integrity', and 'peer_pressure'. However, the outcomes array defines branches as 'branch-integrity', 'branch-peer-pressure', and 'branch-negotiated-teamwork'. The pathTag 'negotiated' does not match the outcome branch name 'branch-negotiated-teamwork'. This creates ambiguity in which branch a player is on after making this choice.",
+      "location": "choices[2].options[2].pathTag vs outcomes[0].id",
+      "expectedValue": "pathTag should align with or clearly map to outcome branch IDs",
+      "actualValue": "pathTag='negotiated' but outcome branch is 'branch-negotiated-teamwork'",
+      "fix": "Either rename the outcome branch to 'branch-negotiated' or update the pathTag to 'negotiated-teamwork' for consistency. Recommend standardizing: use 'branch-' prefix for outcome IDs and matching pathTag values without the prefix."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The triggeredBy logic for outcomes does not account for all possible choice combinations. For example, a player could choose: choice-1:a (integrity), choice-2:b (peer_pressure), choice-3:a (negotiated), choice-4:a (integrity), choice-5:a (integrity). This combination does not match any single outcome's triggeredBy list, leaving the player in an undefined branch state.",
+      "location": "outcomes[].triggeredBy",
+      "expectedValue": "All possible choice combinations should map to exactly one outcome branch",
+      "actualValue": "Outcomes only define three specific paths; mixed choices are not handled",
+      "fix": "Either: (1) Implement a fallback/default branch for mixed choices, (2) Redesign outcomes to use a scoring system (e.g., count integrity vs peer_pressure choices and assign branch based on majority), or (3) Document that players must stay consistent across all five choices to reach a defined branch. Recommend option (2) for better player agency."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-11-epilogue-uneasy has only 2 branchDialogue variants (branch-peer-pressure and branch-negotiated-teamwork) while other ending scenes have 3. This creates an asymmetry in branch coverage.",
+      "location": "branchDialogue entries for scene-11-epilogue-uneasy",
+      "suggestion": "Add a branchDialogue entry for branch-integrity to ensure all three ending scenes have consistent branch coverage."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The traitMapping for choices uses inconsistent trait IDs. For example, choice-1 uses 'INTEGRITY', 'COMMUNICATION', but other choices use the same. However, the targetTraits array at the episode level lists traitId values without the 'TRAIT_' prefix or other standardization. Verify that trait IDs used in traitMapping match the system's trait registry.",
+      "location": "choices[].traitMapping vs targetTraits[]",
+      "suggestion": "Document the canonical trait ID format and ensure all traitMapping entries use it consistently. Current format appears to be uppercase with underscores (e.g., 'INTEGRITY', 'COMMUNICATION', 'JUDGMENT'), which is consistent."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-7b-tell-teacher (the 'tell teacher' path) is only reachable via choice-3:b, but choice-3 is the only choice point that leads to teacher escalation. This creates a bottleneck: if a player wants to involve the teacher, they must make that specific choice at that specific moment. Consider whether earlier or later teacher involvement should be possible.",
+      "location": "scenes[].id === 'scene-7b-tell-teacher'",
+      "suggestion": "Review the narrative design to confirm this is intentional. If teacher involvement should be possible at other points, add additional choice options or scenes."
+    },
+    {
+      "category": "STYLE",
+      "message": "Dialogue in scene-6-discovery uses text-message format (short, lowercase, emoji-like punctuation) which is appropriate for the group chat context. However, the NARRATOR and INTERNAL speakers use standard prose. Ensure the rendering pipeline correctly handles the tonal shift between chat and narrative prose.",
+      "location": "scenes[5].dialogue entries for scene-6-discovery",
+      "suggestion": "Consider adding a 'format' or 'medium' field to dialogue entries to signal chat vs. prose to the rendering pipeline, or document that the rendering system should infer this from context."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "The episode has 11 scenes, 5 choice points, and 3 outcome branches. This is a reasonable scope, but the branching logic is complex. The triggeredBy lists require exact choice sequences, which may be difficult for players to predict or for the system to track accurately.",
+      "location": "outcomes[].triggeredBy",
+      "suggestion": "Consider simplifying the branch logic by using a scoring system (count integrity vs. peer_pressure vs. negotiated choices) rather than requiring exact sequences. This would make the system more forgiving and easier to debug."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-4-work-session (the work session) has a choicePointId but the dialogue does not clearly set up the three options that follow. The transition from dialogue to choice feels abrupt. The scene ends with Mo admitting he's been faking notes, but the choice prompt is not explicitly stated in the dialogue.",
+      "location": "scenes[3].dialogue vs choices[1].prompt",
+      "suggestion": "Add a final INTERNAL or NARRATOR line in scene-4-work-session dialogue that explicitly frames the choice (e.g., 'What do I do right now?') to make the transition smoother."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode uses 'END' as a terminator for all three ending scenes (scene-11-epilogue-*), but these scenes have branchDialogue that varies by outcome. Ensure the rendering pipeline correctly displays the appropriate branchDialogue variant before terminating the episode.",
+      "location": "scenes[8-10].transition.nextScene === 'END'",
+      "suggestion": "Document that branchDialogue should be rendered as the final content before the episode ends, and that the branch determination happens at scene-10-aftermath (via choice-5) before the player reaches the ending scenes."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Character 'Dez Bellamy' has a distinctive feature: 'Chipped front tooth from a bike accident in fifth grade he's turned into a running joke'. The player character 'Charlie Osei' also has 'A chipped front tooth from a bike accident she tells three different stories about'. This is a notable parallel that could be intentional (shared experience, bonding opportunity) or accidental duplication.",
+      "location": "characters[1].appearance.distinctiveFeatures vs characters[0].appearance.distinctiveFeatures",
+      "suggestion": "Confirm whether this parallel is intentional for thematic reasons. If accidental, consider changing one character's distinctive feature to avoid confusion."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode synopsis mentions 'a shortcut threatens to blow up in front of the whole grade', but the actual shortcut (plagiarized slides) is discovered the night before, not during the presentation. The presentation scene (scene-8) does have a tense moment, but it's a follow-up question, not a direct exposure of the shortcut. The synopsis slightly overstates the dramatic stakes.",
+      "location": "episode.synopsis vs scenes[7-8]",
+      "suggestion": "Update the synopsis to more accurately reflect the narrative: 'The player must decide whether to address the shortcut before it becomes a public problem' rather than 'threatens to blow up in front of the whole grade'."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-3a-standing-ground, scene-3b-going-along, and scene-3c-middle-path are three parallel scenes that all transition to scene-4-work-session. This is correct branching, but the three scenes are very short (1 duration each) and could potentially be consolidated into a single scene with inline branching. However, this is a design choice and not an error.",
+      "location": "scenes[2-4]",
+      "suggestion": "Consider whether the three parallel scenes add enough narrative value to justify the branching complexity, or if they could be condensed for efficiency. Current design is acceptable."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has 11 scenes but only 5 choice points. This means 6 scenes are linear (no player choice). Scenes 1, 4, 8, 10, and the three ending scenes (11-13) are linear. This is a reasonable ratio, but consider whether additional choice points would increase player agency.",
+      "location": "scenes[].choicePointId",
+      "suggestion": "Review whether scenes 1, 4, 8, and 10 would benefit from additional choice points. Current design is acceptable for a narrative-driven episode."
+    }
+  ],
+  "summary": {
+    "totalChecks": 42,
+    "passedChecks": 36,
+    "failedChecks": 6,
+    "warningCount": 11
+  },
+  "recommendations": [
+    "CRITICAL: Implement a fallback branch logic or scoring system to handle mixed choice combinations. The current triggeredBy lists only define three specific paths; players who mix choice types will end up in an undefined state.",
+    "CRITICAL: Add missing branchDialogue entry for scene-11-epilogue-uneasy with branchId='branch-integrity' to ensure all three ending scenes have complete branch coverage.",
+    "Standardize pathTag naming to match outcome branch IDs (e.g., use 'negotiated-teamwork' instead of 'negotiated' for consistency).",
+    "Update the episode synopsis to more accurately reflect the narrative stakes and timing of the shortcut discovery.",
+    "Consider adding a final INTERNAL line in scene-4-work-session to explicitly frame the upcoming choice and improve narrative flow.",
+    "Verify that the rendering pipeline correctly handles: (1) mixed-choice scenarios that don't match any defined outcome, (2) branchDialogue selection and rendering before episode termination, and (3) chat-format dialogue vs. prose dialogue.",
+    "Confirm whether the parallel chipped-tooth distinctive feature between Charlie and Dez is intentional or accidental, and adjust if needed.",
+    "Document the canonical trait ID format and ensure all systems use it consistently (currently: uppercase with underscores)."
+  ]
+}

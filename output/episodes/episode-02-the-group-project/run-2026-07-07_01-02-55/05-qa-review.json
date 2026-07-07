@@ -1,0 +1,154 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-11-epilogue-uneasy has no valid exit path. It transitions to END via defaultNextScene, but branchDialogue entries reference it with branch conditions that never resolve to a playable state.",
+      "location": "scenes[10].id, branchDialogue entries for scene-11-epilogue-uneasy",
+      "expectedValue": "Either remove branchDialogue for this scene, or ensure at least one outcome branch can trigger it",
+      "actualValue": "branchDialogue exists for scene-11-epilogue-uneasy but no outcome in the outcomes array has triggeredBy conditions that lead to this scene being reached",
+      "fix": "Either: (1) Add branchDialogue entries only for scenes that are actually reachable via outcome branches, or (2) Ensure at least one outcome branch includes choice paths that lead to scene-11-epilogue-uneasy. Currently, choice-5 option 'b' leads to scene-11-epilogue-uneasy, but no outcome branch is triggered by the path that includes choice-5:b."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch triggering logic is incomplete. The 'branch-peer-pressure' outcome lists triggeredBy: ['choice-1:b','choice-2:b','choice-3:c','choice-4:b'], but this path does not include choice-5. If a player follows this path and reaches choice-5, no outcome branch will be active to select branchDialogue variants.",
+      "location": "outcomes[1].triggeredBy, choice-5 resolution",
+      "expectedValue": "All outcome branches should cover all possible choice-5 outcomes, or choice-5 should not have branchDialogue variants",
+      "actualValue": "branch-peer-pressure outcome has no choice-5 option specified; branchDialogue for scene-11-epilogue-uneasy includes branch-peer-pressure variant",
+      "fix": "Add choice-5 options to each outcome's triggeredBy array. For example, branch-peer-pressure should include 'choice-5:b' in its triggeredBy list if it's meant to handle the 'keep it light' path."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Unreachable scene detected. Scene scene-11-epilogue-uneasy can only be reached via choice-5 option 'b' (nextScene: 'scene-11-epilogue-uneasy'), but the branchDialogue for this scene references outcome branches (branch-integrity, branch-peer-pressure, branch-negotiated-teamwork) that may not be active when this scene is reached, depending on earlier choices.",
+      "location": "choice-5.options[1].nextScene, branchDialogue[scene-11-epilogue-uneasy]",
+      "expectedValue": "branchDialogue variants should only reference branches that are guaranteed to be active when the scene is reached",
+      "actualValue": "branchDialogue includes variants for all three outcome branches, but only one will be active depending on the player's earlier choices",
+      "fix": "This is actually correct behavior — branchDialogue should have variants for all possible active branches. However, ensure that the rendering pipeline correctly selects the active branch variant based on the player's choice history. If the pipeline does not support this, simplify branchDialogue to only include the most likely branch variant."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Missing branchDialogue coverage. Scene scene-11-epilogue-growth has branchDialogue entries, but the triggeredBy conditions in the outcomes array do not guarantee that all three outcome branches can reach this scene.",
+      "location": "outcomes array, branchDialogue[scene-11-epilogue-growth]",
+      "expectedValue": "All outcome branches should have a clear path to scene-11-epilogue-growth, or branchDialogue should only include variants for reachable branches",
+      "actualValue": "branchDialogue includes variants for branch-integrity, branch-peer-pressure, and branch-negotiated-teamwork, but the outcomes array does not specify which branches lead to which ending scenes",
+      "fix": "Clarify the mapping: choice-5 option 'c' leads to scene-11-epilogue-growth. Ensure that all outcome branches that can reach choice-5 are documented. Add explicit documentation or update outcomes to clarify which branches reach which ending scenes."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice-5 branchDialogue references are incomplete. The choiceDialogue array for choice-5 has responseDialogue for options a, b, and c, but branchDialogue entries for the resulting scenes (scene-11-epilogue-integrity, scene-11-epilogue-uneasy, scene-11-epilogue-growth) do not have variants for all possible outcome branches.",
+      "location": "choiceDialogue[choice-5].responseDialogue vs branchDialogue entries",
+      "expectedValue": "Each ending scene should have branchDialogue variants for every outcome branch that can reach it",
+      "actualValue": "scene-11-epilogue-integrity has branchDialogue for branch-integrity, branch-peer-pressure, branch-negotiated-teamwork; scene-11-epilogue-uneasy has the same; scene-11-epilogue-growth has the same. This is correct, but the triggeredBy logic in outcomes does not clearly map which branches reach which scenes.",
+      "fix": "Add explicit documentation in the outcomes array or in a separate mapping document that clarifies: 'branch-integrity reaches scene-11-epilogue-integrity', 'branch-peer-pressure reaches scene-11-epilogue-uneasy', 'branch-negotiated-teamwork reaches scene-11-epilogue-growth'. Alternatively, update branchDialogue to only include variants for branches that actually reach each scene."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-peer-pressure' has incomplete triggeredBy coverage. It lists ['choice-1:b','choice-2:b','choice-3:c','choice-4:b'] but does not include any choice-5 option. If a player reaches choice-5 via this path, the active branch will still be 'branch-peer-pressure', but branchDialogue for the ending scenes may not have variants for this branch.",
+      "location": "outcomes[1].triggeredBy",
+      "expectedValue": "Should include 'choice-5:b' to complete the peer-pressure path",
+      "actualValue": "['choice-1:b','choice-2:b','choice-3:c','choice-4:b']",
+      "fix": "Update to: ['choice-1:b','choice-2:b','choice-3:c','choice-4:b','choice-5:b']"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-integrity' has incomplete triggeredBy coverage. It lists ['choice-1:a','choice-3:b','choice-4:a'] but does not include any choice-2 or choice-5 options. This creates ambiguity about which branch is active if a player chooses choice-1:a, then choice-2:a, then choice-3:b, then choice-4:a, then choice-5:a.",
+      "location": "outcomes[0].triggeredBy",
+      "expectedValue": "Should include choice-2 and choice-5 options to fully specify the integrity path",
+      "actualValue": "['choice-1:a','choice-3:b','choice-4:a']",
+      "fix": "Update to: ['choice-1:a','choice-2:a','choice-3:b','choice-4:a','choice-5:a'] to fully specify the integrity path"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-negotiated-teamwork' has incomplete triggeredBy coverage. It lists ['choice-1:c','choice-2:a','choice-3:a'] but does not include any choice-4 or choice-5 options. This creates ambiguity about which branch is active if a player reaches choice-4 or choice-5 via this path.",
+      "location": "outcomes[2].triggeredBy",
+      "expectedValue": "Should include choice-4 and choice-5 options to fully specify the negotiated teamwork path",
+      "actualValue": "['choice-1:c','choice-2:a','choice-3:a']",
+      "fix": "Update to: ['choice-1:c','choice-2:a','choice-3:a','choice-4:a','choice-5:c'] to fully specify the negotiated teamwork path"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Unreachable outcome branch state. If a player chooses choice-1:a, choice-2:a, choice-3:b, choice-4:b, choice-5:b, no outcome branch in the outcomes array will be active. The branch-integrity branch requires choice-3:b and choice-4:a, but the player chose choice-4:b. The branch-peer-pressure branch requires choice-1:b, but the player chose choice-1:a.",
+      "location": "outcomes array, choice path analysis",
+      "expectedValue": "All possible choice combinations should map to at least one outcome branch",
+      "actualValue": "Some choice combinations do not map to any outcome branch",
+      "fix": "Either: (1) Expand the triggeredBy arrays to cover all possible choice combinations, or (2) Implement a fallback logic where the most recently triggered branch remains active if a new choice doesn't match any branch's triggeredBy conditions."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Outcome branch triggeredBy logic is overly restrictive. The current design requires exact choice sequences, which may not match player behavior. For example, a player who chooses choice-1:a (integrity) but then choice-2:b (brush-off) will not match any outcome branch.",
+      "location": "outcomes array",
+      "suggestion": "Consider implementing a scoring system where each choice contributes to a trait score (INTEGRITY, COMMUNICATION, JUDGMENT), and the outcome branch is determined by which trait score is highest at the end. This would be more forgiving of mixed choice patterns and better reflect the episode's educational goals."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "branchDialogue entries for scene-11-epilogue-uneasy include a variant for 'branch-peer-pressure' that references Mo saying 'Copy the summary. Ask Okafor tomorrow. Let it go. Guess I get the pattern now.' This dialogue assumes the player made all three of those choices, but the scene is reachable via choice-5:b alone, which may not have been preceded by those exact choices.",
+      "location": "branchDialogue[scene-11-epilogue-uneasy].branch-peer-pressure",
+      "suggestion": "Either: (1) Ensure that branchDialogue variants only reference events that are guaranteed to have occurred, or (2) Make the dialogue more generic to handle multiple possible choice histories."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has three distinct ending scenes (scene-11-epilogue-integrity, scene-11-epilogue-uneasy, scene-11-epilogue-growth), but the mapping between outcome branches and ending scenes is not explicit in the data structure. This could cause confusion during implementation.",
+      "location": "outcomes array, scenes array",
+      "suggestion": "Add an 'endingScene' field to each outcome branch object to explicitly specify which scene it leads to. For example: outcomes[0] = { id: 'branch-integrity', ..., endingScene: 'scene-11-epilogue-integrity' }"
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene scene-7c-let-it-go (Hoping for the Best) has a defaultNextScene of 'scene-8-presentation-day', but the dialogue suggests the player is avoiding a confrontation the night before. The emotional beat and dialogue are consistent, but the scene name 'Hoping for the Best' might be clearer as 'Avoiding the Issue' or 'Letting It Slide'.",
+      "location": "scenes[6].title",
+      "suggestion": "Consider renaming to better reflect the emotional content, or ensure the scene title is clear to players about what choice led here."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "The episode has 11 scenes and 5 choice points, resulting in up to 3^5 = 243 possible choice combinations. However, the outcomes array only defines 3 branches with limited triggeredBy coverage. This could result in many choice combinations not mapping to any outcome branch.",
+      "location": "outcomes array",
+      "suggestion": "Either: (1) Expand the outcomes array to cover more choice combinations, (2) Implement a fallback outcome for unmapped combinations, or (3) Simplify the choice structure to reduce the number of possible combinations."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The traitMapping in choices uses trait IDs (INTEGRITY, COMMUNICATION, JUDGMENT) that are not defined in the targetTraits array. The targetTraits array lists objects with traitId and changeAmount, but the choice traitMapping uses string keys directly.",
+      "location": "choices[*].traitMapping vs targetTraits",
+      "suggestion": "Ensure that trait IDs used in traitMapping match the traitId values in targetTraits. If INTEGRITY, COMMUNICATION, and JUDGMENT are the correct trait IDs, verify they are defined in the world or character data."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene scene-4-work-session (The Work Session) has a duration of 1, but the dialogue and narrative suggest multiple days have passed ('Days later, the group is deep in it'). This may confuse players about the timeline.",
+      "location": "scenes[3].duration",
+      "suggestion": "Consider updating the duration to reflect the actual time span, or clarifying in the description that this scene represents a montage of work sessions."
+    },
+    {
+      "category": "STYLE",
+      "message": "Character dialogue in scene-5b-brush-off includes the line 'Guess that works.' from Mo, but this is attributed to 'mo' in the dialogue array. Ensure all character IDs in dialogue match the character roster exactly (case-sensitive).",
+      "location": "scenes[4].dialogue[*].character",
+      "suggestion": "Verify that all character IDs in dialogue (e.g., 'mo', 'dez', 'priya', 'player', 'mr-okafor') match the character roster IDs exactly."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode synopsis mentions 'a shortcut threatens to blow up in front of the whole grade', but the actual shortcut (Dez's copied slides) is discovered the night before, not during the presentation. The presentation scene (scene-8-presentation-day) has a teacher ask a pointed question, but the shortcut itself doesn't 'blow up' publicly.",
+      "location": "synopsis vs scenes[7]",
+      "suggestion": "Either: (1) Update the synopsis to clarify that the shortcut is discovered before the presentation, or (2) Modify the presentation scene to have the plagiarism actually be exposed publicly."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has an estimated play time of 13 minutes, but with 5 choice points and 3 distinct ending scenes, the actual play time could vary significantly depending on which path the player takes. Some paths may be shorter or longer than others.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Consider providing a range (e.g., '10-15 minutes') or clarifying that this is an average estimate."
+    }
+  ],
+  "summary": {
+    "totalChecks": 42,
+    "passedChecks": 28,
+    "failedChecks": 8,
+    "warningCount": 10
+  }
+}
