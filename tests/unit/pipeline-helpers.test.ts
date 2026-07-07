@@ -23,7 +23,8 @@ const {
   mergeSceneDialogue,
   mergeChoiceDialogue,
   mergeBranchDialogue,
-  unreadableResult
+  unreadableResult,
+  reusedProtagonistResult
 } = require('../../scripts/lib/pipeline-helpers');
 
 // ---------- roster collection ----------
@@ -136,6 +137,22 @@ describe('unreadableResult', () => {
     const error = { message: 'bad', rawResponse: 'raw' };
     expect(unreadableResult('decision', error).decision).toBe('UNREADABLE');
     expect(unreadableResult('status', error).status).toBe('UNREADABLE');
+  });
+});
+
+describe('reusedProtagonistResult', () => {
+  it('wraps the carried-over character in a Character-Designer-shaped output', () => {
+    const previousProtagonist = { id: 'player', name: 'Wren Castillo', age: 13, pronouns: 'they/them' };
+    const result = reusedProtagonistResult(previousProtagonist);
+    expect(result.character).toEqual(previousProtagonist);
+    expect(result.designNotes).toMatch(/continuity/i);
+    expect(result.uncertainties).toEqual([]);
+  });
+
+  it('forces id to "player" defensively even if the stored profile somehow lacks it', () => {
+    const result = reusedProtagonistResult({ name: 'Wren Castillo', age: 13 });
+    expect(result.character.id).toBe('player');
+    expect(result.character.name).toBe('Wren Castillo');
   });
 });
 

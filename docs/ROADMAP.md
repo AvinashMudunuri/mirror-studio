@@ -20,7 +20,7 @@ This roadmap outlines the implementation strategy for Project MIRROR Studio, bre
 
 **What exists and works, live-verified against the real Claude API:** an 8-agent pipeline (`scripts/create-real-episode.js`) that takes an episode brief, produces a full outline, protagonist + NPC roster, scene dialogue, runs a 5-agent review board, revises against feedback (bounded loop), and binds a final screenplay — with Postgres persistence, cross-run continuity (episode 2 reads episode 1), prompt-cost optimization, and a read-only admin dashboard over the results.
 
-**What doesn't exist yet:** anything past "generate and internally review an episode." No production/publish agents, no API, no player-facing app, no monitoring, no CI. This is a content-generation backend, not yet a product.
+**What doesn't exist yet:** anything past "generate and internally review an episode." No production/publish agents, no API, no player-facing app, no monitoring. This is a content-generation backend, not yet a product.
 
 | Phase (original) | Status | Notes |
 |---|---|---|
@@ -29,7 +29,7 @@ This roadmap outlines the implementation strategy for Project MIRROR Studio, bre
 | 3. Review Agents | ⚠️ Mostly done | 4 of 5 reviewers built (no Teen Reviewer); debate system never built (feedback routing instead) |
 | 4. Production Agents | ❌ Not started | No Publisher/Analytics/JSON Export agents, no API |
 | 5. Frontend Experience | ❌ Not started | `apps/admin` is an internal dashboard, not a player-facing app |
-| 6. Polish & Launch | ❌ Not started | No monitoring, no CI, nothing published |
+| 6. Polish & Launch | ❌ Not started | No monitoring, nothing published; basic CI exists (build + test) |
 | 7. Growth & Iteration | ❌ Not started | N/A until Phase 4-6 exist |
 
 Episode output so far: 2 episode concepts in 1 world (`NEW_SCHOOL`) across ~10 live runs. Roughly half of full-board runs land `NEEDS_HUMAN_REVIEW` rather than a clean `APPROVED` — reviewer verdict variance is a known, documented quirk (`docs/OPEN-QUESTIONS.md` item 4), not a regression. Nothing has been "published" in the Phase 4 sense — there is no publish step, only a filesystem run folder + a Postgres snapshot of the latest content.
@@ -144,15 +144,12 @@ Needs Phase 4 (or at least a stable content format/API) so the frontend has some
 
 **Goal**: Production-ready system with monitoring
 
-### Status: Not started
+### Status: Not started (basic CI is the one exception)
 
+- **Basic CI — done (2026-07-07)**: `.github/workflows/ci.yml` runs build + the full test suite (including the Postgres-gated integration suite, via a `pgvector` service container) on every PR and push to `main`. No LLM API keys needed — the pipeline's unit/integration tests mock the LLM gateway; only a real Postgres instance is required.
 - No OpenTelemetry/Grafana/Sentry integration.
-- No CI configured at all (no `.github/workflows/`) — tests and builds are currently run manually/by agents per session, not gated automatically on PRs.
 - Content creation: 2 episode concepts in 1 world exist (not "3-5 episodes across 2 worlds"), and roughly half of full-board review runs land `NEEDS_HUMAN_REVIEW` rather than a clean pass (see the run table in "Actual status at a glance").
-- Testing: 153 unit/integration tests passing (`npm test`), covering agent logic, parsing, pipeline helpers, and Postgres-gated persistence — no end-to-end or load testing, since there's no end-to-end (player-facing) system yet.
-
-### Immediate low-cost win available
-Setting up basic CI (build + `npm test` on PRs) doesn't depend on any other phase and would catch regressions the many manual `npm test` runs currently rely on a human/agent remembering to do.
+- Testing: 163 unit/integration tests passing (`npm test`), covering agent logic, parsing, pipeline helpers, and Postgres-gated persistence — no end-to-end or load testing, since there's no end-to-end (player-facing) system yet.
 
 ---
 
@@ -170,13 +167,13 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 ### Resolved since v1.0
 1. ~~**LLM Response Parsing**: regex-based~~ — centralized in `packages/agents/src/json-parsing.ts` (envelope + bare-array tolerance), with structured `ReviewParseError`/`ReviewParseError→UNREADABLE` escalation instead of silent fabrication.
 2. ~~**LLM Costs**: high token usage~~ — actively being worked: model selection per role (creation vs. review), prompt caching across the review board (live-verified real savings), and deterministic fixes that avoid tokens spent on preventable revision round-trips.
+3. ~~**No CI**~~ — `.github/workflows/ci.yml` now gates every PR and push to `main` on build + the full test suite.
 
 ### Still open
 1. **Agent State Management**: still simplified — the orchestrator script IS the state machine; no formal state persistence/resume mid-run beyond the run-folder artifacts already on disk.
 2. **Memory System**: works, but semantic search (`MemorySystem.search()`) is untested live — needs `OPENAI_API_KEY` for embeddings (`docs/OPEN-QUESTIONS.md` item 2).
-3. **Error Handling**: reviewer parse failures now degrade gracefully; budget overruns are handled; but there's no CI, so regressions ship silently until someone runs tests manually.
-4. **Content Quality**: reviewer verdict variance is real and documented, not fully solved — roughly half of full-board runs still need human review.
-5. **Zod output validation**: schemas exist in `@mirror/schemas` but agent outputs are validated by ad-hoc checks, not the schemas themselves (`docs/OPEN-QUESTIONS.md` item 6).
+3. **Content Quality**: reviewer verdict variance is real and documented, not fully solved — roughly half of full-board runs still need human review.
+4. **Zod output validation**: schemas exist in `@mirror/schemas` but agent outputs are validated by ad-hoc checks, not the schemas themselves (`docs/OPEN-QUESTIONS.md` item 6).
 
 ### Identified risks (re-assessed)
 1. **LLM Costs** — partially mitigated (see above); still no batching, no cost dashboard, no per-episode cost ceiling beyond `MAX_RUN_TOKENS`.
@@ -184,7 +181,6 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 3. **Content Quality** — see above; partially mitigated by the revision loop and deterministic fixes, not solved.
 4. **Bias in AI** — Ethics Reviewer exists and runs on every episode; no diverse-testing or continuous-monitoring process exists beyond that.
 5. **User Engagement** — cannot be assessed; no users exist yet (no Phase 5).
-6. **New risk, not in v1.0: no CI** — every regression currently depends on a human or agent remembering to run `npm run build && npm test` before merging.
 
 ---
 
@@ -213,15 +209,18 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 
 ## Next Actions (re-derived from `docs/OPEN-QUESTIONS.md`, not a calendar)
 
+Done since this list was written (2026-07-07):
+- ~~Basic CI~~ — `.github/workflows/ci.yml` builds + runs the full test suite (including the Postgres-gated integration suite, via a `pgvector` service container) on every PR and push to `main`.
+- ~~Protagonist continuity across episodes~~ — `loadPreviousProtagonist()` carries the protagonist's full profile into episode 2+ and skips Character Designer for it entirely; live-verified the Story Architect using the carried-over name unprompted 44 times in one outline. See `docs/OPEN-QUESTIONS.md` item 2.
+
 Cheap, well-scoped, not yet done:
-1. Basic CI (build + test on every PR) — zero dependencies on other phases, closes the "no CI" risk above.
-2. Protagonist continuity across episodes — Character Designer still generates a brand-new protagonist every run even for episode 2+, undermining the continuity work already shipped.
-3. Extend `previousEpisodes` continuity to the remaining 3 reviewers if evidence shows it's worth it.
+1. Extend `previousEpisodes` continuity to the remaining 3 reviewers if evidence shows it's worth it.
+2. NPC continuity — ids the outline reuses (e.g. "jordan") still get a brand-new Character Designer profile every run rather than reusing the prior episode's version of that id (narrower/lower-value than the protagonist fix above, deliberately not extended yet — see `docs/OPEN-QUESTIONS.md` item 2).
 
 Bigger, would start actual Phase 4/5 work:
-4. Decide what "publish" means for one episode with no players yet (Phase 4 blocker).
-5. Admin phase 2: generate-from-UI (episode-brief form, SSE streaming) — still internal tooling, not Phase 5, but the natural next step for the admin app.
-6. A real Phase 5 kickoff (episode player) is not recommended until Phase 4's data contract exists — building a frontend against a shape that's still `output/episodes/*.json` invites a rewrite.
+3. Decide what "publish" means for one episode with no players yet (Phase 4 blocker).
+4. Admin phase 2: generate-from-UI (episode-brief form, SSE streaming) — still internal tooling, not Phase 5, but the natural next step for the admin app.
+5. A real Phase 5 kickoff (episode player) is not recommended until Phase 4's data contract exists — building a frontend against a shape that's still `output/episodes/*.json` invites a rewrite.
 
 ---
 

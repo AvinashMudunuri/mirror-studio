@@ -16,7 +16,7 @@ import * as os from 'os';
 import * as path from 'path';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { loadPreviousEpisodes } = require('../../scripts/lib/load-previous-episodes');
+const { loadPreviousEpisodes, loadPreviousProtagonist } = require('../../scripts/lib/load-previous-episodes');
 
 function outlineFixture(overrides: Record<string, unknown> = {}) {
   return {
@@ -32,11 +32,12 @@ function outlineFixture(overrides: Record<string, unknown> = {}) {
   };
 }
 
-function writeRun(episodesRoot: string, { episodeFolder, runStamp, manifest, storyOutline }: {
+function writeRun(episodesRoot: string, { episodeFolder, runStamp, manifest, storyOutline, protagonist }: {
   episodeFolder: string;
   runStamp: string;
   manifest: unknown;
   storyOutline?: unknown;
+  protagonist?: unknown;
 }) {
   const runDir = path.join(episodesRoot, episodeFolder, `run-${runStamp}`);
   fs.mkdirSync(runDir, { recursive: true });
@@ -46,7 +47,14 @@ function writeRun(episodesRoot: string, { episodeFolder, runStamp, manifest, sto
   if (storyOutline !== undefined) {
     fs.writeFileSync(path.join(runDir, '01-story-outline.json'), JSON.stringify(storyOutline));
   }
+  if (protagonist !== undefined) {
+    fs.writeFileSync(path.join(runDir, '02-protagonist.json'), JSON.stringify(protagonist));
+  }
   return runDir;
+}
+
+function protagonistFixture(overrides: Record<string, unknown> = {}) {
+  return { character: { id: 'player', name: 'Wren Castillo', age: 13, pronouns: 'they/them', ...overrides } };
 }
 
 describe('loadPreviousEpisodes — filesystem source', () => {
@@ -292,5 +300,188 @@ describe('loadPreviousEpisodes — Postgres source', () => {
     } finally {
       fs.rmSync(episodesRoot, { recursive: true, force: true });
     }
+  });
+});
+
+describe('loadPreviousProtagonist — filesystem source', () => {
+  let episodesRoot: string;
+
+  afterEach(() => {
+    if (episodesRoot) fs.rmSync(episodesRoot, { recursive: true, force: true });
+  });
+
+  it('returns null when there is no earlier approved episode', async () => {
+    episodesRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'mirror-episodes-'));
+    const { character, source } = await loadPreviousProtagonist({
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 1,
+      episodesRoot
+    });
+    expect(character).toBeNull();
+    expect(source).toBeNull();
+  });
+
+  it('returns the protagonist from the most recent APPROVED earlier episode', async () => {
+    episodesRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'mirror-episodes-'));
+    writeRun(episodesRoot, {
+      episodeFolder: 'episode-01-first-day',
+      runStamp: '2026-07-06_11-33-54',
+      manifest: { episode: { number: 1, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+      protagonist: protagonistFixture()
+    });
+
+    const { character, source } = await loadPreviousProtagonist({
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 2,
+      episodesRoot
+    });
+
+    expect(source).toBe('filesystem');
+    expect(character).toEqual({ id: 'player', name: 'Wren Castillo', age: 13, pronouns: 'they/them' });
+  });
+
+  it('prefers the HIGHER episode number, even if it is an older run timestamp', async () => {
+    episodesRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'mirror-episodes-'));
+    // Episode 2's run happened before a later re-run of episode 1 — episode
+    // 2's protagonist must still win, since it's more recent in the story.
+    writeRun(episodesRoot, {
+      episodeFolder: 'episode-02-group-project',
+      runStamp: '2026-07-06_10-00-00',
+      manifest: { episode: { number: 2, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+      protagonist: protagonistFixture({ name: 'Episode 2 Protagonist' })
+    });
+    writeRun(episodesRoot, {
+      episodeFolder: 'episode-01-first-day',
+      runStamp: '2026-07-06_20-00-00',
+      manifest: { episode: { number: 1, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+      protagonist: protagonistFixture({ name: 'Episode 1 Protagonist' })
+    });
+
+    const { character } = await loadPreviousProtagonist({
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 3,
+      episodesRoot
+    });
+
+    expect(character.name).toBe('Episode 2 Protagonist');
+  });
+
+  it('ignores non-APPROVED runs and runs from a different world', async () => {
+    episodesRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'mirror-episodes-'));
+    writeRun(episodesRoot, {
+      episodeFolder: 'episode-01-first-day',
+      runStamp: '2026-07-06_08-00-00',
+      manifest: { episode: { number: 1, world: 'NEW_SCHOOL' }, finalStatus: 'NEEDS_HUMAN_REVIEW' },
+      protagonist: protagonistFixture({ name: 'Rejected Draft' })
+    });
+    writeRun(episodesRoot, {
+      episodeFolder: 'episode-01-other-world',
+      runStamp: '2026-07-06_09-00-00',
+      manifest: { episode: { number: 1, world: 'SPORTS_ACADEMY' }, finalStatus: 'APPROVED' },
+      protagonist: protagonistFixture({ name: 'Wrong World' })
+    });
+
+    const { character } = await loadPreviousProtagonist({
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 2,
+      episodesRoot
+    });
+
+    expect(character).toBeNull();
+  });
+
+  it('excludes episodes at or after beforeEpisodeNumber', async () => {
+    episodesRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'mirror-episodes-'));
+    writeRun(episodesRoot, {
+      episodeFolder: 'episode-02-group-project',
+      runStamp: '2026-07-07_09-00-00',
+      manifest: { episode: { number: 2, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+      protagonist: protagonistFixture()
+    });
+
+    const { character } = await loadPreviousProtagonist({
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 2,
+      episodesRoot
+    });
+
+    expect(character).toBeNull();
+  });
+});
+
+describe('loadPreviousProtagonist — Postgres source', () => {
+  afterEach(() => {
+    jest.resetModules();
+    jest.dontMock('pg');
+  });
+
+  it('queries the single latest APPROVED episode and finds the player in its cast', async () => {
+    const query = jest.fn().mockResolvedValue({
+      rows: [{ content: { cast: [{ id: 'player', name: 'Wren Castillo' }, { id: 'jordan', name: 'Jordan' }] } }]
+    });
+    const end = jest.fn().mockResolvedValue(undefined);
+    jest.doMock('pg', () => ({ Pool: jest.fn().mockImplementation(() => ({ query, end })) }));
+
+    const { loadPreviousProtagonist: load } = require('../../scripts/lib/load-previous-episodes');
+    const { character, source } = await load({
+      databaseUrl: 'postgres://fake',
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 2,
+      episodesRoot: path.join(os.tmpdir(), 'unused')
+    });
+
+    expect(source).toBe('postgres');
+    expect(character).toEqual({ id: 'player', name: 'Wren Castillo' });
+    expect(query).toHaveBeenCalledWith(
+      expect.stringContaining('ORDER BY e.episode_number DESC'),
+      ['NEW_SCHOOL', 2]
+    );
+    expect(end).toHaveBeenCalled();
+  });
+
+  it('falls back to the filesystem when the database query fails', async () => {
+    const query = jest.fn().mockRejectedValue(new Error('connection refused'));
+    const end = jest.fn().mockResolvedValue(undefined);
+    jest.doMock('pg', () => ({ Pool: jest.fn().mockImplementation(() => ({ query, end })) }));
+
+    const episodesRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'mirror-episodes-'));
+    try {
+      writeRun(episodesRoot, {
+        episodeFolder: 'episode-01-first-day',
+        runStamp: '2026-07-06_11-33-54',
+        manifest: { episode: { number: 1, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+        protagonist: protagonistFixture()
+      });
+
+      const { loadPreviousProtagonist: load } = require('../../scripts/lib/load-previous-episodes');
+      const { character, source } = await load({
+        databaseUrl: 'postgres://fake',
+        worldId: 'NEW_SCHOOL',
+        beforeEpisodeNumber: 2,
+        episodesRoot
+      });
+
+      expect(source).toBe('filesystem');
+      expect(character.name).toBe('Wren Castillo');
+    } finally {
+      fs.rmSync(episodesRoot, { recursive: true, force: true });
+    }
+  });
+
+  it('returns null (not an error) when Postgres has no earlier episode and neither does the filesystem', async () => {
+    const query = jest.fn().mockResolvedValue({ rows: [] });
+    const end = jest.fn().mockResolvedValue(undefined);
+    jest.doMock('pg', () => ({ Pool: jest.fn().mockImplementation(() => ({ query, end })) }));
+
+    const { loadPreviousProtagonist: load } = require('../../scripts/lib/load-previous-episodes');
+    const { character, source } = await load({
+      databaseUrl: 'postgres://fake',
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 1,
+      episodesRoot: path.join(os.tmpdir(), 'mirror-episodes-does-not-exist')
+    });
+
+    expect(character).toBeNull();
+    expect(source).toBeNull();
   });
 });

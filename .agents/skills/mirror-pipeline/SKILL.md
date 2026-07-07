@@ -36,17 +36,28 @@ Env knobs: `EPISODE_NUMBER` (default 1; selects which brief in
 
 ## Cross-run continuity (episode 2+)
 
-`scripts/lib/load-previous-episodes.js` loads the APPROVED episodes before
-`EPISODE_NUMBER` in the world — from Postgres (`episodes` table) when
-`DATABASE_URL` is set, else the newest APPROVED run folder per episode
-number under `output/episodes/` — and feeds them into the Story
-Architect's `brief.previousEpisodes`. This is the only cross-run memory
-consumer today: NPC ids and the protagonist are still regenerated fresh
-each run even when the outline references a "returning" character (see
-`docs/OPEN-QUESTIONS.md` item 2). To generate episode 2 against a real
-episode 1: `npm run persist:run <episode-1-run-folder>` (or just have
-`DATABASE_URL` set during the episode 1 run), then
-`EPISODE_NUMBER=2 DATABASE_URL=... npm run real:episode:dev`.
+`scripts/lib/load-previous-episodes.js` exports two loaders, both
+Postgres-first (`episodes` table when `DATABASE_URL` is set) with a
+filesystem fallback (newest APPROVED run folder per episode number under
+`output/episodes/`), degrading gracefully to the fallback on any DB error:
+- `loadPreviousEpisodes()` — every APPROVED episode before `EPISODE_NUMBER`,
+  feeds `brief.previousEpisodes` (Story Architect) and, as of 2026-07-07,
+  the Creative Director and QA Reviewer too.
+- `loadPreviousProtagonist()` — the full protagonist ("player") character
+  profile from the single most recent APPROVED episode. When present,
+  `create-real-episode.js` skips Character Designer for the protagonist
+  entirely (`reusedProtagonistResult()`) and also hands it to the Story
+  Architect's `brief.characters` before the outline is written, so the
+  outline uses the established name/pronouns from the start. NPC ids are
+  NOT covered by this — they still get a brand-new profile every run (see
+  `docs/OPEN-QUESTIONS.md` item 2).
+
+To generate episode 2 against a real episode 1: `npm run persist:run
+<episode-1-run-folder>` (or just have `DATABASE_URL` set during the
+episode 1 run), then `EPISODE_NUMBER=2 DATABASE_URL=... npm run
+real:episode:dev`. Look for `👤 Continuity: protagonist "..." carries
+over` and `✅ Protagonist carried over (0.0s)` in the log to confirm it
+worked instead of silently falling through to a fresh generation.
 
 ## Cost expectations (from live runs)
 
