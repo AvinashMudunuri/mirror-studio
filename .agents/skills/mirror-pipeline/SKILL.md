@@ -32,7 +32,30 @@ Env knobs: `EPISODE_NUMBER` (default 1; selects which brief in
 `MAX_RUN_TOKENS` (0 = unlimited), `SKIP_REVIEWERS`
 (comma-separated manifest keys), `ANTHROPIC_MODEL` (creation),
 `ANTHROPIC_REVIEW_MODEL` (reviewers, default haiku), `<AGENT>_MODEL` /
-`<AGENT>_MAX_TOKENS` per-agent overrides, `DATABASE_URL` (Postgres opt-in).
+`<AGENT>_MAX_TOKENS` per-agent overrides, `DATABASE_URL` (Postgres opt-in),
+`CLAUDE_BACKEND` (`anthropic` default, or `bedrock` — see below).
+
+## Claude backend: Anthropic API or AWS Bedrock
+
+`CLAUDE_BACKEND=bedrock` routes all Claude calls through AWS Bedrock
+instead of the Anthropic API, authenticated with AWS credentials
+(`AWS_ACCESS_KEY_ID`/`AWS_SECRET_ACCESS_KEY`/`AWS_REGION`, or the default
+provider chain — `~/.aws/credentials`/IAM role — if those are unset)
+instead of `ANTHROPIC_API_KEY`. Full rationale, request-shape details, and
+caveats: `docs/decisions/004-aws-bedrock-alternative-backend.md`.
+
+**The one thing that WILL bite you:** Bedrock model IDs are different
+strings than the direct API's (e.g. `claude-sonnet-5` vs a Bedrock ID like
+`us.anthropic.claude-sonnet-5` — exact IDs are account/region-specific,
+look them up in the AWS console). Set `ANTHROPIC_MODEL` /
+`ANTHROPIC_REVIEW_MODEL` / `<AGENT>_MODEL` to the Bedrock ID when using
+this backend — reusing the direct-API model name will fail with a "model
+not found" error from Bedrock.
+
+A zero-token smoke run to confirm wiring (same pattern as the dummy-key
+check below, but with dummy AWS creds instead):
+`CLAUDE_BACKEND=bedrock AWS_ACCESS_KEY_ID=dummy AWS_SECRET_ACCESS_KEY=dummy AWS_REGION=us-east-1 MAX_RUN_TOKENS=1000 node scripts/create-real-episode.js`
+(should reach the first `[LLM] Calling Claude` line, then fail on auth).
 
 ## Cross-run continuity (episode 2+)
 
