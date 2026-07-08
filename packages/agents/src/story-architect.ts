@@ -395,10 +395,18 @@ World: ${brief.world}
 Season: ${brief.season}
 Episode: ${brief.episodeNumber}
 Themes: ${brief.themes.join(', ')}
-Target Traits: ${brief.targetTraits.join(', ')}
-
-AVAILABLE CHARACTERS:
-${brief.characters.map(c => `- ${c.name} (${c.storyRole}, age ${c.age})\n  Personality: ${c.personality.coreTraits.join(', ')}\n  Background: ${c.background.interests.join(', ')}`).join('\n\n')}`;
+Target Traits: ${brief.targetTraits.join(', ')}`;
+    
+    if (brief.characters.length > 0) {
+      // brief.characters carries over from a previous episode when one
+      // exists: exactly one is the protagonist (id "player", mandatory —
+      // always reference them that way), the rest are supporting
+      // characters that episode actually used. Bringing one of THOSE back
+      // is optional — reuse their exact id below if you do, so the same
+      // person stays continuous; use a new id for anyone new.
+      context += `\n\nAVAILABLE CHARACTERS (ids shown below — the protagonist "player" must be referenced as "player"; any other character here is a previous episode's supporting character you MAY bring back by reusing their exact id, or ignore in favor of a new character with a new id):
+${brief.characters.map(c => `- ${c.name} [id: ${c.id}] (${c.storyRole}, age ${c.age})\n  Personality: ${c.personality.coreTraits.join(', ')}\n  Background: ${c.background.interests.join(', ')}`).join('\n\n')}`;
+    }
     
     if (brief.previousEpisodes && brief.previousEpisodes.length > 0) {
       context += `\n\nPREVIOUS EPISODES:

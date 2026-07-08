@@ -230,3 +230,60 @@ describe('Story Architect self-repair', () => {
     expect(llmCall).toHaveBeenCalledTimes(2);
   });
 });
+
+// ---------- continuity: previous protagonist/NPCs in the brief ----------
+
+function characterFixture(overrides: Record<string, unknown> = {}) {
+  return {
+    id: 'player', name: 'Wren Castillo', age: 13, pronouns: 'they/them', storyRole: 'Protagonist',
+    personality: { coreTraits: ['curious'] },
+    background: { interests: ['drawing'] },
+    ...overrides
+  };
+}
+
+describe('Story Architect continuity context', () => {
+  it('omits the AVAILABLE CHARACTERS section entirely when there are none (episode 1)', async () => {
+    const llmCall = jest.fn<any>().mockResolvedValue(llmResponse(validOutline()));
+    const agent = await initAgent(llmCall);
+
+    await agent.process(BRIEF);
+    const prompt = llmCall.mock.calls[0][0] as string;
+    expect(prompt).not.toContain('AVAILABLE CHARACTERS');
+  });
+
+  it('shows the protagonist with their id and instructs referencing them as "player"', async () => {
+    const llmCall = jest.fn<any>().mockResolvedValue(llmResponse(validOutline()));
+    const agent = await initAgent(llmCall);
+
+    await agent.process({
+      ...BRIEF,
+      brief: { ...BRIEF.brief, characters: [characterFixture()] as any }
+    });
+
+    const prompt = llmCall.mock.calls[0][0] as string;
+    expect(prompt).toContain('AVAILABLE CHARACTERS');
+    expect(prompt).toContain('Wren Castillo [id: player]');
+    expect(prompt).toContain('must be referenced as "player"');
+  });
+
+  it('shows a returning NPC with their id and marks bringing them back as optional', async () => {
+    const llmCall = jest.fn<any>().mockResolvedValue(llmResponse(validOutline()));
+    const agent = await initAgent(llmCall);
+
+    await agent.process({
+      ...BRIEF,
+      brief: {
+        ...BRIEF.brief,
+        characters: [
+          characterFixture(),
+          characterFixture({ id: 'jordan', name: 'Jordan Oduya', storyRole: 'Supporting' })
+        ] as any
+      }
+    });
+
+    const prompt = llmCall.mock.calls[0][0] as string;
+    expect(prompt).toContain('Jordan Oduya [id: jordan]');
+    expect(prompt).toContain('MAY bring back by reusing their exact id');
+  });
+});

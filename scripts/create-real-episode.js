@@ -26,11 +26,12 @@ const {
   mergeChoiceDialogue,
   mergeBranchDialogue,
   unreadableResult,
-  reusedProtagonistResult
+  reusedCharacterResult,
+  findReusableCharacter
 } = require('./lib/pipeline-helpers');
 const { compileScreenplay } = require('./lib/compile-screenplay');
 const { buildEpisodeRow, persistEpisode } = require('./lib/persist-episode');
-const { loadPreviousEpisodes, loadPreviousProtagonist } = require('./lib/load-previous-episodes');
+const { loadPreviousEpisodes, loadPreviousCast } = require('./lib/load-previous-episodes');
 
 // Import from built packages (resolve from script location)
 const packageRoot = path.resolve(__dirname, '..');
@@ -272,8 +273,8 @@ function worldBrief() {
 /**
  * @param {object} outline - current episode's outline
  * @param {object|null} existingProtagonist - protagonist profile carried
- *   over from a previous episode (loadPreviousProtagonist()), if any.
- *   Reusing it verbatim is what makes "episode 2" actually the same
+ *   over from a previous episode (loadPreviousCast(), the "player" entry),
+ *   if any. Reusing it verbatim is what makes "episode 2" actually the same
  *   person as episode 1's, instead of a different character who happens
  *   to be called "player" — Character Designer previously invented a
  *   brand new protagonist every single run regardless of continuity.
@@ -281,7 +282,7 @@ function worldBrief() {
 async function generateProtagonist(outline, existingProtagonist) {
   if (existingProtagonist) {
     console.log(`   ♻️  Continuity: reusing protagonist "${existingProtagonist.name}" from a previous episode (no Character Designer call)`);
-    return reusedProtagonistResult(existingProtagonist);
+    return reusedCharacterResult(existingProtagonist, 'player');
   }
 
   // NPC ids come from the outline (e.g. "maya", "jordan"). A protagonist
@@ -320,13 +321,31 @@ async function generateProtagonist(outline, existingProtagonist) {
  * Generate a Character Designer profile for every supporting character the
  * outline references but the roster doesn't have yet. Returns the new
  * profiles (full designer outputs, character ids forced to the outline ids).
+ *
+ * @param {object} outline
+ * @param {object[]} roster - characters already generated this run
+ * @param {object[]} [previousCast] - full cast of the most recent previous
+ *   episode (loadPreviousCast()). If the CURRENT outline happens to
+ *   reference an id that character used, reuse their exact profile
+ *   instead of designing someone new with the same id — same continuity
+ *   principle as the protagonist, just opportunistic instead of
+ *   unconditional (only triggers when the Story Architect actually
+ *   brought that id back, which the brief.characters continuity hint in
+ *   main() makes more likely but never guarantees).
  */
-async function generateMissingSupportingCharacters(outline, roster) {
+async function generateMissingSupportingCharacters(outline, roster, previousCast) {
   const known = new Set(roster.map(c => c.id));
   const missing = collectSupportingCharacterIds(outline).filter(id => !known.has(id));
   const results = [];
 
   for (const characterId of missing) {
+    const reusable = findReusableCharacter(characterId, previousCast);
+    if (reusable) {
+      console.log(`   ♻️  Continuity: reusing supporting character "${characterId}" (${reusable.name}) from a previous episode (no Character Designer call)`);
+      results.push(reusedCharacterResult(reusable, characterId));
+      continue;
+    }
+
     const appearances = describeAppearances(outline, characterId);
     console.log(`   🔄 Designing supporting character "${characterId}" (${appearances.length} scene(s))...`);
     const startTime = Date.now();
@@ -662,14 +681,19 @@ async function main() {
       console.log(`   📚 Continuity: ${previousEpisodes.length} previous episode(s) loaded from ${previousEpisodesSource} — ${previousEpisodes.map(e => `"${e.title}"`).join(', ')}\n`);
     }
 
-    const { character: previousProtagonist, source: previousProtagonistSource } = await loadPreviousProtagonist({
+    const { cast: previousCast, source: previousCastSource } = await loadPreviousCast({
       databaseUrl: DATABASE_URL,
       worldId: TEST_WORLD.id,
       beforeEpisodeNumber: EPISODE_BRIEF.episodeNumber,
       episodesRoot: episodesRootForContinuity
     });
+    const previousProtagonist = previousCast.find(c => c.id === 'player') || null;
     if (previousProtagonist) {
-      console.log(`   👤 Continuity: protagonist "${previousProtagonist.name}" carries over from ${previousProtagonistSource} (Story Architect informed, Character Designer skipped)\n`);
+      console.log(`   👤 Continuity: protagonist "${previousProtagonist.name}" carries over from ${previousCastSource} (Story Architect informed, Character Designer skipped)\n`);
+    }
+    const previousNpcCount = previousCast.filter(c => c.id !== 'player').length;
+    if (previousNpcCount > 0) {
+      console.log(`   👥 Continuity: ${previousNpcCount} supporting character(s) from a previous episode are available to bring back if the outline references their id\n`);
     }
 
     console.log('   🔄 Calling Claude API to generate story structure...\n');
@@ -683,12 +707,15 @@ async function main() {
         episodeNumber: EPISODE_BRIEF.episodeNumber,
         themes: EPISODE_BRIEF.themes,
         targetTraits: EPISODE_BRIEF.targetTraits,
-        // The returning protagonist (if any) is given to the Story
-        // Architect BEFORE the outline is written, so scene descriptions
-        // and dialogue naturally use their established name/traits from
-        // the start, instead of a generic "player" placeholder that later
-        // steps have to reconcile with a reused profile.
-        characters: previousProtagonist ? [previousProtagonist] : [],
+        // The full previous cast (if any) is given to the Story Architect
+        // BEFORE the outline is written: the protagonist is always
+        // referenced as "player" (mandatory continuity), and any
+        // supporting character MAY be brought back by reusing their id
+        // (optional — see the AVAILABLE CHARACTERS instructions in
+        // buildContext()). Either way, scene descriptions and dialogue
+        // use established names/traits from the start instead of a
+        // generic placeholder some later step has to reconcile.
+        characters: previousCast,
         previousEpisodes
       }
     });
@@ -725,7 +752,7 @@ async function main() {
     // subset the CURRENT outline references (revisions can write characters
     // out of the story — declaring them anyway makes QA flag phantoms).
     let roster = [protagonistResult.character];
-    const supportingResults = await generateMissingSupportingCharacters(outline, roster);
+    const supportingResults = await generateMissingSupportingCharacters(outline, roster, previousCast);
     roster = roster.concat(supportingResults.map(r => r.character));
     let cast = activeRoster(outline, roster);
 
@@ -801,7 +828,7 @@ async function main() {
 
         // The revised outline may reference new characters — and may have
         // written previously generated ones out of the story.
-        const newSupporting = await generateMissingSupportingCharacters(outline, roster);
+        const newSupporting = await generateMissingSupportingCharacters(outline, roster, previousCast);
         if (newSupporting.length > 0) {
           roster = roster.concat(newSupporting.map(r => r.character));
           actions.push('roster-extension');
@@ -883,7 +910,15 @@ async function main() {
         skippedReviewers: SKIP_REVIEWERS,
         previousEpisodes: previousEpisodes.map(e => ({ id: e.id, title: e.title })),
         previousEpisodesSource: previousEpisodes.length > 0 ? previousEpisodesSource : null,
-        previousProtagonist: previousProtagonist ? { name: previousProtagonist.name, source: previousProtagonistSource } : null,
+        previousProtagonist: previousProtagonist ? { name: previousProtagonist.name, source: previousCastSource } : null,
+        // Any id in the final cast that also appears in previousCast was
+        // necessarily reused, not designed fresh — findReusableCharacter()
+        // only ever returns a match for ids the current outline shares
+        // with the previous episode's cast, and a match always wins over
+        // generating a new character with that id.
+        reusedSupportingCharacters: cast
+          .filter(c => c.id !== 'player' && previousCast.some(pc => pc.id === c.id))
+          .map(c => ({ id: c.id, name: c.name })),
         usage: usageSummary(llm)
       },
       roster: roster.map(c => ({

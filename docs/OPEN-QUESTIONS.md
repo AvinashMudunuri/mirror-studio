@@ -29,6 +29,25 @@ Build order and status:
    script, console streamed via SSE, budget/reviewer-skip controls.
 3. **Editing + review workflow**: rich editors, re-run specific agents,
    versioning — backed by the Postgres layer (item 2 below).
+4. **Publish / "preview as player"** — proposed but not implemented,
+   `docs/decisions/003-publish-scope-proposal.md` recommends the
+   cheapest validation of a new player-content schema is a preview route
+   inside THIS app, before building a separate player-facing frontend.
+
+## 1b. What "publish" means / Phase 4 scope — PROPOSED (2026-07-07)
+
+`docs/decisions/003-publish-scope-proposal.md` recommends: a deterministic
+`publish` action (not an LLM agent — same philosophy as
+`compile-screenplay.js`), gated on a human confirmation rather than
+automatic on `finalStatus: APPROVED` (reviewer verdict variance means
+`APPROVED` shouldn't be sufficient on its own), and a stable
+player-facing content projection distinct from the authoring shape in
+`output/episodes/*.json`. Explicitly recommends AGAINST building
+Publisher/Analytics/JSON-Export as agents at all, and against building
+Analytics before real players exist to generate data for it. Three
+concrete open questions (manual vs. automatic publish, where the read
+path lives, versioning) are listed in the doc and need a human decision
+before implementation.
 
 ## 2. Postgres persistence — DECIDED & WIRED (2026-07-06)
 
@@ -112,13 +131,37 @@ correctly used her established pronouns, and referenced "since day one"
 tying back to episode 1's events. `manifest.run.previousProtagonist:
 {name: "Wren Castillo", source: "postgres"}`.
 
+**NPC continuity — DONE (2026-07-07).** Generalized the protagonist
+mechanism: `loadPreviousCast()` replaces `loadPreviousProtagonist()`
+internally (which now just finds `id === 'player'` in the result) and
+returns the FULL cast of the most recent APPROVED episode — protagonist
+and every supporting character, including any added mid-run by a
+revision (via `resolveFinalArtifacts()`, unlike the protagonist which
+never needs revision-awareness). Two effects, mirroring the protagonist:
+1. The full previous cast (not just the protagonist) is now given to the
+   Story Architect's `brief.characters`. `story-architect.ts`'s
+   `buildContext()` shows each character's id and explicitly says
+   bringing an NPC back is OPTIONAL (reuse their exact id if you do) —
+   unlike the protagonist, which is mandatory every episode.
+2. `generateMissingSupportingCharacters()` checks `findReusableCharacter()`
+   (`pipeline-helpers.js`) before generating any NPC id the outline
+   references; a match skips Character Designer entirely
+   (`reusedCharacterResult()`, the same helper the protagonist now also
+   uses, generalized to take an explicit id instead of hardcoding "player").
+
+Live-verified (`run-2026-07-07_23-19-42`): the Story Architect brought
+back **all 3** of episode 1's supporting characters by id — log lines
+`♻️ Continuity: reusing supporting character "mia"/"alex"/"jordan"` (zero
+Character Designer calls for any of them), and the outline's own synopsis
+named all three with personalities consistent with episode 1 ("magnetic,
+controlling Mia Delgado, still-guarded Alex Nakamura, easygoing Jordan
+Oduya"). The SAME run also correctly generated a brand-new character
+("Priya Patel", id `ms-patel`) introduced by a revision — confirming the
+reuse-vs-generate branch works correctly for a mixed cast, not just an
+all-reused or all-fresh one. `manifest.run.reusedSupportingCharacters:
+[{id: "mia", ...}, {id: "alex", ...}, {id: "jordan", ...}]`.
+
 Still open:
-- NPC ids the outline reuses (e.g. "jordan") still get a brand-new
-  Character Designer profile every run rather than reusing the prior
-  episode's version of that same id — same underlying gap, deliberately
-  not extended to NPCs here (narrower, lower-value than the protagonist,
-  and multiplies the "does this id mean the same person as last episode"
-  ambiguity across however many NPCs an outline reuses).
 - Semantic search needs `OPENAI_API_KEY` for embeddings and is untested live.
 
 ## 3. Message bus (decided: out of runtime — ADR 001)

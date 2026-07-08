@@ -136,7 +136,7 @@ async function loadPreviousEpisodes({ databaseUrl, worldId, beforeEpisodeNumber,
   return { episodes: loadFromFilesystem(episodesRoot, { worldId, beforeEpisodeNumber }), source: 'filesystem' };
 }
 
-async function loadPreviousProtagonistFromDatabase(databaseUrl, { worldId, beforeEpisodeNumber }) {
+async function loadPreviousCastFromDatabase(databaseUrl, { worldId, beforeEpisodeNumber }) {
   const { Pool } = require('pg');
   const pool = new Pool({ connectionString: databaseUrl });
   try {
@@ -149,23 +149,16 @@ async function loadPreviousProtagonistFromDatabase(databaseUrl, { worldId, befor
        LIMIT 1`,
       [worldId, beforeEpisodeNumber]
     );
-    const cast = result.rows[0]?.content?.cast || [];
-    return cast.find(c => c.id === 'player') || null;
+    return result.rows[0]?.content?.cast || [];
   } finally {
     await pool.end();
   }
 }
 
-/**
- * Protagonist ("player") character profile of the single most recent
- * APPROVED episode before `beforeEpisodeNumber`. The protagonist is never
- * touched by a run's revision loop (only the outline/dialogue/NPCs are),
- * so the base `02-protagonist.json` is always the definitive profile for
- * a run — no revision-awareness needed here, unlike `loadFromFilesystem`.
- */
-function loadPreviousProtagonistFromFilesystem(episodesRoot, { worldId, beforeEpisodeNumber }) {
+/** The run folder for the single most recent APPROVED episode before beforeEpisodeNumber, or null. */
+function findLatestApprovedRun(episodesRoot, { worldId, beforeEpisodeNumber }) {
   const runs = listRunFolders(episodesRoot).reverse(); // newest run first
-  let best = null; // { episodeNumber, character }
+  let best = null; // { episodeNumber, runDir }
 
   for (const runDir of runs) {
     const manifestPath = path.join(runDir, 'manifest.json');
@@ -191,36 +184,65 @@ function loadPreviousProtagonistFromFilesystem(episodesRoot, { worldId, beforeEp
     // newest run — a stale re-run of an earlier episode found later in
     // this newest-first scan must not override a higher episode already found.
     if (best && number <= best.episodeNumber) continue;
-
-    const protagonistPath = path.join(runDir, '02-protagonist.json');
-    if (!fs.existsSync(protagonistPath)) continue;
-    let character;
-    try {
-      character = JSON.parse(fs.readFileSync(protagonistPath, 'utf-8'))?.character;
-    } catch {
-      continue;
-    }
-    if (character) best = { episodeNumber: number, character };
+    best = { episodeNumber: number, runDir };
   }
 
-  return best?.character || null;
+  return best?.runDir || null;
 }
 
 /**
+ * Full cast (protagonist + every supporting character, including any
+ * added mid-run by a revision) of a run folder, via the same
+ * revision-aware resolution the bound-script compiler uses.
+ */
+function loadCastFromRunFolder(runDir) {
+  const loadJson = relPath => {
+    const filePath = path.join(runDir, relPath);
+    if (!fs.existsSync(filePath)) return undefined;
+    return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  };
+  const { cast } = resolveFinalArtifacts(loadJson, () => listRevisions(runDir));
+  return cast;
+}
+
+function loadPreviousCastFromFilesystem(episodesRoot, { worldId, beforeEpisodeNumber }) {
+  const runDir = findLatestApprovedRun(episodesRoot, { worldId, beforeEpisodeNumber });
+  return runDir ? loadCastFromRunFolder(runDir) : [];
+}
+
+/**
+ * Full cast (protagonist + supporting characters) of the single most
+ * recent APPROVED episode before `beforeEpisodeNumber` — the source both
+ * `loadPreviousProtagonist()` and NPC-reuse in `create-real-episode.js`
+ * read from.
+ *
+ * @param {object} args - same shape as loadPreviousEpisodes
+ * @returns {Promise<{cast: object[], source: 'postgres' | 'filesystem' | null}>}
+ */
+async function loadPreviousCast({ databaseUrl, worldId, beforeEpisodeNumber, episodesRoot }) {
+  if (databaseUrl) {
+    try {
+      const cast = await loadPreviousCastFromDatabase(databaseUrl, { worldId, beforeEpisodeNumber });
+      if (cast.length > 0) return { cast, source: 'postgres' };
+    } catch (error) {
+      console.warn(`   ⚠️ Loading previous cast from Postgres failed (falling back to run folders): ${error.message}`);
+    }
+  }
+  const cast = loadPreviousCastFromFilesystem(episodesRoot, { worldId, beforeEpisodeNumber });
+  return { cast, source: cast.length > 0 ? 'filesystem' : null };
+}
+
+/**
+ * Just the protagonist ("player") from `loadPreviousCast()` — the common
+ * case for callers that only care about continuing the same protagonist.
+ *
  * @param {object} args - same shape as loadPreviousEpisodes
  * @returns {Promise<{character: object | null, source: 'postgres' | 'filesystem' | null}>}
  */
-async function loadPreviousProtagonist({ databaseUrl, worldId, beforeEpisodeNumber, episodesRoot }) {
-  if (databaseUrl) {
-    try {
-      const character = await loadPreviousProtagonistFromDatabase(databaseUrl, { worldId, beforeEpisodeNumber });
-      if (character) return { character, source: 'postgres' };
-    } catch (error) {
-      console.warn(`   ⚠️ Loading previous protagonist from Postgres failed (falling back to run folders): ${error.message}`);
-    }
-  }
-  const character = loadPreviousProtagonistFromFilesystem(episodesRoot, { worldId, beforeEpisodeNumber });
-  return { character, source: character ? 'filesystem' : null };
+async function loadPreviousProtagonist(args) {
+  const { cast, source } = await loadPreviousCast(args);
+  const character = cast.find(c => c.id === 'player') || null;
+  return { character, source: character ? source : null };
 }
 
-module.exports = { loadPreviousEpisodes, episodeReference, loadPreviousProtagonist };
+module.exports = { loadPreviousEpisodes, episodeReference, loadPreviousCast, loadPreviousProtagonist };
