@@ -10,7 +10,9 @@ This package provides the core agent framework and specific agent implementation
 
 **Base Framework**:
 - `BaseAgent` - Abstract base class all agents extend
-- `LLMGateway` - Unified interface for Claude and GPT
+- `LLMGateway` - Unified interface for Claude and GPT, with Claude callable
+  via either the direct Anthropic API or AWS Bedrock (see "Claude backend"
+  below)
 - Agent lifecycle management
 - Message handling
 - Memory integration
@@ -72,6 +74,44 @@ const result = await developer.process({
 console.log('Generated files:', result.files);
 console.log('Explanation:', result.explanation);
 ```
+
+### Claude backend: Anthropic API or AWS Bedrock
+
+`LLMGateway` calls Claude through one of two backends, selected by
+`claudeBackend` (or the `CLAUDE_BACKEND` env var, read by `LLM_CONFIG` in
+`config.ts`):
+
+- **`'anthropic'`** (default) — calls the Anthropic API directly using
+  `anthropicApiKey` (`ANTHROPIC_API_KEY`).
+- **`'bedrock'`** — calls the same Claude models via AWS Bedrock, using AWS
+  credentials instead of an Anthropic API key. By default this uses the
+  standard AWS credential provider chain (env vars, `~/.aws/credentials`,
+  or an IAM role); pass `bedrock: { region, accessKeyId, secretAccessKey,
+  sessionToken }` to `createLLMGateway` only if you need to override that.
+
+```typescript
+const llm = createLLMGateway({
+  claudeBackend: 'bedrock', // or process.env.CLAUDE_BACKEND
+  // anthropicApiKey is not needed for the bedrock backend
+  openaiApiKey: process.env.OPENAI_API_KEY
+});
+```
+
+**Model IDs are NOT interchangeable between backends.** The direct API's
+`claude-sonnet-5` is a different string than its Bedrock equivalent (e.g.
+`us.anthropic.claude-sonnet-5`, or another cross-region inference-profile ID
+depending on account/region). When using `bedrock`, set `ANTHROPIC_MODEL` /
+`ANTHROPIC_REVIEW_MODEL` / any `<AGENT>_MODEL` override to the Bedrock ID for
+your account and region — look these up in the AWS Bedrock console rather
+than guessing.
+
+Everything else — adaptive thinking, prompt caching (`cache_control`), retry/
+truncation handling, token usage accounting — works the same way on both
+backends, since `AnthropicBedrock.messages.create()` accepts the same request
+shape and returns the same response shape as the direct client for the
+non-streaming calls this gateway makes. See
+`docs/decisions/004-aws-bedrock-alternative-backend.md` for the full
+rationale and caveats.
 
 ### Developer Agent Capabilities
 

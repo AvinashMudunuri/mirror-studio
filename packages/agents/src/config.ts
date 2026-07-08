@@ -21,6 +21,29 @@ export const LLM_CONFIG = {
     anthropic: process.env.ANTHROPIC_API_KEY,
     openai: process.env.OPENAI_API_KEY,
   },
+
+  // Which backend serves Claude calls. 'bedrock' routes through AWS
+  // Bedrock (AWS credentials, no ANTHROPIC_API_KEY needed) instead of the
+  // Anthropic API directly — see packages/agents/README.md and
+  // docs/decisions/004-aws-bedrock-alternative-backend.md. Model ID
+  // strings differ between the two (e.g. `claude-sonnet-5` vs a Bedrock ID
+  // like `us.anthropic.claude-sonnet-5`), so ANTHROPIC_MODEL/
+  // ANTHROPIC_REVIEW_MODEL/<AGENT>_MODEL must be set accordingly per backend.
+  claude: {
+    backend: (process.env.CLAUDE_BACKEND === 'bedrock' ? 'bedrock' : 'anthropic') as 'anthropic' | 'bedrock',
+  },
+
+  // AWS Bedrock connection (only used when claude.backend === 'bedrock').
+  // All fields are optional overrides — omitted fields fall back to the
+  // standard AWS credential provider chain (AWS_ACCESS_KEY_ID/
+  // AWS_SECRET_ACCESS_KEY/AWS_SESSION_TOKEN env vars, ~/.aws/credentials,
+  // or an IAM role), which is the recommended way to authenticate.
+  bedrock: {
+    region: process.env.AWS_REGION,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    sessionToken: process.env.AWS_SESSION_TOKEN,
+  },
   
   // Default temperature settings by agent role
   // NOTE: For Claude 5+ models (claude-sonnet-5, claude-opus-5, etc.) and Opus 4.6+,

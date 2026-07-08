@@ -380,3 +380,49 @@ Still open:
   are still not wired to real data in `create-real-episode.js` (see item
   2) — feeding them would grow the shared block further, which is exactly
   the kind of content caching is meant to absorb.
+
+## 10. AWS Bedrock as an alternative Claude backend — DONE (2026-07-08)
+
+Ask: "we're using Claude for APIs, can we have an alternative to use AWS
+Bedrock as well" — for teams that want AWS-native billing/IAM instead of
+an Anthropic API key.
+
+`docs/decisions/004-aws-bedrock-alternative-backend.md` (Accepted):
+`LLMGateway` (`llm-gateway.ts`) now takes a `claudeBackend: 'anthropic' |
+'bedrock'` config (default `'anthropic'`, override via `CLAUDE_BACKEND`
+env var), and constructs an `AnthropicBedrock` client
+(`@anthropic-ai/bedrock-sdk`, new dependency) instead of the direct
+`Anthropic` client when `'bedrock'` is selected. Every other code path
+(adaptive-thinking headroom, retry/truncation, prompt caching, usage
+accounting) is unchanged and shared across both backends — confirmed via
+research (not assumed) that `AnthropicBedrock.messages.create()` accepts
+the identical request/response shape for the non-streaming calls this
+gateway makes, including top-level `thinking`/`output_config` and
+`cache_control` (a maintainer-confirmed-stale SDK doc comment claims
+Bedrock doesn't support prompt caching; it does, via the standard
+`.messages.create()` path).
+
+**Requires setting Bedrock-specific model IDs.** Bedrock's model ID
+strings differ from the direct API's (e.g. `claude-sonnet-5` vs a Bedrock
+ID/inference-profile like `us.anthropic.claude-sonnet-5`, account/region-
+specific) — no mapping table was built (would go stale/be wrong per
+account), so `ANTHROPIC_MODEL`/`ANTHROPIC_REVIEW_MODEL`/`<AGENT>_MODEL`
+must be set to the Bedrock ID when using this backend. Documented in
+`.env.example`, `packages/agents/README.md`, and the `mirror-pipeline`
+skill.
+
+Verified: 10 new unit tests
+(`tests/unit/llm-gateway-bedrock.test.ts`) mock `AnthropicBedrock` and
+mirror the existing Anthropic-backend coverage (adaptive thinking,
+retries, budget, caching) against the Bedrock path; a build/type-check
+pass confirms the real SDK's TypeScript types accept the request shape
+sent. Additionally live-verified the real network path with dummy AWS
+credentials (`CLAUDE_BACKEND=bedrock AWS_ACCESS_KEY_ID=dummy
+AWS_SECRET_ACCESS_KEY=dummy node scripts/create-real-episode.js`): the
+request reached AWS's real `bedrock-runtime` endpoint and failed with a
+genuine AWS auth error (`403 PermissionDeniedError: The security token
+included in the request is invalid`) rather than any client-side/wiring
+error — proof the SigV4-signed request format is accepted by AWS, only
+the credentials are fake. Full end-to-end verification against a real
+Bedrock model response needs a human to provision real AWS credentials
+with Bedrock model access (no AWS secrets exist in this environment).

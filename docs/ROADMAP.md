@@ -199,6 +199,7 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 - **Reviewers run on a cheaper model than creators** (`claude-haiku-4-5` vs `claude-sonnet-5`), with prompt caching layered on top for the review board specifically.
 - **Fail-loud over fabrication**: reviewers that can't parse a response throw rather than default to a fabricated verdict; the orchestrator escalates that to `UNREADABLE` + `NEEDS_HUMAN_REVIEW` rather than crashing.
 - **Cross-run continuity reads from Postgres or the filesystem, whichever is authoritative**: episode N's brief includes real synopses of APPROVED earlier episodes, not a stub.
+- **Claude is callable via AWS Bedrock as well as the direct Anthropic API** (`docs/decisions/004-aws-bedrock-alternative-backend.md`, Accepted): `CLAUDE_BACKEND=bedrock` swaps `LLMGateway`'s client with no other pipeline changes, for teams standardizing on AWS IAM/billing instead of an Anthropic API key.
 
 ### Pending decisions (unchanged from v1.0 — still not reached)
 - Illustration generation (Midjourney API vs. DALL-E vs. Stable Diffusion)
@@ -216,6 +217,7 @@ Done since this list was written (2026-07-07):
 - ~~Protagonist continuity across episodes~~ — `loadPreviousProtagonist()` carries the protagonist's full profile into episode 2+ and skips Character Designer for it entirely; live-verified the Story Architect using the carried-over name unprompted 44 times in one outline. See `docs/OPEN-QUESTIONS.md` item 2.
 - ~~NPC continuity~~ — generalized to `loadPreviousCast()`; the Story Architect can now optionally bring back any previous episode's supporting character by id. Live-verified: it brought back all 3 of episode 1's NPCs by name in one run, with zero Character Designer calls for any of them, while still correctly generating a genuinely new character introduced mid-revision. See `docs/OPEN-QUESTIONS.md` item 2.
 - ~~Decide what "publish" means and scope Phase 4~~ — decided AND implemented 2026-07-08: `docs/decisions/003-publish-scope-proposal.md` (Accepted). Manual publish button in `apps/admin`, full board required, durable `published_*` snapshot columns, a read API + preview page. Live-verified end-to-end.
+- ~~AWS Bedrock as an alternative Claude backend~~ — `docs/decisions/004-aws-bedrock-alternative-backend.md` (Accepted, 2026-07-08). `CLAUDE_BACKEND=bedrock` routes Claude calls through `@anthropic-ai/bedrock-sdk` instead of the direct Anthropic API; every other gateway feature (adaptive thinking, prompt caching, retries, usage accounting) is shared unchanged. Live-verified the real network path with dummy AWS credentials (genuine AWS 403, proving the request format is accepted); full verification against a real Bedrock response needs a human to provision AWS credentials with Bedrock access.
 
 Cheap, well-scoped, not yet done:
 1. Extend `previousEpisodes` continuity to the remaining 3 reviewers if evidence shows it's worth it.
