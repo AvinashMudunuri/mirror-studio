@@ -242,6 +242,49 @@ Remaining options, cheapest first:
   recurring class — it wasn't among what actually recurred live, so it's
   deprioritized until evidenced.
 
+**Update (2026-07-08), evidenced escalation — haiku hallucinates outright on
+larger/more complex episodes, not just misreads conventions:** while
+re-running episode 1 to reach APPROVED under the tightened gate (item 11),
+QA on haiku reported 22 errors against a 27-scene revision, 20 of them
+claiming specific scenes had a stray `defaultNextScene` alongside a choice
+— e.g. "Scene scene-4a-popular-table ... also defines a defaultNextScene
+(scene-5a-project-assignment)". Directly inspected the exact JSON object
+QA received (`buildEpisodeForReview()`'s output, which already strips
+`defaultNextScene` from choice-scenes per fix 3 above): **none of the 5
+scenes QA named had that field at all** — QA fabricated a claim with a
+specific (wrong) value, not just misread an ambiguous field. Re-ran the
+identical review payload with `QA_REVIEWER_MODEL=claude-sonnet-5`: error
+count dropped from 22 to 1, and that 1 was a genuine, previously-unfound
+defect (a character's pronouns used inconsistently between the roster and
+one dialogue variant). Cost: 41,677 tokens for one sonnet QA call vs. the
+repeated haiku calls that produced only noise.
+
+Also spot-checked Game Designer (haiku had reported 4 MAJOR issues,
+blocking under the tightened gate): re-run on `claude-sonnet-5` against
+the identical payload returned `GOOD` with the same 4 concerns downgraded
+to MINOR — i.e., haiku wasn't fabricating findings out of nothing here,
+but was over-severity-rating them past what a stronger model judged
+appropriate. Ethics Reviewer, by contrast, returned materially similar
+substance on both models (representation concerns about a Korean-coded
+character's model-minority-adjacent traits, and a bullying incident no
+adult ever addresses) — these read as genuine issues, not hallucination or
+miscalibrated severity, and need an actual content revision, not a bigger
+model.
+
+Net: haiku's cost savings on QA/Game Designer specifically stop being a
+good trade once an episode's scene count/complexity grows past whatever
+threshold makes structural review error-prone for a cheap model — this
+episode ballooned to 27 scenes over 3 revision rounds (each round adding
+sub-branch "aftermath" scenes rather than simplifying), which is well
+past `validateOutline`'s own 10-15 minute play-time guideline. Not yet
+promoted to a permanent config default (would raise review cost on every
+run, including ones that never hit this failure mode) — used as an env
+override (`QA_REVIEWER_MODEL`/`GAME_DESIGNER_MODEL=claude-sonnet-5`) for
+this specific recovery attempt instead. Worth revisiting as a permanent
+policy if this recurs on other episodes, or if a scene-count guardrail on
+the Story Architect's revision prompt (discouraging complexity growth
+across revisions) turns out to be the more targeted fix.
+
 ## 5. Branch selection at runtime (schema gap, flagged by QA)
 
 Branches now carry `id` + `triggeredBy` (`"choiceId:optionId"` paths) and
