@@ -298,22 +298,67 @@ runs with `QA_REVIEWER_MODEL`/`GAME_DESIGNER_MODEL`/`ETHICS_REVIEWER_MODEL=claud
 Both are dramatically cheaper AND faster than the two failed haiku-QA
 attempts that preceded them (514,887 + 918,944 = ~1.43M tokens, ~98
 minutes combined, both ending `NEEDS_HUMAN_REVIEW` while chasing
-fabricated findings) — strong, repeated (2/2) evidence this isn't a
-one-off fluke. Verified the approvals are real, not just a status label:
-`failingReviewers()` returns `[]` for both, and the underlying data holds
-up — zero CRITICAL/MAJOR issues, empty `mustFix`, `readyForPublication:
-true`, `readyForAudience: true` on both runs. This strengthens the case
-for promoting the escalation to a permanent default for these three
-reviewers (at least QA, which fabricated ~90% of its findings both times
-it was tested) rather than a per-run workaround — a decision left to a
-human given the direct cost-per-run tradeoff (sonnet is far more
-expensive than haiku).
+fabricated findings). Verified the approvals are real, not just a status
+label: `failingReviewers()` returns `[]` for both, and the underlying data
+holds up — zero CRITICAL/MAJOR issues, empty `mustFix`,
+`readyForPublication: true`, `readyForAudience: true` on both runs.
 
 Both runs' Postgres rows are now `status: APPROVED`, superseding the
 prior runs' `PUBLISHED`/`IN_REVIEW` status (the `episodes` table always
 reflects the LATEST run; `published_*` columns are untouched — see ADR
 003 — so the previously-published episode 1 snapshot is unaffected until
 a human re-publishes via `apps/admin`).
+
+### OPEN — precisely how far does the haiku hallucination finding generalize? (not yet answered, needs a real test)
+
+Correcting an overclaim from the first pass at this writeup: the evidence
+above is **n=1 diagnosed case**, not a general "haiku fails on complex
+episodes" rule, and episode 2 was never independently tested with QA on
+haiku at all (it went straight to the sonnet override) — so "both times it
+was tested" is not accurate; only episode 1's 27-scene revision was ever
+directly diagnosed.
+
+What's actually confirmed, precisely:
+- On ONE specific episode (27 scenes, 7 choice points, 5+ outcome
+  branches), QA on haiku fabricated 20 of 22 reported errors — specific,
+  wrong claims about fields that provably did not exist in the data it
+  received. Game Designer on the SAME episode over-rated real findings'
+  severity (MAJOR -> MINOR under sonnet) without fabricating anything.
+  Ethics Reviewer, Creative Director, and Child Psychologist — all still
+  on haiku throughout — showed no such problem on this same episode.
+
+What's NOT confirmed:
+- The complexity threshold where QA's hallucination starts. Never tested
+  QA-on-haiku with this level of scrutiny against a smaller (~19-21 scene)
+  episode — the originally-"approved" episodes earlier in this project
+  were cleared by the OLD, lenient gate, which never checked whether QA's
+  reasoning was factually correct, only whether its status tier matched.
+  It's equally plausible haiku hallucinates on simpler episodes too and it
+  was simply never caught, or that smaller episodes are genuinely fine.
+- Why QA and Game Designer failed but Ethics Reviewer didn't. Working
+  hypothesis (unverified): QA's task requires precise cross-referencing of
+  many specific ids across a large structured payload (which scene links
+  to which choice, which outcome's `triggeredBy` covers which
+  combination) — a long-context bookkeeping task cheap models are known to
+  lose track of. Ethics Reviewer's task is closer to thematic
+  pattern-matching (does this resemble a known trope), which doesn't need
+  that same cross-referencing. Plausible, not tested.
+
+**Proposed test to actually resolve this** (not yet run): re-run QA on
+`claude-haiku-4-5` against a simpler episode (e.g. episode 2's real
+21-scene content) with a synthetically injected structural defect, and
+check whether it (a) catches the real defect accurately and (b) doesn't
+invent additional fake ones. That would give real evidence on the
+complexity threshold instead of extrapolating from a single data point.
+
+**Decision still pending a human:** whether to promote
+`QA_REVIEWER_MODEL`/`GAME_DESIGNER_MODEL=claude-sonnet-5` from a per-run
+env override (used only for the two manual recovery runs above, not
+committed anywhere) to a permanent `config.ts` default. Cost tradeoff:
+sonnet is far more expensive than haiku per call, and every full-board run
+calls these reviewers multiple times across revision iterations — raising
+the default would increase cost on every run, including simple ones that
+may never hit this failure mode at all.
 
 ## 5. Branch selection at runtime (schema gap, flagged by QA)
 
