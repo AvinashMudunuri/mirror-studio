@@ -25,11 +25,54 @@ Build order and status:
    badges, token cost and revision count; run detail with roster, revision
    history, rendered bound script; raw artifact viewer. Legacy runs render
    as LEGACY, crashed runs as INCOMPLETE.
-2. **Generate from the UI**: episode-brief form spawning the pipeline
-   script, console streamed via SSE, budget/reviewer-skip controls.
+2. **Generate from the UI** — DONE 2026-07-08. `/generate` page: episode
+   number + optional custom brief (title/themes/traits/synopsis — not
+   limited to the two hardcoded episodes anymore), budget/revision-iteration/
+   skip-reviewer controls, an "Advanced" section for the QA/Game Designer/
+   Ethics Reviewer model overrides from item 4. Submitting spawns
+   `scripts/create-real-episode.js` server-side and streams its console
+   live via SSE. Live-verified end-to-end with a real (intentionally
+   token-capped) run — see below.
 3. **Editing + review workflow**: rich editors, re-run specific agents,
    versioning — backed by the Postgres layer (item 2 below).
 4. **Publish / "preview as player"** — DONE 2026-07-08. See item 1b.
+
+### Generate-from-UI implementation notes
+
+- `apps/admin/src/lib/generation-jobs.ts`: an in-memory job registry
+  (deliberately not Postgres/file-backed — the run folder + Postgres row
+  are already the durable source of truth for a FINISHED run; this only
+  tracks a run IN PROGRESS for the live console feed). Only one generation
+  may run at a time — a deliberate cost guardrail, not a technical limit,
+  since a human accidentally queuing several full-board runs in parallel
+  is a more realistic failure mode than needing true concurrency.
+- `scripts/create-real-episode.js` gained `EPISODE_BRIEF_JSON` (env,
+  optional): a complete custom brief takes priority over the hardcoded
+  `EPISODE_BRIEFS[EPISODE_NUMBER]` table, resolved by the new pure
+  `resolveEpisodeBrief()` in `pipeline-helpers.js` (fails loud on
+  incomplete/invalid JSON rather than silently falling back — a
+  half-wrong brief would waste a real, expensive run).
+- SSE stream (`/api/generate/[jobId]/stream`) replays the buffered log on
+  connect (so a page refresh or late open doesn't lose earlier output),
+  then streams new lines, and closes itself once the job finishes.
+- **Real bug caught by actually testing this, not just unit tests**: the
+  job registry's repo-root calculation was originally `__dirname`-based
+  (`../../../..` from the source file) — correct against the source tree,
+  wrong at runtime, because Next.js bundles route handler code so
+  `__dirname` no longer corresponds to the source file's depth once
+  compiled. Every real generation attempt failed immediately trying to
+  spawn a nonexistent `.next/scripts/create-real-episode.js`. Fixed by
+  switching to `process.cwd()` (same assumption `episodesRoot()` in
+  `lib/runs.ts` already relies on) — live-verified afterward with a real,
+  token-capped run that showed genuine Story Architect/Claude API activity
+  streaming live and correctly landed on `BUDGET_EXCEEDED`.
+- Separately hit (twice) an unrelated operational trap while testing:
+  running `npm run build` (a PRODUCTION `next build`) while `next dev` is
+  running against the same `apps/admin/.next` directory corrupts the dev
+  server's chunk cache (`Cannot find module './819.js'` or similar) — not
+  a code bug, just don't run a production build and a dev server against
+  the same `.next` folder concurrently; clearing `.next` and restarting
+  `next dev` fixes it.
 
 ## 1b. What "publish" means / Phase 4 scope — DONE (2026-07-08)
 

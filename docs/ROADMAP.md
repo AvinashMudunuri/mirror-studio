@@ -222,13 +222,14 @@ Done since this list was written (2026-07-07):
 - ~~AWS Bedrock as an alternative Claude backend~~ — `docs/decisions/004-aws-bedrock-alternative-backend.md` (Accepted, 2026-07-08). `CLAUDE_BACKEND=bedrock` routes Claude calls through `@anthropic-ai/bedrock-sdk` instead of the direct Anthropic API; every other gateway feature (adaptive thinking, prompt caching, retries, usage accounting) is shared unchanged. Live-verified the real network path with dummy AWS credentials (genuine AWS 403, proving the request format is accepted); full verification against a real Bedrock response needs a human to provision AWS credentials with Bedrock access.
 - ~~Reviewer calibration: tighten Game Designer/Ethics Reviewer/Child Psychologist~~ — `docs/OPEN-QUESTIONS.md` item 11 (2026-07-08). `REVIEWER_PASSES` now checks issue severity and readiness booleans instead of trusting the coarse status tier alone; prompts gained an explicit calibration rubric mirroring Creative Director's. Verified by replaying all 6 real historical runs where these reviewers ran through the new gate — every one now correctly fails on findings the old gate ignored.
 - ~~Get episode 1 and episode 2 back to APPROVED under the tightened gate~~ — done 2026-07-08, live-verified. Along the way: fixed QA's truncating `maxTokens`, raised `MAX_REVISION_ITERATIONS` to 3, fixed a real Story Architect bug (`validateTransitions()` never checked choice-bearing scenes for a stray `defaultNextScene`), and discovered/escalated QA's haiku hallucination problem (see above). Both episodes reached genuine `APPROVED` on the first pass once QA/Game Designer/Ethics Reviewer ran on `claude-sonnet-5`.
+- ~~Admin phase 2: generate-from-UI~~ — done 2026-07-08. `/generate`: episode-brief form (not limited to the 2 hardcoded episodes anymore), budget/revision/skip-reviewer controls, console streamed live via SSE from a server-spawned `create-real-episode.js` process. Live-verified end-to-end with a real (token-capped) run. See `docs/OPEN-QUESTIONS.md` item 1.
 
 Cheap, well-scoped, not yet done:
 1. Extend `previousEpisodes` continuity to the remaining 3 reviewers if evidence shows it's worth it.
 
 Bigger, would start actual Phase 4/5 work:
 2. A trimmed player-facing content projection — the publish read path currently returns the full authoring shape as-is (deliberately descoped, see the ADR); worth revisiting once a real frontend needs something narrower.
-3. Admin phase 2: generate-from-UI (episode-brief form, SSE streaming) — still internal tooling, not Phase 5, but the natural next step for the admin app.
+3. Admin phase 3: rich editors, re-run specific agents, versioning — backed by the Postgres layer.
 4. A real Phase 5 kickoff (episode player) is not recommended until Phase 4's data contract exists — building a frontend against a shape that's still `output/episodes/*.json` invites a rewrite.
 
 ---
