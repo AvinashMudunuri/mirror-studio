@@ -1,0 +1,766 @@
+{
+  "episodeOutline": {
+    "title": "Group Work",
+    "synopsis": "Wren's second week at Ridgemont brings the first real test of who she's decided to be: a four-person project on invasive species pairs her with magnetic, controlling Mia Delgado, still-guarded Alex Nakamura, and easygoing Jordan Oduya. When deadline pressure pushes Mia toward a shortcut that isn't quite honest, Wren has to decide — in real time, with no adults watching — what she's willing to say, and to whom, when the easy path and the right path stop being the same thing.",
+    "themes": [
+      "Peer Pressure",
+      "Honesty",
+      "Teamwork"
+    ],
+    "targetTraits": [
+      "INTEGRITY",
+      "COMMUNICATION",
+      "JUDGMENT"
+    ],
+    "scenes": [
+      {
+        "id": "classroom-assignment",
+        "title": "Ecosystems Under Pressure",
+        "location": "Ms. Patel's science classroom",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Ms. Patel announces the term's big group project: research an invasive species case study and present it creatively. Groups are posted on the board. Wren scans the list and finds her name locked in with Mia, Alex, and Jordan — three kids she barely knows how to be around yet, in one room, for two weeks.",
+        "emotionalBeat": "Anticipation laced with low-grade dread — the seating chart of Episode 1 made social; now it's academic too.",
+        "defaultNextScene": "group-meeting-1"
+      },
+      {
+        "id": "group-meeting-1",
+        "title": "Who's Running This",
+        "location": "Library group table",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Before anyone else can speak, Mia already has a plan: she'll present, Jordan will 'handle vibes,' Alex can 'draw something,' and Wren gets notes. It's efficient. It's also entirely her call, made in about eleven seconds.",
+        "emotionalBeat": "The quiet discomfort of watching a decision get made without you in the room.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "library-work-session",
+        "title": "Not Babyish, Just Different",
+        "location": "Library group table, an hour later",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Alex, more animated than Wren's seen him, sketches an idea: present the invasive-species case as a wordless comic sequence instead of a standard poster. It's genuinely clever. Mia laughs — not unkindly, but dismissively — 'That's cute, but this is a grade, not art class.' Alex's face closes back up like a door.",
+        "emotionalBeat": "A small cruelty dressed as practicality; the moment tests whether Wren protects Alex's re-opened trust or lets it shut again.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "alex-backed-up",
+        "title": "On the Table",
+        "location": "Library group table",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "With Wren's support, the comic-panel idea survives — Mia grumbles but doesn't fully kill it. Alex glances at Wren once, quick and unreadable, and keeps drawing.",
+        "emotionalBeat": "A flicker of something earned — Alex letting himself be visible again, just slightly.",
+        "defaultNextScene": "shortcut-proposal"
+      },
+      {
+        "id": "alex-overlooked",
+        "title": "Filed Under Later",
+        "location": "Library group table",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The idea dies quietly. Alex slides his notebook half-shut, says 'whatever's easiest' in a voice that means the opposite, and goes back to being furniture in the group.",
+        "emotionalBeat": "A door closing softly — the cost of silence isn't dramatic, it's just absence.",
+        "defaultNextScene": "shortcut-proposal"
+      },
+      {
+        "id": "alex-middle-ground",
+        "title": "One Panel",
+        "location": "Library group table",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Wren's compromise — one comic panel as a visual hook, poster board for the rest — actually lands. Mia shrugs, 'fine, whatever gets it done,' and Alex allows himself the smallest real smile of the day.",
+        "emotionalBeat": "Diplomacy that costs nothing and earns trust anyway.",
+        "defaultNextScene": "shortcut-proposal"
+      },
+      {
+        "id": "shortcut-proposal",
+        "title": "My Sister Already Did This",
+        "location": "Mia's kitchen table, after school",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "The project's due tomorrow and nobody's slept. Mia pulls up her older sister's project from last year — same rubric, different teacher — on her laptop. 'We swap some words, change the species, done by nine. Also—' she adds, almost as an afterthought, '—I'll just tell Ms. Patel the panel idea was mine. Sounds better coming from the presenter.' She says it like it's obviously fine.",
+        "emotionalBeat": "The real test arrives disguised as convenience — the moment the episode has been building toward.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "honest-rebuild",
+        "title": "Doing It the Hard Way",
+        "location": "Mia's kitchen table",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Wren pushes back on the shortcut. Mia's reaction is sharper than expected — 'Must be nice, being able to just redo everything. Some of us don't have unlimited time to be perfect.' Underneath the annoyance is something rawer: she's scared of not being enough without the shortcut.",
+        "emotionalBeat": "Integrity has a cost here — it means seeing Mia's insecurity up close instead of just her control.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "cutting-corners",
+        "title": "This Looks Familiar",
+        "location": "Library group table, next morning",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "The 'borrowed' project is basically done. During a rehearsal run-through, Ms. Patel walks past, pauses, and says, 'This structure looks really familiar, actually...' before moving on to the next table. Mia goes pale and kicks Wren's foot under the table — a silent, panicked question: what do we do.",
+        "emotionalBeat": "The moment consequences stop being hypothetical.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "whistleblow-fallout",
+        "title": "You Told Her?",
+        "location": "Hallway outside the library",
+        "characters": [
+          "player",
+          "mia",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Word got back to Mia — through Jordan, awkwardly — that Wren flagged concerns to Ms. Patel before saying anything to the group. Mia is blindsided and furious: 'You went around me instead of just talking to me?' It's not entirely wrong. Jordan hovers, clearly wishing he weren't in the middle of this.",
+        "emotionalBeat": "Doing the 'right' thing without communication still has a human cost — judgment and integrity aren't the same as connection.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "presentation-day-honest",
+        "title": "Presentation Day (Rebuilt)",
+        "location": "Science classroom",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "The redone project is genuinely good — later, rougher around the edges, but theirs. As they set up, Ms. Patel asks, casually, whose idea the comic-panel opener was.",
+        "emotionalBeat": "A quiet chance to give credit where it's due, in front of the person who almost didn't get it.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "ending-honest-full",
+        "title": "Ending: Earned",
+        "location": "Science classroom, after class",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Wren credits Alex out loud. He looks startled, then quietly pleased in a way he clearly wasn't expecting to feel at Ridgemont. Even Mia, grudgingly, admits the project turned out better this way. Nothing is perfectly resolved, but something real got built — a project, and maybe the beginning of a group that trusts each other slightly more than yesterday.",
+        "emotionalBeat": "Quiet integrity rewarded — not with applause, but with something sturdier.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "ending-honest-quiet",
+        "title": "Ending: Unspoken",
+        "location": "Science classroom, after class",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The presentation goes fine. Nobody mentions whose idea anything was. Alex doesn't seem upset exactly, but he packs up a little faster than usual, and Wren can't shake the feeling she chose comfortable over complete.",
+        "emotionalBeat": "Doing right by the project isn't the same as doing right by the person — a gentler but real cost of staying quiet.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "confession-redemption",
+        "title": "Ending: Told the Truth",
+        "location": "Empty classroom, after the bell",
+        "characters": [
+          "player",
+          "mia",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Wren tells Ms. Patel the truth before presenting — the structure was borrowed, they're fixing it tonight. Ms. Patel is stern but fair: late penalty, redo allowed. Mia is furious in the hallway ('you couldn't have told ME first?') but by the end of the day, grudgingly, she says, 'At least you didn't let me walk in there and get caught.' Alex says nothing, but sits a little closer at lunch.",
+        "emotionalBeat": "Integrity without perfect communication still costs something, but it's survivable, and it's honest.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "presentation-day-coverup",
+        "title": "Presentation Day (Exposed)",
+        "location": "Science classroom",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "They go ahead with the borrowed project. Mid-presentation, Ms. Patel asks a pointed question about a specific data point that doesn't match this year's assigned species at all. The room gets very quiet. Every group member is suddenly very aware of every other group member.",
+        "emotionalBeat": "The exact moment the shortcut stops being invisible.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "ending-cover-cracks",
+        "title": "Ending: Owned It Late",
+        "location": "Science classroom",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Wren admits the truth in front of the class instead of scrambling for a cover story. It's humiliating for about ninety seconds, and there are real consequences — a grade hit, a talk with Ms. Patel after school. But Alex catches her eye afterward with something like respect, and Mia, surprisingly, doesn't throw her under the bus either. Late honesty is still honesty.",
+        "emotionalBeat": "Redemption that costs something real, which is what makes it count.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "ending-exposed",
+        "title": "Ending: Left Holding It",
+        "location": "Science classroom",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Wren freezes, then deflects — 'it was mostly Mia's research' — and it lands exactly as badly as it sounds. Mia's face does something complicated. Alex doesn't say anything the rest of the day, which is somehow louder than if he had. The project gets a redo, but the group doesn't feel like a group anymore.",
+        "emotionalBeat": "The cost of choosing self-protection over honesty when it mattered most — quiet, lonely, and fully earned.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "repaired-trust",
+        "title": "Talking It Out",
+        "location": "Library, before school",
+        "characters": [
+          "player",
+          "mia",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Wren finds Mia early and just says it plainly: why she went to Ms. Patel, and that it wasn't about going around her. Mia's arms stay crossed for a while, but eventually she admits, quietly, that she was scared the project wasn't good enough as it was. They end up rebuilding the last section together, actually together, for the first time.",
+        "emotionalBeat": "Communication repairing what judgment alone couldn't fix.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "ending-trust-earned",
+        "title": "Ending: Actually a Team",
+        "location": "Science classroom, after presenting",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The presentation names contributions specifically — Alex's visual concept, Mia's research structure, Jordan's timeline wrangling. It's a small thing, but Mia looks genuinely surprised to be thanked for something instead of just performing being thanked. For the first time, the group chat that night isn't about damage control.",
+        "emotionalBeat": "The full arc — judgment, integrity, and communication working together — pays off in something that feels like belonging.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "ending-trust-strained",
+        "title": "Ending: Functional",
+        "location": "Science classroom, after presenting",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The presentation goes smoothly enough, but nobody says much beyond the script. Mia thanks Wren, stiffly, for 'handling it' earlier. It's not warmth, exactly. It's a truce. Some bridges get rebuilt slowly, and this one's only halfway there.",
+        "emotionalBeat": "Repair without full follow-through — progress, but not resolution.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "isolated-presentation",
+        "title": "Cold Front",
+        "location": "Library, morning of presentation",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Wren let Jordan smooth things over instead of talking to Mia directly. It worked, sort of — nobody's yelling — but Mia is polite in the specific way that means she hasn't forgiven anything. Alex watches the whole dynamic with the wary look of someone recalculating who's safe to trust here.",
+        "emotionalBeat": "Avoidance disguised as peace — a quieter kind of consequence.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "ending-isolated-success",
+        "title": "Ending: One More Try",
+        "location": "Outside the classroom door, right before presenting",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Right before they walk in, Wren tries once more — a real apology, not a strategic one. Mia doesn't fully thaw, but she nods, and something in her shoulders loosens. The presentation goes well. It's not fixed, but it's not frozen either.",
+        "emotionalBeat": "A last-minute act of good faith that reopens a door rather than closing it.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "ending-isolated-cost",
+        "title": "Ending: Got Through It",
+        "location": "Outside the classroom door, right before presenting",
+        "characters": [
+          "player",
+          "mia",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Wren decides not to push it and just focuses on getting through the presentation cleanly. It works, professionally speaking. But walking out, Mia says 'good job' the way you'd say it to someone you work with, not someone you know. It's fine. It's just not much more than fine.",
+        "emotionalBeat": "Self-protection that keeps things stable but keeps people at a distance too.",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "group-meeting-1",
+        "prompt": "Mia's already assigned everyone's role before you've said a word. What do you do?",
+        "context": "Mia has cast herself as presenter and handed out jobs, including yours, without asking anyone. It's efficient, and also entirely on her terms.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speak up: suggest the group actually pick roles based on what people are into or good at.",
+            "nextScene": "library-work-session"
+          },
+          {
+            "id": "b",
+            "text": "Go along with it for now — not worth the friction on day one of a two-week project.",
+            "nextScene": "library-work-session"
+          },
+          {
+            "id": "c",
+            "text": "Say nothing to Mia, but quietly ask Alex afterward if he wants to team up on the visuals.",
+            "nextScene": "library-work-session"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "COMMUNICATION": -1
+          },
+          "c": {
+            "COMMUNICATION": 1,
+            "JUDGMENT": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "library-work-session",
+        "prompt": "Mia just shut down Alex's genuinely good idea in about two seconds. What do you do?",
+        "context": "Alex proposed a wordless comic-panel format for the project. Mia laughed it off as 'cute but not how you get an A.' Alex is already closing back up.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Back Alex up right there, in front of everyone.",
+            "nextScene": "alex-backed-up"
+          },
+          {
+            "id": "b",
+            "text": "Stay quiet — it's not your project idea to defend.",
+            "nextScene": "alex-overlooked"
+          },
+          {
+            "id": "c",
+            "text": "Suggest a middle ground: one comic panel as a hook, standard format for the rest.",
+            "nextScene": "alex-middle-ground"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -2
+          },
+          "c": {
+            "COMMUNICATION": 1,
+            "JUDGMENT": 2
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "shortcut-proposal",
+        "prompt": "Mia wants to reuse her sister's old project and take credit for Alex's idea when she presents. What do you say?",
+        "context": "It's the night before the deadline. The shortcut would work — probably. Nobody would ever know. Mia's already treating it as decided.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Refuse, and push the group to rebuild it honestly tonight, even though it's late.",
+            "nextScene": "honest-rebuild"
+          },
+          {
+            "id": "b",
+            "text": "Go along with it — it's late, everyone's tired, and it's easier not to fight this.",
+            "nextScene": "cutting-corners"
+          },
+          {
+            "id": "c",
+            "text": "Don't confront Mia directly — instead, quietly flag your concerns to Ms. Patel before class tomorrow.",
+            "nextScene": "whistleblow-fallout"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 3,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": -3
+          },
+          "c": {
+            "INTEGRITY": 2,
+            "JUDGMENT": -1,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4a",
+        "scene": "honest-rebuild",
+        "prompt": "Mia's pushing back hard on redoing the project honestly. How do you bring her around?",
+        "context": "She's scared, not just stubborn, but it's coming out as anger. The clock is still running.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Appeal to the practical upside — it'll actually be better, and you'll all help her with her part too.",
+            "nextScene": "presentation-day-honest"
+          },
+          {
+            "id": "b",
+            "text": "Hold your ground calmly and let her decide whether she's in or not.",
+            "nextScene": "presentation-day-honest"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2
+          },
+          "b": {
+            "JUDGMENT": 1,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5a",
+        "scene": "presentation-day-honest",
+        "prompt": "Ms. Patel asks whose idea the comic-panel opener was. What do you say?",
+        "context": "Alex is standing right there. This is a two-second answer that means something bigger.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Give Alex full, explicit credit out loud.",
+            "nextScene": "ending-honest-full"
+          },
+          {
+            "id": "b",
+            "text": "Let it pass as a group effort without singling anyone out.",
+            "nextScene": "ending-honest-quiet"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4b",
+        "scene": "cutting-corners",
+        "prompt": "Ms. Patel just said the project 'looks familiar.' What do you do?",
+        "context": "Mia is silently panicking under the table. The presentation is in ten minutes.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Pull Ms. Patel aside after class and tell her the truth before presenting.",
+            "nextScene": "confession-redemption"
+          },
+          {
+            "id": "b",
+            "text": "Say nothing and hope it blows over — present as planned.",
+            "nextScene": "presentation-day-coverup"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 3,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5b",
+        "scene": "presentation-day-coverup",
+        "prompt": "Ms. Patel's follow-up question just exposed the copied structure in front of the whole class. What now?",
+        "context": "There's no version of this that isn't uncomfortable. There is a version that's honest.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Own it, right there, in front of everyone.",
+            "nextScene": "ending-cover-cracks"
+          },
+          {
+            "id": "b",
+            "text": "Deflect — imply it was mostly Mia's research, distance yourself.",
+            "nextScene": "ending-exposed"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2
+          },
+          "b": {
+            "INTEGRITY": -3,
+            "COMMUNICATION": -2
+          }
+        }
+      },
+      {
+        "id": "choice-4c",
+        "scene": "whistleblow-fallout",
+        "prompt": "Mia's furious that you went to Ms. Patel without talking to her first. How do you handle it?",
+        "context": "She's not entirely wrong that you skipped a step. Alex is watching to see what kind of person you are when things get tense.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Talk to her directly, explain your reasoning honestly, and invite her to help fix it together.",
+            "nextScene": "repaired-trust"
+          },
+          {
+            "id": "b",
+            "text": "Let Jordan smooth it over and keep some distance yourself.",
+            "nextScene": "isolated-presentation"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -2
+          }
+        }
+      },
+      {
+        "id": "choice-5c",
+        "scene": "repaired-trust",
+        "prompt": "Time to decide how to present as a group. How do you want to handle credit?",
+        "context": "The rebuilt section came together because you both showed up for it. This is the last chance to set the tone.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Name everyone's specific contribution out loud, including Mia's.",
+            "nextScene": "ending-trust-earned"
+          },
+          {
+            "id": "b",
+            "text": "Keep it simple and just get through the presentation without singling anyone out.",
+            "nextScene": "ending-trust-strained"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5c-isolated",
+        "scene": "isolated-presentation",
+        "prompt": "Right before you walk in to present, do you try to close the distance with Mia, or let it be?",
+        "context": "Things are polite but frozen. There's still a few seconds before the door opens.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Try once more — a real apology, no strategy behind it.",
+            "nextScene": "ending-isolated-success"
+          },
+          {
+            "id": "b",
+            "text": "Let it go and just focus on getting through the presentation cleanly.",
+            "nextScene": "ending-isolated-cost"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "JUDGMENT": 1,
+            "COMMUNICATION": -1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-honest-rebuild",
+        "name": "The Rebuild",
+        "triggeredBy": [
+          "choice-3:a"
+        ],
+        "description": "Wren refuses the shortcut and pushes the group to redo the project honestly, confronting Mia's insecurity directly along the way.",
+        "outcome": "Ends in either full, warm credit-sharing (ending-honest-full) or a quieter, competent but incomplete resolution (ending-honest-quiet), depending on whether Wren speaks up for Alex at the finish line."
+      },
+      {
+        "id": "branch-cutting-corners",
+        "name": "The Shortcut",
+        "triggeredBy": [
+          "choice-3:b"
+        ],
+        "description": "Wren goes along with reusing Mia's sister's project to avoid conflict, setting up a slow-building crisis of getting caught.",
+        "outcome": "Leads to an earlier private confession and light consequences (confession-redemption), or a public exposure moment where Wren must choose between owning the mistake (ending-cover-cracks) or deflecting blame onto Mia (ending-exposed), the episode's harshest outcome."
+      },
+      {
+        "id": "branch-whistleblower",
+        "name": "Going Around",
+        "triggeredBy": [
+          "choice-3:c"
+        ],
+        "description": "Wren tries to do the right thing by alerting the teacher, but skips talking to the team first, creating a trust rupture that has to be repaired through communication rather than good intentions alone.",
+        "outcome": "Resolves into either rebuilt trust and generous credit-sharing (ending-trust-earned/strained) or a cooler, more distant functional relationship (ending-isolated-success/cost), depending on whether Wren does the harder work of direct repair."
+      }
+    ],
+    "emotionalArc": [
+      "Opening unease: being placed in a group with near-strangers, powerlessness of the seating-chart feeling returning",
+      "Rising friction: watching a small cruelty happen to Alex and deciding whether to intervene",
+      "Peak pressure: the shortcut proposal, where convenience and dishonesty look almost identical",
+      "Consequence and reckoning: the branch-specific crisis (Mia's fear, getting caught, or the fallout of going around the group)",
+      "Resolution: a presentation day that reflects, quietly, everything that was decided along the way"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from reactive observer (Episode 1) to active participant who must generate honesty and clarity under real social cost, not just navigate a room."
+      },
+      {
+        "character": "mia",
+        "arc": "Her worldview — that control equals safety and shortcuts equal survival — gets tested by whether Wren treats her as an obstacle or a person with something to lose. Can end the episode slightly cracked open or fully unchanged, depending on player choices."
+      },
+      {
+        "character": "alex",
+        "arc": "Continues the slow, non-linear trust arc from Episode 1: whether it's safe to offer a real idea out loud again depends entirely on what happens to it once it's out there."
+      },
+      {
+        "character": "jordan",
+        "arc": "Remains the mirror — he'll smooth things over if asked, but never pushes Wren toward courage. His passivity is a quiet contrast to whichever choice the player makes."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "INTEGRITY",
+        "hiddenIn": "Whether Wren goes along with Mia's shortcut, credits Alex's idea, and how she handles getting caught."
+      },
+      {
+        "trait": "COMMUNICATION",
+        "hiddenIn": "Whether Wren speaks up in the moment (for herself, for Alex, to Mia directly) versus staying quiet, deflecting, or letting others handle hard conversations."
+      },
+      {
+        "trait": "JUDGMENT",
+        "hiddenIn": "The whistleblower branch specifically tests judgment vs. integrity in isolation — doing the 'right' thing without communication still has real costs, teaching that good judgment includes how and when, not just what."
+      }
+    ],
+    "relationshipDynamics": [
+      "Mia and player: adversarial-to-collaborative depending on whether Wren treats her control as a threat to defeat or an insecurity to work with.",
+      "Alex and player: a slow-burn trust meter that runs independent of the 'main' plot, paying off or stalling based on small, specific moments of being defended or overlooked.",
+      "Jordan and player: a low-stakes, warm friendship that reflects rather than directs — Jordan will follow Wren's lead but never sets the moral bar himself.",
+      "Mia and Alex: largely unresolved by design — their relationship only meaningfully shifts if Wren actively brokers it (ending-trust-earned)."
+    ],
+    "replayHooks": [
+      "The three choice-3 paths (rebuild, shortcut, whistleblow) are structurally distinct enough that replaying reveals a genuinely different back half of the episode, not just different dialogue.",
+      "Players who chose 'kind' or 'confident' identities in Episode 1 may be curious whether that reputation holds up under actual pressure here — replaying invites comparing intention to follow-through.",
+      "Six distinct endings encourage 'what if I'd just told the truth sooner' replays, especially between ending-exposed and ending-cover-cracks, which differ by a single late choice.",
+      "Alex's trust arc is subtle enough that players may not notice it shifted until a second playthrough highlights the difference between alex-backed-up and alex-overlooked."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Model that integrity often costs something in the moment (social friction, deadlines, awkwardness) rather than being costless or obviously rewarded",
+      "Show that good judgment includes communication — doing the 'right thing' in isolation without talking to people can still create harm",
+      "Normalize that peer pressure often arrives disguised as practicality or kindness ('it's easier,' 'it sounds better coming from me') rather than as an obvious villain moment",
+      "Demonstrate that honesty after a mistake (confession, owning up) is still meaningfully better than continued concealment, even when it's not costless"
+    ],
+    "conversationStarters": [
+      "Was there a moment where you felt like Mia was right to be scared, even if what she wanted to do was wrong?",
+      "What's the difference between what Wren did in the whistleblower path and actual tattling? Where's the line?",
+      "If you were Alex, would knowing someone stood up for your idea change how much you trusted them — or would you need more than one moment?",
+      "Which ending felt most realistic to you, and which felt like it let someone off too easy?"
+    ]
+  },
+  "designNotes": "The episode intentionally routes all three major choice-3 branches back through a shared emotional question (how do you handle credit and truth on presentation day) so that players who take different paths still land on comparable but distinctly-flavored endings — this keeps replay value high without requiring an unmanageable scene count. Mia is written to be understandable rather than punished by the narrative itself; the goal is for players to reach their own judgment about her rather than have the game render one. The extinct-animals/ecosystem project topic is a deliberate soft callback to Wren's Episode 1 characterization, giving the academic content a personal hook without stating it outright.",
+  "uncertainties": [
+    "Whether four convergence points (scene-3, the alex-reaction scenes, and shared onboarding text in presentation-day-honest) create enough narrative distinction across replays, or whether players will feel the 'honest' branch is too smooth compared to the messier cheating/whistleblower branches — may need additional divergent dialogue passes.",
+    "The whistleblower branch risks reading as 'punished for doing the right thing,' which needs careful line-editing in final dialogue so it teaches judgment-plus-communication rather than 'never tell an adult.'",
+    "Six endings may be more than needed for a 12-15 minute episode; playtesting should confirm whether some endings collapse without losing meaningful distinction."
+  ],
+  "alternativesConsidered": [
+    "A version where the shortcut was Mia plagiarizing an online source rather than her sister's old project — rejected as less emotionally specific and more generically 'about cheating' than about the social dynamics of pressure.",
+    "Making Jordan actively push the player toward the shortcut (active peer pressure) rather than passively avoiding conflict — rejected because it would make Jordan a clearer antagonist, which contradicts his intended role as a mirror rather than a driver.",
+    "A single linear path with only an ending-variable slider instead of true scene branching — rejected because it would undercut the replay value and make the choices feel cosmetic rather than structural."
+  ]
+}

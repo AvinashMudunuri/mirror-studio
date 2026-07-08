@@ -1,0 +1,96 @@
+{
+  "character": {
+    "id": "player",
+    "age": 13,
+    "name": "Wren Castillo",
+    "goals": {
+      "conscious": [
+        "Survive the first day without embarrassing herself",
+        "Find at least one person to eat lunch with",
+        "Figure out the 'map' of who's who before she picks a side"
+      ],
+      "unconscious": [
+        "Wants to belong somewhere long enough that it stops hurting to leave",
+        "Needs to prove to herself that she can be liked for who she actually is, not just who she pretends to be on day one"
+      ]
+    },
+    "pronouns": "she/her (player-customizable in-game to they/them or he/him depending on platform build)",
+    "storyRole": "Player character / protagonist of 'First Bell' — the lens through which the player experiences Ridgemont's social ecosystem for the first time. Wren's choices (who she sits with, whether she speaks up during the lunchroom cruelty moment, how she introduces herself) directly shape both the narrative reputation system and her own internal arc about authenticity vs. self-protection.",
+    "appearance": {
+      "brief": "Medium height, curly dark hair usually pulled back in a messy bun with flyaways, brown skin, wears hand-me-down sneakers she's decorated herself with sharpie doodles.",
+      "distinctiveFeatures": [
+        "A friendship bracelet from her old best friend that she still wears, faded and fraying",
+        "Chews on her pen cap when she's nervous — leaves little teeth marks",
+        "Has a habit of tugging her backpack strap across her chest like a seatbelt when she's overwhelmed"
+      ]
+    },
+    "background": {
+      "family": "Lives with her mom and younger brother; her dad's job moves the family every couple of years for his work, which is why Wren is new to Ridgemont. Her mom worries more than she lets on and always says 'you'll make friends, you always do' — which puts pressure on Wren to prove her right.",
+      "secrets": [
+        "She still texts her old best friend Priya every day and hasn't told anyone at home how much she misses her old school",
+        "She's secretly terrified that being 'the new kid' forever means something is wrong with her, not just her dad's job"
+      ],
+      "interests": [
+        "sketching comic panels in her notebook",
+        "true crime podcasts (mom thinks she's too young)",
+        "basketball, mostly pickup games",
+        "collecting weird facts about extinct animals"
+      ],
+      "strengths": [
+        "reads social dynamics quickly",
+        "genuinely kind without being naive about it",
+        "resilient — has done 'first day' enough times to have survival strategies"
+      ],
+      "struggles": [
+        "struggles to trust that a friendship will last, given her history of leaving people behind",
+        "tends to perform confidence she doesn't fully feel",
+        "avoids conflict even when speaking up would help someone else"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "observant",
+        "quietly funny",
+        "loyal",
+        "anxious under pressure",
+        "adaptable"
+      ],
+      "mannerisms": [
+        "Scans a room before entering it, cataloging exits and friendly faces",
+        "Makes lists in the margins of her notebooks when she's stressed — 'things I know are true'",
+        "Laughs a half-second late at jokes because she's busy reading the room first"
+      ],
+      "bigFiveProfile": {
+        "openness": 7,
+        "neuroticism": 6,
+        "extraversion": 5,
+        "agreeableness": 7,
+        "conscientiousness": 6
+      },
+      "speechPatterns": [
+        "Uses dry, understated humor to defuse tension ('cool, cool, love it here already')",
+        "Talks fast when nervous, slows down and gets more direct when she actually cares about something",
+        "Occasionally narrates her own thoughts out loud without meaning to"
+      ],
+      "emotionalTendencies": "Wren feels everything intensely but has learned to keep her face neutral — a skill from years of being 'the new kid' at three different schools. She's quick to notice when someone else is being left out, because she knows exactly what that feels like. Her anxiety spikes in unstructured social moments (like lunch) more than academic ones."
+    },
+    "arcPotential": [
+      "Episode 'First Bell': Establishes whether Wren becomes known as confident, kind, adaptable, or some blend — and plants the seed of her core conflict between performing okay-ness and being honest about starting over.",
+      "Future episode potential: Wren has to decide whether to tell a new friend the truth about missing her old school/friend, testing whether her new relationships can hold real vulnerability, not just the version of her she showed on day one.",
+      "Future episode potential: A moment where Wren witnesses someone else being the 'new kid' or getting excluded, forcing her to choose between the safety of her now-established group and standing up the way she wished someone had for her."
+    ],
+    "voiceGuidelines": {
+      "examples": [
+        "\"Okay. New school, new me. Except it's still just me. Great plan, Wren.\"",
+        "\"I've done first days before. You just gotta find the one table that isn't already a fortress.\"",
+        "\"That wasn't funny. That was just mean with a laugh track.\"",
+        "\"I don't know if I'm 'confident' or just really good at faking it until the bell rings.\""
+      ],
+      "vocabularyLevel": "Contemporary middle-school casual — contractions, mild slang, self-aware humor, never sounds like an adult wrote a PSA.",
+      "sentenceComplexity": "Short, punchy sentences when anxious or joking; longer, more searching sentences when she's actually being vulnerable.",
+      "emotionalExpressiveness": "Guarded on the surface, but her internal monologue (accessible via player choices/thought bubbles) is much more open and honest than what she says out loud."
+    }
+  },
+  "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+  "uncertainties": []
+}

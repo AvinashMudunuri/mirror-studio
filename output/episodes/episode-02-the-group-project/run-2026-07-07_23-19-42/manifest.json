@@ -1,0 +1,169 @@
+{
+  "episode": {
+    "number": 2,
+    "title": "Group Work",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "c10d99ac-2bcb-42d5-90d3-db16212d65ab",
+    "threadId": "db3b3702-2d07-44cf-b240-884f1799196c",
+    "startedAt": "2026-07-07T23:19:42.385Z",
+    "completedAt": "2026-07-07T23:53:15.470Z",
+    "totalSeconds": 2013.1,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [
+      "childPsychologist",
+      "gameDesigner",
+      "ethicsReviewer"
+    ],
+    "previousEpisodes": [
+      {
+        "id": "ep-1",
+        "title": "First Bell"
+      }
+    ],
+    "previousEpisodesSource": "postgres",
+    "previousProtagonist": {
+      "name": "Wren Castillo",
+      "source": "postgres"
+    },
+    "reusedSupportingCharacters": [
+      {
+        "id": "mia",
+        "name": "Mia Delgado"
+      },
+      {
+        "id": "alex",
+        "name": "Alex Nakamura"
+      },
+      {
+        "id": "jordan",
+        "name": "Jordan Oduya"
+      }
+    ],
+    "usage": {
+      "calls": 14,
+      "inputTokens": 181500,
+      "outputTokens": 217363,
+      "totalTokens": 398863,
+      "cacheCreationInputTokens": 60232,
+      "cacheReadInputTokens": 18633,
+      "budget": 400000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 10,
+          "inputTokens": 97239,
+          "outputTokens": 202320,
+          "cacheReadInputTokens": 0
+        },
+        "claude-haiku-4-5-20251001": {
+          "calls": 4,
+          "inputTokens": 84261,
+          "outputTokens": 15043,
+          "cacheReadInputTokens": 18633
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Wren Castillo",
+      "role": "Player character / protagonist of 'First Bell' — the lens through which the player experiences Ridgemont's social ecosystem for the first time. Wren's choices (who she sits with, whether she speaks up during the lunchroom cruelty moment, how she introduces herself) directly shape both the narrative reputation system and her own internal arc about authenticity vs. self-protection.",
+      "active": true
+    },
+    {
+      "id": "mia",
+      "name": "Mia Delgado",
+      "role": "Mia is the gravitational center of Ridgemont's social ecosystem on day one — the test the player has to decide how to pass. She's not a villain; she's a kid who learned that being first to laugh means you're never the one being laughed at. Her arc across the episode is entirely about recalibration: every choice the player makes either confirms her worldview (kindness is weakness, popularity is safety) or cracks it slightly open.",
+      "active": true
+    },
+    {
+      "id": "alex",
+      "name": "Alex Nakamura",
+      "role": "Alex is the emotional stakes of 'First Bell' made human — not a symbol of kindness to be rescued, but a specific kid testing, without meaning to, whether this new person is someone worth trusting again. His reactions across the episode (the sketchbook, the group project, the lunchroom) form a slow-building trust arc that runs parallel to and independent of the player's reputation system — Alex isn't grading the player's 'kindness score,' he's just a person deciding, moment by moment, whether it's safe to be visible again.",
+      "active": true
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Oduya",
+      "role": "Jordan functions as the player's social translator for Ridgemont — a warm, plugged-in guide whose easy charm masks his own unresolved discomfort with staying neutral. He gives the player information and cover, but never pushes them toward courage; the player's choices ultimately reveal whether they'll do what Jordan hasn't quite managed to do himself. His arc is entirely reactive to the player, making him a mirror for whichever identity — confident, kind, adaptable, or a blend — the player is building.",
+      "active": true
+    },
+    {
+      "id": "ms-patel",
+      "name": "Priya Patel",
+      "role": "Ms. Patel is the offstage moral pressure system of 'Group Work' — not a mouthpiece for the lesson, but a specific, competent adult whose quiet attentiveness is what turns Wren's choice from a private moral question into one with real, external stakes. She never lectures; she just asks the one question that makes hiding no longer possible, and then responds to whatever happens next with consistent, unglamorous fairness. She is proof to the player that adults can be both a consequence and a soft place to land — sometimes in the same sentence.",
+      "active": true
+    }
+  ],
+  "finalStatus": "NEEDS_HUMAN_REVIEW",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "FAIL",
+    "childPsychologist": "SKIPPED",
+    "gameDesigner": "SKIPPED",
+    "ethicsReviewer": "SKIPPED"
+  },
+  "revisions": [
+    {
+      "iteration": 1,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 6,
+      "dialogueFeedbackCount": 18,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "SKIPPED",
+        "gameDesigner": "SKIPPED",
+        "ethicsReviewer": "SKIPPED"
+      }
+    },
+    {
+      "iteration": 2,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "roster-extension",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 7,
+      "dialogueFeedbackCount": 8,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "SKIPPED",
+        "gameDesigner": "SKIPPED",
+        "ethicsReviewer": "SKIPPED"
+      }
+    }
+  ],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "revision-1/feedback.json",
+    "revision-1/story-outline.json",
+    "revision-1/dialogue.json",
+    "revision-1/qa-review.json",
+    "revision-2/feedback.json",
+    "revision-2/story-outline.json",
+    "revision-2/supporting-characters.json",
+    "revision-2/dialogue.json",
+    "revision-2/qa-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}
