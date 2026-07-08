@@ -165,6 +165,23 @@ STATUS LEVELS:
 - NEEDS_WORK: 4-5 overall, significant issues to address
 - UNACCEPTABLE: <4 overall, cannot publish without major revision
 
+DECISION RUBRIC (apply strictly — your status gates an automated pipeline):
+- EXCELLENT and GOOD both require ZERO issues at CRITICAL or MAJOR
+  severity (per the CRITICAL vs MAJOR vs MINOR definitions below — MAJOR
+  means "should fix before publication"), AND readyForPublication MUST be
+  true. If you list ANY CRITICAL or MAJOR issue, or set
+  readyForPublication: false, the status MUST be NEEDS_WORK or
+  UNACCEPTABLE — regardless of what the overall numeric score would
+  otherwise suggest. MINOR issues alone never block EXCELLENT/GOOD.
+- NEEDS_WORK / UNACCEPTABLE: at least one CRITICAL or MAJOR issue, or
+  readyForPublication: false.
+
+Consistency check before you answer: your status, your issues list, and
+summary.readyForPublication must agree with each other. A GOOD or
+EXCELLENT status sitting next to a MAJOR issue or readyForPublication:
+false is a calibration error — downgrade the status to match your own
+findings, don't downgrade the finding to protect the status.
+
 IMPORTANT PRINCIPLES:
 
 1. **Assume good intent, but identify impact**: Focus on harm potential, not creator intent

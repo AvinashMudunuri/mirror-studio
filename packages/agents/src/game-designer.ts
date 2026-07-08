@@ -155,6 +155,21 @@ STATUS LEVELS:
 - NEEDS_WORK: 4-5 overall, significant issues to address
 - POOR: <4 overall, major rework required
 
+DECISION RUBRIC (apply strictly — your status gates an automated pipeline):
+- EXCELLENT and GOOD both require ZERO issues at CRITICAL or MAJOR
+  severity, and an empty summary.mustFix. If you list ANY CRITICAL or
+  MAJOR issue, or put anything in summary.mustFix, the status MUST be
+  NEEDS_WORK or POOR — regardless of what the overall numeric score would
+  otherwise suggest. MINOR issues alone never block EXCELLENT/GOOD.
+- NEEDS_WORK / POOR: at least one CRITICAL or MAJOR issue, or a non-empty
+  mustFix list.
+
+Consistency check before you answer: your status, your issues list, and
+summary.mustFix must agree with each other. A GOOD or EXCELLENT status
+sitting next to a MAJOR issue or a non-empty mustFix list is a calibration
+error — downgrade the status to match your own findings, don't downgrade
+the finding to protect the status.
+
 FORMAT YOUR RESPONSE AS JSON:
 {
   "status": "EXCELLENT" | "GOOD" | "NEEDS_WORK" | "POOR",
