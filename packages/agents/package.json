@@ -9,6 +9,7 @@
     "clean": "rm -rf dist *.tsbuildinfo"
   },
   "dependencies": {
+    "@anthropic-ai/bedrock-sdk": "^0.32.0",
     "@anthropic-ai/sdk": "^0.32.1",
     "@mirror/memory": "*",
     "@mirror/message-bus": "*",

@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
+import { AnthropicBedrock } from '@anthropic-ai/bedrock-sdk';
 import OpenAI from 'openai';
 import { LLM_CONFIG } from './config';
 
@@ -6,7 +7,8 @@ import { LLM_CONFIG } from './config';
  * LLM Gateway - Unified interface for multiple LLM providers
  * 
  * Supports:
- * - Claude (Anthropic) - Primary for complex reasoning
+ * - Claude (Anthropic) - Primary for complex reasoning, callable via
+ *   either the direct Anthropic API or AWS Bedrock (see `claudeBackend`)
  * - GPT (OpenAI) - Secondary/fallback
  * 
  * Features:
@@ -26,6 +28,31 @@ export interface LLMConfig {
   defaultModel?: string;
   defaultTemperature?: number;
   defaultMaxTokens?: number;
+  /**
+   * Which backend serves Claude calls. 'anthropic' (default) calls the
+   * Anthropic API directly using `anthropicApiKey`. 'bedrock' calls the
+   * same Claude models through AWS Bedrock instead, authenticated with
+   * AWS credentials (see `bedrock` below) rather than an Anthropic API
+   * key. The two backends take different model ID strings — e.g. the
+   * direct API's `claude-sonnet-5` vs a Bedrock ID/inference-profile like
+   * `us.anthropic.claude-sonnet-5` — so `model`/`defaultModel` must match
+   * whichever backend is selected. Defaults to LLM_CONFIG.claude.backend
+   * (env CLAUDE_BACKEND).
+   */
+  claudeBackend?: 'anthropic' | 'bedrock';
+  /**
+   * AWS Bedrock connection, only used when claudeBackend === 'bedrock'.
+   * All fields are optional — omit them to use the standard AWS
+   * credential provider chain (env vars, ~/.aws/credentials, or an IAM
+   * role), which is the recommended way to authenticate rather than
+   * passing static keys here.
+   */
+  bedrock?: {
+    region?: string;
+    accessKeyId?: string;
+    secretAccessKey?: string;
+    sessionToken?: string;
+  };
   /**
    * Hard cap on total tokens (input + output) consumed through this
    * gateway instance. When the budget is exhausted the NEXT call throws
@@ -137,6 +164,8 @@ const REQUEST_TIMEOUT_MS = 30 * 60 * 1000;
 
 export class LLMGateway {
   private anthropic?: Anthropic;
+  private bedrockClient?: AnthropicBedrock;
+  private claudeBackend: 'anthropic' | 'bedrock';
   private openai?: OpenAI;
   private config: LLMConfig & {
     defaultProvider: 'claude' | 'gpt';
@@ -163,7 +192,22 @@ export class LLMGateway {
       ...config
     };
 
-    if (config.anthropicApiKey) {
+    this.claudeBackend = config.claudeBackend || LLM_CONFIG.claude.backend;
+
+    if (this.claudeBackend === 'bedrock') {
+      // Static creds are optional and must be provided as a pair (the SDK's
+      // overloads reject one without the other) — omitted entirely, the
+      // SDK falls back to the standard AWS credential provider chain (env
+      // vars, ~/.aws/credentials, IAM role), which is the common case.
+      const bedrockOptions: Record<string, unknown> = { timeout: REQUEST_TIMEOUT_MS };
+      if (config.bedrock?.region) bedrockOptions.awsRegion = config.bedrock.region;
+      if (config.bedrock?.accessKeyId && config.bedrock?.secretAccessKey) {
+        bedrockOptions.awsAccessKey = config.bedrock.accessKeyId;
+        bedrockOptions.awsSecretKey = config.bedrock.secretAccessKey;
+        if (config.bedrock?.sessionToken) bedrockOptions.awsSessionToken = config.bedrock.sessionToken;
+      }
+      this.bedrockClient = new AnthropicBedrock(bedrockOptions as ConstructorParameters<typeof AnthropicBedrock>[0]);
+    } else if (config.anthropicApiKey) {
       this.anthropic = new Anthropic({
         apiKey: config.anthropicApiKey,
         timeout: REQUEST_TIMEOUT_MS
@@ -176,9 +220,14 @@ export class LLMGateway {
       });
     }
 
-    if (!this.anthropic && !this.openai) {
+    if (!this.anthropic && !this.bedrockClient && !this.openai) {
       console.warn('[LLM] No API keys provided - LLM calls will fail');
     }
+  }
+
+  /** The Claude client for the currently configured backend, if any. */
+  private get claudeClient(): Anthropic | AnthropicBedrock | undefined {
+    return this.claudeBackend === 'bedrock' ? this.bedrockClient : this.anthropic;
   }
 
   /**
@@ -269,8 +318,13 @@ export class LLMGateway {
     userPrompt: string,
     options: LLMCallOptions
   ): Promise<LLMResponse> {
-    if (!this.anthropic) {
-      throw new Error('Anthropic API key not configured');
+    const client = this.claudeClient;
+    if (!client) {
+      throw new Error(
+        this.claudeBackend === 'bedrock'
+          ? 'AWS Bedrock backend selected (CLAUDE_BACKEND=bedrock) but the Bedrock client failed to initialize'
+          : 'Anthropic API key not configured'
+      );
     }
 
     const model = options.model || this.config.defaultModel;
@@ -327,7 +381,14 @@ export class LLMGateway {
         requestParams.temperature = temperature;
       }
 
-      const response: Anthropic.Message = await this.anthropic.messages.create(requestParams);
+      // AnthropicBedrock.messages.create() shares the same request/response
+      // shape as the direct Anthropic client for non-streaming calls (it
+      // only adapts the wire format for streaming, which this gateway
+      // never uses) — so requestParams and the response handling below are
+      // identical across both backends. Cast needed because TS can't unify
+      // the two clients' overloaded `messages.create` signatures.
+      const create = client.messages.create.bind(client.messages) as (params: unknown) => Promise<Anthropic.Message>;
+      const response: Anthropic.Message = await create(requestParams);
       lastResponse = response;
       // cache_creation_input_tokens / cache_read_input_tokens aren't in this
       // SDK version's stable Usage type (prompt caching predates it there),
@@ -432,6 +493,11 @@ export class LLMGateway {
   
   /**
    * Check if model is Claude 5+ or Opus 4.6+ (uses effort + adaptive thinking)
+   *
+   * Uses substring matching, so this also works for AWS Bedrock model/
+   * inference-profile IDs (e.g. `us.anthropic.claude-sonnet-5`), which
+   * embed the same `claude-{name}-{version}` substring as the direct
+   * Anthropic API's model names.
    */
   private isClaudeFiveOrNewer(model: string): boolean {
     // Claude 5 models

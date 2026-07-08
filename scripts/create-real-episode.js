@@ -169,6 +169,15 @@ const SKIP_REVIEWERS = (process.env.SKIP_REVIEWERS || '')
   .map(s => s.trim())
   .filter(Boolean);
 
+/**
+ * Which backend serves Claude calls: 'anthropic' (default, needs
+ * ANTHROPIC_API_KEY) or 'bedrock' (needs AWS credentials instead — see
+ * docs/decisions/004-aws-bedrock-alternative-backend.md). Model ID
+ * strings differ between the two backends, so ANTHROPIC_MODEL/
+ * ANTHROPIC_REVIEW_MODEL/<AGENT>_MODEL must match whichever is selected.
+ */
+const CLAUDE_BACKEND = process.env.CLAUDE_BACKEND === 'bedrock' ? 'bedrock' : 'anthropic';
+
 // ============================================================================
 // Output Location
 // ============================================================================
@@ -605,16 +614,22 @@ async function main() {
   console.log('📋 Step 0: Checking Prerequisites\n');
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
+  if (CLAUDE_BACKEND === 'bedrock') {
+    console.log('✅ Claude backend: AWS Bedrock (CLAUDE_BACKEND=bedrock)');
+    console.log(
+      `   AWS credentials: ${process.env.AWS_ACCESS_KEY_ID ? 'from AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY' : 'from default provider chain (~/.aws/credentials or IAM role)'}\n`
+    );
+  } else if (!apiKey) {
     console.error('❌ Error: ANTHROPIC_API_KEY not set!\n');
     console.error('   Please set your Claude API key:');
     console.error('   export ANTHROPIC_API_KEY="sk-ant-your-key-here"\n');
+    console.error('   Or set CLAUDE_BACKEND=bedrock to use AWS Bedrock instead.\n');
     console.error('   Then run this script again.\n');
     process.exit(1);
+  } else {
+    console.log('✅ Claude API key found');
+    console.log(`   Key: ${apiKey.substring(0, 10)}...${apiKey.slice(-4)}\n`);
   }
-
-  console.log('✅ Claude API key found');
-  console.log(`   Key: ${apiKey.substring(0, 10)}...${apiKey.slice(-4)}\n`);
   console.log('⚡ Running in SIMPLIFIED mode (no Docker required)\n');
   console.log(`📁 Output folder for this run:\n   ${OUTPUT_DIR_RELATIVE}\n`);
   console.log('═══════════════════════════════════════════════════════════\n');
@@ -627,10 +642,12 @@ async function main() {
 
   const llm = createLLMGateway({
     anthropicApiKey: apiKey,
+    claudeBackend: CLAUDE_BACKEND,
     defaultProvider: 'claude',
     maxTotalTokens: MAX_RUN_TOKENS > 0 ? MAX_RUN_TOKENS : undefined
   });
   console.log('✅ LLM Gateway ready');
+  console.log(`   Claude backend: ${CLAUDE_BACKEND}`);
   console.log(`   Token budget: ${MAX_RUN_TOKENS > 0 ? MAX_RUN_TOKENS.toLocaleString() + ' tokens (MAX_RUN_TOKENS)' : 'unlimited'}`);
   if (SKIP_REVIEWERS.length > 0) {
     console.log(`   Skipping reviewers: ${SKIP_REVIEWERS.join(', ')} (SKIP_REVIEWERS)`);
