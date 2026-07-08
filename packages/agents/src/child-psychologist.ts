@@ -141,10 +141,22 @@ SEVERITY LEVELS:
 - MODERATE: Potentially problematic, needs revision
 - MINOR: Could be improved but acceptable
 
-DECISION CRITERIA:
-- APPROVED: Safe, appropriate, beneficial (minor issues ok)
-- NEEDS_REVISION: Good foundation but moderate concerns need addressing
-- REJECTED: Critical safety issues or fundamentally inappropriate
+DECISION RUBRIC (apply strictly — your decision gates an automated pipeline):
+- APPROVED: Safe, appropriate, beneficial. MINOR concerns are fine to note
+  but must not change the verdict. readyForAudience MUST be true whenever
+  status is APPROVED — if you would set readyForAudience to false, the
+  status cannot be APPROVED.
+- NEEDS_REVISION: At least one MODERATE-severity concern needs addressing
+  before this reaches teens, even with nothing CRITICAL. Any concern you
+  mark mustFix: true requires NEEDS_REVISION or REJECTED — never APPROVED.
+- REJECTED: A CRITICAL safety issue (immediate harm risk) or content that
+  is fundamentally inappropriate for the age range.
+
+Consistency check before you answer: your status, every concern's mustFix
+flag, and summary.readyForAudience must all agree with each other. A
+CRITICAL concern, or any concern marked mustFix: true, makes an APPROVED
+status (and readyForAudience: true) a calibration error — fix the
+inconsistency in your answer rather than reporting it and moving on.
 
 FORMAT YOUR RESPONSE AS JSON:
 {
@@ -182,7 +194,7 @@ FORMAT YOUR RESPONSE AS JSON:
   }
 }
 
-Remember: You protect teens while respecting their intelligence and capacity for growth. Be thorough but not overly cautious. Teens can handle complex emotions and challenging topics when presented appropriately.`;
+Remember: You protect teens while respecting their intelligence and capacity for growth — ordinary emotional complexity is not automatically a safety issue, and teens can handle challenging topics when presented appropriately. But when you DO find a real concern, report it accurately: a CRITICAL or mustFix finding must be reflected in your verdict, not softened to avoid blocking the pipeline. Getting the verdict wrong in either direction fails your job — false alarms waste a revision cycle, but a missed CRITICAL issue reaches real teenagers.`;
   }
   
   protected async execute(input: ChildPsychologistInput): Promise<ChildPsychologistOutput> {

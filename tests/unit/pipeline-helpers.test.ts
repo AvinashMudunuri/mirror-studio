@@ -122,6 +122,76 @@ describe('failingReviewers', () => {
       creativeDirector: unreadableResult('decision', { message: 'bad json', rawResponse: 'garbage' })
     })).toEqual(['creativeDirector', 'qaReviewer']);
   });
+
+  // docs/OPEN-QUESTIONS.md item 11: Game Designer / Ethics Reviewer / Child
+  // Psychologist previously passed on their coarse status tier alone, with
+  // no regard for their own severity findings or readiness booleans — live
+  // runs showed a GOOD verdict alongside 5 MAJOR issues and a non-empty
+  // mustFix list, and a GOOD ethics verdict alongside readyForPublication:
+  // false. These cover the tightened gate.
+  it('fails Game Designer GOOD if a CRITICAL/MAJOR issue survived into the verdict', () => {
+    expect(failingReviewers({
+      gameDesigner: { status: 'GOOD', issues: [{ severity: 'MAJOR', issue: 'railroaded choices' }] }
+    })).toEqual(['gameDesigner']);
+  });
+
+  it('fails Game Designer GOOD if summary.mustFix is non-empty, even with no MAJOR/CRITICAL issues', () => {
+    expect(failingReviewers({
+      gameDesigner: { status: 'GOOD', issues: [], summary: { mustFix: ['add an ending that matters'] } }
+    })).toEqual(['gameDesigner']);
+  });
+
+  it('passes Game Designer GOOD when only MINOR issues are present and mustFix is empty', () => {
+    expect(failingReviewers({
+      gameDesigner: { status: 'GOOD', issues: [{ severity: 'MINOR', issue: 'pacing nit' }], summary: { mustFix: [] } }
+    })).toEqual([]);
+  });
+
+  it('always passes Game Designer EXCELLENT regardless of stray issues (top tier)', () => {
+    expect(failingReviewers({
+      gameDesigner: { status: 'EXCELLENT', issues: [{ severity: 'MINOR', issue: 'nit' }] }
+    })).toEqual([]);
+  });
+
+  it('fails Ethics Reviewer GOOD if a CRITICAL/MAJOR issue survived into the verdict', () => {
+    expect(failingReviewers({
+      ethicsReviewer: { status: 'GOOD', issues: [{ severity: 'MAJOR', issue: 'model minority trope' }] }
+    })).toEqual(['ethicsReviewer']);
+  });
+
+  it('fails Ethics Reviewer whenever readyForPublication is false, regardless of status tier', () => {
+    expect(failingReviewers({
+      ethicsReviewer: { status: 'GOOD', issues: [], summary: { readyForPublication: false } }
+    })).toEqual(['ethicsReviewer']);
+    expect(failingReviewers({
+      ethicsReviewer: { status: 'EXCELLENT', issues: [], summary: { readyForPublication: false } }
+    })).toEqual(['ethicsReviewer']);
+  });
+
+  it('passes Ethics Reviewer GOOD when issues are MINOR-only and readyForPublication is not false', () => {
+    expect(failingReviewers({
+      ethicsReviewer: { status: 'GOOD', issues: [{ severity: 'MINOR', issue: 'nit' }], summary: { readyForPublication: true } }
+    })).toEqual([]);
+    // Missing summary entirely (older manifests) must not fail on data the reviewer never provided.
+    expect(failingReviewers({
+      ethicsReviewer: { status: 'GOOD', issues: [] }
+    })).toEqual([]);
+  });
+
+  it('fails Child Psychologist APPROVED if readyForAudience is explicitly false', () => {
+    expect(failingReviewers({
+      childPsychologist: { status: 'APPROVED', summary: { readyForAudience: false } }
+    })).toEqual(['childPsychologist']);
+  });
+
+  it('passes Child Psychologist APPROVED when readyForAudience is true or omitted', () => {
+    expect(failingReviewers({
+      childPsychologist: { status: 'APPROVED', summary: { readyForAudience: true } }
+    })).toEqual([]);
+    expect(failingReviewers({
+      childPsychologist: { status: 'APPROVED' }
+    })).toEqual([]);
+  });
 });
 
 describe('unreadableResult', () => {
@@ -244,6 +314,27 @@ describe('collectRevisionFeedback', () => {
       }
     });
     expect(story.map((f: any) => f.severity)).toEqual(['BLOCKER', 'MAJOR']);
+  });
+
+  it('collects feedback for a GOOD-status reviewer that the tightened gate now treats as failing', () => {
+    // Before the tightened REVIEWER_PASSES gate (docs/OPEN-QUESTIONS.md item
+    // 11), a GOOD status short-circuited this function entirely — a MAJOR
+    // issue never reached the revision loop even though it should have.
+    const { story } = collectRevisionFeedback({
+      gameDesigner: {
+        status: 'GOOD',
+        issues: [{ severity: 'MAJOR', issue: 'choices are cosmetic', location: 'scene-3', fix: 'add real consequence' }]
+      },
+      ethicsReviewer: {
+        status: 'GOOD',
+        issues: [],
+        summary: { readyForPublication: false }
+      }
+    });
+    expect(story.map((f: any) => f.from)).toEqual(['GAME_DESIGNER']);
+    // Ethics had no issues to route (readiness flag alone has no message to
+    // extract) — the run still gates via failingReviewers(), just with no
+    // actionable feedback to auto-revise against.
   });
 
   it('skips minor game and ethics issues but keeps critical/major ones', () => {

@@ -242,6 +242,79 @@ Remaining options, cheapest first:
   recurring class — it wasn't among what actually recurred live, so it's
   deprioritized until evidenced.
 
+**Update (2026-07-08), evidenced escalation — haiku hallucinates outright on
+larger/more complex episodes, not just misreads conventions:** while
+re-running episode 1 to reach APPROVED under the tightened gate (item 11),
+QA on haiku reported 22 errors against a 27-scene revision, 20 of them
+claiming specific scenes had a stray `defaultNextScene` alongside a choice
+— e.g. "Scene scene-4a-popular-table ... also defines a defaultNextScene
+(scene-5a-project-assignment)". Directly inspected the exact JSON object
+QA received (`buildEpisodeForReview()`'s output, which already strips
+`defaultNextScene` from choice-scenes per fix 3 above): **none of the 5
+scenes QA named had that field at all** — QA fabricated a claim with a
+specific (wrong) value, not just misread an ambiguous field. Re-ran the
+identical review payload with `QA_REVIEWER_MODEL=claude-sonnet-5`: error
+count dropped from 22 to 1, and that 1 was a genuine, previously-unfound
+defect (a character's pronouns used inconsistently between the roster and
+one dialogue variant). Cost: 41,677 tokens for one sonnet QA call vs. the
+repeated haiku calls that produced only noise.
+
+Also spot-checked Game Designer (haiku had reported 4 MAJOR issues,
+blocking under the tightened gate): re-run on `claude-sonnet-5` against
+the identical payload returned `GOOD` with the same 4 concerns downgraded
+to MINOR — i.e., haiku wasn't fabricating findings out of nothing here,
+but was over-severity-rating them past what a stronger model judged
+appropriate. Ethics Reviewer, by contrast, returned materially similar
+substance on both models (representation concerns about a Korean-coded
+character's model-minority-adjacent traits, and a bullying incident no
+adult ever addresses) — these read as genuine issues, not hallucination or
+miscalibrated severity, and need an actual content revision, not a bigger
+model.
+
+Net: haiku's cost savings on QA/Game Designer specifically stop being a
+good trade once an episode's scene count/complexity grows past whatever
+threshold makes structural review error-prone for a cheap model — this
+episode ballooned to 27 scenes over 3 revision rounds (each round adding
+sub-branch "aftermath" scenes rather than simplifying), which is well
+past `validateOutline`'s own 10-15 minute play-time guideline. Not yet
+promoted to a permanent config default (would raise review cost on every
+run, including ones that never hit this failure mode) — used as an env
+override (`QA_REVIEWER_MODEL`/`GAME_DESIGNER_MODEL=claude-sonnet-5`) for
+this specific recovery attempt instead. Worth revisiting as a permanent
+policy if this recurs on other episodes, or if a scene-count guardrail on
+the Story Architect's revision prompt (discouraging complexity growth
+across revisions) turns out to be the more targeted fix.
+
+**Outcome: both episode 1 and episode 2 reached genuine `APPROVED` under
+the tightened gate (2026-07-08), using this escalation.** Fresh full-board
+runs with `QA_REVIEWER_MODEL`/`GAME_DESIGNER_MODEL`/`ETHICS_REVIEWER_MODEL=claude-sonnet-5`:
+- Episode 1 ("First Bell", `run-2026-07-08_06-52-52`): APPROVED on the
+  FIRST pass, 0 revision iterations, 252,722 tokens, 14.9 minutes.
+- Episode 2 ("The Bridge Table"/"Group Work", `run-2026-07-08_07-11-54`,
+  with real protagonist + 4-NPC continuity from episode 1's Postgres row):
+  APPROVED on the first pass, 0 revision iterations, 224,791 tokens, 11.5
+  minutes.
+
+Both are dramatically cheaper AND faster than the two failed haiku-QA
+attempts that preceded them (514,887 + 918,944 = ~1.43M tokens, ~98
+minutes combined, both ending `NEEDS_HUMAN_REVIEW` while chasing
+fabricated findings) — strong, repeated (2/2) evidence this isn't a
+one-off fluke. Verified the approvals are real, not just a status label:
+`failingReviewers()` returns `[]` for both, and the underlying data holds
+up — zero CRITICAL/MAJOR issues, empty `mustFix`, `readyForPublication:
+true`, `readyForAudience: true` on both runs. This strengthens the case
+for promoting the escalation to a permanent default for these three
+reviewers (at least QA, which fabricated ~90% of its findings both times
+it was tested) rather than a per-run workaround — a decision left to a
+human given the direct cost-per-run tradeoff (sonnet is far more
+expensive than haiku).
+
+Both runs' Postgres rows are now `status: APPROVED`, superseding the
+prior runs' `PUBLISHED`/`IN_REVIEW` status (the `episodes` table always
+reflects the LATEST run; `published_*` columns are untouched — see ADR
+003 — so the previously-published episode 1 snapshot is unaffected until
+a human re-publishes via `apps/admin`).
+
 ## 5. Branch selection at runtime (schema gap, flagged by QA)
 
 Branches now carry `id` + `triggeredBy` (`"choiceId:optionId"` paths) and
@@ -426,3 +499,89 @@ error — proof the SigV4-signed request format is accepted by AWS, only
 the credentials are fake. Full end-to-end verification against a real
 Bedrock model response needs a human to provision real AWS credentials
 with Bedrock model access (no AWS secrets exist in this environment).
+
+## 11. Reviewer calibration — Game Designer / Ethics Reviewer / Child Psychologist gate tightened — DONE (2026-07-08)
+
+Ask: those three reviewers had passed every live run so far (`SKIP_REVIEWERS`
+treats them as the cheap-to-skip trio) — is that because content is
+genuinely fine, or because the gate is miscalibrated?
+
+Investigated against real run data before changing anything (not
+assumed): the LLMs ARE doing real analysis — Game Designer and Ethics
+Reviewer routinely list specific MAJOR-severity issues (e.g. "choices are
+cosmetic," "model minority" stereotyping) — but `REVIEWER_PASSES`
+(`scripts/lib/pipeline-helpers.js`) only ever checked the coarse status
+tier (`GOOD`/`EXCELLENT`), never the severity of the reviewer's own
+findings or its own readiness booleans. Both reviewers' prompts map
+overall score 6-7 to `GOOD`, which passed unconditionally regardless of
+what `issues`/`mustFix`/`readyForPublication` said. Child Psychologist's
+prompt explicitly said "not overly cautious" with no counter-pressure
+against false negatives.
+
+Fix, three parts:
+1. **`REVIEWER_PASSES` now checks severity, not just the status tier.**
+   Game Designer: `GOOD` only passes with zero CRITICAL/MAJOR issues and
+   an empty `summary.mustFix`; `EXCELLENT` always passes (top tier).
+   Ethics Reviewer: same severity rule, plus `readyForPublication` must
+   not be explicitly `false` regardless of tier. Child Psychologist:
+   `APPROVED` only passes if `summary.readyForAudience` is not explicitly
+   `false`. `collectRevisionFeedback` was refactored to call the same
+   `REVIEWER_PASSES` predicates instead of re-deriving its own inline
+   status check, so a reviewer the gate now treats as failing always gets
+   its findings routed into the revision loop too — no divergence between
+   "does this block the run" and "does this feed the revision loop."
+2. **Prompts gained an explicit calibration rubric** (mirroring Creative
+   Director's PR #14 rubric): each reviewer is now told directly that any
+   CRITICAL/MAJOR issue (or `mustFix`/`readyForPublication: false`) makes
+   `GOOD`/`EXCELLENT` a calibration error, with a "downgrade the status,
+   don't downgrade the finding" consistency check. This is best-effort
+   (LLM compliance isn't guaranteed) — the code-level gate in item 1 is
+   the actual enforcement and doesn't depend on the LLM applying this
+   correctly.
+3. Child Psychologist's "not overly cautious" framing was rebalanced to
+   also warn against under-reporting: "a missed CRITICAL issue reaches
+   real teenagers."
+
+**Verified against real historical data, not just synthetic tests**:
+replayed all 6 real runs where these reviewers actually ran their real
+LLM output through the new `failingReviewers()`. Every single one now
+fails Game Designer and/or Ethics Reviewer that the old gate passed
+silently — including the two runs previously documented elsewhere in this
+file as "prod-ready evidence" (episode 1 "First Bell," episode 2 "Cracks
+in the Terrarium," item 2 above). Both had real MAJOR-severity issues
+(and one had `readyForPublication: false`) sitting inside a `GOOD`
+verdict that the old gate never looked at. This means those specific
+historical approvals would NOT re-earn `APPROVED` if re-run today — that
+is the intended effect, not a regression; their PUBLISHED snapshots
+(ADR 003) are unaffected since publishing is a durable snapshot, not a
+live re-check. Also added 15 new unit tests directly covering the new
+predicates in `tests/unit/pipeline-helpers.test.ts`.
+
+Not done / deliberately out of scope:
+- Did not touch QA Reviewer's or Creative Director's PASS/FAIL logic —
+  both already gate on their own findings correctly (binary PASS/FAIL;
+  an explicit calibration rubric from PR #14). QA's reliability problem
+  turned out to be model choice (haiku hallucinating), not gate logic —
+  see the update below.
+
+**Update (2026-07-08): live-verified end-to-end, not left as a
+historical-replay-only claim.** Re-ran episode 1 live under the tightened
+gate — it did NOT immediately reach `APPROVED` (see below), which led to
+two further real fixes, all now live-verified:
+1. `MAX_REVISION_ITERATIONS` raised from 2 to 3 (env-overridable) and
+   `QA_REVIEWER`'s `maxTokens` raised from 4096 to 8192 — QA's response
+   was truncated on every single call (haiku doesn't get the
+   adaptive-thinking retry-with-bigger-budget path a truncated response
+   needs to self-correct).
+2. A genuine Story Architect bug found and fixed: `validateTransitions()`
+   silently skipped choice-bearing scenes entirely, so a stray
+   `defaultNextScene` left on one was never caught — `ensurePlayableOutline()`
+   now strips it deterministically (before AND after the self-repair
+   round-trip) instead of hoping the model removes it.
+3. The real blocker: QA (and to a lesser extent Game Designer) on haiku
+   was hallucinating specific, wrong claims about the review payload on a
+   27-scene episode — see the "Update (2026-07-08)" note above for the
+   full investigation. Escalating those two (plus Ethics Reviewer, whose
+   findings were real but is reviewed alongside them) to
+   `claude-sonnet-5` produced two clean first-pass `APPROVED` runs for
+   episode 1 and episode 2.

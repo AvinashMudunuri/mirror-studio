@@ -85,6 +85,13 @@ describe('validateTransitions', () => {
     expect(errors.some(e => e.includes('attached to unknown scene'))).toBe(true);
   });
 
+  it('rejects a choice-bearing scene that ALSO has a defaultNextScene (recurring live QA blocker, 2026-07-08)', () => {
+    const outline = validOutline();
+    (outline.scenes[1] as any).defaultNextScene = 'scene-3a'; // scene-2 already has choice-1 attached
+    const errors = validate(outline);
+    expect(errors.some(e => e.includes('scene-2') && e.includes('exactly one transition mechanism'))).toBe(true);
+  });
+
   it('rejects dead-end scenes (no choice point, no defaultNextScene)', () => {
     const outline = validOutline();
     delete (outline.scenes[2] as any).defaultNextScene; // scene-3a
@@ -220,6 +227,44 @@ describe('Story Architect self-repair', () => {
     const repairPrompt = (llmCall.mock.calls[1][0] as string);
     expect(repairPrompt).toContain('missing "nextScene"');
     expect(repairPrompt).toContain('UNPLAYABLE');
+  });
+
+  it('strips a redundant defaultNextScene on a choice-bearing scene deterministically — no extra LLM call needed', async () => {
+    // The model recurringly leaves defaultNextScene on a scene that also
+    // has a choice attached, despite the prompt already saying not to
+    // (live-verified: QA flagged this as a BLOCKER on every revision of a
+    // real run). Since the fix is unambiguous, it must be stripped without
+    // spending a self-repair round-trip.
+    const outline = validOutline();
+    (outline.scenes[1] as any).defaultNextScene = 'scene-3a'; // scene-2 has choice-1 attached
+    const llmCall = jest.fn<any>().mockResolvedValue(llmResponse(outline));
+    const agent = await initAgent(llmCall);
+
+    const result = await agent.process(BRIEF);
+    expect(llmCall).toHaveBeenCalledTimes(1); // no self-repair round-trip
+    const scene2 = result.episodeOutline.scenes.find((s: any) => s.id === 'scene-2');
+    expect(scene2.defaultNextScene).toBeUndefined();
+  });
+
+  it('re-strips a redundant defaultNextScene reintroduced by the self-repair pass', async () => {
+    // First response: broken for an UNRELATED reason (missing nextScene) AND
+    // has the redundant-defaultNextScene issue. Self-repair fixes the
+    // missing nextScene but (as models do) leaves the redundant field in
+    // place — it must still be stripped afterward, not just before.
+    const firstDraft = brokenOutline();
+    (firstDraft.scenes[1] as any).defaultNextScene = 'scene-3a';
+    const repaired = validOutline();
+    (repaired.scenes[1] as any).defaultNextScene = 'scene-3a'; // repair "fixed" nextScene but left this
+
+    const llmCall = jest.fn<any>()
+      .mockResolvedValueOnce(llmResponse(firstDraft))
+      .mockResolvedValueOnce(llmResponse(repaired));
+    const agent = await initAgent(llmCall);
+
+    const result = await agent.process(BRIEF);
+    expect(llmCall).toHaveBeenCalledTimes(2);
+    const scene2 = result.episodeOutline.scenes.find((s: any) => s.id === 'scene-2');
+    expect(scene2.defaultNextScene).toBeUndefined();
   });
 
   it('throws when the graph is still broken after self-repair', async () => {

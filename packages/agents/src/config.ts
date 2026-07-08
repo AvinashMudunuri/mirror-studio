@@ -115,7 +115,15 @@ export const AGENT_MODELS = {
   QA_REVIEWER: {
     model: LLM_CONFIG.defaultModels.anthropicReview,
     temperature: 0.2, // Very low for deterministic validation
-    maxTokens: LLM_CONFIG.maxTokens.medium,
+    // `large`, not `medium`: a real episode with a complex branching
+    // structure can have a dozen-plus detailed errors (each carrying
+    // message/location/expectedValue/actualValue/fix), and 4096 tokens
+    // truncated QA's response on every single call across a live run
+    // (docs/OPEN-QUESTIONS.md item 11 follow-up, 2026-07-08) — haiku models
+    // don't get the adaptive-thinking retry-with-bigger-budget path, so a
+    // truncated QA response never self-corrects and may silently drop
+    // findings past the cutoff.
+    maxTokens: LLM_CONFIG.maxTokens.large,
   },
   
   CHILD_PSYCHOLOGIST: {
