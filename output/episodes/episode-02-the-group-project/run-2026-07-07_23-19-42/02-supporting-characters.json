@@ -1,0 +1,285 @@
+[
+  {
+    "character": {
+      "id": "mia",
+      "age": 13,
+      "name": "Mia Delgado",
+      "goals": {
+        "conscious": [
+          "Stay on top of the social order at Ridgemont",
+          "Be the one who decides who's 'in'"
+        ],
+        "unconscious": [
+          "To never again feel as replaceable as she did the day her best friend left her table",
+          "To be loved for something other than her ranking"
+        ]
+      },
+      "pronouns": "she/her",
+      "storyRole": "Mia is the gravitational center of Ridgemont's social ecosystem on day one — the test the player has to decide how to pass. She's not a villain; she's a kid who learned that being first to laugh means you're never the one being laughed at. Her arc across the episode is entirely about recalibration: every choice the player makes either confirms her worldview (kindness is weakness, popularity is safety) or cracks it slightly open.",
+      "appearance": {
+        "brief": "Compact and quick-moving, the kind of energy that fills a hallway before she even speaks. Dark hair she's constantly adjusting — half-up, then down, then twisted into a claw clip mid-conversation. Dresses like she's already decided what's cool this year.",
+        "distinctiveFeatures": [
+          "A laugh that's genuinely infectious — people laugh before they even know the joke",
+          "Chipped gel manicure she picks at when she's not the center of attention",
+          "Wears her older sister's varsity jacket even though she's not on any team"
+        ]
+      },
+      "background": {
+        "family": "Middle kid of three. Her older sister was 'the popular one' at Ridgemont before her, and teachers still occasionally call Mia by her sister's name. Her parents are loving but stretched thin — Mia's the one who's supposed to be 'the easy one,' so her stuff rarely gets airtime at home.",
+        "secrets": [
+          "Cried in the bathroom last year when her best friend since third grade dropped her for a different table — and has never let anyone get that close again",
+          "Actually thought Alex's project idea was good. Laughed anyway."
+        ],
+        "interests": [
+          "curating her group chat's group persona",
+          "dance (does it more for the social world than the art)",
+          "reality TV — she narrates real life like she's editing an episode"
+        ],
+        "strengths": [
+          "genuinely funny",
+          "fiercely loyal to whoever's inside her circle that week",
+          "sharp read on social dynamics — she's usually right about people, which is part of why she's dangerous"
+        ],
+        "struggles": [
+          "terrified of becoming irrelevant, especially in her sister's shadow",
+          "conflates being liked with being safe",
+          "doesn't know how to apologize without it feeling like losing"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "magnetic",
+          "controlling",
+          "insecure underneath",
+          "quick-witted",
+          "loyal to whoever's currently useful"
+        ],
+        "mannerisms": [
+          "Touches people's arms when she talks to them — a way of claiming the moment",
+          "Repeats the last word of what someone just said, like she's testing it before deciding if it's funny",
+          "Goes very still and quiet for half a second right before she says something cutting — like she's aiming"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "neuroticism": 7,
+          "extraversion": 9,
+          "agreeableness": 4,
+          "conscientiousness": 5
+        },
+        "speechPatterns": [
+          "Uses 'literally' and 'obsessed' as punctuation",
+          "Turns observations into group performances: 'Okay wait, everyone has to hear this—'",
+          "Softens cruelty into 'jokes' with a laugh at the end that dares you to be offended"
+        ],
+        "emotionalTendencies": "Mia reads a room in about two seconds and adjusts herself to own it. She's genuinely fun to be around when she's not scared — and she's scared more than she lets anyone see. Her cruelty isn't random; it's precision-targeted at whoever reminds her of what she's afraid of becoming: invisible, or replaced."
+      },
+      "arcPotential": [
+        "Episode 'First Bell': Mia tests the player's resolve — her reaction to being defended (tightening smile, backing off, the flicker of surprised respect) plants the seed that her power isn't absolute, and that someone can stand up to her without the sky falling.",
+        "Future episode potential: A moment where Mia's own insecurity surfaces publicly (sister comparison, a friend group shift) — giving the player a chance to extend the same grace to her that she rarely offers others, testing whether 'kind' extends even to the person who wasn't kind first.",
+        "Longer arc: Mia slowly renegotiating her friendship with Alex or the player — not a redemption arc tied up neatly, but small, real cracks in the armor that show she's capable of more than her defense mechanism allows."
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "\"Oh my god, wait — say that again, everyone needs to hear this.\"",
+          "\"No offense, but that's kind of... a lot? Anyway — Ms. Patel, what are we actually supposed to be doing?\"",
+          "\"I'm not being mean, I'm being HONEST, there's a difference.\"",
+          "(quieter, almost slipping) \"...whatever. It was actually kind of a good idea. Don't tell him I said that.\""
+        ],
+        "vocabularyLevel": "Current teen slang, deployed confidently — she's fluent in the social language of the moment and treats that fluency like currency.",
+        "sentenceComplexity": "Quick, punchy, performative. Sentences built for an audience even in one-on-one conversation.",
+        "emotionalExpressiveness": "Loud on the surface, guarded underneath. Rarely says how she actually feels — she'll joke, deflect, or escalate before she'll admit hurt."
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  },
+  {
+    "character": {
+      "id": "alex",
+      "age": 13,
+      "name": "Alex Nakamura",
+      "goals": {
+        "conscious": [
+          "Get through group project without embarrassing himself further",
+          "Find one person at this school who actually wants to know him"
+        ],
+        "unconscious": [
+          "Wants proof that being fully seen won't just lead to being fully rejected",
+          "Needs to matter to someone without having to perform for it"
+        ]
+      },
+      "pronouns": "he/him",
+      "storyRole": "Alex is the emotional stakes of 'First Bell' made human — not a symbol of kindness to be rescued, but a specific kid testing, without meaning to, whether this new person is someone worth trusting again. His reactions across the episode (the sketchbook, the group project, the lunchroom) form a slow-building trust arc that runs parallel to and independent of the player's reputation system — Alex isn't grading the player's 'kindness score,' he's just a person deciding, moment by moment, whether it's safe to be visible again.",
+      "appearance": {
+        "brief": "Slight build, dark hair that's always a little overgrown because he forgets/avoids haircuts. Wears the same three hoodies in rotation, sleeves pushed up over his knuckles. Ink stains on the side of his right hand.",
+        "distinctiveFeatures": [
+          "Sketchbook with a cracked spine, held together with duct tape shaped badly like a star",
+          "Chews on pen caps when he's thinking",
+          "Wears a watch that doesn't work anymore — was his grandfather's"
+        ]
+      },
+      "background": {
+        "family": "Moved to the city two years ago when his mom's job transferred; dad works night shifts at a hospital lab, so dinner is often Alex and his younger sister figuring it out themselves. Close with his mom, who he talks to more than anyone at school — a fact he'd be embarrassed for people to know.",
+        "secrets": [
+          "He's shown his sketchbook to exactly one person since moving here before the player — a kid who moved away three months later, which stung more than he admitted",
+          "He picked the seat by the window on purpose — it's the seat with the best light for drawing, and also the seat no one fights him for"
+        ],
+        "interests": [
+          "Drawing an ongoing comic about a nameless robot wandering a flooded city (has three notebooks of it)",
+          "Old horror movies, the cheesier the better",
+          "Actually really good at chess but never joined the club because it would mean talking to people"
+        ],
+        "strengths": [
+          "Sharp observational eye — notices things about people others miss",
+          "Genuinely original ideas when he risks sharing them",
+          "Doesn't hold grudges the way you'd expect — quick to warm back up if someone shows up for him"
+        ],
+        "struggles": [
+          "Assumes rejection before it happens, which sometimes causes it",
+          "Two years in and still eats alone most days — has started to believe that's just who he is here",
+          "Struggles to advocate for himself in the moment; needs someone else to go first"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "observant",
+          "guarded",
+          "dryly funny once comfortable",
+          "sensitive to rejection",
+          "quietly stubborn about his own opinions"
+        ],
+        "mannerisms": [
+          "Angles his sketchbook away from people until he decides they've earned a look",
+          "Goes very still and quiet when he's hurt, rather than reacting visibly",
+          "Taps his pen against his knee in a rhythm when nervous",
+          "Makes brief, sharp eye contact when he says something he actually means, then looks away immediately after"
+        ],
+        "bigFiveProfile": {
+          "openness": 8,
+          "neuroticism": 7,
+          "extraversion": 2,
+          "agreeableness": 6,
+          "conscientiousness": 6
+        },
+        "speechPatterns": [
+          "Short sentences in groups, longer ones alone with someone he trusts",
+          "Undercuts his own ideas before anyone else can ('It's dumb, forget it')",
+          "Dry one-liners land completely deadpan — easy to miss if you're not listening",
+          "Talks fast and specific about comics/art when genuinely excited, then catches himself and shrinks back down"
+        ],
+        "emotionalTendencies": "Alex processes hurt by going invisible rather than loud — he doesn't cry or snap, he just closes a door quietly and it's very hard to tell it happened unless you already know him. He's not fragile, though; he's been doing this a long time and has a whole private world (his sketchbooks) where he's fully himself. The tragedy isn't that he has no personality — it's that almost no one at Ridgemont has bothered to find out he has one."
+      },
+      "arcPotential": [
+        "Episode 'First Bell': Alex opens a small door of trust (the sketch) and it either gets honored, gently mishandled, or shut back down — setting the emotional tone for whether he opens up again",
+        "Future episode: Alex could join a club (chess, art) if the player's choices built enough trust, giving him a visible arc of taking up space he'd normally cede",
+        "Future episode: The friend who moved away could resurface (visiting, or contact reestablished) forcing Alex to confront his fear of investing in people who might leave",
+        "Future episode: Mia and Alex's dynamic could evolve — not into false friendship, but into a grudging mutual respect if the player has model reconciled behavior rather than punishment"
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "\"It's just a dumb robot. It doesn't really do anything. I don't know why I'm still drawing it, honestly.\" (said while clearly still drawing it, three notebooks deep)",
+          "\"Yeah, no, sit wherever. I don't own the window.\" (said too fast, already sliding the sketchbook two inches away)",
+          "\"You didn't have to do that.\" (quiet, after the player defends him — not quite meeting their eyes)",
+          "\"I've had worse. This is like, a six out of ten bad. Very manageable.\" (dry, unexpected joke, mid-humiliation)"
+        ],
+        "vocabularyLevel": "Casual middle-school vocabulary, but noticeably more precise and vivid when talking about art or things he loves — that's where his real intelligence shows",
+        "sentenceComplexity": "Clipped and guarded in groups; longer, more textured sentences one-on-one once trust is built",
+        "emotionalExpressiveness": "Understated almost to a fault — feelings show in what he stops saying, not what he says"
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  },
+  {
+    "character": {
+      "id": "jordan",
+      "age": 14,
+      "name": "Jordan Oduya",
+      "goals": {
+        "conscious": [
+          "Make the new kid's first day less terrifying",
+          "Stay on good terms with basically everybody"
+        ],
+        "unconscious": [
+          "Prove to himself that being well-liked isn't the same as being a coward",
+          "Find someone who'll actually take the social risks he keeps almost taking"
+        ]
+      },
+      "pronouns": "he/they",
+      "storyRole": "Jordan functions as the player's social translator for Ridgemont — a warm, plugged-in guide whose easy charm masks his own unresolved discomfort with staying neutral. He gives the player information and cover, but never pushes them toward courage; the player's choices ultimately reveal whether they'll do what Jordan hasn't quite managed to do himself. His arc is entirely reactive to the player, making him a mirror for whichever identity — confident, kind, adaptable, or a blend — the player is building.",
+      "appearance": {
+        "brief": "Medium height, wiry build, always mid-motion. Wears the same faded green backpack with a dozen pins on it — some jokes, some band logos he doesn't actually listen to, one that just says 'ask me about my dog.'",
+        "distinctiveFeatures": [
+          "Gap between front teeth he shows off when he grins",
+          "Constantly re-tying the same shoelace that never stays tied",
+          "A friendship bracelet on his wrist that's clearly years old and fraying"
+        ]
+      },
+      "background": {
+        "family": "Middle kid of three, raised mostly by his older sister while his parents work overlapping shifts (mom's a nurse, dad drives for a delivery service). Nobody's ever really 'assigned' to watch Jordan, so he learned early how to read adults and kids alike to stay ahead of trouble.",
+        "secrets": [
+          "He used to eat lunch with Alex in 6th grade before Mia's group 'happened' and he drifted — he's never told anyone that, including Alex."
+        ],
+        "interests": [
+          "Skateboarding (badly, enthusiastically)",
+          "Making Spotify playlists for people he's known less than a week",
+          "Knowing everyone's business, in a genuinely warm way not a gossip way"
+        ],
+        "strengths": [
+          "Making anyone feel noticed within thirty seconds of meeting them",
+          "Defusing tension with humor",
+          "Remembering small details about people — birthdays, allergies, who likes what"
+        ],
+        "struggles": [
+          "Avoids direct confrontation even when he knows someone deserves to be called out",
+          "Sometimes mistakes being liked by everyone for actually standing for something",
+          "Slight guilt he doesn't examine too closely about staying neutral around Mia's group"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "easygoing",
+          "socially fluent",
+          "quietly observant",
+          "avoids conflict",
+          "loyal once he commits"
+        ],
+        "mannerisms": [
+          "Talks with his hands, especially when explaining social dynamics like he's drawing a map in the air",
+          "Does a little half-wave/half-salute thing to people he doesn't know well enough to hug but likes enough to acknowledge",
+          "Chews on the end of his pen cap when he's actually thinking hard, despite acting like nothing bothers him"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "neuroticism": 4,
+          "extraversion": 8,
+          "agreeableness": 8,
+          "conscientiousness": 5
+        },
+        "speechPatterns": [
+          "Uses 'honestly' as a verbal tic when he's about to say something slightly more real than his usual banter",
+          "Downplays serious observations with a joke immediately after, like he's not sure he's allowed to be that perceptive out loud",
+          "Calls people by slightly-wrong nicknames until they stick or get corrected"
+        ],
+        "emotionalTendencies": "Jordan reads rooms fast and shares what he sees generously — but he's been burned before by picking a side too visibly, so he's learned to narrate rather than intervene. He genuinely likes people, almost indiscriminately, which makes his silences (like never quite calling out Mia) land harder than his words."
+      },
+      "arcPotential": [
+        "First Bell: Establishes Jordan as likable but conflict-avoidant; his reaction to the player's lunchroom choice (relief, admiration, quiet self-recognition) plants seeds for later.",
+        "Future episode: Jordan could be put in a position where he has to choose a side himself, testing whether the player's example actually changed anything for him — or whether he's still the same well-liked kid dodging the hard calls.",
+        "Longer arc: A moment where Jordan finally admits the Alex history, turning his guilt into an actual repair rather than avoidance."
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "Locker's the one that sticks if you don't lift the handle first. Everybody falls for it. Consider that your welcome gift.",
+          "Okay honestly? Don't sit with Mia's table unless you're ready for it to mean something. Not saying don't — just saying it means something.",
+          "That's a hard job. Good thing you're new — nobody's told you it's impossible yet."
+        ],
+        "vocabularyLevel": "Casual middle-school vernacular, quick and current without trying too hard to sound cool — he's naturally plugged in, not performing it.",
+        "sentenceComplexity": "Short, punchy sentences strung together in run-on bursts when excited; slows down and gets simpler when he's saying something he actually means.",
+        "emotionalExpressiveness": "Expressive and warm on the surface, but genuine vulnerability shows up sideways — through a joke that lands a little too true, or a pause before he answers something real."
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  }
+]

@@ -24,7 +24,8 @@ const {
   mergeChoiceDialogue,
   mergeBranchDialogue,
   unreadableResult,
-  reusedProtagonistResult
+  reusedCharacterResult,
+  findReusableCharacter
 } = require('../../scripts/lib/pipeline-helpers');
 
 // ---------- roster collection ----------
@@ -140,19 +141,48 @@ describe('unreadableResult', () => {
   });
 });
 
-describe('reusedProtagonistResult', () => {
+describe('reusedCharacterResult', () => {
   it('wraps the carried-over character in a Character-Designer-shaped output', () => {
     const previousProtagonist = { id: 'player', name: 'Wren Castillo', age: 13, pronouns: 'they/them' };
-    const result = reusedProtagonistResult(previousProtagonist);
+    const result = reusedCharacterResult(previousProtagonist, 'player');
     expect(result.character).toEqual(previousProtagonist);
     expect(result.designNotes).toMatch(/continuity/i);
     expect(result.uncertainties).toEqual([]);
   });
 
-  it('forces id to "player" defensively even if the stored profile somehow lacks it', () => {
-    const result = reusedProtagonistResult({ name: 'Wren Castillo', age: 13 });
+  it('forces the given id defensively even if the stored profile somehow lacks it', () => {
+    const result = reusedCharacterResult({ name: 'Wren Castillo', age: 13 }, 'player');
     expect(result.character.id).toBe('player');
     expect(result.character.name).toBe('Wren Castillo');
+  });
+
+  it('works for a reused NPC id, not just the protagonist', () => {
+    const result = reusedCharacterResult({ name: 'Jordan Oduya' }, 'jordan');
+    expect(result.character.id).toBe('jordan');
+  });
+});
+
+describe('findReusableCharacter', () => {
+  const previousCast = [
+    { id: 'player', name: 'Wren Castillo' },
+    { id: 'jordan', name: 'Jordan Oduya' }
+  ];
+
+  it('finds a previous NPC by id', () => {
+    expect(findReusableCharacter('jordan', previousCast)).toEqual({ id: 'jordan', name: 'Jordan Oduya' });
+  });
+
+  it('returns undefined for an id not in the previous cast', () => {
+    expect(findReusableCharacter('maya', previousCast)).toBeUndefined();
+  });
+
+  it('never matches "player" — the protagonist has its own dedicated continuity path', () => {
+    expect(findReusableCharacter('player', previousCast)).toBeUndefined();
+  });
+
+  it('tolerates a missing/empty previous cast', () => {
+    expect(findReusableCharacter('jordan', undefined)).toBeUndefined();
+    expect(findReusableCharacter('jordan', [])).toBeUndefined();
   });
 });
 

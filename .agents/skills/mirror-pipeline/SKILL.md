@@ -36,21 +36,28 @@ Env knobs: `EPISODE_NUMBER` (default 1; selects which brief in
 
 ## Cross-run continuity (episode 2+)
 
-`scripts/lib/load-previous-episodes.js` exports two loaders, both
+`scripts/lib/load-previous-episodes.js` exports three loaders, all
 Postgres-first (`episodes` table when `DATABASE_URL` is set) with a
 filesystem fallback (newest APPROVED run folder per episode number under
 `output/episodes/`), degrading gracefully to the fallback on any DB error:
 - `loadPreviousEpisodes()` — every APPROVED episode before `EPISODE_NUMBER`,
-  feeds `brief.previousEpisodes` (Story Architect) and, as of 2026-07-07,
-  the Creative Director and QA Reviewer too.
-- `loadPreviousProtagonist()` — the full protagonist ("player") character
-  profile from the single most recent APPROVED episode. When present,
-  `create-real-episode.js` skips Character Designer for the protagonist
-  entirely (`reusedProtagonistResult()`) and also hands it to the Story
-  Architect's `brief.characters` before the outline is written, so the
-  outline uses the established name/pronouns from the start. NPC ids are
-  NOT covered by this — they still get a brand-new profile every run (see
-  `docs/OPEN-QUESTIONS.md` item 2).
+  feeds `brief.previousEpisodes` (Story Architect, Creative Director, QA
+  Reviewer).
+- `loadPreviousCast()` — the full cast (protagonist + every supporting
+  character, revision-aware) of the single most recent APPROVED episode.
+  `create-real-episode.js` hands the whole thing to the Story Architect's
+  `brief.characters` before the outline is written: the protagonist is
+  ALWAYS referenced as "player" (mandatory continuity — see
+  `generateProtagonist()`/`reusedCharacterResult()`, skips Character
+  Designer entirely when one carries over), and any supporting character
+  MAY be brought back by the outline reusing their exact id (optional —
+  `generateMissingSupportingCharacters()` checks `findReusableCharacter()`
+  before designing anyone new). Live-verified bringing back all 3 of an
+  episode's NPCs in one run, zero Character Designer calls for any of
+  them, while still correctly generating a genuinely new character
+  introduced mid-revision.
+- `loadPreviousProtagonist()` — thin wrapper around `loadPreviousCast()`
+  for callers that only want the protagonist.
 
 To generate episode 2 against a real episode 1: `npm run persist:run
 <episode-1-run-folder>` (or just have `DATABASE_URL` set during the

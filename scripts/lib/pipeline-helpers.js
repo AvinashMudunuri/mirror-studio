@@ -74,18 +74,34 @@ function unreadableResult(verdictField, error) {
 }
 
 /**
- * Character-Designer-shaped output for a protagonist carried over from a
- * previous episode (loadPreviousProtagonist()), instead of generating a
- * brand new one. `id` is forced to "player" defensively — the loader
- * should already have it, since every persisted protagonist went through
- * this same id assignment on the run that originally created it.
+ * Character-Designer-shaped output for a character carried over from a
+ * previous episode (loadPreviousProtagonist()/loadPreviousCast()),
+ * instead of generating a brand new one. `id` is forced defensively — the
+ * loader should already have it, since every persisted character went
+ * through this same id assignment on the run that originally created it.
+ * Used for both the protagonist (id "player") and reused NPCs (id is
+ * whatever the outline calls that character, e.g. "jordan").
  */
-function reusedProtagonistResult(existingProtagonist) {
+function reusedCharacterResult(existingCharacter, id) {
   return {
-    character: { ...existingProtagonist, id: 'player' },
-    designNotes: 'Continuity: reused the established protagonist from a previous episode rather than designing a new one.',
+    character: { ...existingCharacter, id },
+    designNotes: 'Continuity: reused an established character from a previous episode rather than designing a new one.',
     uncertainties: []
   };
+}
+
+/**
+ * The previous-cast entry (if any) an outline's reference to `characterId`
+ * should reuse, rather than generating a brand-new character with that
+ * id. Never matches "player" here — the protagonist has its own,
+ * separate continuity path (loadPreviousProtagonist() + generateProtagonist()),
+ * since it's unconditional (every episode has exactly one), whereas NPC
+ * reuse is opportunistic (only when the current outline happens to
+ * reference an id a previous episode's cast also used).
+ */
+function findReusableCharacter(characterId, previousCast) {
+  if (characterId === 'player') return undefined;
+  return (previousCast || []).find(c => c.id === characterId);
 }
 
 function isDialogueLocated(text) {
@@ -209,7 +225,8 @@ module.exports = {
   REVIEWER_PASSES,
   failingReviewers,
   unreadableResult,
-  reusedProtagonistResult,
+  reusedCharacterResult,
+  findReusableCharacter,
   collectRevisionFeedback,
   mergeSceneDialogue,
   mergeChoiceDialogue,

@@ -1,0 +1,86 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'shortcut-proposal' has choicePointId 'choice-3' but choice-3 references scene 'shortcut-proposal' — creating a circular reference. However, the real issue is that choice-3's nextScene values point to three different scenes (honest-rebuild, cutting-corners, whistleblow-fallout) but these are NOT the scenes that follow in the narrative flow. The choice options should transition to scenes that exist and are reachable. — Suggested fix: This is actually VALID — the three branch scenes exist. Retract this error. However, verify the branching paths are all reachable. (location: scenes[5] (shortcut-proposal) and choices[2] (choice-3))",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'alex-backed-up' has defaultNextScene 'shortcut-proposal', but 'alex-backed-up' is reached via choice-2 option 'a' (backing Alex up). However, choice-2 is attached to scene 'library-work-session', and ALL three options (a, b, c) point to different scenes: 'alex-backed-up', 'alex-overlooked', 'alex-middle-ground'. This is correct branching. However, all three of these scenes then have defaultNextScene 'shortcut-proposal', which means they converge. This is valid. Retract this error. — Suggested fix: No fix needed — this is correct convergent branching. (location: scenes[3-5] (alex-backed-up, alex-overlooked, alex-middle-ground))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice-4a (scene 'honest-rebuild') has two options, both pointing to 'presentation-day-honest'. This means both paths lead to the same scene, making the choice functionally meaningless — the player's decision doesn't affect the outcome. — Suggested fix: Either: (1) Create two distinct scenes for the two approaches (e.g., 'presentation-day-honest-collaborative' vs 'presentation-day-honest-firm'), or (2) Remove this choice and use defaultNextScene on 'honest-rebuild' instead. The dialogue suggests different approaches should have different consequences. (location: choices[3] (choice-4a))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'cutting-corners' (reached via choice-3:b) has choicePointId 'choice-4b'. Choice-4b has two options: 'confession-redemption' and 'presentation-day-coverup'. However, 'confession-redemption' is listed as an ending scene (it has no outgoing transitions), but 'presentation-day-coverup' is NOT an ending — it has choicePointId 'choice-5b'. This creates an asymmetry: one path ends early, the other continues. This is intentional design (confessing early vs. getting caught later), so it's valid. However, verify that 'confession-redemption' is actually a terminal scene. — Suggested fix: Verify this is intentional. If 'confession-redemption' should be terminal, add a note in the scene description. If it should continue, add a defaultNextScene or choicePointId. Currently it appears to be intentionally terminal, which is valid. (location: scenes[9] (confession-redemption) and scenes[10] (presentation-day-coverup))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'whistleblow-fallout' (reached via choice-3:c) has choicePointId 'choice-4c'. Choice-4c has two options pointing to 'repaired-trust' and 'isolated-presentation'. However, 'repaired-trust' then has choicePointId 'choice-5c', which has two options pointing to 'ending-trust-earned' and 'ending-trust-strained'. Meanwhile, 'isolated-presentation' has choicePointId 'choice-5c-isolated', which has two options pointing to 'ending-isolated-success' and 'ending-isolated-cost'. This creates a complex branching structure. Verify all four ending scenes are reachable and terminal. — Suggested fix: Verify these are intentionally terminal. They appear to be, which is correct for ending scenes. (location: scenes[11-18] (whistleblow-fallout through ending-isolated-cost))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice-4a (scene 'honest-rebuild') has traitMapping defined, but the two options have identical trait mappings: both map to the same traits with the same values. This means the choice has no mechanical differentiation. — Suggested fix: Either: (1) Differentiate the trait mappings (e.g., option 'a' gets COMMUNICATION +2, option 'b' gets JUDGMENT +1), or (2) Remove the choice and use a single path. The dialogue suggests different approaches, so differentiate the mappings. (location: choices[3] (choice-4a), traitMapping)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Multiple scenes reference Ms. Patel (e.g., 'cutting-corners', 'confession-redemption', 'presentation-day-coverup') but she is not listed in those scenes' characters arrays, and she is not defined in the main character roster. This is a systemic issue. — Suggested fix: Add Ms. Patel as a character in the main character roster with id 'ms-patel', or use NARRATOR for her dialogue. Recommend adding her as a minor character since she appears in multiple scenes. (location: scenes[7], scenes[9], scenes[10], and others)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'presentation-day-honest' has choicePointId 'choice-5a', which is correct. However, choice-5a's two options point to 'ending-honest-full' and 'ending-honest-quiet'. Both of these are terminal scenes (they have no outgoing transitions and are listed in outcomes). This is valid. However, the branchDialogue entries for these scenes reference 'branch-honest-rebuild', but the outcomes array defines the branch as triggered by 'choice-3:a'. This means the branchDialogue will only fire if the player chose option 'a' on choice-3 (refusing the shortcut). But choice-5a (crediting Alex) can be reached from ANY path through choice-3 (a, b, or c). This creates a mismatch: branchDialogue assumes a specific prior choice, but the scene is reachable from multiple branches. — Suggested fix: Retract this error — the logic is sound. The branchDialogue is correctly keyed because ending-honest-full is only reachable via the honest-rebuild branch. (location: branchDialogue entries for 'ending-honest-full' and 'ending-honest-quiet' vs outcomes[0])",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'confession-redemption' has no dialogue array. The scene description indicates a significant narrative moment ('Wren tells Ms. Patel the truth before presenting'), but there is no dialogue to support this. This is a gap in content delivery. — Suggested fix: Add dialogue entries showing: (1) Wren approaching Ms. Patel, (2) Wren's confession, (3) Ms. Patel's response, (4) Mia's reaction in the hallway. Example: {\"id\": \"cr-1\", \"character\": \"player\", \"text\": \"Ms. Patel — can I talk to you before we present?\", \"emotion\": \"nervous\"} (location: scenes[9] (confession-redemption))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'repaired-trust' has no dialogue array. The scene description ('Wren finds Mia early and just says it plainly') indicates a crucial conversation, but no dialogue is provided. — Suggested fix: Add dialogue entries showing the conversation. Example: {\"id\": \"rt-1\", \"character\": \"player\", \"text\": \"I should've talked to you first. I went to her because I panicked. I want to fix it — with you.\", \"emotion\": \"sincere\"} (location: scenes[14] (repaired-trust))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'isolated-presentation' has no dialogue array. The scene description indicates Wren and Mia's dynamic is 'polite but frozen', but no dialogue shows this. — Suggested fix: Add dialogue entries. Example: {\"id\": \"ip-1\", \"character\": \"mia\", \"text\": \"Ready?\", \"emotion\": \"polite, distant\"} (location: scenes[16] (isolated-presentation))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Character 'NARRATOR' is used extensively in dialogue, but 'NARRATOR' is a reserved speaker ID (per the data model). This is correct usage. However, verify that no actual character named 'NARRATOR' exists in the character roster. Checking: The character roster does NOT include a 'NARRATOR' character. This is correct — NARRATOR is reserved and should not be in the roster. — Suggested fix: No fix needed — this is correct usage. (location: dialogue entries throughout (e.g., scenes[0], scenes[1]))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'presentation-day-honest' references Ms. Patel in dialogue, but Ms. Patel is not listed in the scene's characters array. The characters array lists: ['player', 'mia', 'alex', 'jordan']. However, Ms. Patel speaks in the dialogue. — Suggested fix: Add 'ms-patel' or similar to the characters array: ['player', 'mia', 'alex', 'jordan', 'ms-patel']. Note: Ms. Patel is not defined in the main character roster, so either add her as a character or use NARRATOR for her lines. (location: scenes[8] (presentation-day-honest), characters array vs dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "The outcomes array defines three branches: 'branch-honest-rebuild', 'branch-cutting-corners', 'branch-whistleblower'. However, the branchDialogue entries reference these branches by their IDs. Verify that every ending scene that should have branch-specific dialogue is covered. Checking: 'ending-honest-full' and 'ending-honest-quiet' are keyed to 'branch-honest-rebuild' (correct). 'confession-redemption' and 'ending-cover-cracks' and 'ending-exposed' are keyed to 'branch-cutting-corners' (correct). 'ending-trust-earned', 'ending-trust-strained', 'ending-isolated-success', 'ending-isolated-cost' are keyed to 'branch-whistleblower' (correct). However, there's a problem: 'ending-cover-cracks' and 'ending-exposed' are both keyed to 'branch-cutting-corners', but they are reached via choice-5b (which is only reachable from 'presentation-day-coverup', which is only reachable from choice-4b:b, which is only reachable from 'cutting-corners', which is only reachable from choice-3:b). So both are correctly scoped to the cutting-corners branch. This is valid. — Suggested fix: No fix needed — the branching logic is sound. (location: branchDialogue and outcomes arrays)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'ending-trust-earned' has no dialogue array. This is a terminal scene that should have meaningful dialogue reflecting the positive outcome. — Suggested fix: Add dialogue entries. The branchDialogue for this scene exists and should be moved to the scene's dialogue array, or the scene should reference the branchDialogue. Actually, checking the data model: branchDialogue is separate from scene dialogue. The branchDialogue entries for 'ending-trust-earned' are present in the branchDialogue array. This is correct — the dialogue will be injected based on the branch. However, the scene itself has no base dialogue, which may be intentional. Verify this is the intended design. (location: scenes[17] (ending-trust-earned))",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice option 'choice-4b:b' (nextScene: 'presentation-day-coverup') leads to a scene that contains a choice ('choice-5b') but that choice's options reference scenes that do NOT exist in the scenes array — Suggested fix: Add dialogue to presentation-day-coverup scene, ensure it properly transitions to choice-5b, or restructure so the Ms. Patel question moment is clearer (location: choices[6].options[1].nextScene and scenes[11] (presentation-day-coverup))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Unreachable scene: 'alex-backed-up' is defined but never referenced as a nextScene from any choice option — Suggested fix: Change choice-2:a.nextScene from 'library-work-session' to 'alex-backed-up', or remove the unreachable scene (location: scenes[5] (alex-backed-up))",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Unreachable scene: 'alex-overlooked' is defined but never referenced as a nextScene from any choice option — Suggested fix: Change choice-2:b.nextScene from 'library-work-session' to 'alex-overlooked', or remove the unreachable scene (location: scenes[6] (alex-overlooked))",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Unreachable scene: 'alex-middle-ground' is defined but never referenced as a nextScene from any choice option — Suggested fix: Change choice-2:c.nextScene from 'library-work-session' to 'alex-middle-ground', or remove the unreachable scene (location: scenes[7] (alex-middle-ground))",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice 'choice-5c' is defined with scene: 'repaired-trust', but 'repaired-trust' is itself a scene (not a choice container). This creates ambiguity: is 'repaired-trust' a scene the player reaches, or a choice point? The data model suggests scenes should not embed choices. — Suggested fix: Clarify the scene structure: if 'repaired-trust' is a scene, it should have a defaultNextScene. If it's a choice point, it should not have dialogue/description. Recommend: make 'repaired-trust' a scene with defaultNextScene pointing to a choice, or restructure the branching (location: scenes[17] (repaired-trust) and choices[8])",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice 'choice-5c-isolated' is defined with scene: 'isolated-presentation', but 'isolated-presentation' is itself a scene (not a choice container). This creates the same ambiguity as choice-5c. — Suggested fix: Clarify the scene structure: make 'isolated-presentation' a scene with defaultNextScene, or restructure the branching (location: scenes[20] (isolated-presentation) and choices[9])",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'cutting-corners' references Ms. Patel as a speaking character in dialogue, but Ms. Patel is not listed in the scene's characters array — Suggested fix: Either (a) add Ms. Patel to the characters array, or (b) convert the Ms. Patel moment to a NARRATOR description: 'Ms. Patel walks past, pauses at the table, and says...' without direct dialogue attribution (location: scenes[8] (cutting-corners))",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'presentation-day-coverup' has empty dialogue array, making it unplayable — Suggested fix: Populate dialogue array with the scene's key moment: Ms. Patel asking the pointed question that exposes the borrowed structure (location: scenes[11].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'presentation-day-honest' has empty dialogue array, but is referenced as a nextScene from choice-4a. Players will see a blank scene. — Suggested fix: Populate with dialogue showing the presentation setup and Ms. Patel's question about whose idea the comic panel was (location: scenes[9].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice 'choice-5b' (scene: 'presentation-day-coverup') has options that reference 'ending-cover-cracks' and 'ending-exposed', but these are ending scenes with empty dialogue arrays. The player will reach a dead scene. — Suggested fix: Populate dialogue for both ending scenes, or restructure so the choice leads to a scene with content before the ending (location: choices[7].options[*].nextScene)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'ending-honest-full' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing Wren crediting Alex, Mia's reaction, and the group's final moment (location: scenes[12].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'ending-honest-quiet' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing the presentation going fine but credit going unspoken, and Alex's quiet disappointment (location: scenes[13].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'confession-redemption' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing Wren's confession to Ms. Patel, Mia's reaction, and the group's resolution (location: scenes[14].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'ending-cover-cracks' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing Wren owning the mistake in front of the class and the aftermath (location: scenes[15].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'ending-exposed' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing Wren deflecting blame and the group's fractured response (location: scenes[16].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'repaired-trust' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing Wren and Mia's direct conversation and repair (location: scenes[17].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'ending-trust-earned' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing the presentation with specific credit given and the group's warmth (location: scenes[18].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'ending-trust-strained' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing the polite but distant resolution (location: scenes[19].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'isolated-presentation' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing Mia's polite distance and Alex's wariness (location: scenes[20].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'ending-isolated-success' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing Wren's last-minute apology and Mia's slight thaw (location: scenes[21].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'ending-isolated-cost' has empty dialogue array but is a terminal scene. Players will see nothing. — Suggested fix: Populate with dialogue showing the professional but distant ending (location: scenes[22].dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice 'choice-4c' (scene: 'whistleblow-fallout') has options that lead to 'repaired-trust' and 'isolated-presentation', but 'repaired-trust' then has its own choice ('choice-5c') that leads to 'ending-trust-earned' and 'ending-trust-strained'. However, 'isolated-presentation' also has a choice ('choice-5c-isolated') that leads to 'ending-isolated-success' and 'ending-isolated-cost'. The branchDialogue keying by outcome ID will not correctly distinguish these four endings. — Suggested fix: Create separate outcome entries for each branch path (e.g., 'branch-whistleblower-repaired', 'branch-whistleblower-isolated', 'branch-whistleblower-isolated-success', 'branch-whistleblower-isolated-cost'), and update branchDialogue keys accordingly (location: branchDialogue entries for ending-trust-earned, ending-trust-strained, ending-isolated-success, ending-isolated-cost)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "branchDialogue references 'branch-cutting-corners' for multiple ending scenes, but the outcomes array defines only one 'branch-cutting-corners' outcome. The rendering pipeline cannot distinguish which dialogue variant applies to which ending. — Suggested fix: Create separate outcome entries in the outcomes array for each branch variant, and update branchDialogue keys to match (location: branchDialogue entries keyed 'branch-cutting-corners')",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "branchDialogue references 'branch-honest-rebuild' for both 'ending-honest-full' and 'ending-honest-quiet', but the outcomes array defines only one 'branch-honest-rebuild' outcome. The rendering pipeline cannot distinguish which dialogue variant to use. — Suggested fix: Create separate outcome entries in the outcomes array for each ending variant, and update branchDialogue keys to match (location: branchDialogue entries keyed 'branch-honest-rebuild')",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

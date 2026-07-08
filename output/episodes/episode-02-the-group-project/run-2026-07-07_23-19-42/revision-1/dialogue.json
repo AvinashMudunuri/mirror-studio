@@ -1,0 +1,1165 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "classroom-assignment",
+      "lines": [
+        {
+          "id": "ca-1",
+          "character": "NARRATOR",
+          "text": "Ms. Patel taps a marker against the whiteboard, where a new unit title sits in block letters: ECOSYSTEMS UNDER PRESSURE."
+        },
+        {
+          "id": "ca-2",
+          "character": "NARRATOR",
+          "text": "\"Invasive species case study. Research plus a creative presentation component. Groups are posted — go find your people.\""
+        },
+        {
+          "id": "ca-3",
+          "character": "player",
+          "text": "(INTERNAL) Please not the fortress table. Please not the fortress table.",
+          "emotion": "nervous"
+        },
+        {
+          "id": "ca-4",
+          "character": "player",
+          "text": "(scanning the board) Okay. Delgado, Nakamura, Oduya, Castillo.",
+          "emotion": "flat"
+        },
+        {
+          "id": "ca-5",
+          "character": "jordan",
+          "text": "(reading over her shoulder) Oh, hey, welcome to the chaos.",
+          "action": "half-wave"
+        },
+        {
+          "id": "ca-6",
+          "character": "mia",
+          "text": "(already turning around in her seat) Okay wait — group four? We're group four?",
+          "emotion": "bright"
+        },
+        {
+          "id": "ca-7",
+          "character": "alex",
+          "text": "(not looking up from his notebook) Two weeks. Great.",
+          "emotion": "dry"
+        },
+        {
+          "id": "ca-8",
+          "character": "player",
+          "text": "(INTERNAL) Cool, cool. New school, new me, same group project dread.",
+          "emotion": "resigned"
+        }
+      ]
+    },
+    {
+      "sceneId": "group-meeting-1",
+      "lines": [
+        {
+          "id": "gm-1",
+          "character": "mia",
+          "text": "Okay so — I already looked at the rubric, and honestly? I think I should present, because I did the debate unit last year and I'm just, like, good at it.",
+          "action": "already pulling out a notebook"
+        },
+        {
+          "id": "gm-2",
+          "character": "mia",
+          "text": "Jordan, you're vibes — you keep it fun, keep people from zoning out. Alex, you can draw something for the visuals.",
+          "action": "touches Alex's arm briefly"
+        },
+        {
+          "id": "gm-3",
+          "character": "alex",
+          "text": "(quiet) ...sure.",
+          "emotion": "closed off"
+        },
+        {
+          "id": "gm-4",
+          "character": "mia",
+          "text": "And Wren — you're new, so, notes? Just keep track of stuff for now.",
+          "emotion": "already moving on"
+        },
+        {
+          "id": "gm-5",
+          "character": "jordan",
+          "text": "(leaning toward Wren, low) That's Mia. She's not wrong, usually. Just fast.",
+          "emotion": "wry"
+        },
+        {
+          "id": "gm-6",
+          "character": "player",
+          "text": "(INTERNAL) Eleven seconds. She built the whole org chart in eleven seconds and nobody voted.",
+          "emotion": "dry"
+        }
+      ]
+    },
+    {
+      "sceneId": "library-work-session",
+      "lines": [
+        {
+          "id": "lw-1",
+          "character": "alex",
+          "text": "(sliding his sketchbook forward, fast, before he can stop himself) Okay — what if instead of a poster, we do it as, like, a comic. No words. Just panels. The species shows up, panel by panel, it spreads, and then — bam, last panel, here's the damage. You'd get it without reading a single caption.",
+          "emotion": "animated"
+        },
+        {
+          "id": "lw-2",
+          "character": "jordan",
+          "text": "Wait, that's actually kind of sick.",
+          "emotion": "impressed"
+        },
+        {
+          "id": "lw-3",
+          "character": "mia",
+          "text": "(laughs, not unkindly, already shaking her head) That's cute, but — this is a grade, not art class.",
+          "emotion": "dismissive"
+        },
+        {
+          "id": "lw-4",
+          "character": "alex",
+          "text": "(pulling the sketchbook back, voice going flat) Yeah. No, it's fine. It was dumb anyway.",
+          "emotion": "shut down",
+          "action": "closes the notebook halfway"
+        },
+        {
+          "id": "lw-5",
+          "character": "player",
+          "text": "(INTERNAL) That door was open for like four seconds. Way to slam it, Mia.",
+          "emotion": "tight"
+        }
+      ]
+    },
+    {
+      "sceneId": "alex-backed-up",
+      "lines": [
+        {
+          "id": "ab-1",
+          "character": "mia",
+          "text": "(arms crossed) Fine. FINE. One panel. But I'm still writing the actual script.",
+          "emotion": "grudging"
+        },
+        {
+          "id": "ab-2",
+          "character": "alex",
+          "text": "(glancing at Wren, quick, unreadable, then back to the page) ...okay.",
+          "emotion": "guarded but lighter"
+        },
+        {
+          "id": "ab-3",
+          "character": "jordan",
+          "text": "(under his breath, grinning) Democracy lives.",
+          "emotion": "amused"
+        },
+        {
+          "id": "ab-4",
+          "character": "alex",
+          "text": "(already sketching again, not looking up) It's not gonna be that good, probably.",
+          "emotion": "deflecting",
+          "action": "said while clearly already three panels in"
+        }
+      ]
+    },
+    {
+      "sceneId": "alex-overlooked",
+      "lines": [
+        {
+          "id": "ao-1",
+          "character": "mia",
+          "text": "Okay, moving on — poster board, three sections, I'll do the intro.",
+          "action": "already writing"
+        },
+        {
+          "id": "ao-2",
+          "character": "alex",
+          "text": "(sliding his notebook half-shut) Whatever's easiest.",
+          "emotion": "flat, means the opposite"
+        },
+        {
+          "id": "ao-3",
+          "character": "jordan",
+          "text": "(glancing at Alex, then at Wren, saying nothing)",
+          "emotion": "uncertain"
+        },
+        {
+          "id": "ao-4",
+          "character": "player",
+          "text": "(INTERNAL) There it is. That's the sound of somebody deciding not to bother.",
+          "emotion": "quiet guilt"
+        }
+      ]
+    },
+    {
+      "sceneId": "alex-middle-ground",
+      "lines": [
+        {
+          "id": "am-1",
+          "character": "player",
+          "text": "What if we use the panel thing as, like, the opener — the hook — and then poster board for the rest of it? Best of both.",
+          "emotion": "even"
+        },
+        {
+          "id": "am-2",
+          "character": "mia",
+          "text": "(considering, then shrugging) ...Fine. Whatever gets it done.",
+          "emotion": "conceding"
+        },
+        {
+          "id": "am-3",
+          "character": "alex",
+          "text": "(small, real smile, gone almost as fast as it appears) Yeah. That could work.",
+          "emotion": "quietly pleased"
+        },
+        {
+          "id": "am-4",
+          "character": "jordan",
+          "text": "See, this is why you get notes duty. Diplomat.",
+          "emotion": "teasing"
+        }
+      ]
+    },
+    {
+      "sceneId": "shortcut-proposal",
+      "lines": [
+        {
+          "id": "sp-1",
+          "character": "NARRATOR",
+          "text": "It's 8:47 p.m. There are three energy drink cans on Mia's kitchen table and nobody has eaten actual dinner."
+        },
+        {
+          "id": "sp-2",
+          "character": "mia",
+          "text": "(spinning her laptop around) Okay. So. My sister did this exact project last year — different teacher, same rubric basically. We swap the species names, tweak some wording, we're done by nine.",
+          "emotion": "practical, a little too fast"
+        },
+        {
+          "id": "sp-3",
+          "character": "jordan",
+          "text": "(chewing his pen cap) Huh.",
+          "emotion": "carefully neutral"
+        },
+        {
+          "id": "sp-4",
+          "character": "mia",
+          "text": "Also — I'll just tell Ms. Patel the panel thing was my idea. Sounds better coming from whoever's presenting, right?",
+          "action": "says it like an afterthought, already typing",
+          "emotion": "casual"
+        },
+        {
+          "id": "sp-5",
+          "character": "alex",
+          "text": "(goes very still, doesn't say anything, taps his pen once against his knee)",
+          "emotion": "hurt, hiding it"
+        },
+        {
+          "id": "sp-6",
+          "character": "player",
+          "text": "(INTERNAL) That's not tired-brain talking. That's a plan.",
+          "emotion": "alert"
+        }
+      ]
+    },
+    {
+      "sceneId": "honest-rebuild",
+      "lines": [
+        {
+          "id": "hr-1",
+          "character": "mia",
+          "text": "(sharp, defensive) Must be nice. Being able to just — redo everything. Some of us don't have unlimited time to be perfect, Wren.",
+          "emotion": "sharp, brittle"
+        },
+        {
+          "id": "hr-2",
+          "character": "player",
+          "text": "I'm not saying you're not trying. I'm saying I don't want to present something that isn't ours.",
+          "emotion": "steady"
+        },
+        {
+          "id": "hr-3",
+          "character": "mia",
+          "text": "(quiet, almost slipping) ...what if ours isn't good enough.",
+          "emotion": "vulnerable, then catches herself"
+        },
+        {
+          "id": "mia-cover",
+          "character": "mia",
+          "text": "(louder, fixing her face) Whatever. Do what you want. I'm just saying I told you so if we're up all night.",
+          "emotion": "defensive"
+        }
+      ]
+    },
+    {
+      "sceneId": "cutting-corners",
+      "lines": [
+        {
+          "id": "cc-1",
+          "character": "NARRATOR",
+          "text": "The 'borrowed' project sits open on Mia's laptop, renamed, rehearsed. Ms. Patel walks the row during run-through, pauses at their table."
+        },
+        {
+          "id": "cc-2",
+          "character": "NARRATOR",
+          "text": "\"This structure looks really familiar, actually...\" She moves on to the next table without waiting for an answer."
+        },
+        {
+          "id": "cc-3",
+          "character": "mia",
+          "text": "(under her breath, kicking Wren's foot under the table) Okay. Okay, what do we do. What do we DO.",
+          "emotion": "panicked"
+        },
+        {
+          "id": "cc-4",
+          "character": "jordan",
+          "text": "(very quietly) Nobody move. Nobody breathe.",
+          "emotion": "tense joke"
+        },
+        {
+          "id": "cc-5",
+          "character": "alex",
+          "text": "(not looking up from his sketchbook, flat) This is like an eight out of ten bad.",
+          "emotion": "dry, scared underneath"
+        }
+      ]
+    },
+    {
+      "sceneId": "whistleblow-fallout",
+      "lines": [
+        {
+          "id": "wf-1",
+          "character": "mia",
+          "text": "(catching Wren in the hallway) You told her? You went to Ms. Patel — before you said ANYTHING to me?",
+          "emotion": "blindsided, furious"
+        },
+        {
+          "id": "jordan-1",
+          "character": "jordan",
+          "text": "(hovering, hands up) I just — she asked me if something was off, I didn't say much, I swear—",
+          "emotion": "wishing he weren't here"
+        },
+        {
+          "id": "wf-2",
+          "character": "mia",
+          "text": "(cutting him off, not looking away from Wren) You went AROUND me instead of just talking to me.",
+          "emotion": "hurt under the anger"
+        },
+        {
+          "id": "wf-3",
+          "character": "player",
+          "text": "(INTERNAL) She's not wrong. That's the worst part.",
+          "emotion": "guilty"
+        }
+      ]
+    },
+    {
+      "sceneId": "presentation-day-honest",
+      "lines": [
+        {
+          "id": "pdh-1",
+          "character": "NARRATOR",
+          "text": "The rebuilt project is rough at the edges but real — theirs. As they set up, Ms. Patel glances over the panel opener."
+        },
+        {
+          "id": "pdh-2",
+          "character": "NARRATOR",
+          "text": "\"This opening image is great, actually. Whose idea?\""
+        },
+        {
+          "id": "pdh-3",
+          "character": "mia",
+          "text": "(glancing sideways, almost daring Wren to answer differently) ...",
+          "emotion": "watchful"
+        },
+        {
+          "id": "pdh-4",
+          "character": "alex",
+          "text": "(very still, staring at his shoes, not saying it himself)",
+          "emotion": "bracing"
+        }
+      ]
+    },
+    {
+      "sceneId": "presentation-day-coverup",
+      "lines": [
+        {
+          "id": "pdc-1",
+          "character": "NARRATOR",
+          "text": "Halfway through, Ms. Patel raises a hand, mid-sentence. \"Can you walk me through where this specific data point came from? It doesn't match this year's assigned species at all.\""
+        },
+        {
+          "id": "pdc-2",
+          "character": "NARRATOR",
+          "text": "The room goes very quiet. Every group member is suddenly aware of every other group member — and of Wren, specifically, holding the note cards."
+        },
+        {
+          "id": "pdc-3",
+          "character": "mia",
+          "text": "(barely breathing) ...",
+          "emotion": "frozen"
+        },
+        {
+          "id": "pdc-4",
+          "character": "jordan",
+          "text": "(whispering) Say something, say something—",
+          "emotion": "panicked"
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Maybe we should actually pick roles based on what people are into, not just... assign them?\""
+        },
+        {
+          "id": "b",
+          "text": "(nod along) \"Sure, notes works.\""
+        },
+        {
+          "id": "c",
+          "text": "(lean over to Alex later) \"Hey — want to team up on visuals? For real, I mean.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r1a-1",
+            "character": "mia",
+            "text": "(blinking, half-amused) Oh — okay, sure, what, you want to run a whole vote?",
+            "emotion": "surprised, testing"
+          },
+          {
+            "id": "r1a-2",
+            "character": "jordan",
+            "text": "(grinning) New girl's got opinions. I dig it.",
+            "emotion": "delighted"
+          },
+          {
+            "id": "r1a-3",
+            "character": "alex",
+            "text": "(glancing up, brief, then back down) ...noted.",
+            "emotion": "quietly interested"
+          }
+        ],
+        "b": [
+          {
+            "id": "r1b-1",
+            "character": "mia",
+            "text": "Great! Okay, moving on.",
+            "emotion": "already elsewhere"
+          },
+          {
+            "id": "r1b-2",
+            "character": "player",
+            "text": "(INTERNAL) Pick your battles, Wren. Week two isn't the week.",
+            "emotion": "resigned"
+          }
+        ],
+        "c": [
+          {
+            "id": "r1c-1",
+            "character": "alex",
+            "text": "(caught off guard) Oh — uh. Yeah. I mean, if you want.",
+            "emotion": "surprised, guarded hope"
+          },
+          {
+            "id": "r1c-2",
+            "character": "player",
+            "text": "I want.",
+            "emotion": "simple, warm"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Wait, hang on — I actually think that could work really well.\""
+        },
+        {
+          "id": "b",
+          "text": "(say nothing, look down at your notes)"
+        },
+        {
+          "id": "c",
+          "text": "\"What if we do one panel as a hook, and poster board for the rest?\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r2a-1",
+            "character": "mia",
+            "text": "(pausing, going very still for half a second) ...I mean, I guess, if he wants to spend all night on it.",
+            "emotion": "recalculating"
+          },
+          {
+            "id": "r2a-2",
+            "character": "alex",
+            "text": "(looking up, actually looking at Wren) You — really think so?",
+            "emotion": "cautiously hopeful"
+          }
+        ],
+        "b": [
+          {
+            "id": "r2b-1",
+            "character": "alex",
+            "text": "(closing the notebook the rest of the way, quiet) It's fine.",
+            "emotion": "shut down"
+          },
+          {
+            "id": "r2b-2",
+            "character": "player",
+            "text": "(INTERNAL) I didn't say anything. That's the whole problem.",
+            "emotion": "regretful"
+          }
+        ],
+        "c": [
+          {
+            "id": "r2c-1",
+            "character": "mia",
+            "text": "(considering) ...Okay, actually, that's not the worst idea.",
+            "emotion": "grudging respect"
+          },
+          {
+            "id": "r2c-2",
+            "character": "alex",
+            "text": "(small, real smile) Yeah. Okay. That could work.",
+            "emotion": "quietly pleased"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"We can't turn in your sister's project. Let's just... actually do it. Tonight.\""
+        },
+        {
+          "id": "b",
+          "text": "\"...Fine. Whatever gets us home before midnight.\""
+        },
+        {
+          "id": "c",
+          "text": "(say nothing now — but flag it to Ms. Patel quietly, before class)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r3a-1",
+            "character": "mia",
+            "text": "(sharp) Are you serious right now?",
+            "emotion": "defensive"
+          },
+          {
+            "id": "r3a-2",
+            "character": "jordan",
+            "text": "(quietly, to no one in particular) Oh boy.",
+            "emotion": "bracing"
+          }
+        ],
+        "b": [
+          {
+            "id": "r3b-1",
+            "character": "mia",
+            "text": "(relieved, already typing) See, THIS is why you get notes duty.",
+            "emotion": "satisfied"
+          },
+          {
+            "id": "r3b-2",
+            "character": "player",
+            "text": "(INTERNAL) It's just tonight. It's just this once.",
+            "emotion": "uneasy"
+          }
+        ],
+        "c": [
+          {
+            "id": "r3c-1",
+            "character": "player",
+            "text": "(INTERNAL) I'm not going to fight her on this at eight-fifty at night. But I'm not just letting it happen, either.",
+            "emotion": "resolved, quiet"
+          },
+          {
+            "id": "r3c-2",
+            "character": "mia",
+            "text": "Great — okay, I'll finish the swap tonight, we're basically done.",
+            "emotion": "unaware"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4a",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"It'll actually be better this way. And I'll help you with your part too — we do it together.\""
+        },
+        {
+          "id": "b",
+          "text": "\"It's your call. But I'm not putting my name on the other version.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r4a1-1",
+            "character": "mia",
+            "text": "(long pause, arms still crossed) ...Together, together? Not you doing it and me watching?",
+            "emotion": "wary, wanting to believe it"
+          },
+          {
+            "id": "r4a1-2",
+            "character": "player",
+            "text": "Together, together.",
+            "emotion": "sincere"
+          },
+          {
+            "id": "r4a1-3",
+            "character": "mia",
+            "text": "(quieter) ...fine. But if this is bad I'm blaming you specifically.",
+            "emotion": "softening, still guarded"
+          }
+        ],
+        "b": [
+          {
+            "id": "r4a2-1",
+            "character": "mia",
+            "text": "(stung) Wow. Okay.",
+            "emotion": "hurt, defensive"
+          },
+          {
+            "id": "r4a2-2",
+            "character": "jordan",
+            "text": "(mediating) Okay, okay — nobody's blaming anybody, let's just... start typing something.",
+            "emotion": "trying to smooth it"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5a",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"That was Alex. Whole idea, start to finish.\""
+        },
+        {
+          "id": "b",
+          "text": "\"It was kind of a group thing.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r5a1-1",
+            "character": "alex",
+            "text": "(head snapping up, startled) ...",
+            "emotion": "shocked"
+          },
+          {
+            "id": "r5a1-2",
+            "character": "NARRATOR",
+            "text": "Ms. Patel nods. \"Nice instinct. Good visual storytelling.\" Alex looks like he doesn't know where to put his face."
+          },
+          {
+            "id": "r5a1-3",
+            "character": "mia",
+            "text": "(after a beat, muttering) ...it was a good idea. Don't tell him I said that.",
+            "emotion": "grudging"
+          }
+        ],
+        "b": [
+          {
+            "id": "r5a2-1",
+            "character": "alex",
+            "text": "(looks down at his notebook, quiet, unreadable)",
+            "emotion": "swallowed disappointment"
+          },
+          {
+            "id": "r5a2-2",
+            "character": "player",
+            "text": "(INTERNAL) Easy answer. Not the true one.",
+            "emotion": "regretful"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4b",
+      "options": [
+        {
+          "id": "a",
+          "text": "(after class) \"Ms. Patel — can I talk to you for a second? Before we present.\""
+        },
+        {
+          "id": "b",
+          "text": "(say nothing — present as planned and hope for the best)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r4b1-1",
+            "character": "NARRATOR",
+            "text": "Ms. Patel's face doesn't change much. \"I appreciate you telling me. This means a late penalty — but you can redo it tonight and present tomorrow.\""
+          },
+          {
+            "id": "r4b1-2",
+            "character": "player",
+            "text": "(INTERNAL) Okay. That's fair. That's more than fair, honestly.",
+            "emotion": "relieved, scared"
+          }
+        ],
+        "b": [
+          {
+            "id": "r4b2-1",
+            "character": "player",
+            "text": "(INTERNAL) Maybe it just... blows over. Maybe she didn't really mean anything by it.",
+            "emotion": "hoping against evidence"
+          },
+          {
+            "id": "r4b2-2",
+            "character": "mia",
+            "text": "(whispering) Please let it blow over. Please let it blow over.",
+            "emotion": "anxious"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5b",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"...It's not from this year's data. We used an old project as a base. That's on me too.\""
+        },
+        {
+          "id": "b",
+          "text": "\"It was mostly Mia's research, I just, um, presented it.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r5b1-1",
+            "character": "mia",
+            "text": "(stunned, then something loosening in her shoulders) ...",
+            "emotion": "shocked, almost grateful"
+          },
+          {
+            "id": "r5b1-2",
+            "character": "NARRATOR",
+            "text": "Ms. Patel exhales slowly. \"We'll talk after school. Finish your presentation, please.\" The room stays quiet, but it's a different kind of quiet."
+          }
+        ],
+        "b": [
+          {
+            "id": "r5b2-1",
+            "character": "mia",
+            "text": "(voice cracking) ...excuse me?",
+            "emotion": "betrayed"
+          },
+          {
+            "id": "r5b2-2",
+            "character": "alex",
+            "text": "(doesn't say anything at all, which is somehow worse)",
+            "emotion": "cold"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4c",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"I should've talked to you first. I went to her because I panicked. I want to fix it — with you.\""
+        },
+        {
+          "id": "b",
+          "text": "(let Jordan handle it — just give Mia some space)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r4c1-1",
+            "character": "mia",
+            "text": "(arms still crossed, but listening) ...You should've. But — okay. Fine. What's the fix.",
+            "emotion": "still hurt, willing"
+          },
+          {
+            "id": "r4c1-2",
+            "character": "jordan",
+            "text": "(relieved) See, this is much better than me standing here sweating.",
+            "emotion": "lighter"
+          }
+        ],
+        "b": [
+          {
+            "id": "r4c2-1",
+            "character": "jordan",
+            "text": "(sighing) Okay. I'll talk to her. Again.",
+            "emotion": "tired, resigned"
+          },
+          {
+            "id": "r4c2-2",
+            "character": "player",
+            "text": "(INTERNAL) I know I should be the one saying it. I just don't know how yet.",
+            "emotion": "avoidant"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5c",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Alex came up with the visual concept, Mia built the research structure, Jordan kept us all on schedule.\""
+        },
+        {
+          "id": "b",
+          "text": "\"We all worked on it together.\" (keep it simple)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r5c1-1",
+            "character": "mia",
+            "text": "(genuinely startled) ...oh. Um. Thanks.",
+            "emotion": "surprised, unpracticed at being thanked sincerely"
+          },
+          {
+            "id": "r5c1-2",
+            "character": "alex",
+            "text": "(quiet, pleased) That's... yeah. Thanks.",
+            "emotion": "warm, understated"
+          }
+        ],
+        "b": [
+          {
+            "id": "r5c2-1",
+            "character": "mia",
+            "text": "(nodding, a little stiff) Sure. Yeah. Works.",
+            "emotion": "neutral"
+          },
+          {
+            "id": "r5c2-2",
+            "character": "player",
+            "text": "(INTERNAL) Safe. Fine. Not nothing.",
+            "emotion": "ambivalent"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5c-isolated",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Hey — I really am sorry. Not because we got caught. Because you deserved better from me.\""
+        },
+        {
+          "id": "b",
+          "text": "(let it go) \"Let's just get through this.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r5ci1-1",
+            "character": "mia",
+            "text": "(quiet for a second, shoulders dropping slightly) ...okay. Yeah. Let's just go do this.",
+            "emotion": "not fully thawed, but loosening"
+          }
+        ],
+        "b": [
+          {
+            "id": "r5ci2-1",
+            "character": "mia",
+            "text": "(polite, distant) Sure. Let's go.",
+            "emotion": "guarded"
+          },
+          {
+            "id": "r5ci2-2",
+            "character": "player",
+            "text": "(INTERNAL) Professional. Clean. Cold.",
+            "emotion": "resigned"
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "ending-honest-full",
+      "branchId": "branch-honest-rebuild",
+      "lines": [
+        {
+          "id": "bd-hf-1",
+          "character": "player",
+          "text": "That opener? All Alex. He came up with it the first day and it almost didn't make it in.",
+          "emotion": "deliberate"
+        },
+        {
+          "id": "bd-hf-2",
+          "character": "alex",
+          "text": "(startled, then quietly pleased) You didn't have to say that.",
+          "emotion": "unguarded, surprised"
+        },
+        {
+          "id": "bd-hf-3",
+          "character": "mia",
+          "text": "(grudging, but real) ...it's better this way. The redone version. I hate that it's true, but it is.",
+          "emotion": "conceding"
+        },
+        {
+          "id": "bd-hf-4",
+          "character": "jordan",
+          "text": "Group chat's not gonna be a crime scene tonight. Miracles happen.",
+          "emotion": "relieved"
+        }
+      ]
+    },
+    {
+      "sceneId": "ending-honest-quiet",
+      "branchId": "branch-honest-rebuild",
+      "lines": [
+        {
+          "id": "bd-hq-1",
+          "character": "NARRATOR",
+          "text": "Ms. Patel nods at the presentation and moves on to the next group without asking whose idea the opener was."
+        },
+        {
+          "id": "bd-hq-2",
+          "character": "alex",
+          "text": "(packing up a little faster than usual, not looking at anyone) Good job, guys.",
+          "emotion": "flat, a door quietly closing"
+        },
+        {
+          "id": "bd-hq-3",
+          "character": "player",
+          "text": "(INTERNAL) We did it right. We just didn't do it all the way. There's a difference and I know it.",
+          "emotion": "unsettled"
+        }
+      ]
+    },
+    {
+      "sceneId": "confession-redemption",
+      "branchId": "branch-cutting-corners",
+      "lines": [
+        {
+          "id": "bd-cr-1",
+          "character": "NARRATOR",
+          "text": "Ms. Patel listens, jaw tight. \"Late penalty. You can present tomorrow instead. Thank you for telling me before you walked in there.\""
+        },
+        {
+          "id": "bd-cr-2",
+          "character": "mia",
+          "text": "(in the hallway, furious) You couldn't have told ME first? Before her?",
+          "emotion": "hurt, defensive"
+        },
+        {
+          "id": "bd-cr-3",
+          "character": "mia",
+          "text": "(later, quieter, not looking at Wren) ...at least you didn't let me walk in there and get caught. That would've been worse.",
+          "emotion": "grudging gratitude"
+        },
+        {
+          "id": "bd-cr-4",
+          "character": "alex",
+          "text": "(at lunch, sitting a little closer than usual, saying nothing about it)",
+          "emotion": "quiet trust"
+        }
+      ]
+    },
+    {
+      "sceneId": "ending-cover-cracks",
+      "branchId": "branch-cutting-corners",
+      "lines": [
+        {
+          "id": "bd-cc-1",
+          "character": "player",
+          "text": "(in front of the whole class) It's not this year's data. We used an old project as the base. I should've said something before now.",
+          "emotion": "shaky but clear"
+        },
+        {
+          "id": "bd-cc-2",
+          "character": "NARRATOR",
+          "text": "Ninety seconds of silence feel like ninety hours. Ms. Patel assigns a grade hit and a talk after school — but doesn't make an example of them in front of the room."
+        },
+        {
+          "id": "bd-cc-3",
+          "character": "mia",
+          "text": "(afterward, not throwing her under the bus, surprising everyone including herself) ...I could've said it too. I didn't.",
+          "emotion": "subdued"
+        },
+        {
+          "id": "bd-cc-4",
+          "character": "alex",
+          "text": "(catches Wren's eye, something like respect, says nothing)",
+          "emotion": "quiet respect"
+        }
+      ]
+    },
+    {
+      "sceneId": "ending-exposed",
+      "branchId": "branch-cutting-corners",
+      "lines": [
+        {
+          "id": "bd-ex-1",
+          "character": "player",
+          "text": "It was mostly Mia's research, I just — presented some of it.",
+          "emotion": "deflecting, immediately regretting it"
+        },
+        {
+          "id": "bd-ex-2",
+          "character": "mia",
+          "text": "(face doing something complicated — hurt trying to become anger) Wow. Okay. Cool. Good talk.",
+          "emotion": "betrayed"
+        },
+        {
+          "id": "bd-ex-3",
+          "character": "alex",
+          "text": "(says nothing for the rest of the day, which is somehow louder than yelling)",
+          "emotion": "cold"
+        },
+        {
+          "id": "bd-ex-4",
+          "character": "player",
+          "text": "(INTERNAL) We got the redo. We didn't get anything else back.",
+          "emotion": "lonely"
+        }
+      ]
+    },
+    {
+      "sceneId": "ending-trust-earned",
+      "branchId": "branch-whistleblower",
+      "lines": [
+        {
+          "id": "bd-te-1",
+          "character": "player",
+          "text": "Alex's visual concept, Mia's research structure, Jordan wrangling the timeline so none of us imploded.",
+          "emotion": "clear, deliberate"
+        },
+        {
+          "id": "bd-te-2",
+          "character": "mia",
+          "text": "(genuinely thrown, in a good way) ...you didn't have to say all that.",
+          "emotion": "surprised, quietly moved"
+        },
+        {
+          "id": "bd-te-3",
+          "character": "jordan",
+          "text": "First group chat tonight that isn't damage control. Historic.",
+          "emotion": "warm, joking"
+        }
+      ]
+    },
+    {
+      "sceneId": "ending-trust-strained",
+      "branchId": "branch-whistleblower",
+      "lines": [
+        {
+          "id": "bd-ts-1",
+          "character": "mia",
+          "text": "(stiff) Thanks. For, um. Handling it. Earlier.",
+          "emotion": "polite, not warm"
+        },
+        {
+          "id": "bd-ts-2",
+          "character": "player",
+          "text": "Anytime.",
+          "emotion": "matching her tone"
+        },
+        {
+          "id": "bd-ts-3",
+          "character": "player",
+          "text": "(INTERNAL) A truce. Not a friendship. I'll take it.",
+          "emotion": "cautiously okay with it"
+        }
+      ]
+    },
+    {
+      "sceneId": "ending-isolated-success",
+      "branchId": "branch-whistleblower",
+      "lines": [
+        {
+          "id": "bd-is-1",
+          "character": "player",
+          "text": "I really am sorry. Not because we got caught — because I should've come to you first.",
+          "emotion": "sincere, no angle"
+        },
+        {
+          "id": "bd-is-2",
+          "character": "mia",
+          "text": "(doesn't fully thaw, but nods, shoulders loosening) ...okay. Let's just go do this.",
+          "emotion": "guarded but open"
+        },
+        {
+          "id": "bd-is-3",
+          "character": "player",
+          "text": "(INTERNAL) Not fixed. But not frozen either. I'll take that too.",
+          "emotion": "hopeful"
+        }
+      ]
+    },
+    {
+      "sceneId": "ending-isolated-cost",
+      "branchId": "branch-whistleblower",
+      "lines": [
+        {
+          "id": "bd-ic-1",
+          "character": "mia",
+          "text": "(after presenting, flat) Good job.",
+          "emotion": "distant, professional"
+        },
+        {
+          "id": "bd-ic-2",
+          "character": "player",
+          "text": "(INTERNAL) That's the voice you use for someone you work with. Not someone you know.",
+          "emotion": "quietly disappointed"
+        },
+        {
+          "id": "bd-ic-3",
+          "character": "jordan",
+          "text": "(to Wren, low) You good?",
+          "emotion": "checking in"
+        },
+        {
+          "id": "bd-ic-4",
+          "character": "player",
+          "text": "(INTERNAL) Fine. It's fine. It's just not much more than fine.",
+          "emotion": "resigned"
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Mia's cruelty always arrives dressed as practicality, delivered fast and bright so it lands before anyone can object — her stillness right before a cutting line is the tell. Her real vulnerability only surfaces in quieter registers ('...whatever, it was actually a good idea') and disappears the moment she notices she's shown it. Alex undercuts himself reflexively ('it's dumb, forget it') but goes fully fluent and fast when genuinely excited about an idea, then catches himself and recoils — his silences carry more weight than his words, so his hurt should almost never be spoken outright. Jordan uses 'honestly' as the hinge into real observation, then retreats into a joke immediately after, as if he's not sure he's allowed to be that perceptive out loud. Wren's internal lines should do the emotional labor her outward dialogue avoids — she's funniest and most honest inside her own head, and gets more direct and less quippy the moment something actually matters to her.",
+  "alternativeLines": [
+    {
+      "lineId": "lw-3",
+      "alternatives": [
+        "\"Okay, that's adorable, but we're getting graded, not framed.\"",
+        "\"I mean — cute? But let's be serious for a second.\""
+      ],
+      "reasoning": "Keeps Mia's dismissiveness performative and 'joking' rather than overtly mean, consistent with her pattern of softening cruelty with a laugh."
+    },
+    {
+      "lineId": "hr-3",
+      "alternatives": [
+        "\"...what if we redo it and it's still not enough.\"",
+        "\"...I just don't want to be the reason it's late AND bad.\""
+      ],
+      "reasoning": "Alternate phrasings of Mia's slipped vulnerability, in case the direct 'not good enough' reads too on-the-nose for her guarded character."
+    }
+  ]
+}

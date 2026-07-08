@@ -1,0 +1,138 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene 'group-meeting-1' has choicePointId 'choice-1' but choice-1's scene field references 'group-meeting-1' — however, choice-1 has three identical nextScene values ('library-work-session' for all three options), making the choice functionally meaningless. All branches converge immediately without differentiation.",
+      "location": "scenes[1] / choices[0]",
+      "expectedValue": "Each option should lead to a distinct scene or at minimum have distinct dialogue consequences before converging",
+      "actualValue": "All three options (a, b, c) have nextScene: 'library-work-session'",
+      "fix": "Either: (1) Create three distinct scenes reflecting each choice's consequence (e.g., 'library-work-session-spoke-up', 'library-work-session-complied', 'library-work-session-private-deal'), or (2) Move the choice point later in the narrative where the consequences actually diverge, or (3) Remove this choice if it's purely cosmetic and add it to choiceDialogue only."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene 'library-work-session' references choicePointId 'choice-2', which has three distinct nextScene values ('alex-backed-up', 'alex-overlooked', 'alex-middle-ground'). However, the dialogue in 'library-work-session' does not reflect the player's prior choice from 'group-meeting-1'. The scene plays identically regardless of whether the player spoke up, complied, or made a private deal with Alex — creating a narrative discontinuity.",
+      "location": "scenes[2].choicePointId / dialogue",
+      "expectedValue": "Scene dialogue should acknowledge or reflect the outcome of choice-1 (e.g., if player spoke up, Mia's tone should be more defensive; if player complied, Alex might be more guarded)",
+      "actualValue": "Dialogue is static and does not branch based on choice-1 outcome",
+      "fix": "Add conditional dialogue variants in 'library-work-session' that reflect choice-1 outcomes, or restructure so choice-1 consequences are visible before choice-2 is presented."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice-3 ('shortcut-proposal') has three options with nextScene values pointing to 'honest-rebuild', 'cutting-corners', and 'whistleblow-fallout' — three genuinely distinct branches. However, the outcomes array lists three branches ('branch-honest-rebuild', 'branch-cutting-corners', 'branch-whistleblower') with triggeredBy lists that reference choice-3 options. The branch IDs do not match the scene names, creating ambiguity about which branch fires when.",
+      "location": "choices[2].options / outcomes array",
+      "expectedValue": "Branch IDs should either match scene names or be explicitly mapped in a way the rendering engine can resolve",
+      "actualValue": "Branch 'branch-honest-rebuild' is triggered by 'choice-3:a' but leads to scene 'honest-rebuild'; branch 'branch-whistleblower' is triggered by 'choice-3:c' but leads to scene 'whistleblow-fallout'",
+      "fix": "Clarify the mapping: either rename branches to match their entry scenes ('branch-honest-rebuild' → 'honest-rebuild', etc.), or add an explicit 'entryScene' field to each outcome object that the engine can use to resolve which branch applies."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene 'honest-rebuild' has choicePointId 'choice-4a' with two options leading to 'presentation-day-honest-collaborative' and 'presentation-day-honest-firm'. Both of these scenes then have choicePointId 'choice-5a-collab' and 'choice-5a-firm' respectively — two separate choice objects with identical option text and nearly identical logic. This creates a maintenance burden and suggests the choice should be unified.",
+      "location": "scenes[5] and scenes[6] / choices[4] and choices[5]",
+      "expectedValue": "A single choice-5a that applies to both 'presentation-day-honest-collaborative' and 'presentation-day-honest-firm', with context-aware dialogue",
+      "actualValue": "Two separate choice objects (choice-5a-collab and choice-5a-firm) with duplicate logic",
+      "fix": "Merge choice-5a-collab and choice-5a-firm into a single choice-5a that both scenes reference, and use branchDialogue to provide context-specific responses."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene 'cutting-corners' has choicePointId 'choice-4b' with two options: 'confession-redemption' and 'presentation-day-coverup'. The 'presentation-day-coverup' scene then has choicePointId 'choice-5b' with two options: 'ending-cover-cracks' and 'ending-exposed'. However, 'confession-redemption' is listed as a nextScene but is itself a terminal scene (ending scene). This creates a branch that skips the presentation-day scene entirely, which may be intentional but is not documented in the outcomes array.",
+      "location": "choices[6].options[0] / scenes[8]",
+      "expectedValue": "Either 'confession-redemption' should be a full scene with its own choice, or it should be documented as a terminal branch in the outcomes array",
+      "actualValue": "'confession-redemption' is a nextScene but is treated as an ending without a choice",
+      "fix": "Add 'confession-redemption' to the outcomes array with triggeredBy: ['choice-4b:a'], or restructure so the confession happens within 'presentation-day-coverup' before choice-5b."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene 'whistleblow-fallout' has choicePointId 'choice-4c' with two options: 'repaired-trust' and 'isolated-presentation'. However, 'repaired-trust' then has choicePointId 'choice-5c' with two options, while 'isolated-presentation' has choicePointId 'choice-5c-isolated' with two options. This creates two separate choice objects for what should be a unified decision point, with nearly identical option text but different IDs.",
+      "location": "choices[8] and choices[9]",
+      "expectedValue": "A single choice-5c that both 'repaired-trust' and 'isolated-presentation' reference, with context-aware dialogue variants",
+      "actualValue": "Two separate choice objects (choice-5c and choice-5c-isolated) with duplicate logic",
+      "fix": "Merge choice-5c and choice-5c-isolated into a single choice-5c, and use branchDialogue to provide context-specific responses based on the prior branch."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'alex' is referenced in dialogue and scenes throughout, but the character roster lists him as 'Alex Nakamura' with id 'alex'. However, in scene 'library-work-session', dialogue line 'lw-5' attributes a line to 'alex' with action 'goes very still, closes the sketchbook halfway, says nothing' — this is a non-verbal action, not dialogue. The same pattern appears in multiple scenes (e.g., 'alex-backed-up' line 'ab-5'). These should either be INTERNAL monologue or NARRATOR description, not character dialogue.",
+      "location": "scenes[2].dialogue[4] and multiple other scenes",
+      "expectedValue": "Non-verbal character actions should be attributed to 'NARRATOR' or use action-only format without a text field",
+      "actualValue": "Character 'alex' is attributed lines with empty text fields and action descriptions",
+      "fix": "Change character from 'alex' to 'NARRATOR' for action-only lines, or remove the character attribution and keep only the action field."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The outcomes array lists three branches with triggeredBy lists, but the triggeredBy logic does not account for all possible choice paths. For example, a player could choose choice-1:b (comply), then choice-2:b (stay quiet), then choice-3:a (refuse shortcut). This path would trigger 'branch-honest-rebuild', but the dialogue in 'library-work-session' does not reflect that the player complied with Mia's role assignment in choice-1. The branch system assumes choice-3 is the primary differentiator, but earlier choices should also affect which branch fires.",
+      "location": "outcomes array / triggeredBy",
+      "expectedValue": "Either: (1) triggeredBy should include all relevant prior choices, or (2) the narrative should be restructured so only choice-3 determines the branch",
+      "actualValue": "triggeredBy lists only reference choice-3, ignoring choice-1 and choice-2 outcomes",
+      "fix": "Clarify the branch logic: if choice-3 is the primary differentiator, ensure earlier choices don't create narrative inconsistencies. If earlier choices matter, expand triggeredBy to include them (e.g., 'choice-1:a,choice-3:a' for a specific path)."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene 'presentation-day-honest-collaborative' has choicePointId 'choice-5a-collab', but the dialogue does not include the player's response option. The scene ends with 'pdc-3' (Jordan's line), but there is no dialogue line showing what the player actually says in response to Ms. Patel's question. This makes it unclear what the player's choice actually does.",
+      "location": "scenes[5].dialogue",
+      "expectedValue": "Dialogue should include player response options that correspond to choice-5a-collab options",
+      "actualValue": "Dialogue ends with Jordan's prompt; no player dialogue follows",
+      "fix": "Add player dialogue lines for each option in choice-5a-collab (e.g., 'pdc-4' for option a: 'That was Alex's idea...', 'pdc-5' for option b: 'Kind of a group effort...')."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene 'presentation-day-honest-firm' has choicePointId 'choice-5a-firm', but the dialogue is incomplete. Lines 'pdf-1' and 'pdf-2' are present, but 'pdf-3' (Alex's reaction) and any player dialogue are missing. The scene transitions to choice-5a-firm without showing the player's actual choice or its immediate consequence.",
+      "location": "scenes[6].dialogue",
+      "expectedValue": "Dialogue should include player response options and immediate reactions",
+      "actualValue": "Dialogue ends at 'pdf-2' with only Mia's reaction; no player dialogue or choice consequences shown",
+      "fix": "Add player dialogue lines and character reactions for each option in choice-5a-firm."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene 'cutting-corners' has choicePointId 'choice-4b' with option 'a' leading to 'confession-redemption'. However, 'confession-redemption' is listed in the scenes array as a full scene with dialogue, characters, and a defaultNextScene of 'END'. This means the player's choice in 'cutting-corners' leads directly to an ending scene without presenting choice-5b. This is a valid branch, but it is not documented in the outcomes array, creating ambiguity about whether this is an intentional shortcut or a logic error.",
+      "location": "choices[6].options[0] / scenes[8]",
+      "expectedValue": "Either 'confession-redemption' should be added to the outcomes array, or the choice should lead to a scene that includes choice-5b",
+      "actualValue": "'confession-redemption' is a nextScene but is not listed in outcomes",
+      "fix": "Add 'confession-redemption' to the outcomes array with triggeredBy: ['choice-4b:a'] and description: 'Wren confesses to Ms. Patel before presenting, avoiding public exposure but still facing consequences.'"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene 'ending-honest-full' has defaultNextScene 'END', but the branchDialogue array includes an entry for 'ending-honest-full' with branchId 'branch-honest-rebuild'. This suggests the scene should have context-specific dialogue based on which branch fired. However, the scene's dialogue array does not reference these branchDialogue variants — it's unclear how the rendering engine should apply them.",
+      "location": "scenes[16] / branchDialogue[0]",
+      "expectedValue": "Either: (1) the scene's dialogue should include placeholders for branchDialogue variants, or (2) branchDialogue should only be used for scenes that have multiple dialogue paths",
+      "actualValue": "branchDialogue is defined but the scene's dialogue does not reference it",
+      "fix": "Clarify the rendering contract: if branchDialogue is meant to augment or replace dialogue, add a note in the scene or use a consistent marker (e.g., '[BRANCH_VARIANT]') to indicate where variants apply."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The choiceDialogue array contains entries for all choices, but the mapping between choiceDialogue and the actual choice options is unclear. For example, choice-1 has options with ids 'a', 'b', 'c', and choiceDialogue['choice-1'].options has entries with ids 'a', 'b', 'c'. However, the choiceDialogue entries are meant to show the player's spoken choice, not the system's internal representation. This creates ambiguity: are these the player's dialogue options, or are they the system's internal choice IDs?",
+      "location": "choiceDialogue array",
+      "expectedValue": "choiceDialogue should clearly indicate whether it represents player dialogue, system choice IDs, or both",
+      "actualValue": "choiceDialogue entries have 'text' fields that appear to be player dialogue, but the structure mirrors the choice options array",
+      "fix": "Add a comment or documentation clarifying the purpose of choiceDialogue. If it's meant to show player dialogue, ensure the text fields are actual dialogue lines. If it's meant to show choice IDs, remove the text fields."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene 'ending-exposed' has dialogue line 'ee-4' attributed to 'alex' with action 'doesn't say anything the rest of the day — somehow louder than if he had'. This is a narrative summary, not a scene event. The scene's description says 'The project gets a redo, but the group doesn't feel like a group anymore,' which suggests the scene ends here. However, there is no explicit transition or choice — the defaultNextScene is 'END', which is correct, but the dialogue line 'ee-4' is misleading because it describes events that happen after the scene ends.",
+      "location": "scenes[14].dialogue[3]",
+      "expectedValue": "Dialogue should describe events within the scene, not after it. If this is meant to be a narrative summary, it should be in the scene description or a NARRATOR line.",
+      "actualValue": "Character dialogue describes post-scene events",
+      "fix": "Move 'ee-4' to the scene description or change it to a NARRATOR line that summarizes the aftermath."
+    }
+  ],
+  "warnings": [],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 14,
+    "warningCount": 0
+  }
+}

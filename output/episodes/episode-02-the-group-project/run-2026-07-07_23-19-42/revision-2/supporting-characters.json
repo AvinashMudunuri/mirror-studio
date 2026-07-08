@@ -1,0 +1,95 @@
+[
+  {
+    "character": {
+      "id": "ms-patel",
+      "name": "Priya Patel",
+      "age": 34,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height, dark hair usually twisted up with a pencil stuck through it that she forgets is there until someone points it out. Dresses practically — cardigans with deep pockets, sensible shoes she can stand in all day.",
+        "distinctiveFeatures": [
+          "Wears the same chipped mug ('WORLD'S OKAYEST CHEMIST' — a gift from a former student) every day, refilled constantly",
+          "Has a habit of writing on the whiteboard mid-sentence and only realizing later her handwriting trails off into illegibility",
+          "Keeps a running 'jar of good questions' on her desk — index cards students have written genuinely curious questions on, which she reads aloud at random on slow Fridays"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "sharp-eyed",
+          "dryly patient",
+          "fair to a fault",
+          "unsentimental but not cold",
+          "quietly relentless"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 9,
+          "extraversion": 5,
+          "agreeableness": 6,
+          "neuroticism": 3
+        },
+        "mannerisms": [
+          "Taps a single knuckle on a desk twice when she's about to ask a question she already knows the answer to",
+          "Goes very still and quiet right before catching someone in a lie — no dramatics, just a pause that makes the air feel different",
+          "Pushes her glasses up with her wrist when her hands are full of papers, which is always"
+        ],
+        "speechPatterns": [
+          "Uses precise, unhurried phrasing — never raises her voice, lets silence do the work",
+          "Asks questions that sound casual but are surgical ('Can you walk me through where this came from?')",
+          "Occasional dry one-liners delivered completely deadpan, so kids aren't always sure she's joking until she almost-smiles"
+        ],
+        "emotionalTendencies": "Patel doesn't perform warmth or sternness — she's even-keeled almost to a fault, which reads to some kids as cold and to others as deeply safe. She saves visible approval for moments that are actually earned, which is exactly why it means something when it comes."
+      },
+      "background": {
+        "family": "Middle child of three, first in her family born in the U.S.; her parents run a pharmacy two neighborhoods over from the school, and she still fills in at the register some Saturdays. Not married, no kids of her own — deflects questions about this with a joke about having 150 kids for nine months a year.",
+        "interests": [
+          "invasive species and ecological restoration (genuinely, not just for the unit)",
+          "terrible reality TV she'll never admit to watching",
+          "running a very small, very stubborn tomato garden that mostly fails"
+        ],
+        "strengths": [
+          "reads a room fast",
+          "doesn't need to catch someone publicly to correct them — often gives an exit ramp before the public moment",
+          "remembers details about every kid, even the quiet ones"
+        ],
+        "struggles": [
+          "burned out by the sheer volume of grading and behavioral management with too little support",
+          "has to actively fight the instinct to just fix things for struggling kids instead of letting them fix it themselves",
+          "occasionally too subtle for her own good — some kids miss what she's signaling entirely"
+        ],
+        "secrets": [
+          "She saw the mismatched data point three days before presentation day, during a random desk-side check, and chose to wait and see what the group would do with the chance she gave them rather than intervene immediately — a calculated risk she doesn't advertise, because if it went badly it would look like negligence"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "get every group through the invasive species unit having actually learned something, not just performed it",
+          "catch academic dishonesty early enough that it becomes a teachable moment instead of a punitive one"
+        ],
+        "unconscious": [
+          "prove to herself she can still make a real difference in a system that often treats her like a content-delivery machine",
+          "needs to see kids choose integrity on their own, unprompted, because she can't always be there to prompt it"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult, articulate, occasionally uses precise scientific vocabulary casually, but never condescends to students",
+        "sentenceComplexity": "Short, declarative when giving instructions; longer and more probing when asking questions that are actually tests",
+        "emotionalExpressiveness": "Restrained on the surface — dry humor and a raised eyebrow do most of the emotional work. Warmth shows through in specificity (she remembers things about you) rather than effusiveness.",
+        "examples": [
+          "\"This structure looks really familiar, actually...\" (said lightly, already moving to the next table — the pause is the whole message)",
+          "\"Can you walk me through where this specific data point came from? It doesn't match this year's assigned species at all.\"",
+          "\"Late is not the same as never. Sit down, let's talk about what happens next.\"",
+          "\"I give partial credit for good work. I give a lot more for showing me you know the difference between a shortcut and a lie.\""
+        ]
+      },
+      "storyRole": "Ms. Patel is the offstage moral pressure system of 'Group Work' — not a mouthpiece for the lesson, but a specific, competent adult whose quiet attentiveness is what turns Wren's choice from a private moral question into one with real, external stakes. She never lectures; she just asks the one question that makes hiding no longer possible, and then responds to whatever happens next with consistent, unglamorous fairness. She is proof to the player that adults can be both a consequence and a soft place to land — sometimes in the same sentence.",
+      "arcPotential": [
+        "Episode 'Group Work': Functions as the catalyst and the mirror — her calculated choice to give the group room to self-correct before catching them publicly parallels Wren's own choice about when and how to tell the truth.",
+        "Future episode potential: A moment where a student learns Ms. Patel saw the problem early and chose to wait — recontextualizing her as someone who takes real risks on students' behalf, not just an authority figure who metes out consequences.",
+        "Longer arc potential: Small glimpses of her burnout/overload (the register shifts, the grading backlog) humanizing the adults in the building as people managing their own limits, not just plot functions for the kids' arcs."
+      ]
+    },
+    "designNotes": "Ms. Patel needed to do a lot of narrative work in a small number of lines: she's the mechanism that forces Wren's choice into the open across three divergent endings, and the tone of her one recurring question ('whose idea was the comic-panel opener?' / 'can you walk me through this data point?') had to land as organic, not scripted-for-morality. I built her around restraint — she almost never raises her voice or moralizes, because a preachy teacher would undercut the show's whole 'no adults watching, this is on you' premise. Her secret (she saw the problem days early and chose to wait) is important: it makes her fair rather than either naive or a gotcha-trap, and it gives her her own quiet risk in the episode, mirroring the kids' stakes without centering her. The 'good questions jar' and tomato garden are small specific details meant to make her feel like a person who exists before 9am and after 3pm, not a character who blinks into existence when the bell rings.",
+    "representationNotes": "Patel is written as a competent, dry-humored South Asian woman in STEM education — deliberately avoiding both the 'strict foreign-sounding teacher' trope and the inversely saccharine 'inspirational mentor' trope. Her burnout and unglamorous personal life (part-time pharmacy shifts, failing tomato garden, no dramatic personal backstory revealed to students) are meant to normalize the reality that teachers are full people with limited bandwidth, not infinite wells of patience or wisdom — which matters for how kids in this age range learn to see adults as neither omniscient nor irrelevant, but human and finite like everyone else."
+  }
+]

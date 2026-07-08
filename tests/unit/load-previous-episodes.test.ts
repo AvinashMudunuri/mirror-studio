@@ -16,7 +16,7 @@ import * as os from 'os';
 import * as path from 'path';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { loadPreviousEpisodes, loadPreviousProtagonist } = require('../../scripts/lib/load-previous-episodes');
+const { loadPreviousEpisodes, loadPreviousCast, loadPreviousProtagonist } = require('../../scripts/lib/load-previous-episodes');
 
 function outlineFixture(overrides: Record<string, unknown> = {}) {
   return {
@@ -32,12 +32,13 @@ function outlineFixture(overrides: Record<string, unknown> = {}) {
   };
 }
 
-function writeRun(episodesRoot: string, { episodeFolder, runStamp, manifest, storyOutline, protagonist }: {
+function writeRun(episodesRoot: string, { episodeFolder, runStamp, manifest, storyOutline, protagonist, supportingCharacters }: {
   episodeFolder: string;
   runStamp: string;
   manifest: unknown;
   storyOutline?: unknown;
   protagonist?: unknown;
+  supportingCharacters?: unknown;
 }) {
   const runDir = path.join(episodesRoot, episodeFolder, `run-${runStamp}`);
   fs.mkdirSync(runDir, { recursive: true });
@@ -49,6 +50,9 @@ function writeRun(episodesRoot: string, { episodeFolder, runStamp, manifest, sto
   }
   if (protagonist !== undefined) {
     fs.writeFileSync(path.join(runDir, '02-protagonist.json'), JSON.stringify(protagonist));
+  }
+  if (supportingCharacters !== undefined) {
+    fs.writeFileSync(path.join(runDir, '02-supporting-characters.json'), JSON.stringify(supportingCharacters));
   }
   return runDir;
 }
@@ -303,6 +307,97 @@ describe('loadPreviousEpisodes — Postgres source', () => {
   });
 });
 
+describe('loadPreviousCast — filesystem source', () => {
+  let episodesRoot: string;
+
+  afterEach(() => {
+    if (episodesRoot) fs.rmSync(episodesRoot, { recursive: true, force: true });
+  });
+
+  it('returns an empty cast when there is no earlier approved episode', async () => {
+    episodesRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'mirror-episodes-'));
+    const { cast, source } = await loadPreviousCast({
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 1,
+      episodesRoot
+    });
+    expect(cast).toEqual([]);
+    expect(source).toBeNull();
+  });
+
+  it('returns the protagonist AND every supporting character from the most recent APPROVED episode', async () => {
+    episodesRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'mirror-episodes-'));
+    writeRun(episodesRoot, {
+      episodeFolder: 'episode-01-first-day',
+      runStamp: '2026-07-06_11-33-54',
+      manifest: { episode: { number: 1, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+      storyOutline: outlineFixture(),
+      protagonist: protagonistFixture(),
+      supportingCharacters: [{ character: { id: 'jordan', name: 'Jordan Oduya' } }]
+    });
+
+    const { cast, source } = await loadPreviousCast({
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 2,
+      episodesRoot
+    });
+
+    expect(source).toBe('filesystem');
+    expect(cast.map((c: any) => c.id).sort()).toEqual(['jordan', 'player']);
+    expect(cast.find((c: any) => c.id === 'jordan').name).toBe('Jordan Oduya');
+  });
+
+  it('includes supporting characters added by a revision (revision-aware, unlike the protagonist)', async () => {
+    episodesRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'mirror-episodes-'));
+    const runDir = writeRun(episodesRoot, {
+      episodeFolder: 'episode-01-first-day',
+      runStamp: '2026-07-06_11-33-54',
+      manifest: { episode: { number: 1, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+      storyOutline: outlineFixture(),
+      protagonist: protagonistFixture(),
+      supportingCharacters: [{ character: { id: 'jordan', name: 'Jordan Oduya' } }]
+    });
+    fs.mkdirSync(path.join(runDir, 'revision-1'), { recursive: true });
+    fs.writeFileSync(
+      path.join(runDir, 'revision-1', 'supporting-characters.json'),
+      JSON.stringify([{ character: { id: 'maya', name: 'Maya Reyes' } }])
+    );
+
+    const { cast } = await loadPreviousCast({
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 2,
+      episodesRoot
+    });
+
+    expect(cast.map((c: any) => c.id).sort()).toEqual(['jordan', 'maya', 'player']);
+  });
+});
+
+describe('loadPreviousCast — Postgres source', () => {
+  afterEach(() => {
+    jest.resetModules();
+    jest.dontMock('pg');
+  });
+
+  it('returns the full cast array from the single latest APPROVED episode', async () => {
+    const fullCast = [{ id: 'player', name: 'Wren Castillo' }, { id: 'jordan', name: 'Jordan Oduya' }];
+    const query = jest.fn().mockResolvedValue({ rows: [{ content: { cast: fullCast } }] });
+    const end = jest.fn().mockResolvedValue(undefined);
+    jest.doMock('pg', () => ({ Pool: jest.fn().mockImplementation(() => ({ query, end })) }));
+
+    const { loadPreviousCast: load } = require('../../scripts/lib/load-previous-episodes');
+    const { cast, source } = await load({
+      databaseUrl: 'postgres://fake',
+      worldId: 'NEW_SCHOOL',
+      beforeEpisodeNumber: 2,
+      episodesRoot: path.join(os.tmpdir(), 'unused')
+    });
+
+    expect(source).toBe('postgres');
+    expect(cast).toEqual(fullCast);
+  });
+});
+
 describe('loadPreviousProtagonist — filesystem source', () => {
   let episodesRoot: string;
 
@@ -327,6 +422,7 @@ describe('loadPreviousProtagonist — filesystem source', () => {
       episodeFolder: 'episode-01-first-day',
       runStamp: '2026-07-06_11-33-54',
       manifest: { episode: { number: 1, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+      storyOutline: outlineFixture(),
       protagonist: protagonistFixture()
     });
 
@@ -348,12 +444,14 @@ describe('loadPreviousProtagonist — filesystem source', () => {
       episodeFolder: 'episode-02-group-project',
       runStamp: '2026-07-06_10-00-00',
       manifest: { episode: { number: 2, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+      storyOutline: outlineFixture(),
       protagonist: protagonistFixture({ name: 'Episode 2 Protagonist' })
     });
     writeRun(episodesRoot, {
       episodeFolder: 'episode-01-first-day',
       runStamp: '2026-07-06_20-00-00',
       manifest: { episode: { number: 1, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+      storyOutline: outlineFixture(),
       protagonist: protagonistFixture({ name: 'Episode 1 Protagonist' })
     });
 
@@ -450,6 +548,7 @@ describe('loadPreviousProtagonist — Postgres source', () => {
         episodeFolder: 'episode-01-first-day',
         runStamp: '2026-07-06_11-33-54',
         manifest: { episode: { number: 1, world: 'NEW_SCHOOL' }, finalStatus: 'APPROVED' },
+        storyOutline: outlineFixture(),
         protagonist: protagonistFixture()
       });
 
