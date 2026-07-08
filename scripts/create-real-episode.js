@@ -27,7 +27,8 @@ const {
   mergeBranchDialogue,
   unreadableResult,
   reusedCharacterResult,
-  findReusableCharacter
+  findReusableCharacter,
+  resolveEpisodeBrief
 } = require('./lib/pipeline-helpers');
 const { compileScreenplay } = require('./lib/compile-screenplay');
 const { buildEpisodeRow, persistEpisode } = require('./lib/persist-episode');
@@ -125,10 +126,23 @@ const EPISODE_BRIEFS = {
 };
 
 const EPISODE_NUMBER = parseInt(process.env.EPISODE_NUMBER || '1', 10);
-const EPISODE_BRIEF = EPISODE_BRIEFS[EPISODE_NUMBER];
+
+/**
+ * `EPISODE_BRIEF_JSON` (env, optional) lets a caller — the admin
+ * "generate" form, in particular — supply a brand-new brief instead of
+ * being limited to the two hardcoded ones above.
+ */
+let EPISODE_BRIEF;
+try {
+  EPISODE_BRIEF = resolveEpisodeBrief(EPISODE_BRIEFS, EPISODE_NUMBER, process.env.EPISODE_BRIEF_JSON);
+} catch (error) {
+  console.error(`❌ Error: ${error.message}\n`);
+  process.exit(1);
+}
 if (!EPISODE_BRIEF) {
   console.error(`❌ Error: no episode brief defined for EPISODE_NUMBER=${EPISODE_NUMBER}.`);
-  console.error(`   Defined episode numbers: ${Object.keys(EPISODE_BRIEFS).join(', ')}\n`);
+  console.error(`   Defined episode numbers: ${Object.keys(EPISODE_BRIEFS).join(', ')}`);
+  console.error(`   Or pass EPISODE_BRIEF_JSON with a complete custom brief.\n`);
   process.exit(1);
 }
 

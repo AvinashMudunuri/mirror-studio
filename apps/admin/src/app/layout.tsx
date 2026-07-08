@@ -17,6 +17,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/" style={{ color: 'inherit' }}>🎬 MIRROR Studio</Link>
             </h1>
             <span className="sub">episode runs · review board · bound scripts · publish</span>
+            <nav className="site-nav">
+              <Link href="/generate">+ Generate episode</Link>
+            </nav>
           </div>
         </header>
         {children}
