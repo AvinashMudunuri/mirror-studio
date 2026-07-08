@@ -27,7 +27,7 @@ This roadmap outlines the implementation strategy for Project MIRROR Studio, bre
 | 1. Foundation | ✅ Done — differently than planned | Message bus built but deliberately unused (ADR 001); orchestration is a sequential script, not LangGraph |
 | 2. Core Agents | ✅ Done, exceeded milestone | Real episodes generated end-to-end, not just outlines |
 | 3. Review Agents | ⚠️ Mostly done | 4 of 5 reviewers built (no Teen Reviewer); debate system never built (feedback routing instead) |
-| 4. Production Agents | ❌ Not started | No Publisher/Analytics/JSON Export agents, no API |
+| 4. Production Agents | ❌ Not started, but scoped | No Publisher/Analytics/JSON Export agents, no API; scope proposal in `docs/decisions/003-publish-scope-proposal.md` recommends against building these as LLM agents at all |
 | 5. Frontend Experience | ❌ Not started | `apps/admin` is an internal dashboard, not a player-facing app |
 | 6. Polish & Launch | ❌ Not started | No monitoring, nothing published; basic CI exists (build + test) |
 | 7. Growth & Iteration | ❌ Not started | N/A until Phase 4-6 exist |
@@ -123,7 +123,7 @@ Implemented and running live in the review board:
 - The admin dashboard (`apps/admin`) reads run folders directly from the filesystem, bypassing any API layer.
 
 ### Before this phase can start
-Needs a decision on what "published" means for a text/choice-driven episode with no player yet — likely blocked on Phase 5 existing first (an API only matters once something consumes it).
+Needed a decision on what "published" means for a text/choice-driven episode with no player yet. **Proposed (2026-07-07, not yet implemented): `docs/decisions/003-publish-scope-proposal.md`.** Recommends against building Publisher/Analytics/JSON-Export as LLM agents at all (publishing is deterministic, not creative — same philosophy as `compile-screenplay.js`/`persist-episode.js`), a minimal "publish" gate distinct from the existing automatic Postgres upsert, and a stable player-content schema to break the Phase 4/5 circular dependency. Needs a human decision on the open questions in that doc before implementation starts.
 
 ---
 
@@ -203,7 +203,7 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 - Voice narration (ElevenLabs vs. Google Cloud TTS)
 - Frontend hosting (Vercel vs. custom deployment)
 - Analytics platform (custom vs. Mixpanel/Amplitude)
-- **New pending decision**: what "publish" means for this content type, and what the player-facing API/frontend actually needs from Phase 4 before Phase 4 is built.
+- **New pending decision**: what "publish" means for this content type — now has a concrete recommendation (`docs/decisions/003-publish-scope-proposal.md`), but the specific open questions it flags (manual vs. automatic publish gate, new app vs. admin-preview-first, versioning) still need a human call.
 
 ---
 
@@ -212,15 +212,16 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 Done since this list was written (2026-07-07):
 - ~~Basic CI~~ — `.github/workflows/ci.yml` builds + runs the full test suite (including the Postgres-gated integration suite, via a `pgvector` service container) on every PR and push to `main`.
 - ~~Protagonist continuity across episodes~~ — `loadPreviousProtagonist()` carries the protagonist's full profile into episode 2+ and skips Character Designer for it entirely; live-verified the Story Architect using the carried-over name unprompted 44 times in one outline. See `docs/OPEN-QUESTIONS.md` item 2.
+- ~~NPC continuity~~ — generalized to `loadPreviousCast()`; the Story Architect can now optionally bring back any previous episode's supporting character by id. Live-verified: it brought back all 3 of episode 1's NPCs by name in one run, with zero Character Designer calls for any of them, while still correctly generating a genuinely new character introduced mid-revision. See `docs/OPEN-QUESTIONS.md` item 2.
+- **Decided what "publish" means and scoped Phase 4** — see `docs/decisions/003-publish-scope-proposal.md` (proposed, not yet implemented; flags explicit decisions still needing a human call before writing code).
 
 Cheap, well-scoped, not yet done:
 1. Extend `previousEpisodes` continuity to the remaining 3 reviewers if evidence shows it's worth it.
-2. NPC continuity — ids the outline reuses (e.g. "jordan") still get a brand-new Character Designer profile every run rather than reusing the prior episode's version of that id (narrower/lower-value than the protagonist fix above, deliberately not extended yet — see `docs/OPEN-QUESTIONS.md` item 2).
 
 Bigger, would start actual Phase 4/5 work:
-3. Decide what "publish" means for one episode with no players yet (Phase 4 blocker).
-4. Admin phase 2: generate-from-UI (episode-brief form, SSE streaming) — still internal tooling, not Phase 5, but the natural next step for the admin app.
-5. A real Phase 5 kickoff (episode player) is not recommended until Phase 4's data contract exists — building a frontend against a shape that's still `output/episodes/*.json` invites a rewrite.
+2. Confirm or revise the recommendations in `docs/decisions/003-publish-scope-proposal.md`, then implement the minimal Phase 4 scope it proposes (deterministic publish step + player-content projection + a bare-minimum read API) — this is the actual Phase 4 blocker, now scoped rather than open-ended.
+3. Admin phase 2: generate-from-UI (episode-brief form, SSE streaming) — still internal tooling, not Phase 5, but the natural next step for the admin app.
+4. A real Phase 5 kickoff (episode player) is not recommended until Phase 4's data contract exists — building a frontend against a shape that's still `output/episodes/*.json` invites a rewrite.
 
 ---
 
