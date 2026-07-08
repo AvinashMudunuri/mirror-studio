@@ -35,7 +35,11 @@ export TEST_DATABASE_URL=postgres://mirror:mirror_dev_password@localhost:5432/mi
 ```
 
 Databases initialized before 2026-07-06 must also apply
-`infrastructure/db/migrations/2026-07-06-agent-memory-fixes.sql`.
+`infrastructure/db/migrations/2026-07-06-agent-memory-fixes.sql`; those
+before 2026-07-08 must also apply
+`infrastructure/db/migrations/2026-07-08-add-published-columns.sql`
+(publish workflow — `apps/admin`'s Publish button, see
+`docs/decisions/003-publish-scope-proposal.md`).
 
 ## Tests
 

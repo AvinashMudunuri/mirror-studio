@@ -105,11 +105,22 @@ CREATE TABLE episodes (
   episode_number INTEGER NOT NULL,
   title VARCHAR(255) NOT NULL,
   synopsis TEXT,
-  content JSONB NOT NULL, -- Full episode JSON
+  content JSONB NOT NULL, -- Full episode JSON. Mutated by every pipeline
+                          -- run (persist-episode.js) — NOT what a
+                          -- frontend should ever read directly.
   status episode_status DEFAULT 'DRAFT',
   created_by agent_id[],
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   published_at TIMESTAMP,
+  -- Durable publish snapshot (docs/decisions/003-publish-scope-proposal.md):
+  -- frozen copies of content/metadata at the moment a human published this
+  -- episode, decoupled from later pipeline re-runs. persist-episode.js's
+  -- UPSERT never lists these columns, so ordinary runs never touch them —
+  -- only the admin publish action does. A frontend should read
+  -- published_content, never content.
+  published_content JSONB,
+  published_metadata JSONB,
+  published_run_folder VARCHAR(500),
   metadata JSONB DEFAULT '{}',
   UNIQUE(season_id, episode_number)
 );

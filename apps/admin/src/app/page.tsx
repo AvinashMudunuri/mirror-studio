@@ -29,7 +29,7 @@ export default function DashboardPage() {
       <h1 className="page-title">Episode Runs</h1>
       <p className="page-sub">
         {runs.length} run{runs.length === 1 ? '' : 's'} under <code>output/episodes/</code> — newest first.
-        The run folder is the source of truth; this dashboard is read-only.
+        The run folder is the source of truth for content; publishing (making an approved episode available to a frontend) is the one write action this dashboard supports.
       </p>
       
       {runs.length === 0 && (
