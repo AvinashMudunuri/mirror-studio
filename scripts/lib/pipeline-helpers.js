@@ -39,14 +39,46 @@ function describeAppearances(outline, characterId) {
 }
 
 /**
+ * True if any issue is CRITICAL or MAJOR severity. MINOR issues never
+ * block — this mirrors the threshold collectRevisionFeedback already used
+ * (below) for deciding which findings are worth a revision round trip; the
+ * gate now applies the SAME threshold instead of ignoring severity entirely.
+ */
+function hasBlockingIssue(issues) {
+  return (issues || []).some(i => i?.severity === 'CRITICAL' || i?.severity === 'MAJOR');
+}
+
+/**
  * Positive-verdict predicates per reviewer key (keys match the manifest).
+ *
+ * Game Designer / Ethics Reviewer / Child Psychologist previously passed
+ * on their coarse status tier alone (GOOD/EXCELLENT, or APPROVED) with no
+ * regard for the severity of their own findings or their own readiness
+ * booleans — live run data showed this let a GOOD verdict through
+ * alongside 5 MAJOR issues and a non-empty mustFix list, and a GOOD ethics
+ * verdict alongside `readyForPublication: false`. See
+ * docs/OPEN-QUESTIONS.md item 11. Now:
+ * - Game Designer: GOOD only passes with zero CRITICAL/MAJOR issues AND an
+ *   empty `summary.mustFix`; EXCELLENT always passes (it's the top tier).
+ * - Ethics Reviewer: same issue-severity rule, PLUS `readyForPublication`
+ *   must not be explicitly false, regardless of status tier.
+ * - Child Psychologist: APPROVED only passes if `readyForAudience` is not
+ *   explicitly false — a status/readiness mismatch is a real
+ *   inconsistency to catch, not something to trust past.
+ * Missing/absent issues or summary fields (older manifests, or a reviewer
+ * that didn't populate them) are treated as "no red flags" rather than
+ * failing the run on data the reviewer never provided.
  */
 const REVIEWER_PASSES = {
   creativeDirector: r => r?.decision === 'APPROVED',
   qaReviewer: r => r?.status === 'PASS',
-  childPsychologist: r => r?.status === 'APPROVED',
-  gameDesigner: r => r?.status === 'EXCELLENT' || r?.status === 'GOOD',
-  ethicsReviewer: r => r?.status === 'EXCELLENT' || r?.status === 'GOOD'
+  childPsychologist: r => r?.status === 'APPROVED' && r?.summary?.readyForAudience !== false,
+  gameDesigner: r =>
+    r?.status === 'EXCELLENT' ||
+    (r?.status === 'GOOD' && !hasBlockingIssue(r?.issues) && (r?.summary?.mustFix?.length ?? 0) === 0),
+  ethicsReviewer: r =>
+    r?.summary?.readyForPublication !== false &&
+    (r?.status === 'EXCELLENT' || (r?.status === 'GOOD' && !hasBlockingIssue(r?.issues)))
 };
 
 /** Reviewer keys whose current result blocks approval. */
@@ -123,7 +155,7 @@ function collectRevisionFeedback(reviews) {
     (isDialogueLocated(locationHint || '') ? dialogue : story).push(item);
 
   const cd = reviews.creativeDirector;
-  if (cd && cd.decision !== 'APPROVED') {
+  if (cd && !REVIEWER_PASSES.creativeDirector(cd)) {
     const fb = cd.specificFeedback || {};
     for (const m of fb.story || []) story.push({ from: 'CREATIVE_DIRECTOR', message: m, severity: 'MAJOR' });
     for (const m of fb.character || []) story.push({ from: 'CREATIVE_DIRECTOR', message: m, severity: 'MAJOR' });
@@ -132,7 +164,7 @@ function collectRevisionFeedback(reviews) {
   }
 
   const qa = reviews.qaReviewer;
-  if (qa && qa.status !== 'PASS') {
+  if (qa && !REVIEWER_PASSES.qaReviewer(qa)) {
     for (const e of qa.errors || []) {
       route({
         from: 'QA_REVIEWER',
@@ -143,7 +175,7 @@ function collectRevisionFeedback(reviews) {
   }
 
   const psych = reviews.childPsychologist;
-  if (psych && psych.status !== 'APPROVED') {
+  if (psych && !REVIEWER_PASSES.childPsychologist(psych)) {
     for (const c of psych.concerns || []) {
       if (!c.mustFix && c.severity !== 'CRITICAL') continue;
       route({
@@ -155,7 +187,7 @@ function collectRevisionFeedback(reviews) {
   }
 
   const game = reviews.gameDesigner;
-  if (game && game.status !== 'EXCELLENT' && game.status !== 'GOOD') {
+  if (game && !REVIEWER_PASSES.gameDesigner(game)) {
     for (const i of game.issues || []) {
       if (i.severity === 'MINOR') continue;
       story.push({
@@ -167,7 +199,7 @@ function collectRevisionFeedback(reviews) {
   }
 
   const ethics = reviews.ethicsReviewer;
-  if (ethics && ethics.status !== 'EXCELLENT' && ethics.status !== 'GOOD') {
+  if (ethics && !REVIEWER_PASSES.ethicsReviewer(ethics)) {
     for (const i of ethics.issues || []) {
       if (i.severity === 'MINOR') continue;
       route({
