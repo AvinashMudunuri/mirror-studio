@@ -3,9 +3,82 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getRun } from '@/lib/runs';
+import { getPool } from '@/lib/db';
+import { findEpisodeRow, reasonNotPublishable } from '@/lib/publish';
 import { StatusBadge, VerdictBadges } from '@/components/badges';
+import { PublishButton } from './publish-button';
 
 export const dynamic = 'force-dynamic';
+
+function formatTimestamp(iso: string): string {
+  return new Date(iso).toUTCString().replace(' GMT', ' UTC');
+}
+
+async function PublishSection({ episodeFolder, runFolder, worldId, episodeNumber }: {
+  episodeFolder: string;
+  runFolder: string;
+  worldId: string | undefined;
+  episodeNumber: number | undefined;
+}) {
+  const pool = getPool();
+  if (!pool) {
+    return (
+      <div className="publish-box">
+        <p className="publish-reason">
+          <code>DATABASE_URL</code> is not configured for this admin instance — publishing is unavailable.
+        </p>
+      </div>
+    );
+  }
+  if (!worldId || episodeNumber == null) {
+    return (
+      <div className="publish-box">
+        <p className="publish-reason">This run&apos;s manifest is missing episode/world info — can&apos;t look up its Postgres row.</p>
+      </div>
+    );
+  }
+
+  const row = await findEpisodeRow(pool, worldId, episodeNumber);
+  const reason = reasonNotPublishable(row);
+  const runFolderRelative = `output/episodes/${episodeFolder}/${runFolder}`;
+
+  if (reason) {
+    return (
+      <div className="publish-box">
+        <p className="publish-reason" style={{ margin: 0 }}>Not publishable: {reason}</p>
+      </div>
+    );
+  }
+
+  // row is guaranteed non-null here — reasonNotPublishable(null) always returns a reason.
+  const currentContentRunFolder = row!.metadata?.runFolder ?? undefined;
+  const matchesThisRun = currentContentRunFolder ? currentContentRunFolder === runFolderRelative : true;
+  const alreadyPublishedThisContent = row!.publishedRunFolder === (currentContentRunFolder ?? runFolderRelative);
+
+  return (
+    <div className="publish-box">
+      {row!.publishedAt && (
+        <p className="publish-reason" style={{ marginTop: 0 }}>
+          Currently published from <code>{row!.publishedRunFolder}</code>, at {formatTimestamp(row!.publishedAt)} —{' '}
+          <Link href={`/published/${worldId}/${episodeNumber}`}>view preview</Link>.
+        </p>
+      )}
+      {!matchesThisRun && (
+        <p className="publish-reason">
+          Postgres&apos; current content for this episode comes from a different run
+          (<code>{currentContentRunFolder}</code>) — publishing now publishes THAT run&apos;s
+          content, not this page&apos;s.
+        </p>
+      )}
+      <PublishButton
+        episodeId={row!.id}
+        episodeFolder={episodeFolder}
+        runFolder={runFolder}
+        label={alreadyPublishedThisContent ? 'Re-publish (no changes)' : row!.publishedAt ? 'Publish latest content (replaces live)' : 'Publish'}
+      />
+    </div>
+  );
+}
 
 function formatBytes(bytes: number): string {
   if (bytes > 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
@@ -55,6 +128,16 @@ export default async function RunPage({
           <div className="label">Model</div>
           <div className="value small">{detail.model || '—'}</div>
         </div>
+      </div>
+      
+      <div className="section">
+        <h2>Publish</h2>
+        <PublishSection
+          episodeFolder={detail.episodeFolder}
+          runFolder={detail.runFolder}
+          worldId={manifest?.episode?.world}
+          episodeNumber={manifest?.episode?.number}
+        />
       </div>
       
       {manifest?.roster && (

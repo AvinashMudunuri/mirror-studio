@@ -29,25 +29,31 @@ Build order and status:
    script, console streamed via SSE, budget/reviewer-skip controls.
 3. **Editing + review workflow**: rich editors, re-run specific agents,
    versioning — backed by the Postgres layer (item 2 below).
-4. **Publish / "preview as player"** — proposed but not implemented,
-   `docs/decisions/003-publish-scope-proposal.md` recommends the
-   cheapest validation of a new player-content schema is a preview route
-   inside THIS app, before building a separate player-facing frontend.
+4. **Publish / "preview as player"** — DONE 2026-07-08. See item 1b.
 
-## 1b. What "publish" means / Phase 4 scope — PROPOSED (2026-07-07)
+## 1b. What "publish" means / Phase 4 scope — DONE (2026-07-08)
 
-`docs/decisions/003-publish-scope-proposal.md` recommends: a deterministic
-`publish` action (not an LLM agent — same philosophy as
-`compile-screenplay.js`), gated on a human confirmation rather than
-automatic on `finalStatus: APPROVED` (reviewer verdict variance means
-`APPROVED` shouldn't be sufficient on its own), and a stable
-player-facing content projection distinct from the authoring shape in
-`output/episodes/*.json`. Explicitly recommends AGAINST building
-Publisher/Analytics/JSON-Export as agents at all, and against building
-Analytics before real players exist to generate data for it. Three
-concrete open questions (manual vs. automatic publish, where the read
-path lives, versioning) are listed in the doc and need a human decision
-before implementation.
+`docs/decisions/003-publish-scope-proposal.md` (Accepted): a human is
+required to click "Publish" on a run in `apps/admin` — automatic on
+`finalStatus: APPROVED` was explicitly rejected, and so is a dev-mode
+(`SKIP_REVIEWERS`) run even if `APPROVED` (full board required). The
+click snapshots `content`/`metadata` into durable `published_*` columns
+(migration `2026-07-08-add-published-columns.sql`) decoupled from later
+pipeline re-runs — `persist-episode.js`'s UPSERT never touches them.
+`GET /api/published/[world]/[episodeNumber]` (`apps/admin`) is the read
+path a frontend would consume, plus a minimal preview page rendering the
+published scenes/dialogue directly in the admin app. Publisher/Analytics/
+JSON-Export were NOT built as agents (confirmed: publishing is
+deterministic code); Analytics stays deferred until real players exist.
+
+Descoped for this iteration: the read path returns the full authoring
+content shape as-is, not a trimmed player-facing projection — deferred
+until a real frontend exists to define what it actually needs.
+
+Live-verified end-to-end via the admin UI (publish → success message →
+`GET /api/published/NEW_SCHOOL/1` returns 19 scenes → preview page
+renders them; an unpublished episode 404s; a non-`APPROVED` run shows
+"Not publishable: ...").
 
 ## 2. Postgres persistence — DECIDED & WIRED (2026-07-06)
 
