@@ -21,7 +21,7 @@ Postgres persist). There is no message bus in the runtime path (ADR:
 ```bash
 npm run build              # REQUIRED first — the script loads packages/agents/dist
 npm run real:episode       # full board, 800k token budget (~15-50 min, real Claude tokens)
-npm run real:episode:dev   # cheap: skips 3 always-passing reviewers, 400k budget (~12-25 min)
+npm run real:episode:dev   # cheap: skips 3 reviewers (childPsychologist/gameDesigner/ethicsReviewer), 400k budget (~12-25 min)
 npm run bind:script [run-folder]    # (re)compile episode-script.md — zero tokens
 npm run persist:run [run-folder]    # upsert run into Postgres — zero tokens, needs DATABASE_URL
 npm run dev -w @mirror/admin        # dashboard over run folders at localhost:3300

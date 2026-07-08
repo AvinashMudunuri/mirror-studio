@@ -426,3 +426,74 @@ error — proof the SigV4-signed request format is accepted by AWS, only
 the credentials are fake. Full end-to-end verification against a real
 Bedrock model response needs a human to provision real AWS credentials
 with Bedrock model access (no AWS secrets exist in this environment).
+
+## 11. Reviewer calibration — Game Designer / Ethics Reviewer / Child Psychologist gate tightened — DONE (2026-07-08)
+
+Ask: those three reviewers had passed every live run so far (`SKIP_REVIEWERS`
+treats them as the cheap-to-skip trio) — is that because content is
+genuinely fine, or because the gate is miscalibrated?
+
+Investigated against real run data before changing anything (not
+assumed): the LLMs ARE doing real analysis — Game Designer and Ethics
+Reviewer routinely list specific MAJOR-severity issues (e.g. "choices are
+cosmetic," "model minority" stereotyping) — but `REVIEWER_PASSES`
+(`scripts/lib/pipeline-helpers.js`) only ever checked the coarse status
+tier (`GOOD`/`EXCELLENT`), never the severity of the reviewer's own
+findings or its own readiness booleans. Both reviewers' prompts map
+overall score 6-7 to `GOOD`, which passed unconditionally regardless of
+what `issues`/`mustFix`/`readyForPublication` said. Child Psychologist's
+prompt explicitly said "not overly cautious" with no counter-pressure
+against false negatives.
+
+Fix, three parts:
+1. **`REVIEWER_PASSES` now checks severity, not just the status tier.**
+   Game Designer: `GOOD` only passes with zero CRITICAL/MAJOR issues and
+   an empty `summary.mustFix`; `EXCELLENT` always passes (top tier).
+   Ethics Reviewer: same severity rule, plus `readyForPublication` must
+   not be explicitly `false` regardless of tier. Child Psychologist:
+   `APPROVED` only passes if `summary.readyForAudience` is not explicitly
+   `false`. `collectRevisionFeedback` was refactored to call the same
+   `REVIEWER_PASSES` predicates instead of re-deriving its own inline
+   status check, so a reviewer the gate now treats as failing always gets
+   its findings routed into the revision loop too — no divergence between
+   "does this block the run" and "does this feed the revision loop."
+2. **Prompts gained an explicit calibration rubric** (mirroring Creative
+   Director's PR #14 rubric): each reviewer is now told directly that any
+   CRITICAL/MAJOR issue (or `mustFix`/`readyForPublication: false`) makes
+   `GOOD`/`EXCELLENT` a calibration error, with a "downgrade the status,
+   don't downgrade the finding" consistency check. This is best-effort
+   (LLM compliance isn't guaranteed) — the code-level gate in item 1 is
+   the actual enforcement and doesn't depend on the LLM applying this
+   correctly.
+3. Child Psychologist's "not overly cautious" framing was rebalanced to
+   also warn against under-reporting: "a missed CRITICAL issue reaches
+   real teenagers."
+
+**Verified against real historical data, not just synthetic tests**:
+replayed all 6 real runs where these reviewers actually ran their real
+LLM output through the new `failingReviewers()`. Every single one now
+fails Game Designer and/or Ethics Reviewer that the old gate passed
+silently — including the two runs previously documented elsewhere in this
+file as "prod-ready evidence" (episode 1 "First Bell," episode 2 "Cracks
+in the Terrarium," item 2 above). Both had real MAJOR-severity issues
+(and one had `readyForPublication: false`) sitting inside a `GOOD`
+verdict that the old gate never looked at. This means those specific
+historical approvals would NOT re-earn `APPROVED` if re-run today — that
+is the intended effect, not a regression; their PUBLISHED snapshots
+(ADR 003) are unaffected since publishing is a durable snapshot, not a
+live re-check. Also added 15 new unit tests directly covering the new
+predicates in `tests/unit/pipeline-helpers.test.ts`.
+
+Not done / deliberately out of scope:
+- Did not touch QA Reviewer or Creative Director — both already gate on
+  their own findings correctly (binary PASS/FAIL; an explicit calibration
+  rubric from PR #14).
+- Did not re-run the full pipeline live to observe the new revision loop
+  end-to-end (would cost real tokens/time for a purely deterministic code
+  change with strong historical-replay evidence already in hand) — if a
+  live confirmation run is wanted, `npm run real:episode` (full board)
+  is the way to see it.
+- Did not change `MAX_REVISION_ITERATIONS` (still 2) — stricter gating
+  will plausibly increase how often that bound is hit and a run ends
+  `NEEDS_HUMAN_REVIEW` instead of `APPROVED`; revisit if that turns out
+  to block real production use.

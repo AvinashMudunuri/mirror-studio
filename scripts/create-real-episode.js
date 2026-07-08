@@ -160,9 +160,12 @@ const MAX_RUN_TOKENS = process.env.MAX_RUN_TOKENS !== undefined
 /**
  * Reviewers to skip, comma-separated manifest keys
  * (e.g. SKIP_REVIEWERS=childPsychologist,gameDesigner,ethicsReviewer for
- * cheap dev runs — those three have passed every live run so far).
- * Skipped reviewers are recorded as SKIPPED in the manifest and never
- * gate the revision loop.
+ * cheap dev runs). Skipped reviewers are recorded as SKIPPED in the
+ * manifest and never gate the revision loop. Note: these three used to
+ * pass every live run under a since-tightened gate (REVIEWER_PASSES in
+ * pipeline-helpers.js) that ignored their own severity findings — a dev
+ * run skipping them now more plausibly hides real issues than it used to,
+ * see docs/OPEN-QUESTIONS.md item 11.
  */
 const SKIP_REVIEWERS = (process.env.SKIP_REVIEWERS || '')
   .split(',')
