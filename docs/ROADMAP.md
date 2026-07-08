@@ -27,12 +27,12 @@ This roadmap outlines the implementation strategy for Project MIRROR Studio, bre
 | 1. Foundation | ✅ Done — differently than planned | Message bus built but deliberately unused (ADR 001); orchestration is a sequential script, not LangGraph |
 | 2. Core Agents | ✅ Done, exceeded milestone | Real episodes generated end-to-end, not just outlines |
 | 3. Review Agents | ⚠️ Mostly done | 4 of 5 reviewers built (no Teen Reviewer); debate system never built (feedback routing instead) |
-| 4. Production Agents | ❌ Not started, but scoped | No Publisher/Analytics/JSON Export agents, no API; scope proposal in `docs/decisions/003-publish-scope-proposal.md` recommends against building these as LLM agents at all |
+| 4. Production Agents | ✅ Minimal scope done, differently than planned | Publish is a human action in `apps/admin`, not an agent (ADR 003); Analytics still deferred (no players yet) |
 | 5. Frontend Experience | ❌ Not started | `apps/admin` is an internal dashboard, not a player-facing app |
 | 6. Polish & Launch | ❌ Not started | No monitoring, nothing published; basic CI exists (build + test) |
 | 7. Growth & Iteration | ❌ Not started | N/A until Phase 4-6 exist |
 
-Episode output so far: 2 episode concepts in 1 world (`NEW_SCHOOL`) across ~10 live runs. Roughly half of full-board runs land `NEEDS_HUMAN_REVIEW` rather than a clean `APPROVED` — reviewer verdict variance is a known, documented quirk (`docs/OPEN-QUESTIONS.md` item 4), not a regression. Nothing has been "published" in the Phase 4 sense — there is no publish step, only a filesystem run folder + a Postgres snapshot of the latest content.
+Episode output so far: 2 episode concepts in 1 world (`NEW_SCHOOL`) across ~10 live runs. Roughly half of full-board runs land `NEEDS_HUMAN_REVIEW` rather than a clean `APPROVED` — reviewer verdict variance is a known, documented quirk (`docs/OPEN-QUESTIONS.md` item 4), not a regression. A publish mechanism now exists (item 1b/ADR 003) — a human can click "Publish" in `apps/admin` on a full-board `APPROVED` run — but no database ships with the repo, so a fresh environment starts with nothing published until someone actually clicks it.
 
 ---
 
@@ -112,18 +112,20 @@ Implemented and running live in the review board:
 
 **Goal**: Implement production deployment and data systems
 
-### Status: Not started
+### Status: Minimal scope done (2026-07-08), original scope deliberately not built
 
-- **Publisher** — does not exist. There is no concept of "publishing" an episode; `npm run persist:run` upserts the latest run's content into Postgres, which is closer to a cache than a publish step.
-- **Analytics Agent** — does not exist. No player interaction data is collected (there are no players yet).
-- **JSON Export Agent** — does not exist. No API payload format has been defined.
+- **Publisher** — NOT an agent, by design (`docs/decisions/003-publish-scope-proposal.md`, Accepted). Publishing is a human clicking "Publish" in `apps/admin` on a full-board `APPROVED` run, which snapshots content into durable `published_*` columns.
+- **Analytics Agent** — still does not exist, deliberately deferred. No player interaction data is collected (there are no players yet).
+- **JSON Export Agent** — not built as a separate agent; `GET /api/published/[world]/[episodeNumber]` (`apps/admin`) is the read path a frontend would consume instead.
 
-### What exists instead
-- Postgres holds the latest episode content per (season, episode_number) plus agent memory (`docs/OPEN-QUESTIONS.md` item 2) — a real, working piece of infrastructure this phase would build on, just not the phase itself.
-- The admin dashboard (`apps/admin`) reads run folders directly from the filesystem, bypassing any API layer.
+### What exists now
+- `episodes.published_content`/`published_metadata`/`published_at`/`published_run_folder` (migration `2026-07-08-add-published-columns.sql`) — a durable snapshot decoupled from `content`, which every pipeline run keeps mutating.
+- `apps/admin`'s Publish button (`src/lib/publish.ts`, `runs/[episode]/[run]/actions.ts`), gated on full-board `APPROVED` (a dev-mode `SKIP_REVIEWERS` run never qualifies, even if `APPROVED`).
+- `GET /api/published/[world]/[episodeNumber]` and a minimal `/published/[world]/[episodeNumber]` preview page rendering the published scenes/dialogue directly in the admin app.
+- Live-verified end-to-end via the admin UI: publish → success message → API returns content → preview renders it; unpublished episodes 404; non-`APPROVED` runs show why they can't be published.
 
-### Before this phase can start
-Needed a decision on what "published" means for a text/choice-driven episode with no player yet. **Proposed (2026-07-07, not yet implemented): `docs/decisions/003-publish-scope-proposal.md`.** Recommends against building Publisher/Analytics/JSON-Export as LLM agents at all (publishing is deterministic, not creative — same philosophy as `compile-screenplay.js`/`persist-episode.js`), a minimal "publish" gate distinct from the existing automatic Postgres upsert, and a stable player-content schema to break the Phase 4/5 circular dependency. Needs a human decision on the open questions in that doc before implementation starts.
+### Deliberately NOT built
+A trimmed player-facing content projection (the read path returns the full authoring shape as-is — deferred until a real frontend needs something narrower), a separate `apps/player` app, and any auth/role gate on who can publish (`apps/admin` has none today). See "What we deliberately did NOT build" in the ADR for the full list.
 
 ---
 
@@ -203,7 +205,7 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 - Voice narration (ElevenLabs vs. Google Cloud TTS)
 - Frontend hosting (Vercel vs. custom deployment)
 - Analytics platform (custom vs. Mixpanel/Amplitude)
-- **New pending decision**: what "publish" means for this content type — now has a concrete recommendation (`docs/decisions/003-publish-scope-proposal.md`), but the specific open questions it flags (manual vs. automatic publish gate, new app vs. admin-preview-first, versioning) still need a human call.
+- ~~What "publish" means for this content type~~ — decided and implemented 2026-07-08 (`docs/decisions/003-publish-scope-proposal.md`, Accepted): manual gate in `apps/admin`, full board required, durable snapshot columns.
 
 ---
 
@@ -213,13 +215,13 @@ Done since this list was written (2026-07-07):
 - ~~Basic CI~~ — `.github/workflows/ci.yml` builds + runs the full test suite (including the Postgres-gated integration suite, via a `pgvector` service container) on every PR and push to `main`.
 - ~~Protagonist continuity across episodes~~ — `loadPreviousProtagonist()` carries the protagonist's full profile into episode 2+ and skips Character Designer for it entirely; live-verified the Story Architect using the carried-over name unprompted 44 times in one outline. See `docs/OPEN-QUESTIONS.md` item 2.
 - ~~NPC continuity~~ — generalized to `loadPreviousCast()`; the Story Architect can now optionally bring back any previous episode's supporting character by id. Live-verified: it brought back all 3 of episode 1's NPCs by name in one run, with zero Character Designer calls for any of them, while still correctly generating a genuinely new character introduced mid-revision. See `docs/OPEN-QUESTIONS.md` item 2.
-- **Decided what "publish" means and scoped Phase 4** — see `docs/decisions/003-publish-scope-proposal.md` (proposed, not yet implemented; flags explicit decisions still needing a human call before writing code).
+- ~~Decide what "publish" means and scope Phase 4~~ — decided AND implemented 2026-07-08: `docs/decisions/003-publish-scope-proposal.md` (Accepted). Manual publish button in `apps/admin`, full board required, durable `published_*` snapshot columns, a read API + preview page. Live-verified end-to-end.
 
 Cheap, well-scoped, not yet done:
 1. Extend `previousEpisodes` continuity to the remaining 3 reviewers if evidence shows it's worth it.
 
 Bigger, would start actual Phase 4/5 work:
-2. Confirm or revise the recommendations in `docs/decisions/003-publish-scope-proposal.md`, then implement the minimal Phase 4 scope it proposes (deterministic publish step + player-content projection + a bare-minimum read API) — this is the actual Phase 4 blocker, now scoped rather than open-ended.
+2. A trimmed player-facing content projection — the publish read path currently returns the full authoring shape as-is (deliberately descoped, see the ADR); worth revisiting once a real frontend needs something narrower.
 3. Admin phase 2: generate-from-UI (episode-brief form, SSE streaming) — still internal tooling, not Phase 5, but the natural next step for the admin app.
 4. A real Phase 5 kickoff (episode player) is not recommended until Phase 4's data contract exists — building a frontend against a shape that's still `output/episodes/*.json` invites a rewrite.
 

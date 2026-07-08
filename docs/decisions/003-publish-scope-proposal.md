@@ -1,9 +1,8 @@
-# ADR 003 (proposed): What "publish" means, and the minimal scope for Phase 4
+# ADR 003: What "publish" means, and the minimal scope for Phase 4
 
-**Status:** Proposed (2026-07-07) — recommendations below, NOT yet
-implemented. This is a decision-first task, not a code-first one: the
-open questions at the end need a human call before any of this should be
-built.
+**Status:** Accepted (2026-07-08) — decided and implemented. Originally
+posted 2026-07-07 as a proposal; the human decisions below were made the
+next day and the resulting scope was built the same session.
 
 ## Context
 
@@ -32,93 +31,108 @@ What DOES exist today, found while writing this proposal:
   bound script and the Postgres upsert are both assembled from already-
   generated content, not created by an agent call.
 
-## Decision (recommended)
+## Decision
 
-### What "publish" means
+### What "publish" means (confirmed by a human, 2026-07-08)
 
 An episode is **published** when:
-1. Its most recent run's `finalStatus === 'APPROVED'` (already required
-   — this is not new).
-2. A human explicitly confirms it. Not automatic on `APPROVED` — reviewer
-   verdict variance is real and documented (`docs/OPEN-QUESTIONS.md` item
-   4; roughly half of full-board runs need human review even when they
-   eventually pass), so an `APPROVED` pipeline verdict should be a
-   necessary condition for publishing, not a sufficient one.
-3. Its content is projected into a stable, **player-facing** shape —
-   distinct from the authoring shape currently in `output/episodes/*.json`
-   / `episodes.content` — that hides pipeline internals (run folder
-   paths, reviewer verdicts, revision history, agent design notes,
-   `parseError`/`rawResponse` debug fields) and exposes only what a
-   renderer needs: scenes, dialogue, choices, branch outcomes, metadata.
+1. Its most recent run was reviewed by the **full board** and got
+   `finalStatus === 'APPROVED'` — a dev-mode run (`SKIP_REVIEWERS`) never
+   qualifies even if `APPROVED`, since it skips exactly the reviewers most
+   likely to catch real issues (`docs/OPEN-QUESTIONS.md` item 4). This
+   refinement over the original proposal came from implementation: the
+   manifest already records `skippedReviewers`, so enforcing "full board
+   only" cost nothing extra.
+2. A human explicitly confirms it, via a button — not automatic on
+   `APPROVED`. Confirmed: reviewer verdict variance means `APPROVED`
+   should be necessary but not sufficient.
+3. ~~Its content is projected into a stable, player-facing shape~~ —
+   **descoped for this iteration.** The full authoring `content` shape is
+   snapshotted as-is into `published_content`; trimming it to a true
+   player-facing projection is deferred until a real frontend exists to
+   define what it actually needs (see "What we deliberately did NOT
+   build," below). The durable-snapshot property (item 2 below) is what
+   mattered architecturally; shape-trimming is a separable, easy-to-add-
+   later concern.
 
-### Recommended minimal Phase 4 scope
+### Scope built
 
-1. **A `publish` action, not an agent.** Publishing is deterministic
-   (validate + transform + flip a status), not creative — same
-   philosophy as `compile-screenplay.js`. Recommend a
-   `scripts/publish-episode.js` (zero LLM calls, mirrors
-   `persist-run.js`'s shape) callable from the CLI and, once it exists,
-   from an admin-dashboard button. It should be the ONLY code path that
-   ever sets `status = 'PUBLISHED'`.
-2. **A player-content projection function.** A pure transform
-   (`episode row → player-facing JSON`) that strips everything a
-   renderer doesn't need. This is the actual Phase 4/5 "data contract" —
-   defining it is what unblocks Phase 5 without needing the rest of
-   Phase 4's original scope.
-3. **The simplest possible read path.** A Next.js API route (in
-   `apps/admin`, or a new minimal app — see open questions) that reads
-   the published projection from Postgres. No separate backend service.
-4. **Explicitly deferred, with reasoning:**
-   - **Analytics Agent** — no players exist yet, so there is no data to
-     analyze. Building this now would mean guessing at an event schema
-     with zero real usage to validate it against.
-   - **Publisher Agent / JSON Export Agent as LLM agents** — per point 1,
-     these should never have been agents; the "agent" framing in the
-     original roadmap doesn't fit a deterministic operation.
-   - **A production database schema separate from what exists** — the
-     `episodes` table already does the job; no evidence yet that it needs
-     to change beyond adding the publish action above.
+1. **A `publish` action inside `apps/admin`, not a standalone script or
+   an agent** (confirmed: "In the admin portal we complete"). Publishing
+   is deterministic (validate + snapshot + flip a status) — same
+   philosophy as `compile-screenplay.js`. `apps/admin/src/lib/publish.ts`:
+   `reasonNotPublishable()`/`isPublishable()` (pure, unit-tested),
+   `findEpisodeRow()`, `publishEpisode()`. Wired to a "Publish" button
+   (`publish-button.tsx`, a `'use server'` action in `actions.ts`) on the
+   run-detail page. This is the ONLY code path that ever sets
+   `status = 'PUBLISHED'` or writes the `published_*` columns.
+2. **A durable snapshot, not a live pointer.** `content`/`metadata` are
+   mutated by every pipeline run (`persist-episode.js`) — publishing
+   copies them into separate `published_content`/`published_metadata`/
+   `published_run_folder`/`published_at` columns
+   (`infrastructure/db/migrations/2026-07-08-add-published-columns.sql`).
+   `persist-episode.js`'s UPSERT never lists these columns, so an
+   ordinary re-run (routine in this repo's workflow — this session alone
+   re-ran the pipeline a dozen times while testing continuity features)
+   can never silently change what's already published. Re-publishing an
+   unchanged episode is idempotent (`status: 'PUBLISHED'` counts as
+   "was approved" on re-check).
+3. **The simplest possible read path**, inside `apps/admin` (confirmed
+   open question 2, option (a)): `GET /api/published/[world]/[episodeNumber]`
+   reads ONLY the `published_*` columns — never `content` — 404s until a
+   human has published at least once. This is the actual contract a
+   future frontend would consume.
+4. **A minimal preview page** (`/published/[world]/[episodeNumber]`),
+   beyond original scope but cheap and valuable: renders the published
+   snapshot's title/synopsis/cast/scenes/dialogue directly in the admin
+   app, so a human can SEE that publishing produced something real
+   without waiting for a player app to exist.
+5. **Deferred, as originally proposed:**
+   - **Analytics Agent** — no players exist yet.
+   - **Publisher Agent / JSON Export Agent as LLM agents** — publishing
+     stayed code, never became an agent.
+   - **A production database schema separate from what exists** — three
+     new columns on `episodes`, no new tables.
 
-This scope is deliberately much smaller than the original Phase 4 — it
-trades "3 production agents + full production infra" for "one
-deterministic script + one schema + one read route," sized to what's
-actually needed to break the Phase 4/5 circular dependency, not to
-build a production system nothing uses yet.
+## Open questions — resolved
 
-## Open questions (need a human decision before implementation)
+1. **Manual publish button, or automatic on `APPROVED`?** → Manual.
+   Confirmed by a human ("approved by our agents and one final approval
+   by human").
+2. **Where does the read path live?** → Inside `apps/admin` (confirmed:
+   "In the admin portal we complete"), not a new `apps/player`. The
+   preview page item 4 above is the concrete result.
+3. **Versioning.** → Resolved by the durable-snapshot design (item 2
+   above): `published_content`/`published_at` are frozen at publish time,
+   decoupled from `content`, which keeps mutating with every pipeline run.
 
-1. **Manual publish button, or automatic on `APPROVED`?** Recommend
-   manual (see "what publish means" above) — but this is a product
-   call, not a technical one.
-2. **Where does the read path live?** Options, cheapest first:
-   - (a) A "preview as player" route inside `apps/admin` — reuses the
-     existing app, cheapest way to validate the player-content schema
-     before investing in a real player app. **Recommended first step.**
-   - (b) A new minimal `apps/player` app — the eventual real answer, but
-     premature before (a) has validated the schema against actual
-     rendered content.
-3. **Versioning.** Postgres holds only the LATEST content per (season,
-   episode_number) today. If a published episode's underlying run gets
-   regenerated, does the live/published version silently change, or does
-   publishing need to snapshot a durable, versioned copy (e.g. a
-   `published_episodes` table, or a `published_at`/`published_content`
-   pair on the existing row)? Given there are no real players yet, the
-   stakes of overwriting-in-place are low today — but this should be a
-   deliberate choice, not a default.
+## What we deliberately did NOT build
 
-## What we deliberately do NOT propose
-
-- Illustration, voice narration, or any other Phase 7 feature — those
-  depend on having a publish step and players first.
-- A full player-facing frontend (Phase 5 itself) — this proposal only
-  scopes the data contract Phase 5 would consume, per the "before this
-  phase can start" note in `docs/ROADMAP.md`'s Phase 5 section.
+- A trimmed player-facing content projection (see "descoped" note above)
+  — the read path returns the full authoring shape; a real frontend will
+  define what to strip once one exists.
+- Illustration, voice narration, or any other Phase 7 feature.
+- A full player-facing frontend (Phase 5 itself, the interactive
+  scenes-with-choices experience) — the preview page renders dialogue
+  linearly, with no choice interaction; that's genuinely Phase 5.
 - Changing how episodes are AUTHORED (the pipeline in
-  `scripts/create-real-episode.js`) — this is purely about what happens
+  `scripts/create-real-episode.js`) — this was purely about what happens
   to an episode after `finalStatus: APPROVED`.
+- Any auth/role gate on who can click "Publish" — `apps/admin` has none
+  today; out of scope for this decision.
+- Un-publishing. Only forward publish/re-publish exists.
+
+Live-verified end-to-end via the admin UI: published episode 1 ("First
+Bell," a full-board `APPROVED` run), confirmed the success message and
+the "Re-publish (no changes)" state on re-check, confirmed
+`GET /api/published/NEW_SCHOOL/1` returns the full content (19 scenes)
+while `GET /api/published/NEW_SCHOOL/2` (never published) 404s, and
+confirmed the preview page renders real scene/dialogue content. Also
+confirmed the rejection path renders correctly for a non-`APPROVED` run
+("Not publishable: Latest run's status is IN_REVIEW, not APPROVED.").
 
 ## Revisit
 
-If real players/testers become available before this is implemented,
-revisit the Analytics deferral specifically — an early, even primitive
-event schema informed by real usage beats one guessed at in advance.
+If real players/testers become available, revisit the Analytics
+deferral and the player-content-projection descope specifically — both
+are better designed against real usage than guessed at in advance.
