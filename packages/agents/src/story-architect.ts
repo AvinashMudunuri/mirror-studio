@@ -455,6 +455,15 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
    * give the model ONE chance to repair its own structure, then fail loudly.
    */
   private async ensurePlayableOutline(result: StoryArchitectOutput): Promise<StoryArchitectOutput> {
+    // Deterministic cleanup first: a choice-bearing scene keeping a stray
+    // defaultNextScene is the single most common structural defect
+    // observed live (QA flagged it as a BLOCKER on every revision of a
+    // real run, 2026-07-08, despite the prompt already stating the rule
+    // explicitly) — the fix is always unambiguous (the choice's own
+    // options already define where the scene leads), so strip it here for
+    // free instead of spending a self-repair round-trip on it.
+    result = { ...result, episodeOutline: this.stripRedundantDefaultNextScene(result.episodeOutline) };
+
     let structuralErrors = this.validateTransitions(result.episodeOutline);
     
     if (structuralErrors.length > 0) {
@@ -466,6 +475,10 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
         this.buildStructuralRepairPrompt(result, structuralErrors)
       );
       result = this.parseOutlineFromResponse(repairResponse);
+      // The repair pass can reintroduce (or fail to remove) the same
+      // choice-vs-defaultNextScene conflict while fixing something else —
+      // strip again rather than trusting the LLM got it right this time.
+      result = { ...result, episodeOutline: this.stripRedundantDefaultNextScene(result.episodeOutline) };
       
       structuralErrors = this.validateTransitions(result.episodeOutline);
       if (structuralErrors.length > 0) {
@@ -478,6 +491,31 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
     
     this.validateOutline(result.episodeOutline);
     return result;
+  }
+
+  /**
+   * Remove `defaultNextScene` from any scene that also has a choice point
+   * attached — a scene must use exactly one transition mechanism (its
+   * choice options' own `nextScene`, not both). See ensurePlayableOutline.
+   */
+  private stripRedundantDefaultNextScene(outline: EpisodeOutline): EpisodeOutline {
+    const scenesWithChoices = new Set((outline.choicePoints || []).map(cp => cp.scene));
+    let strippedCount = 0;
+
+    const scenes = (outline.scenes || []).map(scene => {
+      if (scenesWithChoices.has(scene.id) && scene.defaultNextScene) {
+        strippedCount += 1;
+        const { defaultNextScene: _unused, ...rest } = scene;
+        return rest as Scene;
+      }
+      return scene;
+    });
+
+    if (strippedCount > 0) {
+      console.log(`[River] Stripped redundant "defaultNextScene" from ${strippedCount} choice-bearing scene(s)`);
+    }
+
+    return { ...outline, scenes };
   }
   
   /**
@@ -518,7 +556,15 @@ ${brief.previousEpisodes.map(e => `- Episode ${e.id}: ${e.title}\n  ${e.synopsis
     }
     
     for (const scene of scenes) {
-      if (scenesWithChoices.has(scene.id)) continue;
+      if (scenesWithChoices.has(scene.id)) {
+        // Defense-in-depth: ensurePlayableOutline strips this
+        // deterministically before/after self-repair, but validate it too
+        // in case this function is ever called on its own.
+        if (scene.defaultNextScene) {
+          errors.push(`Scene "${scene.id}" has a choice point AND a "defaultNextScene" — a scene must use exactly one transition mechanism; remove "defaultNextScene" since the choice's options already route to the next scene(s)`);
+        }
+        continue;
+      }
       
       if (!scene.defaultNextScene) {
         errors.push(`Scene "${scene.id}" has no choice point and no "defaultNextScene" — it is a dead end`);
@@ -588,6 +634,7 @@ ${errors.map(e => `- ${e}`).join('\n')}
 RULES:
 - Every option in every choicePoint needs "nextScene": an existing scene id or "END"
 - Every scene without a choice point needs "defaultNextScene": an existing scene id or "END"
+- A scene WITH a choice point must NOT also have "defaultNextScene" — remove it if present, the choice's own options already define where the scene leads
 - Every scene must be reachable from the first scene
 - At least one path must reach "END"
 - Every branch needs "id" (kebab-case) and "triggeredBy" ("choiceId:optionId" paths)
