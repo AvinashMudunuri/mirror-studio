@@ -285,6 +285,36 @@ policy if this recurs on other episodes, or if a scene-count guardrail on
 the Story Architect's revision prompt (discouraging complexity growth
 across revisions) turns out to be the more targeted fix.
 
+**Outcome: both episode 1 and episode 2 reached genuine `APPROVED` under
+the tightened gate (2026-07-08), using this escalation.** Fresh full-board
+runs with `QA_REVIEWER_MODEL`/`GAME_DESIGNER_MODEL`/`ETHICS_REVIEWER_MODEL=claude-sonnet-5`:
+- Episode 1 ("First Bell", `run-2026-07-08_06-52-52`): APPROVED on the
+  FIRST pass, 0 revision iterations, 252,722 tokens, 14.9 minutes.
+- Episode 2 ("The Bridge Table"/"Group Work", `run-2026-07-08_07-11-54`,
+  with real protagonist + 4-NPC continuity from episode 1's Postgres row):
+  APPROVED on the first pass, 0 revision iterations, 224,791 tokens, 11.5
+  minutes.
+
+Both are dramatically cheaper AND faster than the two failed haiku-QA
+attempts that preceded them (514,887 + 918,944 = ~1.43M tokens, ~98
+minutes combined, both ending `NEEDS_HUMAN_REVIEW` while chasing
+fabricated findings) — strong, repeated (2/2) evidence this isn't a
+one-off fluke. Verified the approvals are real, not just a status label:
+`failingReviewers()` returns `[]` for both, and the underlying data holds
+up — zero CRITICAL/MAJOR issues, empty `mustFix`, `readyForPublication:
+true`, `readyForAudience: true` on both runs. This strengthens the case
+for promoting the escalation to a permanent default for these three
+reviewers (at least QA, which fabricated ~90% of its findings both times
+it was tested) rather than a per-run workaround — a decision left to a
+human given the direct cost-per-run tradeoff (sonnet is far more
+expensive than haiku).
+
+Both runs' Postgres rows are now `status: APPROVED`, superseding the
+prior runs' `PUBLISHED`/`IN_REVIEW` status (the `episodes` table always
+reflects the LATEST run; `published_*` columns are untouched — see ADR
+003 — so the previously-published episode 1 snapshot is unaffected until
+a human re-publishes via `apps/admin`).
+
 ## 5. Branch selection at runtime (schema gap, flagged by QA)
 
 Branches now carry `id` + `triggeredBy` (`"choiceId:optionId"` paths) and
@@ -528,15 +558,30 @@ live re-check. Also added 15 new unit tests directly covering the new
 predicates in `tests/unit/pipeline-helpers.test.ts`.
 
 Not done / deliberately out of scope:
-- Did not touch QA Reviewer or Creative Director — both already gate on
-  their own findings correctly (binary PASS/FAIL; an explicit calibration
-  rubric from PR #14).
-- Did not re-run the full pipeline live to observe the new revision loop
-  end-to-end (would cost real tokens/time for a purely deterministic code
-  change with strong historical-replay evidence already in hand) — if a
-  live confirmation run is wanted, `npm run real:episode` (full board)
-  is the way to see it.
-- Did not change `MAX_REVISION_ITERATIONS` (still 2) — stricter gating
-  will plausibly increase how often that bound is hit and a run ends
-  `NEEDS_HUMAN_REVIEW` instead of `APPROVED`; revisit if that turns out
-  to block real production use.
+- Did not touch QA Reviewer's or Creative Director's PASS/FAIL logic —
+  both already gate on their own findings correctly (binary PASS/FAIL;
+  an explicit calibration rubric from PR #14). QA's reliability problem
+  turned out to be model choice (haiku hallucinating), not gate logic —
+  see the update below.
+
+**Update (2026-07-08): live-verified end-to-end, not left as a
+historical-replay-only claim.** Re-ran episode 1 live under the tightened
+gate — it did NOT immediately reach `APPROVED` (see below), which led to
+two further real fixes, all now live-verified:
+1. `MAX_REVISION_ITERATIONS` raised from 2 to 3 (env-overridable) and
+   `QA_REVIEWER`'s `maxTokens` raised from 4096 to 8192 — QA's response
+   was truncated on every single call (haiku doesn't get the
+   adaptive-thinking retry-with-bigger-budget path a truncated response
+   needs to self-correct).
+2. A genuine Story Architect bug found and fixed: `validateTransitions()`
+   silently skipped choice-bearing scenes entirely, so a stray
+   `defaultNextScene` left on one was never caught — `ensurePlayableOutline()`
+   now strips it deterministically (before AND after the self-repair
+   round-trip) instead of hoping the model removes it.
+3. The real blocker: QA (and to a lesser extent Game Designer) on haiku
+   was hallucinating specific, wrong claims about the review payload on a
+   27-scene episode — see the "Update (2026-07-08)" note above for the
+   full investigation. Escalating those two (plus Ethics Reviewer, whose
+   findings were real but is reviewed alongside them) to
+   `claude-sonnet-5` produced two clean first-pass `APPROVED` runs for
+   episode 1 and episode 2.

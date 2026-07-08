@@ -29,11 +29,24 @@ npm run dev -w @mirror/admin        # dashboard over run folders at localhost:33
 
 Env knobs: `EPISODE_NUMBER` (default 1; selects which brief in
 `EPISODE_BRIEFS` to generate — `2` generates the season's episode 2),
-`MAX_RUN_TOKENS` (0 = unlimited), `SKIP_REVIEWERS`
-(comma-separated manifest keys), `ANTHROPIC_MODEL` (creation),
-`ANTHROPIC_REVIEW_MODEL` (reviewers, default haiku), `<AGENT>_MODEL` /
-`<AGENT>_MAX_TOKENS` per-agent overrides, `DATABASE_URL` (Postgres opt-in),
-`CLAUDE_BACKEND` (`anthropic` default, or `bedrock` — see below).
+`MAX_RUN_TOKENS` (0 = unlimited), `MAX_REVISION_ITERATIONS` (default 3),
+`SKIP_REVIEWERS` (comma-separated manifest keys), `ANTHROPIC_MODEL`
+(creation), `ANTHROPIC_REVIEW_MODEL` (reviewers, default haiku),
+`<AGENT>_MODEL` / `<AGENT>_MAX_TOKENS` per-agent overrides, `DATABASE_URL`
+(Postgres opt-in), `CLAUDE_BACKEND` (`anthropic` default, or `bedrock` —
+see below).
+
+**Known haiku failure mode (2026-07-08): QA Reviewer (and to a lesser
+extent Game Designer) can hallucinate outright on complex/large episodes**
+(live-verified: 20 of 22 QA errors against a 27-scene episode named fields
+that provably did not exist in the data QA received). If a run keeps
+failing QA/Game Designer with findings that look structurally suspicious
+on a large episode, try `QA_REVIEWER_MODEL=claude-sonnet-5
+GAME_DESIGNER_MODEL=claude-sonnet-5 ETHICS_REVIEWER_MODEL=claude-sonnet-5`
+before assuming the content itself is broken — this exact escalation took
+two episodes from repeated `NEEDS_HUMAN_REVIEW` (chasing fabricated
+findings, ~1.4M tokens combined) to first-pass `APPROVED` (~250k tokens
+each). See `docs/OPEN-QUESTIONS.md` item 4's 2026-07-08 update.
 
 ## Claude backend: Anthropic API or AWS Bedrock
 
