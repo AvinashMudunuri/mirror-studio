@@ -25,7 +25,8 @@ const {
   mergeBranchDialogue,
   unreadableResult,
   reusedCharacterResult,
-  findReusableCharacter
+  findReusableCharacter,
+  resolveEpisodeBrief
 } = require('../../scripts/lib/pipeline-helpers');
 
 // ---------- roster collection ----------
@@ -354,6 +355,48 @@ describe('collectRevisionFeedback', () => {
       }
     });
     expect(story.map((f: any) => f.from)).toEqual(['GAME_DESIGNER', 'ETHICS_REVIEWER']);
+  });
+});
+
+// ---------- episode brief resolution (admin "generate" form) ----------
+
+describe('resolveEpisodeBrief', () => {
+  const briefs = {
+    1: { world: 'New School', worldId: 'NEW_SCHOOL', season: 'S1', episodeNumber: 1, title: 'First Day', themes: ['Belonging'], targetTraits: ['CONFIDENCE'], synopsis: '...' }
+  };
+
+  it('falls back to the hardcoded table when no override is given', () => {
+    expect(resolveEpisodeBrief(briefs, 1, undefined)).toEqual(briefs[1]);
+    expect(resolveEpisodeBrief(briefs, 1, '')).toEqual(briefs[1]);
+  });
+
+  it('returns undefined for an undefined episode number with no override (existing "no brief" error path)', () => {
+    expect(resolveEpisodeBrief(briefs, 99, undefined)).toBeUndefined();
+  });
+
+  it('uses a complete custom brief over the hardcoded table, forcing episodeNumber to match the env var', () => {
+    const custom = {
+      world: 'New School', worldId: 'NEW_SCHOOL', season: 'S1',
+      title: 'A New One', themes: ['Trust'], targetTraits: ['INTEGRITY'], synopsis: 'Something happens.'
+    };
+    const result = resolveEpisodeBrief(briefs, 5, JSON.stringify(custom));
+    expect(result).toEqual({ ...custom, episodeNumber: 5 });
+  });
+
+  it('throws on invalid JSON instead of silently falling back', () => {
+    expect(() => resolveEpisodeBrief(briefs, 1, '{not json')).toThrow(/not valid JSON/);
+  });
+
+  it('throws when a required field is missing', () => {
+    const incomplete = { world: 'New School', worldId: 'NEW_SCHOOL', season: 'S1', title: 'X', themes: ['A'], targetTraits: ['CONFIDENCE'] }; // no synopsis
+    expect(() => resolveEpisodeBrief(briefs, 1, JSON.stringify(incomplete))).toThrow(/missing required field.*synopsis/);
+  });
+
+  it('throws when themes or targetTraits is empty or not an array', () => {
+    const base = { world: 'New School', worldId: 'NEW_SCHOOL', season: 'S1', title: 'X', synopsis: '...' };
+    expect(() => resolveEpisodeBrief(briefs, 1, JSON.stringify({ ...base, themes: [], targetTraits: ['CONFIDENCE'] }))).toThrow(/themes must be a non-empty array/);
+    expect(() => resolveEpisodeBrief(briefs, 1, JSON.stringify({ ...base, themes: ['A'], targetTraits: [] }))).toThrow(/targetTraits must be a non-empty array/);
+    expect(() => resolveEpisodeBrief(briefs, 1, JSON.stringify({ ...base, themes: 'A', targetTraits: ['CONFIDENCE'] }))).toThrow(/themes must be a non-empty array/);
   });
 });
 

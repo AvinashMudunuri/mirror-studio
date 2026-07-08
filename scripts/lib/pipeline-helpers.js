@@ -140,6 +140,44 @@ function isDialogueLocated(text) {
   return /dialogue|line|speech|says|spoken/i.test(text);
 }
 
+/** Fields a custom episode brief (e.g. from the admin "generate" form) must provide. */
+const REQUIRED_BRIEF_FIELDS = ['world', 'worldId', 'season', 'title', 'themes', 'targetTraits', 'synopsis'];
+
+/**
+ * Resolve which episode brief a run uses: a custom one (JSON string, e.g.
+ * from `EPISODE_BRIEF_JSON` — the admin "generate" form's episode-brief
+ * form) takes priority over the hardcoded `episodeBriefs[episodeNumber]`
+ * table, so the UI isn't limited to the two pre-written episodes. Throws
+ * (fail loud) rather than silently falling back on malformed/incomplete
+ * custom JSON — a partially-wrong brief would waste a real pipeline run.
+ */
+function resolveEpisodeBrief(episodeBriefs, episodeNumber, briefJsonOverride) {
+  if (!briefJsonOverride) return episodeBriefs[episodeNumber];
+
+  let custom;
+  try {
+    custom = JSON.parse(briefJsonOverride);
+  } catch (error) {
+    throw new Error(`EPISODE_BRIEF_JSON is not valid JSON: ${error.message}`);
+  }
+
+  const missing = REQUIRED_BRIEF_FIELDS.filter(key => {
+    const value = custom[key];
+    return value === undefined || value === null || value === '';
+  });
+  if (missing.length > 0) {
+    throw new Error(`EPISODE_BRIEF_JSON is missing required field(s): ${missing.join(', ')}`);
+  }
+  if (!Array.isArray(custom.themes) || custom.themes.length === 0) {
+    throw new Error('EPISODE_BRIEF_JSON.themes must be a non-empty array');
+  }
+  if (!Array.isArray(custom.targetTraits) || custom.targetTraits.length === 0) {
+    throw new Error('EPISODE_BRIEF_JSON.targetTraits must be a non-empty array');
+  }
+
+  return { ...custom, episodeNumber };
+}
+
 /**
  * Turn negative reviews into revision feedback, split by revision target:
  * - story: goes to Story Architect REVISION_REQUEST
@@ -262,5 +300,6 @@ module.exports = {
   collectRevisionFeedback,
   mergeSceneDialogue,
   mergeChoiceDialogue,
-  mergeBranchDialogue
+  mergeBranchDialogue,
+  resolveEpisodeBrief
 };
