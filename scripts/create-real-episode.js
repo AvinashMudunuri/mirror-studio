@@ -143,8 +143,17 @@ const TEST_WORLD = {
   seasons: ['Season 1: First Year']
 };
 
-/** How many revise → re-review rounds to attempt before accepting the result. */
-const MAX_REVISION_ITERATIONS = 2;
+/**
+ * How many revise → re-review rounds to attempt before accepting the
+ * result. Override with MAX_REVISION_ITERATIONS. Default raised from 2 to
+ * 3 (2026-07-08): the tightened reviewer gate (docs/OPEN-QUESTIONS.md item
+ * 11) makes convergence harder — live-verified 2 iterations was
+ * insufficient for a real episode with a non-trivial branching structure
+ * (Game Designer/Ethics Reviewer still had MAJOR issues after 2 rounds).
+ */
+const MAX_REVISION_ITERATIONS = process.env.MAX_REVISION_ITERATIONS !== undefined
+  ? parseInt(process.env.MAX_REVISION_ITERATIONS, 10)
+  : 3;
 
 /**
  * Hard token budget for the whole run (input + output, all calls).
