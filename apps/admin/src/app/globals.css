@@ -54,7 +54,34 @@ a:hover { text-decoration: underline; }
 .site-nav a:hover { border-color: var(--accent); text-decoration: none; }
 
 .page-title { font-size: 22px; margin: 8px 0 4px; }
-.page-sub { color: var(--text-dim); font-size: 14px; margin: 0 0 24px; }
+.page-sub { color: var(--text-dim); font-size: 14px; margin: 0 0 16px; }
+
+.run-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.run-filter {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-dim);
+}
+.run-filter:hover { border-color: var(--accent); color: var(--text); text-decoration: none; }
+.run-filter.active {
+  border-color: var(--accent);
+  background: rgba(110, 168, 254, 0.12);
+  color: var(--accent);
+}
+.run-filter.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
 
 /* ---------- badges ---------- */
 .badge {

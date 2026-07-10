@@ -174,6 +174,16 @@ export async function listPublishedRunIndex(pool: Pool): Promise<PublishedRunInd
 
 export type RunPublishLabel = 'live' | 'latest' | 'not_published';
 
+export type RunListFilter = 'published' | 'current' | 'all';
+
+const RUN_LIST_FILTERS: RunListFilter[] = ['published', 'current', 'all'];
+
+/** Default dashboard filter — show only LIVE runs on the player. */
+export function parseRunListFilter(value: string | undefined): RunListFilter {
+  if (value && RUN_LIST_FILTERS.includes(value as RunListFilter)) return value as RunListFilter;
+  return 'published';
+}
+
 /** How this run folder relates to what the player serves (if Postgres is configured). */
 export function publishLabelForRun(
   runPath: string,
@@ -182,4 +192,15 @@ export function publishLabelForRun(
   if (index.some(e => e.publishedRunFolder === runPath)) return 'live';
   if (index.some(e => e.contentRunFolder === runPath)) return 'latest';
   return 'not_published';
+}
+
+export function matchesRunListFilter(
+  label: RunPublishLabel | null,
+  filter: RunListFilter,
+  hasDatabase: boolean
+): boolean {
+  if (filter === 'all' || !hasDatabase) return true;
+  if (!label) return false;
+  if (filter === 'published') return label === 'live';
+  return label === 'live' || label === 'latest';
 }
