@@ -14,8 +14,22 @@ export interface PublishActionResult {
  * snapshot. Re-validates publishability server-side (the button that
  * triggers this should already be hidden otherwise, but never trust the
  * client alone for a write).
+ *
+ * Form-backed server action for useActionState — args come from hidden
+ * fields, not a client wrapper (wrapping breaks Server Actions in Next 15).
  */
-export async function publishEpisodeAction(episodeId: string, episodeFolder: string, runFolder: string): Promise<PublishActionResult> {
+export async function publishEpisodeAction(
+  _prev: PublishActionResult,
+  formData: FormData
+): Promise<PublishActionResult> {
+  const episodeId = String(formData.get('episodeId') || '');
+  const episodeFolder = String(formData.get('episodeFolder') || '');
+  const runFolder = String(formData.get('runFolder') || '');
+
+  if (!episodeId || !episodeFolder || !runFolder) {
+    return { ok: false, message: 'Missing publish form fields.' };
+  }
+
   const pool = getPool();
   if (!pool) {
     return { ok: false, message: 'DATABASE_URL is not configured for this admin instance — publishing is unavailable.' };
@@ -24,6 +38,11 @@ export async function publishEpisodeAction(episodeId: string, episodeFolder: str
   try {
     const { publishedAt } = await publishEpisode(pool, episodeId);
     revalidatePath(`/runs/${episodeFolder}/${runFolder}`);
+    const worldId = String(formData.get('worldId') || '');
+    const episodeNumber = String(formData.get('episodeNumber') || '');
+    if (worldId && episodeNumber) {
+      revalidatePath(`/published/${worldId}/${episodeNumber}`);
+    }
     return { ok: true, message: `Published at ${new Date(publishedAt).toUTCString().replace(' GMT', ' UTC')}.` };
   } catch (error) {
     return { ok: false, message: error instanceof Error ? error.message : String(error) };
