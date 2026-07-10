@@ -10,7 +10,7 @@
  */
 
 import { describe, it, expect } from '@jest/globals';
-import { isPublishable, reasonNotPublishable, publishLabelForRun } from '../../apps/admin/src/lib/publish';
+import { isPublishable, reasonNotPublishable, publishLabelForRun, parseRunListFilter, matchesRunListFilter } from '../../apps/admin/src/lib/publish';
 
 describe('reasonNotPublishable / isPublishable', () => {
   it('is publishable when APPROVED with no skipped reviewers', () => {
@@ -89,5 +89,37 @@ describe('publishLabelForRun', () => {
 
   it('marks historical run folders as not published', () => {
     expect(publishLabelForRun('output/episodes/episode-02-the-group-project/run-2026-07-10_15-32-04', index)).toBe('not_published');
+  });
+});
+
+describe('parseRunListFilter / matchesRunListFilter', () => {
+  it('defaults to published', () => {
+    expect(parseRunListFilter(undefined)).toBe('published');
+    expect(parseRunListFilter('')).toBe('published');
+  });
+
+  it('rejects unknown filters', () => {
+    expect(parseRunListFilter('bogus')).toBe('published');
+  });
+
+  it('published filter keeps only live runs', () => {
+    expect(matchesRunListFilter('live', 'published', true)).toBe(true);
+    expect(matchesRunListFilter('latest', 'published', true)).toBe(false);
+    expect(matchesRunListFilter('not_published', 'published', true)).toBe(false);
+  });
+
+  it('current filter keeps live and latest', () => {
+    expect(matchesRunListFilter('live', 'current', true)).toBe(true);
+    expect(matchesRunListFilter('latest', 'current', true)).toBe(true);
+    expect(matchesRunListFilter('not_published', 'current', true)).toBe(false);
+  });
+
+  it('all filter keeps everything', () => {
+    expect(matchesRunListFilter('not_published', 'all', true)).toBe(true);
+  });
+
+  it('without database shows all runs regardless of filter', () => {
+    expect(matchesRunListFilter(null, 'published', false)).toBe(true);
+    expect(matchesRunListFilter('not_published', 'current', false)).toBe(true);
   });
 });
