@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "branchDialogue does not cover all reachable (branch × ending) combinations. Branch-advocate (choice-1:speak-up + choice-2:hold-ground) and branch-repair (choice-2:back-off + choice-3:follow-alex) are both reachable paths that can still terminate at 'ending-comfortable-fit' (e.g., via choice-6a:'stay-quiet' or choice-7:'stay-and-enjoy'), but no branchDialogue entries exist for {sceneId: 'ending-comfortable-fit', branchId: 'branch-advocate'} or {sceneId: 'ending-comfortable-fit', branchId: 'branch-repair'}. Similarly branch-status-lock has no entries for 'ending-quiet-strength' or 'ending-balanced-growth' (this is expected/unlikely to be reachable, but worth confirming).",
+      "location": "branchDialogue[] (missing combinations for sceneId='ending-comfortable-fit', branchId in ['branch-advocate','branch-repair'])",
+      "suggestion": "Add branchDialogue entries for the advocate/repair paths landing on the comfortable-fit ending, so players who spoke up early but later chose the easy route at the party still get a tailored INTERNAL/dialogue beat reflecting that inconsistency (this is actually a great character-guilt moment worth writing)."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "Sum of per-scene 'duration' values across the full playthrough (~20-23 units depending on path) doesn't clearly correspond to the episode-level 'estimatedPlayTime': 13. It's unclear if 'duration' is in minutes or an abstract beat-count, making the estimatedPlayTime figure hard to verify.",
+      "location": "episode.estimatedPlayTime vs scenes[*].duration",
+      "suggestion": "Clarify the unit for scene.duration (e.g., minutes) in documentation, or recompute estimatedPlayTime as a sum along an average path to make the metadata verifiable."
+    },
+    {
+      "category": "STYLE",
+      "message": "Option IDs 'stand-up-publicly', 'stay-quiet', and 'pull-aside-private' are reused identically across both choice-6a and choice-6b. This is not a functional bug (options are scoped to their parent choice), but it makes cross-referencing choiceDialogue/outcomes triggeredBy slightly ambiguous to a human reader, since triggeredBy entries elsewhere use 'choiceId:optionId' pairs and it's easy to misread which choice a bare optionId belongs to.",
+      "location": "choices[6].options (choice-6a), choices[7].options (choice-6b)",
+      "suggestion": "Consider suffixing option ids per-choice (e.g., 'stand-up-publicly-6a', 'stand-up-publicly-6b') for clarity, though current 'choiceId:optionId' referencing pattern still resolves correctly."
+    },
+    {
+      "category": "STYLE",
+      "message": "In scene 'hallway-check-in', the choice-5 transition's nextScenes array lists 'alex-warms' twice (['alex-warms','alex-unsure','alex-warms']), mirroring that two of the three choice-5 options ('honest-admission' and 'direct-invite-repair') both route to 'alex-warms'. This is intentional per the dialogue but could look like a duplication bug on first read.",
+      "location": "scenes[hallway-check-in].transition.nextScenes",
+      "suggestion": "Add a brief inline comment/note in source content docs clarifying that the duplicate is intentional (two distinct emotional routes converging on the same outcome scene)."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 30,
+    "failedChecks": 0,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Fill in the missing branchDialogue combinations identified above (advocate/repair → comfortable-fit) to preserve emotional continuity for players who start strong but drift toward comfort by the party.",
+    "Document the intended unit for scene.duration and reconcile it with estimatedPlayTime so future episodes can be audited consistently.",
+    "Consider a light continuity note confirming Alex's 'talked to me twice' callback (priya-pushback → find-alex) stays accurate regardless of path taken to reach find-alex, since it currently reads correctly in all traced routes.",
+    "This episode's branching structure is clean: all 18 scenes are reachable, all three endings are reachable from all three party-day variants, and every choice/outcome/trait reference resolves correctly. Nice work on the scene graph."
+  ]
+}
