@@ -1,0 +1,148 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Sam Okafor's character relies heavily on quiet, withdrawn, and socially isolated traits without explicit context for why. While introversion is valid, the pattern of 'quiet Asian boy who sits alone, gets tripped, flinches preemptively' risks reinforcing the 'model minority' adjacent stereotype of Asian students as passive, victimized, or socially inept.",
+      "location": "Sam Okafor character profile and scenes 2-4b",
+      "harmPotential": "Asian students could internalize that quietness = social failure, or that Asian characters are primarily defined by social anxiety rather than agency. The 'gets tripped and flinches' pattern specifically positions Sam as a target rather than an agent.",
+      "recommendation": "Expand Sam's agency and complexity. Show his quietness as a deliberate choice (protective, observant, selective about who he trusts) rather than a deficit. Give him moments where he initiates, leads, or makes decisions. Consider adding a scene where his quiet observation actually solves something or gives him insight others miss. Ensure his dry humor and sketchbook talent are positioned as strengths, not compensations for social failure.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Jordan Reyes is the only character with an explicitly coded Latinx surname (Reyes), and she is portrayed as the primary antagonist/bully of the episode—the one who trips Sam, makes cutting jokes, and represents the 'in-crowd' cruelty. While complex characters of all backgrounds should include flawed ones, having the only clearly Latinx character be the main source of harm in the episode risks reinforcing stereotypes about Latinx students as aggressive or mean-spirited.",
+      "location": "Jordan Reyes character profile and scenes 2-4a",
+      "harmPotential": "Latinx players and readers could internalize that characters who look like them are portrayed as bullies/antagonists. Reinforces harmful stereotype of Latinx aggression or meanness. Creates unbalanced representation if Jordan is the only Latinx character.",
+      "recommendation": "Either (1) add another Latinx character with different traits/role to balance representation, or (2) reframe Jordan's antagonism as rooted in her own anxiety/pressure (which the character description hints at) and show her capacity for genuine growth/accountability more explicitly in the episode. The character description notes she's 'terrified of stillness' and has a 'soft' side with her sisters—lean into that complexity in the actual scenes to show her as a full person, not just a bully archetype.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The episode's central moral test (whether Maya defends Sam when Jordan trips him) is framed as a binary choice between 'stand up for Sam' or 'fit in with the crowd.' However, the consequences are not equally weighted: standing up for Sam costs Maya 'a fraction less warmth' from Jordan, while joining in the laugh carries only internal regret. This creates an imbalance where the 'right' choice feels costlier than it actually is, potentially discouraging real-world moral courage.",
+      "location": "Scenes 4a-4a-join-aftermath and 4a-defend-aftermath",
+      "harmPotential": "Players may internalize that standing up for others is more costly than it actually is, or that fitting in requires moral compromise. Conversely, players who choose to laugh along may feel the consequence (internal regret) is too light to matter, normalizing complicity.",
+      "recommendation": "Make consequences more proportional and visible: (1) If Maya defends Sam, show a real but manageable cost (Jordan's warmth cools, but she respects the boundary). (2) If Maya laughs along, show a more visible consequence—Sam actively avoids her later, or she catches him looking hurt, or she has to actively work to rebuild trust. This teaches that both choices have real social weight, and that kindness isn't 'free' but is worth the cost.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex Torres-Mireles is the only character explicitly coded as non-binary (they/them pronouns). While representation is positive, Alex's character is defined almost entirely by transience ('third new school in four years,' 'doesn't know if they'll be here past October'), restlessness ('allergic to stillness'), and anxiety about permanence. This risks positioning non-binary identity as inherently unstable or temporary, rather than as a stable identity that exists across different contexts.",
+      "location": "Alex Torres-Mireles character profile and scenes 4c",
+      "harmPotential": "Non-binary players could internalize that their identity is inherently temporary or unstable. The character's anxiety about staying is tied to their transience (moving schools) rather than their identity, but the clustering of 'non-binary + never stays + always moving' could reinforce harmful associations.",
+      "recommendation": "Decouple Alex's non-binary identity from their transience. Make clear that Alex's identity (they/them) is stable and consistent across schools, while their *location* is unstable due to parent's job. Add a line where Alex explicitly states their pronouns are consistent even as their address changes, or show them confidently using they/them in different contexts. This separates identity stability from geographic stability.",
+      "priority": 6
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Devon Park is the only character with an explicitly East Asian surname (Park). He is portrayed as anxious, competitive, controlling, and driven by pressure to outperform his siblings. While these traits are complex and understandable, the pattern of 'Asian character = high-achieving, anxious, competitive, driven by family pressure' aligns with 'model minority' stereotype, especially without counterbalance or explicit critique of the pressure he faces.",
+      "location": "Devon Park character profile and scenes 5a-6d",
+      "harmPotential": "Asian players could internalize that their worth is tied to achievement, or that anxiety/competitiveness is an inherent trait rather than a response to pressure. The episode doesn't explicitly critique the pressure system that's driving Devon, which could normalize it as 'just how it is' for Asian students.",
+      "recommendation": "Add a moment where Ms. Alvarez or another character explicitly names the pressure Devon is under as *unfair* or *unnecessary*, not just understandable. Show Devon having a moment of relief or self-awareness where he recognizes the pressure isn't actually about the project—it's about proving he's not 'ordinary' or 'invisible.' This frames the pressure as something to question, not just manage. Alternatively, give Devon a moment where he chooses something other than achievement (friendship, fun, rest) and is validated for it.",
+      "priority": 6
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Ms. Alvarez is the only adult character with significant presence, and she is a Latinx woman (Alvarez surname). While she's portrayed positively (watchful, caring, strategic), she's also described as 'tired' and managing her own burnout. The episode doesn't show her having support, mentorship, or relief—only her managing and intervening for students. This risks reinforcing the 'strong Latina who carries everything alone' trope.",
+      "location": "Ms. Alvarez character profile and scenes 5a-6d",
+      "harmPotential": "Latinx players, especially girls, could internalize that their role is to manage others' problems while managing their own burnout silently. The character is admirable but unsupported.",
+      "recommendation": "Add a small moment where Ms. Alvarez is supported or relieved by someone else (a colleague, an admin, a student showing her kindness), or show her explicitly taking care of herself (the tomato plants, the podcast, something that's just for her). This normalizes that even caring adults need and deserve support.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "The episode features a diverse cast (Ferreira, Reyes, Okafor, Torres-Mireles, Park, Alvarez), which is excellent. However, the narrative heavily centers Maya (white/Latina Ferreira) as the protagonist making choices about other characters' lives. While this is appropriate for a player-character game, it's worth noting that the episode's moral weight rests on Maya's choices about Sam, Jordan, and Alex—their agency is somewhat dependent on her choices.",
+      "location": "Overall narrative structure, scenes 4a-4c, 6a-6c",
+      "harmPotential": "Characters of color could feel their agency is secondary to the white/Latina protagonist's moral choices. The 'protagonist saves/helps the marginalized character' framing, even if unintentional, can reinforce savior narratives.",
+      "recommendation": "Ensure that in future episodes, characters like Sam, Jordan, and Alex have moments where they make significant choices independent of Maya's influence. In this episode, consider adding a line or two where Sam, Jordan, or Alex explicitly choose their own path (e.g., Sam decides to sit with the art kids on his own, not because Maya suggested it; Jordan apologizes because she decided to, not because Maya made her). Small moments of independent agency balance the narrative.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "CULTURAL_SENSITIVITY",
+      "issue": "Maya's background is described as 'single mom who works two jobs (home health aide + weekend catering gigs); they moved across town after Maya's mom got a promotion.' This is a positive portrayal of a working-class family, but the episode doesn't explicitly show or discuss economic difference, which could be present in a diverse urban school. The game doesn't acknowledge that some characters may have different economic circumstances.",
+      "location": "Maya Ferreira background, general world-building",
+      "harmPotential": "Players from working-class backgrounds might not see themselves reflected in the school's social dynamics. Conversely, wealthier players might not develop awareness of economic difference as a factor in belonging.",
+      "recommendation": "Consider adding a subtle moment where economic difference is acknowledged (e.g., a character mentions a field trip cost, or someone's family situation is referenced). This doesn't need to be heavy-handed, but normalizing that students have different economic circumstances increases authenticity and inclusivity.",
+      "priority": 2
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "The episode features characters with various personality types (extroverted, introverted, anxious, confident), which is good. However, there is no explicit representation of characters with disabilities, neurodivergence, or chronic illness. While absence isn't inherently a problem, a school-wide episode might benefit from normalizing disability/neurodivergence as part of the student body.",
+      "location": "Character roster, general world-building",
+      "harmPotential": "Players with disabilities or neurodivergence might not see themselves represented. The episode could inadvertently suggest that disability/neurodivergence is rare or not part of typical school social dynamics.",
+      "recommendation": "Consider adding a character with visible or invisible disability/neurodivergence in future episodes, or subtly normalizing it (e.g., a character mentions using the accessible entrance, or someone's anxiety is framed as neurodivergence rather than just 'being nervous'). For this episode, no change is necessary, but it's worth planning for future episodes.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "Diverse cast with multiple ethnic/cultural backgrounds represented (Ferreira, Reyes, Okafor, Torres-Mireles, Park, Alvarez)",
+    "Explicit inclusion of non-binary character (Alex) with correct pronoun usage throughout",
+    "Complex, flawed characters across all backgrounds—no one is a simple 'good' or 'bad' archetype",
+    "Strong ethical framework: the episode consistently asks players to choose between fitting in and being kind, modeling that these aren't always opposed",
+    "Age-appropriate content: no inappropriate relationships, power dynamics, or risk behaviors; identity exploration is supportive",
+    "Ms. Alvarez's quiet intervention modeling demonstrates that adults can support students without being heavy-handed",
+    "Multiple pathways to belonging (Jordan's table, Sam's table, Alex's table, bridge-building) normalize that there's no single 'right' social group",
+    "Sam's dry humor and sketchbook talent are positioned as genuine strengths, not just compensation for social anxiety",
+    "Consequences are generally proportional: standing up for someone costs something, but it's manageable; complicity creates internal regret",
+    "Language is inclusive and contemporary without being try-hard or dated"
+  ],
+  "recommendations": [
+    "Rebalance Sam's character to emphasize agency and choice in his quietness, rather than framing it as a deficit or result of social failure. Show his observation and wit as genuine strengths.",
+    "Add another Latinx character or significantly deepen Jordan's complexity in-episode to avoid having the only clearly Latinx character be the primary antagonist/bully.",
+    "Make consequences more visible and proportional: if Maya laughs along with the tray incident, show Sam actively avoiding her or hurt, not just internal regret. If she defends him, show that the cost (Jordan's coolness) is real but manageable.",
+    "Decouple Alex's non-binary identity from their transience by explicitly stating that their pronouns are stable even as their location changes.",
+    "Add a moment where the pressure Devon faces is explicitly named as unfair or unnecessary, not just understandable. Show him being validated for choosing something other than achievement.",
+    "Give Ms. Alvarez a moment of being supported or cared for by someone else, normalizing that even caring adults need support.",
+    "In future episodes, ensure characters of color have moments of independent agency and decision-making outside of the protagonist's influence.",
+    "Consider subtly acknowledging economic difference in the school's social dynamics (field trip costs, family situations) to increase authenticity.",
+    "Plan for future episodes to include characters with disabilities, neurodivergence, or chronic illness to normalize these as part of the student body."
+  ],
+  "scores": {
+    "biasAvoidance": 6,
+    "representation": 6,
+    "tropes": 7,
+    "ethicalModeling": 7,
+    "culturalSensitivity": 7,
+    "overall": 6.5
+  },
+  "flaggedContent": [
+    {
+      "type": "PORTRAYAL",
+      "location": "Sam Okafor character profile and scenes 2-4b",
+      "content": "Sam is consistently portrayed as quiet, withdrawn, socially isolated, flinching preemptively, and sitting alone. His agency is primarily reactive (responding to Maya's choices) rather than proactive.",
+      "concern": "Pattern risks reinforcing 'model minority' stereotype of Asian students as passive, victimized, or socially inept, especially without explicit context for why he's isolated or framing his quietness as a deliberate choice.",
+      "suggestion": "Show Sam's quietness as a strategic choice (he observes, he's selective, he protects himself). Give him moments where he initiates (waving kids over, sharing his sketchbook, making decisions). Position his humor and art as genuine strengths, not compensations."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Jordan Reyes character profile and scenes 2-4a",
+      "content": "Jordan is the only character with an explicitly Latinx surname and is portrayed as the primary antagonist—making cutting jokes, tripping Sam, representing in-crowd cruelty.",
+      "concern": "Having the only clearly Latinx character be the main source of harm risks reinforcing stereotypes about Latinx students as aggressive or mean-spirited, especially without counterbalance.",
+      "suggestion": "Add another Latinx character with different traits, or deepen Jordan's complexity in-episode by showing her capacity for genuine growth/accountability and the anxiety driving her behavior. Lean into her character description's hint that she's 'terrified of stillness' and has a 'soft' side."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Devon Park character profile and scenes 5a-6d",
+      "content": "Devon is the only character with an explicitly East Asian surname and is portrayed as anxious, competitive, controlling, and driven by family pressure to outperform siblings.",
+      "concern": "Pattern aligns with 'model minority' stereotype (high-achieving, anxious, competitive, family-driven) without explicit critique of the pressure system, which could normalize it as inevitable for Asian students.",
+      "suggestion": "Add a moment where the pressure Devon faces is explicitly named as unfair or unnecessary. Show him being validated for choosing something other than achievement. Frame the pressure as something to question, not just manage."
+    }
+  ],
+  "summary": {
+    "verdict": "No verdict provided",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [],
+    "strengths": [],
+    "readyForPublication": false
+  }
+}

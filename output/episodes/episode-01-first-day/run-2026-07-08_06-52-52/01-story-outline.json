@@ -1,0 +1,654 @@
+{
+  "episodeOutline": {
+    "title": "First Bell",
+    "synopsis": "On her first day at Crestwood High, the player must decide, moment by moment, who she's going to be in a brand-new social world. A golden invitation into the popular crowd collides with a quiet, overlooked classmate named Alex who reminds her of herself. As a forced project partnership deepens into real stakes, the player must balance the pull of fitting in against the cost of staying true to herself — culminating in a public presentation where every earlier choice comes due.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "New Front Steps",
+        "location": "Crestwood High - Front Entrance",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "Player stands outside a school that isn't her own yet, backpack strap gripped tight. Internal narration touches on the move, the old friends left behind, and the small hope that this year could be different — if she can just get the first few minutes right.",
+        "emotionalBeat": "anticipatory anxiety",
+        "defaultNextScene": "scene-2"
+      },
+      {
+        "id": "scene-2",
+        "title": "The Hallway Fork",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "jordan",
+          "alex"
+        ],
+        "duration": 2,
+        "description": "Jordan, warm and instantly likable, spots player and offers to bring her to 'the best table' — a clear ticket into the school's social center. Across the hall, a student named Alex sits alone on a bench, sketchbook open, doing an obvious best-impression of not caring that no one's sat with them.",
+        "emotionalBeat": "social temptation vs. quiet pull of conscience"
+      },
+      {
+        "id": "scene-3a",
+        "title": "The Popular Table",
+        "location": "Cafeteria - Priya's Table",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 2,
+        "description": "Player is welcomed into the school's most visible table. It feels good — until Priya, the group's sharp-tongued center of gravity, cracks a joke at 'sketchbook kid's' expense, and the table laughs.",
+        "emotionalBeat": "flattering belonging curdling into discomfort"
+      },
+      {
+        "id": "scene-3b",
+        "title": "The Bridge Table",
+        "location": "Cafeteria - Mixed Table",
+        "characters": [
+          "player",
+          "jordan",
+          "alex",
+          "priya"
+        ],
+        "duration": 2,
+        "description": "Player brings Alex along. Jordan is easy about it; Priya raises an eyebrow but doesn't object outright. Alex sits stiffly, clearly unused to being included, unsure whether to trust the invitation.",
+        "emotionalBeat": "hopeful but fragile inclusion"
+      },
+      {
+        "id": "scene-3c",
+        "title": "The Quiet Bench",
+        "location": "Cafeteria - Corner Bench",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 2,
+        "description": "Player chooses the bench over the crowd. Alex is startled, then cautiously open, revealing they're new too and use drawing to cope with feeling invisible. Jordan watches from a distance, curious rather than judgmental.",
+        "emotionalBeat": "vulnerable, unhurried connection"
+      },
+      {
+        "id": "scene-4",
+        "title": "Partner Assignment",
+        "location": "Ms. Chen's Classroom",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Ms. Chen pairs students for a semester-long project. No matter what happened at lunch, player is paired with Alex. Alex is already packing their bag, bracing for disappointment or indifference — the day's earlier choices hang unspoken in the air.",
+        "emotionalBeat": "consequence catching up with choice"
+      },
+      {
+        "id": "scene-5a",
+        "title": "Working Side by Side",
+        "location": "Library / Alex's Kitchen Table",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "The project becomes an excuse for real conversation. Alex opens up about the move that brought them here and why art became a way to hold things together. A real friendship starts to take root.",
+        "emotionalBeat": "trust deepening",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-5b",
+        "title": "Strictly Business",
+        "location": "Library",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "The work gets done, efficiently and coldly. Alex answers in short sentences, giving nothing away. Player senses a door quietly staying shut, and isn't sure how to reopen it.",
+        "emotionalBeat": "missed connection, quiet tension",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-6",
+        "title": "The Same Night",
+        "location": "Hallway / Phone Notification",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Jordan texts about a last-minute get-together with the 'in' crowd tonight — the exact night player promised to finish the project with Alex. The invitation is real, tempting, and time-sensitive.",
+        "emotionalBeat": "loyalty under pressure"
+      },
+      {
+        "id": "scene-7a",
+        "title": "A Promise Kept",
+        "location": "Alex's Living Room",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Player shows up as promised. Alex tries to hide relief and mostly fails. The project comes together easily, and something unspoken solidifies between them.",
+        "emotionalBeat": "quiet relief and earned trust",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-7b",
+        "title": "The Party",
+        "location": "Someone's Backyard / Next-Day Hallway",
+        "characters": [
+          "player",
+          "jordan",
+          "priya",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "The party is fun, but there's a nagging weight all night. The next day, Alex is polite, professional, and unmistakably distant — a door that used to be cracked open now firmly closed.",
+        "emotionalBeat": "guilt and quiet cost",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-7c",
+        "title": "Splitting the Difference",
+        "location": "Backyard, then Alex's Doorstep",
+        "characters": [
+          "player",
+          "jordan",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Player makes a rushed appearance at the party, then races to Alex's afterward, arriving late and out of breath. It's messy, but Alex notices the effort, even if the evening still stings a little.",
+        "emotionalBeat": "imperfect effort, partial repair",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-8",
+        "title": "Presentation Day",
+        "location": "Ms. Chen's Classroom",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen",
+          "jordan",
+          "priya"
+        ],
+        "duration": 2,
+        "description": "Ms. Chen calls player and Alex up together. Every choice from the past weeks — who player chose to be at lunch, at the crossroads, in the quiet unwatched moments — is about to show itself in front of the whole class.",
+        "emotionalBeat": "culminating pressure, moment of truth"
+      },
+      {
+        "id": "ending-authentic",
+        "title": "Found Your People",
+        "location": "Ms. Chen's Classroom",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen"
+        ],
+        "duration": 1,
+        "description": "Player leads with confidence but makes sure Alex's specific contributions are seen and named. The class responds well; more importantly, Alex looks genuinely proud. Walking out, player realizes belonging didn't require becoming someone else.",
+        "emotionalBeat": "earned belonging",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "ending-hollow",
+        "title": "Popularity's Price",
+        "location": "Ms. Chen's Classroom",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen"
+        ],
+        "duration": 1,
+        "description": "Nerves take over; player rushes through, unintentionally talking over Alex's part. The presentation goes fine on paper, but Alex leaves quickly afterward, and the win feels strangely empty.",
+        "emotionalBeat": "hollow success, quiet regret",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "ending-collaborative",
+        "title": "Quiet Strength",
+        "location": "Ms. Chen's Classroom",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Player steps back and lets Alex take the spotlight, offering steady support instead of the lead. It's a smaller kind of confidence, but it lands — even Priya nods with unexpected respect on the way out.",
+        "emotionalBeat": "unshowy confidence, mutual respect",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2",
+        "prompt": "Jordan's invitation is your golden ticket into the school's social scene — but you can't quite ignore the kid sitting alone across the hall.",
+        "context": "First real social decision of the day: which direction do you move in, and who do you bring with you (if anyone)?",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"That sounds great, count me in!\" (head straight for Jordan's table)",
+            "nextScene": "scene-3a"
+          },
+          {
+            "id": "b",
+            "text": "\"Thanks! Mind if that person joins us too?\" (gesture toward Alex)",
+            "nextScene": "scene-3b"
+          },
+          {
+            "id": "c",
+            "text": "\"I think I'm going to go say hi to them first.\" (politely peel off toward Alex)",
+            "nextScene": "scene-3c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "EMPATHY": -1
+          },
+          "b": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "EMPATHY": 2,
+            "CONFIDENCE": -1,
+            "ADAPTABILITY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2a",
+        "scene": "scene-3a",
+        "prompt": "Priya's joke about 'sketchbook kid' lands, and the table laughs. All eyes are loosely on you to react.",
+        "context": "You're new here and this table just let you in. Reacting the 'wrong' way could cost you that.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Laugh along to fit in",
+            "nextScene": "scene-4"
+          },
+          {
+            "id": "b",
+            "text": "Change the subject without making it a thing",
+            "nextScene": "scene-4"
+          },
+          {
+            "id": "c",
+            "text": "\"I think their art's actually really good, honestly.\"",
+            "nextScene": "scene-4"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -2
+          },
+          "b": {
+            "ADAPTABILITY": 2
+          },
+          "c": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2b",
+        "scene": "scene-3b",
+        "prompt": "Alex sits stiffly at the edge of the table, clearly unsure whether they actually belong here.",
+        "context": "You brought Alex over — now what you do next decides whether it was a kindness or an awkward mistake.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ask Alex direct questions, pull them into the conversation",
+            "nextScene": "scene-4"
+          },
+          {
+            "id": "b",
+            "text": "Let the conversation flow naturally, don't single them out",
+            "nextScene": "scene-4"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 1,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2c",
+        "scene": "scene-3c",
+        "prompt": "Alex seems surprised anyone chose to sit here at all. You still have the rest of the year — and the rest of the cafeteria — ahead of you.",
+        "context": "A real connection is forming, but you're aware of what you might be giving up by not chasing the bigger social scene.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Commit fully to this — stop worrying about the 'popular' crowd",
+            "nextScene": "scene-4"
+          },
+          {
+            "id": "b",
+            "text": "Try to bridge both worlds — invite Alex to meet Jordan's group later",
+            "nextScene": "scene-4"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-4",
+        "prompt": "Alex is already zipping up their bag, bracing for whatever you're about to say about being project partners.",
+        "context": "Whatever happened at lunch, this is a fresh, private moment to decide how you'll actually treat this person.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Warmly suggest meeting up after school",
+            "nextScene": "scene-5a"
+          },
+          {
+            "id": "b",
+            "text": "Keep it strictly business, minimal small talk",
+            "nextScene": "scene-5b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -1,
+            "ADAPTABILITY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-6",
+        "prompt": "Jordan's invite is tempting — this could cement your place in the friend group. But you already promised Alex you'd finish the project tonight.",
+        "context": "First real test of whether social standing or a quieter promise matters more, under real time pressure.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Go to the party, text Alex to reschedule",
+            "nextScene": "scene-7b"
+          },
+          {
+            "id": "b",
+            "text": "Skip the party, keep your word to Alex",
+            "nextScene": "scene-7a"
+          },
+          {
+            "id": "c",
+            "text": "Make a quick appearance at the party, then rush to Alex's after",
+            "nextScene": "scene-7c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": -1,
+            "EMPATHY": -2
+          },
+          "b": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "CONFIDENCE": 1,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-8",
+        "prompt": "Ms. Chen calls your names. All eyes turn to you both. This is your moment to define what this partnership — and maybe your whole year — is going to look like.",
+        "context": "The public, final test: how you handle the spotlight when someone else's contribution is also on the line.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Take the lead confidently, and make sure to highlight Alex's specific contributions",
+            "nextScene": "ending-authentic"
+          },
+          {
+            "id": "b",
+            "text": "Let nerves take over, rush through your part",
+            "nextScene": "ending-hollow"
+          },
+          {
+            "id": "c",
+            "text": "Step back, let Alex shine, support quietly",
+            "nextScene": "ending-collaborative"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 2
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "EMPATHY": -1,
+            "ADAPTABILITY": -1
+          },
+          "c": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1,
+            "CONFIDENCE": 1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-popular-path",
+        "name": "Chasing the Table",
+        "triggeredBy": [
+          "choice-1:a"
+        ],
+        "description": "Player prioritizes immediate social status, aligning with Jordan and Priya's crowd from the first moment.",
+        "outcome": "Fast social traction, but an early debt of conscience regarding Alex that later choices must reckon with."
+      },
+      {
+        "id": "branch-bridge-path",
+        "name": "Building the Bridge",
+        "triggeredBy": [
+          "choice-1:b"
+        ],
+        "description": "Player tries to have it both ways from the start, bringing Alex into the popular sphere rather than choosing one over the other.",
+        "outcome": "A more socially complex but potentially more integrated path, testing adaptability under group dynamics."
+      },
+      {
+        "id": "branch-authentic-outsider",
+        "name": "The Quiet Bench",
+        "triggeredBy": [
+          "choice-1:c"
+        ],
+        "description": "Player forgoes immediate popularity to connect with Alex directly, risking social standing for authenticity.",
+        "outcome": "Deepest, earliest trust with Alex, but leaves the question of broader belonging unresolved until later choices."
+      },
+      {
+        "id": "branch-authentic-ending",
+        "name": "The Authentic Path",
+        "triggeredBy": [
+          "choice-5:a"
+        ],
+        "description": "All prior threads culminate in the player publicly balancing confidence with genuine credit-sharing.",
+        "outcome": "Player is seen as both capable and kind; Alex's trust is fully validated."
+      },
+      {
+        "id": "branch-hollow-ending",
+        "name": "The Hollow Win",
+        "triggeredBy": [
+          "choice-5:b"
+        ],
+        "description": "Nerves override intention, and the player's need to perform overtakes fairness to their partner.",
+        "outcome": "A technically successful presentation that costs the relationship built over the episode."
+      },
+      {
+        "id": "branch-collaborative-ending",
+        "name": "The Quiet Strength Path",
+        "triggeredBy": [
+          "choice-5:c"
+        ],
+        "description": "Player chooses supportive humility over spotlight, redefining confidence as something other than dominance.",
+        "outcome": "A subtler but no less real form of respect earned from peers, including unexpected figures like Priya."
+      }
+    ],
+    "emotionalArc": [
+      "Anticipation and nerves on arrival",
+      "Seductive pull of instant social belonging",
+      "First moral friction — noticing someone being left out",
+      "Vulnerability in choosing (or avoiding) real connection",
+      "Consequence and guilt when convenience conflicts with loyalty",
+      "Pressure-testing loyalty under real stakes (the crossroads night)",
+      "Public reckoning where all prior choices become visible",
+      "Resolution: earned belonging, hollow win, or quiet mutual respect"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from anxious newcomer to someone who has actually tested what kind of person they want to be under real social pressure, not just in theory."
+      },
+      {
+        "character": "alex",
+        "arc": "Moves from guarded, invisible outsider to either a trusted friend, a politely distanced acquaintance, or something in between, depending entirely on how consistently the player showed up."
+      },
+      {
+        "character": "jordan",
+        "arc": "Remains a fundamentally decent, socially fluent presence throughout — a live test of whether popularity and kindness can coexist, depending on how the player treats their own choices."
+      },
+      {
+        "character": "priya",
+        "arc": "Starts as a gatekeeper figure defined by casual cruelty; can end the episode unchanged, or subtly humbled, depending on whether she was ever challenged."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "description": "Tracked through willingness to take social risks, speak up in front of a group, and lead rather than defer — but distinguished from bravado through pairing with empathy in key moments.",
+        "keyChoices": [
+          "choice-1",
+          "choice-2a",
+          "choice-4",
+          "choice-5"
+        ]
+      },
+      {
+        "trait": "EMPATHY",
+        "description": "Tracked through attention paid to Alex specifically — noticing exclusion, defending someone absent, keeping quiet promises, and sharing credit publicly.",
+        "keyChoices": [
+          "choice-1",
+          "choice-2a",
+          "choice-2b",
+          "choice-2c",
+          "choice-3",
+          "choice-4",
+          "choice-5"
+        ]
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "description": "Tracked through the player's ability to navigate competing social demands (popular crowd vs. new friend) without collapsing into either extreme, especially visible in the crossroads and deflection choices.",
+        "keyChoices": [
+          "choice-1",
+          "choice-2a",
+          "choice-2c",
+          "choice-4",
+          "choice-5"
+        ]
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "dynamic": "The emotional core of the episode — a fragile new friendship that either deepens into trust or erodes into politeness depending on consistent small choices.",
+        "description": "Every major choice point either invests in or withdraws from this relationship, making it the episode's true measure of growth."
+      },
+      {
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "dynamic": "An easy, low-stakes friendship that represents the pull of effortless belonging.",
+        "description": "Jordan never punishes the player for choosing Alex, which is intentional — the tension is internal, not externally enforced."
+      },
+      {
+        "characters": [
+          "player",
+          "priya"
+        ],
+        "dynamic": "A low-key power dynamic representing peer pressure and social gatekeeping.",
+        "description": "Priya's approval is never required for a 'good' ending, subtly teaching that belonging doesn't have to run through the most dominant voice in the room."
+      }
+    ],
+    "replayHooks": [
+      "The very first choice (Jordan's table vs. the bench vs. the bridge) sends the player down visibly different opening scenes, inviting an immediate 'what if I'd sat somewhere else' replay.",
+      "The crossroads choice (party vs. promise vs. both) is designed to feel like a real dilemma with no clean win, encouraging players to try the 'juggle both' option after seeing the costs of the extremes.",
+      "Three distinct, non-punishing endings (not just 'good' vs 'bad') make it satisfying to chase the one you didn't get.",
+      "Priya and Jordan's reactions subtly shift based on earlier choices even when scene text is shared, rewarding attentive replays.",
+      "Because the project pairing with Alex is fixed regardless of lunch choice, replaying reveals how the *same* forced situation feels completely different depending on earlier decisions."
+    ],
+    "estimatedPlayTime": 12,
+    "educationalGoals": [
+      "Practice initiating social risk in a low-stakes, reversible setting (confidence)",
+      "Notice and respond to someone being excluded, even when it's socially inconvenient (empathy)",
+      "Navigate competing social demands without abandoning either personal values or social growth (adaptability)",
+      "Experience how small, private choices accumulate into public, visible outcomes"
+    ],
+    "conversationStarters": [
+      "Which lunch choice felt most like something you'd actually do on a first day?",
+      "Was there a moment where 'fitting in' and 'doing the right thing' felt like they were pulling in different directions? How did you decide?",
+      "Do you think Jordan and Priya would react differently to the player's choices in real life?",
+      "Which ending felt most true to what 'confidence' actually means to you?",
+      "Was there a choice you regretted right after picking it? What would you do differently on a replay?"
+    ]
+  },
+  "designNotes": "The episode deliberately fixes the Alex partnership as an unavoidable plot beat regardless of earlier social choices, which lets the same 'objective' event (being paired for a project) carry very different emotional weight depending on prior player behavior — this is the main invisible mechanism for making trait tracking feel like consequence rather than scoring. Priya functions as an external pressure test rather than a villain to defeat; there is no ending where she is punished or converted, since the goal is to model that belonging shouldn't require her approval. Jordan is intentionally never punitive, so that any tension the player feels around 'choosing Alex over the popular table' is internally generated rather than externally enforced, keeping the empathy/confidence tension honest rather than moralized.",
+  "uncertainties": [
+    "Whether three lunch-scene variants (3a/3b/3c) adequately diverge in tone without excessive branching complexity for a 12-minute runtime — may need trimming of dialogue-heavy beats in production.",
+    "Whether Priya needs a small moment of her own humanization to avoid reading as a flat 'mean girl' archetype; currently she is intentionally underexplored to keep runtime tight.",
+    "Whether players will find the three-way crossroads choice (party/promise/both) sufficiently distinct in consequence, or whether 'both' will read as an obviously 'best' option that undercuts the dilemma.",
+    "Age/grade specifics (freshman vs. general 'new school') were left flexible — may need adjustment depending on target age band for tone calibration."
+  ],
+  "alternativesConsidered": [
+    "A version where the player, not Alex, is the one initially excluded (swapping perspective) — rejected because the current framing better isolates empathy as an active choice rather than a forced circumstance.",
+    "Making Priya's approval a possible 'ending requirement' — rejected to avoid implicitly validating popularity-seeking as an optimal educational outcome.",
+    "A fully linear single-path version focused only on the Alex relationship — rejected because it removed meaningful first-choice divergence and reduced replay incentive.",
+    "Adding a fourth ending for 'befriended Priya' — considered for replay depth but cut to keep the choice-5 options tight and thematically focused on confidence/empathy balance rather than adding a fourth relationship thread this late in the episode."
+  ]
+}

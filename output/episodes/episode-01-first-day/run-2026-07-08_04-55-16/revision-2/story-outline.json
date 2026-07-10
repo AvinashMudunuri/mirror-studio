@@ -1,0 +1,639 @@
+{
+  "episodeOutline": {
+    "title": "The First Bell",
+    "synopsis": "It's move-in day at Ridgeline Academy, and player has exactly one day to figure out who they're going to be here. Between a hallway collision with the school's magnetic golden-child Jordan, a lunchroom seating decision, a group project pairing with awkward outsider Ben, and a public moment that tests everyone's silence, player's small choices quietly build toward one of three very different versions of 'fitting in.'",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "The Front Steps",
+        "location": "Ridgeline Academy - Front Entrance",
+        "characters": [
+          "player"
+        ],
+        "duration": 2,
+        "description": "Player stands outside the school for the first time, schedule crumpled in hand, watching streams of students who all seem to already know each other. An inner monologue establishes the stakes: this is a fresh start, and nobody here knows the old version of you.",
+        "emotionalBeat": "Anxious anticipation - the blank page feeling",
+        "defaultNextScene": "scene-2"
+      },
+      {
+        "id": "scene-2",
+        "title": "Hallway Collision",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "Jordan"
+        ],
+        "duration": 2,
+        "description": "Jordan, clearly a well-liked upperclassman, nearly knocks player's books to the floor while walking backward mid-conversation with friends. Jordan turns, notices the new face, and grins - a small crowd's attention flickers toward player for one unscripted second.",
+        "emotionalBeat": "Sudden spotlight - the first-impression jolt"
+      },
+      {
+        "id": "scene-3a",
+        "title": "Holding Your Ground",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "Jordan"
+        ],
+        "duration": 1,
+        "description": "Jordan seems genuinely impressed by player's easy comeback and introduces themselves properly, mentioning they'll 'see them around.' A few onlookers register player as someone worth knowing.",
+        "emotionalBeat": "Small validation, cautious pride",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-3b",
+        "title": "Quiet Recovery",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "Jordan"
+        ],
+        "duration": 1,
+        "description": "Player gathers the dropped books without fuss. Jordan barely notices, already turning back to friends, but a passing girl with paint-stained fingers - Maya - gives player a small, knowing half-smile before disappearing into the crowd.",
+        "emotionalBeat": "Overlooked but seen by the right person",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-3c",
+        "title": "Trading Jokes",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "Jordan"
+        ],
+        "duration": 1,
+        "description": "Player volleys the joke right back at Jordan, who laughs out loud and calls player 'quick' in front of friends. It gets a laugh from the group, though one boy at the edge of the circle doesn't quite laugh along.",
+        "emotionalBeat": "Adrenaline of a risk that paid off",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-4",
+        "title": "The Cafeteria Map",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "Jordan",
+          "Maya"
+        ],
+        "duration": 2,
+        "description": "Tray in hand, player pauses at the edge of the cafeteria. Jordan's table is loud and central - already laughing before the punchline even lands, the kind of belonging that looks like it doesn't have to try. Near the windows, Maya has her sketchbook propped against her tray, entirely unbothered by eating alone; a couple of kids from art club wave at her from across the room, and she waves back before returning to her drawing - she's not stuck for company, she's just chosen this corner for now. Between the groups, a scattering of open seats sit untouched - lowest risk, no group to join or leave out, but nowhere in particular either. There's maybe two seconds before player has to start walking somewhere.",
+        "emotionalBeat": "The unspoken social math of a first lunch, compressed into a few fast heartbeats"
+      },
+      {
+        "id": "scene-5a",
+        "title": "Sketchbook Seat",
+        "location": "Cafeteria - Window Table",
+        "characters": [
+          "player",
+          "Maya"
+        ],
+        "duration": 1,
+        "description": "Maya is startled, then quietly pleased, when player sits down. 'I'm used to it,' she says, not quite looking up from her sketchbook. 'Not because I have to be - I've got people, art club's got a whole table most days - I just like my own company most days. But you're not... annoying, so.' A beat later she turns the sketchbook around: the school mascot, drawn as something absurdly tragic, and a real laugh breaks the ice.",
+        "emotionalBeat": "Unexpected warmth, offered on her terms",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-5b",
+        "title": "Center Table",
+        "location": "Cafeteria - Jordan's Table",
+        "characters": [
+          "player",
+          "Jordan"
+        ],
+        "duration": 1,
+        "description": "Jordan's friends fold player into the conversation easily - it's fast, funny, and easy to keep up with. By the time the bell's close, three people already know player's name, and someone half-promises to save a seat tomorrow. Across the room, Maya glances over once, then goes back to her sketchbook.",
+        "emotionalBeat": "The real, uncomplicated ease of being welcomed in",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-5c",
+        "title": "Table Hopping",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "Jordan",
+          "Maya"
+        ],
+        "duration": 1,
+        "description": "Player says a quick hello at Jordan's table, then swings by Maya's to compliment her sketchbook before finally settling somewhere in between. It's a little exhausting, but by the end of lunch, three different tables know player's name.",
+        "emotionalBeat": "Exhilarating but precarious - stretched in every direction",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-6",
+        "title": "Partner Assignments",
+        "location": "Classroom - 3rd Period",
+        "characters": [
+          "player",
+          "Ms. Alvarez",
+          "Ben",
+          "Jordan"
+        ],
+        "duration": 2,
+        "description": "Ms. Alvarez pairs the class for a semester-long project. Player is paired with Ben, a nervous, stammering kid who immediately apologizes for 'probably ruining the grade.' Moments earlier, Jordan had actually pitched the sharpest project topic in the room - a detail that gets buried the instant Jordan stage-whispers something about Ben that gets a laugh from a couple of friends, though a couple of other students throw Jordan an uneasy glance before turning back to their notes.",
+        "emotionalBeat": "A small cruelty in the open, and a choice about complicity"
+      },
+      {
+        "id": "scene-6a",
+        "title": "Standing Beside Ben",
+        "location": "Classroom - 3rd Period",
+        "characters": [
+          "player",
+          "Ben",
+          "Jordan"
+        ],
+        "duration": 1,
+        "description": "Player says, loud enough for the room to hear, that they're glad to be paired with Ben. Ben's shoulders drop half an inch in relief, then he mutters, deadpan, 'Guess I ruin grades slower with company.' It's the first joke he's cracked all day - dry, unprompted, entirely his own. Jordan's eyebrows lift, caught off guard, like the moment hadn't landed how he meant it to. He doesn't apologize, but he doesn't push it further either.",
+        "emotionalBeat": "Quiet courage, a flicker of someone else's accountability, and a first glimpse of Ben's own humor",
+        "defaultNextScene": "scene-7"
+      },
+      {
+        "id": "scene-6b",
+        "title": "Working It Out Privately",
+        "location": "Classroom - 3rd Period",
+        "characters": [
+          "player",
+          "Ben"
+        ],
+        "duration": 1,
+        "description": "Player doesn't call out Jordan's comment, but leans over to Ben afterward to start brainstorming. Before player even finishes a sentence, Ben's already sketching a rough diagram in the margin of his notebook - an angle on the project neither of them had mentioned yet - then catches himself, half-apologetic, like he's not used to leading. 'Sorry, is that - I don't know, does that work?' It does. Ben visibly relaxes once the idea is out and the attention is off him.",
+        "emotionalBeat": "Support without spectacle, and a flash of initiative Ben doesn't quite trust yet",
+        "defaultNextScene": "scene-7"
+      },
+      {
+        "id": "scene-6c",
+        "title": "Going Along With It",
+        "location": "Classroom - 3rd Period",
+        "characters": [
+          "player",
+          "Ben",
+          "Jordan"
+        ],
+        "duration": 1,
+        "description": "Player laughs along with Jordan's joke. It feels easy in the moment - until Ben glances over, and player catches the exact second his face falls.",
+        "emotionalBeat": "A cheap laugh that curdles almost immediately",
+        "defaultNextScene": "scene-7"
+      },
+      {
+        "id": "scene-7",
+        "title": "Called On",
+        "location": "Classroom - 3rd Period",
+        "characters": [
+          "player",
+          "Ben",
+          "Ms. Alvarez",
+          "Jordan"
+        ],
+        "duration": 2,
+        "description": "Ms. Alvarez asks Ben to share the group's project idea aloud. He stumbles over his words, and Jordan's table snickers loud enough for the room to hear. Ms. Alvarez looks up from the board - a beat longer than a glance, taking the room in - then turns back to what she was writing without a word. The silence that follows sits heavier than anything she could have said. The snickering fades on its own, but Ben is still red, still stuck mid-sentence, the room's attention lingering a beat too long.",
+        "emotionalBeat": "The moment where silence becomes a choice too"
+      },
+      {
+        "id": "scene-7a",
+        "title": "Out Loud",
+        "location": "Classroom - 3rd Period",
+        "characters": [
+          "player",
+          "Ben",
+          "Jordan",
+          "Ms. Alvarez"
+        ],
+        "duration": 1,
+        "description": "Player speaks up, calmly backing Ben's idea and building on it. The laughter dies out fast, and the room's attention shifts to player instead. Ben exhales, visibly grateful. A couple of Jordan's friends clock player differently now - not unkindly, just... noted. Someone who pushes back.",
+        "emotionalBeat": "Trust earned, and a new line quietly drawn",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-7b",
+        "title": "Looking Away",
+        "location": "Classroom - 3rd Period",
+        "characters": [
+          "player",
+          "Ben",
+          "Jordan"
+        ],
+        "duration": 1,
+        "description": "Player stays quiet in the moment, and Ben mumbles through the rest of his sentence alone. Later, packing up, player leans over with a specific idea for the project - something that actually builds on what Ben said. Ben's shoulders loosen, surprised and grateful, even if it came after the fact.",
+        "emotionalBeat": "A quieter kind of loyalty, built after the fact rather than in front of everyone",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-7c",
+        "title": "Changing the Subject",
+        "location": "Classroom - 3rd Period",
+        "characters": [
+          "player",
+          "Ben",
+          "Jordan"
+        ],
+        "duration": 1,
+        "description": "Player cracks a self-deprecating joke about their own project idea, pulling the room's attention away from Ben without calling anyone out directly. The laughter shifts targets, and Ben gets a second to recover.",
+        "emotionalBeat": "A sideways kindness - not brave, but not nothing",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-8",
+        "title": "Last Bell",
+        "location": "Front Steps",
+        "characters": [
+          "player",
+          "Maya",
+          "Ben",
+          "Jordan"
+        ],
+        "duration": 2,
+        "description": "The day is ending. Jordan's group is heading somewhere and half-invites player along. Maya lingers nearby, sketchbook under her arm, clearly deciding whether to say something. Ben walks past alone, glancing back once. Passing Ms. Alvarez's open classroom door, player catches her jotting a quick note next to Ben's name in her roster - a small, private sign she noticed more today than she let on. Player has one more choice about how today is going to define tomorrow.",
+        "emotionalBeat": "The crossroads moment - who do you want to become here"
+      },
+      {
+        "id": "scene-8a",
+        "title": "The Real Thing",
+        "location": "Front Steps",
+        "characters": [
+          "player",
+          "Maya",
+          "Ben"
+        ],
+        "duration": 1,
+        "description": "Player catches up to Ben and Maya instead. Before player can even ask, Ben's already talking - unprompted, a little too fast, about how the project idea from class could actually work. Maya raises an eyebrow, amused, and properly turns her sketchbook around to show off real work for the first time. It's smaller than Jordan's group, and maybe a little more effort than just coasting - but something about it feels less like performing and more like starting.",
+        "emotionalBeat": "Belonging built on honesty rather than performance",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-8b",
+        "title": "In the Group",
+        "location": "Front Steps",
+        "characters": [
+          "player",
+          "Jordan"
+        ],
+        "duration": 1,
+        "description": "Player joins Jordan's group, and it feels genuinely good - easy laughter, immediate ease. Walking away, player notices Ben and Maya leaving separately, in different directions, and the thought passes as quickly as it arrived.",
+        "emotionalBeat": "Popularity's real warmth, with a thought that lingers just a little",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-8c",
+        "title": "Both Worlds",
+        "location": "Front Steps",
+        "characters": [
+          "player",
+          "Jordan",
+          "Maya",
+          "Ben"
+        ],
+        "duration": 1,
+        "description": "Player tells Jordan's group they'll catch up later, then walks partway with Ben and Maya, trading numbers and half-formed plans. Nothing is fully decided yet, but player feels like they can move between these worlds without losing themselves - for now, at least.",
+        "emotionalBeat": "Cautious optimism - the sense of options still open",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2",
+        "prompt": "Jordan almost knocked your books flying and now the hallway is watching. How do you respond?",
+        "context": "First social moment of the day, with an audience. There's no wrong answer, but there's no neutral one either.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Laugh it off and introduce yourself with a steady handshake.",
+            "nextScene": "scene-3a"
+          },
+          {
+            "id": "b",
+            "text": "Quietly pick up your books and keep moving.",
+            "nextScene": "scene-3b"
+          },
+          {
+            "id": "c",
+            "text": "Fire back a joke of your own.",
+            "nextScene": "scene-3c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "EMPATHY": 1,
+            "CONFIDENCE": -1
+          },
+          "c": {
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": 2
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-4",
+        "prompt": "Where do you sit for your first lunch?",
+        "context": "Jordan's table is loud and waving you over. Maya is alone by the window, sketchbook out. There are also scattered open seats between groups. You've only got a few seconds before you have to start walking somewhere.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Maya, the girl alone by the window - she's not waiting to be invited, but there's an open seat across from her.",
+            "nextScene": "scene-5a"
+          },
+          {
+            "id": "b",
+            "text": "Join Jordan's table, already loud with easy laughter, waving you over like you're already part of the joke.",
+            "nextScene": "scene-5b"
+          },
+          {
+            "id": "c",
+            "text": "Say a quick hello at both tables, then land somewhere among the scattered open seats in between.",
+            "nextScene": "scene-5c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "CONFIDENCE": 2
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-6",
+        "prompt": "Jordan just made a joke at Ben's expense in front of the whole class. What do you do?",
+        "context": "You've just been paired with Ben for a semester-long project. Everyone heard the comment, including Ben.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Say, loud enough for the room, that you're glad to be paired with him.",
+            "nextScene": "scene-6a"
+          },
+          {
+            "id": "b",
+            "text": "Don't call it out, but immediately start working with Ben one-on-one.",
+            "nextScene": "scene-6b"
+          },
+          {
+            "id": "c",
+            "text": "Laugh along with Jordan's joke.",
+            "nextScene": "scene-6c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "EMPATHY": 1,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "EMPATHY": -2,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-7",
+        "prompt": "Ben is stumbling through his answer and Jordan's table is snickering. What do you do?",
+        "context": "This is the moment that could shape how the rest of the year feels for Ben - and how player is read by the room.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speak up and back Ben's idea in front of everyone.",
+            "nextScene": "scene-7a"
+          },
+          {
+            "id": "b",
+            "text": "Stay quiet now, then help Ben privately afterward.",
+            "nextScene": "scene-7b"
+          },
+          {
+            "id": "c",
+            "text": "Crack a joke about your own idea to pull attention away from Ben.",
+            "nextScene": "scene-7c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 1
+          },
+          "b": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1
+          },
+          "c": {
+            "ADAPTABILITY": 1,
+            "EMPATHY": 1,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-8",
+        "prompt": "The day is ending. Where do you put your energy?",
+        "context": "Jordan's group has half-invited you along. Maya is lingering nearby. Ben just walked past alone. Tomorrow starts with whatever you decide right now.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Catch up with Ben and Maya instead.",
+            "nextScene": "scene-8a"
+          },
+          {
+            "id": "b",
+            "text": "Go with Jordan's group.",
+            "nextScene": "scene-8b"
+          },
+          {
+            "id": "c",
+            "text": "Tell Jordan's group you'll catch up later, then walk partway with Ben and Maya.",
+            "nextScene": "scene-8c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": -1
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-authentic-belonging",
+        "name": "The Authentic Path",
+        "triggeredBy": [
+          "choice-2:a",
+          "choice-3:a",
+          "choice-4:a",
+          "choice-5:a"
+        ],
+        "description": "Player consistently chooses connection over status - sitting with Maya, defending Ben, speaking up when it costs something socially.",
+        "outcome": "Player ends the day with two genuine, lower-key friendships and a growing sense of self-respect. If this path holds through a day of visible stands, Ben and Maya read the final approach as consistent, and trust deepens quickly. Sets up Maya and Ben as recurring allies in future episodes.",
+        "futureMechanicHook": "Unlocks a persistent 'Trust' meter with Ben and Maya in later episodes, gating deeper dialogue and story options as it grows."
+      },
+      {
+        "id": "branch-popularity-conformity",
+        "name": "The Popularity Path",
+        "triggeredBy": [
+          "choice-2:b",
+          "choice-3:c",
+          "choice-4:b",
+          "choice-5:b"
+        ],
+        "description": "Player consistently prioritizes fitting in with Jordan's group, staying comfortable and low-risk even when it means going along with the crowd around Ben.",
+        "outcome": "Player ends the day socially secure and instantly 'in' - it's not villainous, just a different bet about where belonging comes from. If player later reaches toward Ben and Maya unexpectedly, both read it with a flicker of surprise or wariness, unsure what changed. Any cost surfaces later, as an unresolved thread in future episodes.",
+        "futureMechanicHook": "Unlocks 'Social Momentum' with Jordan's circle - temporary confidence bonuses in future social scenes, at the cost of slower trust-building with Ben and Maya."
+      },
+      {
+        "id": "branch-balanced-growth",
+        "name": "The Adaptive Path",
+        "triggeredBy": [
+          "choice-2:c",
+          "choice-3:b",
+          "choice-4:c",
+          "choice-5:c"
+        ],
+        "description": "Player moves fluidly between social worlds, offering quieter, indirect support rather than big public stands, and refusing to fully commit to one group.",
+        "outcome": "Player ends the day with a foothold in multiple social circles and a flexible, still-forming sense of identity. This path is intentionally the hardest to sustain across all five choices, which is exactly what makes it interesting to replay.",
+        "futureMechanicHook": "Unlocks a 'Code-Switching' toggle in later episodes, letting player adjust tone/formality per scene as a reflection of practiced flexibility."
+      }
+    ],
+    "emotionalArc": [
+      "Anxious anticipation on the front steps",
+      "Sudden social spotlight in the hallway",
+      "The quiet math of choosing a lunch table",
+      "Discomfort of witnessing casual cruelty",
+      "The charged moment of a public choice point",
+      "Reflection and self-definition at day's end"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from anxious blank slate to someone with a working answer to 'who am I here' - the specific answer depends entirely on player choices."
+      },
+      {
+        "character": "Jordan",
+        "arc": "Introduced as an easy, magnetic golden-child with real intellectual spark that gets buried under performance; subtly revealed across branches as either a genuine ally, a careless bystander who occasionally shows a flicker of self-awareness, or a low-key gatekeeper, depending on how player responds to them."
+      },
+      {
+        "character": "Maya",
+        "arc": "Starts self-possessed and comfortable in her own company, with a life and community (art club) that exists whether or not player notices her - not isolated by default, but selective about who she lets in further. Opens up meaningfully only if player extends effort toward her, planting a seed for a larger friendship arc later in the season."
+      },
+      {
+        "character": "Ben",
+        "arc": "Begins visibly anxious about being an easy target, but shows flashes of dry humor and initiative independent of the anxiety; his trajectory across the episode - defended aloud, quietly supported after the fact, or left exposed - sets up his season-long relationship with player."
+      },
+      {
+        "character": "Ms. Alvarez",
+        "arc": "Introduced as stretched thin and imperfectly attentive in the moment; a quiet coda reveals she noticed more than she showed, planting seeds of accountability and follow-through for future episodes rather than normalizing the miss."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "description": "Measured through willingness to take social risk without needing group approval first - introducing yourself, speaking up publicly, standing by an unpopular choice.",
+        "scenesInvolved": [
+          "scene-2",
+          "scene-6",
+          "scene-7",
+          "scene-8"
+        ]
+      },
+      {
+        "trait": "EMPATHY",
+        "description": "Measured through attentiveness to overlooked people and willingness to act on their behalf even at social cost - choosing Maya, defending or quietly supporting Ben, refusing to laugh along.",
+        "scenesInvolved": [
+          "scene-4",
+          "scene-6",
+          "scene-7",
+          "scene-8"
+        ]
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "description": "Measured through flexible, situational responses that don't collapse into either rigid withdrawal or total conformity - banter, table-hopping, redirecting tension with humor, quiet strategic support.",
+        "scenesInvolved": [
+          "scene-2",
+          "scene-4",
+          "scene-7",
+          "scene-8"
+        ]
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player & Jordan",
+        "dynamic": "A test of whether player can engage with charisma and social power without losing themselves in it. Trends toward genuine mutual respect, distant cordiality, or quiet complicity depending on branch."
+      },
+      {
+        "pair": "player & Maya",
+        "dynamic": "A slow-burn potential friendship gated entirely on player noticing and choosing her when it isn't the obvious move - built on her terms, not out of pity."
+      },
+      {
+        "pair": "player & Ben",
+        "dynamic": "The episode's emotional core - Ben's sense of safety at this new school is directly shaped by whether player defends him aloud, supports him quietly, or leaves him exposed in front of others."
+      }
+    ],
+    "replayHooks": [
+      "Players who chose the popularity path will wonder what Maya's sketchbook joke or Ben's real project idea actually was - only fully visible on the authentic and adaptive paths.",
+      "The lunchroom scenes (5a/5b/5c) reveal different pieces of Jordan and Maya's personalities not visible in other branches.",
+      "Jordan's brief flicker of accountability in scene-6a is easy to miss and only appears if player defends Ben out loud - a hidden layer under his confidence.",
+      "Ben's arc changes meaningfully across all three choice-4 options, encouraging replay just to see how differently he responds to being defended aloud vs. supported quietly vs. redirected around.",
+      "The 'adaptive' branch is the hardest to fully achieve since it requires consistently choosing the indirect option across all five choices - players often want to replay to see if they can 'thread the needle.'",
+      "Maya's line about choosing solitude on her own terms - and having a life outside player's attention - changes how her later warmth reads, worth noticing on a second playthrough.",
+      "Ms. Alvarez's small, private note in scene-8 is easy to miss on a first playthrough and reframes her earlier silence on replay."
+    ],
+    "estimatedPlayTime": 14,
+    "educationalGoals": [
+      "Model confidence as steady self-assertion rather than dominance or performance",
+      "Build empathy by making perspective-taking (noticing Ben's and Maya's emotional states) a rewarded, natural part of the story rather than an explicit lesson",
+      "Illustrate adaptability as flexible authenticity - adjusting behavior to context without abandoning core values, and as a legitimate strategy, not just a compromise",
+      "Show that first impressions and social choices have consequences that ripple forward, encouraging reflective decision-making",
+      "Normalize the idea that there is no single 'correct' way to belong, while still surfacing the emotional costs of certain choices",
+      "Establish clear boundaries around unkindness (via a teacher's charged silence and peers' discomfort) without turning any single choice into a scored morality test"
+    ],
+    "conversationStarters": [
+      "Which lunch table would you actually have sat at on your first day somewhere new?",
+      "Was there ever a moment you wished you'd spoken up for someone, like in the classroom scene?",
+      "Do you think Jordan is a good person, a bad person, or just someone figuring things out too?",
+      "Did your choices feel like 'you,' or were you playing a version of yourself you don't usually show?",
+      "Do you think Maya chose to sit alone, or did it just happen that way? Does it matter?",
+      "What do you think happens to Ben and Maya next, depending on which path you chose?"
+    ]
+  },
+  "designNotes": "Structural fixes: (1) Removed choice-2a and the three 'notice' scenes (scene-4-notice-jordan/maya/seats) and scene-4-decision entirely, per QA/GAME_DESIGNER consensus. Their flavor text was folded directly into scene-4's description and into choice-2's option text, so the same characterization beats survive without the redundant double-choice loop. (2) Renumbered the three sets of reaction-variant scenes to sit directly under their parent decision scenes: old scene-7a/b/c (Jordan-joke reactions) -> scene-6a/b/c; old scene-9a/b/c (Called-On reactions) -> scene-7a/b/c; old scene-11a/b/c (end-of-day choices) -> scene-8a/b/c. Old scene-8 (Called On) -> scene-7; old scene-10 (Last Bell) -> scene-8. This removes the confusing numbering QA flagged while keeping the same story beats. All choicePoints, branch triggeredBy references, and traitMapping scenesInvolved arrays were updated to match. (3) Verified every scene has either a choice point or a defaultNextScene, all choice options declare nextScene, and the graph is a clean forward DAG terminating at END via scene-8a/8b/8c - no loops, no unreachable scenes. (4) Reworked Ms. Alvarez's redirect in scene-7 from a spoken 'let's keep it respectful' into a silent, heavier beat (she looks up, says nothing, turns back) per GAME_DESIGNER's note - this restores player agency as the actual pressure valve in choice-4, and adds a small accountability coda in scene-8 (she's seen jotting a note about Ben) to address the ethics concern about normalizing adult neglect, without turning her into an active rescuer. (5) Addressed ethics notes on stereotype risk: Ben now gets an unprompted, non-apologetic beat of dry humor (scene-6a) and initiative (scene-6b, scene-8a) that isn't just intellectual compensation. Maya now explicitly has an independent social world (art club) referenced in scene-4 and scene-5a, so her warmth toward player reads as chosen rather than default-to-isolation. Jordan gets a buried-but-real competence beat in scene-6 (he pitched the sharpest topic before the joke landed), reframing his social ease as sitting alongside real ability rather than substituting for it. (6) Added lightweight, non-narrative 'futureMechanicHook' notes on each branch addressing the GAME_DESIGNER's request for mechanical variety across paths (trust meter, social momentum, code-switching) - these are additive fields intended for future episodes/engine work, not required for this episode's playability.",
+  "uncertainties": [
+    "The 'futureMechanicHook' fields are speculative and forward-looking (per GAME_DESIGNER's request for cross-episode mechanics) - they aren't validated against any existing engine schema, so they may need reshaping or removal if the platform doesn't support persistent meters/toggles.",
+    "The ethics fixes for Ben, Maya, and Jordan are necessarily light-touch given the single-episode scope and 10-15 minute runtime; deeper counter-stereotype work (e.g., Jordan's academic struggle reframed systemically, Maya pursuing her own goals independent of player) is flagged as more appropriate for Episode 2+ and only seeded here.",
+    "Ms. Alvarez's accountability beat in scene-8 is subtle by design (to avoid removing player agency), but playtesting may reveal it's too easy to miss - could be strengthened with a brief audio/VO cue if the format supports it.",
+    "Scene-4's compressed 'quick succession' observation description is a judgment call on pacing (per GAME_DESIGNER's momentum-drag note); if playtesters still feel it drags, the description could be trimmed further or split visually (not structurally) via UI beats rather than additional scenes."
+  ]
+}

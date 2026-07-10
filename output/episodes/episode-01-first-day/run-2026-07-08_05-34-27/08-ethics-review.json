@@ -1,0 +1,158 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Sam Okafor's characterization relies heavily on quiet, withdrawn, self-protective traits without sufficient complexity or agency. Risk of portraying Black male character as inherently passive/victimized rather than multidimensional.",
+      "location": "Character profile: Sam Okafor; scenes 2, 4b, 6",
+      "harmPotential": "Black male students may see themselves reflected only as quiet, bullied, or needing rescue. Reinforces 'quiet = safe' stereotype for marginalized students. Limits Sam's narrative agency—he's primarily reactive to others' choices rather than driving his own story.",
+      "recommendation": "Expand Sam's agency: Give him moments where he initiates connection, makes bold choices, or leads rather than follows. Add scenes showing his humor/wit in contexts where he's not defending himself. Show his drawing/creative work as a source of power, not just coping. Consider a scene where Sam makes a choice that affects the group, not just receives kindness.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'defending Sam' choice (scene-4a-defend-aftermath) is framed as morally correct, but the narrative doesn't adequately address the systemic nature of Jordan's behavior or hold her accountable. Kindness from Maya is presented as sufficient resolution.",
+      "location": "Scenes 4a, 4a-defend-aftermath, 4a-join-aftermath",
+      "harmPotential": "Players learn that individual kindness is enough to address bullying, rather than understanding that patterns of cruelty require actual accountability/change. Bullies (like Jordan) face no real consequences, only social adjustment. Teaches conflict avoidance over addressing harm.",
+      "recommendation": "Add a follow-up scene where Maya or another character addresses Jordan's behavior directly—not as punishment, but as accountability. Show Jordan having to reckon with the impact of her actions, not just move on. Consider a later scene where Jordan either changes behavior or faces social consequence. Make clear that 'being nice to the victim' ≠ 'solving the problem.'",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex Torres-Mireles is the only character with explicitly non-binary pronouns (they/them), but their identity is never directly acknowledged or explored in the narrative. Risk of tokenization—diversity present but not integrated.",
+      "location": "Character profile: Alex; all scenes featuring Alex",
+      "harmPotential": "Non-binary players may feel their identity is present but invisible/unspoken. Creates a 'don't ask, don't tell' dynamic where diversity exists but isn't normalized through dialogue. Misses opportunity to model how to naturally acknowledge and respect pronouns.",
+      "recommendation": "Include at least one natural moment where Alex's pronouns are used in dialogue with acknowledgment (not explanation—just normalization). Example: 'Alex and I are working on...' or a character naturally using they/them in conversation. Could be as simple as Maya internally noting 'Alex uses they/them' when first meeting, then using it naturally. This normalizes pronoun usage for all players.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Devon Park is the only character with an explicitly Asian surname (Park), but his ethnicity/cultural background is never mentioned, explored, or integrated into his character. He exists as 'the competitive one' without cultural dimension.",
+      "location": "Character profile: Devon Park; all scenes",
+      "harmPotential": "Asian players may see themselves represented only through a stereotype (competitive, anxious about achievement). Misses opportunity to show Asian characters with diverse personalities/motivations. Creates invisible representation—present but unacknowledged.",
+      "recommendation": "Either: (1) Integrate cultural elements naturally (family dinner conversation about expectations, cultural context for his competitiveness, etc.), OR (2) Deliberately diversify his characterization to show he's competitive for reasons unrelated to cultural pressure. Don't require him to 'represent' his culture, but do acknowledge it exists. Could be a single line about his family or background that shows dimension beyond achievement.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'stay quiet' choice (scene-6, choice-4:c) is presented as a negative outcome, but the narrative doesn't adequately explain WHY speaking up matters beyond 'Sam deserves it.' Misses opportunity to model assertiveness as a value, not just kindness.",
+      "location": "Scene 6, choice-4 options and responses",
+      "harmPotential": "Players (especially those socialized to be quiet/accommodating) may internalize that staying silent is acceptable if it avoids conflict. The consequence ('Sam goes quiet') is shown but not explored—no reflection on what that cost means. Teaches conflict avoidance.",
+      "recommendation": "Add internal monologue or follow-up dialogue that explicitly frames speaking up as: (1) advocating for good ideas, not just defending people, and (2) a skill worth developing. Show that silence has costs—not just for Sam, but for the group's work and for Maya's sense of integrity. Make the ethical principle clear: 'Good ideas deserve to be heard, regardless of who suggests them.'",
+      "priority": 7
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Ms. Alvarez is the only adult character with significant presence, and she's portrayed as a tired, slightly detached figure. While realistic, this is the only model of adult authority/mentorship in the episode.",
+      "location": "Character profile: Ms. Alvarez; scene 5",
+      "harmPotential": "Low immediate harm, but contributes to a narrative where adults are peripheral/exhausted rather than actively supportive. Doesn't model healthy mentorship for players navigating school.",
+      "recommendation": "Add one moment where Ms. Alvarez's 'quiet intervention' is revealed to Maya—a moment where she acknowledges she saw what happened and made a deliberate choice to put Maya with Sam/Devon. This shows adults are watching and caring, even when it's not obvious. Doesn't require major changes—could be a single line in a future episode.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "CULTURAL_SENSITIVITY",
+      "issue": "Maya Ferreira's background mentions her mother's work (home health aide + catering), which could be read as reinforcing Latina/immigrant labor stereotypes, though it's presented with dignity and complexity.",
+      "location": "Maya's background section",
+      "harmPotential": "Low—the portrayal includes agency, love, and dignity. However, if not careful, could reinforce 'working-class Latina mother' as a default narrative. The guilt Maya feels about 'wanting more' is realistic but could be deepened.",
+      "recommendation": "In future episodes, show Maya's mother's complexity beyond her jobs—her intelligence, humor, dreams. Show her as a full person, not just a hardworking parent. This is already implied in the text ('makes a big deal out of small wins') but could be expanded to avoid reducing her to her labor.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "The episode features multiple characters of color (Maya, Jordan, Sam, Alex, Devon, Alvarez) which is excellent, but their diversity could be more explicitly normalized in dialogue/interaction rather than just present.",
+      "location": "All scenes",
+      "harmPotential": "Low—diversity is present and normalized through casting. However, the narrative doesn't explicitly acknowledge or celebrate it, which could make it feel incidental rather than intentional.",
+      "recommendation": "In future episodes, include natural moments where cultural/ethnic identity is acknowledged without being 'special'—similar to how pronouns should be used naturally. This isn't about adding 'diversity moments' but about treating identity as a normal part of character, not a plot point.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "Strong ethical framework: The episode explicitly models that kindness, authenticity, and belonging are interconnected values. The core thesis—'those aren't always three different things'—is sound.",
+    "Diverse cast: Multiple characters of color, non-binary representation, and varied socioeconomic backgrounds create an authentically diverse middle school setting.",
+    "Complex antagonist: Jordan is not a one-dimensional bully. She's shown as magnetic, funny, and struggling with her own need to perform—this prevents demonization while still holding her behavior accountable.",
+    "Player agency in ethics: The choice structure genuinely lets players decide how to navigate moral complexity. There's no single 'right' answer forced on players—they choose their values.",
+    "Realistic portrayal of social anxiety: Maya's internal monologue authentically captures the anxiety of being new without pathologizing it. Her coping mechanisms (humor, observation, adaptation) are realistic and relatable.",
+    "Intersectional family backgrounds: Characters have varied family structures (single parent, divorced, long-haul trucker, logistics worker, etc.) that reflect real diversity without stereotyping.",
+    "Bullying framed as pattern, not incident: The episode shows Jordan's cruelty as habitual (Sam flinches 'like he knows this game already'), which is more realistic than a one-off mean moment.",
+    "Quiet characters have depth: Sam and Alex are quiet/introverted but clearly intelligent, funny, and perceptive—not portrayed as lesser for being less loud.",
+    "Age-appropriate content: No inappropriate relationships, no glorification of harmful behavior, no content that would be concerning for 11-14 year olds."
+  ],
+  "recommendations": [
+    "Expand Sam's agency: Give him moments where he initiates, leads, or makes bold choices rather than only receiving kindness. His art/creativity should be a source of power, not just coping.",
+    "Add accountability for Jordan: Include a follow-up scene where Jordan faces real consequences for her behavior—not punishment, but genuine accountability that shows bullying has impact.",
+    "Normalize Alex's pronouns: Include natural dialogue using they/them pronouns, modeling how to respect and use pronouns without making it awkward or special.",
+    "Integrate Devon's cultural background: Either explore his ethnicity naturally (family context, cultural values) or deliberately diversify his characterization to avoid the 'model minority' stereotype.",
+    "Deepen ethical modeling: Make the principle behind 'speak up' explicit—it's not just about kindness, it's about advocating for good ideas and integrity.",
+    "Expand adult mentorship: Show Ms. Alvarez's care more explicitly in future episodes—reveal that her 'random' groupings were deliberate, modeling that adults are watching and supporting.",
+    "Normalize diversity in dialogue: In future episodes, include natural moments where cultural/ethnic identity is acknowledged without being 'special' or plot-driven.",
+    "Explore Maya's guilt more deeply: Her guilt about wanting more than her mother can provide is realistic—explore this with nuance in future episodes to avoid 'grateful immigrant child' trope."
+  ],
+  "scores": {
+    "biasAvoidance": 7,
+    "representation": 6,
+    "tropes": 7,
+    "ethicalModeling": 7,
+    "culturalSensitivity": 7,
+    "overall": 7
+  },
+  "flaggedContent": [
+    {
+      "type": "PORTRAYAL",
+      "location": "Sam Okafor character profile and scenes 2, 4b, 6",
+      "content": "Sam is consistently portrayed as quiet, withdrawn, self-protective, and victimized. His humor is defensive. His ideas are shut down. He's grateful for basic kindness.",
+      "concern": "Risk of portraying Black male character as inherently passive/victimized. Limits narrative agency. Could reinforce stereotype that quiet = safe for marginalized students.",
+      "suggestion": "Add scenes where Sam initiates, leads, or makes bold choices. Show his creativity/intelligence as a source of power. Give him moments of confidence, not just gratitude."
+    },
+    {
+      "type": "NARRATIVE",
+      "location": "Scenes 4a (defend-aftermath) and 4a (join-aftermath)",
+      "content": "When Maya defends Sam, the narrative treats this as sufficient resolution. When she doesn't, Sam just 'goes quiet.' No deeper exploration of systemic bullying or need for accountability.",
+      "concern": "Players learn that individual kindness solves bullying, rather than understanding that patterns require accountability. Bullies face no real consequences.",
+      "suggestion": "Add follow-up scene where Jordan faces accountability (not punishment—genuine reckoning with impact). Show that kindness to victims ≠ solving the problem."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Alex Torres-Mireles character profile and all scenes",
+      "content": "Alex uses they/them pronouns, but this is never acknowledged or used in dialogue. Their non-binary identity is present but invisible.",
+      "concern": "Non-binary players may feel their identity is unspoken/invisible. Misses opportunity to normalize pronoun usage. Creates 'don't ask, don't tell' dynamic.",
+      "suggestion": "Include natural dialogue using they/them pronouns. Model how to respect pronouns without making it awkward. Example: 'Alex and I are working on...' or Maya internally noting pronouns when meeting."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Devon Park character profile and all scenes",
+      "content": "Devon has an Asian surname but no cultural background, family context, or ethnic identity explored. He's 'the competitive one' without dimension.",
+      "concern": "Asian players may see themselves only through competitive/achievement stereotype. Invisible representation—present but unacknowledged.",
+      "suggestion": "Either integrate cultural elements naturally (family context, values) OR deliberately diversify his characterization to show he's competitive for other reasons. Acknowledge his background exists without requiring him to 'represent' it."
+    },
+    {
+      "type": "DECISION",
+      "location": "Scene 6, choice-4 (stay quiet option)",
+      "content": "Staying quiet is presented as negative, but the narrative doesn't explain WHY speaking up matters beyond 'Sam deserves it.' No explicit modeling of assertiveness as a value.",
+      "concern": "Players (especially those socialized to be quiet) may internalize that silence is acceptable. Consequence is shown but not explored. Teaches conflict avoidance.",
+      "suggestion": "Add internal monologue/dialogue that frames speaking up as: (1) advocating for good ideas, and (2) a skill worth developing. Show that silence has costs for integrity and group work."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Maya Ferreira background section",
+      "content": "Maya's mother works as home health aide and caterer—hardworking, loving, but defined primarily by her labor.",
+      "concern": "Low risk, but could reinforce 'working-class Latina mother' stereotype if not careful. Mother is reduced to her jobs rather than shown as full person.",
+      "suggestion": "In future episodes, show mother's complexity—intelligence, humor, dreams, personality. She's already implied to be warm and wise; expand this to avoid reducing her to labor."
+    }
+  ],
+  "summary": {
+    "verdict": "No verdict provided",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [],
+    "strengths": [],
+    "readyForPublication": false
+  }
+}

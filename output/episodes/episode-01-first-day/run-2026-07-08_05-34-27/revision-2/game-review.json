@@ -1,0 +1,145 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "PACING",
+      "issue": "Scene 4 (lunchroom choice) has three nearly identical setup scenes (4a, 4b, 4c) that repeat the same information with minimal variation, creating redundancy rather than meaningful branching",
+      "location": "Scenes 3-lunchroom-confident/redirect/easygoing → Scene 4a/4b/4c",
+      "impact": "Players experience 3 minutes of repetitive setup dialogue before reaching differentiated content. First replay immediately feels like filler. Kills momentum on replay attempts.",
+      "fix": "Consolidate the three lunchroom setups into ONE scene with a single choice point. Use brief, varied transition lines (20-30 words each) to reflect hallway outcomes rather than re-staging the entire cafeteria. Example: '(If confident) Jordan waves like you're already friends. (If redirected) Jordan nods, less warm. (If easygoing) Jordan grins like she's been waiting for you.' Then ONE unified choice: 'Where do you sit?'",
+      "priority": 9
+    },
+    {
+      "severity": "MAJOR",
+      "category": "AGENCY",
+      "issue": "Choice 1 (hallway response) doesn't materially affect subsequent scenes. All three paths lead to the same lunchroom situation with identical stakes. The choice feels performative rather than consequential.",
+      "location": "Choice-1 outcomes → Scene 3-lunchroom transitions",
+      "impact": "Players make their first choice believing it matters, then discover it's cosmetic. Undermines trust in choice system and reduces motivation to engage with subsequent decisions authentically.",
+      "fix": "Make Choice 1 consequences visible and structural: (a) Confident response → Jordan actively recruits you, higher social capital at her table. (b) Redirect → Jordan respects the move but tests you further. (c) Easygoing → Jordan assumes you're already compatible. These should affect dialogue tone, invitation warmth, and table dynamics, not just flavor text. Consider: does confident Maya get a harder time from Devon later? Does easygoing Maya face more pressure to perform?"
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Choice 3 (the tray incident) has one path (defend) that's clearly 'right' by the game's thematic values, making it feel less like a dilemma and more like a morality test with an obvious answer",
+      "location": "Choice-3a (scene-4a-popular-table)",
+      "impact": "Players who've engaged with the narrative understand the 'correct' choice immediately. The trade-off (social cost vs. kindness) exists but feels predetermined rather than genuinely uncertain. Reduces replayability of this critical moment.",
+      "fix": "Reframe the choice architecture: instead of 'defend vs. join vs. deflect,' present it as 'How do you respond to seeing someone hurt?' with outcomes that are all valid but have different consequences: (a) Defend → Sam appreciates it, but Jordan's group cools slightly; you're now marked as 'the empathy girl.' (b) Join the laugh → You're fully in with Jordan, but Sam avoids you for days; you catch him watching you in the hallway. (c) Deflect → Nobody's happy but nobody's mad; the moment passes, and you spend the rest of lunch wondering if you should have said something. Make all three feel like real choices with real costs, not a morality meter."
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPLAYABILITY",
+      "issue": "The three ending paths (8a, 8b, 8c) are thematically distinct but mechanically identical—they're all text-based conclusions with no gameplay differentiation. No reason to replay to see different endings.",
+      "location": "Scenes 8a/8b/8c (end-of-episode)",
+      "impact": "Players complete the episode once and see one ending. Even knowing other paths exist, there's no gameplay incentive to replay—just reading different dialogue. Estimated replay value drops significantly.",
+      "fix": "Add a post-choice consequence that extends into the next episode or creates a visible game state change: (a) Sam path → Unlocks 'Sam's sketchbook' as a collectible; affects how he interacts with you in future episodes. (b) Jordan path → Unlocks 'In-crowd status' that opens different dialogue options in future scenes; also flags a 'regret' variable that affects later choices. (c) Bridge path → Unlocks 'Table founder' achievement and changes how new characters interact with you (they know you as 'the one who made a table'). Make the endings feel like they're setting up different game states, not just different stories."
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ENGAGEMENT",
+      "issue": "Scene 6 (project conflict) lacks a clear emotional escalation. Devon's vulnerability ('I can't do worse than my brother') appears once and is never addressed, making it feel like a random detail rather than a character moment that matters to the choice.",
+      "location": "Scene 6-project-tension, dialogue s6-7",
+      "impact": "The scene's emotional weight depends on players noticing and caring about Devon's one-line crack. Many players will miss it entirely, reducing the scene to 'smart kid vs. quiet kid.' The choice feels less about 'do you defend good ideas' and more about 'do you like Devon or Sam more.'",
+      "fix": "Make Devon's pressure explicit and visible: Have him repeat the 'my brother' reference earlier in the scene (when pitching his idea: 'This is what my brother did, and it worked'). Then, when Sam pushes back, Devon's response should reference it again ('I can't just do something different and hope it works'). This makes the choice not just about Sam vs. Devon, but about 'Do you help Devon see that a good idea is better than a safe one?' It reframes the stakes from 'kindness to the underdog' to 'actually solving the problem together.' Increases emotional resonance and makes players feel like they're making a real call, not just picking a side."
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scene 2 (hallway) is very short (1 minute) followed by three identical 1-minute scenes (3-lunchroom variants). The rhythm feels rushed and repetitive before the player gets to make a meaningful choice.",
+      "location": "Scenes 1-2-3 sequence",
+      "impact": "Players don't have time to settle into the world or build curiosity before being asked to make a choice. The pacing feels compressed rather than intentional.",
+      "fix": "Extend scene 1 (arrival) slightly to establish atmosphere and stakes (30 seconds more). Consolidate scenes 3-lunchroom into one scene (see MAJOR pacing issue above). This creates better rhythm: arrival (establish) → hallway (test) → lunchroom (choice) rather than arrival → hallway → hallway-echo → hallway-echo → hallway-echo → lunchroom."
+    },
+    {
+      "severity": "MINOR",
+      "category": "CHOICES",
+      "issue": "Choice 2 (where to sit) is presented identically across three different hallway outcomes, even though the social context is different. The choice framing doesn't acknowledge that Jordan's warmth level has changed.",
+      "location": "Choices 2-confident/redirect/easygoing",
+      "impact": "Missed opportunity to make players feel like their earlier choice mattered. Reduces coherence of the branching narrative.",
+      "fix": "Vary the choice prompt slightly to reflect context: (Confident) 'Jordan's waving you over like you're already one of them. Where do you sit?' (Redirect) 'Jordan's nodding toward her table. Not quite as warm as before. Where do you sit?' (Easygoing) 'Jordan's grinning like she's been waiting for you. Where do you sit?' Small change, big impact on feeling like choices cascade."
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "The trait system (CONFIDENCE, EMPATHY, ADAPTABILITY) is never explained or made visible to the player. Players won't know they're building traits or what those traits do.",
+      "location": "Trait mapping in choices (not visible in-game)",
+      "impact": "Players can't see the system they're being measured against. Reduces sense of progression and makes replayability feel random rather than strategic.",
+      "fix": "Add a subtle UI element (not intrusive) that shows trait changes after each choice. Example: after Choice 1, a small notification: '+1 CONFIDENCE' or '+1 EMPATHY.' Or, at the end of the episode, show a trait summary: 'Today you built: CONFIDENCE (3), EMPATHY (2), ADAPTABILITY (1).' This makes the system transparent and gives players a reason to replay with different trait builds in mind."
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "Alex (scene 4c) is introduced as a major character but only appears in one scene. For players who choose the 'new table' path, Alex is suddenly central to their day, but there's no earlier foreshadowing or introduction.",
+      "location": "Scene 4c-new-table",
+      "impact": "Alex feels like a deus ex machina rather than a character who's been in the world the whole time. Reduces immersion for players on that path.",
+      "fix": "Add a brief Alex appearance earlier (scene 2 hallway or scene 3 lunchroom setup): Maya could notice Alex looking equally lost, or Alex could pass by with their characteristic chaos. Just a 1-2 line mention: 'A kid with a green undercut and a rubber-banded sketchbook drifts past, looking equally confused about where to be.' This plants Alex in the world so they feel like a discovery, not an invention."
+    }
+  ],
+  "strengths": [
+    "Strong thematic coherence: every scene reinforces the 'belonging vs. authenticity' tension. The episode knows what it's about.",
+    "Excellent character writing: Maya's internal voice is distinctive and relatable. The gap between what she performs and what she feels is the emotional engine.",
+    "High emotional stakes in key scenes: the tray incident and project conflict are genuinely tense moments where players feel the weight of their choices.",
+    "Meaningful branching outcomes: the four ending paths (authentic connection, fit-in, bridge-builder, smoothed-over) are thematically distinct and would create different game states.",
+    "Good use of secondary characters as mirrors: Jordan, Sam, Devon, and Alex all reflect different aspects of Maya's identity question back at her.",
+    "Natural dialogue that sounds like actual 13-year-olds: slang feels earned, not forced. Characters have distinct voices.",
+    "Ms. Alvarez as invisible architect: the reveal that groupings were deliberate is clever and sets up future episodes well.",
+    "Multiple viable playstyles: players can genuinely approach this episode as 'fit in,' 'be kind,' or 'build something new' and have it work."
+  ],
+  "recommendations": [
+    "CRITICAL: Consolidate the three lunchroom setup scenes into one, with brief contextual variations reflecting hallway outcomes. This is a major pacing and replayability issue.",
+    "CRITICAL: Make Choice 1 consequences visible and structural. The hallway choice should materially affect how characters treat Maya later, not just be flavor text.",
+    "CRITICAL: Reframe Choice 3 (tray incident) to present all three options as valid but costly, not as a morality test with an obvious right answer.",
+    "CRITICAL: Add post-episode consequences to the three ending paths so players have a mechanical reason to replay, not just narrative curiosity.",
+    "HIGH: Make Devon's sibling pressure explicit and repeatable throughout scene 6, so the choice feels like it's about solving a real problem, not just picking a side.",
+    "HIGH: Add a subtle trait UI that shows players what they're building with each choice. Make the system transparent and replayable.",
+    "MEDIUM: Extend scene 1 slightly and tighten the overall pacing rhythm. The current sequence feels compressed.",
+    "MEDIUM: Plant Alex earlier in the episode so they feel like a discovery on the 'new table' path, not a sudden invention.",
+    "MEDIUM: Vary the Choice 2 prompt slightly across the three hallway outcomes to reinforce that earlier choices mattered.",
+    "NICE-TO-HAVE: Consider adding a 'secret' dialogue option or hidden scene for players who make specific choice combinations (e.g., 'defend Sam' + 'speak up for his idea' + 'text Sam at the end'). Rewards engaged replays."
+  ],
+  "scores": {
+    "engagement": 7,
+    "choiceQuality": 6,
+    "pacing": 6,
+    "playerAgency": 6,
+    "replayability": 6,
+    "overall": 6
+  },
+  "metrics": {
+    "averageSceneLength": 45,
+    "choiceFrequency": 0.33,
+    "branchingFactor": 3,
+    "estimatedReplayValue": 5
+  },
+  "summary": {
+    "verdict": "GOOD foundation with strong thematic writing, but significant structural issues in choice design and pacing prevent it from being excellent. The episode knows what it wants to say about belonging and authenticity, and the character work is genuinely strong. However, the gameplay doesn't yet match the narrative quality. Multiple scenes feel repetitive, early choices don't have visible consequences, and the ending paths lack mechanical differentiation. These are fixable issues that would move this from 'good story' to 'great game.'",
+    "keyIssues": [
+      "Three identical lunchroom setup scenes create redundancy and kill replay momentum",
+      "Choice 1 (hallway) feels cosmetic—no visible consequences on subsequent scenes",
+      "Choice 3 (tray incident) reads as a morality test, not a genuine dilemma",
+      "Ending paths are narratively distinct but mechanically identical—no gameplay incentive to replay",
+      "Trait system is invisible to player—no sense of progression or strategic replayability"
+    ],
+    "topStrengths": [
+      "Maya's voice is distinctive, relatable, and emotionally honest",
+      "Thematic coherence throughout—every scene reinforces the core tension",
+      "High emotional stakes in key moments (tray, project conflict)",
+      "Secondary characters (Jordan, Sam, Devon, Alex) are well-written and serve the theme",
+      "Multiple viable playstyles feel genuinely supported"
+    ],
+    "mustFix": [
+      "Consolidate scenes 3-lunchroom-confident/redirect/easygoing into one scene with contextual variations",
+      "Make Choice 1 consequences visible and structural (affect how characters treat Maya later)",
+      "Reframe Choice 3 to present all paths as valid but costly, not as obvious morality choice",
+      "Add post-episode game state changes to the three ending paths (unlocks, flags, achievements)",
+      "Make Devon's sibling pressure explicit and repeatable so Choice 4 feels like solving a real problem"
+    ],
+    "niceToHave": [
+      "Add trait UI showing what players are building with each choice",
+      "Extend scene 1 to improve overall pacing rhythm",
+      "Plant Alex earlier so they feel like a discovery, not a sudden invention",
+      "Vary Choice 2 prompt across hallway outcomes to reinforce choice consequences",
+      "Add secret dialogue/scenes for specific choice combinations to reward engaged replays"
+    ]
+  }
+}

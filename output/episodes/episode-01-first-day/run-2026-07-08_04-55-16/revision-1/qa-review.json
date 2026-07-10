@@ -1,0 +1,102 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene 'scene-4' has choice 'choice-2a' attached, but choice-2a leads to intermediate observation scenes (scene-4-notice-jordan, scene-4-notice-maya, scene-4-notice-seats) that all default to 'scene-4-decision'. This creates a branching loop: choice-2a options point back to scene-4-decision, which then triggers choice-2 with different options. The player makes two sequential choices about the same decision (what to notice, then where to sit), which is confusing UX and suggests incomplete scene design.",
+      "location": "scenes[3] (scene-4) and choices[1] (choice-2a)",
+      "expectedValue": "Either: (A) choice-2a should be removed and scene-4 should directly present choice-2 with all three seating options, OR (B) the notice-scenes should be flavor-only with no choice attached, and scene-4-decision should be the actual choice point.",
+      "actualValue": "choice-2a creates intermediate scenes that loop back to scene-4-decision, which then presents choice-2 again",
+      "fix": "Recommend option (A): Delete choice-2a entirely. Modify scene-4 to have a single choice (choice-2) with three options that directly lead to scene-5a, scene-5b, scene-5c. The 'notice' flavor can be embedded in the scene description or in the choice option text itself ('Jordan's table - the easy noise...', etc.)."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Choice 'choice-2' references nextScenes that do not exist in the scenes array. The choice options point to 'scene-4-notice-jordan', 'scene-4-notice-maya', 'scene-4-notice-seats', but these are intermediate observation scenes. However, choice-2 (the actual seating choice) points to 'scene-5a', 'scene-5b', 'scene-5c'. The branching structure is internally inconsistent: choice-2a's options lead to notice-scenes, which default to scene-4-decision, which then triggers choice-2. This is a double-choice pattern that breaks the expected one-choice-per-decision model.",
+      "location": "choices[1] (choice-2a) and choices[2] (choice-2)",
+      "expectedValue": "A single choice with three options, each leading directly to a seating outcome scene (scene-5a, scene-5b, scene-5c).",
+      "actualValue": "Two sequential choices: choice-2a (what to notice) → notice-scenes → scene-4-decision → choice-2 (where to sit) → seating outcome scenes.",
+      "fix": "Consolidate into a single choice. Remove choice-2a and the notice-scenes (scene-4-notice-jordan, scene-4-notice-maya, scene-4-notice-seats). Attach choice-2 directly to scene-4. Rewrite choice-2's option text to include the 'notice' flavor inline: e.g., 'Join Jordan's table (the easy noise of a group already comfortable together)' instead of a separate observation step."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene 'scene-4-decision' is referenced as the defaultNextScene for three observation scenes (scene-4-notice-jordan, scene-4-notice-maya, scene-4-notice-seats), but scene-4-decision itself has a choice (choice-2) with nextScenes pointing to scene-5a, scene-5b, scene-5c. This means the player sees scene-4-decision twice: once after each notice-scene, and then again when they make choice-2. The scene is not duplicated in the array, but the flow implies it should be traversed multiple times, which is unusual and likely unintended.",
+      "location": "scenes[4] (scene-4-notice-jordan), scenes[5] (scene-4-notice-maya), scenes[6] (scene-4-notice-seats) all have defaultNextScene: 'scene-4-decision'",
+      "expectedValue": "Each notice-scene should either (A) not exist, or (B) have a unique defaultNextScene, or (C) be embedded as flavor text in a single choice.",
+      "actualValue": "All three notice-scenes converge on scene-4-decision, creating a funnel that re-presents the same scene.",
+      "fix": "Delete the three notice-scenes entirely. Embed their flavor text into the choice-2 option descriptions. Example: Option A becomes 'Sit with Maya, the girl reading alone by the window (she's got her sketchbook propped against her tray, entirely unbothered by the empty seats around her).' This preserves the flavor without the redundant scene traversal."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Choice 'choice-2a' (the 'what catches your attention first' choice) is defined in the choices array but is never actually attached to any scene via a transition. Scene-4 has a transition with choiceId 'choice-2a', but choice-2a's options point to observation scenes, not to the final seating outcome. This creates a dead-end branch: the player makes choice-2a, sees a notice-scene, defaults to scene-4-decision, then makes choice-2 again. The first choice (choice-2a) is functionally redundant.",
+      "location": "choices[1] (choice-2a) and scene-4's transition",
+      "expectedValue": "Either choice-2a should be removed, or it should be the only choice in the cafeteria sequence, with options leading directly to seating outcomes.",
+      "actualValue": "choice-2a exists and is attached to scene-4, but its outcomes (notice-scenes) are intermediate, not final.",
+      "fix": "Remove choice-2a and its associated notice-scenes. Replace scene-4's transition to point directly to choice-2 instead."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The branchDialogue array references branch IDs ('branch-authentic-belonging', 'branch-popularity-conformity', 'branch-balanced-growth') that are defined in the outcomes array, but the outcomes array's 'triggeredBy' lists reference choice IDs and their option indices (e.g., 'choice-2:a'). However, choice-2a (the observation choice) is not included in any outcome's triggeredBy list. This means the player's choice in choice-2a (what to notice) does not affect which branch is triggered. Only the final seating choice (choice-2) and the later choices (choice-3, choice-4, choice-5) matter. This is likely intentional, but it makes choice-2a feel pointless.",
+      "location": "outcomes array and choices[1] (choice-2a)",
+      "expectedValue": "If choice-2a is meant to be flavor-only, it should not be a choice at all. If it's meant to affect branching, its option IDs should appear in the outcomes' triggeredBy lists.",
+      "actualValue": "choice-2a exists and is presented to the player, but does not affect which ending branch is triggered.",
+      "fix": "Remove choice-2a entirely. If you want the 'notice' flavor, embed it in the scene description or in choice-2's option text."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene 'scene-11a' (and scene-11b, scene-11c) have a transition type of 'default' with nextScene 'END', but the branchDialogue array has entries for sceneId 'scene-11a' with multiple branchIds. This means the scene is supposed to display different dialogue based on which branch the player is in, but the scene itself is the final scene (it transitions to END). The branchDialogue entries are keyed by sceneId and branchId, which suggests they should be rendered as variants of scene-11a's dialogue. However, the scene's dialogue array does not reference these branch variants — it only has static dialogue. This is a disconnect between the branching system and the scene rendering.",
+      "location": "scenes[27] (scene-11a) and branchDialogue array",
+      "expectedValue": "Either (A) scene-11a's dialogue should be static and not vary by branch, or (B) the scene's dialogue should reference branch variants, or (C) the branchDialogue entries should not exist for this scene.",
+      "actualValue": "branchDialogue has entries for scene-11a with three different branches, but scene-11a's dialogue array is static.",
+      "fix": "Clarify the intent: If the ending dialogue should vary by branch, the scene's dialogue array should be replaced with a reference to branchDialogue (or the rendering pipeline should be designed to merge branchDialogue into the scene at render time). If the dialogue should be static, remove the branchDialogue entries for scene-11a, scene-11b, scene-11c. Recommend the latter for simplicity: the branch outcomes are already captured in the narrative flow (which scene is reached), so additional dialogue variants may be redundant."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The outcomes array defines three branches with triggeredBy lists that reference choice options (e.g., 'choice-2:a'). However, choice-2a (the observation choice) is not included in any triggeredBy list. This means the player's choice in choice-2a does not affect which branch is triggered. The branching logic only considers choices 2, 3, 4, and 5 (the seating choice and the three classroom/end-of-day choices). This makes choice-2a feel like a flavor choice with no mechanical impact, which is fine, but it should be documented or removed.",
+      "location": "outcomes array, specifically the triggeredBy lists",
+      "expectedValue": "If choice-2a is meant to affect branching, its option IDs should appear in triggeredBy lists. If not, it should not be a choice.",
+      "actualValue": "choice-2a is presented as a choice but does not affect any outcome.",
+      "fix": "Remove choice-2a and its associated scenes. Alternatively, if you want the observation to matter, add choice-2a option IDs to the triggeredBy lists (e.g., 'choice-2a:a', 'choice-2a:b', 'choice-2a:c') and document how they combine with later choices to determine the branch."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Scene 'scene-5c' (Table Hopping) describes the player visiting Jordan's table, then Maya's table, then settling in an in-between seat. However, the dialogue in scene-5c does not include any interaction with Jordan or Maya — it only shows the player's internal monologue. The scene description says the player 'swings by Jordan's table first' and 'then over to the window table', but the dialogue only shows brief exchanges. This is inconsistent: the description promises a full 'table hopping' sequence, but the dialogue is truncated.",
+      "location": "scenes[24] (scene-5c), dialogue array",
+      "expectedValue": "Either expand the dialogue to show full interactions at each table, or rewrite the description to match the abbreviated dialogue.",
+      "actualValue": "Description says 'swings by Jordan's table first' and 'then over to the window table', but dialogue only shows s5c-1 through s5c-8, with minimal exchanges.",
+      "fix": "Expand the dialogue to include fuller exchanges at Jordan's table and Maya's table, or rewrite the scene description to say 'briefly stops by Jordan's table and Maya's table before settling in an in-between seat'."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The outcomes array's triggeredBy lists use a notation like 'choice-2:a' to indicate 'choice-2, option a'. However, the choices array uses 'id' fields for options (e.g., 'id': 'a'), not 'id': 'choice-2:a'. This means the triggeredBy notation is a derived format, not a direct reference. If the rendering pipeline expects exact ID matches, this will fail. The notation is clear in intent, but the implementation is ambiguous.",
+      "location": "outcomes array, triggeredBy lists (e.g., 'choice-2:a')",
+      "expectedValue": "Either (A) the choices array should use full IDs like 'choice-2:a', or (B) the triggeredBy lists should use a different notation, or (C) the rendering pipeline should be documented to handle the 'choice-id:option-id' notation.",
+      "actualValue": "triggeredBy uses 'choice-2:a' but choices[2].options[0].id is 'a'.",
+      "fix": "Document the triggeredBy notation clearly in the schema. Recommend: triggeredBy should use 'choice-id:option-id' format, and the rendering pipeline should parse this to match against (choice.id, option.id) tuples. Alternatively, change the choices array to use full IDs like 'choice-2:a' for each option."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene 'scene-8' (Partner Assignments) has a transition with choiceId 'choice-3', but choice-3 is defined with options that lead to scene-7a, scene-7b, scene-7c. These are intermediate scenes that describe how the player responds to Jordan's comment. However, scene-8 is the scene where Jordan makes the comment. The choice should be attached to scene-8, not to a later scene. This is correct in the data, but the scene numbering is confusing: scene-7a, scene-7b, scene-7c come before scene-8 in the narrative, but they are numbered as if they come after scene-6. This is a numbering inconsistency, not a logic error, but it makes the episode hard to follow.",
+      "location": "scenes array, scene numbering",
+      "expectedValue": "Scenes should be numbered in narrative order, or the numbering should be clearly documented as non-sequential.",
+      "actualValue": "scene-6 (Partner Assignments) → choice-3 → scene-7a/b/c (responses) → scene-8 (Called On). The numbering suggests scene-7 comes after scene-6, but scene-8 comes after scene-7, which is correct. However, the intermediate response scenes (7a/b/c) are numbered as if they are a single scene with variants, which is confusing.",
+      "fix": "Rename the response scenes to clarify they are variants of a single narrative moment. Options: (A) Rename to scene-6a, scene-6b, scene-6c (responses to Jordan's comment), then scene-7 (Called On), then scene-8 (Last Bell), etc. OR (B) Keep the current numbering but add a comment in the schema documenting that scenes with letters (7a, 7b, 7c) are choice variants, not sequential scenes."
+    }
+  ],
+  "warnings": [],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 10,
+    "warningCount": 0
+  }
+}

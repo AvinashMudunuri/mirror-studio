@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "errors": [
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Priya has a dialogue line in scene-4 but is not listed in the scene's 'characters' array, creating a character-presence inconsistency (she appears to speak from off-screen without being flagged as present or explicitly noted as off-screen).",
+      "location": "scene-4.characters / scene-4.dialogue[scene-4-l8]",
+      "expectedValue": "characters: [\"player\",\"alex\",\"ms-chen\",\"jordan\",\"priya\"] OR dialogue action clarifies she's off-screen/across the room",
+      "actualValue": "characters: [\"player\",\"alex\",\"ms-chen\",\"jordan\"], but priya speaks line scene-4-l8 (\"I heard that.\")",
+      "fix": "Add 'priya' to scene-4's characters array, since the line's action text ('deadpan, from across the room') already implies she's in the room and just not at the immediate cluster — she should be listed as present."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice-2a's three options ('laugh along', 'change subject', 'defend Alex') all route to the same nextScene (scene-4) with no branching state persisted anywhere except implicit trait deltas. This is fine mechanically, but there's no explicit flag/branch tracking for which lunch-table variant was chosen, meaning later branchDialogue selection for 'branch-popular-path' vs 'branch-bridge-path' vs 'branch-authentic-outsider' must rely entirely on choice-1 history (not choice-2a), and choice-2a's own moral weight (laughing at Alex vs defending them) is never referenced again in later scenes or endings.",
+      "location": "choice-2a options / branchDialogue",
+      "suggestion": "Consider having choice-2a's outcome be reflected somewhere later (e.g., Alex referencing whether Sol defended them at lunch), or at least document that only choice-1/choice-4/choice-5 drive branch outcomes while choice-2a/2b/2c/3 only affect trait totals."
+    },
+    {
+      "category": "STYLE",
+      "message": "scene-6's 'nextScenes' array order (['scene-7b','scene-7a','scene-7c']) does not match the visual a→b→c mapping intuition (option 'a' leads to scene-7b, not scene-7a), which could confuse a content editor reading the scene object alone without cross-referencing the choices array.",
+      "location": "scene-6.transition.nextScenes",
+      "suggestion": "Reorder nextScenes to match option order (a,b,c) for readability, i.e., ['scene-7a','scene-7b','scene-7c'], or add inline comments/documentation clarifying the mapping is choice-driven, not positional."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The 'branch-popular-path', 'branch-bridge-path', and 'branch-authentic-outsider' outcomes are only triggeredBy choice-1 (a/b/c respectively), meaning a player's choice-2 (2a/2b/2c) and choice-3/choice-4 selections have no effect on which of these three 'origin path' branchDialogue variants get shown, despite those scenes having thematically distinct content (e.g., 3a's laugh-along vs defend Alex).",
+      "location": "outcomes[branch-popular-path/branch-bridge-path/branch-authentic-outsider].triggeredBy",
+      "suggestion": "If intentional (origin path is fixed at the hallway fork), consider documenting this explicitly in the outcome description so future content reviewers don't assume choice-2 also affects ending branch dialogue selection."
+    },
+    {
+      "category": "STYLE",
+      "message": "Jordan is included in scene-8's characters array but has no dialogue and is only passively referenced; same for Priya in scene-8. This is harmless but worth confirming intentional (background presence for the presentation audience).",
+      "location": "scene-8.characters",
+      "suggestion": "No action needed if intentional as background/audience characters; consider a brief narrator line acknowledging their presence in the room for clarity."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 32,
+    "failedChecks": 1,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Add explicit branch/state tracking (e.g., a 'lunchTableChoice' flag) if you want choice-2a/2b/2c to influence ending branch dialogue selection beyond trait totals.",
+    "Double check off-screen character speaking conventions across scenes — establish a house rule (e.g., characters not in 'characters' array cannot have dialogue lines) to prevent future instances like the scene-4 Priya issue.",
+    "Consider adding a short narrative acknowledgment scene or line for Jordan/Priya's passive presence in scene-8 to fully justify their inclusion in the characters array."
+  ]
+}

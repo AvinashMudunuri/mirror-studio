@@ -1,0 +1,113 @@
+{
+  "failing": [
+    "qaReviewer",
+    "gameDesigner",
+    "ethicsReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'scene-4' has choice 'choice-2a' attached, but choice-2a leads to intermediate observation scenes (scene-4-notice-jordan, scene-4-notice-maya, scene-4-notice-seats) that all default to 'scene-4-decision'. This creates a branching loop: choice-2a options point back to scene-4-decision, which then triggers choice-2 with different options. The player makes two sequential choices about the same decision (what to notice, then where to sit), which is confusing UX and suggests incomplete scene design. — Suggested fix: Recommend option (A): Delete choice-2a entirely. Modify scene-4 to have a single choice (choice-2) with three options that directly lead to scene-5a, scene-5b, scene-5c. The 'notice' flavor can be embedded in the scene description or in the choice option text itself ('Jordan's table - the easy noise...', etc.). (location: scenes[3] (scene-4) and choices[1] (choice-2a))",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice 'choice-2' references nextScenes that do not exist in the scenes array. The choice options point to 'scene-4-notice-jordan', 'scene-4-notice-maya', 'scene-4-notice-seats', but these are intermediate observation scenes. However, choice-2 (the actual seating choice) points to 'scene-5a', 'scene-5b', 'scene-5c'. The branching structure is internally inconsistent: choice-2a's options lead to notice-scenes, which default to scene-4-decision, which then triggers choice-2. This is a double-choice pattern that breaks the expected one-choice-per-decision model. — Suggested fix: Consolidate into a single choice. Remove choice-2a and the notice-scenes (scene-4-notice-jordan, scene-4-notice-maya, scene-4-notice-seats). Attach choice-2 directly to scene-4. Rewrite choice-2's option text to include the 'notice' flavor inline: e.g., 'Join Jordan's table (the easy noise of a group already comfortable together)' instead of a separate observation step. (location: choices[1] (choice-2a) and choices[2] (choice-2))",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'scene-4-decision' is referenced as the defaultNextScene for three observation scenes (scene-4-notice-jordan, scene-4-notice-maya, scene-4-notice-seats), but scene-4-decision itself has a choice (choice-2) with nextScenes pointing to scene-5a, scene-5b, scene-5c. This means the player sees scene-4-decision twice: once after each notice-scene, and then again when they make choice-2. The scene is not duplicated in the array, but the flow implies it should be traversed multiple times, which is unusual and likely unintended. — Suggested fix: Delete the three notice-scenes entirely. Embed their flavor text into the choice-2 option descriptions. Example: Option A becomes 'Sit with Maya, the girl reading alone by the window (she's got her sketchbook propped against her tray, entirely unbothered by the empty seats around her).' This preserves the flavor without the redundant scene traversal. (location: scenes[4] (scene-4-notice-jordan), scenes[5] (scene-4-notice-maya), scenes[6] (scene-4-notice-seats) all have defaultNextScene: 'scene-4-decision')",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Choice 'choice-2a' (the 'what catches your attention first' choice) is defined in the choices array but is never actually attached to any scene via a transition. Scene-4 has a transition with choiceId 'choice-2a', but choice-2a's options point to observation scenes, not to the final seating outcome. This creates a dead-end branch: the player makes choice-2a, sees a notice-scene, defaults to scene-4-decision, then makes choice-2 again. The first choice (choice-2a) is functionally redundant. — Suggested fix: Remove choice-2a and its associated notice-scenes. Replace scene-4's transition to point directly to choice-2 instead. (location: choices[1] (choice-2a) and scene-4's transition)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "The outcomes array defines three branches with triggeredBy lists that reference choice options (e.g., 'choice-2:a'). However, choice-2a (the observation choice) is not included in any triggeredBy list. This means the player's choice in choice-2a does not affect which branch is triggered. The branching logic only considers choices 2, 3, 4, and 5 (the seating choice and the three classroom/end-of-day choices). This makes choice-2a feel like a flavor choice with no mechanical impact, which is fine, but it should be documented or removed. — Suggested fix: Remove choice-2a and its associated scenes. Alternatively, if you want the observation to matter, add choice-2a option IDs to the triggeredBy lists (e.g., 'choice-2a:a', 'choice-2a:b', 'choice-2a:c') and document how they combine with later choices to determine the branch. (location: outcomes array, specifically the triggeredBy lists)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'scene-8' (Partner Assignments) has a transition with choiceId 'choice-3', but choice-3 is defined with options that lead to scene-7a, scene-7b, scene-7c. These are intermediate scenes that describe how the player responds to Jordan's comment. However, scene-8 is the scene where Jordan makes the comment. The choice should be attached to scene-8, not to a later scene. This is correct in the data, but the scene numbering is confusing: scene-7a, scene-7b, scene-7c come before scene-8 in the narrative, but they are numbered as if they come after scene-6. This is a numbering inconsistency, not a logic error, but it makes the episode hard to follow. — Suggested fix: Rename the response scenes to clarify they are variants of a single narrative moment. Options: (A) Rename to scene-6a, scene-6b, scene-6c (responses to Jordan's comment), then scene-7 (Called On), then scene-8 (Last Bell), etc. OR (B) Keep the current numbering but add a comment in the schema documenting that scenes with letters (7a, 7b, 7c) are choice variants, not sequential scenes. (location: scenes array, scene numbering)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Uneven scene distribution creates momentum drag in middle section — Suggested fix: Consolidate the three 'noticing' subscenes into a single, faster scene with internal monologue that hits all three observations in quick succession. Keep the decision moment (scene-4-decision) but reduce setup overhead. Target: compress from ~4 scenes to 2 scenes in this sequence. (location: Scenes 4-5 (cafeteria sequence))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Choice 2a (what catches your attention) feels like a setup choice with no real consequence — Suggested fix: Either: (A) Delete choice-2a entirely and move straight to scene-4-decision with a single observation moment, OR (B) Make choice-2a consequential by having each option subtly influence how the seating choice (choice-2) is framed or what dialogue options appear. For example: if player 'noticed Jordan,' the Jordan table invitation feels warmer; if player 'noticed Maya,' there's a moment of eye contact that changes the tone of joining her. (location: Choice 2a, scene-4)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Limited mechanical variety across the three branches (authentic, popularity, balanced) — Suggested fix: Introduce subtle mechanical differences between branches that persist into future episodes. For example: (A) Authentic branch: unlock a 'trust meter' with Ben/Maya that gates certain dialogue options, (B) Popularity branch: unlock a 'social momentum' mechanic where Jordan's approval gives temporary bonuses to confidence checks, (C) Balanced branch: unlock a 'code-switching' mechanic that lets player choose tone/formality for dialogue. These don't change the story but change how players interact with the game. (location: Outcome branches and trait mapping)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Ms. Alvarez's redirect (scene-8) removes player agency in a critical moment — Suggested fix: Have Ms. Alvarez notice the snickering but NOT address it directly. Instead, have her pause, look up briefly at the room (creating visible tension), then turn back to the board without saying anything. This leaves the vacuum of her silence as the actual pressure—player's choice in scene-9 becomes about whether to fill that silence or let it sit. Increases stakes and agency. (location: Scene-8, dialogue line 's8-4')",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Ben's character relies heavily on self-deprecating anxiety as his primary trait, with limited counter-balance showing his strengths or agency outside of intellectual ideas — Recommendation: Add scenes where Ben demonstrates non-intellectual strengths (humor, observation, kindness) that aren't framed as compensating for his anxiety. Include at least one moment in Episode 1 where Ben initiates something without pre-apologizing, showing agency beyond ideas. Ensure his arc includes moments of genuine confidence, not just intellectual validation. (location: Ben Korlewski character profile and scenes 6-9)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Maya's character is defined primarily through isolation and artistic talent, risking the 'magical minority' trope where a character of color exists in a supporting role defined by a special skill — Recommendation: Expand Maya's social world beyond Riley's choices. Add a scene showing Maya has at least one other peer connection or community (art club, online community, family support) that exists independently of the player's attention. Include dialogue where Maya actively chooses solitude for creative reasons, not just accepts it as inevitable. Ensure her arc in future episodes includes her pursuing her own goals, not just responding to Riley's interest. (location: Maya Oyelaran character profile and scenes 4-5, 11a)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Jordan's character is a charismatic student of color (Korean-American/Black) who is portrayed as conflict-avoidant and academically struggling, while also being the social center. This risks reinforcing the 'charisma over competence' stereotype for students of color — Recommendation: Add a scene in Episode 1 or early Episode 2 where Jordan demonstrates intellectual capability or curiosity in a domain he cares about (not just social intelligence). Alternatively, ensure that his academic struggle is framed as a systemic issue (poor teaching, undiagnosed learning difference, home instability) rather than personal inadequacy. Include a moment where he asks for help or shows vulnerability about the academic pressure, humanizing the struggle rather than just hiding it. Ensure future episodes show him taking agency in addressing the problem, not just managing the secret. (location: Jordan Cho-Williams character profile, particularly the 'secrets' section and background)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Ms. Alvarez is the only adult character with significant presence, and her portrayal as 'stretched thin' and missing important moments could normalize adult neglect in educational settings — Recommendation: Add a scene (in Episode 1 or early Episode 2) where Ms. Alvarez notices the dynamic with Ben after the fact and takes action—either pulling Riley aside to acknowledge what happened, or restructuring group work to prevent similar dynamics. Include internal monologue showing her self-awareness about what she missed and her commitment to doing better. This models accountability without blaming her personally, while also showing that systemic overload doesn't excuse missing student harm. (location: Ms. Alvarez character profile and scenes 6, 8)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "The branchDialogue array references branch IDs ('branch-authentic-belonging', 'branch-popularity-conformity', 'branch-balanced-growth') that are defined in the outcomes array, but the outcomes array's 'triggeredBy' lists reference choice IDs and their option indices (e.g., 'choice-2:a'). However, choice-2a (the observation choice) is not included in any outcome's triggeredBy list. This means the player's choice in choice-2a (what to notice) does not affect which branch is triggered. Only the final seating choice (choice-2) and the later choices (choice-3, choice-4, choice-5) matter. This is likely intentional, but it makes choice-2a feel pointless. — Suggested fix: Remove choice-2a entirely. If you want the 'notice' flavor, embed it in the scene description or in choice-2's option text. (location: outcomes array and choices[1] (choice-2a))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'scene-11a' (and scene-11b, scene-11c) have a transition type of 'default' with nextScene 'END', but the branchDialogue array has entries for sceneId 'scene-11a' with multiple branchIds. This means the scene is supposed to display different dialogue based on which branch the player is in, but the scene itself is the final scene (it transitions to END). The branchDialogue entries are keyed by sceneId and branchId, which suggests they should be rendered as variants of scene-11a's dialogue. However, the scene's dialogue array does not reference these branch variants — it only has static dialogue. This is a disconnect between the branching system and the scene rendering. — Suggested fix: Clarify the intent: If the ending dialogue should vary by branch, the scene's dialogue array should be replaced with a reference to branchDialogue (or the rendering pipeline should be designed to merge branchDialogue into the scene at render time). If the dialogue should be static, remove the branchDialogue entries for scene-11a, scene-11b, scene-11c. Recommend the latter for simplicity: the branch outcomes are already captured in the narrative flow (which scene is reached), so additional dialogue variants may be redundant. (location: scenes[27] (scene-11a) and branchDialogue array)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene 'scene-5c' (Table Hopping) describes the player visiting Jordan's table, then Maya's table, then settling in an in-between seat. However, the dialogue in scene-5c does not include any interaction with Jordan or Maya — it only shows the player's internal monologue. The scene description says the player 'swings by Jordan's table first' and 'then over to the window table', but the dialogue only shows brief exchanges. This is inconsistent: the description promises a full 'table hopping' sequence, but the dialogue is truncated. — Suggested fix: Expand the dialogue to include fuller exchanges at Jordan's table and Maya's table, or rewrite the scene description to say 'briefly stops by Jordan's table and Maya's table before settling in an in-between seat'. (location: scenes[24] (scene-5c), dialogue array)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "The outcomes array's triggeredBy lists use a notation like 'choice-2:a' to indicate 'choice-2, option a'. However, the choices array uses 'id' fields for options (e.g., 'id': 'a'), not 'id': 'choice-2:a'. This means the triggeredBy notation is a derived format, not a direct reference. If the rendering pipeline expects exact ID matches, this will fail. The notation is clear in intent, but the implementation is ambiguous. — Suggested fix: Document the triggeredBy notation clearly in the schema. Recommend: triggeredBy should use 'choice-id:option-id' format, and the rendering pipeline should parse this to match against (choice.id, option.id) tuples. Alternatively, change the choices array to use full IDs like 'choice-2:a' for each option. (location: outcomes array, triggeredBy lists (e.g., 'choice-2:a'))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "The 'going along with Jordan's joke' choice (choice-3:c and choice-4:b) receives minimal consequences, and the narrative doesn't clearly frame this as ethically problematic — Recommendation: Ensure that in scenes following choice-3:c and choice-4:b, there are clear consequences: Ben's trust is noticeably affected (not just 'shoulders drop'), and Riley experiences internal discomfort that isn't resolved. In the branch dialogue for the popularity-conformity path, include Ben or Maya noticing the complicity, creating a moment where Riley must reckon with the choice. The 'speak up' path should feel distinctly more aligned with the stated values of 'authenticity' and 'belonging,' while the conformity path should feel like a trade-off, not an equally valid choice. (location: Scenes 7c, 9b, and branch dialogue for popularity-conformity path)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Riley's pronoun flexibility (she/they with player choice) is mentioned but not meaningfully integrated into the narrative or character interactions — Recommendation: Ensure that whichever pronouns the player selects are consistently used by all NPCs throughout the episode. Include at least one moment where an NPC uses Riley's pronouns correctly in a way that feels natural and affirming (e.g., 'She's got jokes' or 'They're sharp'). If the default is she/they, show at least one NPC using they/them pronouns naturally in dialogue, normalizing non-binary identity. Consider adding a brief scene where Riley corrects someone on pronouns, modeling healthy boundary-setting. (location: Riley Nakamura-Torres character profile and dialogue throughout)",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "PACING",
+      "issue": "Uneven scene distribution creates dead spots in the lunchroom sequence. Scenes 4a, 4b, and 4c are heavily branched but each variant plays out similarly with minimal variation in actual gameplay moment-to-moment.",
+      "location": "Scenes 4a (popular table), 4b (Sam's table), 4c (new table) - the three lunchroom branches",
+      "impact": "Players experience 2-3 minutes of similar pacing and dialogue structure across different branches without enough mechanical or narrative variation to feel distinct. The choice feels consequential (which is good) but the execution feels repetitive.",
+      "fix": "Add 1-2 unique gameplay moments per lunchroom branch: (4a) a mini-challenge where Maya has to navigate table hierarchy/politics; (4b) a moment where Sam shows vulnerability that requires active listening; (4c) Alex proposing a concrete activity (like the pizza club) that Maya can commit to or deflect. Make each branch feel mechanically different, not just narratively different.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Choice 3a (the tray incident) presents three options that don't feel equally weighted or interesting. Option B (laugh along) feels like the 'obviously bad' choice, creating moral clarity rather than genuine dilemma.",
+      "location": "Scene 4a, Choice 3a - 'Sam's tray is on the floor'",
+      "impact": "Players with strong empathy traits will immediately identify the 'correct' choice, reducing the sense of meaningful trade-off. The choice becomes less about 'what kind of person am I?' and more about 'am I a good person or bad person?'",
+      "fix": "Reframe option B to be more morally ambiguous: instead of 'laugh along,' make it 'laugh nervously while helping Sam up — trying to smooth it over as a joke.' This creates a real dilemma: defend him loudly (costs social capital with Jordan), help quietly (ambiguous intent), or deflect (avoids conflict but doesn't help). All three should feel like defensible choices with real costs.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "AGENCY",
+      "issue": "Ms. Alvarez's group assignment (Scene 5a/5b/5c) feels railroaded regardless of player choice. The grouping with Sam and Devon happens no matter what the player did at lunch, reducing the sense that choices have mechanical consequences.",
+      "location": "Scenes 5a, 5b, 5c - 'Group Project Roulette'",
+      "impact": "Players who chose to sit with Jordan may expect to be grouped with Jordan's friends, or at least have that possibility. The fixed grouping undermines the fantasy that social choices have downstream mechanical effects. It feels like the game is saying 'your lunch choice doesn't actually matter for what happens next.'",
+      "fix": "Vary the group assignment based on lunch choice: If player sat with Jordan, group them with Devon + a different character (maybe Alex). If player sat with Sam, group them with Devon + Sam (current). If player sat alone with Alex, group them with Sam + Devon but have the dynamic be different (Alex is in the group instead of just in the scene). This makes the lunch choice feel mechanically consequential, not just narratively so.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Choice 4 (Devon steamrolling Sam's idea) has an option imbalance: option A (speak up strongly) and option B (compromise) both lead to positive outcomes, while option C (stay quiet) leads to regret. The 'right' answer is too obvious.",
+      "location": "Scene 6, Choice 4 - 'Devon just shut down Sam's idea'",
+      "impact": "Players optimizing for 'good outcomes' will always pick A or B, making C feel like a trap rather than a genuine alternative playstyle. This reduces replayability because there's no reason to try the quiet path if you know it leads to regret.",
+      "fix": "Make staying quiet have a hidden benefit: perhaps Devon's idea actually works better than expected, and Sam appreciates that Maya didn't create conflict that would have made the project awkward. Or: Sam privately texts Maya later saying 'thanks for not making it weird.' This doesn't erase the regret, but it gives the quiet path a real upside, not just a downside.",
+      "priority": 7
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "The opening scene (Scene 1: Arrival) is very short (1 minute) and mostly internal monologue. It establishes mood but doesn't create a strong curiosity gap to pull players forward.",
+      "location": "Scene 1 - 'New Kid Jitters'",
+      "impact": "Players may not feel hooked immediately. The opening is introspective rather than active, which works for character but doesn't create the 'what happens next?' momentum that strong openings need.",
+      "fix": "Add a small external trigger: another student bumps into Maya and drops something, or a bell rings and suddenly the hallway surges with movement, or she overhears a snippet of conversation that raises a question. Something to make the world feel active and unpredictable, not just Maya's internal anxiety.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scene 6d (Ms. Alvarez's aside to Devon) is very brief and feels tacked on. It's thematically important but mechanically passive — Maya just observes it happening.",
+      "location": "Scene 6d - 'A Word After Class'",
+      "impact": "After two high-agency scenes (the project conflict and Maya's choice), this scene drops player agency entirely. It's a nice narrative beat but breaks the rhythm of player-driven moments.",
+      "fix": "Give Maya a choice: Does she linger to hear what Alvarez says to Devon, or does she pack up and leave? If she lingers, she overhears it. If she leaves, she doesn't. This small agency moment makes the scene feel less like exposition and more like a player decision.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPLAYABILITY",
+      "issue": "The five ending choices (Choice 5) all lead to similar narrative beats: a text exchange that confirms the player's social direction. The mechanical difference between endings is minimal.",
+      "location": "Scene 7-8, Choice 5 - 'End of Day'",
+      "impact": "While the narrative outcomes differ, the gameplay experience of all three endings is similar: player texts someone, gets a response, day ends. There's no mechanical variation in how the endings play out.",
+      "fix": "Add a small mechanical difference to each ending: (8a) Sam's response includes a hint about a future subplot (his sketchbook); (8b) Jordan's response includes a time/location for tomorrow that creates a new constraint; (8c) Alex's response includes a challenge or commitment that has stakes. Make each ending feel like it's setting up a different Day 2 experience.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "The game doesn't explicitly teach players how trait systems work. The trait mapping exists but is never surfaced to the player, so they may not understand what their choices are optimizing for.",
+      "location": "Throughout all scenes - trait system is invisible",
+      "impact": "Players may replay without understanding what they're optimizing for. Someone might want to build high CONFIDENCE but not realize that staying quiet in Scene 6 actively penalizes it.",
+      "fix": "Add a subtle tutorial moment early (perhaps in Scene 1 or 2) where the game hints at the trait system: 'Maya takes a breath. This is about who she wants to be here.' Then optionally show trait changes after major choices, or let players see their trait profile if they pause. Make it optional/discoverable, not forced.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Excellent choice architecture in the lunchroom decision (Choice 2). Three genuinely different paths with distinct consequences and no obvious 'right' answer. This is the episode's strongest moment.",
+    "Strong character voices and dialogue. Each character feels distinct and the internal monologue captures Maya's anxiety authentically without being melodramatic.",
+    "Good emotional arc overall. The episode builds from nervous anticipation → social testing → conflict → reflection → resolution. The rhythm works.",
+    "Meaningful branching outcomes. The four outcome branches (authentic connection, fit-in, bridge-builder, avoidant) represent genuinely different playstyles and values, not just cosmetic variations.",
+    "Natural integration of consequences. When Maya laughs at the tray incident, she doesn't get a popup saying 'You lost empathy points' — the consequence is that Sam doesn't look at her. This is excellent.",
+    "Replayability hooks built in. The four outcome branches and the variant intros (choice-1 options change how Jordan reacts) create real reasons to replay.",
+    "Ms. Alvarez's presence is subtle and effective. She's a quiet authority figure who notices things, which grounds the world and creates the sense that choices have unseen observers.",
+    "Good use of text messages as a gameplay mechanic. The final choice using texts feels natural and gives players a sense of agency in how they reach out."
+  ],
+  "recommendations": [
+    "Differentiate the three lunchroom branches (4a/4b/4c) with unique gameplay moments, not just dialogue variation. Each path should feel mechanically distinct.",
+    "Reframe the tray incident (Choice 3a, option B) to be morally ambiguous rather than obviously wrong. Make all three options feel like defensible choices with real costs.",
+    "Make the group assignment (Scenes 5a/5b/5c) vary based on the player's lunch choice. This creates mechanical consequence for social choices, not just narrative consequence.",
+    "Add a hidden benefit to staying quiet in Scene 6 (option C). Make it a viable playstyle, not a trap option.",
+    "Strengthen the opening (Scene 1) with a small external trigger to create curiosity gap. Add active world-building, not just internal monologue.",
+    "Give Maya agency in Scene 6d by letting her choose whether to linger and overhear Alvarez's conversation with Devon.",
+    "Add mechanical variation to the three endings (Scene 8a/8b/8c). Make each one set up a different Day 2 experience.",
+    "Consider a subtle, optional tutorial on the trait system. Players should understand what they're optimizing for if they want to.",
+    "Reduce the length of Scene 4 variants slightly. They're currently similar enough that players might feel like they're replaying the same content with different NPCs.",
+    "Add one more choice opportunity between Scene 6 and Scene 7. The episode has a slight lull after the project conflict resolves and before the reflection scene."
+  ],
+  "scores": {
+    "engagement": 7,
+    "choiceQuality": 7,
+    "pacing": 6,
+    "playerAgency": 7,
+    "replayability": 7,
+    "overall": 7
+  },
+  "metrics": {
+    "averageSceneLength": 45,
+    "choiceFrequency": 0.33,
+    "branchingFactor": 2.4,
+    "estimatedReplayValue": 7
+  },
+  "summary": {
+    "verdict": "First Bell is a solid, well-written episode with good emotional beats and meaningful branching. The core lunchroom choice is excellent, and the four outcome branches create real replayability. However, execution issues in pacing and choice design prevent it from reaching excellence. The three lunchroom branches feel repetitive despite being narratively distinct, the group assignment feels railroaded regardless of player choice, and some choice options are too obviously 'right' or 'wrong.' These are fixable issues that would elevate the episode from good to excellent without requiring major restructuring.",
+    "keyIssues": [
+      "Lunchroom branches (4a/4b/4c) are narratively distinct but mechanically similar, creating repetitive gameplay",
+      "Group assignment doesn't vary based on lunch choice, undermining mechanical consequence of social decisions",
+      "Choice 3a (tray incident) has an obvious 'bad' option that reduces the sense of genuine dilemma",
+      "Choice 4 (Devon's idea) makes staying quiet feel like a trap rather than a viable playstyle",
+      "Some scenes drop player agency at key moments (6d) or feel passive (1)"
+    ],
+    "topStrengths": [
+      "Lunchroom decision (Choice 2) is excellent — three genuinely different paths with no obvious right answer",
+      "Character voices are distinct and authentic, especially Maya's internal anxiety",
+      "Consequences are shown through character behavior, not UI popups — very natural",
+      "Four outcome branches represent genuinely different playstyles and values",
+      "Good emotional arc from anticipation through conflict to reflection",
+      "Replayability hooks are built in (variant intros, different outcomes, branching paths)"
+    ],
+    "mustFix": [
+      "Differentiate lunchroom branches with unique gameplay moments, not just dialogue",
+      "Vary group assignment based on lunch choice to create mechanical consequence",
+      "Reframe Choice 3a option B to be morally ambiguous, not obviously wrong"
+    ],
+    "niceToHave": [
+      "Add external trigger to Scene 1 opening to create stronger curiosity gap",
+      "Give Maya agency in Scene 6d (choose to linger or leave)",
+      "Add hidden benefits to staying quiet in Scene 6 to make it a viable playstyle",
+      "Add mechanical variation to endings (Scene 8) to set up different Day 2 experiences",
+      "Consider optional tutorial on trait system"
+    ]
+  }
+}

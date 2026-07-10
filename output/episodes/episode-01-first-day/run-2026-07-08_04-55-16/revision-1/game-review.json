@@ -1,0 +1,140 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "PACING",
+      "issue": "Uneven scene distribution creates momentum drag in middle section",
+      "location": "Scenes 4-5 (cafeteria sequence)",
+      "impact": "Players experience a lull between the high-energy hallway collision and the classroom conflict. The 'noticing' subscenes (4-notice-jordan, 4-notice-maya, 4-notice-seats) add contemplative beats but delay actual decision-making, potentially losing engagement momentum.",
+      "fix": "Consolidate the three 'noticing' subscenes into a single, faster scene with internal monologue that hits all three observations in quick succession. Keep the decision moment (scene-4-decision) but reduce setup overhead. Target: compress from ~4 scenes to 2 scenes in this sequence.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Choice 2a (what catches your attention) feels like a setup choice with no real consequence",
+      "location": "Choice 2a, scene-4",
+      "impact": "Players choose what to notice, but all three options lead to the same next scene (scene-4-decision). The choice doesn't branch or change outcomes—it only flavors internal monologue. This creates the illusion of choice without agency, which is more frustrating than no choice at all.",
+      "fix": "Either: (A) Delete choice-2a entirely and move straight to scene-4-decision with a single observation moment, OR (B) Make choice-2a consequential by having each option subtly influence how the seating choice (choice-2) is framed or what dialogue options appear. For example: if player 'noticed Jordan,' the Jordan table invitation feels warmer; if player 'noticed Maya,' there's a moment of eye contact that changes the tone of joining her.",
+      "priority": 9
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPLAYABILITY",
+      "issue": "Limited mechanical variety across the three branches (authentic, popularity, balanced)",
+      "location": "Outcome branches and trait mapping",
+      "impact": "While the narrative branches are distinct (different friendships, different social positions), the gameplay loop feels similar across all three: make a choice, see a scene, move forward. Players won't feel like they're playing a fundamentally different game on replay—just a different social outcome. This reduces long-term replayability for players who care about mechanical variety.",
+      "fix": "Introduce subtle mechanical differences between branches that persist into future episodes. For example: (A) Authentic branch: unlock a 'trust meter' with Ben/Maya that gates certain dialogue options, (B) Popularity branch: unlock a 'social momentum' mechanic where Jordan's approval gives temporary bonuses to confidence checks, (C) Balanced branch: unlock a 'code-switching' mechanic that lets player choose tone/formality for dialogue. These don't change the story but change how players interact with the game.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "AGENCY",
+      "issue": "Ms. Alvarez's redirect (scene-8) removes player agency in a critical moment",
+      "location": "Scene-8, dialogue line 's8-4'",
+      "impact": "Ms. Alvarez says 'Let's keep it respectful' and turns back to the board, which frames the snickering as already handled. This removes the weight of player's choice in scene-9 (speak up, stay quiet, redirect). Players may feel like the teacher already solved the problem, making their choice feel less impactful. The moment loses moral weight.",
+      "fix": "Have Ms. Alvarez notice the snickering but NOT address it directly. Instead, have her pause, look up briefly at the room (creating visible tension), then turn back to the board without saying anything. This leaves the vacuum of her silence as the actual pressure—player's choice in scene-9 becomes about whether to fill that silence or let it sit. Increases stakes and agency.",
+      "priority": 8
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "Opening scene (scene-1) is entirely internal monologue with no interactive element",
+      "location": "Scene-1, 'The Front Steps'",
+      "impact": "Players stand on the front steps for ~2 minutes reading Riley's anxious thoughts with no way to interact or shape the moment. This is a slow start for a game that's supposed to grab attention. It's well-written but passive.",
+      "fix": "Add a small interactive moment to scene-1: e.g., a choice about what Riley does with the anxiety (fidgets with backpack, rehearses introduction, checks schedule, observes other students). Even a cosmetic choice gives players a sense of control and agency from the very first moment. Keeps the introspection but adds interactivity.",
+      "priority": 5
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Transition from scene-5 (seating choice) to scene-6 (classroom) is abrupt",
+      "location": "Between scenes 5a/5b/5c and scene-6",
+      "impact": "Players experience lunch (with distinct social outcomes), then immediately jump to 3rd period classroom with no transition scene. This is fine narratively but creates a slight pacing hiccup—players don't get a moment to process the lunch choice before the next major choice appears.",
+      "fix": "Add a brief 30-second transition scene between lunch and classroom that shows Riley moving through hallways, maybe running into one of the lunch companions briefly. This gives players a moment to breathe and reinforces the social choice they just made before introducing the new conflict with Ben.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "CHOICES",
+      "issue": "Choice-3 (respond to Jordan's joke about Ben) has an asymmetric difficulty curve",
+      "location": "Choice-3, scene-6",
+      "impact": "Option A (defend Ben publicly) is clearly the 'hard/brave' choice, option C (laugh along) is clearly the 'easy/cowardly' choice, and option B (work privately) is the 'middle path.' This is intentional, but it means experienced players will immediately recognize the moral weight of each option, potentially reducing the sense of genuine dilemma.",
+      "fix": "Reframe the choice framing to obscure the moral hierarchy slightly. Instead of 'laugh along with Jordan's joke,' frame it as 'Let the moment pass and focus on your own project.' This makes the choice feel less like 'be mean or be nice' and more like 'what's your priority in this moment?' Maintains the same outcome but reduces the obviousness of the 'right' answer.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPLAYABILITY",
+      "issue": "No hidden content or secrets to discover on replay",
+      "location": "Overall episode structure",
+      "impact": "Replay value is driven entirely by seeing different story branches. There are no Easter eggs, no alternative dialogue for experienced players, no hidden scenes that unlock on certain choice combinations. This is fine for a first episode, but limits long-term replayability.",
+      "fix": "Add one small secret: if player makes all three 'empathetic' choices (2a-notice-maya, 3-defend-ben, 4-speak-up, 5-catch-up-with-ben-maya), unlock a brief post-credits scene where Maya shows Riley a drawing she made of them during lunch—something small that rewards players for consistent values. No major content, just a 20-second moment that makes replay feel rewarding.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Excellent choice framing and clarity—each choice is presented with clear context and options that are easy to understand",
+    "Strong emotional beats and character voice—Riley's internal monologue is engaging and the supporting characters feel distinct and real",
+    "Meaningful consequences—choices genuinely branch into different social outcomes and character relationships, not just cosmetic variations",
+    "Good variety in choice types—ranging from social performance (choice-1) to seating strategy (choice-2) to moral stands (choice-3, choice-4)",
+    "Compelling core conflict—the tension between authenticity and belonging is clear and relatable for the target age group",
+    "Natural dialogue and character interactions—conversations feel like real middle schoolers, not exposition dumps",
+    "Three distinct narrative branches with genuinely different outcomes and relationship trajectories",
+    "Excellent use of environmental storytelling—the cafeteria layout, classroom dynamics, and hallway interactions all communicate social structure without exposition"
+  ],
+  "recommendations": [
+    "Streamline the cafeteria sequence by consolidating the 'noticing' subscenes into a single faster moment",
+    "Make choice-2a consequential by either removing it or having it influence how the seating choice is framed",
+    "Add mechanical differentiation between the three branches to increase replayability beyond narrative variation",
+    "Strengthen Ms. Alvarez's moment in scene-8 by having her notice the snickering without addressing it, leaving the silence for player to fill",
+    "Add a small interactive moment to the opening scene to engage players from the very first moment",
+    "Include a brief transition scene between lunch and classroom to improve pacing flow",
+    "Reframe choice-3 to obscure the moral hierarchy and make the dilemma feel less obvious",
+    "Add one small hidden reward for players who make consistent empathetic choices across all five decisions"
+  ],
+  "scores": {
+    "engagement": 7,
+    "choiceQuality": 7,
+    "pacing": 6,
+    "playerAgency": 7,
+    "replayability": 6,
+    "overall": 7
+  },
+  "metrics": {
+    "averageSceneLength": 48,
+    "choiceFrequency": 0.36,
+    "branchingFactor": 2.4,
+    "estimatedReplayValue": 6
+  },
+  "summary": {
+    "verdict": "This is a solid, well-written first episode with strong character work, clear choices, and meaningful branching. The core gameplay loop (observe social situation → make choice → see consequence) is engaging and age-appropriate. However, pacing drags slightly in the middle due to unnecessary subscenes, and replayability is limited to narrative variation rather than mechanical difference. The episode is fun to play once and interesting to replay for different story outcomes, but doesn't have the kind of hidden depth or mechanical variety that makes players want to try radically different approaches. With the recommended fixes (particularly streamlining pacing and adding mechanical differentiation), this could easily move to EXCELLENT.",
+    "keyIssues": [
+      "Choice-2a feels cosmetic and doesn't branch—creates illusion of agency without real impact",
+      "Pacing drag in cafeteria sequence due to three separate 'noticing' subscenes",
+      "Ms. Alvarez's intervention in scene-8 reduces player agency in critical moment",
+      "Limited mechanical variety across branches—replayability is narrative-only",
+      "Opening scene is entirely passive observation with no interactivity"
+    ],
+    "topStrengths": [
+      "Excellent choice clarity and framing—players always understand what they're choosing",
+      "Strong character voices and realistic dialogue for middle school setting",
+      "Meaningful branching with genuinely different social outcomes and relationships",
+      "Good emotional pacing with clear setup-conflict-resolution arc",
+      "Compelling core theme (authenticity vs. belonging) that resonates with target age"
+    ],
+    "mustFix": [
+      "Make choice-2a consequential or remove it entirely—currently feels like false agency",
+      "Streamline cafeteria sequence to reduce pacing drag in middle section",
+      "Adjust Ms. Alvarez's intervention to preserve player agency in scene-8/9 moment"
+    ],
+    "niceToHave": [
+      "Add mechanical differentiation between branches for increased replayability",
+      "Include hidden reward for consistent empathetic choices",
+      "Add interactive moment to opening scene",
+      "Reframe choice-3 to obscure moral hierarchy",
+      "Add transition scene between lunch and classroom"
+    ]
+  }
+}

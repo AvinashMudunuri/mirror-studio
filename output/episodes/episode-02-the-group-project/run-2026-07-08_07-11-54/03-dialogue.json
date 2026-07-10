@@ -1,0 +1,1611 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1",
+      "lines": [
+        {
+          "id": "s1-1",
+          "character": "NARRATOR",
+          "text": "The cafeteria roars — trays clattering, a hundred conversations layered on top of each other. Jordan is already on his feet, waving both arms like he's landing a plane."
+        },
+        {
+          "id": "s1-2",
+          "character": "jordan",
+          "text": "Sol! Over here — come on, come on—",
+          "emotion": "bright, urgent",
+          "action": "waving, patting the seat next to him"
+        },
+        {
+          "id": "s1-3",
+          "character": "priya",
+          "text": "Is that the new girl?",
+          "emotion": "amused, half to Jordan",
+          "action": "doesn't fully look up from her phone"
+        },
+        {
+          "id": "s1-4",
+          "character": "priya",
+          "text": "Bring your stray, Jordan. We'll allow it."
+        },
+        {
+          "id": "s1-5",
+          "character": "INTERNAL",
+          "text": "Okay. Rehearsed this a hundred times last night. 'Hey, thanks, this looks great.' Cool. Normal. Human."
+        },
+        {
+          "id": "s1-6",
+          "character": "NARRATOR",
+          "text": "Across the room, by the windows, a kid with a sketchbook sits at a table that's two-thirds empty — not looking around, very deliberately not looking around."
+        },
+        {
+          "id": "s1-7",
+          "character": "INTERNAL",
+          "text": "That's a lot of not-looking for someone who isn't checking if anyone's watching."
+        },
+        {
+          "id": "s1-8",
+          "character": "jordan",
+          "text": "Sol. Seriously. Tray's getting cold, and honestly so is my patience.",
+          "emotion": "teasing"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2a",
+      "lines": [
+        {
+          "id": "s2a-1",
+          "character": "jordan",
+          "text": "Sol, oh my gosh, sit, sit — you're gonna love it here, Priya's doing the bit about Alvarez's class again—",
+          "action": "scoots over, touches her arm"
+        },
+        {
+          "id": "s2a-2",
+          "character": "priya",
+          "text": "So Mr. Alvarez goes, 'Alex, what did you think of the reading,' and Alex goes—",
+          "emotion": "building to a punchline",
+          "action": "pauses for effect"
+        },
+        {
+          "id": "s2a-3",
+          "character": "priya",
+          "text": "—",
+          "emotion": "flat, dead monotone, doing the impression",
+          "action": "'It was fine.'"
+        },
+        {
+          "id": "s2a-4",
+          "character": "priya",
+          "text": "That's it. That's the whole book report. Pulitzer material.",
+          "emotion": "deadpan"
+        },
+        {
+          "id": "s2a-5",
+          "character": "jordan",
+          "text": "",
+          "emotion": "laughs a half-beat late",
+          "action": "eyes flick to Sol before he fully commits to it"
+        },
+        {
+          "id": "s2a-6",
+          "character": "priya",
+          "text": "And then he just — stares. Like a Roomba that lost its charger.",
+          "emotion": "riding the laugh"
+        },
+        {
+          "id": "s2a-7",
+          "character": "INTERNAL",
+          "text": "Everyone at the table is laughing. It's easy. It would be so easy."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2b",
+      "lines": [
+        {
+          "id": "s2b-1",
+          "character": "NARRATOR",
+          "text": "Alex doesn't look up as Sol approaches. But the tray slides half an inch to the left — just enough."
+        },
+        {
+          "id": "s2b-2",
+          "character": "player",
+          "text": "...Is that okay? Me sitting here?",
+          "emotion": "testing"
+        },
+        {
+          "id": "s2b-3",
+          "character": "alex",
+          "text": "Tray moved. That's not nothing.",
+          "emotion": "flat, not unkind",
+          "action": "doesn't look up from the sketch"
+        },
+        {
+          "id": "s2b-4",
+          "character": "player",
+          "text": "Fair. Noted.",
+          "action": "sits"
+        },
+        {
+          "id": "s2b-5",
+          "character": "player",
+          "text": "What are you drawing?"
+        },
+        {
+          "id": "s2b-6",
+          "character": "alex",
+          "text": "Guy having a bad day.",
+          "action": "turns the sketchbook slightly, just enough to see",
+          "emotion": "carefully casual"
+        },
+        {
+          "id": "s2b-7",
+          "character": "player",
+          "text": "He looks like he's about to get hit by a bus.",
+          "emotion": "half-smiling"
+        },
+        {
+          "id": "s2b-8",
+          "character": "alex",
+          "text": "Yeah. That tracks.",
+          "emotion": "the faintest almost-smile"
+        },
+        {
+          "id": "s2b-9",
+          "character": "NARRATOR",
+          "text": "A few real, unguarded minutes pass — comic panels, a shared laugh at nothing much. Then Alex sets the pencil down."
+        },
+        {
+          "id": "s2b-10",
+          "character": "alex",
+          "text": "Are you sitting here because nobody else asked, or because you actually want to?",
+          "emotion": "flat, direct, not cruel — just asking"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2c",
+      "lines": [
+        {
+          "id": "s2c-1",
+          "character": "player",
+          "text": "Hey. There's room over there, if you want.",
+          "action": "stops at Alex's table"
+        },
+        {
+          "id": "s2c-2",
+          "character": "alex",
+          "text": "...You sure.",
+          "emotion": "wary, already bracing"
+        },
+        {
+          "id": "s2c-3",
+          "character": "player",
+          "text": "Yeah. Come on."
+        },
+        {
+          "id": "s2c-4",
+          "character": "alex",
+          "text": "Okay.",
+          "action": "closes the sketchbook slowly, like they're deciding it's not a trap yet"
+        },
+        {
+          "id": "s2c-5",
+          "character": "NARRATOR",
+          "text": "They cross the cafeteria together. Conversation at the popular table stalls the second they arrive."
+        },
+        {
+          "id": "s2c-6",
+          "character": "priya",
+          "text": "...Oh. Hi.",
+          "emotion": "eyebrow up, unreadable",
+          "action": "phone-checking hands go still"
+        },
+        {
+          "id": "s2c-7",
+          "character": "jordan",
+          "text": "Hey Alex! Cool — yeah, there's a seat—",
+          "emotion": "too fast, covering",
+          "action": "scoots down the bench a little too eagerly"
+        },
+        {
+          "id": "s2c-8",
+          "character": "NARRATOR",
+          "text": "Nobody says anything for a second. It feels like a very long second."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3",
+      "lines": [
+        {
+          "id": "s3-1",
+          "character": "ms-chen",
+          "text": "Partners for the semester project.",
+          "emotion": "no preamble",
+          "action": "reads off a clipboard"
+        },
+        {
+          "id": "s3-2",
+          "character": "ms-chen",
+          "text": "Kapoor, Alvarez.",
+          "action": "doesn't look up"
+        },
+        {
+          "id": "s3-3",
+          "character": "priya",
+          "text": "",
+          "emotion": "small smirk, glances at Jordan",
+          "action": "already scooting her chair"
+        },
+        {
+          "id": "s3-4",
+          "character": "ms-chen",
+          "text": "Delgado-Reyes, Nakamura-Torres.",
+          "emotion": "flat, final"
+        },
+        {
+          "id": "s3-5",
+          "character": "jordan",
+          "text": "Good luck.",
+          "emotion": "mouthed silently, sympathetic wince",
+          "action": "no sound, just the shape of the words"
+        },
+        {
+          "id": "s3-6",
+          "character": "alex",
+          "text": "",
+          "emotion": "gives away absolutely nothing",
+          "action": "closes their notebook, doesn't turn around"
+        },
+        {
+          "id": "s3-7",
+          "character": "player",
+          "text": "...Okay.",
+          "emotion": "under her breath"
+        },
+        {
+          "id": "s3-8",
+          "character": "ms-chen",
+          "text": "I don't take requests.",
+          "action": "already moving to the next pair, not looking up"
+        },
+        {
+          "id": "s3-9",
+          "character": "ms-chen",
+          "text": "And I definitely don't take them after the fact."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4",
+      "lines": [
+        {
+          "id": "s4-1",
+          "character": "NARRATOR",
+          "text": "Alex's kitchen table is covered edge to edge in sketches — three fully-formed ideas, already labeled and numbered."
+        },
+        {
+          "id": "s4-2",
+          "character": "alex",
+          "text": "I got three ideas. Not perfect. Pick one, wreck it, whatever.",
+          "action": "slides the sketchbook across without looking up"
+        },
+        {
+          "id": "s4-3",
+          "character": "player",
+          "text": "...You did all this already?"
+        },
+        {
+          "id": "s4-4",
+          "character": "alex",
+          "text": "Couldn't sleep. Also didn't want to sit here in silence with you for an hour.",
+          "emotion": "dry, almost a joke"
+        },
+        {
+          "id": "s4-5",
+          "character": "alex",
+          "text": "You can sit. I don't bite. Allegedly.",
+          "emotion": "one beat late, testing if it lands"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5a",
+      "lines": [
+        {
+          "id": "s5a-1",
+          "character": "player",
+          "text": "Okay, what if instead of the timeline thing, we did it like — from the object's point of view? Like it's telling the story."
+        },
+        {
+          "id": "s5a-2",
+          "character": "alex",
+          "text": "That's not what I had.",
+          "emotion": "defensive first"
+        },
+        {
+          "id": "s5a-3",
+          "character": "alex",
+          "text": "...That's better than what I had.",
+          "emotion": "grudging, a little betrayed by how good it is"
+        },
+        {
+          "id": "s5a-4",
+          "character": "player",
+          "text": "I mean, don't sound so thrilled about it."
+        },
+        {
+          "id": "s5a-5",
+          "character": "alex",
+          "text": "",
+          "emotion": "actually laughs — real, surprised, short",
+          "action": "covers it almost immediately, like they didn't mean to"
+        },
+        {
+          "id": "s5a-6",
+          "character": "player",
+          "text": "Was that a laugh? Did I just get an actual laugh?"
+        },
+        {
+          "id": "s5a-7",
+          "character": "alex",
+          "text": "Don't make it weird.",
+          "emotion": "half-smiling, going back to the sketch"
+        },
+        {
+          "id": "s5a-8",
+          "character": "alex",
+          "text": "...Priya's having people over, before presentation day. In case you didn't know. Everyone knows.",
+          "emotion": "offhand, not quite looking up"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5b",
+      "lines": [
+        {
+          "id": "s5b-1",
+          "character": "player",
+          "text": "Okay, I think this needs to be more like— here, let me just—",
+          "action": "pulls the outline toward herself, starts rewriting"
+        },
+        {
+          "id": "s5b-2",
+          "character": "alex",
+          "text": "...Sure.",
+          "emotion": "flat",
+          "action": "leans back, hands off"
+        },
+        {
+          "id": "s5b-3",
+          "character": "player",
+          "text": "It'll go faster this way, I promise, I just want to structure it a little different—"
+        },
+        {
+          "id": "s5b-4",
+          "character": "alex",
+          "text": "Fine. Your way, then.",
+          "emotion": "no fight left in it — the specific quiet of someone who's stopped arguing",
+          "action": "picks the pencil back up, doesn't offer another idea"
+        },
+        {
+          "id": "s5b-5",
+          "character": "NARRATOR",
+          "text": "Sol's phone lights up on the table — Priya's name, three texts in a row about tonight."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5c",
+      "lines": [
+        {
+          "id": "s5c-1",
+          "character": "player",
+          "text": "I'll help in a bit, just — one sec—",
+          "action": "already typing in the group chat"
+        },
+        {
+          "id": "s5c-2",
+          "character": "alex",
+          "text": "",
+          "action": "keeps working alone, quiet, doesn't say anything about it"
+        },
+        {
+          "id": "s5c-3",
+          "character": "alex",
+          "text": "Does this part make sense?",
+          "action": "slides a page across the table"
+        },
+        {
+          "id": "s5c-4",
+          "character": "player",
+          "text": "Yeah, looks good.",
+          "emotion": "not really looking",
+          "action": "glances for half a second, keeps typing"
+        },
+        {
+          "id": "s5c-5",
+          "character": "NARRATOR",
+          "text": "Priya's name lights up the phone again. Alex slides another page over. Sol doesn't notice which one."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6",
+      "lines": [
+        {
+          "id": "s6-1",
+          "character": "NARRATOR",
+          "text": "The group chat is chaos. Jordan's already there, two streets over, sending photo after photo."
+        },
+        {
+          "id": "s6-2",
+          "character": "jordan",
+          "text": "sol!! everyone's asking where u are, it's tonight ONLY, i'll literally die 😭😭 come for like an hour",
+          "action": "text message"
+        },
+        {
+          "id": "s6-3",
+          "character": "player",
+          "text": "...",
+          "emotion": "staring at her phone",
+          "action": "twists her ring"
+        },
+        {
+          "id": "s6-4",
+          "character": "alex",
+          "text": "You can go if you want.",
+          "emotion": "careful, even — the kind of neutral that isn't",
+          "action": "doesn't look up from the laptop"
+        },
+        {
+          "id": "s6-5",
+          "character": "alex",
+          "text": "I can probably finish it."
+        },
+        {
+          "id": "s6-6",
+          "character": "player",
+          "text": "...You sure?"
+        },
+        {
+          "id": "s6-7",
+          "character": "alex",
+          "text": "It's fine.",
+          "emotion": "three syllables doing a lot of work",
+          "action": "shrug, eyes still on the screen"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7a",
+      "lines": [
+        {
+          "id": "s7a-1",
+          "character": "priya",
+          "text": "Sol! Okay — you actually came, I'm genuinely shocked.",
+          "emotion": "delighted, a little smug"
+        },
+        {
+          "id": "s7a-2",
+          "character": "jordan",
+          "text": "SOL. Okay no for real, best night, get in here—",
+          "action": "arm around her shoulder"
+        },
+        {
+          "id": "s7a-3",
+          "character": "NARRATOR",
+          "text": "It's a good party. That's the annoying part. Music, laughing, someone's terrible karaoke — genuinely fun, in a way Sol can't quite let herself enjoy."
+        },
+        {
+          "id": "s7a-4",
+          "character": "NARRATOR",
+          "text": "Her phone buzzes at 11pm."
+        },
+        {
+          "id": "s7a-5",
+          "character": "alex",
+          "text": "finished it. figured you were busy.",
+          "action": "text message, no punctuation, no exclamation, nothing to accuse her of"
+        },
+        {
+          "id": "s7a-6",
+          "character": "INTERNAL",
+          "text": "That's so much worse than if they'd just been mad."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7b",
+      "lines": [
+        {
+          "id": "s7b-1",
+          "character": "alex",
+          "text": "...Okay. Done. Actually done.",
+          "emotion": "leans back, wrung out but relieved"
+        },
+        {
+          "id": "s7b-2",
+          "character": "player",
+          "text": "We did that. We actually did that.",
+          "emotion": "punch-drunk tired laugh"
+        },
+        {
+          "id": "s7b-3",
+          "character": "alex",
+          "text": "You want food? I make good mac and cheese.",
+          "action": "already getting up, not making it a big deal",
+          "emotion": "casual cover for something it's not"
+        },
+        {
+          "id": "s7b-4",
+          "character": "alex",
+          "text": "It's not a big deal.",
+          "emotion": "too quick to say it, which makes it one"
+        },
+        {
+          "id": "s7b-5",
+          "character": "player",
+          "text": "...Yeah. Okay. Thanks.",
+          "emotion": "quiet, meaning more than the words"
+        },
+        {
+          "id": "s7b-6",
+          "character": "NARRATOR",
+          "text": "Her phone buzzes — party photos, a dozen of them. She turns it face-down without opening a single one."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7c",
+      "lines": [
+        {
+          "id": "s7c-1",
+          "character": "priya",
+          "text": "Wait — you're leaving already? We just got here.",
+          "emotion": "half-teasing, half-testing"
+        },
+        {
+          "id": "s7c-2",
+          "character": "player",
+          "text": "Yeah, I told Alex I'd be back, I gotta—"
+        },
+        {
+          "id": "s7c-3",
+          "character": "priya",
+          "text": "...Okay. Tell Sketchbook I said hi.",
+          "emotion": "dry, watching her go"
+        },
+        {
+          "id": "s7c-4",
+          "character": "NARRATOR",
+          "text": "Back at the kitchen table, Alex doesn't look up right away."
+        },
+        {
+          "id": "s7c-5",
+          "character": "alex",
+          "text": "...Thought you forgot.",
+          "emotion": "flat, a little cold"
+        },
+        {
+          "id": "s7c-6",
+          "character": "player",
+          "text": "I didn't. I'm here. Let's just — let's finish this."
+        },
+        {
+          "id": "s7c-7",
+          "character": "alex",
+          "text": "",
+          "action": "pushes the laptop back toward the middle of the table, a small truce",
+          "emotion": "still guarded but working again"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8",
+      "lines": [
+        {
+          "id": "s8-1",
+          "character": "NARRATOR",
+          "text": "Room 114. The whole class watching. Sol and Alex stand at the front, the last slide still glowing behind them."
+        },
+        {
+          "id": "s8-2",
+          "character": "ms-chen",
+          "text": "This section here.",
+          "action": "taps the board, unreadable",
+          "emotion": "even"
+        },
+        {
+          "id": "s8-3",
+          "character": "ms-chen",
+          "text": "The framework you used. Walk me through whose idea that was, and why it works."
+        },
+        {
+          "id": "s8-4",
+          "character": "NARRATOR",
+          "text": "Alex goes very still. Priya, in the front row, watches with open, undisguised curiosity."
+        },
+        {
+          "id": "s8-5",
+          "character": "INTERNAL",
+          "text": "That part was all Alex. Every piece of it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9a",
+      "lines": [
+        {
+          "id": "s9a-1",
+          "character": "player",
+          "text": "That part was Alex's idea. Honestly the best part.",
+          "emotion": "clear, steady"
+        },
+        {
+          "id": "s9a-2",
+          "character": "player",
+          "text": "The whole framework works because it lets the object carry the emotional weight instead of just narrating it — which is why it doesn't feel like a school project.",
+          "emotion": "explaining it because she actually gets it"
+        },
+        {
+          "id": "s9a-3",
+          "character": "ms-chen",
+          "text": "...Good.",
+          "emotion": "small nod — from her, practically an ovation"
+        },
+        {
+          "id": "s9a-4",
+          "character": "alex",
+          "text": "",
+          "action": "shoulders drop half an inch, disguised as nothing",
+          "emotion": "relief"
+        },
+        {
+          "id": "s9a-5",
+          "character": "priya",
+          "text": "",
+          "action": "watching, unreadable, almost impressed",
+          "emotion": "quiet"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9b",
+      "lines": [
+        {
+          "id": "s9b-1",
+          "character": "player",
+          "text": "We kind of built it together, honestly — it just came out of talking it through.",
+          "emotion": "vague, letting it land soft"
+        },
+        {
+          "id": "s9b-2",
+          "character": "ms-chen",
+          "text": "...Mm.",
+          "action": "writes something small in the margin of her notes, doesn't say it out loud"
+        },
+        {
+          "id": "s9b-3",
+          "character": "alex",
+          "text": "",
+          "action": "doesn't correct her, goes quiet in the specific way from the kitchen table",
+          "emotion": "unreadable"
+        },
+        {
+          "id": "s9b-4",
+          "character": "INTERNAL",
+          "text": "Nobody would call that a lie. I know that's not the same as it not being one."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9c",
+      "lines": [
+        {
+          "id": "s9c-1",
+          "character": "player",
+          "text": "Oh — um, that part was kind of Alex's, but it got kind of confusing, honestly, we ended up changing a lot of it—",
+          "emotion": "fumbling, reaching for cover"
+        },
+        {
+          "id": "s9c-2",
+          "character": "NARRATOR",
+          "text": "A small laugh ripples through the class."
+        },
+        {
+          "id": "s9c-3",
+          "character": "alex",
+          "text": "",
+          "emotion": "face closes like a door",
+          "action": "goes very still, eyes down"
+        },
+        {
+          "id": "s9c-4",
+          "character": "ms-chen",
+          "text": "",
+          "action": "expression doesn't change at all, which is somehow the worst part"
+        },
+        {
+          "id": "s9c-5",
+          "character": "priya",
+          "text": "",
+          "action": "glances between them, something complicated crossing her face"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10",
+      "lines": [
+        {
+          "id": "s10-1",
+          "character": "NARRATOR",
+          "text": "The hallway empties out slow after class. Alex is at their locker, not really packing up — just standing there."
+        },
+        {
+          "id": "s10-2",
+          "character": "priya",
+          "text": "...Hey.",
+          "emotion": "uncharacteristically simple, no punchline",
+          "action": "small, almost involuntary nod as she passes"
+        },
+        {
+          "id": "s10-3",
+          "character": "alex",
+          "text": "",
+          "emotion": "surprised",
+          "action": "watches her go, doesn't say anything"
+        },
+        {
+          "id": "s10-4",
+          "character": "NARRATOR",
+          "text": "Alex looks down the hall toward where Sol's still gathering her things. Hesitates. Doesn't decide yet."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11a",
+      "lines": [
+        {
+          "id": "s11a-1",
+          "character": "player",
+          "text": "Hey — wait up.",
+          "action": "catches up, a little out of breath"
+        },
+        {
+          "id": "s11a-2",
+          "character": "alex",
+          "text": "",
+          "action": "stops, turns — wary, but not closed off",
+          "emotion": "waiting"
+        },
+        {
+          "id": "s11a-3",
+          "character": "player",
+          "text": "I just — I want to actually be a decent partner. Not just for the grade. Like, in general.",
+          "emotion": "plain, not performing it"
+        },
+        {
+          "id": "s11a-4",
+          "character": "alex",
+          "text": "Okay.",
+          "emotion": "flat, but something in the eyes gives it away",
+          "action": "small pause"
+        },
+        {
+          "id": "s11a-5",
+          "character": "alex",
+          "text": "See you tomorrow, then."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "lines": [
+        {
+          "id": "s11b-1",
+          "character": "NARRATOR",
+          "text": "Sol watches Alex walk off down the hall and doesn't call out."
+        },
+        {
+          "id": "s11b-2",
+          "character": "INTERNAL",
+          "text": "I'll text them tonight. Definitely tonight."
+        },
+        {
+          "id": "s11b-3",
+          "character": "NARRATOR",
+          "text": "Tonight doesn't come. Alex disappears into the crowd, exactly as unnoticed as the first day Sol saw them."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "lines": [
+        {
+          "id": "s11c-1",
+          "character": "player",
+          "text": "Hey, um — today was — I didn't mean for it to—",
+          "emotion": "clumsy, trailing off",
+          "action": "doesn't finish the sentence"
+        },
+        {
+          "id": "s11c-2",
+          "character": "alex",
+          "text": "",
+          "emotion": "small, uncertain almost-smile",
+          "action": "doesn't fill the silence for her"
+        },
+        {
+          "id": "s11c-3",
+          "character": "alex",
+          "text": "...Yeah. Okay.",
+          "emotion": "not quite forgiveness, not quite nothing"
+        },
+        {
+          "id": "s11c-4",
+          "character": "NARRATOR",
+          "text": "Neither of them knows exactly where this leaves things. The door isn't closed."
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Head over to Jordan and Priya's table."
+        },
+        {
+          "id": "b",
+          "text": "Go sit with Alex instead."
+        },
+        {
+          "id": "c",
+          "text": "\"Hang on — I'm bringing someone.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r1a-1",
+            "character": "player",
+            "text": "Yeah — coming!",
+            "emotion": "quick, relieved to have an easy answer"
+          },
+          {
+            "id": "r1a-2",
+            "character": "jordan",
+            "text": "There she is.",
+            "action": "grinning, patting the seat"
+          }
+        ],
+        "b": [
+          {
+            "id": "r1b-1",
+            "character": "player",
+            "text": "I'll go say hi over there. Be right back — maybe.",
+            "emotion": "half a joke, mostly not"
+          },
+          {
+            "id": "r1b-2",
+            "character": "jordan",
+            "text": "Oh — okay, cool, I guess. I'll save you a seat for next time, honestly.",
+            "emotion": "smoothing it over fast",
+            "action": "already looking back at Priya's table"
+          }
+        ],
+        "c": [
+          {
+            "id": "r1c-1",
+            "character": "player",
+            "text": "Hey — want to sit with us?",
+            "action": "calls over to Alex's table",
+            "emotion": "puts it out there before she can take it back"
+          },
+          {
+            "id": "r1c-2",
+            "character": "alex",
+            "text": "",
+            "action": "looks up, goes very still, clearly wasn't expecting that",
+            "emotion": "guarded"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2a",
+      "options": [
+        {
+          "id": "a",
+          "text": "Laugh along."
+        },
+        {
+          "id": "b",
+          "text": "Stay quiet — change the subject."
+        },
+        {
+          "id": "c",
+          "text": "Say something in Alex's defense."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r2a-a1",
+            "character": "player",
+            "text": "",
+            "emotion": "laughs a half-second late, checking if it's safe first"
+          },
+          {
+            "id": "r2a-a2",
+            "character": "priya",
+            "text": "See, she gets it.",
+            "emotion": "approving, filing that away",
+            "action": "nods at Sol like she's passed something"
+          },
+          {
+            "id": "r2a-a3",
+            "character": "INTERNAL",
+            "text": "That felt easy. That's the problem."
+          }
+        ],
+        "b": [
+          {
+            "id": "r2a-b1",
+            "character": "player",
+            "text": "So wait — what's the homework for tonight, do we know yet?",
+            "emotion": "a little too casual"
+          },
+          {
+            "id": "r2a-b2",
+            "character": "priya",
+            "text": "...",
+            "emotion": "beat, lets it go, checks her phone",
+            "action": "the joke deflates without a fight"
+          },
+          {
+            "id": "r2a-b3",
+            "character": "jordan",
+            "text": "Right, yeah, homework, that's — good question.",
+            "emotion": "visibly relieved"
+          }
+        ],
+        "c": [
+          {
+            "id": "r2a-c1",
+            "character": "player",
+            "text": "I mean — they're not wrong, they're just quiet. That's not really a bit.",
+            "emotion": "careful but not backing down"
+          },
+          {
+            "id": "r2a-c2",
+            "character": "priya",
+            "text": "Relax. It's a joke. Everyone laughed.",
+            "emotion": "flat, a little sharper now"
+          },
+          {
+            "id": "r2a-c3",
+            "character": "priya",
+            "text": "...Didn't they?",
+            "emotion": "beat — genuinely checking, which she'd never admit"
+          },
+          {
+            "id": "r2a-c4",
+            "character": "jordan",
+            "text": "",
+            "action": "very busy with his tray all of a sudden"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2b",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tell them the honest, complicated truth."
+        },
+        {
+          "id": "b",
+          "text": "Give a comforting half-answer."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r2b-a1",
+            "character": "player",
+            "text": "Honestly? Both, kind of. Jordan asked first. But I saw you over here and I wanted to know what you were drawing more than I wanted to know Priya's inside jokes.",
+            "emotion": "letting it be messy"
+          },
+          {
+            "id": "r2b-a2",
+            "character": "alex",
+            "text": "",
+            "emotion": "small, real reaction — not quite a smile, but close",
+            "action": "goes back to the sketch, a little less guarded"
+          },
+          {
+            "id": "r2b-a3",
+            "character": "alex",
+            "text": "...Okay. That's a real answer.",
+            "emotion": "quiet approval"
+          }
+        ],
+        "b": [
+          {
+            "id": "r2b-b1",
+            "character": "player",
+            "text": "I mean — I wanted to sit with you. Obviously.",
+            "emotion": "a little too smooth"
+          },
+          {
+            "id": "r2b-b2",
+            "character": "alex",
+            "text": "...Cool.",
+            "emotion": "flat, not fully buying it",
+            "action": "goes back to the sketchbook, a door not quite reopening"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2c",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hold your ground and genuinely welcome Alex in."
+        },
+        {
+          "id": "b",
+          "text": "Backpedal and quietly drop the idea."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r2c-a1",
+            "character": "player",
+            "text": "Alex draws these insane comics, you guys have to see them.",
+            "emotion": "genuinely enthusiastic, not performing it"
+          },
+          {
+            "id": "r2c-a2",
+            "character": "alex",
+            "text": "",
+            "action": "ducks their head, hiding a small smile",
+            "emotion": "caught off guard, in a good way"
+          },
+          {
+            "id": "r2c-a3",
+            "character": "priya",
+            "text": "...Huh. Okay. Show me.",
+            "emotion": "grudging, but real interest underneath it"
+          }
+        ],
+        "b": [
+          {
+            "id": "r2c-b1",
+            "character": "player",
+            "text": "Actually — Alex, you probably want your window seat, right? Better light or whatever—",
+            "emotion": "nervous laugh, backpedaling"
+          },
+          {
+            "id": "r2c-b2",
+            "character": "alex",
+            "text": "",
+            "action": "face closes, turns, walks back to the window table alone",
+            "emotion": "unreadable, but not surprised"
+          },
+          {
+            "id": "r2c-b3",
+            "character": "INTERNAL",
+            "text": "That was fast. That was too fast."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "Actually collaborate — build on Alex's ideas."
+        },
+        {
+          "id": "b",
+          "text": "Take charge and redo it your way."
+        },
+        {
+          "id": "c",
+          "text": "Let Alex handle it, stay in the group chat."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r3a-1",
+            "character": "player",
+            "text": "Okay wait, what if we push this idea further instead of starting over?",
+            "emotion": "leaning in, genuinely curious"
+          },
+          {
+            "id": "r3a-2",
+            "character": "alex",
+            "text": "",
+            "emotion": "surprised, then interested",
+            "action": "turns the sketchbook fully toward Sol"
+          }
+        ],
+        "b": [
+          {
+            "id": "r3b-1",
+            "character": "player",
+            "text": "Okay, I think this needs to be more like — here, let me just—",
+            "action": "pulls the outline over, starts rewriting"
+          },
+          {
+            "id": "r3b-2",
+            "character": "alex",
+            "text": "...Sure. Whatever works.",
+            "emotion": "flat, already backing off"
+          }
+        ],
+        "c": [
+          {
+            "id": "r3c-1",
+            "character": "player",
+            "text": "You clearly have this — I'll just, like, back you up on whatever you need.",
+            "emotion": "already reaching for her phone"
+          },
+          {
+            "id": "r3c-2",
+            "character": "alex",
+            "text": "",
+            "action": "glances at her, says nothing, keeps working alone",
+            "emotion": "unreadable"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Go to the party. Let Alex finish alone."
+        },
+        {
+          "id": "b",
+          "text": "Skip the party. Finish it together."
+        },
+        {
+          "id": "c",
+          "text": "Show your face briefly, then come back to help."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r4a-1",
+            "character": "player",
+            "text": "Okay — just for a bit. I'll make it up to you.",
+            "action": "already grabbing her bag"
+          },
+          {
+            "id": "r4a-2",
+            "character": "alex",
+            "text": "...Yeah. Okay.",
+            "emotion": "watching the door, not the laptop"
+          }
+        ],
+        "b": [
+          {
+            "id": "r4b-1",
+            "character": "player",
+            "text": "Nah, I'm good here. Let's just finish this.",
+            "emotion": "certain, no hesitation"
+          },
+          {
+            "id": "r4b-2",
+            "character": "alex",
+            "text": "...Okay. Cool.",
+            "emotion": "small, something in their shoulders loosening",
+            "action": "glances up, surprised"
+          }
+        ],
+        "c": [
+          {
+            "id": "r4c-1",
+            "character": "player",
+            "text": "I'll go say hi, be back in like an hour, promise.",
+            "emotion": "already half out the door"
+          },
+          {
+            "id": "r4c-2",
+            "character": "alex",
+            "text": "...Sure.",
+            "emotion": "skeptical, but lets it go"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"That part was Alex's idea — honestly the best part.\""
+        },
+        {
+          "id": "b",
+          "text": "Answer vaguely. Let the class assume it was mostly you."
+        },
+        {
+          "id": "c",
+          "text": "Fumble it — imply Alex's part was confusing."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r5a-1",
+            "character": "player",
+            "text": "That part was Alex's idea. Honestly the best part.",
+            "emotion": "clear, steady, not performing modesty"
+          }
+        ],
+        "b": [
+          {
+            "id": "r5b-1",
+            "character": "player",
+            "text": "We kind of built it together — it just came out of talking it through.",
+            "emotion": "vague, comfortable"
+          }
+        ],
+        "c": [
+          {
+            "id": "r5c-1",
+            "character": "player",
+            "text": "Oh — um, that part was kind of Alex's, but it got kind of confusing, honestly—",
+            "emotion": "fumbling, grabbing for cover"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-6",
+      "options": [
+        {
+          "id": "a",
+          "text": "Catch up and say something honest."
+        },
+        {
+          "id": "b",
+          "text": "Let it go for now."
+        },
+        {
+          "id": "c",
+          "text": "Say something clumsy — but say something."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r6a-1",
+            "character": "player",
+            "text": "Hey — wait up.",
+            "action": "jogs to catch them"
+          }
+        ],
+        "b": [
+          {
+            "id": "r6b-1",
+            "character": "player",
+            "text": "",
+            "action": "watches Alex go, tells herself she'll fix it later",
+            "emotion": "quiet, avoidant"
+          }
+        ],
+        "c": [
+          {
+            "id": "r6c-1",
+            "character": "player",
+            "text": "Hey, um — today was—",
+            "emotion": "already tripping over it",
+            "action": "catches up anyway"
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-11a",
+      "branchId": "branch-authentic",
+      "lines": [
+        {
+          "id": "ba-11a-1",
+          "character": "player",
+          "text": "I know sitting with you day one probably looked random. It wasn't. I keep meaning to say that.",
+          "emotion": "quiet, sincere"
+        },
+        {
+          "id": "ba-11a-2",
+          "character": "alex",
+          "text": "I know. You've been pretty consistent about it, actually. It's a little annoying.",
+          "emotion": "dry, but it's a real compliment"
+        },
+        {
+          "id": "ba-11a-3",
+          "character": "alex",
+          "text": "See you tomorrow, then.",
+          "emotion": "flat, but the eyes give it away first"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "branchId": "branch-authentic",
+      "lines": [
+        {
+          "id": "ba-11b-1",
+          "character": "INTERNAL",
+          "text": "We were doing so well. I just — let this one go, this one time."
+        },
+        {
+          "id": "ba-11b-2",
+          "character": "NARRATOR",
+          "text": "Alex glances back once, like they were half-expecting Sol to call out. She doesn't. They keep walking."
+        },
+        {
+          "id": "ba-11b-3",
+          "character": "INTERNAL",
+          "text": "First time in weeks the tray hasn't slid over. I noticed. I think that's the point."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "branchId": "branch-authentic",
+      "lines": [
+        {
+          "id": "ba-11c-1",
+          "character": "player",
+          "text": "That was — I know that wasn't nothing today. I'm not great at the words part.",
+          "emotion": "clumsy, honest"
+        },
+        {
+          "id": "ba-11c-2",
+          "character": "alex",
+          "text": "You've never been great at the words part. Kind of your thing.",
+          "emotion": "small, almost fond"
+        },
+        {
+          "id": "ba-11c-3",
+          "character": "alex",
+          "text": "...Yeah. Okay.",
+          "action": "small almost-smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11a",
+      "branchId": "branch-bold-bridge",
+      "lines": [
+        {
+          "id": "bb-11a-1",
+          "character": "player",
+          "text": "I keep thinking about that day I brought you over to Priya's table. That was scarier for me than I let on.",
+          "emotion": "admitting it"
+        },
+        {
+          "id": "bb-11a-2",
+          "character": "alex",
+          "text": "Scarier for you.",
+          "emotion": "dry eyebrow-raise energy in text form"
+        },
+        {
+          "id": "bb-11a-3",
+          "character": "alex",
+          "text": "See you tomorrow, then.",
+          "emotion": "warmer than the words let on"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "branchId": "branch-bold-bridge",
+      "lines": [
+        {
+          "id": "bb-11b-1",
+          "character": "INTERNAL",
+          "text": "I did the hard part in front of everyone at the beginning. Why is this part, alone in a hallway, so much harder?"
+        },
+        {
+          "id": "bb-11b-2",
+          "character": "NARRATOR",
+          "text": "Alex doesn't look back this time. Whatever got started at that lunch table doesn't finish today."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "branchId": "branch-bold-bridge",
+      "lines": [
+        {
+          "id": "bb-11c-1",
+          "character": "player",
+          "text": "I brought you to that table because I wanted you there, not because it was a whole big statement. I don't know if that came across.",
+          "emotion": "clumsy but trying"
+        },
+        {
+          "id": "bb-11c-2",
+          "character": "alex",
+          "text": "...It came across. Eventually.",
+          "emotion": "small, uncertain almost-smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11a",
+      "branchId": "branch-conformist",
+      "lines": [
+        {
+          "id": "bc-11a-1",
+          "character": "player",
+          "text": "I know I laughed at that joke that first day. And I know today wasn't great either. I'm not asking you to just, like, forget that.",
+          "emotion": "not performing, genuinely uncomfortable"
+        },
+        {
+          "id": "bc-11a-2",
+          "character": "alex",
+          "text": "...No. You're not.",
+          "emotion": "wary, weighing it",
+          "action": "long pause"
+        },
+        {
+          "id": "bc-11a-3",
+          "character": "alex",
+          "text": "Okay. See you tomorrow, then.",
+          "emotion": "not warm — but not a door slamming either"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "branchId": "branch-conformist",
+      "lines": [
+        {
+          "id": "bc-11b-1",
+          "character": "INTERNAL",
+          "text": "Party, then the takeover, then the thing in class. I keep telling myself none of it was that bad on its own."
+        },
+        {
+          "id": "bc-11b-2",
+          "character": "NARRATOR",
+          "text": "Alex doesn't glance back at all this time. They've stopped checking."
+        },
+        {
+          "id": "bc-11b-3",
+          "character": "INTERNAL",
+          "text": "That's worse than if they had."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "branchId": "branch-conformist",
+      "lines": [
+        {
+          "id": "bc-11c-1",
+          "character": "player",
+          "text": "I know I've been kind of a — I know. I don't have a clean way to say this.",
+          "emotion": "clumsy, guilty"
+        },
+        {
+          "id": "bc-11c-2",
+          "character": "alex",
+          "text": "",
+          "emotion": "uncertain, not quite an almost-smile — more like deciding whether to allow one",
+          "action": "long pause before answering"
+        },
+        {
+          "id": "bc-11c-3",
+          "character": "alex",
+          "text": "...Yeah. Okay.",
+          "emotion": "guarded, but not walking away"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11a",
+      "branchId": "branch-redemption",
+      "lines": [
+        {
+          "id": "br-11a-1",
+          "character": "player",
+          "text": "You could've said something in class today, when I gave you credit. Called it out as too little too late. You didn't.",
+          "emotion": "grateful, aware of the mess before it"
+        },
+        {
+          "id": "br-11a-2",
+          "character": "alex",
+          "text": "I thought about it.",
+          "emotion": "flat, honest"
+        },
+        {
+          "id": "br-11a-3",
+          "character": "alex",
+          "text": "Okay. See you tomorrow, then.",
+          "emotion": "a real olive branch, quietly extended"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "branchId": "branch-redemption",
+      "lines": [
+        {
+          "id": "br-11b-1",
+          "character": "INTERNAL",
+          "text": "I did the right thing in front of the whole class. That should feel like enough. I don't know why it doesn't."
+        },
+        {
+          "id": "br-11b-2",
+          "character": "NARRATOR",
+          "text": "Alex walks off without waiting. Getting the credit right in public wasn't the same as showing up in private, and somehow they both know it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "branchId": "branch-redemption",
+      "lines": [
+        {
+          "id": "br-11c-1",
+          "character": "player",
+          "text": "I got it right in there, finally. I just — wanted to say it out loud too, not just to Ms. Chen.",
+          "emotion": "clumsy, earnest"
+        },
+        {
+          "id": "br-11c-2",
+          "character": "alex",
+          "text": "...Yeah. I heard you in there.",
+          "emotion": "small, uncertain almost-smile"
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Sol's lines lean on deflection and rehearsal — she often qualifies or half-jokes her way into honesty rather than stating it outright ('I mean, don't sound so thrilled about it'), and her INTERNAL lines are where the real self-doubt surfaces. Jordan's warmth is genuine but conflict-averse — his laugh lands a half-beat late specifically at the moments he's uncomfortable, and he over-explains ('honestly, don't take it personal') to smooth things before they get tense. Priya's cruelty is always performed as comedy first — note the crack in 'Didn't they?', the one place her control slips. Alex speaks in minimum viable words when guarded (three-syllable lines like 'It's fine') and only opens up through specific, concrete detail (the sketchbook, the mac and cheese) rather than direct emotional statements. Ms. Chen never explains herself or raises her voice — her power is in flatness and the unbearable pause after a question.",
+  "alternativeLines": [
+    {
+      "lineId": "s2b-10",
+      "alternatives": [
+        "So which is it. Nobody else asked, or you actually wanted to.",
+        "Be honest. You don't have to, but I'd rather know."
+      ],
+      "reasoning": "Keeps Alex's flat directness while allowing a slightly softer delivery if the scene needs less confrontational pacing."
+    },
+    {
+      "lineId": "r4b-1",
+      "alternatives": [
+        "I'm staying. We're not done, and honestly I don't want to be at that party anyway.",
+        "Nah. Priya's party will still be a thing next week. This won't."
+      ],
+      "reasoning": "Original leans matter-of-fact; alternatives let the player express either indifference to the party or explicit prioritization of Alex, depending on desired tone."
+    },
+    {
+      "lineId": "s9c-1",
+      "alternatives": [
+        "Honestly that part was kind of a group mess, we went back and forth a lot—",
+        "I mean, that part changed so many times I'm not even sure whose idea it ended up being."
+      ],
+      "reasoning": "Both alternatives keep the fumbling deflection but vary how directly Sol throws Alex under the bus, useful if a slightly softer/harsher version of the betrayal is needed."
+    }
+  ]
+}

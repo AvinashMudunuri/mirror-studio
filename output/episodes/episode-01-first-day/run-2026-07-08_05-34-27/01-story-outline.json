@@ -1,0 +1,620 @@
+{
+  "episodeOutline": {
+    "title": "First Bell",
+    "synopsis": "On her first day at Ridgemont High, Maya (the player) has ten minutes between the front doors and first bell to figure out who she's going to be here. A hallway tease, a lunchroom full of unspoken rules, and a group project gone sideways force her to choose, again and again, between fitting in, being kind, and being herself — and discover that those aren't always three different things.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1-arrival",
+        "title": "New Kid Jitters",
+        "location": "Front steps and main hallway of Ridgemont High",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "Maya stands outside the school clutching a schedule she's already memorized out of nerves. Inside, the hallway is a river of strangers who all seem to know exactly where they belong. She catches her reflection in the trophy case and has a half-second to decide how she wants to walk in.",
+        "emotionalBeat": "Anticipatory anxiety - the blank page before the story starts",
+        "defaultNextScene": "scene-2-hallway"
+      },
+      {
+        "id": "scene-2-hallway",
+        "title": "Hallway Introductions",
+        "location": "Locker bay outside Room 114",
+        "characters": [
+          "player",
+          "jordan",
+          "sam"
+        ],
+        "duration": 1,
+        "description": "Maya can't find her locker. Jordan, effortlessly confident and a little sharp-edged, notices her spinning in circles and calls out a joke that lands halfway between funny and mean, loud enough for the hallway to hear. Nearby, a quiet student named Sam flinches, like they know this game already.",
+        "emotionalBeat": "Public vulnerability - the first test of composure",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-3-lunchroom",
+        "title": "The Lunchroom Crossroads",
+        "location": "Ridgemont cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "sam",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Tray in hand, Maya scans a cafeteria that has already sorted itself into invisible territories. Jordan waves her toward a loud, magnetic table. Across the room, Sam eats alone, headphones on, clearly used to it. An empty table sits by the window, waiting for no one in particular.",
+        "emotionalBeat": "The defining crossroads - where do I plant my flag",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-4a-popular-table",
+        "title": "Sitting With the In-Crowd",
+        "location": "Jordan's lunch table",
+        "characters": [
+          "player",
+          "jordan",
+          "sam"
+        ],
+        "duration": 1,
+        "description": "The table is fun, fast, and a little cruel. Mid-laugh, Sam walks by with a full tray and Jordan sticks out a foot 'as a joke.' The tray goes down. The table erupts. Everyone looks at Maya to see how she'll react.",
+        "emotionalBeat": "Complicity test - the cost of belonging",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-4a-defend-aftermath",
+        "title": "A Quiet Thank You",
+        "location": "Cafeteria, near the spilled tray",
+        "characters": [
+          "player",
+          "sam",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Jordan's table goes cold for a second, then moves on like nothing happened - but Sam catches Maya's eye and mouths 'thanks' before disappearing toward the trash cans. It's a small thing. It doesn't feel small.",
+        "emotionalBeat": "Quiet validation - courage noticed by exactly one person",
+        "defaultNextScene": "scene-5-project-assignment"
+      },
+      {
+        "id": "scene-4a-join-aftermath",
+        "title": "The Laugh That Stuck",
+        "location": "Cafeteria, near the spilled tray",
+        "characters": [
+          "player",
+          "sam",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The laugh is out of Maya's mouth before she decides to let it out. Jordan's table loves her a little more for it. Sam doesn't look back on the way out, and somehow that's worse than if he had.",
+        "emotionalBeat": "Belonging bought at a price - the itch of regret",
+        "defaultNextScene": "scene-5-project-assignment"
+      },
+      {
+        "id": "scene-4b-sam-table",
+        "title": "Sitting With Sam",
+        "location": "Table by the recycling bins",
+        "characters": [
+          "player",
+          "sam"
+        ],
+        "duration": 2,
+        "description": "Sam is surprised anyone sat down, then quietly grateful, then - once it's clear Maya isn't leaving - actually funny. He mentions, almost as a throwaway line, that he used to sit with a bigger group before people 'got busy.' It doesn't take a genius to hear what he's not saying.",
+        "emotionalBeat": "Unexpected intimacy - real connection in an overlooked corner",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-4c-new-table",
+        "title": "A Table of Your Own",
+        "location": "Empty table by the window",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 2,
+        "description": "Another new student, Alex, drifts over with the specific relief of someone who also didn't know where to sit. They start building something out of nothing - two strangers deciding, on the spot, what kind of table this is going to be.",
+        "emotionalBeat": "Agency in uncertainty - building instead of choosing sides",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-5-project-assignment",
+        "title": "Group Project Roulette",
+        "location": "Room 114, English class",
+        "characters": [
+          "player",
+          "sam",
+          "devon",
+          "ms-alvarez"
+        ],
+        "duration": 1,
+        "description": "Ms. Alvarez reads off project groups for the semester-long assignment. Whatever happened at lunch, fate (and a teacher's clipboard) puts Maya in a group with Sam and a sharp, competitive classmate named Devon, who already has opinions about how this project should go.",
+        "emotionalBeat": "The universe insists on a second chance",
+        "defaultNextScene": "scene-6-project-tension"
+      },
+      {
+        "id": "scene-6-project-tension",
+        "title": "Whose Idea Wins",
+        "location": "Library work table",
+        "characters": [
+          "player",
+          "sam",
+          "devon"
+        ],
+        "duration": 1,
+        "description": "Sam finally offers an idea for the project - a good one, a little unconventional. Devon shuts it down fast and loud, already pitching his own plan as the obvious choice. Sam goes quiet in the specific way of someone who's used to being talked over. Maya has the floor for exactly one sentence.",
+        "emotionalBeat": "The real test - not the joke this time, but the follow-through",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-7-reflection",
+        "title": "End of Day",
+        "location": "Bus loop, late afternoon",
+        "characters": [
+          "player",
+          "sam",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Backpack on, day survived, Maya has a few quiet minutes before the bus. Her phone buzzes - it could be Sam, it could be Jordan's group chat, it could be nothing at all yet. Tomorrow starts here.",
+        "emotionalBeat": "Reflective calm before the real choice: who am I going to keep being",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-8a-end-friendship",
+        "title": "One Real Friend",
+        "location": "Bus loop / text thread",
+        "characters": [
+          "player",
+          "sam"
+        ],
+        "duration": 1,
+        "description": "Maya texts Sam first. The reply comes back fast, with an exclamation point Sam clearly doesn't use often. It's not the whole school. It's one person who's glad she showed up. For a first day, that might be enough - or the start of something bigger.",
+        "emotionalBeat": "Grounded belonging - small and true",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-8b-end-crowd",
+        "title": "In With the In-Crowd",
+        "location": "Bus loop / text thread",
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Jordan's group chat pings with plans for tomorrow, and Maya's name is already on the list. It feels good - loud, easy, instantly visible. Somewhere under that, quieter, is the memory of Sam's tray hitting the floor.",
+        "emotionalBeat": "Belonging with an asterisk - won, but at a cost she'll have to reckon with",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-8c-end-bridge",
+        "title": "Building Something Bigger",
+        "location": "Bus loop / text thread",
+        "characters": [
+          "player",
+          "sam",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Maya texts Sam an idea: what if tomorrow's table had room for more than two people - Alex, maybe even Jordan if he's willing to lose the audience act. It's a bigger risk than picking a side. It's also the only option where nobody has to eat alone.",
+        "emotionalBeat": "Earned hope - belonging as something you build, not something you're granted",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2-hallway",
+        "prompt": "Jordan's joke is still hanging in the air. Everyone's looking at you.",
+        "context": "Jordan just made a public joke at Maya's expense while she struggled with her locker. Sam flinched nearby, clearly recognizing the pattern.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Fire back with a confident joke of your own",
+            "nextScene": "scene-3-lunchroom"
+          },
+          {
+            "id": "b",
+            "text": "Notice Sam's flinch and gently redirect the moment - 'Rough first day for everyone, huh?'",
+            "nextScene": "scene-3-lunchroom"
+          },
+          {
+            "id": "c",
+            "text": "Laugh along and play the good sport, matching the hallway's energy",
+            "nextScene": "scene-3-lunchroom"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "c": {
+            "ADAPTABILITY": 2
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-3-lunchroom",
+        "prompt": "Tray in hand, where do you sit?",
+        "context": "Jordan is waving Maya over to the loud table. Sam is alone by the window with headphones on. An empty table sits unclaimed near the windows.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Jordan and the crowd",
+            "nextScene": "scene-4a-popular-table"
+          },
+          {
+            "id": "b",
+            "text": "Sit with Sam",
+            "nextScene": "scene-4b-sam-table"
+          },
+          {
+            "id": "c",
+            "text": "Sit alone at the empty table and see what happens",
+            "nextScene": "scene-4c-new-table"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "EMPATHY": 2
+          },
+          "c": {
+            "CONFIDENCE": 2
+          }
+        }
+      },
+      {
+        "id": "choice-3a",
+        "scene": "scene-4a-popular-table",
+        "prompt": "Sam's tray is on the floor and the table is laughing. What do you do?",
+        "context": "Jordan tripped Sam 'as a joke' in front of the whole table. Everyone is watching Maya's reaction.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Help Sam up and tell Jordan that wasn't cool",
+            "nextScene": "scene-4a-defend-aftermath"
+          },
+          {
+            "id": "b",
+            "text": "Laugh along with the table",
+            "nextScene": "scene-4a-join-aftermath"
+          },
+          {
+            "id": "c",
+            "text": "Change the subject smoothly and move the conversation on",
+            "nextScene": "scene-5-project-assignment"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "EMPATHY": -2,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "ADAPTABILITY": 2
+          }
+        }
+      },
+      {
+        "id": "choice-3b",
+        "scene": "scene-4b-sam-table",
+        "prompt": "Sam just admitted his old friend group 'got busy.' What do you say?",
+        "context": "Sam has opened up a little about being left behind by his old friends. He seems unsure whether he wants comfort, distraction, or advice.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tell him you'd both be better off making new friends - starting today",
+            "nextScene": "scene-5-project-assignment"
+          },
+          {
+            "id": "b",
+            "text": "Just stay with him and let the quiet lunch be enough",
+            "nextScene": "scene-5-project-assignment"
+          },
+          {
+            "id": "c",
+            "text": "Wave a couple of other kids over to join you both right now",
+            "nextScene": "scene-5-project-assignment"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1
+          },
+          "c": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3c",
+        "scene": "scene-4c-new-table",
+        "prompt": "Alex is talking about starting an after-school club. What's your move?",
+        "context": "Alex is enthusiastic and a little chaotic, treating the empty table as a blank canvas rather than a punishment.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Get excited and start inviting other kids over to build a bigger table",
+            "nextScene": "scene-5-project-assignment"
+          },
+          {
+            "id": "b",
+            "text": "Keep it low-key and just enjoy getting to know Alex",
+            "nextScene": "scene-5-project-assignment"
+          },
+          {
+            "id": "c",
+            "text": "Admit you're curious about Jordan's table and head over there instead",
+            "nextScene": "scene-4a-popular-table"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "ADAPTABILITY": 1
+          },
+          "b": {
+            "EMPATHY": 1,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "ADAPTABILITY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-6-project-tension",
+        "prompt": "Devon just shut down Sam's idea before it got a fair hearing. You have the floor.",
+        "context": "The project group is deciding on a direction. Devon is loud and certain. Sam has gone quiet. Nobody has actually said whether Sam's idea was good or bad.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speak up: 'Wait, I actually think Sam's idea is worth trying.'",
+            "nextScene": "scene-7-reflection"
+          },
+          {
+            "id": "b",
+            "text": "Propose a compromise that blends both ideas",
+            "nextScene": "scene-7-reflection"
+          },
+          {
+            "id": "c",
+            "text": "Stay quiet and let Devon's plan move forward to avoid a fight",
+            "nextScene": "scene-7-reflection"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1
+          },
+          "c": {
+            "CONFIDENCE": -2,
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-7-reflection",
+        "prompt": "Your phone is in your hand. What do you do with the last five minutes of the day?",
+        "context": "The first day is over. Whatever happened at lunch and in the library, Maya gets to decide what tomorrow looks like.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Text Sam and ask him to sit together again tomorrow",
+            "nextScene": "scene-8a-end-friendship"
+          },
+          {
+            "id": "b",
+            "text": "Accept Jordan's invite to sit with the crowd tomorrow",
+            "nextScene": "scene-8b-end-crowd"
+          },
+          {
+            "id": "c",
+            "text": "Text Sam a bigger idea: inviting more people, even Jordan, to one table",
+            "nextScene": "scene-8c-end-bridge"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "CONFIDENCE": 1,
+            "ADAPTABILITY": 1,
+            "EMPATHY": -1
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-authentic-connection",
+        "name": "The Authentic Path",
+        "triggeredBy": [
+          "choice-2:b",
+          "choice-4:a",
+          "choice-5:a"
+        ],
+        "description": "Maya prioritizes real connection over visibility from the first lunch bell onward, choosing Sam's quiet table, defending his idea under pressure, and reaching out first at day's end.",
+        "outcome": "Maya ends the day with one genuine friendship and a clear sense of who she wants to be, even if it cost her a seat at the loudest table."
+      },
+      {
+        "id": "branch-fit-in-first",
+        "name": "The Fit-In Path",
+        "triggeredBy": [
+          "choice-2:a",
+          "choice-3a:b",
+          "choice-5:b"
+        ],
+        "description": "Maya chases visibility and ease, sitting with Jordan's crowd, laughing along when Sam gets hurt, and accepting an invitation into the in-crowd for tomorrow.",
+        "outcome": "Maya is socially secure but privately unsettled - she got exactly what she reached for and isn't sure it was worth what she gave up."
+      },
+      {
+        "id": "branch-bridge-builder",
+        "name": "The Bridge-Builder Path",
+        "triggeredBy": [
+          "choice-2:c",
+          "choice-3c:a",
+          "choice-4:b",
+          "choice-5:c"
+        ],
+        "description": "Maya refuses to pick a pre-existing side, building her own table with Alex, defending Sam's idea via compromise, and ending the day proposing to merge the school's separate groups.",
+        "outcome": "Maya ends the day as the person who makes room for others, having built something new instead of choosing between two existing options."
+      },
+      {
+        "id": "branch-defended-then-drifted",
+        "name": "The Costly Courage Path",
+        "triggeredBy": [
+          "choice-2:a",
+          "choice-3a:a",
+          "choice-5:b"
+        ],
+        "description": "Maya sits with the popular table but breaks from them to defend Sam when it matters, then still drifts back toward Jordan's group the next day.",
+        "outcome": "A messier, more human outcome - Maya proved she has a spine, but hasn't yet decided which group actually deserves her loyalty."
+      }
+    ],
+    "emotionalArc": [
+      "Anticipatory anxiety on arrival",
+      "Public vulnerability in the hallway test",
+      "High-stakes social choice at the lunchroom crossroads",
+      "Either quiet validation, itchy regret, or grounded connection depending on path",
+      "A second, higher-stakes test of the same instinct during the project conflict",
+      "Reflective calm and a forward-looking choice about identity",
+      "Resolution: belonging framed as something built, not simply granted"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from reactive uncertainty ('who do I need to be to survive today') toward intentional identity ('who do I choose to be tomorrow'), tested twice - once socially, once ethically - to see if the choice holds under pressure."
+      },
+      {
+        "character": "sam",
+        "arc": "Shifts from resigned invisibility to cautious hope (or continued isolation) depending entirely on whether the player notices and acts on his discomfort at two separate moments."
+      },
+      {
+        "character": "jordan",
+        "arc": "Stays consistent as a mirror rather than a villain - confident, a little careless with others' feelings - reflecting back whatever energy the player brings, never explicitly punished or redeemed within the episode."
+      },
+      {
+        "character": "alex",
+        "arc": "Represents the low-risk, high-reward option of building something new rather than choosing between existing groups, present only on the path where the player takes that risk."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "description": "Rewarded when the player takes social risks with visible stakes: standing up to Jordan, sitting alone, speaking up for Sam's idea, or initiating contact rather than waiting to be included."
+      },
+      {
+        "trait": "EMPATHY",
+        "description": "Rewarded when the player notices and responds to Sam's discomfort even when it costs social standing, and when they advocate for someone being overlooked."
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "description": "Rewarded when the player reads a room and adjusts approach without abandoning their values - deflecting conflict smoothly, proposing compromises, or building new social structures instead of picking an existing side."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "characters": [
+          "player",
+          "sam"
+        ],
+        "dynamic": "The emotional core of the episode - a relationship that can deepen into real friendship, curdle into guilt, or never quite form, depending entirely on two separate moments of attention."
+      },
+      {
+        "characters": [
+          "player",
+          "jordan"
+        ],
+        "dynamic": "A test of social gravity - Jordan represents the pull of easy belonging, and the relationship's warmth is inversely tied to how much the player prioritizes Sam."
+      },
+      {
+        "characters": [
+          "player",
+          "devon"
+        ],
+        "dynamic": "A lower-stakes practice run for standing up for someone else, mirroring the earlier tray incident but in an academic setting where the player has more clear authority to intervene."
+      },
+      {
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "dynamic": "An optional, lighter relationship representing the path of building something new rather than joining or rejecting existing groups."
+      }
+    ],
+    "replayHooks": [
+      "Three genuinely different lunchroom scenes (popular table, Sam's table, empty table) mean a first playthrough only sees a third of the content.",
+      "The project-conflict scene plays very differently emotionally depending on whether the player has already bonded with or hurt Sam, even though the scene text is the same - inviting players to imagine 'what if I'd sat somewhere else.'",
+      "A hidden loop lets players who start at the empty table wander over to Jordan's table mid-lunch, discovering the popular-table branch from an unexpected entry point.",
+      "Three distinct endings (quiet friendship, secure popularity, bridge-building) each feel emotionally complete but tonally opposite, encouraging comparison.",
+      "The 'Costly Courage' branch (sit with the crowd but defend Sam anyway) produces a messier, more ambiguous outcome that curious players will want to find on a second run."
+    ],
+    "estimatedPlayTime": 12,
+    "educationalGoals": [
+      "Model that confidence can look like standing alone, speaking up, or simply owning a decision - not just being the loudest person in the room",
+      "Show empathy as an active choice made under social cost, not just a passive feeling",
+      "Demonstrate adaptability as flexibility in approach without loss of core values",
+      "Illustrate that first impressions are made of many small choices, not one big one",
+      "Present belonging as something buildable rather than something granted by the 'right' group"
+    ],
+    "conversationStarters": [
+      "If you had to sit somewhere on your first day, which table do you think you'd actually choose - not which one you'd want to choose?",
+      "Was there a moment in the story where staying quiet felt like the safe choice? Was it?",
+      "Do you think Jordan is a bad person, or just someone who's never had to think about how his jokes land?",
+      "Which ending felt the most 'earned' to you, and which felt like it cost the most?",
+      "Have you ever had a moment like the spilled tray - where you had half a second to decide who you were going to be?"
+    ]
+  },
+  "designNotes": "The structure is built around two parallel tests of the same instinct - once socially (the lunchroom, low institutional stakes, high peer stakes) and once academically (the project table, lower peer stakes, higher fairness stakes) - so that a single trait choice doesn't feel like a one-off quiz question but a recurring, consistent facet of character. Reconvergence at the project-assignment scene is intentional and load-bearing: it keeps the branching scene count manageable while still letting the SAME scene carry different emotional weight depending on prior choices, which is something a human reader/player will feel even though the prose is fixed - this is flagged as an uncertainty below. The loop from scene-4c back into scene-4a is a small, deliberate replay hook rewarding curious players without creating an actual infinite loop, since it still flows forward into scene-5.",
+  "uncertainties": [
+    "Scenes 4a-defend-aftermath, 4a-join-aftermath, scene-5, and scene-6 currently use identical prose regardless of the player's path into them; for full emotional payoff, these should ideally have 2-3 light text variants keyed to prior choices (e.g., Sam being warmer or more guarded toward the player) even though the scene graph itself doesn't need to branch further.",
+    "The Jordan character risks reading as a pure antagonist rather than a 'mirror' - dialogue in scene-2 and scene-4a should be tuned carefully so his behavior feels like real teenage social dynamics rather than cartoonish bullying, preserving the 'no villains' design intent.",
+    "Trait point values are illustrative; actual calibration (how many points constitute a 'high CONFIDENCE' player) should be tuned against the full season's episodes, not this episode in isolation.",
+    "The Costly Courage branch (defend Sam but later drift toward Jordan) is intentionally left unresolved/ambiguous, which is a deliberate design choice but should be play-tested to confirm it doesn't read as a bug or unfinished content."
+  ],
+  "alternativesConsidered": [
+    "A single binary choice architecture (popular table vs. outsider table only) was considered but rejected for offering only 2 paths instead of the requested 2+ meaningfully different paths with enough texture; the three-way lunch split plus the 4c-to-4a loop gives more replay value without much added complexity.",
+    "Considered making Jordan's tray-trip scene optional/skippable to reduce heavy-handedness, but kept it as the episode's central ethical fulcrum since removing it left the empathy trait with no strong test moment.",
+    "Considered a fully unique ending scene for every combination of major choices (up to 9+ endings) but scaled back to 3 clear endings plus documented branch combinations, since too many near-identical endings dilute replay satisfaction rather than enhancing it.",
+    "Considered setting the second test (choice-4) in the same lunchroom rather than a project/library setting, but separating it into an academic context lets the episode test whether the player's values are situational or consistent, which felt like a stronger, less repetitive design."
+  ]
+}

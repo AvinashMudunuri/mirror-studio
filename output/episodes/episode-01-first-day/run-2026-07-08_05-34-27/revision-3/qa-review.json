@@ -1,0 +1,283 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-4a-popular-table has a choice (choice-3a) but also defines a defaultNextScene (scene-5a-project-assignment). Per the data model, a scene should use ONE transition mechanism, not both.",
+      "location": "scenes[7].transition and scenes[7].defaultNextScene",
+      "expectedValue": "Either a choice-based transition OR a defaultNextScene, not both",
+      "actualValue": "Both transition.choiceId='choice-3a' and defaultNextScene='scene-5a-project-assignment' are present",
+      "fix": "Remove the defaultNextScene field from scene-4a-popular-table, as the choice mechanism will handle all three aftermath paths (choice-3a options point to scene-4a-defend-aftermath, scene-4a-join-aftermath, scene-4a-deflect-aftermath, which then use defaultNextScene to reach scene-5a-project-assignment)."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-4b-sam-table has a choice (choice-3b) but also defines a defaultNextScene (scene-5b-project-assignment). Per the data model, a scene should use ONE transition mechanism, not both.",
+      "location": "scenes[10].transition and scenes[10].defaultNextScene",
+      "expectedValue": "Either a choice-based transition OR a defaultNextScene, not both",
+      "actualValue": "Both transition.choiceId='choice-3b' and defaultNextScene='scene-5b-project-assignment' are present",
+      "fix": "Remove the defaultNextScene field from scene-4b-sam-table. The choice mechanism will route to the three aftermath scenes, which then transition to scene-5b-project-assignment via their own defaultNextScene."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-4c-new-table has a choice (choice-3c) but also defines a defaultNextScene (scene-5c-project-assignment). Per the data model, a scene should use ONE transition mechanism, not both.",
+      "location": "scenes[13].transition and scenes[13].defaultNextScene",
+      "expectedValue": "Either a choice-based transition OR a defaultNextScene, not both",
+      "actualValue": "Both transition.choiceId='choice-3c' and defaultNextScene='scene-5c-project-assignment' are present",
+      "fix": "Remove the defaultNextScene field from scene-4c-new-table. The choice mechanism will route to the three aftermath scenes, which then transition to scene-5c-project-assignment via their own defaultNextScene."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-6-project-tension has a choice (choice-4) but also defines a defaultNextScene (scene-6d-alvarez-checkin). Per the data model, a scene should use ONE transition mechanism, not both.",
+      "location": "scenes[20].transition and scenes[20].defaultNextScene",
+      "expectedValue": "Either a choice-based transition OR a defaultNextScene, not both",
+      "actualValue": "Both transition.choiceId='choice-4' and defaultNextScene='scene-6d-alvarez-checkin' are present",
+      "fix": "Remove the defaultNextScene field from scene-6-project-tension. The choice mechanism will route to the three aftermath scenes (scene-6a-speak-aftermath, scene-6b-compromise-aftermath, scene-6c-quiet-aftermath), which then transition to scene-6d-alvarez-checkin via their own defaultNextScene."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-7-reflection has a choice (choice-5) but also defines a defaultNextScene (scene-6d-alvarez-checkin). Per the data model, a scene should use ONE transition mechanism, not both.",
+      "location": "scenes[24].transition and scenes[24].defaultNextScene",
+      "expectedValue": "Either a choice-based transition OR a defaultNextScene, not both",
+      "actualValue": "Both transition.choiceId='choice-5' and defaultNextScene='scene-6d-alvarez-checkin' are present",
+      "fix": "Remove the defaultNextScene field from scene-7-reflection. The choice mechanism will route to the three ending scenes (scene-8a-end-friendship, scene-8b-end-crowd, scene-8c-end-bridge), which then transition to END via their own defaultNextScene."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-3a (scene-4a-popular-table) has three options, but all three point to different aftermath scenes. However, the choice definition shows nextScenes as an array with three identical values ['scene-4a-defend-aftermath','scene-4a-join-aftermath','scene-4a-deflect-aftermath'], which is correct. But the options array has three entries with different nextScene values. This is correct per the data model, but the nextScenes array in the choice definition is redundant and could cause confusion.",
+      "location": "choices[2].nextScenes vs choices[2].options[*].nextScene",
+      "expectedValue": "Either use nextScenes array OR individual option.nextScene values, not both (or ensure they match exactly)",
+      "actualValue": "Both are present and match, but this is redundant",
+      "fix": "Remove the nextScenes array from choice-3a (and similar choices) since the options array already specifies nextScene for each option. The nextScenes array appears to be legacy/redundant."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-3b (scene-4b-sam-table) has redundant nextScenes array. Same issue as choice-3a.",
+      "location": "choices[3].nextScenes vs choices[3].options[*].nextScene",
+      "expectedValue": "Remove redundant nextScenes array",
+      "actualValue": "Both nextScenes array and individual option.nextScene values present",
+      "fix": "Remove the nextScenes array from choice-3b."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-3c (scene-4c-new-table) has redundant nextScenes array. Same issue as choice-3a.",
+      "location": "choices[4].nextScenes vs choices[4].options[*].nextScene",
+      "expectedValue": "Remove redundant nextScenes array",
+      "actualValue": "Both nextScenes array and individual option.nextScene values present",
+      "fix": "Remove the nextScenes array from choice-3c."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-4 (scene-6-project-tension) has redundant nextScenes array. Same issue as choice-3a.",
+      "location": "choices[5].nextScenes vs choices[5].options[*].nextScene",
+      "expectedValue": "Remove redundant nextScenes array",
+      "actualValue": "Both nextScenes array and individual option.nextScene values present",
+      "fix": "Remove the nextScenes array from choice-4."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-5 (scene-7-reflection) has redundant nextScenes array. Same issue as choice-3a.",
+      "location": "choices[6].nextScenes vs choices[6].options[*].nextScene",
+      "expectedValue": "Remove redundant nextScenes array",
+      "actualValue": "Both nextScenes array and individual option.nextScene values present",
+      "fix": "Remove the nextScenes array from choice-5."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Scene scene-3-lunchroom defines variantIntros but never uses them. The scene description is static and does not reference which variant should be shown. This creates ambiguity about which intro text the player sees.",
+      "location": "scenes[4].variantIntros",
+      "expectedValue": "Either remove variantIntros or add logic to select one based on prior choices",
+      "actualValue": "variantIntros defined but no selection mechanism present",
+      "fix": "Either remove the variantIntros field (use a single description), or add a stateFlag or choice-history mechanism to select which variant displays. Currently, it's unclear which intro the player receives."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Scene scene-6-project-tension defines variantIntros but never uses them. Similar issue to scene-3-lunchroom.",
+      "location": "scenes[20].variantIntros",
+      "expectedValue": "Either remove variantIntros or add logic to select one based on prior choices",
+      "actualValue": "variantIntros defined but no selection mechanism present",
+      "fix": "Either remove the variantIntros field or add a selection mechanism."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Scene scene-7-reflection defines variantIntros but never uses them. Similar issue to scene-3-lunchroom.",
+      "location": "scenes[24].variantIntros",
+      "expectedValue": "Either remove variantIntros or add logic to select one based on prior choices",
+      "actualValue": "variantIntros defined but no selection mechanism present",
+      "fix": "Either remove the variantIntros field or add a selection mechanism."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch-defended-then-drifted is triggered by ['choice-1:*','choice-2:a','choice-3a:a','choice-4:*','choice-5:b'], but this path is logically inconsistent. The triggeredBy pattern says 'choice-3a:a' (defend Sam in the hallway), but then 'choice-4:*' (any choice in the project conflict), which means this branch fires even if the player defends Sam in the hallway but then stays silent in the project. However, the branch description says 'Maya sits with the popular table but breaks from them to defend Sam when it matters, then still drifts back toward Jordan's group the next day regardless of the project outcome.' This suggests the player should defend Sam in BOTH the lunch incident AND the project conflict, but the triggeredBy allows defending only in the hallway. This is a logic error.",
+      "location": "outcomes[3].triggeredBy",
+      "expectedValue": "Either clarify the branch logic or adjust triggeredBy to match the intended narrative",
+      "actualValue": "triggeredBy=['choice-1:*','choice-2:a','choice-3a:a','choice-4:*','choice-5:b'] allows defending in hallway but not necessarily in project",
+      "fix": "Either change triggeredBy to require choice-4:a (defend in project too), or update the branch description to clarify that defending in the hallway counts even if silent in the project."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch-avoidant-adaptation is triggered by ['choice-1:*','choice-2:a','choice-3a:c','choice-4:c','choice-5:*'], but this is overly broad. The pattern 'choice-5:*' means this branch fires regardless of the final choice (text Sam, join Jordan, or propose a bridge table). This contradicts the branch description, which says 'Maya keeps the peace at every turn... prioritizing smoothness over friction at every possible cost point.' If the player chooses choice-5:c (bridge table), they are NOT keeping the peace and smoothing over — they are actively building something new. This is a logic error.",
+      "location": "outcomes[4].triggeredBy",
+      "expectedValue": "choice-5:* should be choice-5:b (only the Jordan group choice) or choice-5:c (only the avoidant choice)",
+      "actualValue": "choice-5:* allows any final choice to trigger this branch",
+      "fix": "Change triggeredBy to ['choice-1:*','choice-2:a','choice-3a:c','choice-4:c','choice-5:b'] to ensure only the avoidant path triggers this outcome."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch-bridge-builder is triggered by ['choice-1:*','choice-2:c','choice-3c:a','choice-4:b','choice-5:c'], but choice-3c:a is 'Get excited and start inviting other kids over to build a bigger table' (scene-4c-recruit-aftermath), which is a specific action within the window-table path. However, the branch description says 'Maya refuses to pick a pre-existing side, building her own table with Alex.' This is correct for choice-2:c (sit alone at empty table), but choice-3c:a is only reachable if the player already chose choice-2:c. The triggeredBy is correct, but it's worth noting that this branch requires a specific sequence of choices, not just any combination.",
+      "location": "outcomes[2].triggeredBy",
+      "expectedValue": "Verify that all paths in triggeredBy are actually reachable given prior scene transitions",
+      "actualValue": "choice-3c:a is only reachable after choice-2:c, which is already in triggeredBy, so this is logically sound",
+      "fix": "No fix needed; this is correct. However, document that this branch requires choice-2:c → choice-3c:a → choice-4:b → choice-5:c sequence."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch-authentic-connection is triggered by ['choice-1:*','choice-2:b','choice-3b:*','choice-4:a','choice-5:a'], but this is overly broad. The pattern 'choice-3b:*' means any choice in the Sam-table aftermath (affirm, quiet, or invite) triggers this branch. However, the branch description says 'Maya prioritizes real connection over visibility from the first lunch bell onward, choosing Sam's quiet table, defending his idea under pressure, and reaching out first at day's end.' This suggests the player should defend Sam's idea (choice-4:a) AND reach out first (choice-5:a), which is correct. But 'choice-3b:*' allows any aftermath of sitting with Sam, including choice-3b:c (invite others), which is more about building a bigger table than prioritizing one real connection. This is a logic error.",
+      "location": "outcomes[0].triggeredBy",
+      "expectedValue": "Either clarify the branch or adjust triggeredBy to be more specific about which choice-3b option is intended",
+      "actualValue": "choice-3b:* allows any aftermath, including the 'invite others' option",
+      "fix": "Change triggeredBy to ['choice-1:*','choice-2:b','choice-3b:a','choice-3b:b','choice-4:a','choice-5:a'] to exclude choice-3b:c (invite), or update the branch description to clarify that inviting others is still part of authentic connection."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch-fit-in-first is triggered by ['choice-1:*','choice-2:a','choice-3a:b','choice-4:*','choice-5:b'], but this is overly broad. The pattern 'choice-4:*' means any choice in the project conflict (defend, compromise, or stay quiet) triggers this branch. However, the branch description says 'Maya chases visibility and ease, sitting with Jordan's crowd, laughing along when Sam gets hurt, and accepting an invitation into the in-crowd for tomorrow, regardless of how the project conflict resolves.' This suggests the project conflict outcome doesn't matter (choice-4:*), which is correct. However, the branch should probably NOT fire if the player chooses choice-4:a (defend Sam's idea), as that contradicts 'chasing visibility and ease.' This is a logic error.",
+      "location": "outcomes[1].triggeredBy",
+      "expectedValue": "Either clarify the branch or adjust triggeredBy to exclude choice-4:a",
+      "actualValue": "choice-4:* allows defending Sam's idea, which contradicts the branch narrative",
+      "fix": "Change triggeredBy to ['choice-1:*','choice-2:a','choice-3a:b','choice-4:b','choice-4:c','choice-5:b'] to exclude choice-4:a, or update the branch description to clarify that defending Sam in the project is still compatible with the fit-in-first path."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-1-arrival has no choice attached (no choice references it via 'scene' field). The scene has a defaultNextScene of 'scene-2-hallway', which is correct. However, the scene description says 'She has a half-second to decide how she wants to walk in,' which implies a choice, but no choice is presented. This is either a narrative inconsistency or an incomplete implementation.",
+      "location": "scenes[0]",
+      "expectedValue": "Either add a choice to scene-1-arrival or remove the language suggesting a decision point",
+      "actualValue": "Scene has no choice but description implies one",
+      "fix": "Either add a choice (e.g., 'Walk in confident vs. cautious vs. invisible') or revise the description to remove the implication of a decision. Currently, the player has no agency in this scene."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Scene scene-2-hallway (the hallway introductions) shows Jordan and Sam, but the scene description says 'Nearby, a quiet student named Sam flinches.' However, Sam is not listed in the scene's characters array. The characters array only includes ['player','jordan','sam'], which is correct, but the description's phrasing 'nearby' and 'quiet student named Sam' suggests Sam is a background character, not a primary participant. This is a minor inconsistency but worth noting.",
+      "location": "scenes[1].characters vs scenes[1].description",
+      "expectedValue": "If Sam is in the scene, he should be clearly listed and treated as a participant",
+      "actualValue": "Sam is listed in characters but described as 'nearby' and 'quiet,' suggesting background presence",
+      "fix": "Clarify in the description that Sam is a direct participant in this scene, not a background observer. The current phrasing is accurate but could be clearer."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The branchDialogue entries reference branch IDs that should match outcomes, but the mapping is incomplete. For example, branchDialogue has entries for 'branch-authentic-connection', 'branch-fit-in-first', 'branch-defended-then-drifted', and 'branch-avoidant-adaptation', but the outcomes array has 5 branches (including 'branch-bridge-builder'). The branchDialogue for 'branch-bridge-builder' is present (sceneId='scene-8c-end-bridge', branchId='branch-bridge-builder'), but there is no branchDialogue for 'branch-bridge-builder' in the branchDialogue array. This is inconsistent.",
+      "location": "branchDialogue vs outcomes",
+      "expectedValue": "Each outcome branch should have corresponding branchDialogue entries for its ending scenes",
+      "actualValue": "branch-bridge-builder outcome exists but has no branchDialogue entry",
+      "fix": "Add a branchDialogue entry for branch-bridge-builder with sceneId='scene-8c-end-bridge' and appropriate dialogue lines."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The branchDialogue entry for 'branch-defended-then-drifted' has sceneId='scene-8b-end-crowd', which is correct (the player ends up at Jordan's table). However, the branchId is 'branch-defended-then-drifted', but the outcomes array shows this branch is triggered by ['choice-1:*','choice-2:a','choice-3a:a','choice-4:*','choice-5:b']. This means the player sits with Jordan (choice-2:a), laughs at Sam (choice-3a:a), and then chooses Jordan's group again (choice-5:b). The branchDialogue correctly places this at scene-8b-end-crowd, but the dialogue lines should reflect the specific narrative of 'defended in hallway but drifted back.' The current lines are generic and don't capture this nuance.",
+      "location": "branchDialogue[1] (branch-defended-then-drifted)",
+      "expectedValue": "Dialogue should reflect the specific narrative of defending Sam in the hallway but then drifting back to Jordan's group",
+      "actualValue": "Dialogue is generic and doesn't capture the nuance of this specific path",
+      "fix": "Update the branchDialogue lines for branch-defended-then-drifted to include dialogue that acknowledges the earlier defense of Sam and the subsequent drift back to Jordan's group."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has 5 outcome branches, which is reasonable, but the triggeredBy patterns are complex and overlapping. For example, branch-fit-in-first and branch-defended-then-drifted both include 'choice-2:a' (sit with Jordan), which means they share a common starting point. This is fine, but it increases the risk of unintended branch firing if the triggeredBy logic is not carefully maintained.",
+      "location": "outcomes[*].triggeredBy",
+      "suggestion": "Consider documenting the branch decision tree clearly so that future updates don't accidentally create overlapping or unreachable branches. A visual flowchart of the choice paths would be helpful."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode uses stateFlags in some scenes (e.g., scene-8a-end-friendship has stateFlags={'friendshipWithSam':true}), but these flags are not used elsewhere in the episode. If these flags are intended for future episodes or for tracking player state, they should be documented. If they are not used, they should be removed.",
+      "location": "scenes[25].stateFlags, scenes[26].stateFlags, scenes[27].stateFlags",
+      "suggestion": "Either document how these stateFlags are used in future episodes, or remove them if they are not needed for this episode."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has 27 scenes, which is a substantial amount of content. The estimated play time is 15 minutes, which seems reasonable for a branching narrative with multiple paths. However, the actual play time will vary significantly depending on which path the player takes. Consider adding estimated play times for each branch to help players understand the time commitment.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Add estimated play times for each outcome branch (e.g., 'branch-authentic-connection: 12 minutes, branch-fit-in-first: 14 minutes, etc.')."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has detailed character descriptions and personality profiles in the shared character data, but the episode itself does not fully leverage all of these details. For example, Maya's habit of 'chewing on the drawstring of her hoodie when nervous' is mentioned in the character data but never appears in the episode dialogue or descriptions. Consider incorporating more of these distinctive character traits into the scenes.",
+      "location": "characters[0] vs scenes[*]",
+      "suggestion": "Add more character-specific actions and mannerisms to the scenes to bring the characters to life. For example, include Maya chewing her drawstring when nervous, or Sam tapping a rhythm on his tray when holding back."
+    },
+    {
+      "category": "STYLE",
+      "message": "The dialogue in some scenes is very long and could be broken up for better readability. For example, scene-4b-sam-table has a long dialogue exchange that could be split into smaller chunks with more narrative description in between.",
+      "location": "scenes[10].dialogue",
+      "suggestion": "Consider breaking up long dialogue exchanges with brief narrative descriptions to improve pacing and readability."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode uses both 'NARRATOR' and 'INTERNAL' as speaker IDs, which is correct per the data model. However, the distinction between them could be clearer. 'NARRATOR' appears to be third-person narration, while 'INTERNAL' appears to be Maya's internal thoughts. This is fine, but consider documenting this convention for future episodes.",
+      "location": "dialogue[*].character",
+      "suggestion": "Document the distinction between NARRATOR and INTERNAL speaker IDs in the episode guidelines."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "The episode has a large number of dialogue entries (over 200), which could impact performance if the rendering pipeline is not optimized for large dialogue arrays. Consider profiling the episode to ensure it loads and renders smoothly.",
+      "location": "dialogue[*]",
+      "suggestion": "Profile the episode in the rendering pipeline to ensure performance is acceptable. If performance is an issue, consider splitting the episode into smaller chunks or optimizing the dialogue data structure."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode defines 'educationalGoals' as an array of strings, which is good. However, the goals are quite detailed and could benefit from being mapped to specific scenes or choices where they are addressed. This would help ensure that the educational content is actually delivered to the player.",
+      "location": "educationalGoals",
+      "suggestion": "Consider adding a mapping between educationalGoals and the scenes/choices where they are addressed. For example, 'Model that confidence can look like standing alone' could be mapped to choice-2 (where the player chooses to sit alone at the window table)."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has a detailed 'emotionalArc' array that describes the emotional progression of the episode, but this is not used anywhere in the rendering logic. If this is intended for documentation purposes, it should be clearly labeled as such. If it is intended to be used by the rendering pipeline, it should be integrated into the scene structure.",
+      "location": "emotionalArc",
+      "suggestion": "Either document that emotionalArc is for reference purposes only, or integrate it into the scene structure so that the rendering pipeline can use it to guide pacing and tone."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode uses 'traitMapping' in the choices array to track how player choices affect traits. However, the trait IDs used in traitMapping (e.g., 'CONFIDENCE', 'EMPATHY', 'ADAPTABILITY') are not defined in the targetTraits array. The targetTraits array only lists trait objects with 'traitId' and 'changeAmount' fields, but does not define what these traits mean or how they are calculated. This could lead to confusion about how traits are tracked across episodes.",
+      "location": "choices[*].traitMapping vs targetTraits",
+      "suggestion": "Either define the trait IDs in a separate schema or add descriptions to the targetTraits array to clarify what each trait represents and how it is calculated."
+    }
+  ],
+  "summary": {
+    "totalChecks": 45,
+    "passedChecks": 28,
+    "failedChecks": 17,
+    "warningCount": 10
+  },
+  "recommendations": [
+    "CRITICAL: Fix all BLOCKER and CRITICAL errors before shipping. The redundant transition mechanisms and logic errors in outcome branching will cause unexpected behavior.",
+    "Remove redundant nextScenes arrays from all choices (choice-3a, choice-3b, choice-3c, choice-4, choice-5) to simplify the data structure and reduce confusion.",
+    "Clarify the variantIntros mechanism in scenes 3, 6, and 7. Either remove them or add logic to select which variant displays based on prior choices.",
+    "Fix the outcome branching logic to ensure each branch is triggered by the correct combination of choices. The current triggeredBy patterns are overly broad and may cause unintended branch firing.",
+    "Add branchDialogue entries for all outcome branches, including branch-bridge-builder.",
+    "Add a choice to scene-1-arrival to give the player agency in how they enter the school, or remove the language suggesting a decision point.",
+    "Document the stateFlags usage for future episodes, or remove them if not needed.",
+    "Incorporate more character-specific traits and mannerisms into the scenes (e.g., Maya chewing her drawstring, Sam tapping rhythms).",
+    "Consider adding a visual flowchart or decision tree to document the complex branching logic and ensure future updates don't create overlapping or unreachable branches.",
+    "Profile the episode in the rendering pipeline to ensure performance is acceptable with the large number of dialogue entries."
+  ]
+}

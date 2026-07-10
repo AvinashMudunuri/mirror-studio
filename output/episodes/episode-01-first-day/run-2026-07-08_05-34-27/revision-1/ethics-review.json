@@ -1,0 +1,145 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Sam Okafor's characterization relies heavily on quiet, withdrawn, socially isolated traits without sufficient complexity or agency in his own narrative arc within this episode",
+      "location": "Character profile: Sam Okafor; scenes 2-6 (hallway through project work)",
+      "harmPotential": "Black male characters are frequently stereotyped as quiet, withdrawn, or invisible in media. While Sam has depth in the character notes, the episode itself primarily shows him as a passive recipient of others' kindness rather than an active agent. This risks reinforcing the 'invisible Black kid' trope if not carefully balanced.",
+      "recommendation": "Expand Sam's agency in the episode. Consider: (1) Give Sam an active choice moment where he initiates connection rather than only receiving it; (2) Show his wit/humor landing successfully on his own terms, not just in asides; (3) In the project scene, ensure his idea gets genuine consideration and that he advocates for it, not just proposes it tentatively. The sketchbook reveal is good—lean into moments where Sam's talents are visible and valued on his own initiative.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'defend Sam' choice (choice-3a:a) is framed as the ethical high ground, but the episode doesn't adequately explore or model the social cost of standing up to Jordan, potentially oversimplifying peer dynamics for the target age",
+      "location": "Scene 4a (popular table incident) and choice-3a outcomes",
+      "harmPotential": "Players aged 11-14 are navigating real peer pressure. Presenting the 'ethical choice' without showing realistic social friction could set unrealistic expectations about how kindness is received, potentially leading to disappointment or self-blame when real-world kindness doesn't immediately resolve conflict. Conversely, it could encourage confrontation without preparation for consequences.",
+      "recommendation": "In scene-4a-defend-aftermath, add a moment where standing up to Jordan has a brief social cost—not a huge one, but real. Example: Jordan's smile tightens, she makes a joke that lands a bit sharper, or there's an awkward beat before the group moves on. Then show that Sam notices and appreciates the cost Maya paid, which reframes the choice as 'worth it' but not 'costless.' This models that ethical choices are real choices, not just obviously right moves.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex Torres-Mireles is the only explicitly non-binary character and their non-binary identity is introduced casually but never explored, potentially tokenizing their identity as a diversity marker rather than an authentic character element",
+      "location": "Scene 4c (lunch table introduction): 'Hey, I'm Alex — they/them.' Character profile notes mention pronouns but no exploration of what that means to Alex or how it shapes their experience",
+      "harmPotential": "Non-binary youth are underrepresented in media for this age group. Introducing a non-binary character without any narrative acknowledgment of their identity (either through their own reflection or through peer interaction) risks treating their identity as a checkbox rather than a real part of their experience. It can also leave non-binary players feeling unseen.",
+      "recommendation": "Add a small moment where Alex's identity is acknowledged naturally. Options: (1) A brief internal thought from Alex about pronouns/identity as they introduce themselves; (2) Maya naturally using they/them and it feeling normal; (3) A moment where Alex mentions how many times they've had to re-introduce their pronouns at new schools. This doesn't need to be heavy—just one line that shows identity matters to Alex, not just to the representation checklist.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'fit-in' path (choice-2:a → choice-3a:b → choice-5:b) is presented as a valid ending without sufficient narrative weight given to the ethical cost, potentially normalizing complicity as an acceptable choice for this age group",
+      "location": "Scene 8b (end-crowd branch) and the broader narrative arc of the 'fit-in' path",
+      "harmPotential": "Players aged 11-14 are developing moral reasoning. Presenting the 'fit in by laughing at someone's humiliation' path as equally valid to the 'speak up' path—without stronger narrative framing of the cost—could normalize peer cruelty as just 'how social navigation works.' The internal monologue 'Somehow him not looking back is worse than if he had' is good, but it's subtle. For this age group, the discomfort should be more explicit.",
+      "recommendation": "Strengthen the ethical weight of the 'fit-in' ending. In scene-8b-end-crowd or the branch dialogue, add a moment where Maya explicitly feels the disconnect between what she did and who she wants to be. Example: 'It feels good. Loud, easy, instantly visible. Somewhere under that, quieter, is the memory of Sam's tray hitting the floor, and Jordan's half-apology that didn't quite finish the sentence.' This is already there, but make it more prominent. Consider adding a follow-up text from Sam that Maya doesn't answer, or a moment where she sees Sam alone again and has to look away. The choice should feel like a choice with consequences, not just a different path.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Devon Park is the only East Asian character and is characterized primarily through competitive, controlling, anxious traits without sufficient positive complexity, risking the 'model minority' stereotype (high-achieving, anxious, controlling) without counterbalance",
+      "location": "Character profile: Devon Park; scenes 5-6 (project assignment and conflict)",
+      "harmPotential": "Asian characters in media are frequently stereotyped as high-achieving, anxious, and controlling—the 'model minority' trope. While Devon has depth in the notes ('genuinely brilliant with ideas,' 'loyal to people who beat him fair and square'), the episode itself primarily shows him as anxious, competitive, and steamrolling others. Without showing his humor, warmth, or other dimensions in the actual episode, the stereotype goes unchallenged.",
+      "recommendation": "Add a moment in scene-6 or scene-5b where Devon shows a different side. Options: (1) A moment of genuine humor or self-awareness ('I know I'm doing the thing, I can't help it'); (2) A moment where he admits uncertainty or asks for help; (3) A moment where his competitiveness comes from a place of insecurity that's sympathetic, not just annoying. Even one line in the project scene where Devon shows he's aware of his own pattern would add dimension and prevent the stereotype from being the only read.",
+      "priority": 7
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Jordan Reyes is characterized as the primary antagonist/bully, and while the character has depth, the episode could benefit from showing her humanity earlier to avoid a one-dimensional 'mean girl' reading",
+      "location": "Scenes 2, 4a, 7 (hallway, lunch table, end of day)",
+      "harmPotential": "While Jordan's half-apology at the end (scene-7) is good, players who choose the 'fit-in' path never see her vulnerability. This risks reinforcing the 'mean girl is just mean' trope. Additionally, if players only interact with Jordan through the 'defend Sam' lens, she remains a one-dimensional antagonist. Not critical, but worth noting.",
+      "recommendation": "Consider adding a brief moment earlier in the episode where Jordan's mask slips—not a full apology, but a glimpse of the person underneath. Example: A moment where she laughs at her own joke and then catches herself, or a moment where she's alone for a second and her expression shifts. The scene-7 apology is good, but it comes late. An earlier moment would give players more information to make informed choices about her.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "CULTURAL_SENSITIVITY",
+      "issue": "Ms. Alvarez's characterization includes 'grew up in the same district, still lives fifteen minutes away' and 'one of five kids in a loud house'—details that could be read as culturally specific but aren't explicitly connected to her identity or experience",
+      "location": "Ms. Alvarez character profile: background section",
+      "harmPotential": "Low harm potential, but worth noting: Alvarez is a Latinx name, and the character description includes cultural/family details that feel authentic, but the episode itself doesn't acknowledge or explore her cultural identity. This is fine—not every character needs their identity foregrounded—but it's worth being intentional about whether this is representation or just a name.",
+      "recommendation": "No change required, but be intentional: If Alvarez's cultural identity matters to her character, add a small moment in the episode that acknowledges it (a phrase in Spanish, a cultural reference, etc.). If it doesn't matter to the story, that's fine—just be aware that the name + background details create an expectation of cultural specificity that the episode doesn't fulfill. Either way is acceptable; just be intentional.",
+      "priority": 2
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'compromise' path (choice-4:b) is presented as equally valid to the 'speak up' path, but doesn't model the difference between compromise and conflict avoidance clearly enough for the target age",
+      "location": "Scene 6b (compromise aftermath)",
+      "harmPotential": "Low harm potential, but worth noting: For players aged 11-14 learning to navigate group dynamics, the difference between 'healthy compromise' and 'avoiding conflict by diluting both ideas' is important. Scene-6b shows compromise working, but doesn't help players understand when compromise is the right move vs. when standing firm is. The internal monologue 'Nobody's thrilled. Everybody can work with it. For a first day, that might be its own small win.' is good, but it's ambiguous about whether this is actually a win or just a settlement.",
+      "recommendation": "Add clarity to scene-6b about what compromise costs. Example: 'The blended pitch takes both ideas and files off the sharpest edges. Devon looks vaguely satisfied at getting some credit; Sam looks quietly relieved his idea survived at all. It's not the bold visual project Sam imagined, and it's not the clean timeline Devon wanted. It's workable. Whether that's a win or a loss depends on what you think matters more: being right, or being heard.' This helps players understand the trade-off.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Diverse cast with authentic, complex characterization across multiple dimensions (race, gender identity, socioeconomic background, neurodivergence implied)",
+    "Strong ethical framing of choices with visible consequences—player decisions have narrative weight and don't feel arbitrary",
+    "Multiple valid paths through the episode that model different approaches to belonging (authentic connection, social navigation, bridge-building) without one being presented as obviously 'correct'",
+    "Sam's characterization includes genuine humor and talent (sketchbook) that goes beyond the 'quiet kid' stereotype, though could be more prominent",
+    "Ms. Alvarez's intervention is subtle and realistic—she doesn't lecture about kindness, she just structures the environment to make good choices possible",
+    "The episode models that belonging is something built, not something granted—a healthy message for this age group",
+    "Language is age-appropriate and authentic to how 13-year-olds actually talk, without being condescending or trying too hard",
+    "Internal monologue effectively shows the gap between what Maya performs and what she feels, modeling emotional complexity",
+    "The 'fit-in' path includes narrative discomfort (Sam's tray, the itch of regret) that doesn't glorify complicity",
+    "Socioeconomic diversity is present and handled with respect (Maya's mom working two jobs, Sam's caution about asking for help, Alex's transience due to parent's job)"
+  ],
+  "recommendations": [
+    "Expand Sam's agency: Give him at least one moment where he initiates connection or advocates for himself, not just receives kindness. Consider having him be the one to suggest inviting other kids to the table, or having his joke land successfully on his own terms.",
+    "Strengthen ethical weight of the 'fit-in' path: Make the cost of complicity more explicit for players choosing that path. Add a moment where Maya sees Sam alone again and has to look away, or receives a text from Sam she doesn't answer. The discomfort should be clear.",
+    "Add a moment acknowledging Alex's non-binary identity: One line that shows their identity matters to them, not just to the representation checklist. Example: 'I've had to re-introduce my pronouns at four different schools' or Maya naturally using they/them and it feeling normal.",
+    "Give Devon more dimension in the episode itself: Add a moment of humor, self-awareness, or vulnerability that shows he's more than just anxious and controlling. Even one line acknowledging his own pattern would help.",
+    "Consider adding an earlier vulnerability moment for Jordan: A brief glimpse of the person underneath the performance before the end-of-day apology, so players have more information when making choices about her.",
+    "Clarify the 'compromise' path: Help players understand the difference between healthy compromise and conflict avoidance. Add a line that names what the compromise costs each person.",
+    "Consider a small moment where Ms. Alvarez's cultural identity is acknowledged if it matters to her character: Either a phrase in Spanish, a cultural reference, or intentionally leave it unforegrounded. Just be intentional about the choice.",
+    "In future episodes, continue to develop Sam's voice and agency: He has great potential as a character, but in this episode he's somewhat passive. Lean into his humor and talent more prominently."
+  ],
+  "scores": {
+    "biasAvoidance": 7,
+    "representation": 7,
+    "tropes": 7,
+    "ethicalModeling": 7,
+    "culturalSensitivity": 7,
+    "overall": 7
+  },
+  "flaggedContent": [
+    {
+      "type": "PORTRAYAL",
+      "location": "Sam Okafor throughout episode",
+      "content": "Quiet, withdrawn, socially isolated character who is primarily shown receiving kindness rather than initiating it",
+      "concern": "Risk of reinforcing 'invisible Black kid' stereotype if Sam remains passive throughout the episode",
+      "suggestion": "Add moments where Sam initiates connection, advocates for his idea, or his humor lands on his own terms—not just in asides or as a response to Maya's kindness"
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Devon Park in scenes 5-6",
+      "content": "Characterized primarily through competitive, controlling, anxious traits",
+      "concern": "Risk of reinforcing 'model minority' stereotype (high-achieving, anxious, controlling Asian character) without sufficient counterbalance",
+      "suggestion": "Add a moment showing Devon's humor, self-awareness, or vulnerability—something that shows he's more than just his anxiety and competitiveness"
+    },
+    {
+      "type": "NARRATIVE",
+      "location": "Scene 4a-join-aftermath (the 'fit-in' path)",
+      "content": "Maya laughs along with the table when Sam's tray falls; the narrative notes discomfort but it's subtle",
+      "concern": "For players aged 11-14, the ethical weight of complicity should be clearer. Subtle discomfort might not register as 'this was wrong' but rather as 'this is how social navigation works'",
+      "suggestion": "Make the discomfort more explicit. Add a moment where Maya sees Sam alone again and has to look away, or receives a text from Sam she doesn't answer. Show that the choice had a cost."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Alex Torres-Mireles introduction (scene 4c)",
+      "content": "Non-binary character introduced with pronouns but no narrative acknowledgment of identity",
+      "concern": "Non-binary youth are underrepresented in media for this age. Introducing identity without exploring it risks tokenization—treating it as a checkbox rather than a real part of the character",
+      "suggestion": "Add one line showing Alex's identity matters to them: a mention of re-introducing pronouns at multiple schools, or Maya naturally using they/them and it feeling normal. Just one line to show this is real to Alex, not just to the representation."
+    }
+  ],
+  "summary": {
+    "verdict": "No verdict provided",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [],
+    "strengths": [],
+    "readyForPublication": false
+  }
+}

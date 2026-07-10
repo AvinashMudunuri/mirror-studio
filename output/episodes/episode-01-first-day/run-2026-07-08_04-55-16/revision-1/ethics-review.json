@@ -1,0 +1,161 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Ben's character relies heavily on self-deprecating anxiety as his primary trait, with limited counter-balance showing his strengths or agency outside of intellectual ideas",
+      "location": "Ben Korlewski character profile and scenes 6-9",
+      "harmPotential": "Players with anxiety or social struggles may internalize the message that anxious kids are primarily defined by their nervousness and apologizing. The character lacks sufficient moments of confidence or leadership that aren't tied to intellectual output.",
+      "recommendation": "Add scenes where Ben demonstrates non-intellectual strengths (humor, observation, kindness) that aren't framed as compensating for his anxiety. Include at least one moment in Episode 1 where Ben initiates something without pre-apologizing, showing agency beyond ideas. Ensure his arc includes moments of genuine confidence, not just intellectual validation.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Maya's character is defined primarily through isolation and artistic talent, risking the 'magical minority' trope where a character of color exists in a supporting role defined by a special skill",
+      "location": "Maya Oyelaran character profile and scenes 4-5, 11a",
+      "harmPotential": "Black/Brown characters in media are often portrayed as isolated, artistically talented, and existing to validate or inspire white protagonists. While Maya has agency here, her primary narrative function across multiple scenes is being 'discovered' by Riley, and her social isolation is presented as her default state rather than something she's actively resisting.",
+      "recommendation": "Expand Maya's social world beyond Riley's choices. Add a scene showing Maya has at least one other peer connection or community (art club, online community, family support) that exists independently of the player's attention. Include dialogue where Maya actively chooses solitude for creative reasons, not just accepts it as inevitable. Ensure her arc in future episodes includes her pursuing her own goals, not just responding to Riley's interest.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'going along with Jordan's joke' choice (choice-3:c and choice-4:b) receives minimal consequences, and the narrative doesn't clearly frame this as ethically problematic",
+      "location": "Scenes 7c, 9b, and branch dialogue for popularity-conformity path",
+      "harmPotential": "Players, especially younger ones (11-12), may not recognize that complicity in unkindness is itself a choice with consequences. The narrative should make clear that silence/laughter in response to cruelty is an active choice, not a neutral one. Currently, the 'quiet support' path (9b) and 'change subject' path (9c) are presented as equally valid to the 'speak up' path (9a), which flattens the ethical distinction.",
+      "recommendation": "Ensure that in scenes following choice-3:c and choice-4:b, there are clear consequences: Ben's trust is noticeably affected (not just 'shoulders drop'), and Riley experiences internal discomfort that isn't resolved. In the branch dialogue for the popularity-conformity path, include Ben or Maya noticing the complicity, creating a moment where Riley must reckon with the choice. The 'speak up' path should feel distinctly more aligned with the stated values of 'authenticity' and 'belonging,' while the conformity path should feel like a trade-off, not an equally valid choice.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Jordan's character is a charismatic student of color (Korean-American/Black) who is portrayed as conflict-avoidant and academically struggling, while also being the social center. This risks reinforcing the 'charisma over competence' stereotype for students of color",
+      "location": "Jordan Cho-Williams character profile, particularly the 'secrets' section and background",
+      "harmPotential": "The combination of Jordan being charismatic, failing math, forging signatures, and being the social 'golden child' while academically struggling could reinforce stereotypes that students of color succeed through charm rather than competence. The narrative frames his academic failure as something he hides and manages through social performance, which is a real experience, but without counter-balance showing his intellectual strengths or agency in addressing the problem, it risks stereotype reinforcement.",
+      "recommendation": "Add a scene in Episode 1 or early Episode 2 where Jordan demonstrates intellectual capability or curiosity in a domain he cares about (not just social intelligence). Alternatively, ensure that his academic struggle is framed as a systemic issue (poor teaching, undiagnosed learning difference, home instability) rather than personal inadequacy. Include a moment where he asks for help or shows vulnerability about the academic pressure, humanizing the struggle rather than just hiding it. Ensure future episodes show him taking agency in addressing the problem, not just managing the secret.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Riley's pronoun flexibility (she/they with player choice) is mentioned but not meaningfully integrated into the narrative or character interactions",
+      "location": "Riley Nakamura-Torres character profile and dialogue throughout",
+      "harmPotential": "If pronouns are offered as a customization option but not reflected in NPC dialogue or character responses, it sends a message that pronoun choice is cosmetic rather than meaningful. For non-binary or gender-nonconforming players, this could feel invalidating. Additionally, if the default profile uses she/they but the narrative doesn't show NPCs respecting or acknowledging this, it misses an opportunity to model pronoun respect.",
+      "recommendation": "Ensure that whichever pronouns the player selects are consistently used by all NPCs throughout the episode. Include at least one moment where an NPC uses Riley's pronouns correctly in a way that feels natural and affirming (e.g., 'She's got jokes' or 'They're sharp'). If the default is she/they, show at least one NPC using they/them pronouns naturally in dialogue, normalizing non-binary identity. Consider adding a brief scene where Riley corrects someone on pronouns, modeling healthy boundary-setting.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Ms. Alvarez is the only adult character with significant presence, and her portrayal as 'stretched thin' and missing important moments could normalize adult neglect in educational settings",
+      "location": "Ms. Alvarez character profile and scenes 6, 8",
+      "harmPotential": "While the character is realistically portrayed, the narrative frames her missing Ben's moment of humiliation as an inevitable consequence of being overloaded, without showing systemic critique or her taking corrective action. For players experiencing actual neglect from educators, this could feel validating of the status quo rather than modeling what accountability looks like. Additionally, the narrative doesn't show her later recognizing the missed moment or making amends, which could teach players that adult oversight failures are just 'how it is.'",
+      "recommendation": "Add a scene (in Episode 1 or early Episode 2) where Ms. Alvarez notices the dynamic with Ben after the fact and takes action—either pulling Riley aside to acknowledge what happened, or restructuring group work to prevent similar dynamics. Include internal monologue showing her self-awareness about what she missed and her commitment to doing better. This models accountability without blaming her personally, while also showing that systemic overload doesn't excuse missing student harm.",
+      "priority": 6
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Riley's family structure (split households, parents' work relocation) is mentioned but not explored in terms of how it might affect belonging or identity",
+      "location": "Riley Nakamura-Torres background section",
+      "harmPotential": "Low immediate harm, but players from split households or with parents who've relocated for work might feel their experience is acknowledged but not meaningfully represented in the narrative. This is a missed opportunity for normalization and representation.",
+      "recommendation": "Include at least one brief internal monologue or dialogue moment where Riley references the split household or the move, connecting it to the anxiety about 'fitting in' and 'belonging.' This doesn't need to be a major plot point, but acknowledging it normalizes the experience for players living this reality.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "CULTURAL",
+      "issue": "Riley's Japanese-American and Puerto Rican heritage is mentioned in the background but not reflected in dialogue, internal monologue, or character details",
+      "location": "Riley Nakamura-Torres background and throughout narrative",
+      "harmPotential": "Low immediate harm, but the erasure of cultural identity in the narrative could feel invalidating to mixed-race or multiethnic players. It also misses an opportunity to normalize cultural identity as part of belonging and authenticity.",
+      "recommendation": "Include at least one moment where Riley's cultural background is naturally referenced—either in internal monologue about family, in dialogue with a peer, or in a detail about how Riley navigates cultural identity at a new school. This doesn't need to be heavy-handed; even a brief reference to a family tradition, a name pronunciation moment, or a thought about cultural expectations would ground the identity as real and relevant.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "The three main peer characters (Jordan, Maya, Ben) are all portrayed as having some form of struggle or marginalization, while the narrative doesn't show any characters with visible privilege or ease",
+      "location": "Character profiles for Jordan, Maya, Ben",
+      "harmPotential": "Low immediate harm, but the absence of any character with obvious privilege could inadvertently suggest that all students of color or from diverse backgrounds are struggling, or that struggle is the default for diversity. This risks a subtle form of stereotype (diverse = difficult).",
+      "recommendation": "Consider adding a minor character (even in background) who is clearly privileged and comfortable, to show that diversity exists across all socioeconomic and social positions. Alternatively, ensure that at least one of the main characters (perhaps Jordan) has moments of genuine ease and comfort that aren't framed as compensating for struggle, normalizing the idea that students of color and diverse students can simply exist without constant adversity.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Excellent character complexity: All five main characters are multi-dimensional with realistic flaws, contradictions, and internal lives. None are one-note or purely good/bad.",
+    "Strong ethical framework for player choices: The five choice points are genuinely distinct and have clear ethical dimensions. The game doesn't pretend there's one 'right' answer, but does differentiate between choices with different values.",
+    "Authentic representation of middle school social dynamics: The portrayal of how social hierarchies form, how cruelty happens casually, and how belonging feels urgent is realistic and age-appropriate.",
+    "Diverse cast with intersectional identities: The main characters represent multiple racial/ethnic backgrounds, family structures, and socioeconomic positions. No single character is the 'diversity token.'",
+    "Nuanced portrayal of a struggling teacher: Ms. Alvarez is shown as caring but overloaded, which models realistic adult limitations without excusing them entirely.",
+    "Player agency in identity formation: The game explicitly frames the day as a moment where Riley is deciding 'who to be,' which normalizes identity exploration and gives players permission to experiment.",
+    "Inclusive pronoun customization: Offering she/he/they pronouns for the player character is affirming and normalizing.",
+    "Realistic consequences for social choices: The narrative shows that social choices have ripple effects (Ben's relief, Maya's cautious warmth, Jordan's moment of accountability), teaching players that their actions matter.",
+    "Ethical clarity on complicity: While not perfect, the narrative does frame going along with cruelty as a distinct choice with consequences, which is important modeling for this age group."
+  ],
+  "recommendations": [
+    "Strengthen Ben's character by adding at least one scene where he demonstrates confidence or agency without pre-apologizing, and ensure his arc includes non-intellectual strengths.",
+    "Expand Maya's social world to show she has connections and agency beyond Riley's attention, preventing the 'magical minority' trope.",
+    "Clarify ethical consequences for the 'conformity' path by ensuring Ben and Maya's responses show real hurt/wariness, and include internal discomfort for Riley that isn't resolved.",
+    "Add intellectual or competence-based moments for Jordan to counter the 'charisma over competence' stereotype, or frame his academic struggle with systemic context.",
+    "Ensure pronoun choices are meaningfully reflected in NPC dialogue throughout the episode, with at least one natural use of non-default pronouns.",
+    "Add a follow-up scene with Ms. Alvarez showing accountability and corrective action after she misses Ben's moment, modeling healthy adult responsibility.",
+    "Include at least one reference to Riley's split household or cultural heritage to ground these identities as real and relevant to the belonging narrative.",
+    "Consider adding a minor character with visible privilege/ease to avoid the subtle stereotype that diversity = struggle.",
+    "In future episodes, ensure that the three main peer characters (Jordan, Maya, Ben) each have moments of genuine ease, success, or joy that aren't framed as compensating for struggle."
+  ],
+  "scores": {
+    "biasAvoidance": 7,
+    "representation": 6,
+    "tropes": 7,
+    "ethicalModeling": 7,
+    "culturalSensitivity": 6,
+    "overall": 6.8
+  },
+  "flaggedContent": [
+    {
+      "type": "PORTRAYAL",
+      "location": "Ben Korlewski character profile and scenes 6-9",
+      "content": "Ben is consistently portrayed as apologizing, stammering, and self-deprecating, with limited counter-balance showing confidence or non-intellectual strengths",
+      "concern": "Players with anxiety may internalize that anxious kids are primarily defined by nervousness. The character lacks sufficient agency or moments of genuine confidence.",
+      "suggestion": "Add scenes showing Ben's observational intelligence, dry humor, or kindness in ways that don't require him to pre-apologize. Include at least one moment where he initiates something confidently."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Maya Oyelaran character profile and scenes 4-5, 11a",
+      "content": "Maya is isolated, artistically talented, and primarily exists in scenes where Riley notices/chooses her, fitting the 'magical minority' pattern",
+      "concern": "Black/Brown characters are often portrayed as isolated and defined by special skills, existing to validate protagonists. Maya's agency is limited to responding to Riley's interest.",
+      "suggestion": "Show Maya has independent social connections or pursuits. Include dialogue where she actively chooses solitude for creative reasons. Ensure future episodes show her pursuing her own goals."
+    },
+    {
+      "type": "DECISION",
+      "location": "Choice-3:c (laugh along with Jordan's joke) and Choice-4:b (stay quiet, help privately)",
+      "content": "These choices receive minimal consequences, and the narrative doesn't clearly frame complicity in unkindness as ethically distinct from speaking up",
+      "concern": "Players may not recognize that silence/laughter in response to cruelty is an active choice with consequences. The narrative flattens the ethical distinction between paths.",
+      "suggestion": "Ensure that in scenes following these choices, Ben's hurt is visible and lasting, and Riley experiences internal discomfort. In branch dialogue, show Ben or Maya noticing the complicity, creating accountability."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Jordan Cho-Williams character profile, particularly 'secrets' section",
+      "content": "Jordan is charismatic, socially central, academically failing, and forging signatures—a combination that risks 'charisma over competence' stereotype for students of color",
+      "concern": "The narrative could reinforce the stereotype that students of color succeed through charm rather than competence, without counter-balance showing intellectual capability.",
+      "suggestion": "Add a scene showing Jordan's intellectual capability in a domain he cares about, or frame his academic struggle with systemic context (poor teaching, learning difference, home instability). Show him taking agency in addressing the problem."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Ms. Alvarez character profile and scenes 6, 8",
+      "content": "Ms. Alvarez misses Ben's moment of humiliation and the narrative frames this as inevitable consequence of being overloaded, without showing corrective action or accountability",
+      "concern": "For players experiencing actual neglect from educators, this could normalize adult oversight failures rather than modeling accountability. It misses an opportunity to show what healthy adult responsibility looks like.",
+      "suggestion": "Add a scene where Ms. Alvarez notices the dynamic after the fact and takes action—pulling Riley aside, restructuring group work, or showing self-awareness about what she missed. Model accountability without blaming her personally."
+    }
+  ],
+  "summary": {
+    "verdict": "No verdict provided",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [],
+    "strengths": [],
+    "readyForPublication": false
+  }
+}

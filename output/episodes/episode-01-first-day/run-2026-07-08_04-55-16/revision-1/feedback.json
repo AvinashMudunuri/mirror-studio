@@ -1,0 +1,103 @@
+{
+  "failing": [
+    "qaReviewer",
+    "gameDesigner",
+    "ethicsReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-11a has defaultNextScene 'END' but also appears in choice-5 options, creating ambiguous termination. The choice system should be the authoritative path. — Suggested fix: Remove defaultNextScene from scenes 11a, 11b, 11c since they are exclusively reached via choice-5 options. These scenes should only have transition.type='default' with no defaultNextScene field, OR explicitly set defaultNextScene to null. (location: scenes[10].defaultNextScene and choices[4].options[*].nextScene)",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-11a, scene-11b, and scene-11c lack transition.choiceId field. Per data model, scenes with choices should reference which choice drives them. — Suggested fix: Update all three final scenes to have transition: { type: 'default', nextScene: 'END' } and remove defaultNextScene field, OR change to transition: { type: 'choice', choiceId: 'choice-5' } if they should show the choice UI. (location: scenes[10].transition, scenes[11].transition, scenes[12].transition)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Trait mapping in choices is incomplete. Choice-5 (final choice) has no traitMapping defined, but all other choices do. This choice significantly impacts player identity and should affect traits. — Suggested fix: Add traitMapping to choice-5. Suggested: a: {EMPATHY: 2, CONFIDENCE: 1}, b: {CONFIDENCE: 1, ADAPTABILITY: -1}, c: {ADAPTABILITY: 2, CONFIDENCE: 1} (location: choices[4].traitMapping)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Scene 4 (Cafeteria Map) lacks player agency - pure observation with no interactive choice framing until the actual choice point — Suggested fix: Convert the cafeteria scan into an interactive 'choose what to notice' moment: give player 2-3 micro-choices about what they observe (Jordan's table dynamics, Maya's isolation, empty seats) before the main seating choice. This maintains tension and keeps agency constant. (location: Scene 4: The Cafeteria Map)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Choice 2 (lunch seating) has an invisible 'correct' answer that maps to the game's preferred path - sitting with Maya triggers the 'authentic' branch more strongly — Suggested fix: Neutralize the emotional framing in 5b: make Jordan's table genuinely warm and low-cost in the moment, with consequences that emerge later (Episode 2+) rather than immediate guilt. Let players feel good about their choice today and discover the trade-offs through gameplay, not narrator judgment. (location: Choice 2: The Cafeteria Map + Scene 5a/5b/5c outcomes)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Choice 4 (Ben's public moment) is functionally a morality test, not a genuine dilemma - the 'right' choice (4a) is telegraphed by the setup and Ms. Alvarez's immediate approval — Suggested fix: Reframe 4a and 4b as genuinely different strategies with different payoffs: 4a (speak up) gains Ben's trust but marks player as 'the defender' socially; 4b (quiet support later) builds slower trust but keeps player under Jordan's radar. Make both feel strategically valid, not morally ranked. (location: Scene 8 + Choice 4 + Scene 9a/9b/9c)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Three branching outcomes (authentic, popularity, balanced) are theoretically distinct but converge heavily in final scene - all three paths end with player making a final choice (5a/5b/5c) that resets the arc — Suggested fix: Make Scene 11 choices path-dependent: if player chose 2b (Jordan's table) + 3c (laughed at Ben), then 5a (catch Ben/Maya) should trigger branch dialogue showing skepticism/wariness from Ben and Maya (see branch-popularity-conformity lines already in data). This is partially present but should be more prominent. Alternatively, lock final choice based on earlier path (popularity players only see 5b available, etc.). (location: Scene 11a/11b/11c + branch dialogue)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "The episode frames Jordan's casual cruelty (mocking Ben in scenes 6 and 8) as a minor social misstep rather than genuinely harmful behavior. While the narrative offers the player a choice to intervene, it doesn't clearly establish that Jordan's behavior is wrong—only that the player can choose to respond differently. — Recommendation: Add a brief moment where Ms. Alvarez or another character (not necessarily the player) addresses the inappropriateness of the snickering. This doesn't need to be heavy-handed—a simple redirect ('Hey, that's not the tone we use in here') establishes a clear ethical boundary. Alternatively, if the player chooses to defend Ben (scene 7a), have Jordan show a moment of genuine recognition that his comment was unkind, not just social recalibration. This models accountability and growth. (location: Scenes 6-8, particularly Jordan's stage-whispered comment and the snickering that follows)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Maya is portrayed as isolated and lonely, with her introversion and artistic interests framed as reasons for social exclusion rather than as neutral personality traits. While her character is complex and not stereotyped, the narrative subtly suggests that being quiet and artistic naturally leads to being alone, without exploring systemic factors or her own agency in choosing solitude. — Recommendation: Clarify Maya's agency in scene 5a. When the player sits with her, have Maya indicate that she *chose* to sit alone (not that she was forced to), and that she's genuinely comfortable with solitude—but also open to connection when it feels safe. Add a line like: 'I'm used to it. Not because I have to be—because I like my own company. But you're not... annoying.' This reframes her isolation as a choice, not a consequence of her identity. (location: Scenes 4-5a, particularly the description of Maya eating alone and the implication that she's resigned to isolation)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "branchDialogue entries reference scenes (scene-11a, scene-11b, scene-11c) but the branch-triggering logic is unclear. branchDialogue keyed by sceneId + branchId, but outcomes array uses triggeredBy with choice paths. No mechanism defined for which branch fires at which scene. — Suggested fix: Clarify: (1) Each outcome branch should map to exactly ONE ending scene (11a, 11b, or 11c), not all three. (2) branchDialogue should only include entries for scenes where branching actually occurs. (3) Document that branch selection is determined by matching player's choice history against triggeredBy lists. (location: branchDialogue[*].sceneId and outcomes[*].triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "branchDialogue entries for scene-11a include dialogue from both 'authentic-belonging' and 'popularity-conformity' branches, but scene-11a is only reachable via choice-5 option 'a' (catch up with Ben and Maya). This scene should only show authentic-belonging branch dialogue, not popularity-conformity. — Suggested fix: Remove branchDialogue entry with sceneId='scene-11a' and branchId='branch-popularity-conformity'. Keep only the authentic-belonging variant for 11a. Repeat for 11b (remove authentic-belonging variant) and 11c (remove popularity-conformity variant). (location: branchDialogue[0] (scene-11a, branch-authentic-belonging) and branchDialogue[1] (scene-11a, branch-popularity-conformity))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome branch 'branch-balanced-growth' is triggered by choice paths including choice-2:c, choice-3:b, choice-4:c, choice-5:c, but scene-11c (the ending for this branch) has branchDialogue entries for all three branches (authentic, popularity, balanced). Only balanced-growth dialogue should appear at scene-11c. — Suggested fix: Remove branchDialogue entries for scene-11c with branchId='branch-authentic-belonging' and branchId='branch-popularity-conformity'. Keep only branch-balanced-growth. (location: outcomes[2].triggeredBy and branchDialogue entries for scene-11c)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-11b (the popularity path ending) has branchDialogue entries for both 'popularity-conformity' and 'authentic-belonging' branches. Only popularity-conformity should appear here, since scene-11b is reached via choice-5:b (join Jordan's group). — Suggested fix: Remove branchDialogue entry for scene-11b with branchId='branch-authentic-belonging'. Keep only popularity-conformity. (location: branchDialogue entries for scene-11b)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Character 'Ben' is referenced in scene-11c dialogue (branchDialogue) but the scene's characters array does not include Ben. Per schema, characters array should list all characters present in that scene. — Suggested fix: RETRACTED: Scene-11c does include Ben in characters array. This is correct. (location: scenes[12].characters vs branchDialogue[6].lines[*].character)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-11b (popularity path) has branchDialogue entry 'branch-authentic-belonging' with dialogue where Maya watches player go and player feels guilt. This is thematically inconsistent with the 'popularity-conformity' path, which should show player fully committing to Jordan without regret (or at least not surfacing it). — Suggested fix: Delete branchDialogue entry with sceneId='scene-11b' and branchId='branch-authentic-belonging'. Keep only the popularity-conformity variant for scene-11b. (location: branchDialogue[3] (scene-11b, branch-authentic-belonging))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene-11a (authentic path) has branchDialogue entry 'branch-popularity-conformity' with dialogue acknowledging earlier betrayals of Ben and Maya. This contradicts the authentic-belonging path, which should show player consistently choosing them throughout the day. — Suggested fix: Delete branchDialogue entry with sceneId='scene-11a' and branchId='branch-popularity-conformity'. Keep only the authentic-belonging variant for scene-11a. (location: branchDialogue[1] (scene-11a, branch-popularity-conformity))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "The branching system is fundamentally broken. Three ending scenes (11a, 11b, 11c) each have dialogue for multiple branches, but the triggeredBy logic in outcomes suggests each branch should lead to ONE specific ending scene. Current setup allows a player on the 'authentic-belonging' path to reach scene-11b (popularity ending) and see authentic-belonging dialogue, which is incoherent. — Suggested fix: Restructure: (1) Remove all branchDialogue entries except those matching the intended scene+branch pairs. (2) Ensure choice-5 options route to the correct scenes based on branch logic. (3) Document: if player's choice history matches branch X, they reach scene Y and see only branchDialogue[sceneId=Y, branchId=X]. (location: outcomes[*].triggeredBy vs scenes[10-12] vs branchDialogue[*])",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Ben's character relies heavily on self-deprecation and anxiety as defining traits, with limited positive agency or accomplishment shown in the episode. While his nervousness is contextually appropriate for a new school situation, the narrative consistently frames him through a lens of inadequacy rather than strength. — Recommendation: Add at least one moment where Ben demonstrates competence or self-advocacy independent of player intervention. For example: In scene 8, after Ms. Alvarez asks him to present, Ben could stumble initially but then recover with genuine confidence when discussing his actual idea (emotional weather mapping). This shows anxiety as a response to pressure, not a character flaw. Alternatively, add a brief scene where Ben initiates something with the player rather than always being rescued. (location: Ben's dialogue and characterization throughout (scenes 6-9, particularly scenes 7c, 8, 9b))",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Sam Okafor's characterization relies heavily on quiet, withdrawn traits without sufficient exploration of why or agency in changing the dynamic. Risk of reinforcing 'quiet Asian boy' stereotype.",
+      "location": "Character profile: Sam Okafor; scenes 4b, 6, 8a",
+      "harmPotential": "Asian students may see themselves reflected only as passive, socially isolated, or dependent on others' intervention. Normalizes invisibility as an inherent trait rather than a response to social exclusion.",
+      "recommendation": "Expand Sam's internal complexity: show his dry humor as active choice, not just defense mechanism. Give him moments where he initiates connection (scene 4b-invite-aftermath does this well—expand it). Add dialogue showing he has interests/opinions beyond being 'the quiet one.' Consider a scene where Sam's quietness is strategic choice, not anxiety-driven.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Jordan's cruelty (tripping Sam) is addressed only through Maya's reaction, not through Jordan's own accountability. Jordan's half-apology at end (scene-7) is vague and doesn't require genuine reckoning.",
+      "location": "Scene 4a (tray incident); scene-7 (half-apology); scene 8b outcome",
+      "harmPotential": "Players may learn that cruelty can be smoothed over with a non-specific 'that was messed up' without actual apology or changed behavior. Teaches that social dominance can persist without real consequences. Bullying behavior isn't modeled as having lasting impact.",
+      "recommendation": "If Maya chooses to defend Sam (4a-defend-aftermath), have a follow-up where Jordan must actually engage with what she did—not just a throwaway line. Consider a scene where Sam directly addresses Jordan about the incident, with Jordan having to respond substantively. Alternatively, if the design keeps the half-apology, show it landing as insufficient through Sam's reaction ('thanks, but...' or continued distance).",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex Torres-Mireles is the only character explicitly coded as non-binary (they/them pronouns). While representation is good, Alex is also characterized as 'restlessly funny,' 'allergic to stillness,' and dealing with transience/instability. Risk of coding neurodivergence or anxiety onto the non-binary character without naming it.",
+      "location": "Character profile: Alex; scenes 4c, 8c",
+      "harmPotential": "Non-binary players may see themselves reflected as inherently chaotic/unstable. The combination of non-binary identity + constant movement + fear of impermanence could reinforce stereotype that non-binary identity is tied to instability or 'not settling down.'",
+      "recommendation": "Clarify whether Alex's restlessness is personality, anxiety response to transience, or neurodivergence—and name it explicitly if it's the latter. Give Alex moments of stillness/grounding that show intentionality, not just constant motion. Consider adding a line where Alex reflects on their own stability needs vs. external circumstances.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Devon Park is the only character explicitly coded as having anxiety/perfectionism tied to family pressure (sibling comparison, middle-child invisibility). While realistic, this is portrayed as a character flaw to overcome, not as a valid response to real family dynamics. No counter-narrative showing his anxiety as understandable.",
+      "location": "Character profile: Devon; scenes 6, 6a-speak-aftermath",
+      "harmPotential": "Players with similar family pressure may internalize their anxiety as a personal failing rather than a reasonable response to real circumstances. The episode frames Devon's need for excellence as something to 'manage' rather than something the family system created.",
+      "recommendation": "Add a moment where Ms. Alvarez or another adult acknowledges Devon's pressure is real, not just in his head. Show that his competitiveness is understandable even if it's not always productive. If Maya defends Sam's idea (6a), have Devon's response include recognition that he was defensive, not just that he was wrong.",
+      "priority": 6
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Ms. Alvarez is the only adult character and is portrayed as tired/burnt out. While realistic, this is the only model of adult professionalism shown. No counter-example of an adult who's engaged and not exhausted.",
+      "location": "Character profile: Ms. Alvarez; scenes 5a, 5b, 5c",
+      "harmPotential": "Low—this is one episode. But over a season, could normalize teacher burnout as inevitable rather than systemic problem worth addressing.",
+      "recommendation": "Not urgent for this episode, but for season arc: consider introducing another adult character (counselor, coach, parent) who models engaged, sustainable professionalism. For now, add one line showing Alvarez's intervention is deliberate care, not just tired habit.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "CULTURAL_SENSITIVITY",
+      "issue": "Character names suggest diverse backgrounds (Ferreira, Reyes, Okafor, Torres-Mireles, Park, Alvarez) but cultural identity is not explicitly explored or acknowledged in the episode. Diversity is present but not normalized through dialogue/interaction.",
+      "location": "Character names throughout; no explicit cultural references in dialogue",
+      "harmPotential": "Low—names alone don't cause harm. But absence of any cultural acknowledgment could read as 'diversity as window dressing' rather than authentic representation. Players from these backgrounds may not see their cultures reflected in actual character experience.",
+      "recommendation": "Not necessary to add explicit cultural content, but consider small, natural moments: Maya's mom's work as home health aide and catering (already mentioned) could include cultural food reference; Sam's sketchbook could reflect his interests; Alex's movement/doodling could have cultural roots. Keep it light and authentic, not performative.",
+      "priority": 2
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'bridge-builder' path (choice-5:c) is presented as the most ethically complex/ambitious option, but it's not clearly framed as harder or carrying its own costs. Risk of making it seem like the 'right' answer without showing the actual social risk.",
+      "location": "Scene 8c; choice-5 outcomes",
+      "harmPotential": "Low—but players may feel pressured toward the 'bridge-builder' path as the 'correct' moral choice without understanding the real social risk of inviting Jordan (who bullied Sam) to a table with Sam. Could oversimplify reconciliation.",
+      "recommendation": "Add a note in scene 8c acknowledging the risk: 'This is the hardest ask. You're asking Sam to share space with someone who hurt him, and asking Jordan to show up differently. It might not work.' This frames it as brave, not just right.",
+      "priority": 4
+    }
+  ],
+  "strengths": [
+    "Diverse cast with authentic, complex characterization—no one is a stereotype or one-dimensional",
+    "Strong ethical decision modeling overall: player choices have visible, immediate consequences that match actions",
+    "Multiple valid paths forward (authentic connection, bridge-building, fitting in) without one being obviously 'correct'—respects player agency",
+    "Sam's characterization includes genuine humor and perceptiveness, not just victimhood—he has agency and wit",
+    "Jordan's cruelty is not glorified; it's framed as a pattern with social cost, and she shows a crack of accountability",
+    "Ms. Alvarez's intervention is deliberately kind without being patronizing—she respects student agency while creating structure",
+    "Age-appropriate content: no inappropriate power dynamics, no romanticization of harmful behavior, identity exploration is supportive",
+    "Intersectionality present: characters have multiple identities (family structure, socioeconomic status, personality, social position) not reduced to one trait",
+    "Inclusive representation of social anxiety, perfectionism, and social isolation without pathologizing—normalized as part of middle school experience",
+    "LGBTQ+ representation (Alex's they/them pronouns) is normalized, not made special or plot-central"
+  ],
+  "recommendations": [
+    "Expand Sam's agency: Give him more moments where he initiates connection or makes strategic choices about his quietness, not just reacts to others' kindness",
+    "Strengthen Jordan's accountability: Require more substantive reckoning if player defends Sam, or show her half-apology landing as insufficient",
+    "Clarify Alex's characterization: Distinguish between personality, anxiety response to transience, and any neurodivergence; give moments of intentional stillness",
+    "Acknowledge Devon's family pressure as real: Add a moment where an adult validates that his anxiety is understandable, even if his response needs adjustment",
+    "Frame bridge-builder path with appropriate risk: Acknowledge that inviting Jordan to Sam's table is the hardest ask and might not work",
+    "Consider adding small cultural touchstones: Not required, but could deepen authenticity (food references, art interests, family dynamics that reflect cultural background)",
+    "For season arc: Introduce another adult model who isn't burnt out, to avoid normalizing teacher exhaustion as inevitable"
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 7,
+    "tropes": 8,
+    "ethicalModeling": 7,
+    "culturalSensitivity": 7,
+    "overall": 7
+  },
+  "flaggedContent": [
+    {
+      "type": "PORTRAYAL",
+      "location": "Scene 4a (tray incident)",
+      "content": "Jordan trips Sam 'as a joke' and the table erupts laughing; Maya's reaction determines whether this is addressed",
+      "concern": "Bullying behavior is presented as normal social currency. If Maya doesn't defend Sam, the incident is smoothed over without consequences, potentially normalizing cruelty as acceptable if no one objects.",
+      "suggestion": "Consider adding a small consequence even if Maya doesn't defend Sam—a moment where Sam's body language shows he's hurt, or where the table's energy shifts slightly. This teaches that harm happens regardless of whether bystanders intervene, and has weight."
+    },
+    {
+      "type": "NARRATIVE",
+      "location": "Scene 6 (project conflict)",
+      "content": "Devon's anxiety about his brother's grade is revealed as motivation for steamrolling Sam's idea",
+      "concern": "While realistic, this could read as excusing Devon's behavior ('he's anxious, so it's understandable'). Risk of teaching players that anxiety justifies dismissing others.",
+      "suggestion": "If Maya defends Sam (6a), have Devon acknowledge his anxiety AND that it doesn't justify talking over Sam. Frame it as 'I was scared, and I handled it badly' not just 'I was scared, so I did this.'"
+    },
+    {
+      "type": "DECISION",
+      "location": "Choice-3a (popular table, Sam's tray incident)",
+      "content": "Three options: defend Sam, laugh along, or deflect—but no option to express discomfort without taking action",
+      "concern": "Doesn't model that you can feel conflicted about social pressure without immediately choosing a side. Could make players feel like they must be either 'good' (defend) or 'bad' (laugh/deflect).",
+      "suggestion": "Consider adding a fourth option: 'Feel uncomfortable but say something small and non-confrontational' that shows middle ground. Or add internal narration showing Maya's conflict regardless of choice."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Character profile: Sam Okafor",
+      "content": "Described as 'slight build,' 'hunched,' 'goes very still,' 'flinches,' 'makes himself smaller'—all physical markers of anxiety/trauma response",
+      "concern": "While realistic, the accumulation of these traits without counterbalance could reinforce 'Asian boy as anxious/victimized' stereotype. No mention of his physical strength, confidence in specific contexts, or non-anxiety-driven reasons for his quietness.",
+      "suggestion": "Add physical descriptions showing Sam's agency: 'sits up straighter when he's talking about something he cares about,' 'has a steady hand when he draws,' 'moves with purpose when he knows where he's going.' Balance vulnerability with capability."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Scene 4c (Alex at empty table)",
+      "content": "Alex is introduced as someone who's moved three times in four years, doesn't know if they'll be here past October, has a folder of unsent videos from every school they've left",
+      "concern": "Concentration of instability/transience markers on the non-binary character could reinforce 'non-binary = unstable/temporary' association. Alex's identity and their instability are presented in close proximity.",
+      "suggestion": "Separate these elements: Show Alex as grounded/intentional in some ways (their art, their friendships, their values) even if their living situation is unstable. Make clear that transience is circumstance, not identity."
+    }
+  ],
+  "summary": {
+    "verdict": "This is a strong, ethically sound episode with authentic, complex characters and clear moral modeling. Diverse representation is present and generally well-handled. The main concerns are around depth of representation for specific characters (Sam's agency, Alex's stability, Devon's accountability) and ensuring that ethical choices are framed with appropriate complexity and consequence. No content is harmful or inappropriate for the target age. Ready for publication with recommended revisions.",
+    "criticalIssues": [],
+    "majorConcerns": [
+      "Sam Okafor's characterization risks reinforcing 'quiet Asian boy' stereotype—expand his agency and show his quietness as strategic choice, not just anxiety response",
+      "Jordan's cruelty (tripping Sam) needs more substantive accountability than a vague half-apology—require real reckoning if player defends Sam",
+      "Alex Torres-Mireles' combination of non-binary identity + constant restlessness + fear of impermanence could code neurodivergence/instability onto non-binary identity—clarify and separate these elements",
+      "Devon's family anxiety is portrayed as character flaw to overcome, not as understandable response to real family pressure—add validation from adult character"
+    ],
+    "minorNotes": [
+      "Ms. Alvarez is only adult character shown; she's burnt out. Consider introducing another adult model for season arc.",
+      "Cultural diversity is present (names, backgrounds) but not explicitly explored in dialogue—consider adding small, natural cultural touchstones",
+      "Bridge-builder path (choice-5:c) should be framed as carrying real social risk, not just as 'the right answer'",
+      "Consider adding physical descriptions to Sam that show capability/agency alongside vulnerability",
+      "Add a choice option that models middle-ground response to social pressure (discomfort without immediate action)"
+    ],
+    "strengths": [
+      "Diverse, complex characters with authentic motivations and agency",
+      "Strong ethical decision modeling with visible, proportionate consequences",
+      "Multiple valid paths forward respecting player choice",
+      "Age-appropriate content with healthy power dynamics",
+      "Normalized LGBTQ+ representation (Alex's pronouns)",
+      "No glorification of harmful behavior; cruelty is framed as having social cost",
+      "Intersectional character design (multiple identities, not reduced to one trait)",
+      "Inclusive representation of social anxiety and social isolation without pathologizing"
+    ],
+    "readyForPublication": true
+  }
+}

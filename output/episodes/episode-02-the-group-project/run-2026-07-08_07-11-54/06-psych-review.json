@@ -1,0 +1,96 @@
+{
+  "status": "APPROVED",
+  "concerns": [
+    {
+      "severity": "MINOR",
+      "category": "EMOTIONAL_SAFETY",
+      "issue": "Social exclusion and peer rejection are central to the narrative tension, which could resonate intensely with vulnerable teens already experiencing isolation",
+      "location": "Throughout episode, particularly scenes 2a-2c (cafeteria choices), scene 6 (party invitation), scene 9c (public credit deflection)",
+      "recommendation": "Include framing in episode introduction or teacher guide emphasizing that the discomfort characters experience is normal and survivable, and that choosing integrity often feels lonely in the moment but builds real connection. Consider optional reflection prompt post-episode for isolated teens.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "EDUCATIONAL",
+      "issue": "The 'branch-conformist' path (choice-1:a → choice-2a:a → choice-3:c → choice-4:a → choice-5:c) models peer pressure compliance and social dishonesty without explicit consequences or reflection opportunity within that branch",
+      "location": "Scene 11b (Missed Chance) - the conformist branch ending",
+      "recommendation": "Add a brief internal monologue or follow-up scene in the conformist branch where Sol experiences the emotional cost of her choices (Alex's withdrawal, Ms. Chen's observation, her own discomfort), making the consequence visible even in the 'easier' path. This prevents the episode from accidentally rewarding social compliance.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "AGE_INAPPROPRIATE",
+      "issue": "Sol's internal monologue references her late abuela and unresolved grief; while age-appropriate and realistic, this background trauma is mentioned but not explored within this episode, which could leave some viewers wanting support resources",
+      "location": "Character background (Sol's profile) and referenced in voiceGuidelines",
+      "recommendation": "Ensure any episode guide or follow-up materials acknowledge grief/loss as a theme in Sol's character arc. Not a content issue, but a resource issue—make sure support information is available if teens recognize themselves in Sol's loss.",
+      "mustFix": false
+    }
+  ],
+  "recommendations": [
+    "Add optional post-episode reflection prompts for players who chose the 'conformist' path, helping them examine the emotional cost of their choices without shame",
+    "Include a brief teacher/facilitator guide note about how to support teens who identify strongly with Alex's experience of exclusion or social invisibility",
+    "Consider adding a 'what happened next' epilogue scene (optional) that shows the longer-term consequences of each branch—particularly the conformist path—to reinforce that social ease in the moment doesn't equal long-term belonging",
+    "Ensure platform provides clear, accessible mental health resources for topics like social anxiety, belonging, and friendship conflict in the resource library",
+    "The party scene (7a) could benefit from a brief note in facilitator guide about how to discuss peer pressure that feels warm/friendly rather than overtly coercive, since this is a key educational goal"
+  ],
+  "triggerWarnings": [
+    {
+      "category": "BULLYING",
+      "description": "Social exclusion, cutting jokes at someone's expense (Priya's impression of Alex), being laughed at by peers, public embarrassment during presentation",
+      "severity": "MODERATE",
+      "location": "Scenes 2a (the joke), 9c (public fumble), throughout cafeteria dynamics"
+    },
+    {
+      "category": "SELF_ESTEEM",
+      "description": "Protagonist experiences self-doubt about authenticity, questions whether peers would like 'the real her,' worries about fitting in and being labeled, experiences guilt over social choices",
+      "severity": "MODERATE",
+      "location": "Sol's character background, internal monologues throughout, particularly scenes 1, 4, 6, 8"
+    },
+    {
+      "category": "ANXIETY",
+      "description": "Social anxiety (rehearsing conversations, checking if it's safe to laugh, worrying about judgment), decision paralysis in high-stakes moments, physical anxiety responses (twisting ring, drawing nervous stars)",
+      "severity": "MODERATE",
+      "location": "Sol's personality/mannerisms, scenes 1, 6, 8; Alex's preemptive withdrawal pattern in scenes 2b, 4, 6"
+    },
+    {
+      "category": "LOSS",
+      "description": "Sol's late abuela (died last spring) is referenced as a source of emotional grounding; Sol's guilt over abandoning a friend at previous school",
+      "severity": "MILD",
+      "location": "Sol's character background and secrets"
+    },
+    {
+      "category": "FAMILY_CONFLICT",
+      "description": "Sol's guilt about her mother's exhaustion and long work hours; Alex's absent/distant father and single-parent household stress; Priya's undisclosed home responsibilities",
+      "severity": "MILD",
+      "location": "Character backgrounds (Sol, Alex, Priya profiles)"
+    }
+  ],
+  "scores": {
+    "ageAppropriateness": 9,
+    "emotionalSafety": 8,
+    "educationalValue": 9,
+    "mentalHealthRep": 8,
+    "overall": 8.5
+  },
+  "summary": {
+    "strengths": [
+      "Exceptional age-appropriateness: language, pacing, and emotional complexity match 11-14 cognitive development perfectly. Dialogue feels authentically teen without condescension.",
+      "Nuanced peer pressure modeling: The episode brilliantly illustrates that peer pressure is often warm, friendly, and non-coercive (Jordan's genuine kindness, Priya's humor), making it harder to recognize and resist—this is psychologically sophisticated and valuable.",
+      "Strong social-emotional learning: Multiple choice points teach that integrity is built through small, repeatable decisions rather than one dramatic moment. Realistic consequences (Alex's withdrawal, Ms. Chen's observation) reinforce learning.",
+      "Healthy conflict resolution: No characters are villainized; even Priya is shown as complex and capable of respect. Conflicts are resolved through communication and choice, not punishment or shame.",
+      "Authentic representation of adolescent anxiety and self-doubt: Sol's internal experience (rehearsing conversations, checking if it's safe to laugh, questioning authenticity) is realistic and validating for anxious teens.",
+      "Multiple narrative branches respect player agency: The conformist, authentic, and redemption paths all feel earned and meaningful, allowing different teens to see themselves reflected.",
+      "Diverse identity representation: Characters include Filipinx-American (Jordan), Indian-American (Priya), Latinx (Sol), and Japanese-American/Latinx (Alex) representation that feels integrated, not tokenized. LGBTQ+ inclusion (Alex's they/them pronouns) is normalized.",
+      "Teacher/adult character is realistic: Ms. Chen is observant and fair without being a savior figure; she holds boundaries and lets consequences unfold naturally.",
+      "Emotional realism: The episode doesn't shy away from the genuine discomfort of social choice, but frames it as survivable and meaningful rather than catastrophic."
+    ],
+    "improvements": [
+      "The conformist branch (choice path leading to scene 11b) could more explicitly show emotional consequences within that branch, not just in contrast to other paths. Currently, the 'easier' social path might feel consequence-free to some players.",
+      "Consider adding one optional reflection scene or prompt for players who chose to laugh at Alex's expense, helping them examine that moment without shame—this would deepen the learning for that branch.",
+      "The episode's focus on Sol's internal experience is excellent, but Alex's internal experience is only shown through behavior/dialogue. One brief scene from Alex's POV (e.g., internal monologue while drawing, or a moment of hope/hurt) could deepen empathy.",
+      "Priya's character is complex and well-written, but her final 'respect' nod (scene 10) could be slightly more explicit in the dialogue to ensure all players catch the character growth, not just perceptive ones.",
+      "The party scene (7a) could include one brief moment showing the social cost of Sol's choice (e.g., a moment of not fully enjoying it, or a text from Alex that lands harder), making the 'easy' path feel less consequence-free."
+    ],
+    "readyForAudience": true
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Ben's character relies heavily on self-deprecation and anxiety as defining traits, with limited positive agency or moments of genuine confidence outside of niche interests (cartography, deep-sea creatures). While this reflects real neurodivergent/anxious teen experiences, the pattern risks normalizing self-erasure as inevitable for socially struggling students.",
+      "location": "Ben Korlewski character profile and dialogue throughout scenes 6-7",
+      "harmPotential": "Anxious and neurodivergent teens may internalize that constant apologizing and self-diminishment is their 'role' rather than a pattern to work toward changing. The character lacks moments of unambiguous self-advocacy or pride that aren't immediately undercut by doubt.",
+      "recommendation": "Add at least one scene moment where Ben asserts an idea or boundary without pre-apologizing, even if it's small. Example: When player asks about the project, Ben could say 'Actually, I have a specific idea' instead of 'Sorry, probably dumb, but—' Consider showing Ben's humor landing successfully at least once without it being self-directed mockery. This preserves authenticity while modeling healthier self-advocacy.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Maya is the only character whose financial situation is explicitly referenced ('Money's tight but never talked about directly') and she's also the only character whose family structure is non-traditional (single mom + abuela). While authentic representation, the pattern of linking financial precarity to a character of color, combined with her being the 'outsider' character, risks reinforcing a subtle stereotype that marginalized students are inherently more isolated.",
+      "location": "Maya Oyelaran background and characterization",
+      "harmPotential": "Students of color from low-income or non-nuclear families may feel their circumstances are being framed as a reason for social isolation, rather than as a neutral fact of their lives. The narrative risk is that Maya's isolation is read as *caused by* her circumstances rather than as a separate social choice.",
+      "recommendation": "Explicitly show Maya has chosen her solitude and has genuine social options (the text mentions 'art club's got a whole table most days' — keep this prominent). Add a line where Maya or another character normalizes her family structure without it being tied to her outsider status. Example: 'My abuela's the one who actually gets my art' (pride, not burden). Consider giving at least one other character a non-nuclear family structure to avoid singling out the character of color.",
+      "priority": 6
+    },
+    {
+      "severity": "MAJOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The three ending paths (scene-8a, 8b, 8c) present different moral outcomes, but the 'authentic belonging' path (8a) is narratively rewarded with warmer dialogue and clearer emotional resolution, while the 'popularity' path (8b) ends with a subtle note of doubt ('That's fine. Probably fine. Everyone splits off eventually'). This creates a moral hierarchy that, while aligned with the game's values, may feel preachy to players who choose differently.",
+      "location": "Scene 8 branching outcomes and branch dialogue",
+      "harmPotential": "Players who choose the 'popularity' path may feel judged by the game's narrative framing, which could undermine the stated goal of showing 'there is no single correct way to belong.' Teens already navigating social anxiety don't need their choices subtly coded as morally inferior.",
+      "recommendation": "Equalize the emotional warmth across all three endings. Give the 'popularity' path a moment of genuine ease without the undertone of doubt. Give the 'authentic' path a moment of uncertainty or cost ('This is smaller, but it feels real' rather than pure validation). The goal is to show different *consequences*, not different *moral values*. Let players feel their choice was valid even if it wasn't the 'intended' one.",
+      "priority": 6
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPRESENTATION",
+      "issue": "Jordan is coded as East Asian (surname Cho-Williams, half-sister comparison, family split between two households). His character arc centers on anxiety about relevance and academic struggle (failing math, forging signatures). While this avoids the 'model minority' stereotype, it risks creating a different stereotype: the 'charismatic but struggling' Asian teen who masks academic failure with social performance. No other character's academic struggle is mentioned.",
+      "location": "Jordan Korlewski character profile, background, and secrets",
+      "harmPotential": "Asian students may internalize that their value comes from social charisma rather than intellectual contribution, or that academic struggle is something to hide rather than address. The pattern of 'good at people, bad at school' can reinforce a limiting identity.",
+      "recommendation": "Either (a) give Jordan a moment in the episode where his intelligence is visible despite his math struggle (e.g., his ecosystem mapping idea is genuinely smart and he knows it), or (b) add another character with academic struggle to avoid singling out the Asian character. Ideally both. Show that Jordan's struggle is real but doesn't define his capability. Consider a future episode where his academic issue surfaces and he has to choose between maintaining his image or asking for help.",
+      "priority": 6
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Ms. Alvarez is Latina (surname Alvarez, background mentions translating for parents) but her character is defined primarily through her role as an adult authority figure managing a classroom. Her cultural identity is mentioned in backstory but not reflected in her voice, values, or presence in the episode. This risks making her identity feel like a checkbox rather than an integrated part of her character.",
+      "location": "Ms. Alvarez character profile and dialogue",
+      "harmPotential": "Low — Ms. Alvarez is a well-drawn character with genuine complexity. However, Latina teachers are often invisible in media, and this character could be richer if her identity informed her teaching philosophy or perspective in visible ways.",
+      "recommendation": "Consider adding a line of dialogue or action that reflects her background authentically. Example: A teaching approach rooted in her experience as a translator/cultural bridge-builder ('I want this classroom to be a place where you don't have to translate yourself'). Or a moment where her bilingual background is mentioned naturally. This enriches her character without requiring major changes.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Riley's pronouns are player-selectable (she/they default, he/she/they available), which is excellent. However, the character description uses she/they consistently, and there's no indication in the dialogue or narrative that other characters will adapt to the player's choice. This could create a disconnect if a player selects he/him pronouns.",
+      "location": "Riley character profile and dialogue throughout",
+      "harmPotential": "Low — this is a design question rather than an ethical one. However, if the game doesn't properly implement pronoun changes in NPC dialogue, trans and non-binary players may feel erased despite the inclusive character creation option.",
+      "recommendation": "Ensure dialogue and NPC references adapt dynamically to the player's pronoun choice. This is a technical implementation note, but it's ethically important. Test that a player who selects he/him pronouns hears 'he' from NPCs, not just in character creation.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "CULTURAL_SENSITIVITY",
+      "issue": "Riley's background mentions 'Japanese-American mom and a Puerto Rican dad' with a surname 'Nakamura-Torres.' This is authentic multiracial representation, but the character's internal monologue and dialogue don't reflect any cultural identity or experience. The multiracial identity is stated but not lived in the narrative.",
+      "location": "Riley character profile and internal monologue",
+      "harmPotential": "Low — Riley's multiracial identity is present and not stereotyped. However, multiracial teens often navigate complex identity questions, and the game could deepen authenticity by acknowledging this even subtly.",
+      "recommendation": "Consider adding one internal thought or dialogue moment that reflects Riley's multiracial experience. This doesn't need to be heavy-handed. Example: An internal note about which parent they're staying with this week, or a moment of noticing who else in the room looks like them. This normalizes multiracial identity as a lived experience, not just a demographic fact.",
+      "priority": 2
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "The 'standing up for Ben' choice (scene-6a, 7a) is clearly framed as the 'right' choice through narrative rewards (Ms. Alvarez's approval, Ben's gratitude, room's respect). While this models good behavior, it may not reflect the real complexity of teen social dynamics, where standing up for someone often *does* cost social capital in ways the game doesn't fully show.",
+      "location": "Scenes 6a, 7a, and their dialogue/outcomes",
+      "harmPotential": "Low — the game is intentionally modeling positive behavior. However, teens may feel the game is oversimplifying social consequences, which could undermine credibility.",
+      "recommendation": "Consider adding a subtle cost to the 'standing up' choice that doesn't negate its value. Example: In scene-7a, after player speaks up, Jordan's eyebrow lift could be followed by a moment where one of his friends looks at player differently — not hostile, just 'noted.' This shows the choice was right *and* had a real social cost, which is more honest and actually more powerful modeling.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Diverse cast with authentic representation: Riley (multiracial), Jordan (East Asian), Maya (Black), Ms. Alvarez (Latina), Ben (Eastern European surname) — diversity is normalized, not tokenized.",
+    "Complex, flawed characters: No character is a stereotype or a 'lesson.' Jordan is charismatic *and* struggling; Maya is confident *and* guarded; Ben is anxious *and* intelligent. This reflects real teen complexity.",
+    "Multiple paths to belonging: The three ending branches explicitly reject a single 'correct' way to fit in, modeling that different social strategies have different costs/benefits rather than ranking them morally.",
+    "Ethical decision-making is player-driven, not scripted: The game doesn't tell players what's right; it shows consequences and lets them choose. This respects teen agency.",
+    "Authentic social dynamics: The portrayal of middle school social hierarchies (Jordan's table, Maya's solitude, Ben's anxiety) reflects real experiences without caricature.",
+    "Intersectional character design: Characters have multiple identity layers (family structure, academic struggle, neurodivergence, socioeconomic status) that interact naturally rather than being isolated traits.",
+    "Teacher character is realistically flawed: Ms. Alvarez is well-meaning but overloaded, which models that adults aren't all-knowing saviors — a healthy message for teens.",
+    "Inclusive pronoun options for player character: Excellent accessibility for trans and non-binary players.",
+    "Bullying is addressed without glorification: Jordan's mockery of Ben is clearly framed as unkind, and the game models multiple ways to respond without forcing a single 'correct' response."
+  ],
+  "recommendations": [
+    "Equalize narrative rewards across the three ending paths to avoid subtle moral hierarchy. All three choices should feel valid even if they have different consequences.",
+    "Add a moment where Ben demonstrates genuine confidence or self-advocacy without immediate self-doubt, to avoid normalizing constant self-erasure for anxious characters.",
+    "Ensure pronoun implementation is dynamic — test that NPC dialogue adapts to player's pronoun choice throughout the episode.",
+    "Consider adding one other character with a non-nuclear family structure to avoid singling out the character of color for this representation.",
+    "Give Jordan a visible moment of intellectual capability despite his academic struggle, to avoid the 'charismatic but academically weak' stereotype for the Asian character.",
+    "Add subtle cultural texture to Ms. Alvarez's character (dialogue, teaching philosophy) that reflects her Latina identity authentically.",
+    "Include one moment in Riley's internal monologue that acknowledges their multiracial identity as a lived experience, not just a demographic fact.",
+    "Consider adding a subtle social cost to the 'standing up for Ben' choice (e.g., being 'noted' by Jordan's group) to show the choice was right *and* had real consequences — more honest modeling."
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 7,
+    "tropes": 8,
+    "ethicalModeling": 7,
+    "culturalSensitivity": 7,
+    "overall": 7
+  },
+  "flaggedContent": [
+    {
+      "type": "PORTRAYAL",
+      "location": "Ben Korlewski character profile and dialogue",
+      "content": "Ben is defined primarily through anxiety, self-deprecation, and apologizing. His positive traits (observant, creative, funny) are mentioned but rarely shown in action without being undercut by doubt.",
+      "concern": "Risk of normalizing self-erasure as inevitable for anxious/struggling teens rather than as a pattern to work toward changing.",
+      "suggestion": "Add at least one scene moment where Ben asserts an idea or boundary confidently, even if it's small. Show his humor landing successfully without self-directed mockery at least once."
+    },
+    {
+      "type": "NARRATIVE",
+      "location": "Scene 8 branching outcomes (8a, 8b, 8c)",
+      "content": "The 'authentic belonging' path (8a) ends with warm dialogue and clear emotional validation. The 'popularity' path (8b) ends with subtle doubt ('That's fine. Probably fine.'). The 'adaptive' path (8c) is uncertain.",
+      "concern": "Creates a subtle moral hierarchy that contradicts the stated goal of showing 'there is no single correct way to belong.' Players who choose differently may feel judged by the game's narrative framing.",
+      "suggestion": "Equalize emotional warmth across endings. Give each path genuine validation while showing different consequences. Let players feel their choice was valid even if it wasn't the 'intended' one."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Jordan Cho-Williams character profile and secrets",
+      "content": "Jordan is East Asian, charismatic, socially skilled, but academically struggling (failing math, forging signatures). No other character's academic struggle is mentioned.",
+      "concern": "Risk of reinforcing 'charismatic but academically weak' stereotype for Asian character, which can limit identity and reinforce stereotype that Asian value comes from social performance rather than intellectual contribution.",
+      "suggestion": "Show Jordan's genuine intelligence despite his math struggle (his ecosystem mapping idea is smart and he knows it). Consider adding another character with academic struggle to avoid singling out the Asian character. Plan a future episode where his academic issue surfaces and he chooses between image maintenance or asking for help."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Maya Oyelaran character profile and background",
+      "content": "Maya is Black, from a low-income household ('Money's tight'), lives with single mom and abuela, and is characterized as socially isolated/choosing solitude. Financial precarity is explicitly mentioned; no other character's economic situation is referenced.",
+      "concern": "Risk of linking financial precarity to a character of color and framing it as a reason for social isolation, which can reinforce subtle stereotype that marginalized students are inherently more isolated.",
+      "suggestion": "Prominently maintain that Maya has chosen her solitude and has genuine social options (art club). Add a line normalizing her family structure without tying it to isolation. Consider giving at least one other character a non-nuclear family structure to avoid singling out the character of color."
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Ms. Alvarez character profile and dialogue",
+      "content": "Ms. Alvarez is Latina (surname, background mentions translating for parents) but her cultural identity is not reflected in her voice, values, or presence in the episode. She's defined primarily through her role as classroom manager.",
+      "concern": "Risk of making cultural identity feel like a checkbox rather than an integrated part of character. Latina teachers are often invisible in media.",
+      "suggestion": "Add dialogue or action reflecting her background authentically. Example: Teaching philosophy rooted in her experience as a translator ('I want this classroom to be a place where you don't have to translate yourself'). Or mention her bilingual background naturally in dialogue."
+    }
+  ],
+  "summary": {
+    "verdict": "No verdict provided",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [],
+    "strengths": [],
+    "readyForPublication": false
+  }
+}

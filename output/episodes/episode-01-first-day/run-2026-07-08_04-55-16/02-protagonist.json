@@ -1,0 +1,92 @@
+{
+  "character": {
+    "id": "player",
+    "name": "Riley Nakamura-Torres",
+    "age": 12,
+    "pronouns": "she/they (player can select he/she/they at game start; default profile uses she/they)",
+    "appearance": {
+      "brief": "Average height for their age, still growing into their limbs. Wears a mix of hand-me-downs from an older cousin and one or two 'first day' items they saved allowance for. Carries a backpack with pins from their old school's clubs, half peeled off.",
+      "distinctiveFeatures": [
+        "A faded friendship bracelet from their old best friend, worn but never removed",
+        "Chews the end of their pen/pencil when thinking — a habit they're trying (and failing) to break",
+        "Uneven bangs from a self-cut attempt over the summer 'for a new school, new me' moment"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "observant",
+        "adaptable",
+        "quietly stubborn",
+        "eager to please but resents that about themself"
+      ],
+      "bigFiveProfile": {
+        "openness": 8,
+        "conscientiousness": 6,
+        "extraversion": 5,
+        "agreeableness": 7,
+        "neuroticism": 6
+      },
+      "mannerisms": [
+        "Rehearses conversations in their head before saying them out loud, then says something completely different in the moment",
+        "Fidgets with the zipper pull on their backpack when nervous",
+        "Laughs a half-second late at jokes because they're busy reading the room first"
+      ],
+      "speechPatterns": [
+        "Trails off mid-sentence when unsure ('I just thought maybe— never mind.')",
+        "Uses humor as a shield in tense moments",
+        "Switches vocabulary/tone slightly depending on who they're talking to (more careful and formal with adults, looser and slangier with peers) — a skill that's becoming a source of guilt"
+      ],
+      "emotionalTendencies": "Riley feels things intensely but privately. They're quick to notice when someone else is uncomfortable and quick to fix it — often at their own expense. Under stress, they go quiet and analytical rather than emotional, which people sometimes mistake for coldness."
+    },
+    "background": {
+      "family": "Only child of a Japanese-American mom and a Puerto Rican dad, both of whom worked hard to move the family into the Ridgeline Academy district — a fact Riley knows and feels pressure about, even though nobody's said it out loud. Parents recently split time between two households due to a work relocation, so Riley is also adjusting to two different homes on top of a new school.",
+      "interests": [
+        "Drawing comics starring an alter-ego who always says the right thing",
+        "Podcasts about true crime and 'weird history' facts",
+        "Used to play travel soccer at old school, quit before the move and hasn't told anyone why"
+      ],
+      "strengths": [
+        "Genuinely good at reading people and social situations",
+        "Loyal once trust is earned",
+        "Can find common ground with almost anyone if given five minutes"
+      ],
+      "struggles": [
+        "Conflict-avoidant to the point of self-erasure — will agree with a group just to keep the peace",
+        "Deep fear of being 'the new kid' forever, of never having a place that feels solid",
+        "Struggles to trust that people will still like them once they stop performing"
+      ],
+      "secrets": [
+        "Quit soccer after being cut from the starting lineup and told the team 'moved on' without them — hasn't processed that rejection, and it's part of why fitting in now feels so high-stakes",
+        "Has a sketchbook of comics they're embarrassed about but secretly proud of"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Make it through the first day without embarrassing themself",
+        "Figure out 'who to be' at Ridgeline before people decide it for them"
+      ],
+      "unconscious": [
+        "To be chosen — to matter to a group without having to shrink or perform to earn it",
+        "To forgive themself for the soccer team's rejection by proving they're not actually 'unwantable'"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Casual middle-school vernacular; occasional flashes of wit and specificity when discussing things they care about (comics, true crime facts). Avoids sounding overly mature or performing wisdom beyond their years.",
+      "sentenceComplexity": "Short and clipped when anxious; longer and more animated when comfortable or excited about a topic.",
+      "emotionalExpressiveness": "Internally very expressive (rich inner monologue available to player via thought-choices), externally guarded until they trust someone.",
+      "examples": [
+        "\"Cool, cool, cool. Totally normal to trip in front of the entire hallway on day one. Very on brand for me, actually.\"",
+        "\"I'm not saying I'd sit with you. I'm saying there's an empty chair and gravity is a powerful force.\"",
+        "\"You ever notice how everyone already has a whole life going, and you're just... standing outside it, knocking?\""
+      ]
+    },
+    "storyRole": "Player-controlled protagonist whose choices in seating, partnering, and moments of silence/speech determine which version of 'fitting in' they build toward — the performer, the quiet observer, or the genuine connector. Riley is the emotional lens through which the player experiences Ridgeline Academy.",
+    "arcPotential": [
+      "Episode 'The First Bell': Riley's choices around Jordan (charisma vs. authenticity), lunchroom seating (safety vs. risk), and Ben's group project (dismiss vs. connect) begin sorting Riley into an identity — 'the cool kid's shadow,' 'the invisible one,' or 'the one who's just themselves' — culminating in how Riley responds when someone else is publicly humiliated.",
+      "Future episode potential: Riley confronts the soccer rejection by trying out for a new team or club, testing whether their new 'fitting in' identity can survive actual vulnerability.",
+      "Future episode potential: Riley's friendship with Ben (if nurtured) becomes a throughline questioning whether popularity and belonging are the same thing."
+    ]
+  },
+  "designNotes": "Riley is designed as a mirror-flexible protagonist (name/pronouns adjustable at game start, though this profile provides a fully-realized default identity so writers have a concrete emotional core to write toward). The soccer-rejection backstory gives Riley a private wound that directly explains their conflict-avoidance and hunger to belong — without ever needing to be stated outright in Episode 1, it should simply color their choices. The three 'fitting in' paths (performer/shadow, invisible observer, authentic connector) are baked into Riley's existing personality traits (agreeableness vs. stubbornness vs. observational honesty) so that any player choice feels like an authentic extension of who Riley already is, not an arbitrary branch. Humor is used as Riley's coping mechanism, making them likable and funny even in anxious moments, which keeps the tone from becoming too heavy for the 11-14 audience.",
+  "representationNotes": "Riley is written as biracial (Japanese-American and Puerto Rican) with a bicultural home life, reflecting the diverse urban setting without making ethnicity the plot's central conflict — it's simply part of who they are, referenced through small authentic details (family, food, language) rather than treated as an 'issue.' Pronouns are left flexible to support player customization, respecting that identity exploration is core to the target age group's real experience. The divorced/dual-household detail is included because it's an extremely common but underrepresented reality for this age group, and it adds texture to 'home' as a source of instability that mirrors the instability of the new school, without turning into an afterschool-special subplot."
+}

@@ -1,0 +1,180 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-11a has defaultNextScene 'END' but also appears in choice-5 options, creating ambiguous termination. The choice system should be the authoritative path.",
+      "location": "scenes[10].defaultNextScene and choices[4].options[*].nextScene",
+      "expectedValue": "Either remove defaultNextScene from scene-11a/11b/11c (choice-driven scenes) OR remove them from choice-5 options (not both)",
+      "actualValue": "Both mechanisms present simultaneously",
+      "fix": "Remove defaultNextScene from scenes 11a, 11b, 11c since they are exclusively reached via choice-5 options. These scenes should only have transition.type='default' with no defaultNextScene field, OR explicitly set defaultNextScene to null."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-11a, scene-11b, and scene-11c lack transition.choiceId field. Per data model, scenes with choices should reference which choice drives them.",
+      "location": "scenes[10].transition, scenes[11].transition, scenes[12].transition",
+      "expectedValue": "transition object with type='choice' and choiceId='choice-5'",
+      "actualValue": "transition object with type='default' and nextScene='END'",
+      "fix": "Update all three final scenes to have transition: { type: 'default', nextScene: 'END' } and remove defaultNextScene field, OR change to transition: { type: 'choice', choiceId: 'choice-5' } if they should show the choice UI."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "branchDialogue entries reference scenes (scene-11a, scene-11b, scene-11c) but the branch-triggering logic is unclear. branchDialogue keyed by sceneId + branchId, but outcomes array uses triggeredBy with choice paths. No mechanism defined for which branch fires at which scene.",
+      "location": "branchDialogue[*].sceneId and outcomes[*].triggeredBy",
+      "expectedValue": "Clear mapping: if player's choice history matches a branch's triggeredBy list, that branch's dialogue fires at the corresponding scene.",
+      "actualValue": "branchDialogue has 3 entries per scene (11a, 11b, 11c) with multiple branchIds, but no explicit rule for which branch applies to which scene based on prior choices.",
+      "fix": "Clarify: (1) Each outcome branch should map to exactly ONE ending scene (11a, 11b, or 11c), not all three. (2) branchDialogue should only include entries for scenes where branching actually occurs. (3) Document that branch selection is determined by matching player's choice history against triggeredBy lists."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "branchDialogue entries for scene-11a include dialogue from both 'authentic-belonging' and 'popularity-conformity' branches, but scene-11a is only reachable via choice-5 option 'a' (catch up with Ben and Maya). This scene should only show authentic-belonging branch dialogue, not popularity-conformity.",
+      "location": "branchDialogue[0] (scene-11a, branch-authentic-belonging) and branchDialogue[1] (scene-11a, branch-popularity-conformity)",
+      "expectedValue": "branchDialogue for scene-11a should only include branch-authentic-belonging (since that's the only path to 11a)",
+      "actualValue": "branchDialogue includes both authentic-belonging and popularity-conformity variants for scene-11a",
+      "fix": "Remove branchDialogue entry with sceneId='scene-11a' and branchId='branch-popularity-conformity'. Keep only the authentic-belonging variant for 11a. Repeat for 11b (remove authentic-belonging variant) and 11c (remove popularity-conformity variant)."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-balanced-growth' is triggered by choice paths including choice-2:c, choice-3:b, choice-4:c, choice-5:c, but scene-11c (the ending for this branch) has branchDialogue entries for all three branches (authentic, popularity, balanced). Only balanced-growth dialogue should appear at scene-11c.",
+      "location": "outcomes[2].triggeredBy and branchDialogue entries for scene-11c",
+      "expectedValue": "branchDialogue for scene-11c should only include branch-balanced-growth",
+      "actualValue": "branchDialogue for scene-11c includes branch-balanced-growth, branch-authentic-belonging, and branch-popularity-conformity",
+      "fix": "Remove branchDialogue entries for scene-11c with branchId='branch-authentic-belonging' and branchId='branch-popularity-conformity'. Keep only branch-balanced-growth."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene-11b (the popularity path ending) has branchDialogue entries for both 'popularity-conformity' and 'authentic-belonging' branches. Only popularity-conformity should appear here, since scene-11b is reached via choice-5:b (join Jordan's group).",
+      "location": "branchDialogue entries for scene-11b",
+      "expectedValue": "Only branchDialogue with sceneId='scene-11b' and branchId='branch-popularity-conformity'",
+      "actualValue": "branchDialogue includes both branch-popularity-conformity and branch-authentic-belonging for scene-11b",
+      "fix": "Remove branchDialogue entry for scene-11b with branchId='branch-authentic-belonging'. Keep only popularity-conformity."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Trait mapping in choices is incomplete. Choice-5 (final choice) has no traitMapping defined, but all other choices do. This choice significantly impacts player identity and should affect traits.",
+      "location": "choices[4].traitMapping",
+      "expectedValue": "traitMapping object with trait deltas for options a, b, c",
+      "actualValue": "Field is missing entirely",
+      "fix": "Add traitMapping to choice-5. Suggested: a: {EMPATHY: 2, CONFIDENCE: 1}, b: {CONFIDENCE: 1, ADAPTABILITY: -1}, c: {ADAPTABILITY: 2, CONFIDENCE: 1}"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'Ben' is referenced in scene-11c dialogue (branchDialogue) but the scene's characters array does not include Ben. Per schema, characters array should list all characters present in that scene.",
+      "location": "scenes[12].characters vs branchDialogue[6].lines[*].character",
+      "expectedValue": "scenes[12].characters should include 'Ben'",
+      "actualValue": "scenes[12].characters = ['player', 'Jordan', 'Maya', 'Ben'] — actually this IS correct. No error here.",
+      "fix": "RETRACTED: Scene-11c does include Ben in characters array. This is correct."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene-11b (popularity path) has branchDialogue entry 'branch-authentic-belonging' with dialogue where Maya watches player go and player feels guilt. This is thematically inconsistent with the 'popularity-conformity' path, which should show player fully committing to Jordan without regret (or at least not surfacing it).",
+      "location": "branchDialogue[3] (scene-11b, branch-authentic-belonging)",
+      "expectedValue": "This branchDialogue entry should not exist for scene-11b, OR if it does, it should show a different emotional tone (player fully committed, no guilt)",
+      "actualValue": "Dialogue shows player experiencing guilt and noticing Maya's disappointment, which contradicts the 'popularity-conformity' path's premise",
+      "fix": "Delete branchDialogue entry with sceneId='scene-11b' and branchId='branch-authentic-belonging'. Keep only the popularity-conformity variant for scene-11b."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene-11a (authentic path) has branchDialogue entry 'branch-popularity-conformity' with dialogue acknowledging earlier betrayals of Ben and Maya. This contradicts the authentic-belonging path, which should show player consistently choosing them throughout the day.",
+      "location": "branchDialogue[1] (scene-11a, branch-popularity-conformity)",
+      "expectedValue": "This branchDialogue entry should not exist for scene-11a, OR should only appear if player took mixed choices earlier",
+      "actualValue": "Dialogue appears at scene-11a (the authentic ending) but references earlier compromises that wouldn't happen on the authentic path",
+      "fix": "Delete branchDialogue entry with sceneId='scene-11a' and branchId='branch-popularity-conformity'. Keep only the authentic-belonging variant for scene-11a."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "The branching system is fundamentally broken. Three ending scenes (11a, 11b, 11c) each have dialogue for multiple branches, but the triggeredBy logic in outcomes suggests each branch should lead to ONE specific ending scene. Current setup allows a player on the 'authentic-belonging' path to reach scene-11b (popularity ending) and see authentic-belonging dialogue, which is incoherent.",
+      "location": "outcomes[*].triggeredBy vs scenes[10-12] vs branchDialogue[*]",
+      "expectedValue": "One-to-one mapping: branch-authentic-belonging → scene-11a only, branch-popularity-conformity → scene-11b only, branch-balanced-growth → scene-11c only. branchDialogue should only include entries for the correct scene+branch pairs.",
+      "actualValue": "Each ending scene has branchDialogue for multiple branches, creating ambiguity about which dialogue fires when",
+      "fix": "Restructure: (1) Remove all branchDialogue entries except those matching the intended scene+branch pairs. (2) Ensure choice-5 options route to the correct scenes based on branch logic. (3) Document: if player's choice history matches branch X, they reach scene Y and see only branchDialogue[sceneId=Y, branchId=X]."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-11a, 11b, 11c all have duration: 1, but they are complex ending scenes with multiple dialogue branches. Consider increasing duration to 2 to reflect the actual content complexity.",
+      "location": "scenes[10-12].duration",
+      "suggestion": "Change duration from 1 to 2 for all three final scenes."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "choiceDialogue array is defined but appears to duplicate information already in choices[*].options[*].text. Clarify whether choiceDialogue is meant to override or supplement the choice text.",
+      "location": "choiceDialogue[*]",
+      "suggestion": "Document the relationship between choices[*].options[*].text and choiceDialogue[*].options[*].text. If they're redundant, consider removing one."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Trait mapping uses CONFIDENCE, EMPATHY, ADAPTABILITY but targetTraits array lists them with different casing/format. Ensure trait IDs are consistent across the episode.",
+      "location": "choices[*].traitMapping vs targetTraits[*].traitId",
+      "suggestion": "Verify that trait IDs in traitMapping match exactly with targetTraits array. Current: targetTraits uses 'CONFIDENCE', 'EMPATHY', 'ADAPTABILITY' — confirm this matches all choice mappings."
+    },
+    {
+      "category": "STYLE",
+      "message": "Scene-3a, 3b, 3c are all very short (duration: 1) and represent different player responses to the same moment. Consider whether these should be separate scenes or dialogue variants within a single scene.",
+      "location": "scenes[2-4]",
+      "suggestion": "These three scenes are mutually exclusive outcomes of choice-1. They could be consolidated into a single scene with branching dialogue, reducing scene count and improving clarity."
+    },
+    {
+      "category": "STYLE",
+      "message": "Similarly, scenes 5a, 5b, 5c are three different lunch table choices. Consider consolidating into one scene with branching dialogue.",
+      "location": "scenes[5-7]",
+      "suggestion": "Consolidate scenes 5a, 5b, 5c into a single scene with branchDialogue variants, similar to the final scenes."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene-6 (Partner Assignments) is quite long (duration: 2) and contains multiple dialogue beats. Consider breaking it into smaller scenes or adding more granular scene transitions.",
+      "location": "scenes[8]",
+      "suggestion": "Review whether scene-6 should be split into 'Ms. Alvarez announces pairs' and 'Jordan makes joke' as separate scenes for better pacing."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "branchDialogue array has 9 entries, but only 3 are actually valid (one per ending scene per branch). The other 6 are orphaned or conflicting. This creates maintenance burden.",
+      "location": "branchDialogue[*]",
+      "suggestion": "Reduce branchDialogue to exactly 3 entries: one for each (scene, branch) pair that actually fires."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Outcomes array lists three branches with triggeredBy lists, but the relationship between choice paths and ending scenes is not explicitly documented in the episode metadata. Consider adding a 'branchMap' field or clearer documentation.",
+      "location": "outcomes[*]",
+      "suggestion": "Add explicit mapping: branch-authentic-belonging (choices 2a, 3a, 4a, 5a) → scene-11a; branch-popularity-conformity (choices 2b, 3c, 4b, 5b) → scene-11b; branch-balanced-growth (choices 2c, 3b, 4c, 5c) → scene-11c."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Character 'Ben' appears in scene-7c dialogue but the scene's characters array does not include Ben. Verify all character references in dialogue match the scene's characters array.",
+      "location": "scenes[9].characters vs scenes[9].dialogue[*].character",
+      "expectedValue": "scenes[9].characters should include 'Ben' if Ben speaks in that scene",
+      "actualValue": "scenes[9].characters = ['player', 'Ben', 'Jordan'] — actually correct. No error.",
+      "suggestion": "RETRACTED: Scene-7c does include Ben. This is correct."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Dialogue in scene-8 includes a line from Ben that says 'never mind, it's fine, I'll just—' but this is cut off. Verify this is intentional (representing stammering) or complete the line.",
+      "location": "scenes[8].dialogue[7]",
+      "suggestion": "If this is intentional stammering, add a note in the description. If not, complete the dialogue line."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "estimatedPlayTime is 13 minutes, but the episode has 12 scenes with varying durations (mostly 1-2 minutes each). Verify this estimate is accurate.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Recalculate: sum of scene durations = ~18 minutes (12 scenes × 1.5 avg). Consider updating estimatedPlayTime to 15-18 minutes."
+    }
+  ],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 11,
+    "warningCount": 11
+  }
+}

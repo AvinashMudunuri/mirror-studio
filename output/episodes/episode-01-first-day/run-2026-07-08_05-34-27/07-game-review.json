@@ -1,0 +1,141 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "PACING",
+      "issue": "Scene 4 (lunchroom choice) is a critical bottleneck with three heavily branching paths (4a, 4b, 4c) that collapse into scene 5 with no meaningful differentiation in setup. Players experience wildly different emotional contexts arriving at the same project assignment.",
+      "location": "Scenes 3-5 transition (lunchroom → project assignment)",
+      "impact": "Players who chose different lunch tables arrive at the group project with different relationship states but the same scene framing, creating tonal whiplash. A player coming from Sam's table experiences this as a second chance; a player from Jordan's table experiences it as interruption. The scene doesn't acknowledge or leverage these different emotional states.",
+      "fix": "Create 3 distinct scene-5 variants that open with brief contextual callbacks: (5a) 'Ms. Alvarez calls your name and you realize you're in a group with the person you just defended/ignored,' (5b) 'Sam's already at the table when you arrive,' (5c) 'Alex is somehow also in this group.' Even 2-3 lines of context-specific dialogue would anchor players' emotional continuity.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Choice 3a (Sam's tray incident) presents a false dilemma. Options (a) defend Sam, (b) laugh along, and (c) change subject all lead to the same scene-5, but the emotional weight and character relationship consequences are vastly different. The choice feels consequential but the game doesn't track or reflect those consequences until much later (if at all).",
+      "location": "Scene 4a, Choice 3a",
+      "impact": "Players who make emotionally significant choices (especially defending Sam or betraying him) don't see immediate feedback. The game doesn't show Sam's reaction, Jordan's reaction, or Maya's internal conflict until scene 4a-aftermath. This delays consequence visibility and weakens choice impact.",
+      "fix": "Add immediate, visible consequences in the same scene: (a) Sam makes eye contact and nods; Jordan's smile tightens slightly. (b) Sam doesn't look back; Jordan's arm around Maya feels heavier. (c) Awkward beat where nobody quite knows what just happened. Make these micro-reactions visible so players feel the weight of their choice immediately.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "AGENCY",
+      "issue": "The project assignment (scene 5) is completely non-interactive. Ms. Alvarez reads groups off a clipboard with no player input, and the 'random' grouping is actually predetermined. While this is narratively clever (Alvarez is deliberately engineering outcomes), it removes player agency at a critical moment and doesn't give players the information they need to understand why this matters.",
+      "location": "Scene 5, Ms. Alvarez's dialogue",
+      "impact": "Players have no control over who they're grouped with, which contradicts the episode's central theme (you choose who you are). The scene tells players 'no trading, no negotiating' but doesn't explain why this group specifically matters. Players who wanted to work with Sam or avoid Devon have no recourse.",
+      "fix": "Option 1 (agency-focused): Let players choose their group from available options before Alvarez reads the list. Option 2 (narrative-focused): Have Alvarez explain her reasoning in a way that makes the grouping feel earned, not arbitrary—'I'm putting you three together because I think you need each other.' Option 3 (hybrid): Keep the non-choice but add a reaction beat where Maya realizes why this group was chosen, with internal dialogue acknowledging the setup.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPLAYABILITY",
+      "issue": "The three branch paths (authentic connection, fit-in, bridge-builder) are defined by early lunch choices but the game doesn't clearly signal which path players are on. Players replaying won't have clear guidance on how to reach different endings, making intentional path selection difficult.",
+      "location": "Scenes 3-8 (all branch paths)",
+      "impact": "Replayability suffers because players can't deliberately choose 'I want to play the bridge-builder path this time.' They have to reverse-engineer the path requirements from the outcomes listed in the episode data (which they won't have access to). This reduces intentional replayability and makes the game feel more like 'discover the right answer' than 'choose your own adventure.'",
+      "fix": "Add subtle UI/narrative signposting: After major choice moments, include brief internal monologue that signals which path Maya is on ('I'm building something new' vs. 'I'm fitting in' vs. 'I'm being real with one person'). This helps players understand the consequences of their choices and makes intentional replays possible.",
+      "priority": 6
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "Scene 1 (arrival) is very short (1 duration unit) and mostly internal monologue. The opening hook relies entirely on player anxiety about being new, which is relatable but not particularly interactive or surprising.",
+      "location": "Scene 1, 'New Kid Jitters'",
+      "impact": "The opening doesn't grab attention through gameplay or discovery—it's atmospheric but passive. Players are reading Maya's anxiety rather than experiencing a hook that makes them curious about what happens next.",
+      "fix": "Add a small interactive element: a hallway detail that catches Maya's eye (a flyer, a overheard conversation, a specific person), or a micro-choice about how to walk in (confident, invisible, curious). Even one small choice in scene 1 would make the opening feel less like exposition and more like the start of a game.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scene 2 (hallway) is very brief (1 duration unit) and serves primarily as setup for the lunchroom choice. The Jordan/Sam introduction happens fast and doesn't give players time to form opinions before being asked to choose.",
+      "location": "Scene 2, 'Hallway Introductions'",
+      "impact": "Players meet Jordan and Sam for the first time in a high-pressure moment (public embarrassment) with no prior context. This works narratively but doesn't give players time to develop relationships or curiosity about these characters before making a major social choice.",
+      "fix": "Extend scene 2 slightly to include a moment where Maya observes Jordan and Sam separately before the tray incident. Even 2-3 lines of observation ('Jordan's laugh carries across the hallway' / 'Sam's headphones are a barrier') would give players character context and make the lunchroom choice feel more informed.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "CHOICES",
+      "issue": "Choice 1 (hallway response to Jordan) has three options that are all fundamentally about how to respond to being teased, but they don't feel equally viable. Option (b) 'notice Sam's flinch' is the 'good' choice; option (c) is the 'easy' choice; option (a) is the 'confident' choice. The framing slightly guides toward (b).",
+      "location": "Choice 1, Scene 2",
+      "impact": "While the choice is meaningful, the framing isn't perfectly neutral. Players who want to play 'confident' might feel like that's not the 'right' way to handle this moment. This is minor because the choice does work, but the framing could be more balanced.",
+      "fix": "Reframe the options to be more equally valid: (a) 'Match her energy—she seems to respect confidence,' (b) 'Redirect gently—she's testing you, and Sam's already hurt,' (c) 'Laugh it off—no point making enemies on day one.' This makes all three feel like legitimate strategies rather than good/neutral/bad.",
+      "priority": 2
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "The game doesn't explicitly teach players that their choices affect relationships and future scenes. Players might not realize that defending Sam in scene 4a actually changes how Sam behaves later, or that joining Jordan's table affects available options.",
+      "location": "Scenes 3-8 (implicit consequence system)",
+      "impact": "Players might replay thinking they made 'wrong' choices when actually they made different choices with different consequences. The game would benefit from one moment where a consequence is made explicit ('Sam remembers that you helped him').",
+      "fix": "In scene 4a-defend-aftermath or 4b-sam-table, include a line of dialogue where Sam explicitly acknowledges the consequence of Maya's choice: 'You didn't have to do that' or 'Most people just watch.' This teaches players that choices have relationship consequences without being preachy.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Strong thematic coherence: Every scene and choice reinforces the 'who do you want to be' central question. The episode knows what it's about.",
+    "Excellent character writing: All six characters are distinct, believable, and have clear motivations. Jordan, Sam, and Alex especially feel like real people with hidden depths.",
+    "Meaningful choice architecture: The five major choices (1, 2, 3a/b/c, 4, 5) genuinely express different values and lead to different outcomes. No obvious 'right' answer in most cases.",
+    "Multiple viable playstyles: Players can succeed as the authentic-connection player, the bridge-builder, or the fit-in player. The game doesn't punish different approaches.",
+    "Excellent emotional beats: The tray-incident moment is genuinely high-stakes and emotionally charged. The project-group moment creates real tension. The end-of-day reflection lands well.",
+    "Clear branching outcomes: The four defined paths (authentic connection, fit-in, bridge-builder, defended-then-drifted) are genuinely different and would feel distinct on replay.",
+    "Strong dialogue: All character voices are distinct and authentic. Dialogue reveals character while advancing plot.",
+    "Good use of internal monologue: Maya's inner thoughts create empathy and show the gap between performance and reality.",
+    "Excellent theme integration: The episode genuinely explores belonging as something you build, not something granted. This comes through in gameplay, not just story."
+  ],
+  "recommendations": [
+    "Create context-specific variants of scene 5 (project assignment) that acknowledge which lunch path players took. Even brief callbacks would improve continuity.",
+    "Add immediate, visible consequences to choice 3a (Sam's tray). Show Sam's reaction, Jordan's reaction, and Maya's internal conflict in the same scene.",
+    "Consider adding a small interactive element to scene 1 (arrival) to make the opening feel more like gameplay and less like exposition.",
+    "Extend scene 2 (hallway) slightly to give players character context before the lunchroom choice. Observation beats would help.",
+    "Add subtle UI/narrative signposting to help players understand which path they're on and make intentional replays possible.",
+    "Make at least one consequence explicit in dialogue (Sam saying 'you didn't have to do that') to teach players that choices affect relationships.",
+    "Reframe choice 1 options to feel more equally valid rather than good/neutral/bad.",
+    "Consider adding a brief moment where Ms. Alvarez explains why she grouped Maya, Sam, and Devon together, making the 'random' assignment feel earned rather than arbitrary."
+  ],
+  "scores": {
+    "engagement": 7,
+    "choiceQuality": 8,
+    "pacing": 6,
+    "playerAgency": 6,
+    "replayability": 7,
+    "overall": 7
+  },
+  "metrics": {
+    "averageSceneLength": 51,
+    "choiceFrequency": 0.42,
+    "branchingFactor": 2.8,
+    "estimatedReplayValue": 7
+  },
+  "summary": {
+    "verdict": "GOOD. 'First Bell' is a well-written episode with meaningful choices, strong character work, and clear thematic coherence. The core gameplay loop (observe → choose → see consequences) works well, and the multiple viable paths create genuine replayability. However, pacing issues around the lunchroom-to-project transition, delayed consequence visibility, and reduced agency in the project assignment scene prevent this from being EXCELLENT. With targeted fixes to scene continuity and consequence feedback, this would be outstanding.",
+    "keyIssues": [
+      "Scene 4→5 transition lacks context-specific variants; players with different lunch choices arrive at project assignment with no acknowledgment of their different emotional states",
+      "Choice 3a (Sam's tray) consequences aren't immediately visible; players don't see how their choice affected Sam until much later",
+      "Scene 5 (project assignment) removes player agency entirely; Ms. Alvarez assigns groups with no player input, which contradicts the episode's theme of choosing who you are",
+      "Replayability is strong in outcomes but weak in guidance; players can't deliberately choose which path to take without reverse-engineering from episode data"
+    ],
+    "topStrengths": [
+      "Meaningful choice architecture with multiple viable playstyles",
+      "Excellent character writing and distinct voices",
+      "Strong thematic coherence throughout",
+      "Clear branching outcomes that feel genuinely different",
+      "Emotionally charged moments (tray incident, project tension) that land well",
+      "Good balance of internal monologue and dialogue"
+    ],
+    "mustFix": [
+      "Create 3 context-specific variants of scene 5 that acknowledge which lunch path players took",
+      "Add immediate, visible consequences to choice 3a in the same scene (show Sam's and Jordan's reactions)"
+    ],
+    "niceToHave": [
+      "Add small interactive element to scene 1 opening",
+      "Extend scene 2 with character observation beats",
+      "Add subtle path-signposting in internal monologue",
+      "Make at least one consequence explicit in dialogue",
+      "Reframe choice 1 options to feel more equally valid",
+      "Add brief moment where Ms. Alvarez explains the grouping"
+    ]
+  }
+}
