@@ -75,6 +75,8 @@ async function main() {
 }
 
 main().catch(error => {
-  console.error('❌ Persist failed:', error.message);
+  console.error('❌ Persist failed:', error.message || error);
+  if (error.code) console.error(`   code: ${error.code}`);
+  if (error.detail) console.error(`   detail: ${error.detail}`);
   process.exit(1);
 });
