@@ -122,6 +122,36 @@ const EPISODE_BRIEFS = {
     themes: ['Peer Pressure', 'Honesty', 'Teamwork'],
     targetTraits: ['INTEGRITY', 'COMMUNICATION', 'JUDGMENT'],
     synopsis: 'A few weeks into the new school, the protagonist is placed in a group project with classmates from different friend circles. When a groupmate pushes to cut corners so the group finishes early, the protagonist has to decide whether to speak up, go along, or find another way — continuing to figure out who they want to be now that the nerves of the first day have worn off.'
+  },
+  3: {
+    world: 'New School',
+    worldId: 'NEW_SCHOOL',
+    season: 'Season 1: First Year',
+    episodeNumber: 3,
+    title: 'The Invite',
+    themes: ['Inclusion', 'Social Status', 'Loyalty'],
+    targetTraits: ['EMPATHY', 'CONFIDENCE', 'EMOTIONAL_AWARENESS'],
+    synopsis: 'A popular classmate is throwing a birthday hangout and the guest list is suddenly everyone\'s business. The protagonist gets an in — but someone they actually care about doesn\'t. They have to decide whether to go, who to bring, and whether fitting in means leaving someone behind again.'
+  },
+  4: {
+    world: 'New School',
+    worldId: 'NEW_SCHOOL',
+    season: 'Season 1: First Year',
+    episodeNumber: 4,
+    title: 'The Fallout',
+    themes: ['Conflict Repair', 'Apology', 'Boundaries'],
+    targetTraits: ['COMMUNICATION', 'EMOTIONAL_AWARENESS', 'INTEGRITY'],
+    synopsis: 'Something the protagonist said or did — at the party, in the group chat, or in the hallway — lands wrong. A friend goes quiet, a rumor starts, or both. The episode is about how you show up after you hurt someone: dodge it, defend yourself, or actually listen and repair.'
+  },
+  5: {
+    world: 'New School',
+    worldId: 'NEW_SCHOOL',
+    season: 'Season 1: First Year',
+    episodeNumber: 5,
+    title: 'Last Bell',
+    themes: ['Growth', 'Identity', 'Choosing Your People'],
+    targetTraits: ['CONFIDENCE', 'RESILIENCE', 'JUDGMENT'],
+    synopsis: 'The last week before winter break, the school stacks small public moments — a class reflection, a hallway goodbye, one last choice about who to sit with at lunch. The protagonist looks back at who they were on day one and decides, out loud or in action, who they are becoming and which relationships they are willing to stand up for.'
   }
 };
 
