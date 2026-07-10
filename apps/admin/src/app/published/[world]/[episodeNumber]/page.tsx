@@ -47,6 +47,8 @@ export default async function PublishedPreviewPage({
       <p className="page-sub">
         Published {formatTimestamp(published.publishedAt)} · fetched from{' '}
         <code>GET /api/published/{world}/{num}</code> — the same read path a real frontend would use.
+        {' '}Player projection: <code>?format=player</code>.
+        {' '}Interactive preview: <a href={`http://localhost:3400/play/${world}/${num}`}>open in MIRROR Player</a>.
       </p>
       <p className="page-sub">{published.synopsis}</p>
 

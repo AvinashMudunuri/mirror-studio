@@ -28,7 +28,7 @@ This roadmap outlines the implementation strategy for Project MIRROR Studio, bre
 | 2. Core Agents | ✅ Done, exceeded milestone | Real episodes generated end-to-end, not just outlines |
 | 3. Review Agents | ⚠️ Mostly done | 4 of 5 reviewers built (no Teen Reviewer); debate system never built (feedback routing instead) |
 | 4. Production Agents | ✅ Minimal scope done, differently than planned | Publish is a human action in `apps/admin`, not an agent (ADR 003); Analytics still deferred (no players yet) |
-| 5. Frontend Experience | ❌ Not started | `apps/admin` is an internal dashboard, not a player-facing app |
+| 5. Frontend Experience | ⚠️ Started (minimal) | `apps/player` on port 3400: interactive playthrough of published episodes via the player content projection; not yet profiles, reflection UI, or world selection |
 | 6. Polish & Launch | ❌ Not started | No monitoring, nothing published; basic CI exists (build + test) |
 | 7. Growth & Iteration | ❌ Not started | N/A until Phase 4-6 exist |
 
@@ -133,9 +133,11 @@ A trimmed player-facing content projection (the read path returns the full autho
 
 **Goal**: Build player-facing web application
 
-### Status: Not started
+### Status: Minimal preview started (2026-07-10)
 
-None of the 5 planned components (Episode Player, Character System, Reflection Interface, World Selection, Profile & Progress) exist. `apps/admin` is the only frontend in the repo, and it is explicitly internal/read-only: a Next.js dashboard over `output/episodes/` for run status, verdicts, token cost, revision history, and the rendered bound script. It has no concept of a player, a session, or making a choice.
+**What exists:** `apps/player` — a player-facing Next.js app (port 3400) that reads published Postgres snapshots, projects them via `projectPlayerEpisode()` (`@mirror/schemas`), and renders an interactive playthrough (scene dialogue, choices, branch-specific ending lines). The admin publish API also exposes the same projection at `GET /api/published/[world]/[episodeNumber]?format=player`.
+
+**What doesn't exist yet:** Episode Player polish (no save/resume, no trait UI), Character System, Reflection Interface, World Selection, Profile & Progress. `apps/admin` remains the internal authoring/review dashboard.
 
 ### Before this phase can start
 Needs Phase 4 (or at least a stable content format/API) so the frontend has something real to consume beyond raw run-folder JSON.
@@ -228,9 +230,9 @@ Cheap, well-scoped, not yet done:
 1. Extend `previousEpisodes` continuity to the remaining 3 reviewers if evidence shows it's worth it.
 
 Bigger, would start actual Phase 4/5 work:
-2. A trimmed player-facing content projection — the publish read path currently returns the full authoring shape as-is (deliberately descoped, see the ADR); worth revisiting once a real frontend needs something narrower.
+2. ~~A trimmed player-facing content projection~~ — done 2026-07-10. `projectPlayerEpisode()` in `@mirror/schemas`; admin API `?format=player`; consumed by `apps/player`.
 3. Admin phase 3: rich editors, re-run specific agents, versioning — backed by the Postgres layer.
-4. A real Phase 5 kickoff (episode player) is not recommended until Phase 4's data contract exists — building a frontend against a shape that's still `output/episodes/*.json` invites a rewrite.
+4. Phase 5 expansion: save/resume, trait tracking UI, reflection prompts, world selection — building on the player projection + `apps/player` skeleton.
 
 ---
 

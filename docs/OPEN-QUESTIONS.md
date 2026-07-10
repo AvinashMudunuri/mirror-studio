@@ -89,9 +89,12 @@ published scenes/dialogue directly in the admin app. Publisher/Analytics/
 JSON-Export were NOT built as agents (confirmed: publishing is
 deterministic code); Analytics stays deferred until real players exist.
 
-Descoped for this iteration: the read path returns the full authoring
-content shape as-is, not a trimmed player-facing projection — deferred
-until a real frontend exists to define what it actually needs.
+Descoped for this iteration: ~~the read path returns the full authoring
+content shape as-is, not a trimmed player-facing projection~~ — **player
+projection added 2026-07-10** (`projectPlayerEpisode()` in
+`@mirror/schemas`, admin API `?format=player`, consumed by `apps/player`).
+Publish snapshots remain the full authoring shape; projection happens at
+read time so re-publishing is unchanged.
 
 Live-verified end-to-end via the admin UI (publish → success message →
 `GET /api/published/NEW_SCHOOL/1` returns 19 scenes → preview page
@@ -405,12 +408,16 @@ may never hit this failure mode at all.
 
 ## 5. Branch selection at runtime (schema gap, flagged by QA)
 
-Branches now carry `id` + `triggeredBy` (`"choiceId:optionId"` paths) and
-endings have per-branch `branchDialogue` variants. What is still undefined:
-the precedence rule a renderer applies when a player's choice history
-matches multiple branches' `triggeredBy` lists (or none). Needs a decision
-when a real player-facing renderer exists; until then QA is instructed the
-current keying is the convention.
+Branches carry `id` + `triggeredBy` (`"choiceId:optionId"` paths) and
+endings have per-branch `branchDialogue` variants. **Resolution rule
+implemented for the player projection (2026-07-10):** `all-matching-
+append-ordered` — every branch whose full `triggeredBy` list is satisfied
+by the player's choice history contributes its variant lines for that
+scene, ordered by the latest matching choice in history (earlier path
+context first, most recent choice context last). See
+`packages/schemas/src/player-projection.ts` (`resolveBranchLines`).
+Still open: whether this is the final product rule or needs UX tuning once
+real players/testers exist.
 
 ## 6. Zod output validation (schemas exist, unused)
 

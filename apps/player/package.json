@@ -1,11 +1,11 @@
 {
-  "name": "@mirror/admin",
+  "name": "@mirror/player",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3300",
+    "dev": "next dev -p 3400",
     "build": "next build",
-    "start": "next start -p 3300",
+    "start": "next start -p 3400",
     "clean": "rm -rf .next"
   },
   "dependencies": {
@@ -13,9 +13,7 @@
     "next": "^15.3.3",
     "pg": "^8.13.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-markdown": "^10.1.0",
-    "remark-gfm": "^4.0.1"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.16",

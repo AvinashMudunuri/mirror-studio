@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { projectPlayerEpisode } from '@mirror/schemas';
 import { getPool } from '@/lib/db';
 import { getPublishedEpisode } from '@/lib/publish';
 
@@ -8,9 +9,12 @@ import { getPublishedEpisode } from '@/lib/publish';
  * durable `published_*` snapshot, never the latest (possibly unapproved,
  * possibly mid-revision) pipeline content. 404 until a human has
  * explicitly published this episode at least once.
+ *
+ * `?format=player` returns the trimmed player graph instead of the raw
+ * authoring shape — the contract Phase 5 should build against.
  */
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: Promise<{ world: string; episodeNumber: string }> }
 ) {
   const { world, episodeNumber } = await params;
@@ -27,6 +31,24 @@ export async function GET(
   const published = await getPublishedEpisode(pool, world, num);
   if (!published) {
     return NextResponse.json({ error: 'This episode has not been published' }, { status: 404 });
+  }
+
+  const format = new URL(request.url).searchParams.get('format');
+  if (format === 'player') {
+    try {
+      const player = projectPlayerEpisode(published.content as any);
+      return NextResponse.json({
+        worldId: published.worldId,
+        episodeNumber: published.episodeNumber,
+        title: published.title,
+        synopsis: published.synopsis,
+        publishedAt: published.publishedAt,
+        player
+      });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Failed to project player episode';
+      return NextResponse.json({ error: message }, { status: 500 });
+    }
   }
 
   return NextResponse.json(published);
