@@ -12,10 +12,16 @@
  *     ANTHROPIC_REVIEW_MODEL=<bedrock-review-id> \
  *     npm run test:bedrock
  *
+ * Builds @mirror/agents first (same prerequisite as npm run real:episode).
+ *
  * See docs/decisions/004-aws-bedrock-alternative-backend.md for model ID notes.
  */
 
+const fs = require('fs');
+const path = require('path');
 const { AnthropicBedrock } = require('@anthropic-ai/bedrock-sdk');
+
+const GATEWAY_DIST = path.join(__dirname, '..', 'packages', 'agents', 'dist', 'llm-gateway.js');
 
 function printHeader() {
   console.log('🔍 AWS Bedrock Connectivity Check');
@@ -72,9 +78,19 @@ async function testSdkModel(client, label, modelId) {
   }
 }
 
+function loadLLMGateway() {
+  if (!fs.existsSync(GATEWAY_DIST)) {
+    console.error('');
+    console.error('❌ LLMGateway not built — packages/agents/dist/llm-gateway.js is missing.');
+    console.error('   Run: npm run build --workspace=@mirror/agents');
+    console.error('   Or:  npm run test:bedrock   (builds automatically)');
+    process.exit(1);
+  }
+  return require('../packages/agents/dist/llm-gateway');
+}
+
 async function testGatewayModel(modelId) {
-  // Lazy-require so the script fails fast on missing env before loading dist.
-  const { createLLMGateway } = require('../packages/agents/dist/llm-gateway');
+  const { createLLMGateway } = loadLLMGateway();
 
   process.stdout.write(`Gateway (${modelId})... `);
   const llm = createLLMGateway({
