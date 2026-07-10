@@ -50,3 +50,22 @@ export function VerdictBadges({ verdicts }: { verdicts: Record<string, string> }
     </>
   );
 }
+
+const PUBLISH_LABEL_TONE: Record<string, 'good' | 'warn' | 'dim'> = {
+  live: 'good',
+  latest: 'warn',
+  not_published: 'dim'
+};
+
+const PUBLISH_LABEL_TEXT: Record<string, string> = {
+  live: 'LIVE',
+  latest: 'latest (unpublished)',
+  not_published: 'not published'
+};
+
+/** Whether this run folder is live on the player, latest in Postgres, or filesystem-only. */
+export function PublishBadge({ label }: { label: 'live' | 'latest' | 'not_published' | null }) {
+  if (!label) return null;
+  const tone = PUBLISH_LABEL_TONE[label] || 'dim';
+  return <span className={`badge ${tone}`}>{PUBLISH_LABEL_TEXT[label]}</span>;
+}

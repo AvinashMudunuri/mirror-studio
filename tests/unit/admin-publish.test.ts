@@ -10,7 +10,7 @@
  */
 
 import { describe, it, expect } from '@jest/globals';
-import { isPublishable, reasonNotPublishable } from '../../apps/admin/src/lib/publish';
+import { isPublishable, reasonNotPublishable, publishLabelForRun } from '../../apps/admin/src/lib/publish';
 
 describe('reasonNotPublishable / isPublishable', () => {
   it('is publishable when APPROVED with no skipped reviewers', () => {
@@ -48,5 +48,46 @@ describe('reasonNotPublishable / isPublishable', () => {
     expect(isPublishable({ status: 'APPROVED', metadata: null })).toBe(true);
     expect(isPublishable({ status: 'APPROVED', metadata: {} })).toBe(true);
     expect(isPublishable({ status: 'APPROVED', metadata: { run: {} } })).toBe(true);
+  });
+});
+
+describe('publishLabelForRun', () => {
+  const index = [
+    {
+      worldId: 'NEW_SCHOOL',
+      episodeNumber: 1,
+      title: 'First Bell',
+      publishedRunFolder: 'output/episodes/episode-01-first-day/run-2026-07-10_13-26-56',
+      publishedAt: '2026-07-10T00:00:00Z',
+      contentRunFolder: 'output/episodes/episode-01-first-day/run-2026-07-10_13-26-56'
+    },
+    {
+      worldId: 'NEW_SCHOOL',
+      episodeNumber: 2,
+      title: 'Show Your Work',
+      publishedRunFolder: 'output/episodes/episode-02-the-group-project/run-2026-07-10_22-26-36',
+      publishedAt: '2026-07-10T01:00:00Z',
+      contentRunFolder: 'output/episodes/episode-02-the-group-project/run-2026-07-10_22-26-36'
+    },
+    {
+      worldId: 'NEW_SCHOOL',
+      episodeNumber: 3,
+      title: 'Showcase',
+      publishedRunFolder: null,
+      publishedAt: null,
+      contentRunFolder: 'output/episodes/episode-03-the-invite/run-2026-07-10_22-52-33'
+    }
+  ];
+
+  it('marks the published run folder as live', () => {
+    expect(publishLabelForRun('output/episodes/episode-02-the-group-project/run-2026-07-10_22-26-36', index)).toBe('live');
+  });
+
+  it('marks latest persisted-but-unpublished content', () => {
+    expect(publishLabelForRun('output/episodes/episode-03-the-invite/run-2026-07-10_22-52-33', index)).toBe('latest');
+  });
+
+  it('marks historical run folders as not published', () => {
+    expect(publishLabelForRun('output/episodes/episode-02-the-group-project/run-2026-07-10_15-32-04', index)).toBe('not_published');
   });
 });
