@@ -1,0 +1,100 @@
+{
+  "status": "APPROVED",
+  "concerns": [
+    {
+      "severity": "MINOR",
+      "category": "EMOTIONAL_SAFETY",
+      "issue": "Public humiliation of Ben (scene-8) could be distressing for players who have experienced similar situations, though the episode provides multiple response pathways including supportive interventions",
+      "location": "Scene 8: 'Called On' - Ben stammering through presentation while Jordan's table snickers",
+      "recommendation": "Consider adding a brief pre-scene content note: 'This scene includes mild peer mockery in a classroom setting. You'll have choices about how to respond.' This respects player agency while providing transparency",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "AGE_INAPPROPRIATE",
+      "issue": "Target age range listed as 11-14, but episode content and complexity are solidly middle-grade (11-13). The psychological sophistication of choice consequences and identity exploration may be slightly advanced for 11-year-olds, though not inappropriate",
+      "location": "Overall episode design and thematic depth",
+      "recommendation": "Consider clarifying target age as 11-14 with note that 11-year-olds may benefit from adult co-play or discussion. Content is not inappropriate for 11, just cognitively demanding",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "MENTAL_HEALTH",
+      "issue": "Ben's character background includes parental separation and repeated school moves (trauma indicators), but these are mentioned only in character background, not explored in episode narrative. Risk of under-addressing his emotional needs",
+      "location": "Ben's background section; not surfaced in episode dialogue",
+      "recommendation": "Consider adding one brief line in Ben's dialogue (e.g., during project work) that hints at his background without requiring player to know it: 'I'm used to being the new person. You get good at reading rooms when you move a lot.' This makes his anxiety legible without heavy exposition",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "EDUCATIONAL",
+      "issue": "The three branching paths (authentic, popularity, adaptive) are well-designed, but the 'popularity conformity' path (choice-5:b) doesn't explicitly surface consequences until later episodes. Players choosing that path may not recognize the emotional cost until future content",
+      "location": "Scene 11b and branch outcomes",
+      "recommendation": "In scene-11b (popularity path), add one additional line of internal monologue or observation that hints at cost: e.g., 'Walking off, you catch Ben's eyes for just a second — and something in his face closes.' This plants the seed of consequence within this episode without heavy-handedness",
+      "mustFix": false
+    }
+  ],
+  "recommendations": [
+    "Add optional pre-episode content note about peer mockery/social anxiety themes to support player choice-making",
+    "Consider a brief post-episode reflection prompt (outside the narrative) for players on the 'popularity' path: 'How did your choices feel? Would you do anything differently?' This encourages metacognition without judgment",
+    "Ensure that future episodes follow up on the branch outcomes consistently — players on the 'authentic' path should see Ben and Maya's trust deepen; players on 'popularity' path should see Ben's wariness persist",
+    "In future episodes, surface Ben's background (family instability, repeated moves) gradually through dialogue so players understand his anxiety is contextual, not inherent weakness",
+    "Consider adding one scene in a future episode where Jordan's own insecurity surfaces (his failing math, his fear of being 'forgettable'), creating opportunity for player to model the empathy they may have shown Ben"
+  ],
+  "triggerWarnings": [
+    {
+      "category": "BULLYING",
+      "description": "Peer mockery and social exclusion: Jordan makes a joke at Ben's expense in front of the class (scene-6); Ben stammers through a presentation while classmates snicker (scene-8). The episode provides player agency to intervene or not, but the bullying moment itself is present",
+      "severity": "MILD",
+      "location": "Scenes 6-9: Partner assignment through presentation"
+    },
+    {
+      "category": "SELF_ESTEEM",
+      "description": "Social anxiety and fear of rejection: Riley's internal monologue includes worry about 'being the new kid forever' and 'never having a place that feels solid'; Ben's character is defined by self-deprecation and social anxiety; Maya's background includes repeated school moves and friendship loss",
+      "severity": "MILD",
+      "location": "Throughout episode, especially in internal monologues and character backgrounds"
+    },
+    {
+      "category": "FAMILY_CONFLICT",
+      "description": "Parental separation and family instability: Riley's parents recently split time between two households; Ben's parents split two years ago; Maya's mother works night shifts, creating financial and emotional strain. These are mentioned in backgrounds but not dramatized in episode",
+      "severity": "MILD",
+      "location": "Character background sections (not dramatized in episode narrative)"
+    },
+    {
+      "category": "ANXIETY",
+      "description": "Social performance anxiety and fear of judgment: Multiple characters experience anxiety about social standing and peer perception. Ben's anxiety is particularly pronounced (stammering, apologizing preemptively, physical symptoms of nervousness)",
+      "severity": "MILD",
+      "location": "Throughout episode, especially scenes 6-9 and character internal monologues"
+    }
+  ],
+  "scores": {
+    "ageAppropriateness": 9,
+    "emotionalSafety": 8,
+    "educationalValue": 9,
+    "mentalHealthRep": 8,
+    "overall": 8.5
+  },
+  "summary": {
+    "strengths": [
+      "Excellent age-appropriate language and cognitive complexity: dialogue feels authentic to middle-grade voices without condescension; internal monologues are sophisticated but not overwrought",
+      "Strong social-emotional learning design: episode teaches empathy, perspective-taking, and consequence-awareness through player agency rather than explicit instruction. The three branching paths model different valid approaches to belonging without moralizing",
+      "Realistic portrayal of middle school social dynamics: the cafeteria seating choice, the hallway collision, the group project pairing, and the public humiliation moment are all authentic to 11-14 year old experience",
+      "Healthy representation of anxiety and social vulnerability: Ben's anxiety is portrayed as understandable and contextual (repeated moves, family instability), not as a character flaw. Multiple characters show realistic nervousness about social situations",
+      "Diverse, authentic character representation: Riley's multiracial identity, Jordan's split household, Ben's economic precarity, Maya's immigrant family background, and Ms. Alvarez's working-parent reality are all woven naturally into character design without tokenism",
+      "Player agency with emotional consequences: the choice structure genuinely matters. Choosing to support Ben vs. laugh along has different emotional payoffs, and the episode respects player intelligence by not making any choice 'obviously correct'",
+      "Inclusive pronoun handling: Riley's pronouns (she/they) are presented matter-of-factly as a player choice at game start, normalizing gender diversity without making it a plot point",
+      "Realistic portrayal of teacher limitations: Ms. Alvarez is warm and well-intentioned but overloaded and imperfect. She misses the moment of Ben's humiliation, which is realistic and creates space for player agency rather than relying on adult rescue",
+      "Hope and resilience present: all three branching paths end with some form of connection or possibility. Even the 'popularity' path doesn't end in tragedy — it ends in ambiguity, which is developmentally appropriate",
+      "Clear educational alignment: the episode directly teaches the stated goals (confidence as self-assertion, empathy through perspective-taking, adaptability as flexible authenticity, consequence-awareness)"
+    ],
+    "improvements": [
+      "Add optional content note before episode about peer mockery themes to support informed player choice",
+      "Enhance consequence visibility in 'popularity' path by adding one subtle line in scene-11b that hints at emotional cost (Ben's face closing, Maya's wariness) — this keeps the path valid while making consequences legible within the episode",
+      "Consider brief post-episode reflection prompt for players to metacognate on their choices without judgment",
+      "In future episodes, gradually surface Ben's background (family moves, instability) through dialogue so his anxiety becomes more legible as contextual rather than inherent",
+      "Ensure future episodes consistently follow branch outcomes — don't reset relationship dynamics between episodes",
+      "Consider adding one moment in a future episode where Jordan's own insecurity/academic struggle surfaces, creating opportunity for player empathy to extend to him"
+    ],
+    "readyForAudience": true
+  }
+}

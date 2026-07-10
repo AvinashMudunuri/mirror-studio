@@ -1,0 +1,227 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-4a-popular-table has no choice attached, but its defaultNextScene points to scene-4a-defend-aftermath, which is not a valid next scene. The scene should either have a choice with options leading to valid scenes, or defaultNextScene should point to a scene that exists in the scenes array.",
+      "location": "scenes[3].defaultNextScene",
+      "expectedValue": "A valid scene ID from the scenes array, OR a choice should be attached to this scene via the choices array",
+      "actualValue": "defaultNextScene: 'scene-4a-defend-aftermath' (which exists as a scene), but the scene structure suggests this should be a choice-driven branch",
+      "fix": "Either: (a) Create a choice with id 'choice-3a' that branches to scene-4a-defend-aftermath and scene-4a-join-aftermath based on player action, OR (b) Remove the defaultNextScene and attach the choice via the choices array. The current structure is ambiguous."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Choice choice-3a references scene-4a-popular-table as its scene, but the choice's options point to scene-4a-defend-aftermath and scene-4a-join-aftermath. However, scene-4a-popular-table itself has a defaultNextScene pointing to scene-4a-defend-aftermath. This creates ambiguity: does the player make a choice at scene-4a-popular-table, or does the scene auto-transition?",
+      "location": "choices[2] and scenes[3]",
+      "expectedValue": "Either the choice should be attached to scene-4a-popular-table (and it should have NO defaultNextScene), OR the scene should have a defaultNextScene and NO choice should reference it",
+      "actualValue": "Both choice-3a and defaultNextScene are present, creating dual transition paths",
+      "fix": "Remove defaultNextScene from scene-4a-popular-table (line in scenes[3]), since choice-3a is the intended branching mechanism. The choice will handle all transitions."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-3a has 3 options, but only 2 unique nextScene values are specified. Option [2] (id 'c') points to 'scene-5-project-assignment', which skips the aftermath scenes entirely. This is inconsistent with options [0] and [1], which lead to aftermath scenes.",
+      "location": "choices[2].options[2]",
+      "expectedValue": "A nextScene that is either scene-4a-defend-aftermath, scene-4a-join-aftermath, or a new aftermath scene for the 'change subject' path",
+      "actualValue": "nextScene: 'scene-5-project-assignment'",
+      "fix": "Either: (a) Create a third aftermath scene (e.g., scene-4a-deflect-aftermath) for the 'change subject' option, OR (b) Redirect option [2] to one of the existing aftermath scenes. Currently, this path skips narrative resolution."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-4b-sam-table has defaultNextScene 'scene-5-project-assignment', but it also has a choice attached (choice-3b). Per the data model, a scene should use EITHER a choice OR a defaultNextScene, not both. This creates ambiguity about which transition mechanism fires.",
+      "location": "scenes[4]",
+      "expectedValue": "Either defaultNextScene should be removed (if choice-3b is the intended branching), OR choice-3b should be removed (if defaultNextScene is intended)",
+      "actualValue": "Both are present",
+      "fix": "Remove the defaultNextScene field from scene-4b-sam-table. Choice-3b will handle all transitions from this scene."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-3b is attached to scene-4b-sam-table, but all 3 options point to the same nextScene: 'scene-5-project-assignment'. This means the choice has no functional impact on the story flow — all paths converge immediately.",
+      "location": "choices[3].options[*].nextScene",
+      "expectedValue": "At least 2 different nextScene values across the options, OR the choice should be removed entirely",
+      "actualValue": "All options point to 'scene-5-project-assignment'",
+      "fix": "Either: (a) Create branching aftermath scenes for each option (e.g., scene-4b-affirm-aftermath, scene-4b-quiet-aftermath, scene-4b-invite-aftermath), OR (b) Remove choice-3b and rely on defaultNextScene. Currently, the choice is cosmetic."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-4c-new-table has defaultNextScene 'scene-5-project-assignment', but it also has a choice attached (choice-3c). Per the data model, a scene should use EITHER a choice OR a defaultNextScene, not both.",
+      "location": "scenes[5]",
+      "expectedValue": "Either defaultNextScene should be removed, OR choice-3c should be removed",
+      "actualValue": "Both are present",
+      "fix": "Remove the defaultNextScene field from scene-4c-new-table. Choice-3c will handle all transitions."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-3c has 3 options, but option [2] (id 'c', 'Admit you're curious about Jordan's table too') points to nextScene 'scene-4a-popular-table'. This creates a loop: the player can choose to sit at the empty table (scene-4c), then immediately choose to go to Jordan's table (scene-4a), which they could have chosen in choice-2. This is narratively confusing and breaks the 'one choice per scene' flow.",
+      "location": "choices[4].options[2].nextScene",
+      "expectedValue": "A new scene or a valid progression forward (e.g., scene-5-project-assignment), not a backward loop to scene-4a-popular-table",
+      "actualValue": "nextScene: 'scene-4a-popular-table'",
+      "fix": "Change option [2] to point to scene-5-project-assignment (or create a new transition scene). If the player wants to join Jordan's table, that choice should happen at the lunchroom (choice-2), not after committing to the empty table."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-4 is attached to scene-6-project-tension, but the scene's description and dialogue suggest the player is making a choice about whether to defend Sam's idea. However, the choice's traitMapping shows option [2] (staying quiet) has negative trait changes (CONFIDENCE: -2, EMPATHY: -1), which is appropriate. But the nextScene for all 3 options is 'scene-7-reflection', meaning the choice has no branching impact on the story — only on trait tracking.",
+      "location": "choices[5].options[*].nextScene",
+      "expectedValue": "Either different nextScene values for different options (to show narrative consequences), OR the choice should be removed and the scene should auto-transition",
+      "actualValue": "All options point to 'scene-7-reflection'",
+      "fix": "Consider creating branching aftermath scenes (e.g., scene-6-defended-aftermath, scene-6-compromised-aftermath, scene-6-silent-aftermath) to show narrative consequences of the choice. Alternatively, if all paths converge, remove the choice and rely on defaultNextScene for clarity."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-5 is attached to scene-7-reflection, and its 3 options point to 3 different nextScene values (scene-8a-end-friendship, scene-8b-end-crowd, scene-8c-end-bridge). However, all 3 of these scenes have defaultNextScene: 'END'. This is correct. BUT: the branchDialogue array references branch IDs (branch-authentic-connection, branch-fit-in-first, branch-bridge-builder, branch-defended-then-drifted) that should be triggered by the outcomes array. The outcomes array DOES contain these branch IDs, and their triggeredBy lists reference choice paths. This is correct, but the mapping is complex and should be verified.",
+      "location": "outcomes[*].triggeredBy and branchDialogue[*].branchId",
+      "expectedValue": "Each branchId in branchDialogue should have a corresponding entry in outcomes with a matching id",
+      "actualValue": "All 4 branchIds in branchDialogue have matching entries in outcomes",
+      "fix": "No fix needed for this specific issue, but note that the branch-triggered-by logic is complex. Verify that the choice paths in outcomes[*].triggeredBy correctly map to the player's actual decision history."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Outcome branch-defended-then-drifted is defined in the outcomes array with triggeredBy: ['choice-2:a', 'choice-3a:a', 'choice-5:b'], but there is no corresponding branchDialogue entry for this branch. The other 3 branches (branch-authentic-connection, branch-fit-in-first, branch-bridge-builder) all have branchDialogue entries.",
+      "location": "outcomes[3] vs branchDialogue[*]",
+      "expectedValue": "A branchDialogue entry with branchId: 'branch-defended-then-drifted'",
+      "actualValue": "No matching branchDialogue entry",
+      "fix": "Add a branchDialogue entry for branch-defended-then-drifted with appropriate dialogue lines for the ending scene (likely scene-8b-end-crowd, since the branch ends with choice-5:b)."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-4a-popular-table is described as a scene where 'the player makes a choice' (Sam's tray is on the floor, what do you do?), but the scene itself does NOT have a 'choices' field embedded. Per the data model, the choice is referenced via the choices array, not embedded in the scene. However, the scene's dialogue includes a NARRATOR line that says 'The whole table looks at Maya. Waiting to see which way she tips.' This implies a choice is coming, but the scene's transition mechanism is unclear (defaultNextScene vs. choice-3a).",
+      "location": "scenes[3]",
+      "expectedValue": "The scene should have NO defaultNextScene, and should rely entirely on choice-3a for transitions",
+      "actualValue": "Scene has both defaultNextScene and is referenced by choice-3a",
+      "fix": "Remove defaultNextScene from scene-4a-popular-table. The choice-3a mechanism will handle all transitions."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The traitMapping in choice-3a, option [2] (change subject) has ADAPTABILITY: 2, but this option is described as 'Change the subject smoothly and move the conversation on.' This is a valid adaptability move, but the nextScene points to scene-5-project-assignment, which skips the aftermath entirely. This means the player's choice to 'change the subject' has no narrative consequence — the scene just ends. This is inconsistent with options [0] and [1], which lead to aftermath scenes that show the consequence of the choice.",
+      "location": "choices[2].options[2]",
+      "expectedValue": "Either a new aftermath scene for the 'change subject' path, OR the option should be removed",
+      "actualValue": "nextScene: 'scene-5-project-assignment' (no aftermath)",
+      "fix": "Create scene-4a-deflect-aftermath to show the consequence of changing the subject (e.g., Sam goes quiet, the moment passes, but the tension lingers). Then update option [2] to point to this new scene."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-3b (attached to scene-4b-sam-table) has 3 options with different text descriptions, but all 3 options point to the same nextScene ('scene-5-project-assignment'). This means the choice is purely cosmetic — it affects trait tracking but not story flow. Additionally, the choice's traitMapping shows different trait changes for each option (e.g., option [0] has EMPATHY: 2, CONFIDENCE: 1; option [1] has ADAPTABILITY: 2, EMPATHY: 1; option [2] has CONFIDENCE: 2, EMPATHY: 1), which suggests the choices should have narrative consequences. But they don't.",
+      "location": "choices[3]",
+      "expectedValue": "Either different nextScene values for each option, OR the choice should be removed and the scene should auto-transition",
+      "actualValue": "All options point to 'scene-5-project-assignment'",
+      "fix": "Create 3 branching aftermath scenes (scene-4b-affirm-aftermath, scene-4b-quiet-aftermath, scene-4b-invite-aftermath) and update the choice options to point to these scenes. This will make the choice meaningful in both trait tracking and story flow."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-3c (attached to scene-4c-new-table) has 3 options, but option [2] points back to scene-4a-popular-table, creating a narrative loop. The player chooses to sit at the empty table (scene-4c), then immediately chooses to go to Jordan's table (scene-4a). This breaks the linear flow and suggests the player made the wrong choice at the lunchroom (choice-2). This is confusing.",
+      "location": "choices[4].options[2]",
+      "expectedValue": "nextScene should be scene-5-project-assignment or a new transition scene, not scene-4a-popular-table",
+      "actualValue": "nextScene: 'scene-4a-popular-table'",
+      "fix": "Change option [2] to point to scene-5-project-assignment. If the player wants to join Jordan's table, that choice should happen at the lunchroom (choice-2), not after committing to the empty table."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice choice-4 (attached to scene-6-project-tension) has 3 options with different text and traitMapping, but all 3 options point to the same nextScene ('scene-7-reflection'). This means the choice is purely cosmetic — it affects trait tracking but not story flow. The scene's dialogue suggests a high-stakes moment ('Maya has the floor. Exactly one sentence's worth, before Devon's plan just... becomes the plan.'), but the choice has no narrative consequence.",
+      "location": "choices[5]",
+      "expectedValue": "Either different nextScene values for each option, OR the choice should be removed and the scene should auto-transition",
+      "actualValue": "All options point to 'scene-7-reflection'",
+      "fix": "Create 3 branching aftermath scenes (scene-6-defended-aftermath, scene-6-compromised-aftermath, scene-6-silent-aftermath) and update the choice options to point to these scenes. This will make the choice meaningful in both trait tracking and story flow."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The outcomes array defines 4 branches, but the branchDialogue array only has 3 entries. Specifically, branch-defended-then-drifted (outcomes[3]) has no corresponding branchDialogue entry. This means if the player triggers this branch (via choice-2:a, choice-3a:a, choice-5:b), the ending scene (scene-8b-end-crowd) will not have branch-specific dialogue variants.",
+      "location": "outcomes[3] vs branchDialogue[*]",
+      "expectedValue": "A branchDialogue entry with branchId: 'branch-defended-then-drifted' and sceneId: 'scene-8b-end-crowd'",
+      "actualValue": "No matching entry",
+      "fix": "Add a branchDialogue entry for branch-defended-then-drifted. This branch represents a player who defended Sam but then drifted back to Jordan's table, so the dialogue should reflect that internal conflict."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene scene-4a-popular-table has a defaultNextScene pointing to scene-4a-defend-aftermath, but it's also referenced by choice-3a. This dual-transition mechanism is confusing. The data model supports this, but it's not clear which mechanism takes precedence.",
+      "location": "scenes[3]",
+      "suggestion": "Remove defaultNextScene from scene-4a-popular-table and rely entirely on choice-3a for transitions. This makes the flow explicit."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scenes scene-4b-sam-table and scene-4c-new-table both have defaultNextScene AND are referenced by choices (choice-3b and choice-3c). This is inconsistent with the data model's intent, which suggests a scene should use EITHER a choice OR a defaultNextScene, not both.",
+      "location": "scenes[4], scenes[5]",
+      "suggestion": "Remove defaultNextScene from both scenes and rely entirely on the choice mechanisms."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Multiple choices (choice-3b, choice-3c, choice-4) have all options pointing to the same nextScene. This makes the choices purely cosmetic (trait tracking only, no story branching). While this is technically valid, it may confuse players who expect their choices to have narrative consequences.",
+      "location": "choices[3], choices[4], choices[5]",
+      "suggestion": "Either create branching aftermath scenes for each option, OR remove the choices and rely on defaultNextScene. Make the choice-to-consequence relationship explicit."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice choice-3c, option [2] creates a narrative loop by pointing back to scene-4a-popular-table. This suggests the player can 'undo' their choice to sit at the empty table by immediately choosing to go to Jordan's table. This is confusing and breaks the linear flow.",
+      "location": "choices[4].options[2]",
+      "suggestion": "Change option [2] to point to scene-5-project-assignment. If the player wants to join Jordan's table, that choice should happen at the lunchroom (choice-2), not after committing to the empty table."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The outcomes array defines 4 branches, but only 3 have branchDialogue entries. This means one branch (branch-defended-then-drifted) will not have ending-scene dialogue variants, which may result in generic dialogue for that branch.",
+      "location": "outcomes[3] vs branchDialogue[*]",
+      "suggestion": "Add a branchDialogue entry for branch-defended-then-drifted to provide branch-specific dialogue for the ending scene."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene scene-4a-popular-table is described as a scene where the player makes a choice ('The whole table looks at Maya. Waiting to see which way she tips.'), but the scene itself has no explicit choice field. The choice is referenced via the choices array (choice-3a), which is correct per the data model, but the scene's dialogue should be clearer about when the choice happens.",
+      "location": "scenes[3].dialogue",
+      "suggestion": "Add a dialogue line at the end of the scene that explicitly prompts the player to make a choice (e.g., 'What do you do?'). This makes the choice point clear."
+    },
+    {
+      "category": "STYLE",
+      "message": "The episode has 8 scenes, but 3 of them (scene-4a-defend-aftermath, scene-4a-join-aftermath, scene-4b-sam-table) are relatively short and could be consolidated or expanded. The narrative flow feels a bit fragmented.",
+      "location": "scenes[*]",
+      "suggestion": "Consider consolidating short aftermath scenes or expanding them with more dialogue/description to improve narrative flow."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "The episode has 5 choices, but 3 of them (choice-3b, choice-3c, choice-4) have all options pointing to the same nextScene. This means the rendering pipeline will load the same scene regardless of the player's choice, which is inefficient.",
+      "location": "choices[3], choices[4], choices[5]",
+      "suggestion": "Either create branching scenes for each option, OR remove the choices and rely on defaultNextScene. This will improve rendering efficiency."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The traitMapping in choice-3a, option [2] has ADAPTABILITY: 2, but the nextScene points to scene-5-project-assignment, which skips the aftermath entirely. This means the player's choice to 'change the subject' has no narrative consequence, which is inconsistent with the trait change.",
+      "location": "choices[2].options[2]",
+      "suggestion": "Create a new aftermath scene (scene-4a-deflect-aftermath) to show the consequence of changing the subject. Then update option [2] to point to this new scene."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode's estimated play time is 12 minutes, but the actual content (8 scenes, 5 choices, ~100 dialogue lines) suggests it could be shorter (8-10 minutes) or longer (15-20 minutes) depending on player reading speed and choice complexity.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Verify the estimated play time by testing with actual players. Adjust if necessary."
+    }
+  ],
+  "summary": {
+    "totalChecks": 45,
+    "passedChecks": 32,
+    "failedChecks": 13,
+    "warningCount": 10
+  },
+  "recommendations": [
+    "CRITICAL: Remove all defaultNextScene fields from scenes that are referenced by choices (scenes 3, 4, 5). This will eliminate the dual-transition ambiguity and make the flow explicit.",
+    "CRITICAL: Create branching aftermath scenes for choices that currently have all options pointing to the same nextScene (choice-3b, choice-3c, choice-4). This will make the choices meaningful in both trait tracking and story flow.",
+    "CRITICAL: Add a branchDialogue entry for branch-defended-then-drifted to provide branch-specific dialogue for the ending scene.",
+    "CRITICAL: Fix the narrative loop in choice-3c, option [2] by changing the nextScene from scene-4a-popular-table to scene-5-project-assignment.",
+    "BEST_PRACTICE: Add explicit choice prompts to scenes that have choices (e.g., 'What do you do?' at the end of scene-4a-popular-table). This makes the choice point clear to players.",
+    "BEST_PRACTICE: Consolidate or expand short aftermath scenes to improve narrative flow and pacing.",
+    "BEST_PRACTICE: Verify the estimated play time (12 minutes) by testing with actual players. Adjust if necessary based on actual reading speed and choice complexity.",
+    "BEST_PRACTICE: Consider adding more branching scenes to increase replayability and show narrative consequences of player choices. Currently, many choices have no story impact."
+  ]
+}

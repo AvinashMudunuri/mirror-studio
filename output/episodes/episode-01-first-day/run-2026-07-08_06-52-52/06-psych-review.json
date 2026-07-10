@@ -1,0 +1,98 @@
+{
+  "status": "APPROVED",
+  "concerns": [
+    {
+      "severity": "MINOR",
+      "category": "EMOTIONAL_SAFETY",
+      "issue": "Sol's anxiety about fitting in and self-doubt is portrayed realistically but intensely throughout the episode. While age-appropriate, some players may experience vicarious anxiety.",
+      "location": "Scene 1 (New Front Steps), Scene 2 (Hallway Fork), internal monologues throughout",
+      "recommendation": "Content is appropriate as-is; recommend pairing with post-play reflection prompts that normalize anxiety as a common teen experience and validate healthy coping choices.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "EMOTIONAL_SAFETY",
+      "issue": "Alex's social isolation and preemptive withdrawal pattern could resonate painfully for isolated players, though the narrative frames it with compassion rather than shame.",
+      "location": "Scene 2 (Hallway Fork), Scene 3c (Quiet Bench), Scene 5b (Strictly Business)",
+      "recommendation": "Include a note in learning materials acknowledging that Alex's experience (moving, invisibility, guarded trust) is valid and common, and that reaching out (as Sol does) is a real, effective strategy.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "MENTAL_HEALTH",
+      "issue": "Sol's loss of her abuela is mentioned as recent (last spring) and unresolved grief. While realistic and age-appropriate, it's not deeply explored and could feel unfinished.",
+      "location": "Character background, Scene 1 internal monologue, Scene 5a dialogue",
+      "recommendation": "Current treatment is appropriate—grief is present but not the episode's focus. If this becomes a series, consider dedicating a future episode to processing this loss more fully.",
+      "mustFix": false
+    }
+  ],
+  "recommendations": [
+    "Add optional post-play reflection prompts for players who chose 'hollow' or 'party' endings, normalizing guilt and regret as teachable moments rather than character failures.",
+    "Consider brief contextual notes for educators about Alex's homesickness and Sol's grief—these are real teen experiences that may need follow-up conversation.",
+    "In future episodes, explore whether Sol reconnects with the friend she ditched at her old school (mentioned in her secrets), deepening the theme of loyalty and accountability.",
+    "Ensure the learning materials emphasize that all three ending branches are 'valid' outcomes with different lessons—no single 'correct' choice, which models real-world moral complexity.",
+    "Consider a companion resource for teachers on how to facilitate discussions about social belonging without shaming students who struggle with it."
+  ],
+  "triggerWarnings": [
+    {
+      "category": "ANXIETY",
+      "description": "Social anxiety about fitting in, first-day nerves, fear of being left out or labeled. Sol's internal monologues frequently reference worry about being judged or excluded.",
+      "severity": "MILD",
+      "location": "Throughout, especially Scene 1, Scene 2, Scene 3a, Scene 6"
+    },
+    {
+      "category": "LOSS",
+      "description": "Sol's recent loss of her abuela (died last spring) is mentioned as an unresolved grief that affects her sense of belonging and self-worth. Not graphically explored but emotionally present.",
+      "severity": "MILD",
+      "location": "Character background, Scene 1 internal monologue ('no te achiques'), Scene 5a dialogue"
+    },
+    {
+      "category": "SELF_ESTEEM",
+      "description": "Both Sol and Alex struggle with self-doubt, feeling invisible, and questioning whether they're 'enough.' Alex has a pattern of preemptive withdrawal to avoid rejection.",
+      "severity": "MILD",
+      "location": "Character backgrounds, Scene 3c, Scene 5b, Scene 7b (hollow ending)"
+    },
+    {
+      "category": "BULLYING",
+      "description": "Priya makes a joke at Alex's expense ('Sketchbook's out here having a whole art residency. By himself. Again.'). It's not severe, but it models social exclusion and mockery. The episode uses this as a moral test for the player.",
+      "severity": "MILD",
+      "location": "Scene 3a (Popular Table), briefly in Scene 3b (Bridge Table) when Priya raises an eyebrow"
+    },
+    {
+      "category": "FAMILY_CONFLICT",
+      "description": "Sol feels guilt about being embarrassed of her mom's exhaustion and work hours. Alex's parents are distant/inconsistent (dad in old city, mom working doubles). Jordan is parentified (caring for younger sister).",
+      "severity": "MILD",
+      "location": "Character backgrounds; not explicitly dramatized in scenes but present in context"
+    }
+  ],
+  "scores": {
+    "ageAppropriateness": 9,
+    "emotionalSafety": 8,
+    "educationalValue": 9,
+    "mentalHealthRep": 8,
+    "overall": 8.5
+  },
+  "summary": {
+    "strengths": [
+      "Authentic portrayal of real teen social dynamics: the seductive pull of belonging, the cost of exclusion, the difficulty of choosing authenticity over convenience.",
+      "Complex, non-villainous characters (even Priya is sharp but not evil; Jordan is genuinely kind but conflict-avoidant). This models that people are multidimensional.",
+      "Excellent emotional realism: Sol's self-doubt, Alex's guarded trust, the specific anxiety of being new. Teens will recognize themselves.",
+      "Strong educational design: the branching structure makes every choice visible and consequential, teaching that small decisions accumulate into larger outcomes.",
+      "Healthy modeling of key skills: empathy (noticing someone being left out), boundary-setting (keeping promises), courage (speaking up for someone), adaptability (navigating multiple social worlds).",
+      "Realistic consequences without punishment: hollow ending isn't a 'bad' ending, just a different one with different lessons. This respects player agency.",
+      "Diverse representation: multiethnic characters, LGBTQ+ inclusion (Alex uses they/them), working-class family contexts (Sol's mom, Jordan's parents' restaurant, Alex's single-parent household).",
+      "Trauma-informed approach: grief, loss, and family instability are present but not sensationalized. Characters cope through connection, not self-harm.",
+      "Ms. Chen models healthy adult presence: fair, observant, not performatively warm but genuinely caring. Shows teens what a good teacher looks like.",
+      "Humor is age-appropriate and character-driven: Sol's deflective humor, Alex's dry observations, Priya's sharp wit. Feels real, not forced."
+    ],
+    "improvements": [
+      "Consider adding a brief moment where Sol or another character explicitly names the value of what they're learning (e.g., 'I realized I was choosing comfort over kindness'). The episode trusts players to extract the lesson, which is good, but some explicit reflection could help younger players (11-12) consolidate learning.",
+      "The 'hollow' ending (Scene 7b) is emotionally realistic but could include a small moment of hope—perhaps Ms. Chen's comment hints that this isn't permanent, that Sol can rebuild trust. Currently it ends on regret, which is appropriate but could be slightly softened for younger players.",
+      "Alex's homesickness is mentioned but not deeply explored. If this is intentional (to keep focus on Sol's arc), that's fine, but if Alex gets future episodes, consider circling back to this unresolved grief.",
+      "Priya's joke about Alex could include a moment where someone (not necessarily Sol) visibly reacts with discomfort, making it clearer that the joke lands as unkind, not just witty. Currently, the moral weight depends entirely on the player's interpretation.",
+      "Consider a brief moment in the presentation day scene where Ms. Chen's fairness is explicitly visible—e.g., she gives feedback that acknowledges effort, not just outcome. This models what healthy evaluation looks like.",
+      "The party scene (7b) could include one line showing Jordan's awareness that Sol ditched Alex—not as judgment, but as evidence that he notices and cares. This would deepen his character and show that kindness isn't oblivious."
+    ],
+    "readyForAudience": true
+  }
+}

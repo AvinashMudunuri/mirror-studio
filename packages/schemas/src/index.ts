@@ -532,3 +532,4 @@ export type Workflow = z.infer<typeof WorkflowSchema>;
 // ============================================================================
 
 export * from './agent-specs';
+export * from './player-projection';

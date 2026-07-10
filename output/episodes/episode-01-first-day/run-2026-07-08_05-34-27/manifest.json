@@ -1,0 +1,186 @@
+{
+  "episode": {
+    "number": 1,
+    "title": "First Bell",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "0bb74933-9e16-4092-93e1-2578cc84f9f6",
+    "threadId": "a67ad3c5-3efa-4ffe-99d8-c96cc3dc6938",
+    "startedAt": "2026-07-08T05:34:27.432Z",
+    "completedAt": "2026-07-08T06:37:57.716Z",
+    "totalSeconds": 3810.3,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [],
+    "previousEpisodes": [],
+    "previousEpisodesSource": null,
+    "previousProtagonist": null,
+    "reusedSupportingCharacters": [],
+    "usage": {
+      "calls": 31,
+      "inputTokens": 524255,
+      "outputTokens": 394689,
+      "totalTokens": 918944,
+      "cacheCreationInputTokens": 95345,
+      "cacheReadInputTokens": 233196,
+      "budget": 1200000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 17,
+          "inputTokens": 166792,
+          "outputTokens": 323887,
+          "cacheReadInputTokens": 0
+        },
+        "claude-haiku-4-5-20251001": {
+          "calls": 14,
+          "inputTokens": 357463,
+          "outputTokens": 70802,
+          "cacheReadInputTokens": 233196
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Maya Ferreira",
+      "role": "Player-character protagonist of 'First Bell.' Maya is the lens through which the player makes identity choices in real time — every hallway interaction, lunch table decision, and group project moment is a live test of whether she edits herself to fit in or risks being seen. Her arc across the episode is a compressed version of the whole season's theme: belonging isn't something you find by disappearing into the right group, it's something you build by letting the right people see you.",
+      "active": true
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Reyes",
+      "role": "The gravitational center of the 'in-crowd' table and the episode's clearest test of complicity — Jordan makes the cost of belonging concrete and immediate, not abstract. She's not a villain; she's the mirror Maya could become if she stops noticing the cost.",
+      "active": true
+    },
+    {
+      "id": "sam",
+      "name": "Sam Okafor",
+      "role": "Sam is the human stakes of Maya's choices — not a lesson, a person. He's the one who actually gets hurt when Maya goes along with the crowd, and the one who actually notices when she doesn't. He gives Maya's decisions weight and consequence, and gives her (and the player) a genuine alternative to Jordan's table: smaller, quieter, realer.",
+      "active": true
+    },
+    {
+      "id": "alex",
+      "name": "Alex Torres-Mireles",
+      "role": "Alex is the living proof of the episode's thesis before Maya fully believes it: that a place to belong can be built, not just found. They give Maya her first real choice that isn't 'pick a side' — it's 'make a side, from nothing, with someone else who's scared too.' Alex's own hidden fear of impermanence quietly raises the stakes of Maya's later text to Sam: for Alex, a table that lasts past one lunch period isn't a nice idea, it's the first evidence in a long time that staying somewhere might be worth it.",
+      "active": true
+    },
+    {
+      "id": "devon",
+      "name": "Devon Park",
+      "role": "Devon is the second obstacle in Maya's episode — not a bully, a bulldozer. He gives Maya a concrete, low-stakes-but-real test of whether she'll spend her one sentence defending Sam's idea or smoothing things over to keep group harmony intact. He also quietly seeds his own arc: a kid so afraid of being ordinary that he can't recognize a good idea unless it's his.",
+      "active": true
+    },
+    {
+      "id": "ms-alvarez",
+      "name": "Renata Alvarez",
+      "role": "Ms. Alvarez is the unseen hand behind the episode's central 'second chance' beat — the teacher whose ordinary classroom logistics turn out to be quietly load-bearing. She doesn't lecture Maya about kindness or belonging; she just puts her in a room with Sam and Devon and lets the actual test happen. Her presence in 'First Bell' is brief but structurally important: she's proof that adults in this world are watching more closely than the kids assume, and that not every act of care announces itself as one.",
+      "active": true
+    }
+  ],
+  "finalStatus": "NEEDS_HUMAN_REVIEW",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "FAIL",
+    "childPsychologist": "APPROVED",
+    "gameDesigner": "GOOD",
+    "ethicsReviewer": "GOOD"
+  },
+  "revisions": [
+    {
+      "iteration": 1,
+      "failingBefore": [
+        "qaReviewer",
+        "gameDesigner",
+        "ethicsReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 18,
+      "dialogueFeedbackCount": 7,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    },
+    {
+      "iteration": 2,
+      "failingBefore": [
+        "qaReviewer",
+        "gameDesigner",
+        "ethicsReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 17,
+      "dialogueFeedbackCount": 6,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "UNREADABLE",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    },
+    {
+      "iteration": 3,
+      "failingBefore": [
+        "qaReviewer",
+        "gameDesigner",
+        "ethicsReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 9,
+      "dialogueFeedbackCount": 0,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    }
+  ],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "06-psych-review.json",
+    "07-game-review.json",
+    "08-ethics-review.json",
+    "revision-1/feedback.json",
+    "revision-1/story-outline.json",
+    "revision-1/dialogue.json",
+    "revision-1/qa-review.json",
+    "revision-1/game-review.json",
+    "revision-1/ethics-review.json",
+    "revision-2/feedback.json",
+    "revision-2/story-outline.json",
+    "revision-2/dialogue.json",
+    "revision-2/qa-review.json",
+    "revision-2/game-review.json",
+    "revision-2/ethics-review.json",
+    "revision-3/feedback.json",
+    "revision-3/story-outline.json",
+    "revision-3/dialogue.json",
+    "revision-3/qa-review.json",
+    "revision-3/game-review.json",
+    "revision-3/ethics-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}

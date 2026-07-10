@@ -1,0 +1,156 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-6 has a choice (choice-3) but also defines a defaultNextScene (scene-7). Per the data model, a scene must use exactly one transition mechanism, not both.",
+      "location": "scenes[9].transitions and scenes[9].defaultNextScene",
+      "expectedValue": "Either a choice with nextScenes OR a defaultNextScene, not both",
+      "actualValue": "Both present: choice-3 with nextScenes=['scene-6a','scene-6b','scene-6c'] AND defaultNextScene='scene-7'",
+      "fix": "Remove the defaultNextScene field from scene-6, as the choice mechanism takes precedence. The choice options already route to scene-6a/b/c, which then route to scene-7 via their own defaultNextScene values."
+    },
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-7 has a choice (choice-4) but also defines a defaultNextScene (scene-8). Per the data model, a scene must use exactly one transition mechanism, not both.",
+      "location": "scenes[10].transitions and scenes[10].defaultNextScene",
+      "expectedValue": "Either a choice with nextScenes OR a defaultNextScene, not both",
+      "actualValue": "Both present: choice-4 with nextScenes=['scene-7a','scene-7b','scene-7c'] AND defaultNextScene='scene-8'",
+      "fix": "Remove the defaultNextScene field from scene-7. The choice options route to scene-7a/b/c, which then route to scene-8 via their own defaultNextScene values."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Choice option scene-3a references nextScene='scene-4', but scene-4 is not a choice scene — it has no choice attached. However, scene-4 itself has a choice (choice-2) that should be the transition point. This creates an inconsistency in the branching model.",
+      "location": "choices[0].options[0].nextScene",
+      "expectedValue": "Should reference a scene that either has a choice or a defaultNextScene that eventually leads to a choice or END",
+      "actualValue": "scene-4 (which has a choice but is being treated as a passthrough)",
+      "fix": "This is actually correct per the model: scene-4 has a choice, so it will present that choice to the player. The nextScene='scene-4' is valid. However, verify that the rendering pipeline correctly handles scenes that have both a choice and are referenced as a nextScene target. If the pipeline expects scenes to be 'pure' (either choice-bearing or choice-free), restructure so scene-4 is always entered fresh."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-3a, scene-3b, and scene-3c all have defaultNextScene='scene-4', but scene-4 is a choice scene. This means all three branches converge at a choice point, which is correct, but the dialogue in scene-3a/b/c does not explicitly indicate that the player is moving to a new scene (the cafeteria). The transition feels abrupt.",
+      "location": "scenes[3,4,5].defaultNextScene",
+      "expectedValue": "Dialogue should bridge to the cafeteria or next location",
+      "actualValue": "Dialogue ends without transition narration",
+      "fix": "Add a final NARRATOR line in each of scene-3a/b/c dialogue that bridges to the cafeteria (e.g., 'The bell rings. Time to find lunch.'). This improves UX clarity."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "In scene-6 dialogue, Ms. Alvarez says 'That's — actually really strong, Jordan. Hold that thought.' but then immediately the pairing list is read and Ben is paired with player. The dialogue does not show Ms. Alvarez actually reading the pairings aloud. This creates a narrative gap.",
+      "location": "scenes[9].dialogue[3-5]",
+      "expectedValue": "Dialogue should include Ms. Alvarez reading the pairings or transitioning to that action",
+      "actualValue": "Dialogue jumps from praising Jordan to Ben being paired without the reading step",
+      "fix": "Add a NARRATOR line between s6-4 and s6-5: 'Ms. Alvarez reads off the pairing list. Ben's name lands next to player's.' This clarifies the transition."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-7 (Called On) has choice-4 with three options (scene-7a, scene-7b, scene-7c). However, the dialogue in scene-7 does not clearly establish that a choice is about to be presented to the player. The scene ends with 'The room's attention lingering a beat too long.' — which is atmospheric but does not signal that the player is about to make a decision.",
+      "location": "scenes[10].dialogue and scenes[10].transitions",
+      "expectedValue": "Final dialogue should prompt or signal the choice (e.g., 'What do you do?' or similar)",
+      "actualValue": "Scene ends with atmospheric narration, no choice signal",
+      "fix": "Add a final INTERNAL line to scene-7 dialogue: 'Okay. This is the moment. What do you do?' This signals the choice point to the player."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "In scene-8 (Last Bell), the dialogue references 'Jordan's group' and 'Maya' and 'Ben' as separate entities, but the scene description says 'Jordan's group is heading somewhere and half-invites player along.' However, the dialogue does not show Jordan actually extending the invitation. The invitation is implied but not shown.",
+      "location": "scenes[11].dialogue[2]",
+      "expectedValue": "Dialogue should include Jordan's actual invitation line",
+      "actualValue": "Dialogue references the invitation but does not show it",
+      "fix": "Add a dialogue line from Jordan before s8-2: 'Jordan catches up to player at the bottom of the steps. \"Hey — we're all heading to the place by the field, if you want in. No pressure. Just, you know. Should probably be there.\"' This makes the invitation explicit."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-authentic-belonging' is triggered by ['choice-2:a','choice-3:a','choice-4:a','choice-5:a'], meaning the player must choose option 'a' in all four choice points. However, there are five choice points total (choice-1 through choice-5). The outcome does not account for choice-1, which means a player who chooses 'a' in choice-1 but 'b' in choice-2 would not trigger this branch. This is inconsistent with the stated intent.",
+      "location": "outcomes[0].triggeredBy",
+      "expectedValue": "Should include choice-1:a or explicitly exclude choice-1 from the branch logic",
+      "actualValue": "Starts at choice-2:a, skipping choice-1",
+      "fix": "Update triggeredBy to ['choice-1:a','choice-2:a','choice-3:a','choice-4:a','choice-5:a'] to require all five choices to be 'a' for the authentic path. Alternatively, clarify in the description that choice-1 is a 'soft' choice that doesn't lock the branch."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-popularity-conformity' is triggered by ['choice-2:b','choice-3:c','choice-4:b','choice-5:b']. This skips choice-1 entirely and also skips choice-4:c. A player who chooses 'b' in choice-2, 'c' in choice-3, 'b' in choice-4, and 'b' in choice-5 would not match any branch (no branch includes choice-3:c + choice-4:b). This creates an unreachable outcome state.",
+      "location": "outcomes[1].triggeredBy",
+      "expectedValue": "Should cover all possible combinations or explicitly document which combinations are valid",
+      "actualValue": "Incomplete coverage; some choice combinations don't map to any branch",
+      "fix": "Either expand the triggeredBy arrays to cover all combinations, or add a 'default' branch that catches unmapped combinations. Recommend adding a fourth outcome for mixed strategies."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-balanced-growth' is triggered by ['choice-2:c','choice-3:b','choice-4:c','choice-5:c']. Again, choice-1 is not included. Additionally, a player who chooses 'c' in choice-2, 'a' in choice-3, 'c' in choice-4, and 'c' in choice-5 would not match any branch. This creates unreachable states.",
+      "location": "outcomes[2].triggeredBy",
+      "expectedValue": "Should cover all possible combinations or be documented as partial",
+      "actualValue": "Incomplete coverage; many combinations unmapped",
+      "fix": "Expand all three outcome branches to include choice-1 and ensure all 3^5 = 243 combinations (or at least all 3^4 = 81 combinations if choice-1 is intentionally soft) map to exactly one branch. Alternatively, implement a 'closest match' algorithm in the rendering pipeline."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "The episode has 5 choice points, but only 3 outcome branches. The triggeredBy arrays do not cover all possible choice combinations. For example, a player who chooses [a, a, a, a, b] (all 'a' except final choice) does not match any branch. This means the branchDialogue for scene-8a will not fire for all players who reach scene-8a.",
+      "location": "outcomes array",
+      "expectedValue": "Either 3^5=243 branches (one per combination) or a documented 'default' branch for unmapped combinations",
+      "actualValue": "3 branches with incomplete triggeredBy coverage",
+      "fix": "Add a fourth outcome branch for 'mixed' strategies, or implement a 'majority vote' algorithm (e.g., if player chose 'a' more than 'b' or 'c', trigger authentic-belonging). Document the algorithm clearly."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-8a has branchDialogue entries for three different branches (branch-authentic-belonging, branch-popularity-conformity, branch-balanced-growth). However, only one of these branches can fire at a time based on the player's choice history. If a player reaches scene-8a but their choice history doesn't match any of the three branches, the rendering pipeline will not know which branchDialogue to display. This is a critical rendering failure.",
+      "location": "branchDialogue[0-2]",
+      "expectedValue": "All possible branches that can reach scene-8a should have branchDialogue entries, and all possible choice histories should map to exactly one branch",
+      "actualValue": "Three branches defined, but choice history mapping is incomplete",
+      "fix": "Ensure that every possible choice history maps to exactly one branch. Use a 'default' or 'fallback' branch for unmapped combinations."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "In branchDialogue for scene-8a, the branch-popularity-conformity variant includes dialogue where Maya says 'Didn't peg you for a window-table person.' However, this dialogue assumes the player chose to sit with Maya in choice-2:a. But the branch-popularity-conformity is triggered by choice-2:b (Jordan's table), not choice-2:a. This is a contradiction — the player would not be at the window table if they chose Jordan's table.",
+      "location": "branchDialogue[1] (scene-8a, branch-popularity-conformity)",
+      "expectedValue": "Dialogue should reflect that player chose Jordan's table, not Maya's table",
+      "actualValue": "Dialogue assumes player is at window table, contradicting the branch trigger",
+      "fix": "Rewrite the branch-popularity-conformity dialogue for scene-8a to reflect that player chose Jordan's table earlier. For example: 'Maya glances over from the window table, then goes back to her sketchbook like she never looked at all.'"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "In branchDialogue for scene-8b, the branch-authentic-belonging variant includes dialogue where Jordan says 'Didn't think you'd actually pick us, ngl.' However, this dialogue assumes the player chose Jordan's table in choice-2:b. But the branch-authentic-belonging is triggered by choice-2:a (Maya's table), not choice-2:b. This is a contradiction — the player would not be at Jordan's table if they chose Maya's table.",
+      "location": "branchDialogue[4] (scene-8b, branch-authentic-belonging)",
+      "expectedValue": "Dialogue should reflect that player chose Maya's table, not Jordan's table",
+      "actualValue": "Dialogue assumes player is at Jordan's table, contradicting the branch trigger",
+      "fix": "This branchDialogue entry should not exist for scene-8b if the player chose choice-2:a. Either remove this entry or restructure the branch logic to allow players to reach scene-8b via multiple paths."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-8b (In the Group) is only reachable via choice-5:b. However, choice-5 is only presented if the player reaches scene-8. But scene-8 is only reachable if the player completes the earlier scenes. The issue is that scene-8b's branchDialogue assumes the player chose choice-2:b (Jordan's table), but a player could theoretically reach scene-8b via a different path if the choice logic is not enforced. This creates a potential narrative inconsistency.",
+      "location": "scenes[11] and choices[4]",
+      "expectedValue": "Scene-8b should only be reachable if player chose choice-2:b earlier",
+      "actualValue": "Scene-8b is reachable via choice-5:b, but the path from choice-2 is not enforced",
+      "fix": "Add a validation check in the rendering pipeline to ensure that if a player reaches scene-8b, they must have chosen choice-2:b. Alternatively, make scene-8b's dialogue flexible enough to handle multiple prior choice histories."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Scene scene-8a has branchDialogue for three branches, but the dialogue variants assume different prior choices. For example, branch-authentic-belonging assumes choice-2:a (Maya's table), but branch-popularity-conformity assumes choice-2:b (Jordan's table). However, scene-8a is only reachable via choice-5:a, which means the player chose to sit with Ben and Maya. This contradicts the branch-popularity-conformity dialogue, which assumes the player chose Jordan's table.",
+      "location": "branchDialogue[0-2] (scene-8a)",
+      "expectedValue": "All branchDialogue variants for scene-8a should be consistent with the fact that the player chose choice-5:a (Ben and Maya)",
+      "actualValue": "branch-popularity-conformity dialogue contradicts the choice-5:a path",
+      "fix": "Remove the branch-popularity-conformity branchDialogue entry from scene-8a, or rewrite it to reflect that the player is now at the window table despite earlier choices. Alternatively, restructure the scene routing so that scene-8a is only reachable if the player chose choice-2:a (Maya's table) earlier."
+    }
+  ],
+  "warnings": [],
+  "summary": {
+    "totalChecks": 0,
+    "passedChecks": 0,
+    "failedChecks": 16,
+    "warningCount": 0
+  }
+}

@@ -1,0 +1,377 @@
+[
+  {
+    "character": {
+      "id": "Jordan",
+      "name": "Jordan Cho-Williams",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Medium height, easy posture, the kind of kid who looks like he's already comfortable in every room he walks into. Wears his backpack slung over one shoulder, never both — like he's always ready to peel off toward something more interesting.",
+        "distinctiveFeatures": [
+          "A chipped front tooth from a skateboarding fall in 5th grade that he's turned into a signature grin",
+          "Always has a rotating cast of wristbands and lanyards from every club/team he's briefly committed to",
+          "Walks backward when he talks to people, like he trusts the hallway to move out of his way"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "charismatic",
+          "quick-witted",
+          "conflict-avoidant",
+          "secretly anxious about relevance",
+          "reflexively generous with attention, inconsistently generous with loyalty"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "conscientiousness": 4,
+          "extraversion": 9,
+          "agreeableness": 6,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Points finger-guns at people he's just met as a way of 'locking in' their name",
+          "Laughs a half-second before the joke actually lands, like he's cueing the room",
+          "Taps a rhythm on lockers/desks when he's bored or covering for not knowing an answer"
+        ],
+        "speechPatterns": [
+          "Instantly assigns nicknames ('new kid,' 'quick,' shortened versions of names) as a way of claiming familiarity fast",
+          "Uses hype-man language ('no way,' 'that's actually insane,' 'I respect it') to make people feel like main characters around him",
+          "Deflects with a joke the second a conversation gets emotionally real"
+        ],
+        "emotionalTendencies": "Jordan runs warm and fast — quick to laugh, quick to include, quick to move on. But underneath the constant motion is a low hum of anxiety about being forgettable. He reads rooms compulsively, adjusting his energy to stay the center of gravity. When someone else (even briefly) becomes more interesting, he doesn't get mean exactly — he gets funnier, louder, faster, like he's trying to out-charisma the moment back into his favor."
+      },
+      "background": {
+        "family": "Oldest of three, with a much-older half-sister who's a source of constant unspoken comparison — she was valedictorian, all-state soccer, 'the good one.' Jordan's parents split when he was nine; he splits weeks between two households and has gotten very good at being the easy, low-maintenance kid in both, because the alternative — being a problem — feels unaffordable.",
+        "interests": [
+          "skateboarding (more for the culture than the sport)",
+          "collecting weird trivia to drop in conversation",
+          "basketball, though he's benched more than he plays",
+          "making Spotify playlists named after inside jokes"
+        ],
+        "strengths": [
+          "genuinely remembers small details about people — birthdays, siblings' names, what someone said they were nervous about",
+          "can defuse tension in a room instantly",
+          "loyal to people once he decides they're 'his,' even if it takes him a while to get there"
+        ],
+        "struggles": [
+          "quietly behind in most of his classes and terrified of anyone finding out, which is part of why he never wants attention to land anywhere serious for too long",
+          "doesn't know how to be disliked, even for a good reason",
+          "has never once told a friend group 'no' when they were about to be unkind, because the two seconds of silence that would take feels like free-falling"
+        ],
+        "secrets": [
+          "He's failing math and has been forging his dad's signature on progress reports for two months",
+          "He actually thinks Ben's project idea (the one he mocked) was smart — he just didn't want the room's attention to land somewhere he couldn't control it"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Stay the person everyone wants at their table",
+          "Make new kid (player) 'his' discovery before anyone else claims them socially",
+          "Keep things light — never let a moment get heavy enough that someone might ask him a real question"
+        ],
+        "unconscious": [
+          "To matter in a way that doesn't depend on being impressive at anything specific",
+          "To be forgiven in advance for the moments he knows, deep down, he's being a coward"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Contemporary middle-school slang used fluently and constantly, but not performatively — this is just how he talks. Confident cadence, minimal hedging.",
+        "sentenceComplexity": "Short, punchy, momentum-driven. Rarely pauses mid-thought. Sentences often trail into a joke rather than a full stop.",
+        "emotionalExpressiveness": "Loud and immediate on the surface — real feeling underneath comes out sideways, in the things he deflects from rather than what he says directly.",
+        "examples": [
+          "\"Whoa — okay, new kid's got hands. I respect it. Didn't even flinch.\"",
+          "\"Ben, my man, groundbreaking as always\" (said with a grin, right before the room laughs at Ben instead of with him)",
+          "\"See, this is why I like you — you don't get weird about stuff. Come sit with us, it's not a whole thing.\"",
+          "\"...nah, forget it, forget I said anything, what were you saying\" (his go-to exit line whenever a conversation risks turning serious)"
+        ]
+      },
+      "storyRole": "Jordan is the gravitational center of Ridgeline's social world — the character whose approval feels like the fastest, easiest path to belonging. Functionally, Jordan is the personification of the 'performer' path: charismatic, low-cost validation that always has a hidden toll (Ben, Maya, and eventually the player's own sense of self). Jordan is not a villain — he's a mirror for the player's own temptation to trade authenticity for ease.",
+      "arcPotential": [
+        "Later episode: Jordan's academic struggles surface publicly, and the player has the chance to be the first person who doesn't perform surprise or judgment — testing whether the friendship built in 'The First Bell' was real.",
+        "Later episode: A moment where Jordan's group turns the same casual cruelty on Jordan himself (making fun of a stumble, a mistake), forcing Jordan to feel what Ben felt — and the player gets to choose whether to call it out, mirroring the Ben storyline.",
+        "Long-arc potential: Jordan slowly becomes capable of one real, costly act of loyalty — defending someone with nothing to gain — if the player has modeled that behavior for him across the season."
+      ]
+    },
+    "designNotes": "Jordan is designed to be genuinely likable in the room — not a cartoon golden child — because the player's temptation to orbit him only works dramatically if the appeal is real. His charisma is a survival adaptation (blended family, older high-achieving sibling, academic struggles he's hiding), not an innate trait, which gives him room to grow without excusing the harm he causes. The key contradiction: he privately respects Ben's idea but publicly mocks it — this is what keeps him from being a simple bully and makes him a mirror for the player's own social compromises. His speech patterns (instant nicknames, deflection through humor) are built to feel warm on first contact and slightly hollow on closer inspection, so that player-characters who choose 'Center Table' or 'In the Group' get a taste of real charm alongside a quiet, growing unease — exactly the emotional texture the episode needs.",
+    "representationNotes": "Jordan's mixed-heritage, blended-family background (implied Korean American father, remarried household) is present in texture (last name Cho-Williams, references to splitting time between two homes) without being reduced to an 'issue' — it informs his psychology (a kid who's learned to be easy and agreeable across two households) rather than his plot function. Care was taken not to make the 'popular kid' archetype a stand-in for shallowness; Jordan's struggles (undiagnosed or unaddressed academic difficulty, family comparison pressure) are common, real pressures for early-teen boys who mask insecurity with social performance, and are written with empathy rather than as a punishment waiting to happen."
+  },
+  {
+    "character": {
+      "id": "Maya",
+      "name": "Maya Oyelaran",
+      "age": 12,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height, dark brown skin, thick coily hair usually pulled into a messy bun stabbed through with a pencil. Wears the same three oversized hoodies in rotation, sleeves pushed up to her elbows when she draws.",
+        "distinctiveFeatures": [
+          "Perpetual smudges of graphite or colored pencil on the side of her hand",
+          "A sketchbook with a cracked spine, held together with duct tape shaped badly like a star",
+          "Chews on pen caps when she's concentrating, has ruined at least four this way"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "guarded",
+          "dry-witted",
+          "fiercely observant",
+          "loyal once trust is earned",
+          "quietly proud"
+        ],
+        "bigFiveProfile": {
+          "openness": 9,
+          "conscientiousness": 6,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Angles her sketchbook away from people until she decides they've earned a look",
+          "Taps her pencil against her teeth when she's deciding whether to trust someone with a joke",
+          "Goes very still and quiet when she's actually hurt, instead of reacting loudly"
+        ],
+        "speechPatterns": [
+          "Short, clipped sentences until she's comfortable, then suddenly rambling about something hyper-specific (art technique, a comic panel, an animal fact)",
+          "Deploys sarcasm as a first line of defense — 'Oh good, another person to ignore me creatively'",
+          "Rarely uses filler words; when she says something sincere, it lands harder because it's rare"
+        ],
+        "emotionalTendencies": "Maya has trained herself to expect to be overlooked, so she preempts it — she'd rather seem like she doesn't care than be caught caring and get proven right that no one else does. Warmth cracks through fast once someone shows her real, unglamorous attention (not performance-attention), and when it does, she's startlingly funny and generous."
+      },
+      "background": {
+        "family": "Lives with her mom, an ER nurse who works long unpredictable shifts, and her abuela, who raised her most of elementary school while her mom worked nights. Money's tight but never talked about directly — Maya deflects with jokes if it comes up.",
+        "interests": [
+          "Drawing absurdist/surreal versions of mundane things (mascots, teachers, cafeteria food as monsters)",
+          "Horror movies she's definitely too young to be watching",
+          "Collecting weird facts about deep-sea creatures"
+        ],
+        "strengths": [
+          "Sees people clearly — notices who's performing and who's real, faster than almost anyone",
+          "Genuinely talented artist, though she downplays it",
+          "Doesn't cave to social pressure the way Jordan's orbit expects everyone to"
+        ],
+        "struggles": [
+          "Moved schools twice in the last three years (family moves for work/rent reasons), so she's stopped investing early in friendships expecting to lose them",
+          "Convinced she's 'not really a middle school person' — uses that identity as armor rather than admitting she's lonely",
+          "Struggles to ask for things directly; will test people with small gestures instead of saying 'I want to be your friend'"
+        ],
+        "secrets": [
+          "She's been eating alone by window for three weeks and has started drawing the same unnamed kid (loosely based on nobody in particular, she tells herself) sitting across from her in her sketchbook",
+          "She actually really wanted Jordan's table to invite her once, back in September — she said no when it happened, and has never told anyone she regrets it"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the day without anyone noticing she's alone",
+          "Fill her sketchbook with something good enough to maybe show at the spring art show"
+        ],
+        "unconscious": [
+          "Wants someone to choose her without her having to ask",
+          "Needs proof that being herself (weird, guarded, unimpressive by Ridgeline's social math) doesn't automatically mean being alone"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Sharp, a little older-sounding than her peers — reads a lot, picks up phrases from movies and internet culture, uses them dryly rather than trying to sound cool.",
+        "sentenceComplexity": "Short and guarded early in a conversation; longer, tangent-heavy sentences once comfortable, especially about art or niche interests.",
+        "emotionalExpressiveness": "Indirect by default — jokes instead of stating feelings. When she does say something sincere, it's brief, almost surprised out of her, and she often deflects immediately afterward with humor.",
+        "examples": [
+          "Example line 1: \"Oh, you're sitting here? Bold move. I don't bite, I just judge your tray choices silently.\"",
+          "Example line 2: \"...It's the mascot. As a raccoon that's seen some stuff. Don't— it's not that deep, stop looking at me like that.\"",
+          "Example line 3: \"I'm used to it. The alone thing. It's fine.\" (beat) \"It's not, like, tragic. I have a sketchbook. I have opinions about sharks.\""
+        ]
+      },
+      "storyRole": "Maya is the emotional anchor of the 'genuine connector' path — she represents the risk and reward of choosing quiet authenticity over easy, loud belonging. She never chases the player's attention the way Jordan's orbit does; she has to be noticed and chosen, which makes her arc a direct test of whether the player is capable of the smaller, harder kind of courage.",
+      "arcPotential": [
+        "Episode 2: Maya cautiously starts sitting with the player and Ben by choice, but bristles the first time the player also sits with Jordan's table, testing whether she's about to be dropped again",
+        "Episode 3: Maya's art gets noticed (positively or mockingly) by a wider audience, forcing her to decide whether visibility is worth the vulnerability",
+        "Episode 4-5: Maya opens up about the repeated moves and why she guards new friendships, deepening trust with the player if the 'genuine connector' path was chosen consistently",
+        "Season finale potential: Maya submits to the art show, and the player's arc culminates in showing up for her publicly, mirroring the private choice made on 'The First Bell'"
+      ]
+    },
+    "designNotes": "Maya is built to resist being 'the sad lonely girl who just needs a friend' as a flat trope — her loneliness is real, but she has agency, humor, and pride that make her prickly rather than pitiable. Her defense mechanism (preemptive dismissal/sarcasm) directly mirrors Riley's own 'eager to please but resents it' trait, giving them a natural, non-cutesy chemistry: two guarded people circling each other. The secret about wanting Jordan's table once complicates any temptation to read her as morally superior to the performer path — she's not above wanting easy belonging, she just didn't get offered it the way Riley is, which raises the stakes of the player's choice without making Jordan a strawman.",
+    "representationNotes": "Maya's family situation (working-class, multigenerational household, nurse mother with unpredictable hours) is depicted through texture and behavior rather than stated as a 'poverty plot point' — it explains things like her rotation of hoodies and her deflection around money without turning her into an issue-of-the-week character. Her being a Black girl who is guarded, sarcastic, and artistically confident is written to avoid both the 'sassy sidekick' flattening and the 'suffering' trope — her interiority (fear, pride, specific dorky interests like deep-sea creatures) is centered as the point of her character, not her social utility to Riley's arc."
+  },
+  {
+    "character": {
+      "id": "Ms. Alvarez",
+      "name": "Elena Alvarez",
+      "age": 34,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height, dark curly hair usually pulled back in a claw clip that's losing the battle by 3rd period, wears cardigans with chalk dust on the sleeves regardless of whether the room has a whiteboard or not — an old habit from her first classroom.",
+        "distinctiveFeatures": [
+          "A rotating cast of novelty pens she 'confiscates' from students and then visibly uses herself",
+          "A voice that drops half an octave when she's trying to get control of a loud room, instead of rising",
+          "Reading glasses she wears on a beaded chain and forgets are already on her face"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "warm but stretched thin",
+          "believes in structure as kindness",
+          "quietly perceptive but overloaded",
+          "self-critical about what she misses"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 8,
+          "extraversion": 5,
+          "agreeableness": 7,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Taps two fingers on the desk when scanning the room for who's paying attention",
+          "Says 'okay, okay, okay' rapid-fire when transitioning the class between activities",
+          "Crouches down to eye level when talking to a student one-on-one instead of talking down at them"
+        ],
+        "speechPatterns": [
+          "Uses 'folks' to address the class instead of 'guys' or 'class'",
+          "Turns questions back on students ('What do you think that means?') even when she could just answer",
+          "Has a verbal tic of saying 'Here's the thing' before delivering a mini life-lesson she immediately seems embarrassed about"
+        ],
+        "emotionalTendencies": "Genuinely cares and tries to build a classroom where kids feel safe, but she's managing five sections a day and running on too little sleep — her attention is real but finite, and she knows it, which eats at her more than she lets on. She's quick to warmth, slower to notice quiet damage happening at the edges of a loud room."
+      },
+      "background": {
+        "family": "Oldest of four, grew up translating for her parents at parent-teacher conferences that weren't her own — part of why she became a teacher in the first place. Now has a toddler at home and a husband who does daycare pickup on the days she has after-school tutoring.",
+        "interests": [
+          "restoring an old bike she never has time to ride",
+          "true crime podcasts during grading",
+          "keeps a 'wall of fame' of former students' postcards"
+        ],
+        "strengths": [
+          "building real rapport with reluctant students",
+          "reading a room's emotional temperature — most of the time",
+          "making group work actually functional instead of a free-for-all"
+        ],
+        "struggles": [
+          "spread too thin across too many students to catch everything",
+          "guilt over the moments she misses",
+          "tendency to over-explain when she feels she's failed a kid"
+        ],
+        "secrets": [
+          "She noticed Jordan's pattern of needling other kids months ago and has been quietly trying to redirect his energy in class discussions — she just hasn't cracked how yet",
+          "She keeps a private note in her planner about every kid who seems isolated, including Ben, and feels like she's behind on all of them"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the semester project without a repeat of last year's group-work disaster",
+          "Build a classroom culture where kids call each other in, not out"
+        ],
+        "unconscious": [
+          "To prove to herself she's still the teacher she meant to be before the job wore her down",
+          "To be trusted by kids who don't trust adults easily"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult, plain-spoken, avoids jargon; occasionally slips into 'teacher voice' cadence when redirecting the class.",
+        "sentenceComplexity": "Short and directive during classroom management ('Okay, eyes up here'), longer and warmer in one-on-one moments.",
+        "emotionalExpressiveness": "Direct with praise, understated with correction — she'd rather redirect the room's energy than call out a specific kid by name.",
+        "examples": [
+          "\"Okay, okay, okay — settle in, folks, we've got groups to make and not a lot of period left.\"",
+          "\"Ben, why don't you kick us off — I liked where your group's notes were headed.\"",
+          "\"Riley, thank you for that — that's exactly the kind of building-on-an-idea I want to see more of in here.\""
+        ]
+      },
+      "storyRole": "Ms. Alvarez is the well-meaning adult authority whose imperfect attention creates the exact vacuum where the player's choice matters most. She's not oblivious by design — she's a real teacher managing a real room, and her missed moment with Ben isn't negligence, it's the ordinary failure of an adult who can't watch everything at once. Her approving nod at the end of 'Out Loud' matters because it's rare and earned, not automatic — she notices real courage when she catches it, even if she doesn't catch everything.",
+      "arcPotential": [
+        "Later episode: Ms. Alvarez privately pulls Riley aside to say she noticed the 'Out Loud' moment and has been meaning to say something — suggesting she's been tracking more than she lets on, complicating the 'oblivious adult' read",
+        "Possible episode: A parent-teacher-style scene where her home life (toddler, exhaustion) briefly surfaces, humanizing why she misses things without excusing it",
+        "Possible late-game beat: She restructures group work specifically because of what happened with Ben, showing the ripple effect of the player's choice reaching the adults too"
+      ]
+    },
+    "designNotes": "The temptation with a teacher character in this kind of moral-choice scene is to make her either a saintly noticer (undercutting the player's agency — 'don't worry, the adult will fix it') or a careless cardboard cutout who conveniently looks away (making the cruelty feel authored rather than real). I wanted Ms. Alvarez's inattention in 'Called On' to feel like the natural texture of an overloaded classroom, not a plot contrivance — she's genuinely at the board, genuinely juggling five sections a day, and genuinely trying. Giving her a private note-taking habit about isolated kids and an unresolved awareness of Jordan's pattern lets her be someone who cares and still misses things, which is a much more honest and quietly devastating adult figure for this age group than either extreme. Her approving nod in 'Out Loud' needed to feel earned and specific rather than generic 'good job' — so her praise names *what* Riley did (building on an idea) rather than just praising the child, modeling the kind of feedback that actually lands with 11-14 year olds.",
+    "representationNotes": "Elena Alvarez is written as a Latina teacher whose personal history (translating for her parents as a kid) informs her professional empathy without being reduced to a single-issue backstory — it's texture, not thesis. I avoided the 'inspirational teacher fixes everything' trope and the 'checked-out teacher' trope equally; the goal was a working-class-adjacent, visibly tired, competent professional whose limitations are structural (caseload, time, sleep) rather than personal failings, which is a more accurate and less blame-shifting picture of the adults in most middle schoolers' lives."
+  },
+  {
+    "character": {
+      "id": "Ben",
+      "name": "Ben Korlewski",
+      "age": 12,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Skinny, still growing into his hands and feet, with the kind of posture that comes from years of trying to take up less space. Wears the same three hoodies in rotation, sleeves pulled down over his palms.",
+        "distinctiveFeatures": [
+          "A spiral notebook he never fully closes, corners soft from handling",
+          "Chews on pen caps until they crack",
+          "A faded friendship bracelet on his wrist he's never explained to anyone"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "hyper-observant",
+          "self-deprecating as armor",
+          "quietly funny",
+          "loyal fast, trusts slow"
+        ],
+        "bigFiveProfile": {
+          "openness": 8,
+          "conscientiousness": 7,
+          "extraversion": 2,
+          "agreeableness": 6,
+          "neuroticism": 8
+        },
+        "mannerisms": [
+          "Apologizes before anyone's asked anything of him ('sorry, probably a dumb idea, but—')",
+          "Taps a specific rhythm on his desk when he's rehearsing what he's about to say",
+          "Goes very still and quiet right before he's about to be embarrassed, like bracing for impact"
+        ],
+        "speechPatterns": [
+          "Stammers and over-qualifies under social pressure ('I mean—it's fine, really, we don't have to—')",
+          "Speech becomes fluent, fast, and precise the moment he's talking about something he actually cares about",
+          "Uses oddly formal vocabulary he picked up from books, which sometimes lands wrong in casual conversation"
+        ],
+        "emotionalTendencies": "Ben runs a constant background threat-assessment of every room he's in — who's watching, who's about to laugh, how long until it's his turn to be the joke. This makes him exhausting to be around for people who don't understand it, and quietly magnetic for people who do, because he notices things about them nobody else bothers to. His warmth is real but rationed; he doesn't hand it out until he's sure it's safe."
+      },
+      "background": {
+        "family": "Lives with his mom, a night-shift nurse, since his parents split two years ago. This is his third school in four years — not because of behavior, but because his mom keeps chasing better shifts and cheaper rent. He's stopped unpacking his room fully at each new place.",
+        "interests": [
+          "Cartography — draws elaborate maps of fictional places in his notebook",
+          "Deep-sea creatures ('the ones nobody funds research for')",
+          "Old strategy board games he plays online with a friend from his last school he video-calls twice a week"
+        ],
+        "strengths": [
+          "Sees social dynamics with unusual clarity — he could map the classroom's alliances better than anyone",
+          "Genuinely creative, especially under a project's constraints rather than a blank page",
+          "Doesn't hold grudges the way you'd expect — he's more surprised than bitter when people are kind to him"
+        ],
+        "struggles": [
+          "Has convinced himself that shrinking is the only strategy that's ever worked",
+          "Struggles to believe kindness directed at him will last past the moment it happens",
+          "Physically anxious in group speaking situations — goes red, throat tightens, loses his words"
+        ],
+        "secrets": [
+          "He already has a whole map drawn of Ridgeline's social geography in the back of his notebook — cafeteria tables labeled like territories, in pencil, just for himself",
+          "He genuinely liked his last school's group project partner, who moved away before they could stay friends, and he's terrified of that happening again"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the semester project without becoming a punchline",
+          "Not get noticed — noticing leads to nicknames"
+        ],
+        "unconscious": [
+          "Wants someone to see past the apologizing and actually ask him something real",
+          "Needs proof that it's safe to invest in a place before he has to leave it again"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Above-average for his age, picked up from reading rather than social exposure — occasional slightly formal word choices that stick out charmingly among casual middle-school slang.",
+        "sentenceComplexity": "Fragmented and hedging under stress ('I just— it's probably— never mind'); fuller and more confident when discussing his interests or once trust is established.",
+        "emotionalExpressiveness": "Guarded by default, surprisingly dry and funny once safe — his humor tends to be self-aware rather than self-hating, a fine but important distinction.",
+        "examples": [
+          "\"Sorry — sorry, I'll just, I'll go with whatever you want, I don't want to be the reason we get a bad grade.\"",
+          "\"Okay, actually — hear me out — what if the map isn't of a place, it's of a *feeling*, and the legend is like, emotional weather—\"",
+          "\"You didn't have to do that. I mean — thanks. But you didn't have to.\"",
+          "\"I already labeled your table in my notebook, by the way. You're filed under 'unknown, possibly fine.' I'm updating it now.\""
+        ]
+      },
+      "storyRole": "Ben is the moral pressure-test of the episode — not a prize to be won or a lesson to be learned, but a real kid whose reactions (relief, retreat, quiet trust) give the player's choices weight. He is the visible cost of the 'performer' path and the visible reward of the 'connector' path.",
+      "arcPotential": [
+        "Episode 'The First Bell': Establishes whether Ben is someone Riley protects, ignores, or uses — sets the emotional baseline for trust between them.",
+        "Future episode potential: Ben could become a stable, dry-humored anchor friendship for Riley if trust is built early — someone who eventually stops pre-apologizing around them specifically, which becomes its own quiet payoff.",
+        "Future episode potential: A storyline where Ben's mom gets another job offer elsewhere, forcing Riley to confront whether the friendship they built was worth the risk even knowing it might end."
+      ]
+    },
+    "designNotes": "Ben needed to avoid the trap of being purely a 'sad target' plot device. The key was giving him agency and interiority the player might never even see directly: he's already quietly mapped the entire social ecosystem of the school in his notebook before the player even meets him — he is not passive, he's just protective. His stammer is real and physical, but it's paired with a sharp, dry wit and genuine expertise (cartography, deep-sea life) that surfaces the instant social threat drops away, which gives writers a tool to show growth through *register shift* rather than exposition. The repeated-move backstory grounds his hypervigilance in something concrete and gives future episodes a built-in emotional bomb (the possibility of him leaving again) without needing to invent new stakes later.",
+    "representationNotes": "Ben's anxiety is written as situational and social rather than a diagnosed condition, to avoid flattening him into 'the anxious kid' as his whole identity — the notebook, the interests, the humor exist independent of his anxiety and should get real screen time, not just be color. His family situation (single working mom, financial instability driving moves) is common and under-shown in middle-grade media without being played for pity — his mom's night shifts are a fact of life, not a tragedy backstory. Avoided making him precocious-wise-beyond-his-years in the way that can feel like a device; his insight is specifically social-survival insight, believable for a kid who's had to relearn the rules of a new school three times."
+  }
+]

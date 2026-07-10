@@ -1,0 +1,97 @@
+{
+  "character": {
+    "id": "player",
+    "age": 13,
+    "name": "Marisol \"Sol\" Delgado-Reyes",
+    "goals": {
+      "conscious": [
+        "Make it through first bell without being labeled 'the new girl' forever",
+        "Get invited into a group where she doesn't have to explain herself",
+        "Do well enough on the project to not stand out academically either way — just blend"
+      ],
+      "unconscious": [
+        "To find one place where she doesn't have to perform to belong",
+        "To forgive herself for the friend she left behind at her last school",
+        "To believe her abuela was right — that she's enough without shrinking"
+      ]
+    },
+    "pronouns": "she/her",
+    "storyRole": "Player-controlled protagonist of 'First Bell.' Sol is the emotional lens through which the player experiences the tension between social safety and authenticity. Every choice about how she talks, who she sits with, and how she treats Alex shapes both her arc and the episode's thematic payoff.",
+    "appearance": {
+      "brief": "Medium height with dark, curly hair she's constantly trying (and failing) to tame into a bun, warm brown skin, and an oversized cardigan she stole from her tía that she wears like armor over whatever outfit she picked that morning.",
+      "distinctiveFeatures": [
+        "A chipped front tooth from a skateboarding accident she tells three different stories about",
+        "Draws tiny stars in the margins of every notebook when she's nervous",
+        "Wears mismatched socks on purpose 'so at least one thing is under my control'"
+      ]
+    },
+    "background": {
+      "family": "Only child of a single mom who works two jobs (home health aide + weekend catering gigs); they've moved four times in six years chasing cheaper rent and better school districts. Her abuela, who died last spring, used to be the one constant — the person who called her 'mija' and told her she didn't have to shrink herself for anybody. Sol still isn't totally okay with that loss.",
+      "secrets": [
+        "She still sleeps with the cardigan on bad nights because it smells like her abuela's house, even though she'd die if anyone at school knew",
+        "She once ditched a friend at her old school the same way she's now scared of doing to Alex — and she's never told anyone that story, not even her mom"
+      ],
+      "interests": [
+        "Sketching outfits and 'redesigning' her school uniform in her notebook",
+        "Old telenovelas she watches with subtitles off to practice her Spanish",
+        "Skateboarding badly but enthusiastically",
+        "Making playlists titled things like 'songs for pretending I'm not nervous'"
+      ],
+      "strengths": [
+        "Genuinely empathetic — notices when someone's having a hard day before anyone else does",
+        "Quick-witted, good at defusing tension with a joke",
+        "Adaptable — can walk into a new room and find the temperature fast"
+      ],
+      "struggles": [
+        "Doesn't trust that people would like the 'real' her, so she edits herself in real time",
+        "Guilt over sometimes being embarrassed of her mom's exhaustion/hours instead of just missing her",
+        "Struggles to stay friends with people once she's decided they're 'not cool enough' to be worth the risk — then hates herself for it"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "adaptive",
+        "watchful",
+        "secretly funny",
+        "loyal",
+        "self-doubting"
+      ],
+      "mannerisms": [
+        "Rehearses conversations under her breath before she has them",
+        "Twists her ring (her late abuela's) when she's about to say something she's not sure she should",
+        "Laughs a half-second late in group settings, like she's checking if it's safe first"
+      ],
+      "bigFiveProfile": {
+        "openness": 7,
+        "neuroticism": 7,
+        "extraversion": 6,
+        "agreeableness": 7,
+        "conscientiousness": 6
+      },
+      "speechPatterns": [
+        "Switches between confident 'performing' voice and quieter, more honest voice depending on who's around",
+        "Uses humor to deflect ('I'm fine, I just also might throw up, but fine')",
+        "Occasional Spanish phrases slip in when she's emotional, especially ones from her abuela"
+      ],
+      "emotionalTendencies": "Sol feels everything about ten seconds before she lets herself show it. She's an expert at reading rooms — who's laughing at what, who's fake-smiling, who's about to be left out — because she's spent years learning to survive by fitting the shape of wherever she lands. This makes her perceptive and kind, but also means she second-guesses her own instincts until she's not sure which version of herself is real."
+    },
+    "arcPotential": [
+      "Episode 'First Bell': Sol must choose, moment by moment, between the ease of the popular crowd's approval and the harder, realer connection forming with Alex — culminating in whether she publicly credits/defends Alex's work or lets her fade into the background to protect her own social standing.",
+      "Future episode potential: Sol confronts the friend she left behind at her old school, forcing her to reckon with the pattern she's been repeating.",
+      "Future episode potential: Sol has to introduce her mom or her home life to her new friend group, testing whether the 'belonging' she's found is conditional on hiding parts of herself."
+    ],
+    "voiceGuidelines": {
+      "examples": [
+        "\"Okay, new plan: I make zero friends, I make zero enemies, I graduate invisible. Perfectly reasonable life goal.\"",
+        "\"I'm not NOT freaking out. I'm just freaking out with my mouth closed.\"",
+        "\"You know what's worse than being the new kid? Being the new kid who cries in the bathroom on day one. I've done both. Don't recommend either.\"",
+        "\"My abuela used to say 'no te achiques' — don't make yourself smaller. I don't know why that's so much easier to hear than to actually do.\""
+      ],
+      "vocabularyLevel": "Casual middle-school vernacular with occasional Spanish phrases; self-aware humor, some sarcasm, no over-articulated 'adult' phrasing.",
+      "sentenceComplexity": "Short, rhythmic sentences when anxious; longer rambling ones when comfortable and joking around.",
+      "emotionalExpressiveness": "Guarded with new people, sarcastic-deflective under stress, but capable of sudden bursts of real honesty when it matters — especially with Alex."
+    }
+  },
+  "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+  "uncertainties": []
+}

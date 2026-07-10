@@ -1,0 +1,133 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "PACING",
+      "issue": "Scene 4 (Cafeteria Map) lacks player agency - pure observation with no interactive choice framing until the actual choice point",
+      "location": "Scene 4: The Cafeteria Map",
+      "impact": "Player feels like a passive observer scanning a room rather than an active decision-maker. The 2-minute scene is entirely descriptive narration before the choice appears, creating a lull in player control.",
+      "fix": "Convert the cafeteria scan into an interactive 'choose what to notice' moment: give player 2-3 micro-choices about what they observe (Jordan's table dynamics, Maya's isolation, empty seats) before the main seating choice. This maintains tension and keeps agency constant.",
+      "priority": 7
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Choice 2 (lunch seating) has an invisible 'correct' answer that maps to the game's preferred path - sitting with Maya triggers the 'authentic' branch more strongly",
+      "location": "Choice 2: The Cafeteria Map + Scene 5a/5b/5c outcomes",
+      "impact": "Players who choose Jordan's table (5b) immediately feel the guilt-tinged narration ('something about the win feels a little hollow'), signaling the 'wrong' choice. This undermines the stated design goal of 'no obvious right answer' and pressures players toward authenticity rather than letting them discover consequences naturally.",
+      "fix": "Neutralize the emotional framing in 5b: make Jordan's table genuinely warm and low-cost in the moment, with consequences that emerge later (Episode 2+) rather than immediate guilt. Let players feel good about their choice today and discover the trade-offs through gameplay, not narrator judgment.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Choice 4 (Ben's public moment) is functionally a morality test, not a genuine dilemma - the 'right' choice (4a) is telegraphed by the setup and Ms. Alvarez's immediate approval",
+      "location": "Scene 8 + Choice 4 + Scene 9a/9b/9c",
+      "impact": "Players who choose 4a (speak up) get immediate positive reinforcement (Ms. Alvarez's nod, Ben's relief). Players who choose 4b (quiet) get guilt-tinged narration ('uncomfortable weight of an unspoken regret'). This removes genuine trade-off tension - there's a clear 'good' choice and a 'bad' choice, not a meaningful dilemma.",
+      "fix": "Reframe 4a and 4b as genuinely different strategies with different payoffs: 4a (speak up) gains Ben's trust but marks player as 'the defender' socially; 4b (quiet support later) builds slower trust but keeps player under Jordan's radar. Make both feel strategically valid, not morally ranked.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPLAYABILITY",
+      "issue": "Three branching outcomes (authentic, popularity, balanced) are theoretically distinct but converge heavily in final scene - all three paths end with player making a final choice (5a/5b/5c) that resets the arc",
+      "location": "Scene 11a/11b/11c + branch dialogue",
+      "impact": "A player who chose 'popularity' path all episode (2b→3c→4b→5b) can still pivot to 'authentic' in the final scene by choosing 5a, completely undoing their previous choices. This makes earlier decisions feel less consequential and reduces replay incentive - there's no 'locked in' identity by end of episode.",
+      "fix": "Make Scene 11 choices path-dependent: if player chose 2b (Jordan's table) + 3c (laughed at Ben), then 5a (catch Ben/Maya) should trigger branch dialogue showing skepticism/wariness from Ben and Maya (see branch-popularity-conformity lines already in data). This is partially present but should be more prominent. Alternatively, lock final choice based on earlier path (popularity players only see 5b available, etc.).",
+      "priority": 7
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "Scene 1 (Front Steps) is very short (2 min) and purely internal monologue - no external hook or inciting incident",
+      "location": "Scene 1: The Front Steps",
+      "impact": "Opening relies entirely on player's own anxiety about new school rather than an external event to grab attention. For some players, this introspective opening will feel slow; others will find it relatable. Tone-dependent engagement.",
+      "fix": "Add a small external inciting incident: another student bumps into Riley, a group of kids laughs nearby, or a bell rings unexpectedly. Keep the introspection but anchor it to a concrete moment that pulls player into the world.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scene 8 (Called On) has dense dialogue and internal monologue but no player choice until the end - feels like a long setup for Choice 4",
+      "location": "Scene 8: Called On",
+      "impact": "Player watches Ben struggle for ~1 minute before getting agency back. The scene is necessary for stakes, but it's entirely passive observation. Slight pacing drag.",
+      "fix": "Add a micro-choice mid-scene: 'Do you make eye contact with Ben to show support, or look away to avoid drawing attention?' This is low-stakes but keeps agency flowing. Alternatively, trim dialogue by 20% and move faster to Choice 4.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "No explicit tutorial on how trait-mapping works or how choices affect Riley's character - players may not realize their decisions are building toward a specific identity",
+      "location": "Entire episode",
+      "impact": "Experienced narrative game players will intuitively understand that choices shape character; younger/newer players may not realize they're 'building' toward an identity until the final scene reveals it. Missed opportunity for discovery.",
+      "fix": "Add a subtle UI element or end-of-scene reflection: after Choice 2, show a brief internal monologue like 'That was the easy choice. Or the real choice. Still deciding which.' This signals that choices are identity-building without being preachy.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "Strong emotional anchor in Riley's internal voice - players will feel her anxiety and stakes immediately",
+    "Excellent character setup: Jordan, Maya, and Ben are all distinctly written with clear motivations and vulnerabilities",
+    "Choice 1 (hallway response) is genuinely well-framed with three distinct playstyles (confident, quiet, witty) and no obvious 'right' answer",
+    "Scene 3b (quiet recovery with Maya's half-smile) is a subtle, elegant moment that rewards players who choose quiet authenticity - excellent design",
+    "Lunch seating choice (2) is the strongest in the episode: three genuinely different social paths with real trade-offs",
+    "Pacing variation: 2-minute scenes alternate with 1-minute scenes, creating rhythm",
+    "Branch dialogue system is sophisticated - same final scene has different emotional undertones based on earlier path choices",
+    "High replayability potential: three distinct outcome branches mean players will want to see all three endings",
+    "Natural integration of game mechanics: trait mapping (CONFIDENCE, EMPATHY, ADAPTABILITY) emerges from choices without explicit tutorial",
+    "Excellent use of silence and subtext: moments like Ben's face falling (7c) or Maya's half-smile (3b) teach empathy through observation rather than telling"
+  ],
+  "recommendations": [
+    "Reduce moral clarity in Choices 3 and 4: reframe them as strategy choices (build trust slowly vs. quickly, stay under radar vs. be visible) rather than good vs. bad decisions",
+    "Add micro-choices in Scene 4 and Scene 8 to maintain constant agency - even low-stakes choices keep player engaged",
+    "Strengthen consequence visibility: after Choice 2, show a brief scene of how player's lunch choice affects Maya or Ben immediately (not just end-of-episode narration)",
+    "Make final scene (Scene 11) path-dependent: if player chose 'popularity' path, make 5a (catching Ben/Maya) feel risky or require extra dialogue to convince them. Lock in identity rather than allowing mid-episode pivots",
+    "Add a subtle 'identity tracker' UI element that appears after each major choice, showing how choices are building toward 'authentic,' 'popular,' or 'balanced' - helps players understand the meta-game",
+    "Expand Scene 1 with a small external incident to anchor the introspection",
+    "Consider adding a hidden 4th choice path in Scene 5 or 6: what if player tries to befriend Jordan AND Maya simultaneously? This would create a 'chameleon' path distinct from 'balanced'",
+    "Clarify Ms. Alvarez's role: she's underutilized as an adult authority figure. Consider giving her a moment in Scene 8 or 9 where she notices something is happening (even if she doesn't fully intervene) - this sets up her arc for future episodes"
+  ],
+  "scores": {
+    "engagement": 8,
+    "choiceQuality": 6,
+    "pacing": 7,
+    "playerAgency": 7,
+    "replayability": 8,
+    "overall": 7
+  },
+  "metrics": {
+    "averageSceneLength": 56,
+    "choiceFrequency": 0.38,
+    "branchingFactor": 3,
+    "estimatedReplayValue": 8
+  },
+  "summary": {
+    "verdict": "GOOD episode with strong emotional hooks and excellent character work, but choice design leans too heavily toward 'correct' answers (authenticity/empathy) rather than genuine dilemmas. The core gameplay loop is solid - observe, choose, see consequences - but moral framing undermines the stated design goal of 'no obvious right answer.' High replayability due to three distinct outcome branches, but players may feel guided toward one 'good' path rather than discovering consequences naturally. With fixes to Choices 3 and 4, this becomes EXCELLENT.",
+    "keyIssues": [
+      "Choices 3 and 4 telegraph the 'correct' answer through immediate positive/negative narrator feedback, removing genuine dilemma tension",
+      "Choice 2 outcome (5b) is framed as 'hollow' even though it's a valid social strategy, pressuring players toward authenticity",
+      "Scene 4 is entirely passive observation before the choice point - player agency drops temporarily",
+      "Final scene allows players to completely pivot identity in the last 60 seconds, undoing earlier path choices"
+    ],
+    "topStrengths": [
+      "Riley's internal voice is engaging and relatable - strong POV character",
+      "Choice 1 and Choice 2 are genuinely well-designed dilemmas with real trade-offs",
+      "Character setup is excellent: Jordan, Maya, Ben all feel like real middle schoolers with distinct vulnerabilities",
+      "Scene 3b (quiet recovery) is elegant design - rewards observation and quiet authenticity",
+      "Three distinct outcome branches create genuine replayability",
+      "Pacing variation keeps rhythm engaging"
+    ],
+    "mustFix": [
+      "Reframe Choices 3 and 4 to remove moral ranking - make both options feel strategically valid, not good vs. bad",
+      "Neutralize guilty/hollow narration in Choice 2 outcomes - let consequences emerge in future episodes, not immediate judgment",
+      "Make Scene 11 path-dependent: lock identity based on earlier choices, or show skepticism/wariness from Ben/Maya if player chose 'popularity' path"
+    ],
+    "niceToHave": [
+      "Add micro-choices in Scene 4 and 8 to maintain constant agency",
+      "Expand Scene 1 with external incident to anchor opening",
+      "Add subtle identity tracker UI to help players understand the meta-game",
+      "Consider hidden 4th path option (chameleon/simultaneous befriending)",
+      "Strengthen Ms. Alvarez's observational role for future episode setup"
+    ]
+  }
+}

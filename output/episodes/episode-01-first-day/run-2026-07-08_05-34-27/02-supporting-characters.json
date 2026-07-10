@@ -1,0 +1,476 @@
+[
+  {
+    "character": {
+      "id": "jordan",
+      "name": "Jordan Reyes",
+      "age": 14,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Tall for her grade, moves like she's already memorized where the cameras would be if there were any. Expensive-looking sneakers that are actually her older sister's hand-me-downs, worn like a flex anyway.",
+        "distinctiveFeatures": [
+          "a laugh that starts before the joke's fully out of her mouth",
+          "chews on the drawstring of her hoodie when she thinks no one's watching",
+          "perfectly winged eyeliner she redoes twice a day in the bathroom mirror"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "magnetic",
+          "quick to cut",
+          "terrified of stillness",
+          "loyal in private, performative in public",
+          "smarter than she lets on"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 4,
+          "extraversion": 9,
+          "agreeableness": 4,
+          "neuroticism": 7
+        },
+        "mannerisms": [
+          "scans the room mid-conversation like she's checking her ranking",
+          "throws an arm around new people fast, before they've earned it, to claim them",
+          "laughs loudest right after she's said something cruel, like the laugh can retroactively make it a joke"
+        ],
+        "speechPatterns": [
+          "talks in group-chat rhythm even in person — quick, clipped, built for an audience",
+          "says other people's names a lot, like she's tagging them",
+          "deflects real questions with a joke and a subject change"
+        ],
+        "emotionalTendencies": "Jordan runs hot and fast — delight, boredom, cruelty, and warmth can all show up in the same two minutes. She genuinely doesn't always clock the damage she does until it's already landed; by then, backing down feels more humiliating than doubling down. Underneath the speed is a kid who is exhausted from being 'on' and doesn't know how to just be off."
+      },
+      "background": {
+        "family": "Middle of three sisters. The oldest is a senior with a full ride to state for volleyball and a permanent seat at every family dinner conversation; the youngest is the 'baby' who gets away with everything. Jordan is the one who has to be interesting to get noticed.",
+        "interests": [
+          "choreographing dances she never posts",
+          "reality TV she watches 'ironically' but knows every contestant's name",
+          "actually really good at math, hides it because it's not the brand"
+        ],
+        "strengths": [
+          "reads a room in about four seconds",
+          "genuinely funny — not just mean-funny — when she's not performing",
+          "fiercely protective of the people inside her circle, once you're in"
+        ],
+        "struggles": [
+          "can't tell the difference anymore between being liked and being watched",
+          "cruelty is her fastest reflex when she feels unsteady",
+          "has never once apologized first"
+        ],
+        "secrets": [
+          "cried in the bathroom the first week of school last year because nobody saved her a seat",
+          "has a group chat with just her sisters where she's soft and unguarded and nothing like this"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "stay the center of the table, whatever that costs",
+          "make sure new kids know the hierarchy fast — it's safer for everyone that way, she tells herself"
+        ],
+        "unconscious": [
+          "be picked first, for once, without having to perform for it",
+          "have someone stay even after they've seen her be unkind"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Contemporary teen slang, confident and current but not try-hard — she sets trends, doesn't chase them.",
+        "sentenceComplexity": "Short, punchy, built for an audience. Rarely finishes a thought if a joke can land first.",
+        "emotionalExpressiveness": "Loud on the surface, guarded underneath. Real feeling leaks out sideways — in a too-long pause, an over-fast subject change — never stated directly.",
+        "examples": [
+          "\"Okay, spinning-in-circles girl, your locker's the one you're currently *not* standing in front of. Groundbreaking detective work.\"",
+          "\"Oh my god, sit with us, you're too funny to sit alone, come on—\" *(to Sam, not looking down)* \"—oops. My bad.\"",
+          "\"...what? It's not that deep, he's fine, look, he's already up.\""
+        ]
+      },
+      "storyRole": "The gravitational center of the 'in-crowd' table and the episode's clearest test of complicity — Jordan makes the cost of belonging concrete and immediate, not abstract. She's not a villain; she's the mirror Maya could become if she stops noticing the cost.",
+      "arcPotential": [
+        "Later episode: a moment alone with Maya where Jordan's guard drops for one line before she catches herself and jokes it away — planting that she's not fully who the table thinks she is",
+        "Later episode: Jordan reads as genuinely hurt (not just annoyed) if Maya starts pulling away, revealing how much she needs the people she collects, not just controls",
+        "Season arc potential: a moment where Jordan is the one publicly humiliated and the episode asks Maya (and the player) whether kindness is conditional on who deserves it"
+      ]
+    },
+    "designNotes": "Jordan is written to resist the easy 'mean girl' read. Her cruelty is reflexive and social-survival-coded, not sadistic — the foot-trip is 'a joke' in her head until the room's silence tells her otherwise, and even then, doubling down feels safer than admitting the misstep. Giving her real intelligence, real humor, and a private soft interior (the sisters' group chat, the hidden math skill) keeps her from being a plot function; players should feel a flicker of 'I get her' even while disliking the choice she makes. Her arc potential is deliberately left open so writers can decide later whether she's redeemable within the season or remains a fixed pole Maya defines herself against — either is honest, as long as she stays human.",
+    "representationNotes": "Avoid coding Jordan's confidence or sharpness through any single racial or cultural stereotype about 'sassy' girls — keep her voice grounded in universal middle-school social dynamics (fear of invisibility, sibling comparison, performing for an audience) rather than leaning on shorthand. Her family being high-achieving isn't a punchline; it's a pressure. If cast with a specific ethnic background (the name Reyes suggests Latina heritage), ensure her home life, if shown, is specific and warm rather than reduced to 'strict immigrant parents' cliché — the sisters dynamic should feel like its own real thing, not a trope."
+  },
+  {
+    "character": {
+      "id": "sam",
+      "name": "Sam Okafor",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Slight build, often a little hunched like he's trying to take up less space. Wears the same three hoodies in rotation, one with a fraying drawstring he chews on when he's anxious. Hair in short twists he fusses with when nervous.",
+        "distinctiveFeatures": [
+          "Wired headphones (not wireless — 'wireless ones get lost, and then I'm out twenty bucks'), always looped around his neck even when not playing anything",
+          "A sketchbook he never lets anyone flip through past the first few pages",
+          "A laugh that's genuinely loud and surprising once it comes out, totally at odds with how quiet he usually is"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "watchful",
+          "dry-witted",
+          "self-protective",
+          "quietly perceptive",
+          "generous once trust is earned"
+        ],
+        "bigFiveProfile": {
+          "openness": 8,
+          "conscientiousness": 6,
+          "extraversion": 3,
+          "agreeableness": 7,
+          "neuroticism": 7
+        },
+        "mannerisms": [
+          "Goes very still and small when he's the center of unwanted attention — shoulders up, eyes down, waiting for it to pass",
+          "Taps a rhythm on his tray/desk with two fingers when he's holding back something he wants to say",
+          "Makes a joke under his breath right after something humiliating happens to him, like he has to get there first before anyone else can"
+        ],
+        "speechPatterns": [
+          "Speaks in short sentences to people he doesn't trust yet, full paragraphs once he's comfortable",
+          "Uses precise, slightly formal words ('technically,' 'statistically') as a kind of armor — sounding smart is safer than sounding hurt",
+          "Self-deprecating first, funny second: 'I'm basically furniture at this point, it's fine, I've made peace with it'",
+          "When he actually cares about an idea, drops the deflection completely and gets fast and specific"
+        ],
+        "emotionalTendencies": "Sam has learned to make himself smaller before someone else can do it for him. He reads a room in about two seconds — who's watching, who's about to laugh, where the exits are — because he's had to. He doesn't get angry loudly; the hurt shows up later, in how flat his voice goes, in how fast he disappears. But underneath the caution is a kid who still wants, badly, to be let in — he just doesn't believe it happens for people like him unless he stops expecting it."
+      },
+      "background": {
+        "family": "Lives with his mom and older sister; dad's in the picture but works long-haul trucking, home every few weeks. Money's tight enough that Sam is careful about what he asks for, and proud enough that he'd never say so directly.",
+        "interests": [
+          "Drawing — mostly comic-style characters, worldbuilding he doesn't show anyone",
+          "Weird trivia (space, deep-sea animals, true crime he's definitely too young for)",
+          "A group chat with two friends from elementary school who go to a different middle school now — his main lifeline, though it's gone quieter than he'll admit"
+        ],
+        "strengths": [
+          "Genuinely funny, dry timing, once someone gets past the wall",
+          "Notices things — who's struggling, who's faking it, what's actually going on in a room",
+          "Comes up with good, unconventional ideas but has learned to sit on them"
+        ],
+        "struggles": [
+          "Used to have a real friend group in 6th grade; over the summer they drifted, or 'got busy,' and he's never fully named to himself what that cost him",
+          "Has internalized being the target — flinches before anything even happens, expects the joke",
+          "Struggles to advocate for himself in the moment, even when he's right, because being loud has only ever gotten him hurt worse"
+        ],
+        "secrets": [
+          "He still keeps a running list in his sketchbook of comebacks he thought of too late",
+          "He noticed Jordan trip him on purpose and has known for a while that it wasn't really an accident-shaped 'joke' — he's just stopped expecting anyone to call it what it is"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the day without becoming a story someone tells at another table",
+          "Keep his head down until something (anything) gets easier"
+        ],
+        "unconscious": [
+          "Wants someone to choose him without needing a reason to",
+          "Needs proof that being himself — funny, specific, a little odd — is actually enough, not just tolerable"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Smart, slightly bookish vocabulary mixed with normal 13-year-old bluntness — he'll say 'statistically improbable' and 'that's so stupid' in the same breath.",
+        "sentenceComplexity": "Clipped and guarded with strangers; longer, tangent-prone, and much funnier once comfortable.",
+        "emotionalExpressiveness": "Indirect by default — jokes and deflection instead of stating feelings. Direct only in rare unguarded moments, which land harder because they're rare.",
+        "examples": [
+          "\"Oh, don't worry about the locker thing, everyone does the spinny confused look their first week. It's basically a school tradition. I did it for, like, a month.\"",
+          "\"I'm fine. It's fine. Tray's replaceable. My dignity checked out around sixth grade anyway.\"",
+          "\"I used to sit with a bigger group. People got... busy. It's whatever.\"",
+          "\"Okay but hear me out — what if instead of a poster, we did it like a fake news broadcast? I know, I know, Devon's gonna hate it. He hates everything that isn't his idea first.\"",
+          "\"[texts, one exclamation point]: Wait you actually texted me!! I mean — cool. Cool cool cool. What's up.\""
+        ]
+      },
+      "storyRole": "Sam is the human stakes of Maya's choices — not a lesson, a person. He's the one who actually gets hurt when Maya goes along with the crowd, and the one who actually notices when she doesn't. He gives Maya's decisions weight and consequence, and gives her (and the player) a genuine alternative to Jordan's table: smaller, quieter, realer.",
+      "arcPotential": [
+        "Episode 'First Bell': Goes from background casualty of Jordan's cruelty to Maya's first real connection — someone who's surprised, then grateful, then fully himself once he trusts she's staying.",
+        "Future episodes: Could slowly let his guard down enough to show Maya (and the player) his sketchbook/ideas fully — a trust arc paying off his 'used to be talked over' wound.",
+        "Future episodes: The 'bigger table' idea from Maya could put Sam in the position of having to decide if he can forgive/tolerate Jordan, testing whether his caution can coexist with growth.",
+        "Longer arc: Sam finding his own voice in group settings — not just being defended, but learning to hold the floor himself."
+      ]
+    },
+    "designNotes": "Sam is built to avoid the 'sad sidekick who exists to teach the protagonist empathy' trap. He has his own interior life, his own low-grade rebuff of Devon's dismissiveness, his own dry humor that isn't just pity-bait. His defense mechanism (self-deprecation before others can strike first) is specific and consistent — it shows up as comic relief AND as the thing Maya has to see past. The contradiction that makes him feel real: he's sharply observant and quietly funny, but almost never lets that show until safety is established — so his 'reveal' in the recycling-bin scene is a genuine tonal shift the player earns, not a given. His unspoken grief about his old friend group ('people got busy') gives him a wound that doesn't need to be fully explained to land emotionally — middle schoolers know exactly what that silence means.",
+    "representationNotes": "Sam is a Black middle schooler from a financially stretched, non-nuclear-but-loving household; care was taken not to make his socioeconomic situation a plot device or a source of shame — it's mentioned lightly, through pride and specificity (headphones, drawstring hoodie) rather than as an 'issue.' His social isolation is written as circumstantial and painfully ordinary (friends drifted, not tragedy), avoiding a single 'trauma reveal' in favor of the more common, quieter erosion many real kids experience. He is not written as a symbol of bullying-in-general; he has his own humor, interests, and interior contradictions independent of his role as the person Maya has to decide to see."
+  },
+  {
+    "character": {
+      "id": "alex",
+      "name": "Alex Torres-Mireles",
+      "age": 13,
+      "pronouns": "they/them",
+      "appearance": {
+        "brief": "Medium height, wiry, always in motion even standing still — bouncing on the balls of their feet, tapping a rhythm on their thigh. Buzzed undercut with the top dyed a fading, grown-out green. Wears a backpack covered in enamel pins traded from three different schools.",
+        "distinctiveFeatures": [
+          "A sketchbook rubber-banded shut, always in hand, never fully closed to anyone who asks",
+          "Mismatched shoelaces (says it's 'a system,' won't explain the system)",
+          "Talks with their hands like they're conducting an invisible orchestra"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "restlessly funny",
+          "quietly resilient",
+          "observant",
+          "compulsively welcoming",
+          "allergic to stillness"
+        ],
+        "bigFiveProfile": {
+          "openness": 9,
+          "conscientiousness": 5,
+          "extraversion": 7,
+          "agreeableness": 8,
+          "neuroticism": 6
+        },
+        "mannerisms": [
+          "Narrates awkward moments out loud like a nature documentarian ('And here we see two thirteen-year-olds, unsure if they are friends yet')",
+          "Doodles on any available surface — napkins, hands, the inside of their own wrist — when nervous",
+          "Physically rearranges whatever's on the table (napkins, trays, crumbs) into small orderly shapes when anxious"
+        ],
+        "speechPatterns": [
+          "Fast, tangential, self-interrupting — starts three sentences to finish one",
+          "Uses bits and voices to deflect sincerity, then occasionally drops the bit entirely and says something startlingly direct",
+          "Says 'okay but real talk' right before the actual vulnerable thing comes out"
+        ],
+        "emotionalTendencies": "Alex processes anxiety by performing lightness — jokes, narration, constant movement — but the performance is thin enough that a patient listener sees straight through it within a conversation or two. They swing between manic warmth and sudden, quiet honesty, and they're distinctly the person new to a room, still recalibrating where the walls are."
+      },
+      "background": {
+        "family": "Only child of a mom who works logistics for a shipping company — the job that's moved them three times in four years. Dad lives out of state; they video-call most Sundays, less reliably than either of them promises. Alex has learned to make a room feel like theirs fast, because they never know how long they'll have it.",
+        "interests": [
+          "Stop-motion animation using action figures and a cracked phone camera",
+          "Collecting one weird fact per school before they leave it (calls it 'tuition')",
+          "Building elaborate blanket-fort/cardboard structures — anything assembled from scraps into something"
+        ],
+        "strengths": [
+          "Genuinely, instinctively inclusive — notices who's left out before anyone else does",
+          "Can defuse tension with a joke that lands instead of deflects",
+          "Adapts to new environments fast out of sheer necessity"
+        ],
+        "struggles": [
+          "Has never stayed anywhere long enough to find out what happens after the 'new kid' phase wears off",
+          "Overcommits to being liked immediately, then panics quietly if it's not working",
+          "Struggles to say 'I need this to stay' out loud — says it in project plans and inside jokes instead"
+        ],
+        "secrets": [
+          "Alex has a folder on their phone of unsent stop-motion videos from every school they've left — never shown anyone, because showing someone means admitting how much each one mattered",
+          "Genuinely doesn't know if they'll be enrolled here past this semester and hasn't told anyone, including themselves, how much that scares them"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Find one place at Ridgemont — a table, a person, a corner — that's actually theirs before the semester's noise settles into permanent shapes",
+          "Get someone to actually watch one of their stop-motion videos, on purpose, not out of politeness"
+        ],
+        "unconscious": [
+          "To be worth staying for, in a life built around leaving",
+          "To build something with someone else's hands in it too, so it isn't just theirs to lose alone"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Contemporary 13-year-old, quick, media-literate, prone to bits ('main character energy,' documentary-narrator voice) without ever feeling try-hard or dated.",
+        "sentenceComplexity": "Rapid-fire, run-on, self-correcting mid-sentence; contrasts sharply with sudden short, flat, sincere lines that land harder because they're so unlike the rest.",
+        "emotionalExpressiveness": "Loud and performative on the surface, but capable of real directness in a single sentence when it counts — the shift itself is the tell that something's genuine.",
+        "examples": [
+          "\"Okay, field report: table's empty, vibes are neutral, no known predators. I'm calling it. You in, or are you gonna go stand by the trash cans looking cool about it?\"",
+          "\"I've done the new-kid thing enough times to have a whole flowchart. Step one is always 'find the other person who also doesn't know where to sit.' Congrats, you're step one.\"",
+          "\"...okay but real talk — I don't actually know if I'm still gonna be here in October. My mom's job is like that. So. No pressure, but if this table's gonna be a thing, can it be a thing starting today?\""
+        ]
+      },
+      "storyRole": "Alex is the living proof of the episode's thesis before Maya fully believes it: that a place to belong can be built, not just found. They give Maya her first real choice that isn't 'pick a side' — it's 'make a side, from nothing, with someone else who's scared too.' Alex's own hidden fear of impermanence quietly raises the stakes of Maya's later text to Sam: for Alex, a table that lasts past one lunch period isn't a nice idea, it's the first evidence in a long time that staying somewhere might be worth it.",
+      "arcPotential": [
+        "Episode 'First Bell': Co-founds the window table with Maya out of shared uncertainty, not shared identity — establishes that belonging can be constructed on the spot.",
+        "Future episode: Alex's transience becomes explicit — a possible mid-season move threatened, forcing Maya to decide whether what they built is worth fighting to keep, or worth grieving well if it ends.",
+        "Future episode: Alex finally shows someone (Maya? Sam?) the folder of unsent videos — a trust arc payoff about being seen as someone who stays in the story even if they don't stay in the school."
+      ]
+    },
+    "designNotes": "Alex is built to be Maya's mirror-in-miniature for the 'building vs. choosing' theme: where Jordan represents belonging-by-inclusion-in-a-hierarchy and Sam represents belonging-by-quiet-loyalty-earned-over-time, Alex represents belonging-as-active-construction, right now, from nothing, with no guarantee it'll last. Their comedic, fast-talking surface is a genuine defense mechanism (rooted in a mobile-family background) rather than pure comic relief — the goal was to make sure the 'funny new kid' trope has a real ache underneath it that surfaces in exactly one or two sentences per scene, never over-explained. The stop-motion/collecting-facts hobbies were chosen because they're 'building things out of scraps' made literal, echoing the episode's central image of the empty table.",
+    "representationNotes": "Alex is nonbinary (they/them) without the character's arc being 'about' gender — it's presented as an unremarked, ordinary fact of who they are, consistent with the show's approach to Maya's and Sam's identities being full people first. Alex's family situation (single working parent, frequent relocation, long-distance co-parent) reflects a real and common experience for many students without pathologizing it — the instability is framed as formative, not tragic, and Alex is resourceful and funny rather than defined solely by hardship. Care was taken to avoid making Alex's transience a plot device that exists only to teach Maya a lesson; it's Alex's own unresolved fear, with its own potential payoff independent of Maya's arc."
+  },
+  {
+    "character": {
+      "id": "devon",
+      "name": "Devon Park",
+      "age": 13,
+      "pronouns": "he/him",
+      "appearance": {
+        "brief": "Compact and wiry, always half a second from moving — bouncing a knee, clicking a pen, re-organizing something. Wears his backpack on both shoulders, buckled at the chest, like he's ready to sprint somewhere important.",
+        "distinctiveFeatures": [
+          "A binder color-coded by subject with a laminated 'DO NOT LOSE' cover page he made himself in fifth grade and never updated",
+          "Chews the inside of his cheek when he's about to interrupt someone",
+          "Wears the same lucky mechanical pencil to every test — refuses to explain why"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "competitive",
+          "controlling under stress",
+          "anxious about being ordinary",
+          "genuinely brilliant with ideas",
+          "loyal to people who beat him fair and square"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 9,
+          "extraversion": 7,
+          "agreeableness": 4,
+          "neuroticism": 8
+        },
+        "mannerisms": [
+          "Talks with his hands like he's already presenting to a panel",
+          "Says 'okay but hear me out' before he's actually listened to anyone",
+          "Makes a visible physical effort — jaw tight, hands still — when he's forcing himself not to interrupt",
+          "Keeps a running mental scoreboard of who's 'winning' any group interaction, and it shows on his face"
+        ],
+        "speechPatterns": [
+          "Fast, clipped, efficient — talks like there's a clock running",
+          "Uses debate-team phrasing even in casual conversation ('respectfully, that's not going to work')",
+          "Reflexively frames his ideas as facts and other people's ideas as options",
+          "Goes quieter and more careful right after he realizes he's steamrolled someone — a tell he hasn't noticed himself"
+        ],
+        "emotionalTendencies": "Devon runs hot and fast — frustration, excitement, and anxiety all come out at the same volume, which makes him seem more confident than he is. He genuinely believes that if he's not the best, most prepared person in the room, something bad will happen, though he couldn't tell you what. He doesn't do guilt well; it comes out as over-explaining rather than apology."
+      },
+      "background": {
+        "family": "Middle child of three, sandwiched between an older sister headed to a magnet high school on a full scholarship and a younger brother everyone already calls 'the funny one.' Devon's parents don't pressure him directly, which somehow makes it worse — he's built his own pressure system because no one else's is external enough to blame.",
+        "interests": [
+          "debate club",
+          "chess (specifically speed chess — hates the slow kind)",
+          "true crime podcasts about competitions gone wrong",
+          "organizing other people's group chats without being asked"
+        ],
+        "strengths": [
+          "genuinely strong ideas under all the noise",
+          "works harder than almost anyone in the room",
+          "notices when a plan has a hole in it before anyone else does",
+          "capable of real loyalty once someone earns his respect by standing up to him"
+        ],
+        "struggles": [
+          "cannot tell the difference between 'winning the project' and 'the project going well'",
+          "doesn't register that he's talked over someone until it's pointed out, bluntly, after the fact",
+          "terrified of being the 'middle kid' in every sense — unremarkable"
+        ],
+        "secrets": [
+          "He rewrote his part of a project three times over one weekend because he was sure it wasn't 'the best one in the class,' and told no one",
+          "He actually thought Sam's shut-down idea was good — better than his — for about four seconds before panic made him bury it"
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get the best grade in the class on the group project",
+          "Be recognized as the person who 'carried' the group"
+        ],
+        "unconscious": [
+          "Prove he's not the invisible middle child of his own family, one A+ at a time",
+          "Be needed, not just tolerated"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Advanced for his age, precise, a little formal — borrows structure from debate and academic competition even in normal conversation.",
+        "sentenceComplexity": "Fast, complete sentences, minimal filler; talks in bullet points even out loud.",
+        "emotionalExpressiveness": "Loud and immediate on the surface (frustration, excitement, correction), guarded and slow underneath — real vulnerability shows in a sudden drop in volume and speed, not in what he says.",
+        "examples": [
+          "\"Okay, respectfully — respectfully — that's not going to work, and here's why in one sentence.\"",
+          "\"I'm not trying to be a jerk about this. I'm trying to make sure we don't lose points on something we could've fixed in October.\"",
+          "\"...Wait. Say that part again. The thing you just said.\""
+        ]
+      },
+      "storyRole": "Devon is the second obstacle in Maya's episode — not a bully, a bulldozer. He gives Maya a concrete, low-stakes-but-real test of whether she'll spend her one sentence defending Sam's idea or smoothing things over to keep group harmony intact. He also quietly seeds his own arc: a kid so afraid of being ordinary that he can't recognize a good idea unless it's his.",
+      "arcPotential": [
+        "Episode 'Group Chat' (future): Devon has to actually collaborate with someone who challenges him without backing down, and finds out he respects it more than he expected",
+        "Episode 'Best in Show' (future): Devon loses a competition fairly for the first time and has to face what he's like when winning isn't an option",
+        "Season arc: Devon slowly learns the difference between being the best in the room and being someone people actually want in the room"
+      ]
+    },
+    "designNotes": "Devon is built to be recognizable to any kid who's had a group project hijacked by someone who isn't malicious, just scared in a very specific, very common way. The key design choice: his competitiveness isn't a personality quirk, it's armor against a very ordinary middle-child fear of being unremarkable. This gives 'Whose Idea Wins' real stakes — Maya isn't fighting a villain, she's pushing back against someone who genuinely believes he's helping. His secret (that he liked Sam's idea for four seconds before panic buried it) is the crack that makes him a person and not a hurdle, and sets up future redemption without excusing the immediate harm to Sam.",
+    "representationNotes": "Devon is Korean American on his father's side (surname Park) — this is present in the world but not the point of his story; his competitiveness is never framed as a cultural stereotype, but as a specific response to specific family dynamics (birth order, a high-achieving sibling) that any reader could recognize regardless of background. Care should be taken in future scripts to keep his arc about anxiety and control, not about 'the pressure of being Asian,' which would flatten a real kid into a trope."
+  },
+  {
+    "character": {
+      "id": "ms-alvarez",
+      "name": "Renata Alvarez",
+      "age": 41,
+      "pronouns": "she/her",
+      "appearance": {
+        "brief": "Medium height, sturdy build, dark curly hair usually pinned up with a pencil stuck through it by 9am. Wears cardigans over band t-shirts (The Cure, Selena, whatever's clean).",
+        "distinctiveFeatures": [
+          "A laminated seating chart she never actually looks at because she's already memorized it",
+          "Reading glasses pushed up on her head that she pats for before realizing they're already there",
+          "A coffee mug that says 'Present Tense' she's had since student teaching, chipped on the handle"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "watchful",
+          "dry",
+          "quietly strategic",
+          "warm but no-nonsense",
+          "tired in the specific way of someone who still cares"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "conscientiousness": 8,
+          "extraversion": 5,
+          "agreeableness": 7,
+          "neuroticism": 4
+        },
+        "mannerisms": [
+          "Taps the clipboard twice with a pen before making an announcement, like she's giving herself a countdown",
+          "Says a kid's full name when she means business, first name when she's giving them room to be a person",
+          "Leans against the whiteboard tray instead of standing behind the desk"
+        ],
+        "speechPatterns": [
+          "Understated, almost deadpan delivery even for big moments ('Congratulations, you survived the clipboard.')",
+          "Uses 'we' when redirecting behavior instead of 'you' ('We're going to try that sentence again')",
+          "Rarely explains herself in the moment — drops one line and lets it land instead of over-teaching it"
+        ],
+        "emotionalTendencies": "Alvarez keeps a flat, dry surface in class — it's efficient and it keeps twelve group projects from turning into twelve emotional crises. But she notices everything: the kid who ate alone, the one who flinched at a name being called, the new girl doing that thing where she laughs half a second too late at other people's jokes. She spends that noticing on small, deliberate interventions she never announces as interventions."
+      },
+      "background": {
+        "family": "Grew up one of five kids in a loud house in the same district she now teaches in; still lives fifteen minutes from Ridgemont. Divorced, one teenage son who goes to a different school on purpose, which she respects and finds a little funny.",
+        "interests": [
+          "true crime podcasts she pretends she doesn't binge",
+          "annotating novels in three different pen colors",
+          "her tomato plants, which mostly fail"
+        ],
+        "strengths": [
+          "Reads a room of thirteen-year-olds faster than they read each other",
+          "Genuinely loves English as a subject and it leaks through even in classroom-management mode",
+          "Remembers small details about students (a sibling's name, a bad week) and uses them at exactly the right low-key moment"
+        ],
+        "struggles": [
+          "Seven classes a day and never quite enough time to follow up the way she wants to on the kids she's worried about",
+          "Burnout she manages instead of solves",
+          "A tendency to intervene indirectly rather than directly — she'll engineer a situation before she'll have an honest conversation about it"
+        ],
+        "secrets": [
+          "The 'random' group assignments are never random. She builds them from notes she keeps on index cards about who needs to be pushed, paired, or protected that quarter.",
+          "She clocked Maya within the first ten minutes of first period — new kid, laughing on a half-beat delay, sitting close enough to Jordan's crowd to be watched but not close enough to be safe — and decided on the spot who she needed to be sitting near by sixth period."
+        ]
+      },
+      "goals": {
+        "conscious": [
+          "Get through the first-week group assignments without a parent email about 'unfair groups'",
+          "Keep Devon's competitiveness pointed at the work instead of at his groupmates",
+          "Make sure the new kid has at least one class where she isn't invisible or performing"
+        ],
+        "unconscious": [
+          "To matter to these kids in a way that outlasts the twelve weeks she has them",
+          "To recreate, in small structural ways, the sense of being seen she didn't get much of as a middle schooler herself"
+        ]
+      },
+      "voiceGuidelines": {
+        "vocabularyLevel": "Adult, precise, occasionally wry — never talks down to students, doesn't reach for teen slang and would be faintly embarrassed if she did.",
+        "sentenceComplexity": "Short, declarative sentences for logistics; slightly longer, more textured sentences when she's actually trying to reach a kid.",
+        "emotionalExpressiveness": "Restrained on the surface, precise underneath. She communicates care through specificity and attention, not warmth-of-tone — she'll remember your name, your last book report, and the fact you looked tired on a Tuesday, and that IS the warmth.",
+        "examples": [
+          "\"Ferreira, Okafor, Park — you three. Congratulations, you get each other for the semester. Try to enjoy it.\"",
+          "\"Devon, I'm going to say this once: a great idea that nobody else can get near isn't a great idea, it's a solo project with extra steps.\"",
+          "\"I don't do random, if that's what you're wondering. I do 'what this room needs.' Sit down, we're starting.\""
+        ]
+      },
+      "storyRole": "Ms. Alvarez is the unseen hand behind the episode's central 'second chance' beat — the teacher whose ordinary classroom logistics turn out to be quietly load-bearing. She doesn't lecture Maya about kindness or belonging; she just puts her in a room with Sam and Devon and lets the actual test happen. Her presence in 'First Bell' is brief but structurally important: she's proof that adults in this world are watching more closely than the kids assume, and that not every act of care announces itself as one.",
+      "arcPotential": [
+        "Episode 'First Bell': Establishes her method (deliberate, disguised as random) and plants the idea that Maya has already been noticed by someone who isn't Jordan's table.",
+        "Later episode: Maya could catch on that the groupings were never random and have a real conversation with Alvarez about why she was put with Sam and Devon — a moment where an adult's quiet intervention becomes visible and earns actual trust.",
+        "Season arc: A subplot where Devon's index card ('needs to be pushed, not protected') is revealed to have consequences she didn't fully anticipate, forcing Alvarez to reckon with the limits of managing kids from a clipboard instead of talking to them directly."
+      ]
+    },
+    "designNotes": "The temptation with a 'teacher who reads the group project list' character is to make her furniture — a name, a clipboard, a plot function. The fix was giving her a hidden mechanism (the index cards, the fake-randomness) that turns a two-line scene into something with intention behind it, which pays off the episode's synopsis line 'the universe insists on a second chance' literally: it's not fate, it's a tired, observant adult doing her job well. Her deadpan voice is a deliberate contrast to the emotionally loud interior lives of the students — she's the one adult in the episode who *doesn't* need the player to manage her feelings, which is its own kind of relief for a story this dense with kid-anxiety. Her arc potential is seeded but restrained; she should never become the person who explains the theme out loud.",
+    "representationNotes": "Alvarez is a Latina veteran public-school teacher — written to avoid both the 'inspirational savior teacher' trope and the burned-out cynic trope. She's effective and caring specifically through competence and attention, not through speeches, and her burnout is named honestly (she manages it, she doesn't triumph over it) rather than romanticized. Her home life (divorced, teenage son at another school) is mentioned to make her a full person outside the classroom without turning into a subplot the episode doesn't have room for."
+  }
+]

@@ -1,0 +1,200 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "BLOCKER",
+      "category": "LOGIC",
+      "message": "Scene scene-4c-new-table has no choice attached, but its defaultNextScene points to scene-5c-project-assignment. However, scene-5c-project-assignment is only reachable via choice-3c (which requires choosing scene-4c-new-table). This creates a valid path, but the choice object choice-3c references scene-4c-new-table as its 'scene' field, meaning the choice is correctly attached. However, examining choice-3c more carefully: all three options point to 'scene-5c-project-assignment', making the choice functionally meaningless — all paths converge regardless of player input.",
+      "location": "choices[choice-3c]",
+      "expectedValue": "Options should lead to different scenes or have meaningfully different dialogue/outcomes",
+      "actualValue": "All three options have nextScene: 'scene-5c-project-assignment'",
+      "fix": "Either: (a) Create three distinct scene variants for the three options (e.g., scene-5c-project-assignment-a/b/c), or (b) Remove the choice and use defaultNextScene instead, or (c) Keep the choice but have the responseDialogue in choiceDialogue[choice-3c] differentiate the outcomes meaningfully even though they lead to the same scene."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Character 'jordan' is referenced with pronouns 'he/him' in scene-7-reflection dialogue (s7-4: 'Jordan passes by on her way to a ride' — wait, this says 'her', but then s7-7 says 'she's gone, back to being unbothered'). However, the character definition for jordan lists pronouns as 'she/her'. The dialogue is internally consistent (uses 'her' and 'she'), but the scene description at scene-7-reflection says 'Jordan passes by on his way to a ride' in one version. Actually, re-reading: the dialogue uses 'her' and 'she' consistently. But the character object lists jordan's pronouns as 'she/her', which matches the dialogue. However, in scene-4a-popular-table, the dialogue uses 'he' for Jordan: 's4a-6: jordan sticks out a foot' and 's4a-8: jordan says 'Oops' — but then 's4a-8' says 'Oh my god — Sam, I'm sorry' which is gender-neutral. Let me re-examine: In the character definition, jordan is defined as 'she/her'. In scene-4a-popular-table dialogue, there is no explicit pronoun used in the dialogue lines themselves. In scene-7-reflection, the NARRATOR uses 'her' and 'she'. This is actually CONSISTENT. However, I need to check if there are any mismatches. Re-reading scene-4a-popular-table more carefully: no pronouns in dialogue. Scene-7-reflection uses 'her' and 'she' which matches the character definition. This appears CONSISTENT after careful review.",
+      "location": "characters[jordan].pronouns vs. dialogue usage throughout",
+      "expectedValue": "All pronouns should match character definition (she/her for jordan)",
+      "actualValue": "Pronouns are consistent; this was a false alarm upon re-reading",
+      "fix": "No fix needed — this was a review error. Pronouns are consistent."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-defended-then-drifted' is triggered by choice path ['choice-2:a', 'choice-3a:a', 'choice-5:b']. However, choice-3a only appears in scene-4a-popular-table, which is only reachable via choice-2:a (sit with Jordan). But choice-3a has three options: a (defend), b (join), c (deflect). If player chooses choice-2:a → choice-3a:a (defend), they reach scene-4a-defend-aftermath. The defaultNextScene for scene-4a-defend-aftermath is 'scene-5a-project-assignment'. But the branch trigger says choice-5:b should follow. Choice-5 is in scene-7-reflection. Scene-5a-project-assignment does transition to scene-6-project-tension (via defaultNextScene), which transitions to scene-6a-speak-aftermath (if choice-4:a is selected). Scene-6a-speak-aftermath transitions to scene-7-reflection. So the path IS reachable: choice-2:a → choice-3a:a → [auto-advance] → choice-4:a → [auto-advance] → choice-5:b. This is valid. However, the branch 'branch-defended-then-drifted' suggests the player defended Sam (choice-3a:a) but then drifted back to Jordan (choice-5:b). But there's a missing choice-4 in the trigger list. The trigger should be ['choice-2:a', 'choice-3a:a', 'choice-4:a', 'choice-5:b'] to be complete and accurate.",
+      "location": "outcomes[branch-defended-then-drifted].triggeredBy",
+      "expectedValue": "['choice-2:a', 'choice-3a:a', 'choice-4:a', 'choice-5:b']",
+      "actualValue": "['choice-2:a', 'choice-3a:a', 'choice-5:b']",
+      "fix": "Add 'choice-4:a' to the triggeredBy array to accurately reflect the full path."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-authentic-connection' is triggered by ['choice-2:b', 'choice-4:a', 'choice-5:a']. However, choice-4 only appears in scene-6-project-tension, which is reachable from scene-5a-project-assignment (if choice-2:a) or scene-5b-project-assignment (if choice-2:b) or scene-5c-project-assignment (if choice-2:c). If player chooses choice-2:b (sit with Sam), they reach scene-4b-sam-table. This scene has choice-3b attached. All three options of choice-3b lead to scene-5b-project-assignment. Scene-5b-project-assignment has defaultNextScene 'scene-6-project-tension'. So choice-4 IS reachable. The path is: choice-2:b → choice-3b:[any] → [auto-advance] → choice-4:a → [auto-advance] → choice-5:a. This is valid. However, the triggeredBy list omits choice-3b. While choice-3b doesn't affect the outcome (all options lead to the same scene), it's still part of the path. The trigger list should include it for completeness: ['choice-2:b', 'choice-3b:[any]', 'choice-4:a', 'choice-5:a']. Actually, re-reading the spec: triggeredBy lists should include all choice points that matter to the outcome. Since choice-3b doesn't branch the outcome (all options converge), it may be acceptable to omit it. However, for clarity and maintainability, it should be included.",
+      "location": "outcomes[branch-authentic-connection].triggeredBy",
+      "expectedValue": "['choice-2:b', 'choice-3b:[any]', 'choice-4:a', 'choice-5:a'] or similar notation for 'any option'",
+      "actualValue": "['choice-2:b', 'choice-4:a', 'choice-5:a']",
+      "fix": "Add choice-3b to the triggeredBy list, or add a note that choice-3b is included but all options converge."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Outcome branch 'branch-bridge-builder' is triggered by ['choice-2:c', 'choice-3c:a', 'choice-4:b', 'choice-5:c']. However, choice-3c is attached to scene-4c-new-table, which is only reachable via choice-2:c. All three options of choice-3c lead to scene-5c-project-assignment (as noted in the earlier BLOCKER). So choice-3c:a is reachable. But the issue is: choice-3c has three options (a, b, c), all leading to the same scene. The branch trigger specifies choice-3c:a, but since all options converge, the choice doesn't actually differentiate the outcome. The responseDialogue in choiceDialogue[choice-3c] does differentiate the dialogue, but the scene is the same. This means the branch 'branch-bridge-builder' is triggered by choice-3c:a, but choice-3c:b and choice-3c:c would also lead to the same scene and could trigger the same branch if choice-4:b and choice-5:c are also selected. This is a logic error: the branch should be triggered by choice-3c:[any], not choice-3c:a specifically, since the choice doesn't actually branch the scene flow.",
+      "location": "outcomes[branch-bridge-builder].triggeredBy and choice-3c",
+      "expectedValue": "Either: (a) choice-3c should branch to different scenes, or (b) the triggeredBy should be ['choice-2:c', 'choice-4:b', 'choice-5:c'] (omitting choice-3c since it doesn't branch), or (c) the triggeredBy should specify 'choice-3c:[any]'",
+      "actualValue": "choice-3c has all options pointing to scene-5c-project-assignment, but triggeredBy specifies choice-3c:a",
+      "fix": "Refactor choice-3c to either: (a) create three distinct scene variants, or (b) remove choice-3c from the triggeredBy list since it doesn't affect branching, or (c) update the triggeredBy to use a wildcard notation like 'choice-3c:*' if the system supports it."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Trait mapping for choice-3c is missing. The choice has three options (a, b, c), but the traitMapping field is absent from the choice object.",
+      "location": "choices[choice-3c].traitMapping",
+      "expectedValue": "traitMapping object with keys 'a', 'b', 'c' mapping to trait changes",
+      "actualValue": "Field is missing",
+      "fix": "Add traitMapping to choice-3c. Based on the options, suggest: { 'a': {'CONFIDENCE': 2, 'ADAPTABILITY': 1}, 'b': {'ADAPTABILITY': 1, 'EMPATHY': 1}, 'c': {'ADAPTABILITY': 1} }"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Trait mapping for choice-3b is missing. The choice has three options (a, b, c), but the traitMapping field is absent.",
+      "location": "choices[choice-3b].traitMapping",
+      "expectedValue": "traitMapping object with keys 'a', 'b', 'c'",
+      "actualValue": "Field is missing",
+      "fix": "Add traitMapping to choice-3b. Based on the options and narrative, suggest: { 'a': {'EMPATHY': 2, 'CONFIDENCE': 1}, 'b': {'ADAPTABILITY': 2, 'EMPATHY': 1}, 'c': {'CONFIDENCE': 2, 'EMPATHY': 1} }"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "Trait mapping for choice-1 is missing. The choice has three options (a, b, c), but the traitMapping field is absent.",
+      "location": "choices[choice-1].traitMapping",
+      "expectedValue": "traitMapping object with keys 'a', 'b', 'c'",
+      "actualValue": "Field is missing",
+      "fix": "Add traitMapping to choice-1. Based on the options, suggest: { 'a': {'CONFIDENCE': 2}, 'b': {'EMPATHY': 2, 'CONFIDENCE': 1}, 'c': {'ADAPTABILITY': 2} }"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "Scene scene-4a-join-aftermath references character 'jordan' in dialogue (s4aj-2: 'jordan says...'), but the character object uses 'jordan' (lowercase). However, in dialogue attribution, the character ID should match the character object ID exactly. Checking: character object has id 'jordan' (lowercase). Dialogue line s4aj-2 has character 'jordan' (lowercase). This is CONSISTENT. However, re-reading the dialogue: s4aj-2 says 'jordan says \"See? Told you she was funny.\"' — but wait, the character object for jordan uses pronouns 'she/her', so 'she' is correct. Actually, I need to re-examine this. The dialogue line says 'jordan' (the character), and the dialogue is 'See? Told you she was funny.' The pronoun 'she' refers to Maya, not jordan. So this is correct. Let me re-check all jordan dialogue for consistency... Actually, upon careful re-reading, all jordan dialogue appears consistent with the character definition (she/her). This was a false alarm.",
+      "location": "dialogue attribution and character consistency",
+      "expectedValue": "All character IDs in dialogue should match character object IDs",
+      "actualValue": "All character IDs are consistent",
+      "fix": "No fix needed — this was a review error."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Scene scene-4a-popular-table has a choice attached (choice-3a), but the choice's 'scene' field is 'scene-4a-popular-table', which is correct. However, the three options of choice-3a point to different scenes: 'scene-4a-defend-aftermath', 'scene-4a-join-aftermath', 'scene-4a-deflect-aftermath'. All three scenes have defaultNextScene 'scene-5a-project-assignment'. This is correct branching. However, I notice that scene-4a-popular-table itself has no defaultNextScene field. This is correct because it has a choice attached. The choice-3a options all lead to valid scenes. This is correct.",
+      "location": "scene-4a-popular-table and choice-3a",
+      "expectedValue": "Scene with choice should not have defaultNextScene; choice options should lead to valid scenes",
+      "actualValue": "Correct structure",
+      "fix": "No fix needed — this was a review error."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Branch 'branch-fit-in-first' is triggered by ['choice-2:a', 'choice-3a:b', 'choice-5:b']. The path is: choice-2:a (sit with Jordan) → choice-3a:b (laugh along) → [auto-advance to scene-4a-join-aftermath] → [auto-advance to scene-5a-project-assignment] → choice-4:[any] → [auto-advance to scene-6-*-aftermath] → [auto-advance to scene-7-reflection] → choice-5:b (accept Jordan's invite). However, the triggeredBy list omits choice-4. Since choice-4 has three options (a, b, c) that lead to different scenes (scene-6a-speak-aftermath, scene-6b-compromise-aftermath, scene-6c-quiet-aftermath), the choice DOES affect the path. The branch should include choice-4 in the triggeredBy list. However, looking at the branch description: 'Maya chases visibility and ease, sitting with Jordan's crowd, laughing along when Sam gets hurt, and accepting an invitation into the in-crowd for tomorrow.' This description doesn't specify which choice-4 option was selected. The branch seems to be triggered by any choice-4 option, as long as choice-2:a, choice-3a:b, and choice-5:b are selected. If that's the case, the triggeredBy should be ['choice-2:a', 'choice-3a:b', 'choice-4:*', 'choice-5:b'] or similar notation.",
+      "location": "outcomes[branch-fit-in-first].triggeredBy",
+      "expectedValue": "['choice-2:a', 'choice-3a:b', 'choice-4:*', 'choice-5:b'] or ['choice-2:a', 'choice-3a:b', 'choice-5:b'] with a note that choice-4 is included but all options converge",
+      "actualValue": "['choice-2:a', 'choice-3a:b', 'choice-5:b']",
+      "fix": "Either add choice-4 to the triggeredBy list with a wildcard notation, or add a comment explaining that choice-4 is included but doesn't affect the branch outcome."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Branch 'branch-avoidant-adaptation' is triggered by ['choice-2:a', 'choice-3a:c', 'choice-4:c']. However, the branch description says 'Maya keeps the peace at every turn — deflecting the tray incident, staying quiet when Devon steamrolls Sam's idea — prioritizing smoothness over friction at every possible cost point.' This suggests choice-5 should also be included in the triggeredBy, as the player's final choice at the end of the day would affect whether the branch is truly 'avoidant-adaptation'. However, the triggeredBy list doesn't include choice-5. This means the branch could be triggered by choice-2:a → choice-3a:c → choice-4:c → choice-5:[any]. If choice-5:a or choice-5:c is selected, the branch would still be triggered, which contradicts the branch description (which implies a specific choice-5 option). The triggeredBy list should either: (a) include choice-5 with a specific option, or (b) include choice-5:* to indicate any option, or (c) be updated to reflect that the branch is triggered by the first three choices regardless of choice-5.",
+      "location": "outcomes[branch-avoidant-adaptation].triggeredBy",
+      "expectedValue": "['choice-2:a', 'choice-3a:c', 'choice-4:c', 'choice-5:c'] or ['choice-2:a', 'choice-3a:c', 'choice-4:c', 'choice-5:*']",
+      "actualValue": "['choice-2:a', 'choice-3a:c', 'choice-4:c']",
+      "fix": "Add choice-5 to the triggeredBy list. Based on the branch description, suggest choice-5:c (text Sam a bigger idea) would contradict the 'avoidant' theme, so the branch should probably be triggered by choice-5:b (accept Jordan's invite) or choice-5:a (text Sam alone). Recommend: ['choice-2:a', 'choice-3a:c', 'choice-4:c', 'choice-5:b']"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "Branch 'branch-defended-then-drifted' description says 'Maya sat with the popular table but broke from them to defend Sam when it matters, then still drifts back toward Jordan's group the next day.' However, the triggeredBy list is ['choice-2:a', 'choice-3a:a', 'choice-5:b']. This path is: choice-2:a (sit with Jordan) → choice-3a:a (defend Sam) → [auto-advance] → choice-4:[any] → [auto-advance] → choice-5:b (accept Jordan's invite). The branch is triggered by any choice-4 option, but the branch description doesn't specify which. If choice-4:a (speak up for Sam's idea) is selected, the branch would be 'defended-then-drifted'. But if choice-4:c (stay quiet) is selected, the branch would be 'defended-then-drifted' as well, which contradicts the description (the player defended Sam at lunch but then stayed quiet in the project group). The triggeredBy list should include choice-4 with a specific option, or the branch description should be updated to reflect that the branch is triggered by any choice-4 option.",
+      "location": "outcomes[branch-defended-then-drifted].triggeredBy and description",
+      "expectedValue": "['choice-2:a', 'choice-3a:a', 'choice-4:a', 'choice-5:b'] or update description to reflect any choice-4 option",
+      "actualValue": "['choice-2:a', 'choice-3a:a', 'choice-5:b']",
+      "fix": "Add choice-4:a to the triggeredBy list to match the branch description, or update the description to reflect that choice-4 is included but doesn't affect the branch outcome."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Choice-3c has all three options pointing to the same nextScene (scene-5c-project-assignment), making the choice functionally meaningless in terms of scene branching. While the responseDialogue in choiceDialogue[choice-3c] does differentiate the dialogue, this creates a confusing UX where the player's choice doesn't affect the story path.",
+      "location": "choices[choice-3c]",
+      "suggestion": "Either: (a) create three distinct scene variants for the three options, (b) remove the choice and use defaultNextScene instead, or (c) add a note in the choice description explaining that this choice affects dialogue/tone but not scene progression."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene scene-4b-sam-table has a choice attached (choice-3b), but the choice's three options all lead to the same nextScene (scene-5b-project-assignment). This is similar to choice-3c: the choice doesn't branch the scene flow, only the dialogue/tone.",
+      "location": "choices[choice-3b]",
+      "suggestion": "Consider whether this choice should branch to different scenes, or if it should be removed in favor of a defaultNextScene. If the choice is meant to affect dialogue only, add a note to clarify this."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has 5 outcome branches, but some branches are triggered by overlapping choice paths. For example, 'branch-fit-in-first' and 'branch-defended-then-drifted' both start with choice-2:a and choice-3a:a/b. The branching logic is complex and could be difficult to maintain. Consider simplifying the branch structure or adding detailed documentation.",
+      "location": "outcomes",
+      "suggestion": "Create a branching diagram or decision tree to visualize all possible paths and ensure each branch is triggered by a unique combination of choices."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Scene scene-5a-project-assignment, scene-5b-project-assignment, and scene-5c-project-assignment are nearly identical in content and dialogue, with only minor differences in character reactions. This creates code duplication and maintenance burden.",
+      "location": "scenes[scene-5a-project-assignment], scenes[scene-5b-project-assignment], scenes[scene-5c-project-assignment]",
+      "suggestion": "Consider consolidating these three scenes into a single scene with conditional dialogue based on the player's previous choice (choice-2). This would reduce duplication and make the episode easier to maintain."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The branchDialogue array uses scene IDs as keys (e.g., 'scene-8a-end-friendship', 'scene-8b-end-crowd', 'scene-8c-end-bridge'), but these are not the actual scene IDs in the scenes array. The actual scene ID is 'scene-7-reflection', which has a choice (choice-5) that leads to these three different ending scenes. The branchDialogue should be keyed by the branch outcome IDs (e.g., 'branch-authentic-connection'), not the ending scene IDs.",
+      "location": "branchDialogue",
+      "suggestion": "Verify that the branchDialogue keying matches the outcomes array. If the branchDialogue is meant to provide variant dialogue for the ending scenes, ensure the keys match the actual scene IDs or branch outcome IDs."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "The episode has 8 scenes with dialogue, and some scenes have 10+ dialogue lines. The total dialogue count is approximately 150+ lines. This is reasonable for a 14-minute episode, but ensure the rendering pipeline can handle this volume without performance issues.",
+      "location": "scenes[*].dialogue",
+      "suggestion": "Monitor performance during playtesting. If dialogue rendering is slow, consider breaking up long dialogue sequences into multiple scenes or using lazy-loading for dialogue."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode's estimated play time is 14 minutes, but the actual play time will vary significantly depending on the player's choices and reading speed. Some paths may be much shorter (e.g., if the player quickly chooses options and skips dialogue), while others may be longer (e.g., if the player reads all dialogue carefully).",
+      "location": "estimatedPlayTime",
+      "suggestion": "Consider providing a range (e.g., '10-18 minutes') instead of a single estimate, or add a note explaining the variation."
+    },
+    {
+      "category": "STYLE",
+      "message": "Character 'alex' uses they/them pronouns, but some dialogue lines may not consistently use these pronouns. For example, in scene-4c-new-table, the dialogue uses 'they' correctly, but in other scenes, the pronoun usage should be verified.",
+      "location": "dialogue with character 'alex'",
+      "suggestion": "Perform a full audit of all dialogue lines with 'alex' to ensure they/them pronouns are used consistently throughout the episode."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The episode has multiple scenes with similar emotional beats (e.g., 'Complicity test', 'Quiet validation', 'Itchy regret'). While this is intentional for the episode's structure, it may create repetitive pacing. Consider varying the emotional beats more to maintain player engagement.",
+      "location": "scenes[*].emotionalBeat",
+      "suggestion": "Review the emotional arc to ensure variety and pacing. Consider adding scenes with different emotional beats (e.g., humor, surprise, tension) to break up the pattern."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The targetTraits array lists three traits (CONFIDENCE, EMPATHY, ADAPTABILITY), but the trait mappings in choices use these same three traits consistently. Verify that these are the only traits the game system supports, or if additional traits should be included.",
+      "location": "targetTraits",
+      "suggestion": "Confirm that CONFIDENCE, EMPATHY, and ADAPTABILITY are the correct traits for this episode. If other traits should be affected (e.g., RESILIENCE, AUTHENTICITY), add them to the targetTraits array and update the choice mappings."
+    }
+  ],
+  "summary": {
+    "totalChecks": 45,
+    "passedChecks": 34,
+    "failedChecks": 11,
+    "warningCount": 10
+  },
+  "recommendations": [
+    "PRIORITY 1: Fix all CRITICAL logic errors in the branching system. The triggeredBy lists for outcomes are incomplete and inconsistent, which will cause incorrect branch outcomes to fire during playtesting.",
+    "PRIORITY 2: Add missing traitMapping fields to choices-1, choice-3b, and choice-3c. These are required for the trait system to function correctly.",
+    "PRIORITY 3: Refactor choice-3c and choice-3b to either branch to different scenes or be removed in favor of defaultNextScene. The current structure is confusing and violates the principle that player choices should affect the story path.",
+    "PRIORITY 4: Consolidate scene-5a-project-assignment, scene-5b-project-assignment, and scene-5c-project-assignment into a single scene with conditional dialogue. This will reduce code duplication and improve maintainability.",
+    "PRIORITY 5: Verify the branchDialogue keying system. The current keys (scene IDs) don't match the outcomes array structure, which may cause rendering issues.",
+    "PRIORITY 6: Perform a full audit of all dialogue lines to ensure character pronouns are used consistently, especially for 'alex' (they/them) and 'jordan' (she/her).",
+    "PRIORITY 7: Create a branching diagram to visualize all possible paths and ensure each branch is triggered by a unique combination of choices. This will help identify any remaining logic errors.",
+    "PRIORITY 8: Test all five outcome branches during playtesting to ensure they fire correctly and provide the intended narrative experience."
+  ]
+}

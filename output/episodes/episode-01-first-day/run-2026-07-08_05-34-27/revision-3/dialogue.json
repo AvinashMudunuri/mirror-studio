@@ -1,0 +1,1307 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1-arrival",
+      "lines": [
+        {
+          "id": "arr-1",
+          "character": "NARRATOR",
+          "text": "The front steps of Ridgemont High rise up like a dare. Somewhere behind Maya, a car pulls away. She doesn't turn to watch it go."
+        },
+        {
+          "id": "arr-2",
+          "character": "player",
+          "text": "Okay so — new plan. I'm not 'new girl who cried in the car,' I'm 'new girl who's mysterious and has places to be.'",
+          "emotion": "rehearsing under breath"
+        },
+        {
+          "id": "arr-3",
+          "character": "INTERNAL",
+          "text": "Very chill. Very normal. Ten out of ten normal. Sure. Nailed it already."
+        },
+        {
+          "id": "arr-4",
+          "character": "player",
+          "text": "Right. Armor's on.",
+          "action": "straightens jacket collar"
+        },
+        {
+          "id": "arr-5",
+          "character": "NARRATOR",
+          "text": "Inside, the hallway is a river already moving — everyone flowing toward somewhere they've been a hundred times before. Maya catches her reflection in the trophy case."
+        },
+        {
+          "id": "arr-6",
+          "character": "INTERNAL",
+          "text": "Find a table. Don't cry. Befriend at least one (1) person. Boom. Day one, complete."
+        },
+        {
+          "id": "arr-7",
+          "character": "player",
+          "text": "Okay. Ten minutes. Let's find out who I am today.",
+          "emotion": "quiet resolve"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2-hallway",
+      "lines": [
+        {
+          "id": "hall-1",
+          "character": "NARRATOR",
+          "text": "Room 114 is supposed to be right here. According to the schedule. According to the map she's already memorized. It is decidedly not."
+        },
+        {
+          "id": "hall-2",
+          "character": "player",
+          "text": "Okay, locker two-forty... two-forty... you are testing me right now—",
+          "action": "turning in a slow circle"
+        },
+        {
+          "id": "hall-3",
+          "character": "jordan",
+          "text": "Okay, spinning-in-circles girl, your locker's the one you're currently *not* standing in front of. Groundbreaking detective work.",
+          "emotion": "loud, playing to the hallway"
+        },
+        {
+          "id": "hall-4",
+          "character": "NARRATOR",
+          "text": "A couple of nearby kids laugh. Jordan doesn't slow down long enough to see if it landed."
+        },
+        {
+          "id": "hall-5",
+          "character": "player",
+          "text": "Cool. Cool, cool. Thank you, detective.",
+          "emotion": "forced smile"
+        },
+        {
+          "id": "hall-6",
+          "character": "sam",
+          "text": "Cool locker technique. Very avant-garde.",
+          "emotion": "dry, almost inaudible",
+          "action": "doesn't look up"
+        },
+        {
+          "id": "hall-7",
+          "character": "NARRATOR",
+          "text": "It's dry, and it's funny, and it's gone before Jordan even clocks it happened."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3-lunchroom",
+      "lines": [
+        {
+          "id": "lunch-1",
+          "character": "NARRATOR",
+          "text": "The cafeteria hits like a wall of sound. Maya's tray suddenly weighs approximately one thousand pounds."
+        },
+        {
+          "id": "lunch-2",
+          "character": "jordan",
+          "text": "Ferreira! Right? Come sit, come sit — we don't bite. Mostly.",
+          "action": "arm already half-raised, not quite looking"
+        },
+        {
+          "id": "lunch-3",
+          "character": "NARRATOR",
+          "text": "A few tables over, Sam eats alone by the window, headphones on, eyes fixed on his tray like it's the only fixed point in the room."
+        },
+        {
+          "id": "lunch-4",
+          "character": "alex",
+          "text": "Field report: window table's empty except for one very committed loner, popular table's already recruiting, and you have — *checks imaginary watch* — about four seconds before this becomes a whole thing.",
+          "action": "appearing out of nowhere"
+        },
+        {
+          "id": "lunch-5",
+          "character": "player",
+          "text": "No pressure.",
+          "emotion": "under breath"
+        },
+        {
+          "id": "lunch-6",
+          "character": "alex",
+          "text": "Zero pressure. Massive, life-altering, completely-not-a-big-deal pressure."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4a-popular-table",
+      "lines": [
+        {
+          "id": "4a-1",
+          "character": "NARRATOR",
+          "text": "Jordan's table runs like a live show — everyone half-performing, half-watching everyone else perform."
+        },
+        {
+          "id": "4a-2",
+          "character": "jordan",
+          "text": "—and THEN he says 'I thought this was the poetry unit,' in front of the ENTIRE class—",
+          "emotion": "mid-story, delighted with herself"
+        },
+        {
+          "id": "4a-3",
+          "character": "jordan",
+          "text": "Okay but seriously — you're funny. You're staying. This is decided.",
+          "action": "arm sliding along Maya's chair"
+        },
+        {
+          "id": "4a-4",
+          "character": "player",
+          "text": "I mean — I wasn't gonna fight you on it.",
+          "emotion": "a little louder than she means to"
+        },
+        {
+          "id": "4a-5",
+          "character": "NARRATOR",
+          "text": "Sam passes with a full tray, headphones on, trying to be invisible. Jordan's foot slides out. 'As a joke.'"
+        },
+        {
+          "id": "4a-6",
+          "character": "NARRATOR",
+          "text": "The tray hits the floor first. Sam hits the bench second. The table erupts."
+        },
+        {
+          "id": "4a-7",
+          "character": "jordan",
+          "text": "Oh my god— Okafor, you good?",
+          "emotion": "already laughing"
+        },
+        {
+          "id": "4a-8",
+          "character": "NARRATOR",
+          "text": "Everyone looks at Maya. Waiting to see which way she'll go."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4a-defend-aftermath",
+      "lines": [
+        {
+          "id": "4a-def-1",
+          "character": "player",
+          "text": "Hey — that wasn't cool.",
+          "action": "helping Sam gather his tray"
+        },
+        {
+          "id": "4a-def-2",
+          "character": "jordan",
+          "text": "Relax, it was a joke.",
+          "emotion": "smile tightening, half to herself"
+        },
+        {
+          "id": "4a-def-3",
+          "character": "NARRATOR",
+          "text": "It doesn't quite land. Jordan knows it too."
+        },
+        {
+          "id": "4a-def-4",
+          "character": "sam",
+          "text": "Thanks.",
+          "action": "mouths it silently, slipping toward the trash cans"
+        },
+        {
+          "id": "4a-def-5",
+          "character": "NARRATOR",
+          "text": "For the rest of lunch, Jordan's jokes carry a fraction less warmth aimed Maya's way. It doesn't fix everything. It isn't nothing."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4a-join-aftermath",
+      "lines": [
+        {
+          "id": "4a-join-1",
+          "character": "NARRATOR",
+          "text": "The laugh is out of Maya's mouth before she decides to let it out."
+        },
+        {
+          "id": "4a-join-2",
+          "character": "jordan",
+          "text": "See, this one gets it.",
+          "action": "arm sliding along the back of Maya's chair like a prize"
+        },
+        {
+          "id": "4a-join-3",
+          "character": "NARRATOR",
+          "text": "Sam doesn't look back on his way to the trash cans. Somehow that's worse than if he had."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4a-deflect-aftermath",
+      "lines": [
+        {
+          "id": "4a-defl-1",
+          "character": "player",
+          "text": "So — anyway, does anyone else think the cafeteria pizza tastes like the box it came in?",
+          "emotion": "too bright"
+        },
+        {
+          "id": "4a-defl-2",
+          "character": "jordan",
+          "text": "Oh my god, RIGHT? It's like eating cardboard's cardboard.",
+          "emotion": "already off and running"
+        },
+        {
+          "id": "4a-defl-3",
+          "character": "NARRATOR",
+          "text": "The table's attention slides right off the tray on the floor. Sam picks himself up without a word. Nobody quite manages to look at him while he does it. Maya included."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4b-sam-table",
+      "lines": [
+        {
+          "id": "4b-1",
+          "character": "sam",
+          "text": "You know the popular table's like, right there. Very much still an option.",
+          "emotion": "bracing for a punchline"
+        },
+        {
+          "id": "4b-2",
+          "character": "player",
+          "text": "Yeah, I know where it is. I have functioning eyes.",
+          "action": "sitting anyway"
+        },
+        {
+          "id": "4b-3",
+          "character": "sam",
+          "text": "Noted.",
+          "emotion": "small, surprised smile"
+        },
+        {
+          "id": "4b-4",
+          "character": "sam",
+          "text": "For the record, that pizza's not food. It's a legal loophole.",
+          "action": "nodding at her tray"
+        },
+        {
+          "id": "4b-5",
+          "character": "player",
+          "text": "Oh no. What's actually good here.",
+          "emotion": "laughing"
+        },
+        {
+          "id": "4b-6",
+          "character": "sam",
+          "text": "Nothing. That's the tragedy. The vending machine has three flavors of 'regret' and calls it a candy selection. It's basically a personal attack."
+        },
+        {
+          "id": "4b-7",
+          "character": "player",
+          "text": "Okay, you have opinions.",
+          "emotion": "grinning"
+        },
+        {
+          "id": "4b-8",
+          "character": "sam",
+          "text": "I've had a lot of lunch periods to develop them."
+        },
+        {
+          "id": "4b-9",
+          "character": "player",
+          "text": "You always sit here?",
+          "emotion": "careful"
+        },
+        {
+          "id": "4b-10",
+          "character": "sam",
+          "text": "Used to sit with a bigger group. People got... busy.",
+          "action": "shrug, eyes on his tray"
+        },
+        {
+          "id": "4b-11",
+          "character": "NARRATOR",
+          "text": "He says it like a fact, not a wound. It doesn't take a genius to hear the part he skipped."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4b-affirm-aftermath",
+      "lines": [
+        {
+          "id": "4b-aff-1",
+          "character": "sam",
+          "text": "Today, huh?",
+          "emotion": "short laugh, surprised into it"
+        },
+        {
+          "id": "4b-aff-2",
+          "character": "sam",
+          "text": "...Yeah. Okay. There's a table by the art room, actually. They're weird in a good way.",
+          "action": "nodding toward it"
+        },
+        {
+          "id": "4b-aff-3",
+          "character": "NARRATOR",
+          "text": "It started as Maya's suggestion. By the end, it's entirely his call."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4b-quiet-aftermath",
+      "lines": [
+        {
+          "id": "4b-qt-1",
+          "character": "NARRATOR",
+          "text": "Neither of them says much else. It isn't awkward — it's easy, in the way only two people who've stopped performing for anyone can be."
+        },
+        {
+          "id": "4b-qt-2",
+          "character": "sam",
+          "text": "",
+          "action": "slides a sketchbook across the table without a word — a half-finished comic panel, sharp and funny in a way his quiet voice never hints at"
+        },
+        {
+          "id": "4b-qt-3",
+          "character": "player",
+          "text": "You draw?",
+          "emotion": "surprised"
+        },
+        {
+          "id": "4b-qt-4",
+          "character": "sam",
+          "text": "I mean. Sometimes.",
+          "action": "shrug, like it's not a big deal — it clearly is"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4b-invite-aftermath",
+      "lines": [
+        {
+          "id": "4b-inv-1",
+          "character": "sam",
+          "text": "...Hey.",
+          "emotion": "hesitating, then deciding",
+          "action": "waving two kids over from a nearby table"
+        },
+        {
+          "id": "4b-inv-2",
+          "character": "sam",
+          "text": "Sit with us.",
+          "emotion": "surprised at himself"
+        },
+        {
+          "id": "4b-inv-3",
+          "character": "NARRATOR",
+          "text": "Whatever door just opened, he's the one who opened it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4c-new-table",
+      "lines": [
+        {
+          "id": "4c-1",
+          "character": "alex",
+          "text": "Hey, I'm Alex — they/them. Third new school in four years, so I've got the introduction down to a science.",
+          "action": "dropping into the seat like gravity decided for them"
+        },
+        {
+          "id": "4c-2",
+          "character": "player",
+          "text": "That obvious I'm new?",
+          "emotion": "surprised"
+        },
+        {
+          "id": "4c-3",
+          "character": "alex",
+          "text": "You've got the exact haunted look I had in sixth grade. Very 'where is the bathroom and also who am I now.' Said with love."
+        },
+        {
+          "id": "4c-4",
+          "character": "player",
+          "text": "That tracks.",
+          "emotion": "laughing"
+        },
+        {
+          "id": "4c-5",
+          "character": "alex",
+          "text": "Okay but real talk — building a table from scratch is honestly the power move. Nobody assigned you a seat. You just... claimed one.",
+          "action": "rearranging napkins into a neat grid"
+        },
+        {
+          "id": "4c-6",
+          "character": "player",
+          "text": "Feels less like claiming and more like nobody else wanted it."
+        },
+        {
+          "id": "4c-7",
+          "character": "alex",
+          "text": "Wow, low bar, we're already doing the vulnerable honesty bit, love that for us."
+        },
+        {
+          "id": "4c-8",
+          "character": "alex",
+          "text": "So then I figured — what if there was a club that was just, like, complaining about the cafeteria pizza. Formally. Minutes taken. Real bylaws."
+        },
+        {
+          "id": "4c-9",
+          "character": "player",
+          "text": "That's either the best idea I've ever heard or a cry for help."
+        },
+        {
+          "id": "4c-10",
+          "character": "alex",
+          "text": "Extremely possible it's both."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4c-recruit-aftermath",
+      "lines": [
+        {
+          "id": "4c-rec-1",
+          "character": "alex",
+          "text": "Wait — okay, we're doing this, hold on—",
+          "action": "already on their feet, waving over two kids from the lunch line"
+        },
+        {
+          "id": "4c-rec-2",
+          "character": "alex",
+          "text": "You two. Sit. We're starting a table and possibly a club, no pressure."
+        },
+        {
+          "id": "4c-rec-3",
+          "character": "NARRATOR",
+          "text": "By the bell, their table of two is a table of five. Alex looks like they just won something."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4c-bond-aftermath",
+      "lines": [
+        {
+          "id": "4c-bond-1",
+          "character": "alex",
+          "text": "...okay but real talk,",
+          "emotion": "quieter than their usual rhythm"
+        },
+        {
+          "id": "4c-bond-2",
+          "character": "alex",
+          "text": "I'm kind of tired of always being the one who makes the first move. I'm good at starting over. I'd just like a place I don't have to."
+        },
+        {
+          "id": "4c-bond-3",
+          "character": "player",
+          "text": "You don't have to today.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "4c-bond-4",
+          "character": "NARRATOR",
+          "text": "It's not sadness, exactly — just honesty, sitting still for a second before the conversation moves on."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4c-curious-aftermath",
+      "lines": [
+        {
+          "id": "4c-cur-1",
+          "character": "alex",
+          "text": "You can want both things, you know.",
+          "emotion": "not unkind",
+          "action": "catching Maya's eyes drift toward Jordan's table"
+        },
+        {
+          "id": "4c-cur-2",
+          "character": "alex",
+          "text": "Doesn't make you a fraud."
+        },
+        {
+          "id": "4c-cur-3",
+          "character": "player",
+          "text": "...I wasn't— okay, maybe a little.",
+          "emotion": "caught"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5a-project-assignment",
+      "lines": [
+        {
+          "id": "5a-1",
+          "character": "ms-alvarez",
+          "text": "Ferreira, Okafor, Park — you three. Congratulations, you get each other for the semester. Try to enjoy it.",
+          "action": "tapping clipboard twice"
+        },
+        {
+          "id": "5a-2",
+          "character": "devon",
+          "text": "Perfect. I have thoughts. Several.",
+          "action": "already flipping to a prepped page"
+        },
+        {
+          "id": "5a-3",
+          "character": "sam",
+          "text": "Great.",
+          "emotion": "flat",
+          "action": "jaw tight, not looking at Maya"
+        },
+        {
+          "id": "5a-4",
+          "character": "NARRATOR",
+          "text": "Jordan catches Maya's eye across the room for half a second — like he's trying to read which version of today just happened."
+        },
+        {
+          "id": "5a-5",
+          "character": "INTERNAL",
+          "text": "Given the last hour. Can I really blame him."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5b-project-assignment",
+      "lines": [
+        {
+          "id": "5b-1",
+          "character": "ms-alvarez",
+          "text": "Ferreira, Okafor, Park. Congratulations, you get each other for the semester.",
+          "action": "tapping clipboard twice"
+        },
+        {
+          "id": "5b-2",
+          "character": "sam",
+          "text": "Oh, hey.",
+          "emotion": "small grin, already there"
+        },
+        {
+          "id": "5b-3",
+          "character": "devon",
+          "text": "Try to keep up.",
+          "emotion": "half joking",
+          "action": "flipping to a prepped page"
+        },
+        {
+          "id": "5b-4",
+          "character": "sam",
+          "text": "We'll manage.",
+          "emotion": "grin not moving an inch"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5c-project-assignment",
+      "lines": [
+        {
+          "id": "5c-1",
+          "character": "ms-alvarez",
+          "text": "Ferreira, Okafor, Park.",
+          "action": "tapping clipboard twice"
+        },
+        {
+          "id": "5c-2",
+          "character": "INTERNAL",
+          "text": "Sam. That's — the quiet kid by the window, right?"
+        },
+        {
+          "id": "5c-3",
+          "character": "devon",
+          "text": "Great, let's not waste the period.",
+          "action": "already flipping to a fresh page before his name finishes being read"
+        },
+        {
+          "id": "5c-4",
+          "character": "alex",
+          "text": "Good luck!",
+          "action": "mouthing it across the room with an exaggerated shrug"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-project-tension",
+      "lines": [
+        {
+          "id": "6-1",
+          "character": "devon",
+          "text": "Okay, hear me out — this is basically what my brother did two years ago, and it got him an A. I'm not messing with a formula that works.",
+          "action": "talking with his hands"
+        },
+        {
+          "id": "6-2",
+          "character": "sam",
+          "text": "Or — we could do something visual. Like a fake news broadcast instead of a poster. It's not that different, just—",
+          "emotion": "testing the water"
+        },
+        {
+          "id": "6-3",
+          "character": "devon",
+          "text": "Respectfully, that's not going to work, we don't have the equipment and we don't have the—",
+          "action": "talking over him"
+        },
+        {
+          "id": "6-4",
+          "character": "sam",
+          "text": "We have phones. That's the equipment.",
+          "emotion": "quiet but not backing down"
+        },
+        {
+          "id": "6-5",
+          "character": "devon",
+          "text": "I can't just do something different and hope it works. I'm not doing worse than him.",
+          "emotion": "faster than he means to"
+        },
+        {
+          "id": "6-6",
+          "character": "NARRATOR",
+          "text": "For half a second the certainty cracks all the way through. Then it's gone, replaced by his usual sureness. Maya caught it. So did Sam."
+        },
+        {
+          "id": "6-7",
+          "character": "devon",
+          "text": "Anyway. Point is—",
+          "emotion": "recovering"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6a-speak-aftermath",
+      "lines": [
+        {
+          "id": "6a-1",
+          "character": "devon",
+          "text": "...Fine. Yeah. Maybe I got in my head about it.",
+          "emotion": "thrown, then honest"
+        },
+        {
+          "id": "6a-2",
+          "character": "sam",
+          "text": "",
+          "action": "sits up a little straighter, doesn't say anything, doesn't need to"
+        },
+        {
+          "id": "6a-3",
+          "character": "NARRATOR",
+          "text": "It was never really about being defended. It was about being heard."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6b-compromise-aftermath",
+      "lines": [
+        {
+          "id": "6b-1",
+          "character": "player",
+          "text": "What if we did some of both — the broadcast idea, but structured the way your brother's project was?"
+        },
+        {
+          "id": "6b-2",
+          "character": "devon",
+          "text": "...that could actually work. If we keep the structure tight.",
+          "emotion": "vaguely satisfied"
+        },
+        {
+          "id": "6b-3",
+          "character": "sam",
+          "text": "Yeah. I can work with that.",
+          "emotion": "quietly relieved"
+        },
+        {
+          "id": "6b-4",
+          "character": "NARRATOR",
+          "text": "Nobody's thrilled. Everybody can work with it. For a first day, that might be its own small win."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6c-quiet-aftermath",
+      "lines": [
+        {
+          "id": "6c-1",
+          "character": "devon",
+          "text": "Right, so — poster, three sections, I'll take the intro.",
+          "emotion": "already moving on"
+        },
+        {
+          "id": "6c-2",
+          "character": "NARRATOR",
+          "text": "Sam doesn't say another word for the rest of the period."
+        },
+        {
+          "id": "6c-3",
+          "character": "INTERNAL",
+          "text": "It wasn't a big deal. It wasn't. ...It kind of was."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6d-alvarez-checkin",
+      "lines": [
+        {
+          "id": "6d-1",
+          "character": "ms-alvarez",
+          "text": "Whatever's waiting for you at home, Devon — this project doesn't have to be a rerun of somebody else's. It can just be yours.",
+          "emotion": "quiet, just for him"
+        },
+        {
+          "id": "6d-2",
+          "character": "NARRATOR",
+          "text": "Devon doesn't have a comeback for that. He nods once, and heads out."
+        },
+        {
+          "id": "6d-3",
+          "character": "INTERNAL",
+          "text": "Huh. Didn't expect that to be the sentence that got him."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-reflection",
+      "lines": [
+        {
+          "id": "7-1",
+          "character": "NARRATOR",
+          "text": "Backpack on. Day survived. Bus loop, late afternoon."
+        },
+        {
+          "id": "7-2",
+          "character": "INTERNAL",
+          "text": "Ten minutes felt like a year this morning. Now the whole day's folding down into a backpack-sized thing."
+        },
+        {
+          "id": "7-3",
+          "character": "NARRATOR",
+          "text": "Maya's phone buzzes."
+        },
+        {
+          "id": "7-4",
+          "character": "player",
+          "text": "Okay. Last five minutes of day one. No pressure.",
+          "emotion": "glancing at it"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8a-end-friendship",
+      "lines": [
+        {
+          "id": "8a-1",
+          "character": "NARRATOR",
+          "text": "The reply comes back fast — an exclamation point Sam clearly doesn't use often."
+        },
+        {
+          "id": "8a-2",
+          "character": "sam",
+          "text": "Wait you actually texted me!! I mean — cool. Cool cool cool. What's up.",
+          "emotion": "text message"
+        },
+        {
+          "id": "8a-3",
+          "character": "player",
+          "text": "Yeah. Same table tomorrow?",
+          "emotion": "small smile she doesn't bother hiding"
+        },
+        {
+          "id": "8a-4",
+          "character": "sam",
+          "text": "Obviously. Who else is gonna explain the vending machine tragedy to you.",
+          "emotion": "text message"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8b-end-crowd",
+      "lines": [
+        {
+          "id": "8b-1",
+          "character": "NARRATOR",
+          "text": "Jordan's group chat pings — plans already forming for tomorrow, Maya's name already on the list."
+        },
+        {
+          "id": "8b-2",
+          "character": "jordan",
+          "text": "ferreira's in obviously. who else",
+          "emotion": "text message"
+        },
+        {
+          "id": "8b-3",
+          "character": "NARRATOR",
+          "text": "Underneath it, unopened: a text from Sam. 'good luck with the group project tmrw, lol.'"
+        },
+        {
+          "id": "8b-4",
+          "character": "INTERNAL",
+          "text": "I'll answer that. Later. Probably."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8c-end-bridge",
+      "lines": [
+        {
+          "id": "8c-1",
+          "character": "player",
+          "text": "what if tomorrow's table has room for like, everybody. even jordan if he can chill for five minutes",
+          "emotion": "text message, typed fast before she can talk herself out of it"
+        },
+        {
+          "id": "8c-2",
+          "character": "alex",
+          "text": "oh i am WILDLY into this. bringing napkins for the seating chart. see you at 7:58.",
+          "emotion": "text message"
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wow, okay, we're doing bits already? Love that for you."
+        },
+        {
+          "id": "b",
+          "text": "Rough first day for everyone, huh?"
+        },
+        {
+          "id": "c",
+          "text": "Ha — yeah, very smooth. Very me."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c1-a-1",
+            "character": "jordan",
+            "text": "Ooh. She bites back.",
+            "emotion": "delighted, eyebrow raised"
+          },
+          {
+            "id": "c1-a-2",
+            "character": "sam",
+            "text": "",
+            "action": "a small, private almost-smile, gone fast"
+          }
+        ],
+        "b": [
+          {
+            "id": "c1-b-1",
+            "character": "jordan",
+            "text": "...I mean — yeah. Sure. Whatever.",
+            "emotion": "thrown for half a second"
+          },
+          {
+            "id": "c1-b-2",
+            "character": "sam",
+            "text": "",
+            "action": "quick glance at Maya, surprised someone noticed"
+          }
+        ],
+        "c": [
+          {
+            "id": "c1-c-1",
+            "character": "jordan",
+            "text": "See, this one gets it. Come on.",
+            "action": "arm sliding around Maya's shoulders, already moving on"
+          },
+          {
+            "id": "c1-c-2",
+            "character": "sam",
+            "text": "",
+            "action": "eyes drop, steps back into the crowd"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yeah — okay, I'm coming."
+        },
+        {
+          "id": "b",
+          "text": "Think I'll sit over there."
+        },
+        {
+          "id": "c",
+          "text": "I think I'm good right here, actually."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2-a-1",
+            "character": "jordan",
+            "text": "Knew it.",
+            "action": "already scooting over to make room"
+          }
+        ],
+        "b": [
+          {
+            "id": "c2-b-1",
+            "character": "sam",
+            "text": "...oh. Okay.",
+            "emotion": "surprised",
+            "action": "sliding his tray over a little"
+          }
+        ],
+        "c": [
+          {
+            "id": "c2-c-1",
+            "character": "alex",
+            "text": "A woman of mystery. Respect.",
+            "emotion": "grinning"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3a",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hey — that wasn't cool."
+        },
+        {
+          "id": "b",
+          "text": "(Laugh along with the table.)"
+        },
+        {
+          "id": "c",
+          "text": "So — anyway, does anyone else think the pizza tastes like the box?"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3a-a-1",
+            "character": "jordan",
+            "text": "Relax, it was a joke.",
+            "emotion": "smile tightening"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3a-b-1",
+            "character": "jordan",
+            "text": "See, this one gets it.",
+            "action": "arm sliding along the back of Maya's chair"
+          }
+        ],
+        "c": [
+          {
+            "id": "c3a-c-1",
+            "character": "jordan",
+            "text": "Oh my god, RIGHT? It's like eating cardboard's cardboard.",
+            "emotion": "already off and running"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3b",
+      "options": [
+        {
+          "id": "a",
+          "text": "Honestly? We'd probably both do better making new friends. Starting today."
+        },
+        {
+          "id": "b",
+          "text": "I'm good right here, if that's cool."
+        },
+        {
+          "id": "c",
+          "text": "Okay but — you should wave somebody over. Right now."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3b-a-1",
+            "character": "sam",
+            "text": "Today, huh?",
+            "emotion": "short laugh, surprised into it"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3b-b-1",
+            "character": "sam",
+            "text": "",
+            "action": "small nod, like that was the right answer"
+          }
+        ],
+        "c": [
+          {
+            "id": "c3b-c-1",
+            "character": "sam",
+            "text": "...Right now?",
+            "emotion": "hesitating"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3c",
+      "options": [
+        {
+          "id": "a",
+          "text": "Okay, we need more people at this table. Immediately."
+        },
+        {
+          "id": "b",
+          "text": "Honestly, I'm kind of into just this."
+        },
+        {
+          "id": "c",
+          "text": "...Okay, not gonna lie, I keep looking over there."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3c-a-1",
+            "character": "alex",
+            "text": "Say less.",
+            "action": "already on their feet"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3c-b-1",
+            "character": "alex",
+            "text": "Oh thank god. My legs were not ready to stand back up."
+          }
+        ],
+        "c": [
+          {
+            "id": "c3c-c-1",
+            "character": "alex",
+            "text": "You can want both things, you know. Doesn't make you a fraud.",
+            "emotion": "not unkind"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wait, I actually think Sam's idea is worth trying."
+        },
+        {
+          "id": "b",
+          "text": "What if we did some of both?"
+        },
+        {
+          "id": "c",
+          "text": "(Say nothing. Let it go.)"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4-a-1",
+            "character": "devon",
+            "text": "...Fine. Yeah. Maybe I got in my head about it.",
+            "emotion": "thrown, then honest"
+          }
+        ],
+        "b": [
+          {
+            "id": "c4-b-1",
+            "character": "devon",
+            "text": "...that could actually work. If we keep the structure tight."
+          }
+        ],
+        "c": [
+          {
+            "id": "c4-c-1",
+            "character": "devon",
+            "text": "Right, so — poster, three sections, I'll take the intro.",
+            "emotion": "already moving on"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "hey. same table tomorrow?"
+        },
+        {
+          "id": "b",
+          "text": "yeah, I'm in"
+        },
+        {
+          "id": "c",
+          "text": "ok wild idea — what if tomorrow's table had room for everybody"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c5-a-1",
+            "character": "sam",
+            "text": "Wait you actually texted me!!",
+            "emotion": "text message, exclamation point he clearly doesn't use often"
+          }
+        ],
+        "b": [
+          {
+            "id": "c5-b-1",
+            "character": "jordan",
+            "text": "knew it. see you at the good table",
+            "emotion": "text message"
+          }
+        ],
+        "c": [
+          {
+            "id": "c5-c-1",
+            "character": "alex",
+            "text": "oh i am WILDLY into this",
+            "emotion": "text message"
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-8a-end-friendship",
+      "branchId": "branch-authentic-connection",
+      "lines": [
+        {
+          "id": "b-auth-1",
+          "character": "INTERNAL",
+          "text": "One person. Not the whole hallway. Just — one real one."
+        },
+        {
+          "id": "b-auth-2",
+          "character": "player",
+          "text": "Not bad for a first day, Ferreira.",
+          "emotion": "quiet, to herself"
+        },
+        {
+          "id": "b-auth-3",
+          "character": "sam",
+          "text": "also. i think devon's brother's project was actually kind of overrated. don't tell him i said that.",
+          "emotion": "text message"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8b-end-crowd",
+      "branchId": "branch-fit-in-first",
+      "lines": [
+        {
+          "id": "b-fit-1",
+          "character": "INTERNAL",
+          "text": "It felt good, back there. Loud good. Easy good."
+        },
+        {
+          "id": "b-fit-2",
+          "character": "INTERNAL",
+          "text": "I laughed too, though. When the tray went down. I didn't have to."
+        },
+        {
+          "id": "b-fit-3",
+          "character": "player",
+          "text": "Later.",
+          "action": "thumb hovering over Sam's text, then locking the phone"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8b-end-crowd",
+      "branchId": "branch-defended-then-drifted",
+      "lines": [
+        {
+          "id": "b-drift-1",
+          "character": "INTERNAL",
+          "text": "I did stand up for him. At lunch. That has to count for something."
+        },
+        {
+          "id": "b-drift-2",
+          "character": "INTERNAL",
+          "text": "So why does going back to that table feel like taking it back."
+        },
+        {
+          "id": "b-drift-3",
+          "character": "player",
+          "text": "yeah, in",
+          "emotion": "typing to Jordan's chat instead of answering Sam"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8b-end-crowd",
+      "branchId": "branch-avoidant-adaptation",
+      "lines": [
+        {
+          "id": "b-avoid-1",
+          "character": "INTERNAL",
+          "text": "Nothing bad happened today. Nothing really happened at all."
+        },
+        {
+          "id": "b-avoid-2",
+          "character": "INTERNAL",
+          "text": "That's supposed to feel like winning."
+        },
+        {
+          "id": "b-avoid-3",
+          "character": "player",
+          "text": "Tomorrow. I'll figure out tomorrow.",
+          "action": "locks the phone without answering either text"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8c-end-bridge",
+      "branchId": "branch-bridge-builder",
+      "lines": [
+        {
+          "id": "b-bridge-1",
+          "character": "INTERNAL",
+          "text": "I didn't pick a side today. Turns out that was the point."
+        },
+        {
+          "id": "b-bridge-2",
+          "character": "sam",
+          "text": "...I'll believe it when I see Jordan share a table without an audience. But sure. I'm in.",
+          "emotion": "text message"
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Jordan speaks in performance mode almost constantly — even one-on-one lines carry an implied audience, which is why her 'relax, it was a joke' in the defend-aftermath is the first crack: she's trying to convince herself as much as Maya. Sam's armor is precision and understatement; his real feeling always shows up sideways, in a joke that's slightly too specific to be casual ('legal loophole,' 'personal attack'). He only drops the deflection fully in the quiet-aftermath sketchbook beat — that's the tell that trust has actually been earned, not just offered. Devon's crack in scene-6 ('I'm not doing worse than him') should read as involuntary — faster, tighter, no hand gestures for that one line only, then the hands come back as he recovers. Alex is the only character who names things directly ('you can want both things') — they've done this new-kid routine enough times to have dropped some of the armor everyone else is still wearing. Ms. Alvarez never over-explains; her one line to Devon should land and then the scene should get out of the way.",
+  "alternativeLines": [
+    {
+      "lineId": "hall-3",
+      "alternatives": [
+        "Locker's not gonna find itself, but nice moves.",
+        "Okay but as a bit, ten out of ten. As directions, zero."
+      ],
+      "reasoning": "Keeps Jordan's line performative and audience-aware while offering slightly less/more edge depending on how sharp the studio wants the first tease to land."
+    },
+    {
+      "lineId": "4b-10",
+      "alternatives": [
+        "Group kind of... thinned out. It's whatever.",
+        "Had a bigger crew last year. Schedules happen."
+      ],
+      "reasoning": "Preserves the underplayed, fact-not-wound delivery if 'got busy' reads as too on-the-nose in voice direction."
+    },
+    {
+      "lineId": "6-5",
+      "alternatives": [
+        "I'm not doing worse than him. I can't be the one who does worse.",
+        "It has to be at least as good. It just does."
+      ],
+      "reasoning": "Slightly more raw phrasing if the studio wants Devon's crack to land harder before he recovers his composure."
+    }
+  ]
+}

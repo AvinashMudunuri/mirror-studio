@@ -1,0 +1,776 @@
+{
+  "episodeOutline": {
+    "title": "The Bridge Table",
+    "synopsis": "The morning after 'First Bell,' Sol has to choose where she sits — literally and figuratively — as the social map of Crestwood comes into focus. A cutting joke at the popular table, a forced project partnership with Alex, and a party invitation on the worst possible night force Sol to decide, choice by choice, whether being liked and being honest can coexist. It all comes due in front of the whole class on Presentation Day, when there's no more room to have it both ways.",
+    "themes": [
+      "Peer Pressure",
+      "Honesty",
+      "Teamwork"
+    ],
+    "targetTraits": [
+      "INTEGRITY",
+      "COMMUNICATION",
+      "JUDGMENT"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "Cafeteria Crossroads",
+        "location": "Crestwood Middle School Cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "priya",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Second day, lunch bell. Jordan waves Sol toward the packed, laughing popular table where Priya is holding court. Across the room, Alex sits alone at a half-empty table by the windows, sketchbook open, very deliberately not looking around for anyone.",
+        "emotionalBeat": "The pull of an easy 'yes' versus the itch of noticing who's alone.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-2a",
+        "title": "The Popular Table",
+        "location": "Crestwood Middle School Cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The table is warm, funny, easy — until Priya, mid-joke, does a pitch-perfect impression of Alex's monotone answer in English class. The table laughs. Jordan laughs too, a beat late, eyes flicking to Sol.",
+        "emotionalBeat": "Belonging curdling into complicity, in real time.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-2b",
+        "title": "The Bridge Table",
+        "location": "Crestwood Middle School Cafeteria, by the windows",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Alex doesn't look up right away, but slides their tray over half an inch — an invitation disguised as nothing. After a few real, unguarded minutes, Alex asks, flat and direct: 'Are you sitting here because nobody else asked, or because you actually want to?'",
+        "emotionalBeat": "The discomfort of being asked to be honest before you've decided who you are.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-2c",
+        "title": "Split the Difference",
+        "location": "Crestwood Middle School Cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "priya",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Sol walks over and asks Alex to come sit with the group. Alex hesitates, clearly bracing for a joke at their expense. Priya's eyebrow goes up — not quite hostile, but very much watching to see if Sol will fold under the sudden silence at the table.",
+        "emotionalBeat": "The vertigo of a brave move that might backfire immediately.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-3",
+        "title": "Ms. Chen's Announcement",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "alex",
+          "jordan",
+          "priya",
+          "ms-chen"
+        ],
+        "duration": 1,
+        "description": "Ms. Chen reads out partner assignments for the semester project without ceremony or apology: 'Delgado-Reyes, Nakamura-Torres.' No explanation, no room for trades. Priya smirks. Jordan mouths 'good luck' sympathetically. Alex's face gives away nothing at all.",
+        "emotionalBeat": "A door closing on the easy option — the project makes the social choice unavoidable.",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-4",
+        "title": "Work Session Begins",
+        "location": "The Nakamura-Torres kitchen table",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "First work session. Alex has already sketched three solid ideas for the project. Sol has to decide how she's going to show up — as a real partner, a director, or a guest.",
+        "emotionalBeat": "The quiet test of who you are when there's no audience.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-5a",
+        "title": "Actually Building Something",
+        "location": "The Nakamura-Torres kitchen table",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "They argue over an idea, land on something better than either had alone, and Alex laughs — really laughs — for the first time at something Sol said. Alex mentions, almost offhand, a party Priya's throwing before the presentation.",
+        "emotionalBeat": "Trust forming in the unglamorous work of actually listening.",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-5b",
+        "title": "Taking Over",
+        "location": "The Nakamura-Torres kitchen table",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Sol overrides Alex's idea twice 'to save time,' redoing the outline her way. Alex goes quiet and compliant in the specific way of someone who's stopped bothering to argue. Sol gets a text from Priya about a party before the presentation.",
+        "emotionalBeat": "Efficiency mistaken for leadership, at Alex's expense.",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-5c",
+        "title": "Drifting Apart",
+        "location": "The Nakamura-Torres kitchen table",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Sol says she'll 'help in a bit' and spends most of the session texting the group chat while Alex quietly does the actual work, sliding pages toward her to review that she barely reads. Priya's party invite lights up her phone again.",
+        "emotionalBeat": "The slow, deniable kind of letting someone down.",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-6",
+        "title": "The Invitation",
+        "location": "Text thread / the Nakamura-Torres front porch",
+        "characters": [
+          "player",
+          "alex",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The night before the presentation, with the project not quite finished, Priya's party is happening two streets over and Jordan's already there. Alex says, carefully neutral, 'You can go if you want. I can probably finish it.' It is not actually neutral.",
+        "emotionalBeat": "Peer pressure at its most seductive: no one's forcing you, and that's the trap.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-7a",
+        "title": "The Party",
+        "location": "Priya's House",
+        "characters": [
+          "player",
+          "priya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The party is fun, genuinely — that's the uncomfortable part. Sol gets a single text from Alex around 11pm: 'finished it. figured you were busy.' No punctuation of accusation. Somehow that's worse.",
+        "emotionalBeat": "The specific guilt of a good night you can't quite enjoy.",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-7b",
+        "title": "Staying In",
+        "location": "The Nakamura-Torres kitchen table",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "They finish the project together at 10pm, tired and a little punchy, and Alex shows Sol the mac and cheese recipe as a kind of thank-you nobody says out loud. Sol's phone buzzes with party photos she doesn't open.",
+        "emotionalBeat": "Ordinary, unglamorous loyalty, and how good it quietly feels.",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-7c",
+        "title": "The Quick Return",
+        "location": "Priya's House / The Nakamura-Torres front porch",
+        "characters": [
+          "player",
+          "alex",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Sol shows her face at the party, feels the clock the whole time, and leaves early over Priya's mild teasing to go finish the project with Alex. It's rushed and a little tense, but they get it done together.",
+        "emotionalBeat": "Trying to have both, and mostly, barely, managing it.",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-8",
+        "title": "Presentation Day",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen",
+          "priya",
+          "jordan"
+        ],
+        "duration": 2,
+        "description": "Standing in front of the class, Ms. Chen asks a pointed follow-up question about a specific part of the project — the part that was entirely Alex's idea. Priya watches with open curiosity. Alex goes very still, waiting to see what Sol does with the moment.",
+        "emotionalBeat": "The public moment every private choice was quietly building toward.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-9a",
+        "title": "Credit Given",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Sol says plainly, 'That part was Alex's idea, honestly the best part,' and explains it well because she actually understands it. Ms. Chen gives the smallest possible nod — from her, practically an ovation. Alex's shoulders drop half an inch, relief disguised as nothing.",
+        "emotionalBeat": "The specific relief of a truth that costs nothing to tell and everything not to.",
+        "defaultNextScene": "scene-10"
+      },
+      {
+        "id": "scene-9b",
+        "title": "Credit Blurred",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Sol answers the question in vague 'we' language that lets the class assume it was mostly her. Nobody calls it a lie. Alex doesn't correct her either — just goes quiet in a way Sol recognizes from the kitchen table.",
+        "emotionalBeat": "A small, deniable dishonesty that still lands somewhere.",
+        "defaultNextScene": "scene-10"
+      },
+      {
+        "id": "scene-9c",
+        "title": "Credit Deflected",
+        "location": "Room 114",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Caught off guard, Sol fumbles the question and, reaching for cover, implies Alex's part was 'kind of confusing, actually.' It gets a small laugh. Alex's face closes like a door. Ms. Chen's expression doesn't change, which is somehow the worst part.",
+        "emotionalBeat": "The moment integrity breaks under pressure, in front of everyone.",
+        "defaultNextScene": "scene-10"
+      },
+      {
+        "id": "scene-10",
+        "title": "Quiet Strength",
+        "location": "Hallway outside Room 114",
+        "characters": [
+          "player",
+          "alex",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "After class, Priya passes Alex in the hall and, for once, doesn't say anything cutting — just a small, almost involuntary nod, like she's clocked something she doesn't have words for yet. Alex is at their locker, deciding whether to wait for Sol or just leave.",
+        "emotionalBeat": "The narrow window where things could still be repaired, or not.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-11a",
+        "title": "Real Connection",
+        "location": "Outside school",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Sol catches up to Alex and says something true and specific — not an apology performance, just honesty about how she wants to keep being a decent partner, project or not. Alex, wary but not closed off, says, 'Okay. See you tomorrow, then.' It's not everything. It's real.",
+        "emotionalBeat": "Earned, unglamorous hope.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-11b",
+        "title": "Missed Chance",
+        "location": "Outside school",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Sol lets Alex walk off without saying anything, telling herself she'll fix it later. Later doesn't arrive today. Alex disappears into the crowd exactly as unnoticed as the first time Sol saw them.",
+        "emotionalBeat": "The quiet cost of comfortable inaction.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-11c",
+        "title": "Awkward Bridge",
+        "location": "Outside school",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Sol says something clumsy and half-finished — not quite the apology she meant, not quite nothing either. Alex gives a small, uncertain almost-smile. Neither of them knows exactly where this leaves things, but the door isn't closed.",
+        "emotionalBeat": "Imperfect effort as its own kind of honesty.",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-1",
+        "prompt": "Where do you sit?",
+        "context": "Jordan's waving you toward the loud, easy table. Alex is alone by the windows, clearly not expecting company.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Jordan and Priya.",
+            "nextScene": "scene-2a"
+          },
+          {
+            "id": "b",
+            "text": "Sit with Alex.",
+            "nextScene": "scene-2b"
+          },
+          {
+            "id": "c",
+            "text": "Invite Alex to sit with the group.",
+            "nextScene": "scene-2c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "JUDGMENT": -1
+          },
+          "b": {
+            "JUDGMENT": 1,
+            "COMMUNICATION": 1
+          },
+          "c": {
+            "JUDGMENT": 2,
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2a",
+        "scene": "scene-2a",
+        "prompt": "Priya's impression of Alex is landing hard with the table. What do you do?",
+        "context": "It's genuinely funny, in a way that makes it worse. Everyone's looking, half at Priya, half at you.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Laugh along.",
+            "nextScene": "scene-3"
+          },
+          {
+            "id": "b",
+            "text": "Stay quiet and change the subject.",
+            "nextScene": "scene-3"
+          },
+          {
+            "id": "c",
+            "text": "Say something in Alex's defense.",
+            "nextScene": "scene-3"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1
+          },
+          "b": {
+            "INTEGRITY": -1
+          },
+          "c": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1,
+            "JUDGMENT": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2b",
+        "scene": "scene-2b",
+        "prompt": "Alex asks you directly: are you here because you wanted to, or because no one else asked?",
+        "context": "There's no good vague answer to this. Alex is watching you decide.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tell the honest, complicated truth.",
+            "nextScene": "scene-3"
+          },
+          {
+            "id": "b",
+            "text": "Give a comforting half-answer.",
+            "nextScene": "scene-3"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 2
+          },
+          "b": {
+            "INTEGRITY": -1,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2c",
+        "scene": "scene-2c",
+        "prompt": "Alex is hesitating, and Priya's watching to see what happens next.",
+        "context": "The silence at the table is getting long. You can smooth it over or let it stand.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Hold your ground and genuinely welcome Alex in.",
+            "nextScene": "scene-3"
+          },
+          {
+            "id": "b",
+            "text": "Backpedal and quietly drop the idea.",
+            "nextScene": "scene-3"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-4",
+        "prompt": "How do you approach the work session?",
+        "context": "Alex already has ideas on the table. This project only works if you actually show up as a partner.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Actually collaborate — build on Alex's ideas.",
+            "nextScene": "scene-5a"
+          },
+          {
+            "id": "b",
+            "text": "Take charge and redo it your way.",
+            "nextScene": "scene-5b"
+          },
+          {
+            "id": "c",
+            "text": "Let Alex handle it while you stay in the group chat.",
+            "nextScene": "scene-5c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "JUDGMENT": 1,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -2,
+            "JUDGMENT": -1
+          },
+          "c": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1,
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-6",
+        "prompt": "Priya's party is tonight. The project isn't quite finished.",
+        "context": "Alex says you can go if you want. It doesn't sound like they mean it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Go to the party, let Alex finish alone.",
+            "nextScene": "scene-7a"
+          },
+          {
+            "id": "b",
+            "text": "Skip the party and finish it together.",
+            "nextScene": "scene-7b"
+          },
+          {
+            "id": "c",
+            "text": "Show your face briefly, then come back to help.",
+            "nextScene": "scene-7c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1,
+            "JUDGMENT": -1
+          },
+          "b": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1,
+            "JUDGMENT": 1
+          },
+          "c": {
+            "JUDGMENT": 2,
+            "COMMUNICATION": 1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-8",
+        "prompt": "Ms. Chen asks a pointed question about the part of the project that was Alex's idea.",
+        "context": "The whole class is listening. Alex is waiting to see what you say.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Give Alex full, specific credit.",
+            "nextScene": "scene-9a"
+          },
+          {
+            "id": "b",
+            "text": "Answer vaguely and let the class assume it was you.",
+            "nextScene": "scene-9b"
+          },
+          {
+            "id": "c",
+            "text": "Fumble it and imply Alex's part was confusing.",
+            "nextScene": "scene-9c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 3,
+            "COMMUNICATION": 2
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1
+          },
+          "c": {
+            "INTEGRITY": -3,
+            "COMMUNICATION": -2,
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-6",
+        "scene": "scene-10",
+        "prompt": "Alex is at their locker, deciding whether to wait for you.",
+        "context": "This might be the only window you get today to say something real.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Catch up and say something honest and specific.",
+            "nextScene": "scene-11a"
+          },
+          {
+            "id": "b",
+            "text": "Let it go for now.",
+            "nextScene": "scene-11b"
+          },
+          {
+            "id": "c",
+            "text": "Say something clumsy, but say something.",
+            "nextScene": "scene-11c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 2
+          },
+          "b": {
+            "INTEGRITY": -1,
+            "COMMUNICATION": -1
+          },
+          "c": {
+            "COMMUNICATION": 1,
+            "JUDGMENT": 1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-authentic",
+        "name": "The Bridge Path",
+        "triggeredBy": [
+          "choice-1:b",
+          "choice-2b:a",
+          "choice-3:a",
+          "choice-4:b",
+          "choice-5:a"
+        ],
+        "description": "Sol chooses Alex early and stays consistent — honest at the table, present in the work, honest under pressure.",
+        "outcome": "A real, if fragile, friendship with Alex forms; Sol earns Ms. Chen's rare approval and a flicker of respect from Priya, at the cost of some social ease with the popular table."
+      },
+      {
+        "id": "branch-conformist",
+        "name": "The Popular Table Path",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-2a:a",
+          "choice-3:c",
+          "choice-4:a",
+          "choice-5:c"
+        ],
+        "description": "Sol prioritizes comfort and status at every turn, laughing along, coasting on Alex's work, and folding under pressure at the worst moment.",
+        "outcome": "Sol keeps her social footing but damages Alex's trust badly; the episode ends on an unresolved, uncomfortable note that sets up conflict for future episodes."
+      },
+      {
+        "id": "branch-bold-bridge",
+        "name": "The Brave Invitation",
+        "triggeredBy": [
+          "choice-1:c",
+          "choice-2c:a"
+        ],
+        "description": "Sol takes the boldest early option, publicly bringing Alex into her social world rather than choosing one side.",
+        "outcome": "Creates a visible shift in the cafeteria's social dynamics and gives Priya an early, grudging data point about Sol that pays off in the finale nod."
+      },
+      {
+        "id": "branch-redemption",
+        "name": "Late Course Correction",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-2a:b",
+          "choice-4:a",
+          "choice-5:a"
+        ],
+        "description": "Sol stumbles into the popular table and avoids conflict early, but chooses integrity when it matters most, at presentation.",
+        "outcome": "A messier, more human arc — Sol doesn't get everything right, but proves that the choice that matters most is the one made under real pressure."
+      }
+    ],
+    "emotionalArc": [
+      "Comfort and social pull (cafeteria)",
+      "Complicity or discomfort (the joke/the question)",
+      "Forced proximity and quiet testing (partnership announcement)",
+      "Trust building or eroding (work session)",
+      "Temptation and cost (the party)",
+      "Public reckoning (presentation)",
+      "Fragile repair or quiet loss (hallway aftermath)"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Sol moves from reactive social navigation toward an active, costly choice about who she wants to be — the episode doesn't require her to be perfect, only honest about the choice in front of her each time."
+      },
+      {
+        "character": "alex",
+        "arc": "Alex moves from guarded self-protection toward cautious, conditional trust — or, on the harsher paths, retreats further into self-sufficiency, closing a door that was only barely open."
+      },
+      {
+        "character": "priya",
+        "arc": "Priya's control cracks almost imperceptibly — she never apologizes, but the hallway nod signals she's clocked a kind of strength in Sol (or Alex) that unsettles her worldview."
+      },
+      {
+        "character": "jordan",
+        "arc": "Jordan stays consistently easy and non-confrontational throughout, illustrating that the danger of comfortable belonging isn't cruelty — it's simply never being asked to be brave."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "INTEGRITY",
+        "sceneHooks": [
+          "choice-2a",
+          "choice-2b",
+          "choice-2c",
+          "choice-3",
+          "choice-4",
+          "choice-5",
+          "choice-6"
+        ],
+        "description": "Tracked through whether Sol tells the truth, gives real credit, and stays consistent when no one's checking versus when everyone is."
+      },
+      {
+        "trait": "COMMUNICATION",
+        "sceneHooks": [
+          "choice-1",
+          "choice-2a",
+          "choice-2b",
+          "choice-3",
+          "choice-5",
+          "choice-6"
+        ],
+        "description": "Tracked through whether Sol speaks up, listens to Alex's ideas, and is direct rather than vague when it's uncomfortable to be direct."
+      },
+      {
+        "trait": "JUDGMENT",
+        "sceneHooks": [
+          "choice-1",
+          "choice-2a",
+          "choice-2c",
+          "choice-3",
+          "choice-4"
+        ],
+        "description": "Tracked through Sol's read of social situations and her ability to find workable middle paths (like choice-4's compromise) rather than false binaries."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": [
+          "player",
+          "alex"
+        ],
+        "dynamic": "The emotional core of the episode — trust is built or broken in small, specific moments (the direct question, the work session, the credit at presentation) rather than one big gesture."
+      },
+      {
+        "pair": [
+          "player",
+          "priya"
+        ],
+        "dynamic": "A low-grade status test throughout; Priya never becomes an enemy, but she is always watching and recalibrating what she thinks of Sol."
+      },
+      {
+        "pair": [
+          "player",
+          "jordan"
+        ],
+        "dynamic": "Warm and low-stakes throughout — Jordan never demands anything of Sol, which is precisely what makes him easy to disappoint Alex for without noticing."
+      },
+      {
+        "pair": [
+          "alex",
+          "priya"
+        ],
+        "dynamic": "Almost entirely one-directional until the final hallway beat, where Priya's small nod suggests she's begun to see Alex (or Sol's loyalty to Alex) differently."
+      }
+    ],
+    "replayHooks": [
+      "The three seating options in scene-1 lead to genuinely different opening tones (easy belonging, quiet honesty, or brave risk) worth experiencing separately.",
+      "Priya's joke response (choice-2a) versus Alex's direct question (choice-2b) reward replay by showing how differently integrity is tested depending on audience.",
+      "The party invitation (choice-4) has a hidden 'compromise' option most players won't find on a first pass, rewarding a second playthrough.",
+      "The presentation credit moment (choice-5) is the emotional hinge of the episode — replaying just to see Ms. Chen's and Alex's reactions across all three options is a strong hook.",
+      "The hallway ending (choice-6) can recontextualize an otherwise 'good' playthrough if earlier choices were shaky, or salvage a rough playthrough — players will want to see if repair is possible."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Model that integrity is built through many small, repeatable choices rather than one dramatic moment",
+      "Show that honest communication (giving real credit, asking direct questions) carries real social cost and is worth it anyway",
+      "Demonstrate good judgment as finding workable middle paths (the party compromise) rather than false either/or thinking",
+      "Illustrate that peer pressure is often gentle and warm (Jordan, the popular table) rather than overtly cruel, making it harder to notice and resist"
+    ],
+    "conversationStarters": [
+      "Was there a moment where you laughed at something you didn't really think was okay, just because everyone else was laughing?",
+      "Have you ever had to choose between a fun invitation and finishing something you owed to someone else?",
+      "Why do you think Alex's question in the cafeteria ('did you want to sit here, or did no one else ask you') is so hard for Sol to answer honestly?",
+      "What's the difference between being 'nice' and actually being a good partner to someone?"
+    ]
+  },
+  "designNotes": "The structure deliberately keeps the early choices (seating, the joke, the direct question) trait-affecting but non-branching in terms of scene structure, converging everyone at Ms. Chen's forced-partnership announcement — this mirrors the real-world truth that early social choices don't have visible consequences until circumstances (the project) force them due. Structural divergence is saved for the three high-stakes choice clusters (work session approach, the party, the presentation credit moment) so that replay value is concentrated where it matters most emotionally. Ms. Chen is used sparingly and never explains the lesson — she simply creates the container (the forced pairing, the pointed question) and lets Sol's own choices supply the consequence, per her character brief.",
+  "uncertainties": [
+    "Whether 3-option choices at every point create decision fatigue for a 13-year-old target audience versus the tighter tension of binary choices — may want to trim some choice points to 2 options in production.",
+    "The convergence of choice-2a/2b/2c all funneling to the same scene-3 may feel anticlimactic on replay if players expect visibly different content immediately; light scene-3 dialogue variation (a single reactive line from Alex or Priya) may be worth adding even though it's not reflected as a separate scene id here.",
+    "Priya's 'hallway nod' as her only real arc beat is intentionally subtle per her character brief, but playtesting may reveal players want a more explicit signal that her perspective has shifted.",
+    "Scene-8's presentation choice assumes players have enough context from prior scenes to understand why the specific question matters; may need a brief visual/dialogue cue reinforcing which part of the project was Alex's idea."
+  ],
+  "alternativesConsidered": [
+    "A fully binary choice structure (2 options everywhere) for tighter pacing and simpler trait math — rejected in favor of a third 'middle path' option at key moments (choice-1, choice-4) to reward nuanced judgment rather than just good/bad extremes.",
+    "Branching scene-3 into multiple versions based on earlier choices — considered for stronger felt-divergence, but set aside to keep scene count manageable within a 10-15 minute target; recommended as a production enhancement if runtime allows.",
+    "Making Priya's joke target Sol instead of Alex, to simplify stakes — rejected because the brief specifically calls for Alex as the living cost of Sol's choices, and the joke needed to implicate Sol as a bystander, not a victim.",
+    "Ending the episode strictly on the presentation (cutting scene-10/11) for a punchier finish — rejected because the hallway epilogue is where the 'replay to see what if' hook and the Priya/Alex micro-arcs land, per the brief's emphasis on replayability and character-driven payoff."
+  ]
+}

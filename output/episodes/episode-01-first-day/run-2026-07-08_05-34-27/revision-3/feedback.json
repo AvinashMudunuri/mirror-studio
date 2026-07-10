@@ -1,0 +1,57 @@
+{
+  "failing": [
+    "qaReviewer",
+    "gameDesigner",
+    "ethicsReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Scene 4 (lunchroom choice) has three nearly identical setup scenes (4a, 4b, 4c) that repeat the same information with minimal variation, creating redundancy rather than meaningful branching — Suggested fix: Consolidate the three lunchroom setups into ONE scene with a single choice point. Use brief, varied transition lines (20-30 words each) to reflect hallway outcomes rather than re-staging the entire cafeteria. Example: '(If confident) Jordan waves like you're already friends. (If redirected) Jordan nods, less warm. (If easygoing) Jordan grins like she's been waiting for you.' Then ONE unified choice: 'Where do you sit?' (location: Scenes 3-lunchroom-confident/redirect/easygoing → Scene 4a/4b/4c)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Choice 1 (hallway response) doesn't materially affect subsequent scenes. All three paths lead to the same lunchroom situation with identical stakes. The choice feels performative rather than consequential. — Suggested fix: Make Choice 1 consequences visible and structural: (a) Confident response → Jordan actively recruits you, higher social capital at her table. (b) Redirect → Jordan respects the move but tests you further. (c) Easygoing → Jordan assumes you're already compatible. These should affect dialogue tone, invitation warmth, and table dynamics, not just flavor text. Consider: does confident Maya get a harder time from Devon later? Does easygoing Maya face more pressure to perform? (location: Choice-1 outcomes → Scene 3-lunchroom transitions)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Choice 3 (the tray incident) has one path (defend) that's clearly 'right' by the game's thematic values, making it feel less like a dilemma and more like a morality test with an obvious answer — Suggested fix: Reframe the choice architecture: instead of 'defend vs. join vs. deflect,' present it as 'How do you respond to seeing someone hurt?' with outcomes that are all valid but have different consequences: (a) Defend → Sam appreciates it, but Jordan's group cools slightly; you're now marked as 'the empathy girl.' (b) Join the laugh → You're fully in with Jordan, but Sam avoids you for days; you catch him watching you in the hallway. (c) Deflect → Nobody's happy but nobody's mad; the moment passes, and you spend the rest of lunch wondering if you should have said something. Make all three feel like real choices with real costs, not a morality meter. (location: Choice-3a (scene-4a-popular-table))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "The three ending paths (8a, 8b, 8c) are thematically distinct but mechanically identical—they're all text-based conclusions with no gameplay differentiation. No reason to replay to see different endings. — Suggested fix: Add a post-choice consequence that extends into the next episode or creates a visible game state change: (a) Sam path → Unlocks 'Sam's sketchbook' as a collectible; affects how he interacts with you in future episodes. (b) Jordan path → Unlocks 'In-crowd status' that opens different dialogue options in future scenes; also flags a 'regret' variable that affects later choices. (c) Bridge path → Unlocks 'Table founder' achievement and changes how new characters interact with you (they know you as 'the one who made a table'). Make the endings feel like they're setting up different game states, not just different stories. (location: Scenes 8a/8b/8c (end-of-episode))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Scene 6 (project conflict) lacks a clear emotional escalation. Devon's vulnerability ('I can't do worse than my brother') appears once and is never addressed, making it feel like a random detail rather than a character moment that matters to the choice. — Suggested fix: Make Devon's pressure explicit and visible: Have him repeat the 'my brother' reference earlier in the scene (when pitching his idea: 'This is what my brother did, and it worked'). Then, when Sam pushes back, Devon's response should reference it again ('I can't just do something different and hope it works'). This makes the choice not just about Sam vs. Devon, but about 'Do you help Devon see that a good idea is better than a safe one?' It reframes the stakes from 'kindness to the underdog' to 'actually solving the problem together.' Increases emotional resonance and makes players feel like they're making a real call, not just picking a side. (location: Scene 6-project-tension, dialogue s6-7)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Sam Okafor's characterization relies heavily on quiet, withdrawn traits without sufficient exploration of why or agency in changing the dynamic. Risk of reinforcing 'quiet Asian boy' stereotype. — Recommendation: Expand Sam's internal complexity: show his dry humor as active choice, not just defense mechanism. Give him moments where he initiates connection (scene 4b-invite-aftermath does this well—expand it). Add dialogue showing he has interests/opinions beyond being 'the quiet one.' Consider a scene where Sam's quietness is strategic choice, not anxiety-driven. (location: Character profile: Sam Okafor; scenes 4b, 6, 8a)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Jordan's cruelty (tripping Sam) is addressed only through Maya's reaction, not through Jordan's own accountability. Jordan's half-apology at end (scene-7) is vague and doesn't require genuine reckoning. — Recommendation: If Maya chooses to defend Sam (4a-defend-aftermath), have a follow-up where Jordan must actually engage with what she did—not just a throwaway line. Consider a scene where Sam directly addresses Jordan about the incident, with Jordan having to respond substantively. Alternatively, if the design keeps the half-apology, show it landing as insufficient through Sam's reaction ('thanks, but...' or continued distance). (location: Scene 4a (tray incident); scene-7 (half-apology); scene 8b outcome)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Alex Torres-Mireles is the only character explicitly coded as non-binary (they/them pronouns). While representation is good, Alex is also characterized as 'restlessly funny,' 'allergic to stillness,' and dealing with transience/instability. Risk of coding neurodivergence or anxiety onto the non-binary character without naming it. — Recommendation: Clarify whether Alex's restlessness is personality, anxiety response to transience, or neurodivergence—and name it explicitly if it's the latter. Give Alex moments of stillness/grounding that show intentionality, not just constant motion. Consider adding a line where Alex reflects on their own stability needs vs. external circumstances. (location: Character profile: Alex; scenes 4c, 8c)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Devon Park is the only character explicitly coded as having anxiety/perfectionism tied to family pressure (sibling comparison, middle-child invisibility). While realistic, this is portrayed as a character flaw to overcome, not as a valid response to real family dynamics. No counter-narrative showing his anxiety as understandable. — Recommendation: Add a moment where Ms. Alvarez or another adult acknowledges Devon's pressure is real, not just in his head. Show that his competitiveness is understandable even if it's not always productive. If Maya defends Sam's idea (6a), have Devon's response include recognition that he was defensive, not just that he was wrong. (location: Character profile: Devon; scenes 6, 6a-speak-aftermath)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": []
+  }
+}

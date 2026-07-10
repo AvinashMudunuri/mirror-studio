@@ -1,0 +1,74 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex, who uses they/them pronouns, is defined largely through guardedness and social withdrawal tied to moving/homesickness rather than any exploration of gender identity itself — which is good (identity isn't tokenized as plot device) but also means their nonbinary identity is never mentioned, acknowledged, or reflected by other characters at all, even neutrally.",
+      "location": "Alex's character sheet and all scenes",
+      "harmPotential": "Low harm, but a missed opportunity — nonbinary players/readers may feel their identity is invisible rather than affirmed since no character ever uses 'they' correctly on-page in dialogue or narration acknowledges pronouns.",
+      "recommendation": "Consider one small, natural beat (e.g., Ms. Chen or Jordan correctly using 'they' in a sentence) so the representation is normalized on-page, not just in metadata.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "BIAS",
+      "issue": "Priya (South Asian) is written as the sharp-tongued, status-obsessed 'mean girl' with hidden home-caretaking burdens, while Jordan (Filipino-American) is the easygoing social connector who also secretly caretakes a sibling. Both non-white characters carry a 'hidden domestic responsibility' backstory that isn't given to the white-coded characters in the same way.",
+      "location": "Priya and Jordan background sections",
+      "harmPotential": "Low but worth noting: could read as a subtle pattern where kids of color are written with 'quiet overburdened caretaker' backstories more than peers, even though each character is otherwise well-rounded and this isn't a stereotype in isolation.",
+      "recommendation": "Not necessary to change, but if the roster expands, ensure this 'hidden responsibility at home' trait is distributed across characters of all backgrounds, including white-coded characters, to avoid unintentional pattern.",
+      "priority": 2
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Priya's arc gives her only a small nod/acknowledgment at the end ('Not bad, Sketchbook... You too, I guess') without ever being asked to apologize or reflect explicitly on the harm of her joke about Alex's art/loneliness, even in the best-outcome branch.",
+      "location": "ending-collaborative branch, scene-3a",
+      "harmPotential": "Minimal — but could send a slightly soft message that social cruelty just needs to be quietly outgrown rather than acknowledged, which is a missed teaching opportunity for the 'ethical modeling' goal.",
+      "recommendation": "Consider adding an optional beat/future-episode hook where Priya's shift is made slightly more explicit, even briefly, so the show-don't-tell isn't so subtle it's missed by younger players.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Diverse cast (Latina, Filipino-American, Japanese/Latino mixed-heritage nonbinary, Indian-American, Asian-American teacher) is normalized — none of the characters' arcs are 'about' their race/ethnicity; identity is background texture, not plot device.",
+    "No harmful tropes detected: no 'magical minority' helping a white protagonist (protagonist herself is Latina), no 'model minority' flattening, no 'bury your gays'/harm-to-LGBTQ+ pattern, no savior narrative — Alex is never 'rescued,' they retain agency and can reject or accept Sol's overtures realistically across branches.",
+    "Excellent ethical branching structure: consequences are proportionate and non-punitive-but-real (e.g., 'It's fine' after being ditched reads as authentic hurt, not melodrama; the hollow-win ending has Ms. Chen deliver restrained, non-humiliating feedback).",
+    "Priya, the 'mean girl,' is given interiority (secretly lonely, undisclosed home responsibilities) rather than being a flat antagonist — avoids the reductive 'popular girl = evil' trope.",
+    "Jordan's conflict-avoidance is portrayed as a realistic flaw with real social cost (implicated in the Priya joke) rather than being coded as purely a virtue of his warmth, avoiding a shallow 'nice guy' stereotype.",
+    "Class and economic diversity (single mom working two jobs, family catering business, sudden layoff-driven move) is handled with dignity — struggle is present but not treated as shameful or spectacle, and Sol's guilt about being 'embarrassed of her mom's exhaustion' is framed sympathetically rather than judgmentally.",
+    "Alex's nonbinary identity is written with normalcy — it is simply a fact of who they are, not a 'very special episode' topic, which models healthy identity representation for the 11-14 age range.",
+    "The core theme (social belonging vs. authenticity) is handled with genuine moral complexity — Jordan and Priya are never mustache-twirling, making the player's ethical choices feel earned rather than obvious."
+  ],
+  "recommendations": [
+    "Add a small on-page moment normalizing Alex's pronouns via another character's natural speech.",
+    "If expanding the roster in future episodes, balance 'hidden caretaker' backstories across characters of varied backgrounds.",
+    "Consider a slightly more explicit (but still age-appropriate, non-lecture) acknowledgment from Priya about the cost of her joke in at least one branch, to strengthen the ethical modeling around bystander/exclusion behavior."
+  ],
+  "scores": {
+    "biasAvoidance": 9,
+    "representation": 9,
+    "tropes": 9,
+    "ethicalModeling": 8,
+    "culturalSensitivity": 9,
+    "overall": 9
+  },
+  "flaggedContent": [],
+  "summary": {
+    "verdict": "This episode is a strong, thoughtfully written piece of inclusive middle-grade fiction. Its diverse cast is handled with nuance and agency, avoiding all major harmful tropes (magical minority, model minority, bury-your-gays, savior narrative, tragic-identity). Ethical stakes around belonging, exclusion, and loyalty are modeled with realistic, proportionate consequences across all branches, and no character's identity is used as a device rather than a lived trait. Only minor refinements are suggested for even stronger representation and ethical clarity.",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [
+      "Normalize Alex's pronouns on-page via other characters' dialogue.",
+      "Watch for a pattern of 'hidden caretaker' backstories concentrated in characters of color if the cast expands.",
+      "Consider slightly more explicit acknowledgment of harm in Priya's arc."
+    ],
+    "strengths": [
+      "Normalized, agency-driven diversity across race, ethnicity, gender identity, and class",
+      "No harmful tropes present",
+      "Complex, non-stereotypical antagonist (Priya) and non-shallow 'nice guy' (Jordan)",
+      "Proportionate, non-punitive consequence design across all narrative branches",
+      "Healthy, age-appropriate identity exploration"
+    ],
+    "readyForPublication": true
+  }
+}

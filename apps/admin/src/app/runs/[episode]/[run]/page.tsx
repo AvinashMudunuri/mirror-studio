@@ -74,6 +74,8 @@ async function PublishSection({ episodeFolder, runFolder, worldId, episodeNumber
         episodeId={row!.id}
         episodeFolder={episodeFolder}
         runFolder={runFolder}
+        episodeNumber={episodeNumber}
+        worldId={worldId}
         label={alreadyPublishedThisContent ? 'Re-publish (no changes)' : row!.publishedAt ? 'Publish latest content (replaces live)' : 'Publish'}
       />
     </div>

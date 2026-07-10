@@ -1,0 +1,143 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "category": "PACING",
+      "issue": "Scene 1 (The Front Steps) is purely expository internal monologue with no player interaction or choice, creating a passive opening that delays actual gameplay engagement",
+      "location": "Scene 1: The Front Steps",
+      "impact": "Players sit through ~2 minutes of narration and Riley's thoughts before making their first meaningful choice. This risks losing engagement in the critical first 60 seconds, especially for younger players (11-12 year-olds) who expect immediate interactivity.",
+      "fix": "Integrate the opening anxiety/stakes into an immediate micro-choice (e.g., 'Do you take a deep breath before entering?' or 'Do you check your schedule one more time?') that feels low-stakes but establishes player agency from second one. Alternatively, compress the internal monologue to 30 seconds max and move directly to Scene 2.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "CHOICES",
+      "issue": "Choice 1 (Hallway Collision) presents three options that feel stylistically different but lack clear consequence differentiation. All three lead to Scene 3a/3b/3c with similar emotional beats and all funnel to Scene 4 identically.",
+      "location": "Choice 1 & Scenes 3a/3b/3c",
+      "impact": "Players may not perceive real stakes in their first choice. The three paths feel like 'tone variants' rather than 'strategy variants' — they don't meaningfully alter how Jordan perceives Riley or what social capital Riley gains. This undermines the episode's core premise that 'small choices build toward different versions of fitting in.'",
+      "fix": "Make the three paths have distinct social consequences: (a) establishes Riley as 'confident/direct,' gaining Jordan's respect but potentially reading as cocky to others; (b) establishes Riley as 'quiet/observant,' gaining Maya's subtle approval but not Jordan's immediate attention; (c) establishes Riley as 'quick-witted,' gaining Jordan's favor but also his attention/expectation for future entertainment. Scene 4 should reflect which path was taken (e.g., if 3b, Maya actively initiates at lunch; if 3c, Jordan's group actively waves Riley over).",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "AGENCY",
+      "issue": "Choice 2 (Cafeteria Seating) is framed as high-stakes ('two seconds, maybe three'), but all three options lead to substantively similar outcomes: player sits somewhere, has a brief interaction, and moves to the group project scene. The choice doesn't feel like it's truly determining Riley's social trajectory.",
+      "location": "Choice 2 & Scenes 5a/5b/5c",
+      "impact": "This is the episode's most thematically important choice (which social circle to align with), but the payoff feels muted. Scene 5a (Maya) and 5b (Jordan) lead to dramatically different social positions, yet Scene 6 treats all three options identically — Ben is still the project partner, Jordan still makes the same joke, the same conflict still emerges. Players who chose 5a may feel their choice was cosmetic.",
+      "fix": "Differentiate Scene 6 based on Choice 2 outcome: If player chose 5a/5c (Ben/Maya path), Ben's anxiety about the pairing is noticeably lower because Riley already showed up for him. If player chose 5b (Jordan path), Ben's anxiety is higher, and Jordan's joke lands differently (more performative for his audience, less reflexive). The group project dynamics should reflect where Riley's social weight is positioned.",
+      "priority": 8
+    },
+    {
+      "severity": "MAJOR",
+      "category": "REPLAYABILITY",
+      "issue": "The three outcome branches (authentic-belonging, popularity-conformity, balanced-growth) are mechanically distinct but the paths to reach them are heavily weighted. Choices 3, 4, and 5 almost force players down one path if they've already committed to a certain choice sequence. There's limited 'mixing' of strategies.",
+      "location": "Outcome branches & choice sequences",
+      "impact": "If a player chooses 5a (Maya), they're already strongly signaled toward 'authentic belonging.' Choosing 6c (laugh along) would feel contradictory and immersion-breaking. This reduces perceived player agency — it feels like the episode is funneling players toward a predetermined ending rather than letting them discover it through genuine choice.",
+      "fix": "Allow more hybrid paths. For example: a player who chooses 5b (Jordan) could still reach 'authentic belonging' by choosing 6a (defend Ben) — this creates a more interesting arc (popularity seeker who chooses principle). Add a 4th outcome branch like 'The Conflicted Path' for players who oscillate between choices, or adjust the outcome triggers to allow more cross-pollination (e.g., 'authentic belonging' requires 2+ empathy-focused choices, not all 5).",
+      "priority": 7
+    },
+    {
+      "severity": "MINOR",
+      "category": "ENGAGEMENT",
+      "issue": "Scene 6 (Partner Assignments) has a lot of narrative weight (the core conflict setup) but limited player interactivity. The scene is mostly watching Ben get mocked, then choosing how to respond. There's no choice *during* the mocking moment itself.",
+      "location": "Scene 6: Partner Assignments",
+      "impact": "Players experience the Ben-mocking moment as passive observers. Some may feel they should have had a choice to intervene *during* the joke, not after. This is a minor immersion break for players who want more granular control.",
+      "fix": "Add a micro-choice right after Jordan's joke lands: 'Do you: (a) laugh along, (b) stay silent, (c) make a face that shows disapproval.' This gives players immediate agency in the moment rather than waiting for Scene 7. Keeps the scene's pacing tight but increases interactivity.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scene 7 (Called On) has Ms. Alvarez's charged silence as a powerful moment, but it's not immediately clear to players what that silence *means*. The narration says 'sits heavier than anything she could have said' but younger players may not catch the subtext.",
+      "location": "Scene 7: Called On",
+      "impact": "Players might miss that Ms. Alvarez is subtly calling out the room's unkindness. This is a key moment for modeling adult accountability, but it's too subtle for the target age group (11-14). Some players will replay and miss it entirely.",
+      "fix": "Add a brief internal monologue from Riley right after the silence: 'Ms. Alvarez isn't saying anything. That's worse than saying something.' This clarifies the moment's significance without over-explaining it. Alternatively, have Ms. Alvarez's eyes linger on Jordan's table for a beat — more visible cue.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "CHOICES",
+      "issue": "Choice 5 (Last Bell) is framed as 'who are you gonna be tomorrow' but the three options don't feel equally weighted or appealing. Option 5b (go with Jordan) feels like the 'easy' choice, 5a (Ben/Maya) feels like the 'good' choice, 5c (both) feels like the 'fence-sitting' choice. There's subtle moral framing that might influence players away from their genuine preference.",
+      "location": "Choice 5: Last Bell",
+      "impact": "Players who genuinely prefer Jordan's group might feel judged for choosing 5b. The episode's stated goal is 'no single correct way to belong,' but the framing of the choices subtly suggests one path is more authentic. This could reduce replay motivation for players who want to explore the 'popularity' path without feeling like they're choosing the 'wrong' thing.",
+      "fix": "Reframe the choice options to be equally appealing and neutral: Instead of 'Go with Jordan's group' (passive, easy), try 'Lean into the momentum — Jordan's group is already waving you over, and the energy is real.' Instead of 'Catch up with Ben and Maya' (virtuous), try 'There's something more interesting happening at the window table.' This removes the moral weight and lets players choose based on genuine preference.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "The episode doesn't explicitly teach players how their choices map to trait changes (CONFIDENCE, EMPATHY, ADAPTABILITY). Players won't know what they're optimizing for unless they replay and compare outcomes.",
+      "location": "Throughout episode, no explicit trait feedback",
+      "impact": "Players may not understand the game's progression system. On first playthrough, they won't see how their choices connect to the trait system mentioned in the episode description. This is fine for narrative-focused players, but may confuse players who want to understand the mechanical layer.",
+      "fix": "Add subtle trait feedback after key choices. For example, after Choice 3 (standing beside Ben), a brief internal monologue: 'That took more confidence than I expected.' Or after Choice 2 (Maya), 'I'm getting better at reading people.' This teaches the trait system without being preachy. Alternatively, add a post-episode summary screen showing 'Trait Changes: +1 EMPATHY' etc.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "Strong character voice and differentiation — Jordan, Ben, and Maya are immediately distinct and memorable, with clear motivations and social positions",
+    "Excellent thematic clarity — the episode's core question ('who are you gonna be?') is established early and drives every scene",
+    "Compelling emotional stakes — the Ben-mocking moment and Ms. Alvarez's silence create genuine tension without being melodramatic",
+    "Well-designed choice consequences — the three outcome branches (authentic, popularity, balanced) are mechanically distinct and create meaningfully different replays",
+    "Natural dialogue and internal monologue — Riley's voice is authentic, self-aware, and age-appropriate; doesn't feel written by an adult trying too hard",
+    "Strong scene variety in tone and content — hallway collision, cafeteria seating, group project, public moment create natural rhythm",
+    "Excellent secondary character depth — even minor characters like Ms. Alvarez have clear motivations and constraints (overloaded, trying her best)",
+    "Good use of subtext and implication — the episode trusts players to read social dynamics without over-explaining"
+  ],
+  "recommendations": [
+    "Compress or eliminate Scene 1's passive opening; move to interactive moment within first 30 seconds",
+    "Differentiate the consequences of Choice 1 (Hallway) more clearly — make each path establish a distinct social reputation that carries forward",
+    "Make Choice 2 (Cafeteria) consequences visible in Scene 6 — Ben's anxiety or Jordan's attention should vary based on where Riley sat",
+    "Allow more hybrid outcome paths; don't funnel players too strongly toward one ending based on early choices",
+    "Add a micro-choice during the Ben-mocking moment (Scene 6) to increase interactivity in a key scene",
+    "Clarify Ms. Alvarez's charged silence (Scene 7) with a brief internal monologue so younger players catch the significance",
+    "Reframe Choice 5 options to be morally neutral and equally appealing, removing subtle 'good choice' / 'easy choice' framing",
+    "Add subtle trait feedback after key choices to teach the progression system naturally",
+    "Consider adding a post-episode summary showing trait changes and outcome branch reached, helping players understand the mechanical layer",
+    "In future episodes, create opportunities for players to 'switch' outcome branches mid-season, rewarding character growth over rigid path commitment"
+  ],
+  "scores": {
+    "engagement": 8,
+    "choiceQuality": 7,
+    "pacing": 7,
+    "playerAgency": 7,
+    "replayability": 8,
+    "overall": 7.4
+  },
+  "metrics": {
+    "averageSceneLength": 38,
+    "choiceFrequency": 0.36,
+    "branchingFactor": 3,
+    "estimatedReplayValue": 8
+  },
+  "summary": {
+    "verdict": "The First Bell is a well-crafted, emotionally resonant episode with strong character work and thematic clarity. The core gameplay loop (observe social dynamics → make value-aligned choice → see consequences) is engaging and supports the episode's central question. However, several pacing and agency issues prevent it from reaching 'excellent' status. The opening lacks interactivity, early choices feel less consequential than they should, and some outcome paths are too heavily funneled. These are fixable issues that don't require narrative rework — mostly tweaks to choice framing, consequence visibility, and pacing.",
+    "keyIssues": [
+      "Scene 1 is purely expository with no player interaction, delaying gameplay engagement",
+      "Choice 1 and Choice 2 consequences aren't clearly differentiated across paths",
+      "Scene 6 lacks a choice during the core conflict moment (Ben-mocking)",
+      "Outcome branches are too heavily funneled; limited hybrid paths",
+      "Choice 5 framing subtly suggests one morally 'correct' answer"
+    ],
+    "topStrengths": [
+      "Authentic, age-appropriate character voices and dialogue",
+      "Clear thematic throughline and emotional stakes",
+      "Three mechanically distinct outcome branches supporting replayability",
+      "Excellent use of subtext and social dynamics",
+      "Natural scene variety and pacing rhythm"
+    ],
+    "mustFix": [
+      "Add player choice within first 30 seconds of Scene 1, or compress opening to move to Scene 2 faster",
+      "Differentiate consequences of Choice 1 (Hallway) across the three paths — make each establish distinct social reputation",
+      "Make Choice 2 (Cafeteria) consequences visible in Scene 6 — vary Ben's anxiety level or Jordan's attention based on where Riley sat",
+      "Reframe Choice 5 options to remove moral weighting — make all three equally appealing and neutral"
+    ],
+    "niceToHave": [
+      "Add micro-choice during Ben-mocking moment (Scene 6) for increased interactivity",
+      "Clarify Ms. Alvarez's charged silence with brief internal monologue (Scene 7)",
+      "Add subtle trait feedback after key choices to teach progression system",
+      "Post-episode summary screen showing trait changes and outcome branch reached",
+      "Allow more hybrid outcome paths in future episodes for character growth mid-season"
+    ]
+  }
+}

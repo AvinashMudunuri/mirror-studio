@@ -1,0 +1,101 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Sol's Latina identity and Priya's South Asian identity are conveyed largely through surface markers (Spanish phrases/abuela, family restaurant) rather than deep integration into the plot, while Jordan's Filipino-American background and Alex's Japanese/Latino mixed heritage are barely referenced in-episode at all.",
+      "location": "Character backgrounds vs. actual episode dialogue",
+      "harmPotential": "Low — background material is rich and specific, but if these details never surface in-episode, players may perceive cultural identity as decorative rather than integrated. Not harmful, but a missed opportunity.",
+      "recommendation": "Consider letting a small, organic detail (Sol's ring-twisting/Spanish phrase, Jordan's family catering business, Alex's dual heritage) surface naturally in a line of dialogue within this episode, not just in background text.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Priya's cutting joke about Alex's monotone answer ('Roomba that lost its charger') is presented as genuinely funny and status-generating, and in the 'popular table' branch it goes fully unchallenged and even rewarded socially.",
+      "location": "scene-2a, choice-2a option 'a'",
+      "harmPotential": "Could normalize the idea that mocking a quieter/neurodivergent-coded peer is an acceptable price of social belonging if the episode didn't provide consequence tracking (INTEGRITY -2) and later payoff scenes showing cost.",
+      "recommendation": "This is already well-mitigated by the trait system and Alex's visible hurt in later scenes (9c, closed-off body language) and Priya's own arc softening (hallway nod). Consider ensuring at least one explicit narrative beat where Alex's interiority validates that the joke hurt, so players who choose 'laugh along' still see the human cost, not just a stat penalty.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex (they/them, quietly coded as possibly neurodivergent via 'monotone,' guarded affect, sketchbook-as-armor) is the episode's most withdrawn/isolated character and the one subjected to mockery and exclusion in multiple branches — the 'outsider' role falls on the queer/gender-nonconforming-coded character.",
+      "location": "Throughout — Alex's characterization and treatment across branches",
+      "harmPotential": "If left unchecked this pattern (LGBTQ+/gender-diverse character as the perpetual target of ridicule and isolation) could read as a soft version of the 'tragic outsider' trope, even though Alex has agency, wit, and a full inner life.",
+      "recommendation": "The character write-up already gives Alex strengths, humor, and agency (arc potential, comic project, mac-and-cheese warmth), which substantially mitigates this. To fully neutralize the concern, ensure future episodes give Alex wins/moments of social ease independent of Sol's rescue, so their arc isn't solely defined by being the target who needs saving.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "BIAS",
+      "issue": "Priya, the most status-driven and 'sharp/controlling' character, is also the one named with a South Asian surname (Kapoor), and Jordan (Filipino-American) is the most conflict-avoidant/accommodating character — an unintentional alignment of personality-with-ethnicity that could read as pattern if viewed across the roster.",
+      "location": "Character designs — Priya Kapoor, Jordan Alvarez",
+      "harmPotential": "Low but worth monitoring: could reinforce subtle 'sharp-tongued South Asian' or 'agreeable Filipino peacemaker' associations if repeated across the series without variation.",
+      "recommendation": "Both characters are written with significant psychological depth and backstory that undercuts stereotype (Priya's loneliness/reinvention, Jordan's own hidden 'sketchbook kid' past), which is good practice. Continue to vary personality-ethnicity pairings across future episodes/characters to avoid unintentional pattern accumulation.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "Excellent structural design: consequences for cruelty, dishonesty, and self-interest are consistently tracked and narratively felt (INTEGRITY/COMMUNICATION/JUDGMENT), never glorified as costless",
+    "Priya and Jordan are both given interiority that complicates surface stereotypes — their popularity has real psychological cost, avoiding one-dimensional 'mean girl'/'golden boy' portrayals",
+    "Alex is written with agency, wit, and specific interests (art, skateboarding, mac and cheese) rather than existing solely to be pitied or to teach Sol a lesson",
+    "The 'peer pressure is warm, not cruel' framing (Jordan's ease, Priya's humor) is a genuinely sophisticated and age-appropriate way to model how real social pressure works, more useful than a mustache-twirling bully",
+    "Diverse cast (Latina, Filipino-American, South Asian, Japanese/Latino mixed, presumably East Asian teacher) is normalized as simply the demographic reality of an urban school, not flagged as remarkable",
+    "Gender-neutral characterization of Alex (they/them) is handled matter-of-factly without being made a 'topic' or source of conflict — identity isn't the plot, character is",
+    "Ms. Chen models fair, unsentimental adult authority without favoritism, giving both Sol's success and failure paths grounded, proportionate feedback",
+    "No romantic/adult-minor power dynamics; all relationships are age-appropriate peer dynamics with realistic middle-school stakes"
+  ],
+  "recommendations": [
+    "In future episodes, surface a few more specific cultural/family details in-scene (not just background text) so representation feels lived-in during actual play, not just in character bibles",
+    "Give Alex at least one beat of social success or belonging that isn't contingent on Sol's choices, reinforcing their agency beyond 'the kid who gets rescued or not'",
+    "Continue varying which characters get to be 'sharp,' 'accommodating,' 'guarded,' etc. across ethnic lines in future episodes to avoid subtle pattern accumulation",
+    "Consider a brief explicit interior beat for Alex after being mocked (even in the 'laugh along' branch) so the human cost registers narratively, not just mechanically via trait deltas"
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 8,
+    "tropes": 8,
+    "ethicalModeling": 9,
+    "culturalSensitivity": 8,
+    "overall": 8
+  },
+  "flaggedContent": [
+    {
+      "type": "NARRATIVE",
+      "location": "scene-2a / choice-2a",
+      "content": "Priya's impersonation of Alex's flat classroom answer, framed as a genuinely funny 'bit' that lands with the table",
+      "concern": "Risk of normalizing mockery of a quieter/possibly neurodivergent-coded peer as a harmless price of social belonging",
+      "suggestion": "Already mitigated via consequence tracking and later scenes of Alex's visible hurt; consider adding a brief internal beat showing real emotional cost even in the 'laugh along' path"
+    },
+    {
+      "type": "PORTRAYAL",
+      "location": "Character roster overall",
+      "content": "Personality-trait alignment with ethnic surnames (controlling/sharp = Kapoor, accommodating/peacemaking = Alvarez)",
+      "concern": "Potential subtle stereotype accumulation if pattern repeats across the series",
+      "suggestion": "Vary trait-ethnicity pairings in future episodes; leverage the strong backstory work already present to keep undercutting the surface pattern"
+    }
+  ],
+  "summary": {
+    "verdict": "The Bridge Table is a thoughtfully constructed episode that handles peer pressure, exclusion, and integrity with nuance appropriate for its age group. Diverse characters are written with genuine complexity, agency, and interiority rather than as stereotypes or plot devices, and the episode's branching consequence system meaningfully models that unkindness and dishonesty have real social and emotional costs. Remaining concerns are minor and largely mitigatable through small additions in future content rather than requiring structural rework.",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [
+      "Cultural/identity details underused in-scene relative to rich background material",
+      "Alex's arc leans on being the target of exclusion; ensure future agency/wins independent of rescue",
+      "Watch for trait-ethnicity pairing patterns accumulating across the series",
+      "Consider deepening the felt emotional cost of the 'laugh along' branch"
+    ],
+    "strengths": [
+      "Complex, non-stereotypical portrayals of Priya and Jordan",
+      "Alex has full agency and interests beyond their outsider status",
+      "Peer pressure realistically modeled as warm/seductive rather than cartoonishly cruel",
+      "Consistent, proportionate consequence system for ethical choices",
+      "Normalized diversity without tokenization",
+      "Age-appropriate, healthy relationship dynamics throughout"
+    ],
+    "readyForPublication": true
+  }
+}

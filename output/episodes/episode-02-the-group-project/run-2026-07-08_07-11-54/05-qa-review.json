@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Character 'jordan' delivers dialogue (a text message, s6-2) in scene-6, but 'jordan' is not listed in scene-6's characters array (which lists player, alex, priya). Priya, conversely, is listed in the characters array but never appears in any dialogue line in this scene. This makes the characters array an unreliable indicator of who actually speaks/texts in the scene.",
+      "location": "scene-6.characters",
+      "suggestion": "Either add 'jordan' to scene-6.characters (if off-screen texters should be included) or add a note/convention that the characters array only reflects physical presence, and remove 'priya' if she's not meant to be depicted at all."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Character 'alex' sends a text message (s7a-5, character: 'alex') in scene-7a ('The Party'), but 'alex' is not included in scene-7a's characters array (player, priya, jordan). This mirrors the same off-screen-texter inconsistency seen in scene-6.",
+      "location": "scene-7a.characters",
+      "suggestion": "Establish a consistent rule for whether characters array includes off-screen texters, and apply it uniformly across scene-6 and scene-7a (and any other text-message scenes)."
+    },
+    {
+      "category": "STYLE",
+      "message": "World.seasons lists the season as a human-readable string ('Season 1: First Year') while the episode's seasonId is a slug-style id ('season-1'). There's no explicit season object with an 'id' field in the world data to confirm the mapping, so the linkage relies on convention only.",
+      "location": "episode.seasonId vs world.seasons[0]",
+      "suggestion": "If a formal season registry/id list exists elsewhere, confirm 'season-1' maps to 'Season 1: First Year'; otherwise consider documenting the slug convention so future episodes stay consistent."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "branch-conformist and branch-redemption share three of four triggeredBy entries (choice-1:a, choice-2a:b, choice-4:a) and differ only on choice-5 (c vs a). This is intentional per the design (late course-correction vs. full conformity), but the near-identical trigger sets increase the risk of ambiguous branch resolution if the branch-matching logic isn't strictly exact-match or priority-ordered.",
+      "location": "outcomes[branch-conformist].triggeredBy vs outcomes[branch-redemption].triggeredBy",
+      "suggestion": "Confirm the branch resolution engine prioritizes the most recent/decisive choice (choice-5) correctly, or document the precedence rule explicitly to avoid future maintenance confusion."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 30,
+    "failedChecks": 0,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Adopt a consistent convention for whether 'characters' arrays represent physical presence only or include off-screen participants who communicate via text, and apply it uniformly across all scenes.",
+    "Consider adding an explicit season registry (id -> display name) to the world schema to remove ambiguity between seasonId slugs and human-readable season names.",
+    "Since branch-conformist and branch-redemption diverge only at the final presentation choice, consider a short design note clarifying that choice-5 is the deciding trigger, to aid future writers extending this branching structure."
+  ]
+}

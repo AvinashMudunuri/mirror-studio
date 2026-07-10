@@ -1,0 +1,1409 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1",
+      "lines": [
+        {
+          "id": "s1-1",
+          "character": "NARRATOR",
+          "text": "The steps of Ridgeline Academy rise in front of you like a dare. Kids stream past in twos and threes, already fluent in a language you haven't learned yet."
+        },
+        {
+          "id": "s1-2",
+          "character": "INTERNAL",
+          "text": "Okay. New school. New town. Nobody here has seen you fall off the stage during the fourth grade talent show."
+        },
+        {
+          "id": "s1-3",
+          "character": "INTERNAL",
+          "text": "Small mercies.",
+          "emotion": "dry"
+        },
+        {
+          "id": "s1-4",
+          "character": "NARRATOR",
+          "text": "The schedule in your hand is already going soft at the folds. The backpack strap digs into your shoulder.",
+          "action": "fidgets with the zipper pull"
+        },
+        {
+          "id": "s1-5",
+          "character": "INTERNAL",
+          "text": "You could be anyone today. That's the terrifying part."
+        },
+        {
+          "id": "s1-6",
+          "character": "INTERNAL",
+          "text": "That's also, like — kind of the whole point."
+        },
+        {
+          "id": "s1-7",
+          "character": "INTERNAL",
+          "text": "Okay. Okay okay okay. Just walk in like you've done this before.",
+          "emotion": "steeling herself"
+        },
+        {
+          "id": "s1-8",
+          "character": "NARRATOR",
+          "text": "You take a breath and step through the doors."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2",
+      "lines": [
+        {
+          "id": "s2-1",
+          "character": "NARRATOR",
+          "text": "The hallway is a river, and everyone else already knows the current. Jordan Cho-Williams walks backward through it, holding court with two friends, laughing a half-second before his own punchline lands."
+        },
+        {
+          "id": "s2-2",
+          "character": "Jordan",
+          "text": "—so then I told the ref, respectfully, that my guy needed glasses—",
+          "action": "walking backward, gesturing"
+        },
+        {
+          "id": "s2-3",
+          "character": "NARRATOR",
+          "text": "He doesn't see you until it's too late. His shoulder clips your stack of books. They slide, teeter, one binder threatening the floor."
+        },
+        {
+          "id": "s2-4",
+          "character": "Jordan",
+          "text": "Whoa— my bad, my bad—",
+          "action": "hands up, spinning around"
+        },
+        {
+          "id": "s2-5",
+          "character": "Jordan",
+          "text": "...okay, wait. You're new. I'd remember a face causing me this much property damage.",
+          "emotion": "grinning"
+        },
+        {
+          "id": "s2-6",
+          "character": "NARRATOR",
+          "text": "A few heads turn. Not the whole hallway. Just enough."
+        },
+        {
+          "id": "s2-7",
+          "character": "INTERNAL",
+          "text": "Say something. Anything. You had a whole plan for exactly this—"
+        },
+        {
+          "id": "s2-8",
+          "character": "INTERNAL",
+          "text": "Nope. Brain's empty. Very cool. Very smooth."
+        },
+        {
+          "id": "s2-9",
+          "character": "Jordan",
+          "text": "So? What's it gonna be, new kid?",
+          "action": "finger-guns"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3a",
+      "lines": [
+        {
+          "id": "s3a-1",
+          "character": "NARRATOR",
+          "text": "Jordan blinks — actually blinks — like he wasn't expecting you to just stick out a hand."
+        },
+        {
+          "id": "s3a-2",
+          "character": "Jordan",
+          "text": "Okay, respect. Most people just kind of stare at me like I'm a weather event.",
+          "action": "shakes hand, laughing"
+        },
+        {
+          "id": "s3a-3",
+          "character": "Jordan",
+          "text": "Jordan. Cho-Williams, but nobody uses both unless I'm in trouble. You?"
+        },
+        {
+          "id": "s3a-4",
+          "character": "player",
+          "text": "Riley. Or whatever you end up calling me in three weeks."
+        },
+        {
+          "id": "s3a-5",
+          "character": "Jordan",
+          "text": "Riley. Locked in.",
+          "action": "finger-guns"
+        },
+        {
+          "id": "s3a-6",
+          "character": "Jordan",
+          "text": "Welcome to the food chain. I'll see you around.",
+          "action": "already turning back to his friends"
+        },
+        {
+          "id": "s3a-7",
+          "character": "NARRATOR",
+          "text": "The onlookers un-pause, but a couple of them look at you a half-second longer than before."
+        },
+        {
+          "id": "s3a-8",
+          "character": "INTERNAL",
+          "text": "Huh. Okay. That actually worked."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3b",
+      "lines": [
+        {
+          "id": "s3b-1",
+          "character": "NARRATOR",
+          "text": "You crouch and gather the books without a word, without a scene."
+        },
+        {
+          "id": "s3b-2",
+          "character": "Jordan",
+          "text": "—anyway, my guy needs glasses, that's the whole story—",
+          "action": "barely glancing back"
+        },
+        {
+          "id": "s3b-3",
+          "character": "Jordan",
+          "text": "Sorry 'bout that.",
+          "action": "already absorbed back into his friends"
+        },
+        {
+          "id": "s3b-4",
+          "character": "NARRATOR",
+          "text": "A girl passing by — paint under her fingernails, sketchbook hugged to her chest — pauses just long enough."
+        },
+        {
+          "id": "s3b-5",
+          "character": "Maya",
+          "text": "Smooth landing.",
+          "emotion": "dry, small half-smile"
+        },
+        {
+          "id": "s3b-6",
+          "character": "INTERNAL",
+          "text": "Wait — was that a compliment or—"
+        },
+        {
+          "id": "s3b-7",
+          "character": "NARRATOR",
+          "text": "She's gone before you can decide."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3c",
+      "lines": [
+        {
+          "id": "s3c-1",
+          "character": "NARRATOR",
+          "text": "Jordan's laugh comes loud and immediate, his head tipping back like you just told the best joke he's heard all week."
+        },
+        {
+          "id": "s3c-2",
+          "character": "Jordan",
+          "text": "Okay, we're keeping this one.",
+          "action": "finger-guns at you"
+        },
+        {
+          "id": "s3c-3",
+          "character": "Jordan",
+          "text": "Quick! That's the name now, deal with it.",
+          "emotion": "delighted"
+        },
+        {
+          "id": "s3c-4",
+          "character": "NARRATOR",
+          "text": "The group laughs — a good laugh, warm — except one boy at the edge, arms crossed, whose smile doesn't quite reach the rest of his face."
+        },
+        {
+          "id": "s3c-5",
+          "character": "INTERNAL",
+          "text": "Adrenaline's a hell of a drug. Ask me again in five minutes if that was worth it."
+        },
+        {
+          "id": "s3c-6",
+          "character": "Jordan",
+          "text": "Catch you around, Quick."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4",
+      "lines": [
+        {
+          "id": "s4-1",
+          "character": "NARRATOR",
+          "text": "Tray in hand, you scan the cafeteria like a general studying a battlefield."
+        },
+        {
+          "id": "s4-2",
+          "character": "NARRATOR",
+          "text": "Jordan's table is loud, magnetic — several friends waving you over like they've already decided you belong there."
+        },
+        {
+          "id": "s4-3",
+          "character": "Jordan",
+          "text": "Yo — Riley! Or Quick, whatever we're doing today — there's a seat, come on!",
+          "action": "waving, shouting over the noise"
+        },
+        {
+          "id": "s4-4",
+          "character": "NARRATOR",
+          "text": "Near the windows, Maya sits alone, sketchbook propped against her tray, headphones in — the picture of someone who's made peace with solo lunches. Or convinced herself she has."
+        },
+        {
+          "id": "s4-5",
+          "character": "INTERNAL",
+          "text": "Okay. Social chess. No pressure."
+        },
+        {
+          "id": "s4-6",
+          "character": "INTERNAL",
+          "text": "There's also, like, four empty seats in the middle of nowhere. Very diplomatic. Very boring."
+        },
+        {
+          "id": "s4-7",
+          "character": "INTERNAL",
+          "text": "Whatever I do in the next ten seconds, someone's gonna remember it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5a",
+      "lines": [
+        {
+          "id": "s5a-1",
+          "character": "NARRATOR",
+          "text": "You set your tray down across from Maya. She startles — actually startles — like she forgot other people could see her."
+        },
+        {
+          "id": "s5a-2",
+          "character": "Maya",
+          "text": "Oh. You're... sitting here.",
+          "emotion": "guarded"
+        },
+        {
+          "id": "s5a-3",
+          "character": "Maya",
+          "text": "Bold move. I don't bite, I just judge your tray choices silently."
+        },
+        {
+          "id": "s5a-4",
+          "character": "player",
+          "text": "Good, 'cause I already regret the mystery casserole."
+        },
+        {
+          "id": "s5a-5",
+          "character": "NARRATOR",
+          "text": "A long quiet stretch. Then, like she's testing something, Maya angles her sketchbook — just slightly — so you can see."
+        },
+        {
+          "id": "s5a-6",
+          "character": "Maya",
+          "text": "It's the mascot. As a raccoon that's seen some stuff.",
+          "action": "taps pencil against her teeth"
+        },
+        {
+          "id": "s5a-7",
+          "character": "Maya",
+          "text": "Don't. It's not that deep. Stop looking at me like that."
+        },
+        {
+          "id": "s5a-8",
+          "character": "player",
+          "text": "It's incredible, actually. Why is he holding a court summons.",
+          "emotion": "laughing"
+        },
+        {
+          "id": "s5a-9",
+          "character": "Maya",
+          "text": "Because raccoons are always one bad decision from a court summons. It's just true.",
+          "emotion": "small real laugh"
+        },
+        {
+          "id": "s5a-10",
+          "character": "NARRATOR",
+          "text": "Something in her shoulders loosens, just a little."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5b",
+      "lines": [
+        {
+          "id": "s5b-1",
+          "character": "NARRATOR",
+          "text": "Jordan's friends absorb you instantly, the way a current pulls a leaf."
+        },
+        {
+          "id": "s5b-2",
+          "character": "Jordan",
+          "text": "Everyone, this is Riley. Riley, everyone. Don't worry, we'll drill you on names later, there's a quiz."
+        },
+        {
+          "id": "s5b-3",
+          "character": "NARRATOR",
+          "text": "Jokes fly fast, half of them referencing things that happened before you existed at this school. You laugh a half-second late, piecing punchlines together after the fact."
+        },
+        {
+          "id": "s5b-4",
+          "character": "Jordan",
+          "text": "—and THEN he tries to tell the teacher it was a science experiment—",
+          "emotion": "mid-story, grinning"
+        },
+        {
+          "id": "s5b-5",
+          "character": "NARRATOR",
+          "text": "You laugh along, genuinely warm for a second. Then, across the room, you catch Maya glance over — just for half a second — before turning back to her sketchbook."
+        },
+        {
+          "id": "s5b-6",
+          "character": "INTERNAL",
+          "text": "Huh."
+        },
+        {
+          "id": "s5b-7",
+          "character": "INTERNAL",
+          "text": "Not my problem. Right?",
+          "emotion": "unconvincing, even to herself"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5c",
+      "lines": [
+        {
+          "id": "s5c-1",
+          "character": "NARRATOR",
+          "text": "You do a full lap of the cafeteria like a diplomat with a very short attention span."
+        },
+        {
+          "id": "s5c-2",
+          "character": "player",
+          "text": "Can't stay long, but had to say hi.",
+          "action": "at Jordan's table"
+        },
+        {
+          "id": "s5c-3",
+          "character": "Jordan",
+          "text": "Efficient. I respect it."
+        },
+        {
+          "id": "s5c-4",
+          "character": "NARRATOR",
+          "text": "Then over to the window table."
+        },
+        {
+          "id": "s5c-5",
+          "character": "player",
+          "text": "Okay, that raccoon needs its own show."
+        },
+        {
+          "id": "s5c-6",
+          "character": "Maya",
+          "text": "It's called 'Judicial Raccoon.' Season one's just him getting arraigned.",
+          "emotion": "dry, but pleased"
+        },
+        {
+          "id": "s5c-7",
+          "character": "NARRATOR",
+          "text": "You finally land at a half-empty table in between, tray finally down, feet finally still."
+        },
+        {
+          "id": "s5c-8",
+          "character": "INTERNAL",
+          "text": "Three tables know my name now. I don't know if that's a strategy or just running out of breath."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6",
+      "lines": [
+        {
+          "id": "s6-1",
+          "character": "NARRATOR",
+          "text": "Ms. Alvarez claps twice, scanning the room like she's counting heads without looking like she's counting heads.",
+          "action": "taps two fingers on desk"
+        },
+        {
+          "id": "s6-2",
+          "character": "Ms. Alvarez",
+          "text": "Okay, okay, okay — settle in, folks, we've got groups to make and not a lot of period left."
+        },
+        {
+          "id": "s6-3",
+          "character": "Ms. Alvarez",
+          "text": "I'm pairing you for the semester project, so get comfortable — this is a marriage.",
+          "emotion": "small smile"
+        },
+        {
+          "id": "s6-4",
+          "character": "Ms. Alvarez",
+          "text": "Riley — you're with Ben."
+        },
+        {
+          "id": "s6-5",
+          "character": "NARRATOR",
+          "text": "Ben, a few seats over, goes very still, like he's bracing for impact."
+        },
+        {
+          "id": "s6-6",
+          "character": "Ben",
+          "text": "Sorry — sorry, I'll just, I'll go with whatever you want, I don't want to be the reason we get a bad grade—",
+          "emotion": "already apologizing"
+        },
+        {
+          "id": "s6-7",
+          "character": "NARRATOR",
+          "text": "Before you can answer, Jordan's voice carries from across the room, pitched just loud enough."
+        },
+        {
+          "id": "s6-8",
+          "character": "Jordan",
+          "text": "Rough draw, Riley. Ben's gonna 'sorry' you into an F.",
+          "action": "stage-whisper, grinning"
+        },
+        {
+          "id": "s6-9",
+          "character": "NARRATOR",
+          "text": "A ripple of laughter. Ben's eyes drop straight to his desk."
+        },
+        {
+          "id": "s6-10",
+          "character": "Ben",
+          "text": "...that's — yeah, that's fair, probably.",
+          "emotion": "quiet, almost to himself"
+        },
+        {
+          "id": "s6-11",
+          "character": "INTERNAL",
+          "text": "Okay. This is the part where I do something. Or don't."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7a",
+      "lines": [
+        {
+          "id": "s7a-1",
+          "character": "player",
+          "text": "Actually, I'm glad I got Ben. He probably has better ideas than half this room.",
+          "emotion": "loud enough to carry"
+        },
+        {
+          "id": "s7a-2",
+          "character": "NARRATOR",
+          "text": "Ben's head comes up, slow, like he's checking if that was real."
+        },
+        {
+          "id": "s7a-3",
+          "character": "Ben",
+          "text": "...you don't have to do that.",
+          "emotion": "quiet"
+        },
+        {
+          "id": "s7a-4",
+          "character": "player",
+          "text": "I'm not doing anything. It's just true."
+        },
+        {
+          "id": "s7a-5",
+          "character": "NARRATOR",
+          "text": "Jordan's eyebrow ticks up — a flicker of something unreadable — but he doesn't push it."
+        },
+        {
+          "id": "s7a-6",
+          "character": "Jordan",
+          "text": "...alright, alright. Didn't mean anything by it.",
+          "action": "shrugging, turning back to his table"
+        },
+        {
+          "id": "s7a-7",
+          "character": "Ben",
+          "text": "Thanks. I mean — you didn't have to. But thanks.",
+          "action": "shoulders dropping half an inch"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7b",
+      "lines": [
+        {
+          "id": "s7b-1",
+          "character": "NARRATOR",
+          "text": "You don't say anything to the room. Instead, once the laughter dies down on its own, you lean over toward Ben's desk."
+        },
+        {
+          "id": "s7b-2",
+          "character": "player",
+          "text": "So, what've you got? For the project.",
+          "emotion": "low, just to him"
+        },
+        {
+          "id": "s7b-3",
+          "character": "Ben",
+          "text": "Oh— um. I mean, it's probably dumb, but—",
+          "emotion": "startled"
+        },
+        {
+          "id": "s7b-4",
+          "character": "Ben",
+          "text": "—what if the map isn't of a place, it's of a feeling, and the legend is like, emotional weather—",
+          "emotion": "gaining speed"
+        },
+        {
+          "id": "s7b-5",
+          "character": "player",
+          "text": "Wait, say that again."
+        },
+        {
+          "id": "s7b-6",
+          "character": "NARRATOR",
+          "text": "Ben blinks, surprised, then does — and this time his voice doesn't shake at all."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7c",
+      "lines": [
+        {
+          "id": "s7c-1",
+          "character": "NARRATOR",
+          "text": "The laugh is already halfway out of your mouth before you decide to let it."
+        },
+        {
+          "id": "s7c-2",
+          "character": "player",
+          "text": "Okay, that's — yeah, that's fair, kind of.",
+          "emotion": "laughing"
+        },
+        {
+          "id": "s7c-3",
+          "character": "NARRATOR",
+          "text": "It feels easy. Warm, even. For about two seconds."
+        },
+        {
+          "id": "s7c-4",
+          "character": "NARRATOR",
+          "text": "Then you catch Ben's face — the exact half-second it falls, like a door quietly closing."
+        },
+        {
+          "id": "s7c-5",
+          "character": "INTERNAL",
+          "text": "Oh."
+        },
+        {
+          "id": "s7c-6",
+          "character": "INTERNAL",
+          "text": "Okay, that felt worse than I thought it would."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-8",
+      "lines": [
+        {
+          "id": "s8-1",
+          "character": "NARRATOR",
+          "text": "Ten minutes later, Ms. Alvarez taps two fingers on her desk, scanning the room.",
+          "action": "at the whiteboard"
+        },
+        {
+          "id": "s8-2",
+          "character": "Ms. Alvarez",
+          "text": "Ben, why don't you kick us off — I liked where your group's notes were headed."
+        },
+        {
+          "id": "s8-3",
+          "character": "NARRATOR",
+          "text": "Ben stands, or half-stands, his notebook trembling slightly in his hands."
+        },
+        {
+          "id": "s8-4",
+          "character": "Ben",
+          "text": "So, um — our idea is — it's a map, but it's not — I mean it is a map, but the legend part is —",
+          "emotion": "stammering"
+        },
+        {
+          "id": "s8-5",
+          "character": "NARRATOR",
+          "text": "He stumbles over 'emotional weather' like the words got tangled on the way out."
+        },
+        {
+          "id": "s8-6",
+          "character": "NARRATOR",
+          "text": "Jordan's table snickers — loud enough that the whole room hears it, quiet enough that Ms. Alvarez, turned toward the board, misses it completely."
+        },
+        {
+          "id": "s8-7",
+          "character": "Ben",
+          "text": "...never mind, it's fine, I'll just—",
+          "emotion": "face going red, staring at his desk"
+        },
+        {
+          "id": "s8-8",
+          "character": "INTERNAL",
+          "text": "She's not gonna turn around in time. This is happening whether I move or not."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9a",
+      "lines": [
+        {
+          "id": "s9a-1",
+          "character": "player",
+          "text": "No, that's actually really cool — the map being of a feeling instead of a place. We were gonna do the legend as, like, storm categories for different emotions.",
+          "emotion": "calm, cutting through the snickering"
+        },
+        {
+          "id": "s9a-2",
+          "character": "NARRATOR",
+          "text": "The laughter dies almost instantly, like someone unplugged it."
+        },
+        {
+          "id": "s9a-3",
+          "character": "Ms. Alvarez",
+          "text": "Wait — say more about that. Storm categories, like intensity?",
+          "action": "turning around, actually listening"
+        },
+        {
+          "id": "s9a-4",
+          "character": "player",
+          "text": "Yeah, like a category one is 'mildly annoyed' and a category five is 'crying in the bathroom during gym.'"
+        },
+        {
+          "id": "s9a-5",
+          "character": "NARRATOR",
+          "text": "A few real laughs this time — with, not at."
+        },
+        {
+          "id": "s9a-6",
+          "character": "Ms. Alvarez",
+          "text": "Riley, thank you for that — that's exactly the kind of building-on-an-idea I want to see more of in here.",
+          "emotion": "approving nod"
+        },
+        {
+          "id": "s9a-7",
+          "character": "Ben",
+          "text": "...you didn't have to do that.",
+          "emotion": "barely audible"
+        },
+        {
+          "id": "s9a-8",
+          "character": "player",
+          "text": "I know."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9b",
+      "lines": [
+        {
+          "id": "s9b-1",
+          "character": "NARRATOR",
+          "text": "You say nothing. The room holds its breath for a second too long, and then lets it go."
+        },
+        {
+          "id": "s9b-2",
+          "character": "Ben",
+          "text": "...it's a map of a feeling. That's — that's it, I guess.",
+          "emotion": "mumbling, alone"
+        },
+        {
+          "id": "s9b-3",
+          "character": "NARRATOR",
+          "text": "Ms. Alvarez, still at the board, moves on without noticing anything happened at all."
+        },
+        {
+          "id": "s9b-4",
+          "character": "NARRATOR",
+          "text": "Later, packing up, Ben zips his bag with more focus than a zipper really requires."
+        },
+        {
+          "id": "s9b-5",
+          "character": "Ben",
+          "text": "...see you next class, I guess.",
+          "emotion": "not looking up"
+        },
+        {
+          "id": "s9b-6",
+          "character": "INTERNAL",
+          "text": "He won't look at me. I don't blame him."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-9c",
+      "lines": [
+        {
+          "id": "s9c-1",
+          "character": "player",
+          "text": "Honestly, if my project idea gets read out loud, I'm just gonna set the desk on fire as a distraction, so — Ben's doing great, relatively speaking.",
+          "emotion": "loud, easy"
+        },
+        {
+          "id": "s9c-2",
+          "character": "NARRATOR",
+          "text": "The laugh shifts — not at Ben anymore, just a laugh, loose and general."
+        },
+        {
+          "id": "s9c-3",
+          "character": "NARRATOR",
+          "text": "Ben exhales, shoulders dropping, using the half-second of cover to finish his sentence in a much steadier voice."
+        },
+        {
+          "id": "s9c-4",
+          "character": "Ben",
+          "text": "...that was — thanks. That was actually kind of smooth.",
+          "emotion": "quiet, to player after class"
+        },
+        {
+          "id": "s9c-5",
+          "character": "player",
+          "text": "I have my moments. Rarely, but I have them.",
+          "emotion": "shrug"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-10",
+      "lines": [
+        {
+          "id": "s10-1",
+          "character": "NARRATOR",
+          "text": "The final bell echoes down the hallway and out onto the steps, where the whole day seems to exhale at once."
+        },
+        {
+          "id": "s10-2",
+          "character": "Jordan",
+          "text": "Riley! We're grabbing food before practice, you're coming, right? Don't overthink it, it's not a whole thing.",
+          "emotion": "calling over, surrounded by his group"
+        },
+        {
+          "id": "s10-3",
+          "character": "NARRATOR",
+          "text": "Maya lingers by the railing, sketchbook clutched to her chest, clearly deciding whether today was a fluke or not."
+        },
+        {
+          "id": "s10-4",
+          "character": "NARRATOR",
+          "text": "Ben passes by alone, backpack straps pulled too tight, glancing back once like he's hoping to be stopped."
+        },
+        {
+          "id": "s10-5",
+          "character": "INTERNAL",
+          "text": "Okay. Last one today. Probably the one that actually matters."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11a",
+      "lines": [
+        {
+          "id": "s11a-1",
+          "character": "NARRATOR",
+          "text": "You jog to catch Ben before he disappears around the corner."
+        },
+        {
+          "id": "s11a-2",
+          "character": "player",
+          "text": "Hey — that map idea. The emotional weather thing. Can we actually build that? Like for real?"
+        },
+        {
+          "id": "s11a-3",
+          "character": "Ben",
+          "text": "...you mean it? Because I have, um, a lot of thoughts. Possibly too many.",
+          "emotion": "surprised, careful"
+        },
+        {
+          "id": "s11a-4",
+          "character": "player",
+          "text": "I want all of them."
+        },
+        {
+          "id": "s11a-5",
+          "character": "NARRATOR",
+          "text": "Maya drifts closer, one eyebrow raised."
+        },
+        {
+          "id": "s11a-6",
+          "character": "Maya",
+          "text": "You're just gonna let him talk for the next hour, huh."
+        },
+        {
+          "id": "s11a-7",
+          "character": "player",
+          "text": "Only if you show me the rest of that sketchbook. The real version. Not the sneak preview."
+        },
+        {
+          "id": "s11a-8",
+          "character": "Maya",
+          "text": "...okay. Yeah. Alright.",
+          "emotion": "small, real smile"
+        },
+        {
+          "id": "s11a-9",
+          "character": "NARRATOR",
+          "text": "It's smaller than Jordan's crowd. Quieter. But it feels like something with actual weight to it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "lines": [
+        {
+          "id": "s11b-1",
+          "character": "NARRATOR",
+          "text": "You fall into step with Jordan's group, and it's easy — it's so easy, laughter already rising to meet you halfway."
+        },
+        {
+          "id": "s11b-2",
+          "character": "Jordan",
+          "text": "See, this is why I like you — you don't get weird about stuff.",
+          "action": "arm slung loose over your shoulder"
+        },
+        {
+          "id": "s11b-3",
+          "character": "NARRATOR",
+          "text": "You laugh, and it's not fake, not exactly. But walking off, glancing back once, you catch Ben and Maya leaving in opposite directions. Alone. Both of them."
+        },
+        {
+          "id": "s11b-4",
+          "character": "INTERNAL",
+          "text": "Huh."
+        },
+        {
+          "id": "s11b-5",
+          "character": "INTERNAL",
+          "text": "It's fine. It's one day. There's tomorrow.",
+          "emotion": "pushing it down"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "lines": [
+        {
+          "id": "s11c-1",
+          "character": "player",
+          "text": "Catch up with you guys later, promise.",
+          "action": "waving to Jordan's group"
+        },
+        {
+          "id": "s11c-2",
+          "character": "Jordan",
+          "text": "Your loss, Quick, we're getting the good fries.",
+          "emotion": "unbothered, already turning"
+        },
+        {
+          "id": "s11c-3",
+          "character": "NARRATOR",
+          "text": "You fall into step with Ben and Maya instead, not committing to either exit."
+        },
+        {
+          "id": "s11c-4",
+          "character": "Ben",
+          "text": "You know you didn't have to—"
+        },
+        {
+          "id": "s11c-5",
+          "character": "player",
+          "text": "I know. I wanted to."
+        },
+        {
+          "id": "s11c-6",
+          "character": "Maya",
+          "text": "Give me your number before you change your mind.",
+          "action": "already digging for her phone"
+        },
+        {
+          "id": "s11c-7",
+          "character": "NARRATOR",
+          "text": "Numbers trade. Plans half-form, nothing locked down yet. But for the first time all day, you aren't performing a version of yourself — just figuring out, slowly, which pieces are actually true."
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Laugh it off and stick your hand out. \"I'm Riley, by the way.\""
+        },
+        {
+          "id": "b",
+          "text": "Say nothing. Just pick up your books."
+        },
+        {
+          "id": "c",
+          "text": "\"Careful — I bruise like a peach and I will tell everyone.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r1a-1",
+            "character": "player",
+            "text": "Smooth landing, right? Riley.",
+            "action": "steady handshake"
+          },
+          {
+            "id": "r1a-2",
+            "character": "Jordan",
+            "text": "Okay — respect.",
+            "emotion": "surprised"
+          }
+        ],
+        "b": [
+          {
+            "id": "r1b-1",
+            "character": "NARRATOR",
+            "text": "You crouch and start gathering the fallen books, saying nothing at all."
+          }
+        ],
+        "c": [
+          {
+            "id": "r1c-1",
+            "character": "player",
+            "text": "Careful — I bruise like a peach and I will tell everyone."
+          },
+          {
+            "id": "r1c-2",
+            "character": "Jordan",
+            "text": "Ha— okay, we're keeping this one.",
+            "emotion": "surprised laugh"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sit with the girl reading alone by the windows."
+        },
+        {
+          "id": "b",
+          "text": "Head for Jordan's table."
+        },
+        {
+          "id": "c",
+          "text": "Say a quick hello at both and land somewhere in between."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r2a-1",
+            "character": "NARRATOR",
+            "text": "You cross the cafeteria toward the window table, tray steady."
+          },
+          {
+            "id": "r2a-2",
+            "character": "Maya",
+            "text": "Oh. You're... sitting here.",
+            "emotion": "startled"
+          }
+        ],
+        "b": [
+          {
+            "id": "r2b-1",
+            "character": "Jordan",
+            "text": "Yes! Get in, get in—",
+            "action": "scooting over"
+          }
+        ],
+        "c": [
+          {
+            "id": "r2c-1",
+            "character": "INTERNAL",
+            "text": "Okay. Diplomatic tour it is."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "Say, loud enough for the room, \"I'm glad I got Ben.\""
+        },
+        {
+          "id": "b",
+          "text": "Say nothing to the room — but lean over and start working with Ben directly."
+        },
+        {
+          "id": "c",
+          "text": "Laugh along with Jordan's joke."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r3a-1",
+            "character": "player",
+            "text": "Actually, I'm glad I got Ben.",
+            "emotion": "clear, carrying"
+          }
+        ],
+        "b": [
+          {
+            "id": "r3b-1",
+            "character": "player",
+            "text": "So, what've you got? For the project.",
+            "emotion": "low, just to Ben"
+          }
+        ],
+        "c": [
+          {
+            "id": "r3c-1",
+            "character": "player",
+            "text": "Okay, that's — yeah, that's fair, kind of.",
+            "emotion": "laughing"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Speak up and back Ben's idea, out loud, right now."
+        },
+        {
+          "id": "b",
+          "text": "Stay quiet and let the moment pass."
+        },
+        {
+          "id": "c",
+          "text": "Crack a joke about your own project idea to pull the attention away."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r4a-1",
+            "character": "player",
+            "text": "No, that's actually really cool—",
+            "emotion": "cutting through the laughter"
+          }
+        ],
+        "b": [
+          {
+            "id": "r4b-1",
+            "character": "NARRATOR",
+            "text": "You stay still. The room waits a beat too long, then moves on without you."
+          }
+        ],
+        "c": [
+          {
+            "id": "r4c-1",
+            "character": "player",
+            "text": "Honestly, if my idea gets read out loud, I'm setting the desk on fire as a distraction—",
+            "emotion": "loud, easy"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-5",
+      "options": [
+        {
+          "id": "a",
+          "text": "Catch up with Ben and Maya instead."
+        },
+        {
+          "id": "b",
+          "text": "Go with Jordan's group."
+        },
+        {
+          "id": "c",
+          "text": "Tell Jordan you'll catch up later, then walk partway with Ben and Maya."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "r5a-1",
+            "character": "NARRATOR",
+            "text": "You jog after Ben and Maya, letting Jordan's group head off without you."
+          }
+        ],
+        "b": [
+          {
+            "id": "r5b-1",
+            "character": "player",
+            "text": "Yeah — yeah, I'm coming.",
+            "action": "falling into step with Jordan's group"
+          }
+        ],
+        "c": [
+          {
+            "id": "r5c-1",
+            "character": "player",
+            "text": "Catch up with you guys later, promise."
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-11a",
+      "branchId": "branch-authentic-belonging",
+      "lines": [
+        {
+          "id": "ba-11a-1",
+          "character": "INTERNAL",
+          "text": "Sat with Maya at lunch. Stood up for Ben in front of the whole room. This isn't a new move — it's just today, finally, all matching up."
+        },
+        {
+          "id": "ba-11a-2",
+          "character": "Ben",
+          "text": "You've kind of been like this all day, you know. In case that wasn't obvious.",
+          "emotion": "shy, almost teasing"
+        },
+        {
+          "id": "ba-11a-3",
+          "character": "Maya",
+          "text": "Don't make it weird. But — yeah. Noticed.",
+          "action": "not quite meeting your eyes"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11a",
+      "branchId": "branch-popularity-conformity",
+      "lines": [
+        {
+          "id": "bp-11a-1",
+          "character": "INTERNAL",
+          "text": "I laughed at Jordan's joke about Ben this morning. I sat at the loud table at lunch. And now I'm here, hoping that counts for nothing."
+        },
+        {
+          "id": "bp-11a-2",
+          "character": "Ben",
+          "text": "...you sure? I mean — you've got, um, other options today.",
+          "emotion": "wary, not quite trusting it"
+        },
+        {
+          "id": "bp-11a-3",
+          "character": "player",
+          "text": "I know how it looked earlier. I'm not asking you to forget that. I'm just asking if we can start now."
+        },
+        {
+          "id": "bp-11a-4",
+          "character": "Maya",
+          "text": "...We'll see.",
+          "emotion": "guarded, but not closing the door"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11a",
+      "branchId": "branch-balanced-growth",
+      "lines": [
+        {
+          "id": "bb-11a-1",
+          "character": "INTERNAL",
+          "text": "I've been everywhere today. Every table, every side. This is the first time I'm picking just one thing and staying in it."
+        },
+        {
+          "id": "bb-11a-2",
+          "character": "Maya",
+          "text": "So this is the version where you actually sit still.",
+          "emotion": "dry, testing"
+        },
+        {
+          "id": "bb-11a-3",
+          "character": "player",
+          "text": "Apparently. We'll see how long it lasts."
+        },
+        {
+          "id": "bb-11a-4",
+          "character": "Ben",
+          "text": "I'll take it. Even temporarily.",
+          "emotion": "small smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "branchId": "branch-popularity-conformity",
+      "lines": [
+        {
+          "id": "bp-11b-1",
+          "character": "INTERNAL",
+          "text": "Jordan's table. Again. Same as lunch, same as the joke I laughed at in third period. It's not a decision anymore, it's just — where I go now."
+        },
+        {
+          "id": "bp-11b-2",
+          "character": "Jordan",
+          "text": "Told you. First day and you already get it.",
+          "emotion": "proud, easy"
+        },
+        {
+          "id": "bp-11b-3",
+          "character": "INTERNAL",
+          "text": "Ben didn't even look back this time. I guess he stopped expecting me to."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "branchId": "branch-authentic-belonging",
+      "lines": [
+        {
+          "id": "ba-11b-1",
+          "character": "INTERNAL",
+          "text": "I sat with Maya. I told the room I was glad to have Ben. I meant all of it. And I'm still walking toward Jordan's table right now."
+        },
+        {
+          "id": "ba-11b-2",
+          "character": "NARRATOR",
+          "text": "Maya doesn't call out. She just watches you go, sketchbook held a little tighter against her chest."
+        },
+        {
+          "id": "ba-11b-3",
+          "character": "INTERNAL",
+          "text": "That's going to cost something. I can feel it costing something already."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11b",
+      "branchId": "branch-balanced-growth",
+      "lines": [
+        {
+          "id": "bb-11b-1",
+          "character": "INTERNAL",
+          "text": "I've been splitting myself between tables all day. Tonight it's just Jordan's — one stop instead of three."
+        },
+        {
+          "id": "bb-11b-2",
+          "character": "Jordan",
+          "text": "See, this is why I like you — you don't get weird about stuff.",
+          "action": "arm around your shoulder"
+        },
+        {
+          "id": "bb-11b-3",
+          "character": "INTERNAL",
+          "text": "Ben and Maya are still out there somewhere. I'll find them tomorrow. Probably."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "branchId": "branch-balanced-growth",
+      "lines": [
+        {
+          "id": "bb-11c-1",
+          "character": "INTERNAL",
+          "text": "Half hello at Jordan's table, half a real conversation with Maya about her sketchbook, one-on-one time with Ben over the project. This is just today, doing what it's been doing since first period."
+        },
+        {
+          "id": "bb-11c-2",
+          "character": "Maya",
+          "text": "You're everywhere today. It's exhausting just watching you.",
+          "emotion": "dry"
+        },
+        {
+          "id": "bb-11c-3",
+          "character": "player",
+          "text": "Tell me about it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "branchId": "branch-authentic-belonging",
+      "lines": [
+        {
+          "id": "ba-11c-1",
+          "character": "INTERNAL",
+          "text": "I've spent all day picking Ben and Maya over the easy option. Right now I'm not fully choosing — just keeping the door open. That still feels like something."
+        },
+        {
+          "id": "ba-11c-2",
+          "character": "Ben",
+          "text": "You didn't have to wave at Jordan's table too, you know.",
+          "emotion": "curious, not accusing"
+        },
+        {
+          "id": "ba-11c-3",
+          "character": "player",
+          "text": "I know. I just didn't want to be rude about it."
+        },
+        {
+          "id": "ba-11c-4",
+          "character": "Maya",
+          "text": "...Fair enough. Give me your number anyway.",
+          "emotion": "small smile"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-11c",
+      "branchId": "branch-popularity-conformity",
+      "lines": [
+        {
+          "id": "bp-11c-1",
+          "character": "INTERNAL",
+          "text": "I laughed along earlier. I stayed quiet when it mattered. Now I'm trying to walk partway with Ben and Maya like that erases anything."
+        },
+        {
+          "id": "bp-11c-2",
+          "character": "Ben",
+          "text": "...Sure. I mean — okay. We can talk.",
+          "emotion": "hesitant, still a little burned"
+        },
+        {
+          "id": "bp-11c-3",
+          "character": "Maya",
+          "text": "Numbers, sure. Doesn't mean much yet, though.",
+          "emotion": "flat, watching to see if you mean it"
+        },
+        {
+          "id": "bp-11c-4",
+          "character": "INTERNAL",
+          "text": "Fair. I'll have to actually show up tomorrow for that to change."
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Riley's internal voice should always undercut sincerity with a joke half a beat later — that's the 'humor as shield' trait doing its job, and it should show up MORE in high-stakes moments (choice-1, choice-4), not less. Jordan never lingers in emotional territory: his lines should always have an exit ramp built in (a joke, a nickname, a 'we'll see you around'), even in scene-7a where he's mildly checked — he deflects rather than apologizes outright. Maya's dialogue should be sparse until she's decided to trust someone, then suddenly specific and a little rambly (the raccoon bit) — resist the urge to make her warm too early. Ben's stammer should almost fully disappear the instant he's talking about the actual project idea (7b, 9a) — that shift in fluency IS his characterization, so don't smooth it out for readability. Ms. Alvarez should never over-explain; she asks rather than tells, and her one 'here's the thing' moment (not used yet in this draft) should be saved for a future episode where she actually addresses what she missed with Ben.",
+  "alternativeLines": [
+    {
+      "lineId": "s7a-1",
+      "alternatives": [
+        "I got Ben. Honestly? Lucky draw.",
+        "I don't know, I think Ben's gonna carry this project."
+      ],
+      "reasoning": "Original may read slightly too composed for a 12-year-old defending someone publicly for possibly the first time; these alternates keep it a little more off-the-cuff and less like a rehearsed speech, matching Riley's 'says something different than rehearsed' trait."
+    },
+    {
+      "lineId": "s9a-1",
+      "alternatives": [
+        "Wait, no, that's actually good — the map of a feeling thing. We had the legend as storm categories, like intensity levels for emotions."
+      ],
+      "reasoning": "Slightly more halting/less polished delivery ('Wait, no—') may read as more realistic for a student speaking up under pressure for the first time, versus the cleaner original."
+    },
+    {
+      "lineId": "s11b-2",
+      "alternatives": [
+        "Called it. Knew you'd come around.",
+        "See? Told you it wouldn't be a whole thing."
+      ],
+      "reasoning": "Offers tonal variants depending on how smug vs. warmly inclusive Jordan should read in this specific branch — 'Called it' leans more self-satisfied, useful if the popularity branch should feel a touch more uncomfortable."
+    }
+  ]
+}

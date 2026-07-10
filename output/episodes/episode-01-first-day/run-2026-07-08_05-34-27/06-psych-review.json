@@ -1,0 +1,90 @@
+{
+  "status": "APPROVED",
+  "concerns": [
+    {
+      "severity": "MINOR",
+      "category": "EMOTIONAL_SAFETY",
+      "issue": "Jordan's deliberate tripping of Sam is presented as ambiguous ('as a joke') without clear adult intervention or consequence",
+      "location": "Scene 4a: 'Sitting With the In-Crowd' - Jordan sticks out foot, tray crashes",
+      "recommendation": "Consider adding a brief moment where Ms. Alvarez or another adult notices and addresses it (even subtly), or ensure player choices make the harm explicit rather than ambiguous. Current framing risks normalizing deliberate humiliation as 'just joking.'",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "AGE_INAPPROPRIATE",
+      "issue": "Sam and Maya both reference 'true crime podcasts they're definitely too young for' as a character detail",
+      "location": "Character backgrounds for both Sam and Maya",
+      "recommendation": "This is a realistic teen behavior but frames consuming adult content as normal without acknowledgment. Consider either removing the reference or having a character express mild concern about it, normalizing age-appropriate media boundaries.",
+      "mustFix": false
+    },
+    {
+      "severity": "MINOR",
+      "category": "EDUCATIONAL",
+      "issue": "The 'group project' resolution paths don't explicitly model how to handle a dominant groupmate after standing up to them",
+      "location": "Scene 6 choices and Scene 7 outcomes",
+      "recommendation": "Add a brief follow-up dialogue showing how Maya/Sam/Devon navigate working together after the conflict, modeling healthy post-conflict collaboration rather than just 'winning' or 'losing' the argument.",
+      "mustFix": false
+    }
+  ],
+  "recommendations": [
+    "Add one line of adult awareness in the Jordan/Sam tripping scene (Ms. Alvarez noticing, even if she doesn't intervene immediately) to signal that deliberate humiliation is being observed, not invisible.",
+    "In the group project resolution, include a moment showing Devon's reaction to being challenged—does he respect it? Resent it? This models how to handle competitive peers post-conflict.",
+    "Consider adding a brief Ms. Alvarez moment in Scene 5 where she pulls Maya aside after grouping is announced—not to lecture, but to signal that her choice in the lunchroom was noticed. This validates the 'quiet intervention' theme already present in her character.",
+    "Ensure all three ending paths (authentic, fit-in, bridge-builder) are equally narratively satisfying—currently the 'bridge-builder' path feels slightly more rewarded, which is thematically appropriate but could subtly pressure players toward that choice.",
+    "The 'defended-then-drifted' outcome is excellent for modeling moral complexity, but ensure it's clearly presented as a valid path, not a 'failed' version of another choice."
+  ],
+  "triggerWarnings": [
+    {
+      "category": "BULLYING",
+      "description": "Deliberate public humiliation (Jordan tripping Sam, causing him to drop his lunch tray in front of the cafeteria). Framed as 'a joke' but is clearly intentional harm. Not graphic, but emotionally pointed.",
+      "severity": "MODERATE",
+      "location": "Scene 4a: 'Sitting With the In-Crowd' and Scene 4a-join-aftermath"
+    },
+    {
+      "category": "SELF_ESTEEM",
+      "description": "Sam's internalized expectation of being targeted and hurt; his learned response of making himself smaller and invisible. Not traumatic, but depicts real social anxiety and exclusion patterns.",
+      "severity": "MILD",
+      "location": "Sam's character background and throughout Scenes 2, 4a, 4b, 6"
+    },
+    {
+      "category": "ANXIETY",
+      "description": "Maya's first-day anxiety, including crying in the car, internal rehearsal of social interactions, and constant self-monitoring of how she's perceived. Realistic but intense for younger players (11-12).",
+      "severity": "MILD",
+      "location": "Scene 1, Maya's internal monologue throughout, Scene 7 reflection"
+    },
+    {
+      "category": "LOSS",
+      "description": "Sam's experience of friendship loss ('people got busy') and Alex's transience (may move mid-semester). Not traumatic, but touches on real grief of drifting friendships.",
+      "severity": "MILD",
+      "location": "Scene 4b: Sam's admission about old friend group; Scene 4c: Alex's disclosure about possible mid-semester move"
+    }
+  ],
+  "scores": {
+    "ageAppropriateness": 9,
+    "emotionalSafety": 8,
+    "educationalValue": 9,
+    "mentalHealthRep": 9,
+    "overall": 9
+  },
+  "summary": {
+    "strengths": [
+      "Excellent age-appropriate language that respects teen intelligence without being condescending; uses realistic vernacular without feeling forced or dated",
+      "Realistic portrayal of first-day anxiety and social navigation—captures the genuine cognitive load of 'who am I in this new space' without romanticizing or trivializing it",
+      "Strong social-emotional learning: models empathy as an active choice with real cost, not just a feeling; shows confidence as multifaceted (standing alone, speaking up, owning decisions)",
+      "Nuanced character work: Jordan, Sam, Devon, and Alex are all complex—not villains or saints, but real adolescents with understandable motivations and hidden depths",
+      "Multiple valid narrative paths that don't punish different choices equally—the 'bridge-builder' path feels earned, not imposed, and the 'fit-in' path includes realistic regret",
+      "Excellent representation: diverse names and backgrounds woven naturally; Alex's they/them pronouns integrated without fanfare; single-parent household (Maya's mom) normalized",
+      "Teacher character (Ms. Alvarez) models quiet, strategic kindness—shows adults noticing and intervening without being preachy or heavy-handed",
+      "Healthy conflict resolution modeled: the group project scene shows how to advocate for an idea without escalating, and how to handle being talked over",
+      "Clear path toward resolution and hope: multiple endings show belonging as buildable, not granted; validates both solitude and connection as valid"
+    ],
+    "improvements": [
+      "The Jordan/Sam tripping scene is the emotional centerpiece of the episode but lacks any signal that an adult is aware of it—consider adding subtle adult observation to signal that deliberate humiliation doesn't go unnoticed",
+      "Group project resolution could include a follow-up moment showing how the group dynamic shifts after conflict—does Devon respect being challenged? Does Sam gain confidence? This would reinforce the 'healthy conflict' lesson",
+      "All three ending paths are strong, but ensure the 'fit-in' and 'defended-then-drifted' paths feel equally valid narratively, not like 'lesser' versions of the 'bridge-builder' path",
+      "Consider adding one moment where an adult (Ms. Alvarez or another) signals to Maya that her choices are being noticed—not to lecture, but to validate that kindness and courage are visible even when they feel private",
+      "The 'true crime podcast' reference for 11-13 year olds could include a brief acknowledgment of age-appropriateness (e.g., a character saying 'I know I'm not supposed to listen to this but...')"
+    ],
+    "readyForAudience": true
+  }
+}

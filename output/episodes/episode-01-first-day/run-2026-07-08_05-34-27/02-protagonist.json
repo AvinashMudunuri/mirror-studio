@@ -1,0 +1,97 @@
+{
+  "character": {
+    "id": "player",
+    "name": "Maya Ferreira",
+    "age": 13,
+    "pronouns": "she/her",
+    "appearance": {
+      "brief": "Medium height, curvy build, brown skin with warm undertones, dark curly hair she's still figuring out how to wear — today it's in a puff that took three tries this morning. Wears a favorite thrifted denim jacket covered in enamel pins from her old school's clubs, like she couldn't decide whether to bring them or leave them behind.",
+      "distinctiveFeatures": [
+        "Chews on the drawstring of her hoodie when nervous (and knows it's a gross habit but can't stop)",
+        "Draws small doodles on her hand and wrist in blue pen — stars, eyes, tiny cartoon faces",
+        "Laughs with her whole face, loud and sudden, then sometimes claps a hand over her mouth like she got caught"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "quick-witted",
+        "adaptable",
+        "secretly anxious",
+        "fiercely loyal once she trusts you",
+        "performs confidence she doesn't fully feel"
+      ],
+      "bigFiveProfile": {
+        "openness": 8,
+        "conscientiousness": 6,
+        "extraversion": 6,
+        "agreeableness": 7,
+        "neuroticism": 7
+      },
+      "mannerisms": [
+        "Rehearses conversations under her breath before she has them",
+        "Straightens her jacket collar like it's armor before walking into a new room",
+        "Makes jokes to defuse tension, even when the joke isn't landing"
+      ],
+      "speechPatterns": [
+        "Talks fast when nervous, slows way down when she actually means something",
+        "Uses 'okay so' and 'wait wait wait' to buy herself thinking time",
+        "Slips into sarcasm as a shield, then immediately worries she went too far"
+      ],
+      "emotionalTendencies": "Maya feels everything at full volume internally but has gotten very good at editing herself in real time for an audience. She reads rooms fast — maybe too fast — and has a habit of pre-deciding who she needs to be before she even walks in. When she slips and shows the real, unedited Maya (the blunt honesty, the dorky enthusiasm, the actual laugh), it surprises people, including her."
+    },
+    "background": {
+      "family": "Only child of a single mom who works two jobs (home health aide + weekend catering gigs); they moved across town after Maya's mom got a promotion, which is why Maya's starting Ridgemont mid-year instead of with everyone else. Money's tight but her mom makes a big deal out of small wins — new-school-first-day pancakes, that kind of thing. Maya feels guilty wanting more than her mom can give.",
+      "interests": [
+        "making stop-motion videos with an old phone",
+        "collecting weird slang and using it wrong on purpose",
+        "basketball she plays badly but loves anyway",
+        "true crime podcasts she's definitely too young for"
+      ],
+      "strengths": [
+        "reads people and social situations quickly",
+        "genuinely curious about others, asks good follow-up questions",
+        "resilient — has done the 'new kid' thing before and survived it"
+      ],
+      "struggles": [
+        "conflates being liked with being safe",
+        "struggles to trust that people will still want her once they see the unfiltered version",
+        "tends to abandon her own opinions mid-sentence if she senses pushback"
+      ],
+      "secrets": [
+        "She cried in the car this morning and told her mom she was 'just tired'",
+        "She already has a whole ranked mental list of which kids in the hallway seem 'safe' to sit near at lunch, and she hates herself a little for doing it",
+        "Back at her old school she was the 'popular funny girl' — and part of her is terrified of finding out she can't do that trick twice"
+      ]
+    },
+    "goals": {
+      "conscious": [
+        "Find a lunch table before the bell rings",
+        "Not be 'the new girl who cried' or 'the new girl who has no friends' by 3pm",
+        "Make at least one person laugh today, on purpose"
+      ],
+      "unconscious": [
+        "To be known and still chosen — not just perform a version of herself people will like",
+        "To prove to herself that starting over doesn't mean losing who she actually is"
+      ]
+    },
+    "voiceGuidelines": {
+      "vocabularyLevel": "Contemporary 13-year-old vernacular — casual slang mixed in naturally, not overdone; occasional self-aware irony about her own dramatics ('okay, dramatic, I know, but—')",
+      "sentenceComplexity": "Short, punchy internal thoughts under stress; run-on sentences when she's excited or rambling to fill silence; trails off with '...' when she's editing herself mid-thought",
+      "emotionalExpressiveness": "Very expressive on the surface (jokes, quips, exaggeration) but she narrates her real feelings mostly to herself/the player — the gap between what she says and what she's thinking is the emotional engine of her voice",
+      "examples": [
+        "\"Okay so — new plan. I'm not 'new girl who cried in the car,' I'm 'new girl who's mysterious and has places to be.' Very chill. Very normal. Ten out of ten normal.\"",
+        "\"I mean — it's fine. It's *fine.* I've done new schools before. This is basically a speedrun. Find a table, don't cry, befriend at least one (1) person, boom, day one, complete.\"",
+        "\"That was — okay that was actually a pretty solid joke, why did nobody laugh, do I smell weird, do I have something on my—\"",
+        "\"You know what, no. No, I'm not gonna pretend I don't know what a paramecium is just so Tyler doesn't feel dumb. That's not — I'm not doing the thing. Not today. Okay, maybe just this once. Ugh.\""
+      ]
+    },
+    "storyRole": "Player-character protagonist of 'First Bell.' Maya is the lens through which the player makes identity choices in real time — every hallway interaction, lunch table decision, and group project moment is a live test of whether she edits herself to fit in or risks being seen. Her arc across the episode is a compressed version of the whole season's theme: belonging isn't something you find by disappearing into the right group, it's something you build by letting the right people see you.",
+    "arcPotential": [
+      "Episode 'First Bell': Maya cycles through performed identities (funny girl, quiet mysterious girl, group-project peacemaker) before a moment forces her to just react honestly — and discovers someone responds better to the real her than any performance.",
+      "Later episode: Maya's old-school friend group finds her on social media and she has to reconcile who she was there with who she's becoming at Ridgemont — testing whether her 'new self' is a betrayal or growth.",
+      "Later episode: Maya, now more settled, becomes the one who has to decide how to treat the NEXT new kid — inheriting the choice that was made for her, and realizing kindness costs her something now that she has a group to lose."
+    ]
+  },
+  "designNotes": "Maya is built around a core tension every new kid feels: the terrifying freedom of a first day. Nobody at Ridgemont knows her yet, which means she could theoretically 'be' anyone — and that possibility is both thrilling and destabilizing. Her defense mechanism (fast talk, jokes, pre-reading rooms) is presented as competent and even likeable, not just anxious, so players don't see her as broken — she's resourceful, she's just resourcing the wrong thing (control) instead of the thing she actually needs (connection). The internal/external voice gap lets the episode dramatize 'fitting in vs. being kind vs. being yourself' as live, moment-to-moment choices rather than abstract lessons: every beat where Maya's spoken line diverges from her inner monologue IS the theme. I avoided making her a blank self-insert; she has a specific home life, specific guilt about money and her mom, and a specific secret shame (crying in the car) that grounds her anxiety in something real rather than generic 'new kid nerves.'",
+  "representationNotes": "Maya is written as a Black and Latina girl (Ferreira surname, described skin tone and hair texture) from a working-class single-parent household — chosen deliberately since 'new kid navigating code-switching and belonging' resonates especially for kids who already do social/cultural code-switching daily, without making that the explicit 'lesson' of the episode. Her mixed heritage and family structure are present in texture (mom's jobs, the pancake ritual) rather than flagged as Issues. Care was taken not to make her poverty a plot device for pity — it's one more thing she's quietly managing, same as everyone else's stuff, which is truer to how middle schoolers actually experience economic difference among peers."
+}

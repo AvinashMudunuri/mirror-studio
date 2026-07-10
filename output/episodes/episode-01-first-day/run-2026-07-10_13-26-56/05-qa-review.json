@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "seasonId 'season-1' has no corresponding season object in the world's 'seasons' array — the world only lists a display string 'Season 1: First Year', not an id. This works today but is a fragile implicit mapping if seasons are ever formalized as objects.",
+      "location": "episode.seasonId",
+      "suggestion": "Either add an explicit id/name mapping for seasons in the world schema, or document that seasonId is a free-form slug not directly tied to the world.seasons string array."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "branchDialogue coverage is incomplete for some combinatorial paths. For example, a player who chooses choice-2:a (popular path) and then choice-5:a (integrated ending) lands on scene-ending-integrated, but branchDialogue only supplies variants keyed 'branch-integrated', 'branch-authentic', and 'branch-bridge' for that scene — there is no 'branch-popular' variant, so that specific combo would presumably fall back to a generic/default variant (branch-integrated) with no acknowledgment of the earlier popular-table choice.",
+      "location": "branchDialogue[sceneId=scene-ending-integrated]",
+      "suggestion": "Either add a branch-popular variant for scene-ending-integrated (and equivalent missing combos for the other two endings) or confirm/document that the base 'ending' branchId (e.g. branch-integrated) is always used as a fallback when the earlier-path branch has no specific line, so silent path combos degrade gracefully."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "estimatedPlayTime is listed as 12 minutes, but the episode contains ~24 scenes and 7 choice points with fairly dense dialogue; actual read-through time for a careful player is likely higher.",
+      "location": "episode.estimatedPlayTime",
+      "suggestion": "Re-time a full playthrough (including the longest branch, e.g. Front Steps → Hallway → Classroom → Lunch Setup → Lunch-Alex → Alex-Confront → Project Team → Climax → Ending) and adjust estimatedPlayTime accordingly, or note that this reflects a single-branch estimate rather than full content."
+    },
+    {
+      "category": "STYLE",
+      "message": "Mr. Alvarez's character sheet mentions a running classroom whiteboard gag ('DAYS SINCE INCIDENT') and a bartender mug, neither of which is referenced anywhere in the episode's actual scene descriptions or dialogue.",
+      "location": "scene-classroom",
+      "suggestion": "Not required for this episode, but consider a small visual beat referencing these established character details to reinforce continuity/characterization if the scene is ever expanded."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 34,
+    "failedChecks": 0,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Consider adding explicit 'startScene' metadata at the episode level (currently inferred from array order = scene-arrival) to remove ambiguity for the rendering pipeline.",
+    "Consider filling in the missing combinatorial branchDialogue variants (or explicitly documenting fallback behavior) so no player-path combination reaches an ending with only generic narration.",
+    "Double-check estimated play time against a full manual playthrough timing pass before publishing."
+  ]
+}

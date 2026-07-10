@@ -1,0 +1,128 @@
+{
+  "failing": [
+    "qaReviewer",
+    "gameDesigner",
+    "ethicsReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-4c-new-table has no choice attached, but its defaultNextScene points to scene-5c-project-assignment. However, scene-5c-project-assignment is only reachable via choice-3c (which requires choosing scene-4c-new-table). This creates a valid path, but the choice object choice-3c references scene-4c-new-table as its 'scene' field, meaning the choice is correctly attached. However, examining choice-3c more carefully: all three options point to 'scene-5c-project-assignment', making the choice functionally meaningless — all paths converge regardless of player input. — Suggested fix: Either: (a) Create three distinct scene variants for the three options (e.g., scene-5c-project-assignment-a/b/c), or (b) Remove the choice and use defaultNextScene instead, or (c) Keep the choice but have the responseDialogue in choiceDialogue[choice-3c] differentiate the outcomes meaningfully even though they lead to the same scene. (location: choices[choice-3c])",
+        "severity": "BLOCKER"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome branch 'branch-authentic-connection' is triggered by ['choice-2:b', 'choice-4:a', 'choice-5:a']. However, choice-4 only appears in scene-6-project-tension, which is reachable from scene-5a-project-assignment (if choice-2:a) or scene-5b-project-assignment (if choice-2:b) or scene-5c-project-assignment (if choice-2:c). If player chooses choice-2:b (sit with Sam), they reach scene-4b-sam-table. This scene has choice-3b attached. All three options of choice-3b lead to scene-5b-project-assignment. Scene-5b-project-assignment has defaultNextScene 'scene-6-project-tension'. So choice-4 IS reachable. The path is: choice-2:b → choice-3b:[any] → [auto-advance] → choice-4:a → [auto-advance] → choice-5:a. This is valid. However, the triggeredBy list omits choice-3b. While choice-3b doesn't affect the outcome (all options lead to the same scene), it's still part of the path. The trigger list should include it for completeness: ['choice-2:b', 'choice-3b:[any]', 'choice-4:a', 'choice-5:a']. Actually, re-reading the spec: triggeredBy lists should include all choice points that matter to the outcome. Since choice-3b doesn't branch the outcome (all options converge), it may be acceptable to omit it. However, for clarity and maintainability, it should be included. — Suggested fix: Add choice-3b to the triggeredBy list, or add a note that choice-3b is included but all options converge. (location: outcomes[branch-authentic-connection].triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Trait mapping for choice-3c is missing. The choice has three options (a, b, c), but the traitMapping field is absent from the choice object. — Suggested fix: Add traitMapping to choice-3c. Based on the options, suggest: { 'a': {'CONFIDENCE': 2, 'ADAPTABILITY': 1}, 'b': {'ADAPTABILITY': 1, 'EMPATHY': 1}, 'c': {'ADAPTABILITY': 1} } (location: choices[choice-3c].traitMapping)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Trait mapping for choice-3b is missing. The choice has three options (a, b, c), but the traitMapping field is absent. — Suggested fix: Add traitMapping to choice-3b. Based on the options and narrative, suggest: { 'a': {'EMPATHY': 2, 'CONFIDENCE': 1}, 'b': {'ADAPTABILITY': 2, 'EMPATHY': 1}, 'c': {'CONFIDENCE': 2, 'EMPATHY': 1} } (location: choices[choice-3b].traitMapping)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Trait mapping for choice-1 is missing. The choice has three options (a, b, c), but the traitMapping field is absent. — Suggested fix: Add traitMapping to choice-1. Based on the options, suggest: { 'a': {'CONFIDENCE': 2}, 'b': {'EMPATHY': 2, 'CONFIDENCE': 1}, 'c': {'ADAPTABILITY': 2} } (location: choices[choice-1].traitMapping)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-4a-popular-table has a choice attached (choice-3a), but the choice's 'scene' field is 'scene-4a-popular-table', which is correct. However, the three options of choice-3a point to different scenes: 'scene-4a-defend-aftermath', 'scene-4a-join-aftermath', 'scene-4a-deflect-aftermath'. All three scenes have defaultNextScene 'scene-5a-project-assignment'. This is correct branching. However, I notice that scene-4a-popular-table itself has no defaultNextScene field. This is correct because it has a choice attached. The choice-3a options all lead to valid scenes. This is correct. — Suggested fix: No fix needed — this was a review error. (location: scene-4a-popular-table and choice-3a)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Branch 'branch-fit-in-first' is triggered by ['choice-2:a', 'choice-3a:b', 'choice-5:b']. The path is: choice-2:a (sit with Jordan) → choice-3a:b (laugh along) → [auto-advance to scene-4a-join-aftermath] → [auto-advance to scene-5a-project-assignment] → choice-4:[any] → [auto-advance to scene-6-*-aftermath] → [auto-advance to scene-7-reflection] → choice-5:b (accept Jordan's invite). However, the triggeredBy list omits choice-4. Since choice-4 has three options (a, b, c) that lead to different scenes (scene-6a-speak-aftermath, scene-6b-compromise-aftermath, scene-6c-quiet-aftermath), the choice DOES affect the path. The branch should include choice-4 in the triggeredBy list. However, looking at the branch description: 'Maya chases visibility and ease, sitting with Jordan's crowd, laughing along when Sam gets hurt, and accepting an invitation into the in-crowd for tomorrow.' This description doesn't specify which choice-4 option was selected. The branch seems to be triggered by any choice-4 option, as long as choice-2:a, choice-3a:b, and choice-5:b are selected. If that's the case, the triggeredBy should be ['choice-2:a', 'choice-3a:b', 'choice-4:*', 'choice-5:b'] or similar notation. — Suggested fix: Either add choice-4 to the triggeredBy list with a wildcard notation, or add a comment explaining that choice-4 is included but doesn't affect the branch outcome. (location: outcomes[branch-fit-in-first].triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Choice 3c (scene-4c-new-table) lacks meaningful consequence differentiation. All three options lead to identical next scene (scene-5c-project-assignment) with no branching variation in how Alex responds or the table dynamic plays out. — Suggested fix: Create three distinct scene continuations: (a) Alex gets energized and they immediately start recruiting, (b) Alex appreciates the low-key approach and bonds deeper, (c) Alex gently calls out the ambivalence and Maya has to pick a side. Each should affect the project group dynamic differently. (location: Choice 3c and scene-4c aftermath)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Scene 4a/4b/4c (lunch table choice aftermath) creates three parallel 1-2 minute scenes, but only one is ever played. This means 66% of written content is invisible to any single playthrough, creating dead weight in the design. — Suggested fix: Consider consolidating: have all three table options present in one scene, with choice determining where Maya sits and what she witnesses (rather than three separate scene trees). Or add a 'what you missed' mechanic that hints at alternate paths. (location: Scenes 4a, 4b, 4c and their aftermath branches)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Choice 1 (hallway response to Jordan) has three distinct options but all three lead to identical next scene (scene-3-lunchroom) with no visible consequence. The choice feels like it should matter but doesn't mechanically. — Suggested fix: Have the three options affect Jordan's attitude or openness in the lunchroom scene. Option A (confident joke) → Jordan is impressed and more welcoming. Option B (redirect) → Jordan is slightly defensive but respects it. Option C (laugh along) → Jordan treats Maya as an easy mark. Small dialogue shifts that show the choice mattered. (location: Choice 1 and transition to scene-3-lunchroom)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "Choice 3a (popular table aftermath: defend/laugh/deflect) has strong consequence differentiation in the immediate scene, BUT the emotional payoff is inconsistent. Scene 4a-defend-aftermath shows Sam mouthing 'thanks,' but in 4a-join-aftermath and 4a-deflect-aftermath, Sam's reaction is less clear and less rewarding. — Suggested fix: Give all three paths equally clear but different consequences: Defend → Sam trusts you but Jordan's friendship becomes conditional. Laugh → Sam avoids you but Jordan fully accepts you. Deflect → Both relationships stay neutral but you feel guilty. Make each path have a real cost. (location: Scene 4a aftermath options and Sam's response)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "GAME_DESIGNER",
+        "message": "The five outcome branches (authentic-connection, fit-in-first, bridge-builder, defended-then-drifted, avoidant-adaptation) are narratively distinct but mechanically, players can't easily see what triggers each path until after playing. No clear 'choice architecture' guides players toward different endings. — Suggested fix: Add subtle environmental or dialogue hints that telegraph which path you're on. Example: After choice-2, have a brief internal monologue from Maya about what she just chose ('I picked the quiet table — that's a choice, right?'). Or add a 'path indicator' UI that shows which ending track you're currently on. (location: Outcome branches and choice triggers)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Sam Okafor's characterization relies heavily on quiet, withdrawn, socially isolated traits without sufficient complexity or agency in his own narrative arc within this episode — Recommendation: Expand Sam's agency in the episode. Consider: (1) Give Sam an active choice moment where he initiates connection rather than only receiving it; (2) Show his wit/humor landing successfully on his own terms, not just in asides; (3) In the project scene, ensure his idea gets genuine consideration and that he advocates for it, not just proposes it tentatively. The sketchbook reveal is good—lean into moments where Sam's talents are visible and valued on his own initiative. (location: Character profile: Sam Okafor; scenes 2-6 (hallway through project work))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "The 'defend Sam' choice (choice-3a:a) is framed as the ethical high ground, but the episode doesn't adequately explore or model the social cost of standing up to Jordan, potentially oversimplifying peer dynamics for the target age — Recommendation: In scene-4a-defend-aftermath, add a moment where standing up to Jordan has a brief social cost—not a huge one, but real. Example: Jordan's smile tightens, she makes a joke that lands a bit sharper, or there's an awkward beat before the group moves on. Then show that Sam notices and appreciates the cost Maya paid, which reframes the choice as 'worth it' but not 'costless.' This models that ethical choices are real choices, not just obviously right moves. (location: Scene 4a (popular table incident) and choice-3a outcomes)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Alex Torres-Mireles is the only explicitly non-binary character and their non-binary identity is introduced casually but never explored, potentially tokenizing their identity as a diversity marker rather than an authentic character element — Recommendation: Add a small moment where Alex's identity is acknowledged naturally. Options: (1) A brief internal thought from Alex about pronouns/identity as they introduce themselves; (2) Maya naturally using they/them and it feeling normal; (3) A moment where Alex mentions how many times they've had to re-introduce their pronouns at new schools. This doesn't need to be heavy—just one line that shows identity matters to Alex, not just to the representation checklist. (location: Scene 4c (lunch table introduction): 'Hey, I'm Alex — they/them.' Character profile notes mention pronouns but no exploration of what that means to Alex or how it shapes their experience)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "The 'fit-in' path (choice-2:a → choice-3a:b → choice-5:b) is presented as a valid ending without sufficient narrative weight given to the ethical cost, potentially normalizing complicity as an acceptable choice for this age group — Recommendation: Strengthen the ethical weight of the 'fit-in' ending. In scene-8b-end-crowd or the branch dialogue, add a moment where Maya explicitly feels the disconnect between what she did and who she wants to be. Example: 'It feels good. Loud, easy, instantly visible. Somewhere under that, quieter, is the memory of Sam's tray hitting the floor, and Jordan's half-apology that didn't quite finish the sentence.' This is already there, but make it more prominent. Consider adding a follow-up text from Sam that Maya doesn't answer, or a moment where she sees Sam alone again and has to look away. The choice should feel like a choice with consequences, not just a different path. (location: Scene 8b (end-crowd branch) and the broader narrative arc of the 'fit-in' path)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "ETHICS_REVIEWER",
+        "message": "Devon Park is the only East Asian character and is characterized primarily through competitive, controlling, anxious traits without sufficient positive complexity, risking the 'model minority' stereotype (high-achieving, anxious, controlling) without counterbalance — Recommendation: Add a moment in scene-6 or scene-5b where Devon shows a different side. Options: (1) A moment of genuine humor or self-awareness ('I know I'm doing the thing, I can't help it'); (2) A moment where he admits uncertainty or asks for help; (3) A moment where his competitiveness comes from a place of insecurity that's sympathetic, not just annoying. Even one line in the project scene where Devon shows he's aware of his own pattern would add dimension and prevent the stereotype from being the only read. (location: Character profile: Devon Park; scenes 5-6 (project assignment and conflict))",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Character 'jordan' is referenced with pronouns 'he/him' in scene-7-reflection dialogue (s7-4: 'Jordan passes by on her way to a ride' — wait, this says 'her', but then s7-7 says 'she's gone, back to being unbothered'). However, the character definition for jordan lists pronouns as 'she/her'. The dialogue is internally consistent (uses 'her' and 'she'), but the scene description at scene-7-reflection says 'Jordan passes by on his way to a ride' in one version. Actually, re-reading: the dialogue uses 'her' and 'she' consistently. But the character object lists jordan's pronouns as 'she/her', which matches the dialogue. However, in scene-4a-popular-table, the dialogue uses 'he' for Jordan: 's4a-6: jordan sticks out a foot' and 's4a-8: jordan says 'Oops' — but then 's4a-8' says 'Oh my god — Sam, I'm sorry' which is gender-neutral. Let me re-examine: In the character definition, jordan is defined as 'she/her'. In scene-4a-popular-table dialogue, there is no explicit pronoun used in the dialogue lines themselves. In scene-7-reflection, the NARRATOR uses 'her' and 'she'. This is actually CONSISTENT. However, I need to check if there are any mismatches. Re-reading scene-4a-popular-table more carefully: no pronouns in dialogue. Scene-7-reflection uses 'her' and 'she' which matches the character definition. This appears CONSISTENT after careful review. — Suggested fix: No fix needed — this was a review error. Pronouns are consistent. (location: characters[jordan].pronouns vs. dialogue usage throughout)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome branch 'branch-defended-then-drifted' is triggered by choice path ['choice-2:a', 'choice-3a:a', 'choice-5:b']. However, choice-3a only appears in scene-4a-popular-table, which is only reachable via choice-2:a (sit with Jordan). But choice-3a has three options: a (defend), b (join), c (deflect). If player chooses choice-2:a → choice-3a:a (defend), they reach scene-4a-defend-aftermath. The defaultNextScene for scene-4a-defend-aftermath is 'scene-5a-project-assignment'. But the branch trigger says choice-5:b should follow. Choice-5 is in scene-7-reflection. Scene-5a-project-assignment does transition to scene-6-project-tension (via defaultNextScene), which transitions to scene-6a-speak-aftermath (if choice-4:a is selected). Scene-6a-speak-aftermath transitions to scene-7-reflection. So the path IS reachable: choice-2:a → choice-3a:a → [auto-advance] → choice-4:a → [auto-advance] → choice-5:b. This is valid. However, the branch 'branch-defended-then-drifted' suggests the player defended Sam (choice-3a:a) but then drifted back to Jordan (choice-5:b). But there's a missing choice-4 in the trigger list. The trigger should be ['choice-2:a', 'choice-3a:a', 'choice-4:a', 'choice-5:b'] to be complete and accurate. — Suggested fix: Add 'choice-4:a' to the triggeredBy array to accurately reflect the full path. (location: outcomes[branch-defended-then-drifted].triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Outcome branch 'branch-bridge-builder' is triggered by ['choice-2:c', 'choice-3c:a', 'choice-4:b', 'choice-5:c']. However, choice-3c is attached to scene-4c-new-table, which is only reachable via choice-2:c. All three options of choice-3c lead to scene-5c-project-assignment (as noted in the earlier BLOCKER). So choice-3c:a is reachable. But the issue is: choice-3c has three options (a, b, c), all leading to the same scene. The branch trigger specifies choice-3c:a, but since all options converge, the choice doesn't actually differentiate the outcome. The responseDialogue in choiceDialogue[choice-3c] does differentiate the dialogue, but the scene is the same. This means the branch 'branch-bridge-builder' is triggered by choice-3c:a, but choice-3c:b and choice-3c:c would also lead to the same scene and could trigger the same branch if choice-4:b and choice-5:c are also selected. This is a logic error: the branch should be triggered by choice-3c:[any], not choice-3c:a specifically, since the choice doesn't actually branch the scene flow. — Suggested fix: Refactor choice-3c to either: (a) create three distinct scene variants, or (b) remove choice-3c from the triggeredBy list since it doesn't affect branching, or (c) update the triggeredBy to use a wildcard notation like 'choice-3c:*' if the system supports it. (location: outcomes[branch-bridge-builder].triggeredBy and choice-3c)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Scene scene-4a-join-aftermath references character 'jordan' in dialogue (s4aj-2: 'jordan says...'), but the character object uses 'jordan' (lowercase). However, in dialogue attribution, the character ID should match the character object ID exactly. Checking: character object has id 'jordan' (lowercase). Dialogue line s4aj-2 has character 'jordan' (lowercase). This is CONSISTENT. However, re-reading the dialogue: s4aj-2 says 'jordan says \"See? Told you she was funny.\"' — but wait, the character object for jordan uses pronouns 'she/her', so 'she' is correct. Actually, I need to re-examine this. The dialogue line says 'jordan' (the character), and the dialogue is 'See? Told you she was funny.' The pronoun 'she' refers to Maya, not jordan. So this is correct. Let me re-check all jordan dialogue for consistency... Actually, upon careful re-reading, all jordan dialogue appears consistent with the character definition (she/her). This was a false alarm. — Suggested fix: No fix needed — this was a review error. (location: dialogue attribution and character consistency)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Branch 'branch-avoidant-adaptation' is triggered by ['choice-2:a', 'choice-3a:c', 'choice-4:c']. However, the branch description says 'Maya keeps the peace at every turn — deflecting the tray incident, staying quiet when Devon steamrolls Sam's idea — prioritizing smoothness over friction at every possible cost point.' This suggests choice-5 should also be included in the triggeredBy, as the player's final choice at the end of the day would affect whether the branch is truly 'avoidant-adaptation'. However, the triggeredBy list doesn't include choice-5. This means the branch could be triggered by choice-2:a → choice-3a:c → choice-4:c → choice-5:[any]. If choice-5:a or choice-5:c is selected, the branch would still be triggered, which contradicts the branch description (which implies a specific choice-5 option). The triggeredBy list should either: (a) include choice-5 with a specific option, or (b) include choice-5:* to indicate any option, or (c) be updated to reflect that the branch is triggered by the first three choices regardless of choice-5. — Suggested fix: Add choice-5 to the triggeredBy list. Based on the branch description, suggest choice-5:c (text Sam a bigger idea) would contradict the 'avoidant' theme, so the branch should probably be triggered by choice-5:b (accept Jordan's invite) or choice-5:a (text Sam alone). Recommend: ['choice-2:a', 'choice-3a:c', 'choice-4:c', 'choice-5:b'] (location: outcomes[branch-avoidant-adaptation].triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "Branch 'branch-defended-then-drifted' description says 'Maya sat with the popular table but broke from them to defend Sam when it matters, then still drifts back toward Jordan's group the next day.' However, the triggeredBy list is ['choice-2:a', 'choice-3a:a', 'choice-5:b']. This path is: choice-2:a (sit with Jordan) → choice-3a:a (defend Sam) → [auto-advance] → choice-4:[any] → [auto-advance] → choice-5:b (accept Jordan's invite). The branch is triggered by any choice-4 option, but the branch description doesn't specify which. If choice-4:a (speak up for Sam's idea) is selected, the branch would be 'defended-then-drifted'. But if choice-4:c (stay quiet) is selected, the branch would be 'defended-then-drifted' as well, which contradicts the description (the player defended Sam at lunch but then stayed quiet in the project group). The triggeredBy list should include choice-4 with a specific option, or the branch description should be updated to reflect that the branch is triggered by any choice-4 option. — Suggested fix: Add choice-4:a to the triggeredBy list to match the branch description, or update the description to reflect that choice-4 is included but doesn't affect the branch outcome. (location: outcomes[branch-defended-then-drifted].triggeredBy and description)",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

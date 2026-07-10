@@ -28,7 +28,7 @@ This roadmap outlines the implementation strategy for Project MIRROR Studio, bre
 | 2. Core Agents | ✅ Done, exceeded milestone | Real episodes generated end-to-end, not just outlines |
 | 3. Review Agents | ⚠️ Mostly done | 4 of 5 reviewers built (no Teen Reviewer); debate system never built (feedback routing instead) |
 | 4. Production Agents | ✅ Minimal scope done, differently than planned | Publish is a human action in `apps/admin`, not an agent (ADR 003); Analytics still deferred (no players yet) |
-| 5. Frontend Experience | ❌ Not started | `apps/admin` is an internal dashboard, not a player-facing app |
+| 5. Frontend Experience | ⚠️ Started (minimal) | `apps/player` on port 3400: interactive playthrough of published episodes via the player content projection; not yet profiles, reflection UI, or world selection |
 | 6. Polish & Launch | ❌ Not started | No monitoring, nothing published; basic CI exists (build + test) |
 | 7. Growth & Iteration | ❌ Not started | N/A until Phase 4-6 exist |
 
@@ -133,9 +133,11 @@ A trimmed player-facing content projection (the read path returns the full autho
 
 **Goal**: Build player-facing web application
 
-### Status: Not started
+### Status: Minimal preview started (2026-07-10)
 
-None of the 5 planned components (Episode Player, Character System, Reflection Interface, World Selection, Profile & Progress) exist. `apps/admin` is the only frontend in the repo, and it is explicitly internal/read-only: a Next.js dashboard over `output/episodes/` for run status, verdicts, token cost, revision history, and the rendered bound script. It has no concept of a player, a session, or making a choice.
+**What exists:** `apps/player` — a player-facing Next.js app (port 3400) that reads published Postgres snapshots, projects them via `projectPlayerEpisode()` (`@mirror/schemas`), and renders an interactive playthrough (scene dialogue, choices, branch-specific ending lines). The admin publish API also exposes the same projection at `GET /api/published/[world]/[episodeNumber]?format=player`.
+
+**What doesn't exist yet:** Episode Player polish (no save/resume, no trait UI), Character System, Reflection Interface, World Selection, Profile & Progress. `apps/admin` remains the internal authoring/review dashboard.
 
 ### Before this phase can start
 Needs Phase 4 (or at least a stable content format/API) so the frontend has something real to consume beyond raw run-folder JSON.
@@ -202,6 +204,7 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 - **Claude is callable via AWS Bedrock as well as the direct Anthropic API** (`docs/decisions/004-aws-bedrock-alternative-backend.md`, Accepted): `CLAUDE_BACKEND=bedrock` swaps `LLMGateway`'s client with no other pipeline changes, for teams standardizing on AWS IAM/billing instead of an Anthropic API key.
 - **Reviewer approval gate now checks severity, not just status tier**: Game Designer/Ethics Reviewer/Child Psychologist previously passed on a coarse `GOOD`/`APPROVED` status alone; `REVIEWER_PASSES` (`pipeline-helpers.js`) now also requires zero CRITICAL/MAJOR issues and an honest readiness boolean. Verified against real historical run data: this correctly flips every real run where these reviewers ran — including two previously-documented "prod-ready" runs — from passing to failing on findings the old gate silently ignored. See `docs/OPEN-QUESTIONS.md` item 11.
 - **QA Reviewer (and to a lesser extent Game Designer) on haiku fabricated findings on one real complex episode**, not just misread conventions — live-verified a 22-error QA review against a 27-scene episode where 20 of the errors named fields that provably did not exist in the data QA received. Escalating QA/Game Designer/Ethics Reviewer to `claude-sonnet-5` (env override, not yet a permanent default) let both episode 1 and episode 2 reach genuine `APPROVED` on their first pass, using far fewer tokens than the haiku attempts that chased fabricated findings. **Open question, not yet a settled conclusion**: whether this generalizes below 27 scenes, and whether to promote the escalation to a permanent default — see `docs/OPEN-QUESTIONS.md` item 4's "OPEN" subsection.
+- **Product intent and protagonist model** (`docs/decisions/005-product-intent-and-protagonist-model.md`, Accepted 2026-07-10): player product = SEL practice + reflection, not plot franchise; **serial within a world**, **anthology across worlds** (new protagonist per world); **player profile** (future) holds growth, not one canon character saga. Cross-world story bridges optional; Sports Academy does not require NEW_SCHOOL plot continuity.
 
 ### Pending decisions (unchanged from v1.0 — still not reached)
 - Illustration generation (Midjourney API vs. DALL-E vs. Stable Diffusion)
@@ -228,9 +231,9 @@ Cheap, well-scoped, not yet done:
 1. Extend `previousEpisodes` continuity to the remaining 3 reviewers if evidence shows it's worth it.
 
 Bigger, would start actual Phase 4/5 work:
-2. A trimmed player-facing content projection — the publish read path currently returns the full authoring shape as-is (deliberately descoped, see the ADR); worth revisiting once a real frontend needs something narrower.
+2. ~~A trimmed player-facing content projection~~ — done 2026-07-10. `projectPlayerEpisode()` in `@mirror/schemas`; admin API `?format=player`; consumed by `apps/player`.
 3. Admin phase 3: rich editors, re-run specific agents, versioning — backed by the Postgres layer.
-4. A real Phase 5 kickoff (episode player) is not recommended until Phase 4's data contract exists — building a frontend against a shape that's still `output/episodes/*.json` invites a rewrite.
+4. Phase 5 expansion: save/resume, trait tracking UI, reflection prompts, world selection — building on the player projection + `apps/player` skeleton.
 
 ---
 

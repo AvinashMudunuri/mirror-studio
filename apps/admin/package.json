@@ -9,6 +9,7 @@
     "clean": "rm -rf .next"
   },
   "dependencies": {
+    "@mirror/schemas": "*",
     "next": "^15.3.3",
     "pg": "^8.13.1",
     "react": "^19.1.0",
