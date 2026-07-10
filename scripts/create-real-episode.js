@@ -33,6 +33,7 @@ const {
 const { compileScreenplay } = require('./lib/compile-screenplay');
 const { buildEpisodeRow, persistEpisode } = require('./lib/persist-episode');
 const { loadPreviousEpisodes, loadPreviousCast } = require('./lib/load-previous-episodes');
+const { checkSeasonProtagonistContinuity, printContinuityGuardResult } = require('./lib/continuity-guard');
 
 // Import from built packages (resolve from script location)
 const packageRoot = path.resolve(__dirname, '..');
@@ -767,6 +768,19 @@ async function main() {
     const previousNpcCount = previousCast.filter(c => c.id !== 'player').length;
     if (previousNpcCount > 0) {
       console.log(`   👥 Continuity: ${previousNpcCount} supporting character(s) from a previous episode are available to bring back if the outline references their id\n`);
+    }
+
+    const continuityGuard = await checkSeasonProtagonistContinuity({
+      episodeNumber: EPISODE_BRIEF.episodeNumber,
+      worldId: TEST_WORLD.id,
+      episodesRoot: episodesRootForContinuity,
+      databaseUrl: DATABASE_URL,
+      carryOverProtagonist: previousProtagonist,
+      carryOverSource: previousCastSource
+    });
+    printContinuityGuardResult(continuityGuard);
+    if (!continuityGuard.ok) {
+      process.exit(1);
     }
 
     console.log('   🔄 Calling Claude API to generate story structure...\n');
