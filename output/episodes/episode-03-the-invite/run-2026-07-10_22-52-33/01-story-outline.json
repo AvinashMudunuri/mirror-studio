@@ -1,0 +1,544 @@
+{
+  "episodeOutline": {
+    "title": "Showcase",
+    "synopsis": "Mr. Alvarez announces a school-wide Passion Project Showcase, and the pressure it puts on Alex's most guarded creation — a hand-drawn invented world — forces Wren to choose, again and again, between the ease of Maya's orbit and the harder work of actually showing up for someone. When a private page gets leaked for a laugh, Wren learns that loyalty isn't a single grand gesture; it's a string of small, costly choices nobody else may ever notice her make.",
+    "themes": [
+      "Inclusion",
+      "Social Status",
+      "Loyalty"
+    ],
+    "targetTraits": [
+      "EMPATHY",
+      "CONFIDENCE",
+      "EMOTIONAL_AWARENESS"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1-showcase-announcement",
+        "title": "The Announcement",
+        "location": "Mr. Alvarez's classroom",
+        "characters": [
+          "player",
+          "mr-alvarez",
+          "alex",
+          "jordan",
+          "maya"
+        ],
+        "duration": 1.5,
+        "description": "Mr. Alvarez announces the Passion Project Showcase — a public, grade-wide event where students present something that actually matters to them. Alex goes rigid at the word 'public.' Maya is already whispering about assembling a 'showcase committee' to curate the cool acts. Jordan bounces over, thrilled, already planning a playlist.",
+        "emotionalBeat": "Anticipation laced with old, familiar anxiety — Wren's performance instinct switches on before she's decided anything at all.",
+        "defaultNextScene": "scene-2-maya-invite"
+      },
+      {
+        "id": "scene-2-maya-invite",
+        "title": "The Committee",
+        "location": "Hallway outside homeroom",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Maya catches Wren before class, offering her a seat on the committee curating the showcase's 'good' acts. She mentions, almost casually, that they're 'trimming' a few weird ones to keep it tight. Jordan hovers nearby, clearly wanting Wren to say yes and also clearly not wanting to be the one who says no.",
+        "emotionalBeat": "The pull of an easy yes versus the itch of knowing what 'trimming' probably means.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-3a-curation-meeting",
+        "title": "The List",
+        "location": "The courtyard lunch table",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "The committee reviews sign-ups over lunch. Laughs turn pointed when someone reads Alex's entry aloud — 'some notebook world thing' — and suggests cutting it for time. Jordan goes quiet and stares at his tray.",
+        "emotionalBeat": "The specific, small-room feeling of watching a joke about someone else start to gather momentum.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-3b-library-alex",
+        "title": "The Direct Question",
+        "location": "Library, back table",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Wren finds Alex hunched over their notebook, the invented world spread open — coastlines, invented alphabets, a whole history in the margins. Alex asks bluntly whether Wren thinks people will laugh if they actually show this.",
+        "emotionalBeat": "Being trusted with something real, and realizing how easy it would be to answer wrong.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-4a-defend",
+        "title": "Holding the Line",
+        "location": "The courtyard lunch table",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Wren vouches for the project. Maya's mouth tightens, but she doesn't fight it past a certain point — the project stays on the list, and something unreadable flickers across Maya's face.",
+        "emotionalBeat": "The specific tension of pushing back against someone whose approval still feels good to have.",
+        "defaultNextScene": "scene-5-the-leak"
+      },
+      {
+        "id": "scene-4a-silent",
+        "title": "Crossed Off",
+        "location": "The courtyard lunch table",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Wren says nothing. The project gets crossed off the list with a laugh. Jordan glances at her — not accusing, just noticing — and looks away first.",
+        "emotionalBeat": "The quiet, private guilt of a silence nobody will ever call out loud.",
+        "defaultNextScene": "scene-5-the-leak"
+      },
+      {
+        "id": "scene-4b-encourage",
+        "title": "The Real Thing",
+        "location": "Library, back table",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Wren tells Alex the truth: it's the best thing about them, and they should show the real thing. Alex, startled, flips to a deeper page — a piece of the world they've never shown anyone — and decides, right there, to present it as-is.",
+        "emotionalBeat": "A friendship shifting from cautious to chosen.",
+        "defaultNextScene": "scene-5-the-leak"
+      },
+      {
+        "id": "scene-4b-safe",
+        "title": "The Backup",
+        "location": "Library, back table",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Wren suggests something easier to explain, something less exposed. Alex nods, closes the notebook a little too carefully, and starts sketching a blander backup idea instead. Something in their eyes closes with it.",
+        "emotionalBeat": "Good intentions landing as a small, specific disappointment.",
+        "defaultNextScene": "scene-5-the-leak"
+      },
+      {
+        "id": "scene-5-the-leak",
+        "title": "The Leak",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "A photo of a private notebook page — Alex's invented world, clearly not meant for an audience — surfaces in the grade-wide group chat with a mocking caption. Laughter ripples across the cafeteria. Alex freezes. A few kids glance at Wren, half-expecting her to do something, since 'she's friends with him, right?'",
+        "emotionalBeat": "The room holding its breath to see what Wren does with a spotlight she didn't ask for.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-6a-public-defense",
+        "title": "Out Loud",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Wren calls it out, right there, in front of everyone. The room quiets in that specific way rooms do. Maya, surprisingly, doesn't pile on — something like respect crosses her face. Alex is stunned, grateful, and a little more exposed than they wanted to be.",
+        "emotionalBeat": "The adrenaline crash after doing the brave, loud thing.",
+        "defaultNextScene": "scene-7-alvarez-prep"
+      },
+      {
+        "id": "scene-6b-private-support",
+        "title": "Off to the Side",
+        "location": "Hallway alcove",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Wren pulls Alex out of the noise, not making a scene, just sitting with them. Alex admits, quietly, that this always happens somewhere. No public reckoning, but a real one, just the two of them.",
+        "emotionalBeat": "Comfort without spectacle — quieter, but no less real.",
+        "defaultNextScene": "scene-7-alvarez-prep"
+      },
+      {
+        "id": "scene-6c-silence",
+        "title": "Looking Away",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Wren says nothing. Across the cafeteria, Alex catches her eye for one second — checking — and looks away first, like they already knew the answer before they asked.",
+        "emotionalBeat": "The specific, sinking cost of the choice not to move.",
+        "defaultNextScene": "scene-7-alvarez-prep"
+      },
+      {
+        "id": "scene-7-alvarez-prep",
+        "title": "The Schedule",
+        "location": "Classroom, after school",
+        "characters": [
+          "player",
+          "mr-alvarez"
+        ],
+        "duration": 1,
+        "description": "Mr. Alvarez is finalizing the showcase order. He's clearly aware something happened today. He asks Wren, genuinely, whether he should move Alex's slot somewhere safer and smaller — or leave it exactly where it was. 'I used to beg teachers to move my name down the list too,' he adds, half to himself.",
+        "emotionalBeat": "Being asked to speak for someone else, and realizing that might not be the right move at all.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-8-backstage-question",
+        "title": "One More Direct Question",
+        "location": "Backstage hallway, before the showcase",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Minutes before the showcase, Alex turns to Wren, notebook in hand. 'Do you actually want to be here, or are you just being nice? You can tell me. I'd rather know.'",
+        "emotionalBeat": "The moment the whole episode has been quietly building toward — no more room to perform.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-9a-showcase-real",
+        "title": "The Real World, Out Loud",
+        "location": "Auditorium",
+        "characters": [
+          "player",
+          "alex",
+          "mr-alvarez",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Alex presents the real invented world — voice shaking, then steadying as they find Wren in the crowd. Genuine applause. Even Maya nods, once, like she means it. Afterward, Alex says thanks like it costs them nothing to say — which means everything.",
+        "emotionalBeat": "Belonging built on truth, and how much sturdier it feels than the performance ever did.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-9b-showcase-safe",
+        "title": "The Backup, Politely Applauded",
+        "location": "Auditorium",
+        "characters": [
+          "player",
+          "alex",
+          "mr-alvarez",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Alex presents the safer backup project — competent, careful, forgettable. Polite applause. Afterward, Alex thanks Wren for coming, but there's a new, small distance behind their eyes, a door that stayed half-closed.",
+        "emotionalBeat": "The quiet ache of a friendship that survived the day but didn't quite deepen.",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2-maya-invite",
+        "prompt": "Maya's waiting for an answer.",
+        "context": "Joining the committee means proximity, visibility, and a say in what gets cut. Declining means walking away from exactly the kind of invitation Wren spent all of last year wishing for.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Join the committee — you can always steer it from the inside.",
+            "nextScene": "scene-3a-curation-meeting"
+          },
+          {
+            "id": "b",
+            "text": "Pass — you've got somewhere else to be. Go find Alex.",
+            "nextScene": "scene-3b-library-alex"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2a",
+        "scene": "scene-3a-curation-meeting",
+        "prompt": "Alex's project is about to get quietly cut from the list.",
+        "context": "Saying something costs social capital in a room that runs on ease. Saying nothing costs something else.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speak up — vouch for the project.",
+            "nextScene": "scene-4a-defend"
+          },
+          {
+            "id": "b",
+            "text": "Let it go. It's not your fight.",
+            "nextScene": "scene-4a-silent"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "EMPATHY": -1,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2b",
+        "scene": "scene-3b-library-alex",
+        "prompt": "Alex is waiting for a real answer.",
+        "context": "Encouraging honesty risks being wrong about how the room will react. Playing it safe avoids that risk — and maybe avoids the point of asking in the first place.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"It's the best thing about you. Show them the real one.\"",
+            "nextScene": "scene-4b-encourage"
+          },
+          {
+            "id": "b",
+            "text": "\"Maybe do something easier to explain — keep the notebook private.\"",
+            "nextScene": "scene-4b-safe"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 1,
+            "EMOTIONAL_AWARENESS": 2
+          },
+          "b": {
+            "EMOTIONAL_AWARENESS": -1,
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-5-the-leak",
+        "prompt": "The cafeteria is laughing, and Alex hasn't moved.",
+        "context": "Every reaction here is visible to a room that's already decided this is a moment. There is no version of this that costs nothing.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Call it out — loudly, right now, in front of everyone.",
+            "nextScene": "scene-6a-public-defense"
+          },
+          {
+            "id": "b",
+            "text": "Pull Alex aside quietly. Deal with the rest later.",
+            "nextScene": "scene-6b-private-support"
+          },
+          {
+            "id": "c",
+            "text": "Stay still. Let it pass.",
+            "nextScene": "scene-6c-silence"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 1
+          },
+          "b": {
+            "EMPATHY": 2,
+            "EMOTIONAL_AWARENESS": 2
+          },
+          "c": {
+            "CONFIDENCE": -2,
+            "EMPATHY": -2
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-7-alvarez-prep",
+        "prompt": "Mr. Alvarez wants your read on the schedule.",
+        "context": "He's asking you to speak for someone who isn't in the room. That might be exactly the wrong move, even with the best intentions.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"Don't move anything yet — ask Alex what they actually want.\"",
+            "nextScene": "scene-8-backstage-question"
+          },
+          {
+            "id": "b",
+            "text": "\"Move them to the smaller slot. Less crowd, less risk.\"",
+            "nextScene": "scene-8-backstage-question"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMOTIONAL_AWARENESS": 2,
+            "EMPATHY": 1
+          },
+          "b": {
+            "EMPATHY": 1,
+            "EMOTIONAL_AWARENESS": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-8-backstage-question",
+        "prompt": "\"Do you actually want to be here, or are you just being nice?\"",
+        "context": "There is no version of the truthful answer that doesn't admit the day cost something. There is a version of the easy answer that avoids saying so.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tell the truth — name the cost, and say you're choosing this anyway.",
+            "nextScene": "scene-9a-showcase-real"
+          },
+          {
+            "id": "b",
+            "text": "Crack a joke. Keep it light. Don't actually answer.",
+            "nextScene": "scene-9b-showcase-safe"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMOTIONAL_AWARENESS": 2,
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "EMOTIONAL_AWARENESS": -2,
+            "CONFIDENCE": -1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-full-authentic",
+        "name": "Chosen, Not Convenient",
+        "triggeredBy": [
+          "choice-1:b",
+          "choice-2b:a",
+          "choice-3:a",
+          "choice-4:a",
+          "choice-5:a"
+        ],
+        "description": "Wren skips the committee, tells Alex the truth in the library, defends them loudly when the leak hits, insists Alvarez ask rather than assume, and answers honestly backstage.",
+        "outcome": "Alex presents the real invented world to genuine applause; the friendship is fully, mutually chosen, and Wren starts to understand that this version of belonging is heavier to carry but doesn't wobble."
+      },
+      {
+        "id": "branch-full-status",
+        "name": "The Cost of Staying Easy",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-2a:b",
+          "choice-3:c",
+          "choice-4:b",
+          "choice-5:b"
+        ],
+        "description": "Wren joins Maya's committee, stays quiet as Alex's project gets cut, freezes during the leak, lets Alvarez decide for Alex, and deflects the direct question backstage.",
+        "outcome": "Alex presents a hollowed-out backup project to polite applause and quietly, permanently recalibrates how much to trust Wren — the door narrows, and Wren feels it close without being told why."
+      },
+      {
+        "id": "branch-late-course-correct",
+        "name": "Late, But Real",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-2a:b",
+          "choice-3:a",
+          "choice-4:a",
+          "choice-5:a"
+        ],
+        "description": "Wren starts on the status path, fails to protect Alex early, but reverses hard at the leak — defending loudly, insisting on Alex's agency with Alvarez, and answering honestly backstage.",
+        "outcome": "The friendship survives on the strength of the recovery rather than the setup, proving the episode's core idea: it's not one grand gesture that earns loyalty, it's what you do after you get it wrong."
+      }
+    ],
+    "emotionalArc": [
+      "Ease and performance-mode confidence at the announcement, mirroring Wren's practiced survival system",
+      "Quiet pressure and divided loyalty as Maya's invitation and Alex's vulnerability compete for the same lunch period",
+      "Small, private guilt or pride depending on whether Wren speaks up in the curation scene",
+      "Public exposure and adrenaline at the leak — the episode's emotional peak, with no neutral option available",
+      "Reflective vulnerability with Alvarez, reframing 'protecting' someone versus actually listening to them",
+      "Quiet, high-stakes intimacy in the backstage direct question, echoing Alex's pattern from Episode 2",
+      "Resolution that is either earned closeness or a subtle, aching distance — never punished outright, always felt"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Wren moves from managing her social position by instinct to actively choosing, under real pressure, what kind of friend she wants to be — discovering that loyalty isn't a single decision but a sequence of smaller, replayable ones."
+      },
+      {
+        "character": "alex",
+        "arc": "Alex tests, again, whether this new place will go the way the last ones did — this time under public exposure rather than a private assignment, raising the stakes of Episode 2's fragile trust into something either strengthened or quietly retracted."
+      },
+      {
+        "character": "maya",
+        "arc": "Maya's reaction to Wren defending Alex (respect flickering through the polish) suggests her own hunger for someone to hold ground around her, without ever resolving into a redemption arc — she stays exactly as complicated as she is."
+      },
+      {
+        "character": "mr-alvarez",
+        "arc": "His question about the schedule is the episode's quiet thesis moment — modeling, without lecturing, the difference between protecting someone and actually asking them what they need."
+      },
+      {
+        "character": "jordan",
+        "arc": "Jordan's persistent discomfort-without-action in every version of the curation scene reinforces his established limit: warmth without willingness to hold real conflict, making Wren's choice to do so matter more by contrast."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "EMPATHY",
+        "hiddenIn": "Choices about defending Alex's project, reacting to the leak, and how honestly Wren answers Alex's direct backstage question — never framed as a 'kindness meter,' always framed as a specific social risk."
+      },
+      {
+        "trait": "CONFIDENCE",
+        "hiddenIn": "Choices about speaking up in front of Maya's table and reacting publicly versus privately to the leak — measuring willingness to be visible, not just to be right."
+      },
+      {
+        "trait": "EMOTIONAL_AWARENESS",
+        "hiddenIn": "The library scene's advice-giving, the Alvarez scheduling question (assuming versus asking), and the final honest-versus-deflecting answer — measuring whether Wren notices what Alex actually needs versus what feels comfortable to offer."
+      }
+    ],
+    "relationshipDynamics": [
+      "Wren & Alex: continues Episode 2's fragile, direct-question-driven trust — this episode tests whether that trust holds under public pressure rather than private assignment stress.",
+      "Wren & Maya: an ongoing referendum on whether proximity to Maya's magnetism is being mistaken for belonging, with Maya occasionally, uncomfortably human underneath the curation instinct.",
+      "Wren & Mr. Alvarez: shifts from 'the adult who creates the pressure' to 'the adult who models how to sit with it,' without ever explicitly stating his own outsider history.",
+      "Wren & Jordan: a low-stakes mirror for what happens when someone likable simply never risks anything — present in every version of the courtyard scene."
+    ],
+    "replayHooks": [
+      "The four distinct combinations of the choice-2 fork (defend/silent x encourage/safe) meaningfully change what Alex actually presents at the showcase, not just how the audience reacts.",
+      "Maya's reaction to being defended out loud (choice-3a) only appears in that specific branch, rewarding replay with a rare glimpse of her unpolished side.",
+      "The Alvarez scheduling choice (choice-4) changes nothing about the plot mechanically but recontextualizes every prior choice as either consistent or hypocritical, inviting a full replay to see the 'ask, don't assume' version.",
+      "The two endings are deliberately not framed as 'good' and 'bad' — players who got the safe ending often want to replay specifically to see what the 'real' project even was."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Model that inclusion is built from a sequence of small, repeatable choices rather than one heroic moment",
+      "Distinguish protecting someone from actually listening to what they want (agency vs. paternalism)",
+      "Show that loyalty under social cost is a skill, not a fixed trait — practiced and sometimes recovered late",
+      "Normalize the discomfort of speaking up in a room that rewards staying quiet"
+    ],
+    "conversationStarters": [
+      "Was there a moment in the episode where staying quiet felt safer than it actually was?",
+      "Do you think Mr. Alvarez was right to ask Wren instead of asking Alex directly — why might an adult do that?",
+      "What's the difference between the 'safe slot' choice and the 'ask first' choice, even though they both come from good intentions?",
+      "Which ending felt more honest to you, and why might 'polite applause' feel worse than no applause at all?"
+    ]
+  },
+  "designNotes": "This episode deliberately reuses Episode 2's 'direct question' motif as a structural rhyme — Alex asking a blunt, unguarded question at a moment of maximum stakes — because the returning pattern is itself characterization: this is how Alex tests trust. The scene graph is built as a fork-and-converge structure (branch at choice-1, sub-fork at choice-2a/2b, converge at scene-5, fork again at choice-3, converge at scene-7, final fork at choice-5) so that replay value comes from meaningfully different content in the middle acts rather than purely cosmetic dialogue swaps at the end. The two 'safe slot' options at choice-4 intentionally lead to the same next scene id, because the divergence there is emotional/textual (how prepared or consulted Alex feels) rather than structural — this keeps the graph size manageable while preserving the choice's felt weight.",
+  "uncertainties": [
+    "Whether choice-4 (the Alvarez scheduling question) lands as clearly consequential to players, since both options route to the same next scene — the divergence is written into tone/context rather than structure, which risks feeling like a 'fake choice' if the connecting text isn't carefully differentiated in final implementation.",
+    "Whether three options at choice-3 (public/private/silent) is the right number, or whether it dilutes the binary tension that makes choice-5 so sharp — could collapse to two options if playtesting shows the 'private support' middle path is underused.",
+    "Whether Maya's brief flicker of respect after being publicly defended risks softening her too much, undercutting her value as a cautionary mirror for Wren."
+  ],
+  "alternativesConsidered": [
+    "Considered making the leak scene the episode's opening beat and flashing back to the curation meeting, but decided linear chronology better preserves the slow-building dread and keeps choice-2's consequences legible.",
+    "Considered a three-way split at choice-1 (committee / library / neutral-third-option) but cut it to two to keep the branch tree from exceeding scope for a 12-15 minute episode.",
+    "Considered giving Maya a redemption-arc ending where she personally apologizes to Alex, but rejected it as too neat — leaving her only partially softened keeps her useful as an ongoing 'mirror' character across the season rather than resolving her in one episode."
+  ]
+}

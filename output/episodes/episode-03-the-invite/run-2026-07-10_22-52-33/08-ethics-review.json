@@ -1,0 +1,70 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex's gender identity (they/them) is never mentioned or discussed by any character, which is good in that it isn't tokenized, but it also means the pronoun usage is invisible in a way that could be strengthened with at least one natural, non-fraught acknowledgment (e.g., a classmate using 'they' correctly without comment) to model normalization for readers who may not be familiar with nonbinary pronouns.",
+      "location": "Throughout - Alex's characterization",
+      "harmPotential": "Low harm potential; mostly a missed opportunity for quiet modeling of pronoun respect for cisgender readers who might not encounter this normalization elsewhere.",
+      "recommendation": "Consider one small beat where a character uses 'they/them' naturally in dialogue referring to Alex, reinforcing normalization without making it a lesson."
+    },
+    {
+      "severity": "MINOR",
+      "category": "BIAS",
+      "issue": "Jordan, one of the only characters whose background explicitly centers a large, loud Nigerian-American family, is coded as conflict-avoidant, eager-to-please 'peacemaker' who freezes under real pressure and whose jokes 'don't quite land.' While not a harmful stereotype on its own, paired with Wren's Nigerian father being largely defined by his career causing instability, there's a pattern of Nigerian/Nigerian-diaspora family contexts being linked to pressure, striving, or discomfort rather than varied portrayal.",
+      "location": "Jordan's character profile; Wren's family background (external character data)",
+      "harmPotential": "Low-moderate; could read as a subtle pattern if viewed across the season, though this single episode uses Jordan's background minimally.",
+      "recommendation": "In future episodes, ensure Jordan and other Nigerian-diaspora characters get moments of strength/agency unrelated to social anxiety or family pressure, to avoid a cumulative pattern."
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "In the 'status' branch outcome, Alex's relationship with Wren quietly deteriorates with no explicit repair mechanic offered within this episode (the door 'doesn't open again the same way'), which is emotionally realistic but could leave younger players without a clear sense of how to repair a friendship after failing to show up for someone.",
+      "location": "scene-9b-showcase-safe / branch-full-status outcome",
+      "harmPotential": "Minimal; players who pick the 'safe' path repeatedly may internalize that mistakes are unrecoverable, which slightly undercuts the growth-mindset goal, though the season framing ('Late, But Real' branch) does model recovery elsewhere.",
+      "recommendation": "Consider an epilogue beat or future-episode hook explicitly showing that repair is still possible after the status path, to avoid implying permanent social consequences for early missteps."
+    }
+  ],
+  "strengths": [
+    "Alex is written with genuine agency, interiority, and specificity (the invented world, the grief-language detail) rather than existing solely to teach Wren a lesson — avoiding the 'magical minority'/plot-device trap.",
+    "Alex's guardedness and backstory of humiliation at a previous school is handled with nuance — it's framed as a learned defense mechanism, not an inherent trait tied to identity, and the episode explicitly centers Alex's own choice/agency in the backstage scene ('Do you actually want to be here?').",
+    "Maya, the 'mean girl' archetype, is given real interiority and a backstory (she was 'the Alex' once) that resists a flat villain reading and models that social cruelty often stems from fear rather than power.",
+    "Mr. Alvarez's arc explicitly models the difference between well-intentioned paternalism ('move them to a safer slot') and respecting a young person's agency ('ask Alex what they actually want') — direct, age-appropriate ethical modeling for the target audience.",
+    "The branching structure ensures no single choice is 'punished' with melodrama; consequences are proportionate, realistic, and reversible (the 'Late, But Real' path), teaching that recovery after a misstep is possible.",
+    "Diversity of the cast (Nigerian-American, Brazilian-American, Chinese-American/Latino, Black, nonbinary) is presented as ordinary texture of an urban middle school rather than flagged as noteworthy — good normalization.",
+    "The cyberbullying/leak plotline is handled responsibly: the violation (photo taken without consent and mocked) is clearly framed as the wrongdoing, not the content of Alex's notebook itself ('That's not yours to laugh at... Somebody stole it')."
+  ],
+  "recommendations": [
+    "Add a small, natural beat normalizing Alex's they/them pronouns in dialogue from a peer.",
+    "Track Jordan's and other Nigerian-diaspora characters' portrayals across the season to ensure varied, non-repetitive framing (avoid consistently linking their arcs to anxiety/pressure).",
+    "Consider a brief future hook confirming repair is possible even after the 'status' branch, reinforcing growth-mindset messaging for players who choose the harder path."
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 9,
+    "tropes": 9,
+    "ethicalModeling": 9,
+    "culturalSensitivity": 8,
+    "overall": 8
+  },
+  "flaggedContent": [],
+  "summary": {
+    "verdict": "This episode handles a socially and emotionally complex scenario (public humiliation, social status pressure, and friendship loyalty) with notable care. Alex is a well-drawn, non-tokenized character with real agency; Maya's antagonism is humanized rather than flattened; and Mr. Alvarez's arc offers a clear, age-appropriate model of the difference between protecting and listening to a young person. No critical or major ethical issues were identified. Minor opportunities exist to normalize Alex's pronouns more explicitly and to ensure balanced portrayal of Nigerian-diaspora characters across the season.",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [
+      "Normalize Alex's they/them pronouns with a natural in-dialogue usage by a peer.",
+      "Watch for a cross-episode pattern linking Nigerian-diaspora family contexts primarily to pressure/anxiety.",
+      "Consider reinforcing that repair remains possible after the 'status' branch outcome."
+    ],
+    "strengths": [
+      "Authentic, agency-driven portrayal of a guarded nonbinary character",
+      "Humanized antagonist (Maya) with backstory resisting flat villainy",
+      "Strong, explicit modeling of agency-respecting adult behavior via Mr. Alvarez",
+      "Responsible handling of the leaked-content/cyberbullying plotline",
+      "Naturalistic, non-tokenized diversity throughout the cast"
+    ],
+    "readyForPublication": true
+  }
+}
