@@ -13,6 +13,7 @@
     "test:integration": "jest tests/integration",
     "test:models": "node scripts/test-api-models.js",
     "test:bedrock-models": "node scripts/test-bedrock-models.js",
+    "test:bedrock": "node scripts/test-bedrock-connectivity.js",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
     "demo:episode": "npx tsx scripts/demo-sample-episode.ts",
