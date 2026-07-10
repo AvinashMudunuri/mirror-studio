@@ -10,6 +10,32 @@ export interface PublishedPlayerEpisode {
   player: PlayerEpisode;
 }
 
+export interface PublishedPlayerEpisodeSummary {
+  worldId: string;
+  episodeNumber: number;
+  title: string;
+  synopsis: string;
+  publishedAt: string;
+}
+
+/** All episodes with a durable published snapshot, ordered by world then episode number. */
+export async function listPublishedPlayerEpisodes(pool: Pool): Promise<PublishedPlayerEpisodeSummary[]> {
+  const result = await pool.query(
+    `SELECT s.world_id, e.episode_number, e.title, e.synopsis, e.published_at
+     FROM episodes e
+     JOIN seasons s ON s.id = e.season_id
+     WHERE e.published_at IS NOT NULL
+     ORDER BY s.world_id ASC, e.episode_number ASC`
+  );
+  return result.rows.map(row => ({
+    worldId: row.world_id,
+    episodeNumber: row.episode_number,
+    title: row.title,
+    synopsis: row.synopsis,
+    publishedAt: row.published_at
+  }));
+}
+
 /** Fetch the durable published snapshot and project it for the player app. */
 export async function getPublishedPlayerEpisode(
   pool: Pool,
