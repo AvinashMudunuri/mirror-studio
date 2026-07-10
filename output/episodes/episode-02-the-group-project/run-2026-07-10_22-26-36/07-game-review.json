@@ -1,0 +1,88 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "CHOICES",
+      "issue": "Choice-1's option A ('Alex is actually cool, I don't think that's fair.') is telegraphed as the clearly 'good' choice by all surrounding narrative framing (Alvarez's mission, thematic goals, Alex-as-sympathetic-victim), reducing genuine dilemma tension.",
+      "location": "scene-2-lunch-pressure / choice-1",
+      "impact": "Players optimizing for 'good outcome' rather than roleplaying their character can trivially guess the 'correct' answer, flattening the intended moral weight.",
+      "fix": "Add a stronger cost to the integrity option in the immediate moment (e.g., Maya visibly withdrawing an invitation, a beat where Wren loses something concrete) so the trade-off is felt in real time, not just implied.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scenes 6-8 (spotlight setup, needling, public stand/silence) move very fast in sequence with three back-to-back high-tension beats and almost no breathing room between them.",
+      "location": "scene-6-spotlight-setup through scene-8",
+      "impact": "Could feel rushed/relentless rather than building tension with release; player may not have time to emotionally register the stakes before the next decision point.",
+      "fix": "Insert a brief beat (even one line of internal monologue or a reaction shot) between scene-6 and scene-7 to let the dread land before the joke hits.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPLAYABILITY",
+      "issue": "While the branching is well-designed structurally (5 choices, combinatorial variants via branchDialogue), the actual scene content (locations, core plot beats) converges quickly back to the same scenes (scene-4, scene-6, scene-9, scene-11), limiting how 'different' a replay actually feels visually/structurally.",
+      "location": "overall structure",
+      "impact": "Replay value is driven mostly by dialogue variation rather than structurally distinct content, which may feel like reading alternate lines rather than a truly different playthrough.",
+      "fix": "Consider adding at least one scene-level structural divergence (e.g., a unique location or scene exclusive to the 'laughed along' path) to make early choices feel more materially different.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "No explicit tutorial/onboarding moment for trait system (INTEGRITY/COMMUNICATION/JUDGMENT) — players are never shown that these choices are being tracked in-fiction.",
+      "location": "entire episode",
+      "impact": "New players may not understand that their choices are shaping a persistent trait profile, reducing perceived stakes of decisions.",
+      "fix": "Even a subtle UI cue or first-choice framing line acknowledging 'this matters' would help calibrate expectations without breaking immersion.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "Choice-4 (the hallway confrontation) is an excellent 'no audience' choice design — stripping away social cover makes the decision feel genuinely personal rather than performative, which is a strong piece of choice architecture.",
+    "The five-choice branching cascades meaningfully into different final-scene tones via branchDialogue, giving real texture to replays without needing entirely new scene trees.",
+    "Choice-5's three-way split (Alex/Maya/Bridge) is a great design touch — the bridge option rewards players who threaded earlier choices carefully, creating a satisfying 'high-judgment' path distinct from a binary good/bad framing.",
+    "Pacing arc (dread → pressure → private consequence → connection window → public stakes → climax → quiet resolution) closely tracks the emotionalArc metadata and reads as a well-constructed tension curve.",
+    "Alvarez's obliviousness during the public-shaming moment is a clever design choice — it removes the 'adult will fix it' safety net, forcing full weight onto the player's choice."
+  ],
+  "recommendations": [
+    "Add a small felt cost to the 'defend Alex early' choice so it's not simply the obviously-correct answer for trait-optimizing players.",
+    "Break up the scene-6/7/8 tension cluster with a brief pacing beat.",
+    "Introduce at least one structurally unique scene per major branch (not just dialogue variation) to boost replay distinctiveness.",
+    "Consider a light, diegetic acknowledgment of trait tracking early on for onboarding clarity."
+  ],
+  "scores": {
+    "engagement": 8,
+    "choiceQuality": 8,
+    "pacing": 7,
+    "playerAgency": 8,
+    "replayability": 7,
+    "overall": 8
+  },
+  "metrics": {
+    "averageSceneLength": 45,
+    "choiceFrequency": 0.38,
+    "branchingFactor": 2.4,
+    "estimatedReplayValue": 7
+  },
+  "summary": {
+    "verdict": "A well-constructed, emotionally coherent episode with strong choice architecture — particularly the audience-free hallway confrontation and the three-way final table choice. Pacing and stakes escalate logically, and the branching dialogue rewards attentive replay. Issues present are minor polish items, not structural blockers.",
+    "keyIssues": [
+      "First choice's 'right answer' is somewhat telegraphed by surrounding context",
+      "Tension cluster in scenes 6-8 lacks a breathing beat",
+      "Replay variety leans on dialogue differences more than structural divergence"
+    ],
+    "topStrengths": [
+      "Choice-4 hallway confrontation as a high-agency, audience-free climax",
+      "Three-way final choice (Alex/Maya/Bridge) rewarding nuanced play",
+      "Strong tension arc matching emotional beats to escalating social stakes"
+    ],
+    "mustFix": [],
+    "niceToHave": [
+      "Add felt cost to early integrity choice",
+      "Insert breathing beat between scenes 6 and 7",
+      "Add structurally distinct scene content per branch",
+      "Light onboarding cue for trait tracking"
+    ]
+  }
+}

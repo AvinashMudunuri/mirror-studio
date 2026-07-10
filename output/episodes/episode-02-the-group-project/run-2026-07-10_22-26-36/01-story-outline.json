@@ -1,0 +1,559 @@
+{
+  "episodeOutline": {
+    "title": "Show Your Work",
+    "synopsis": "Two weeks into life at Crestwood, Wren's survival system is working exactly as designed — until Mr. Alvarez pairs her with Alex, the guarded kid nobody at Maya's table has bothered to actually meet, for a term project. When the lunch table turns the pairing into a joke, Wren has to decide, fast and repeatedly, whether her spot at that table is worth more than her word. A library session, a surprise in-class share-out, and one very direct question from Alex later, Wren learns that 'fitting in' and 'telling the truth' don't always fit in the same sentence — and that the version of herself she picks now is the one that sticks.",
+    "themes": [
+      "Peer Pressure",
+      "Honesty",
+      "Teamwork"
+    ],
+    "targetTraits": [
+      "INTEGRITY",
+      "COMMUNICATION",
+      "JUDGMENT"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1-pairing-announcement",
+        "title": "The List Goes Up",
+        "location": "Homeroom, second period",
+        "characters": [
+          "player",
+          "mr-alvarez",
+          "maya",
+          "jordan",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Mr. Alvarez tapes a project list to the whiteboard: 'Neighborhood Histories,' partners assigned, not chosen. Wren scans for her name and finds it next to Alex's. Across the room, Maya's eyebrows go up in a way that is not subtle. Jordan mouths 'oh no' with something between sympathy and amusement.",
+        "emotionalBeat": "A small dread — the first crack in the easy first-week script",
+        "defaultNextScene": "scene-2-lunch-pressure"
+      },
+      {
+        "id": "scene-2-lunch-pressure",
+        "title": "Table Talk",
+        "location": "Cafeteria, Maya's table",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Maya slides a tray down next to Wren's like it's already decided where Wren sits. 'Alex? Rough draw. He drew a whole comic about a war between two kinds of moss once — I saw it fall out of his backpack.' The table laughs. Jordan laughs a half-second late, checking Wren's face before committing to it. Someone asks Wren, directly, if she's going to 'suffer through it' or get Alvarez to switch her out.",
+        "emotionalBeat": "The first real test — laugh along, or don't",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-3-defend-alex",
+        "title": "Not Nothing",
+        "location": "Hallway outside the cafeteria",
+        "characters": [
+          "player",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Alex is at their locker, close enough that they clearly heard some of it. They don't say anything about the moss comment — just glance at Wren with the specific wariness of someone waiting to see if this was a one-time performance. Jordan hangs back, relieved someone else did the hard part.",
+        "emotionalBeat": "A door left slightly open, not yet trusted",
+        "defaultNextScene": "scene-4-library-session"
+      },
+      {
+        "id": "scene-3-laugh-along",
+        "title": "The Sound Carries",
+        "location": "Cafeteria, near the tray return",
+        "characters": [
+          "player",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Alex is closer than Wren realized — close enough to have heard the laugh, not just the joke. Their face does the fast, practiced thing of deciding not to react. Jordan won't meet Wren's eyes either, which is its own kind of verdict.",
+        "emotionalBeat": "The cost of the laugh, arriving late but arriving",
+        "defaultNextScene": "scene-4-library-session"
+      },
+      {
+        "id": "scene-4-library-session",
+        "title": "Forty Minutes",
+        "location": "School library, study room 2",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Mr. Alvarez has given pairs the period to start research. Alex has already outlined three topics, color-coded, no wasted motion — clearly used to doing group projects mostly alone. There's a folded page sticking out of their bag that looks like the edge of a hand-drawn map. The silence in the room is the kind that's waiting to be either broken or made permanent.",
+        "emotionalBeat": "A fork disguised as small talk",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-5-open-up",
+        "title": "The Moss War",
+        "location": "School library, study room 2",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Wren brings up the lunch comment on purpose — names it, doesn't excuse it. Alex is quiet for a second too long, then, almost against their will, pulls out the notebook: an entire invented world, mapped in tiny, obsessive handwriting. They only show it because Wren asked the right way. The project actually gets easier after that — ideas instead of silence.",
+        "emotionalBeat": "Trust, given carefully, on purpose",
+        "defaultNextScene": "scene-6-spotlight-setup"
+      },
+      {
+        "id": "scene-5-tense-work",
+        "title": "Just the Facts",
+        "location": "School library, study room 2",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Wren keeps it about the assignment — sources, sections, who's writing what. It's efficient. It's also clearly not nothing to Alex, who answers everything in short, correct sentences and doesn't offer anything that isn't asked for. The notebook stays zipped in the bag the whole time.",
+        "emotionalBeat": "Productive, and quietly cold",
+        "defaultNextScene": "scene-6-spotlight-setup"
+      },
+      {
+        "id": "scene-6-spotlight-setup",
+        "title": "Surprise, Today",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "alex",
+          "mr-alvarez",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Mr. Alvarez, beaming with the confidence of a man who does not remember what being thirteen felt like, announces that every pair will share their 'rough idea' out loud today — 'just to build the muscle.' Maya's eyes find Wren's across the room, delighted. Alex goes very still.",
+        "emotionalBeat": "The stakes get public whether anyone's ready or not",
+        "defaultNextScene": "scene-7-maya-needles"
+      },
+      {
+        "id": "scene-7-maya-needles",
+        "title": "Just Kidding, Kind Of",
+        "location": "Classroom, in front of the class",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "mr-alvarez",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Alex starts to explain their genuinely good idea — mapping the neighborhood's history through the businesses that vanished — and stumbles on a word. Maya, not even unkindly, fills the silence with a joke about 'moss-level detail' that gets a laugh. Alex's jaw tightens. Mr. Alvarez, oblivious, says 'keep going, this is great' to the room in general. Everyone is, for one second, looking at Wren.",
+        "emotionalBeat": "The referendum moment — in front of everyone",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-8-public-stand",
+        "title": "For the Record",
+        "location": "Classroom, in front of the class",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "mr-alvarez"
+        ],
+        "duration": 1,
+        "description": "Wren says, clearly enough for the room to hear, that the idea is actually really good, and picks up the thread Alex dropped. It lands — Alvarez nods, a few kids actually lean in, and Maya's laugh dies into something more careful. Alex doesn't look at Wren, but their shoulders come down half an inch.",
+        "emotionalBeat": "Relief with a side of exposure",
+        "defaultNextScene": "scene-9-aftermath-confrontation"
+      },
+      {
+        "id": "scene-8-public-silence",
+        "title": "Letting It Sit",
+        "location": "Classroom, in front of the class",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "mr-alvarez"
+        ],
+        "duration": 1,
+        "description": "Wren says nothing. The joke gets its full life span before Alvarez moves things along. Alex finishes their part in a flat, fast voice designed to end the moment as quickly as possible and sits back down without looking at anyone.",
+        "emotionalBeat": "The quiet that follows not choosing",
+        "defaultNextScene": "scene-9-aftermath-confrontation"
+      },
+      {
+        "id": "scene-9-aftermath-confrontation",
+        "title": "Just Tell Me",
+        "location": "Hallway, after class",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Alex catches Wren alone before she can get away with not talking about it. 'You laughed at lunch. Or you didn't. I can't actually tell with you.' It's not an accusation, exactly — it's a test, direct and unarmored in a way that costs Alex something to ask. There's a real answer here, and a easier one.",
+        "emotionalBeat": "The climax — nowhere left to perform",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-10-honest-repair",
+        "title": "The True Thing",
+        "location": "Hallway, after class",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Wren tells the truth — the laugh, the fear of losing a seat, the fact that it wasn't okay even with a reason attached. Alex listens with their arms crossed, then, slowly, uncrosses them. 'Okay,' they say. 'That's more than anyone's said to me here.' It's not forgiveness exactly. It's a start that feels real.",
+        "emotionalBeat": "Earned, fragile trust",
+        "defaultNextScene": "scene-11-final-choice"
+      },
+      {
+        "id": "scene-10-fractured-trust",
+        "title": "Noted",
+        "location": "Hallway, after class",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Wren deflects — 'I don't even remember that, honestly' — and watches Alex's face close like a door that was never really open. 'Right,' Alex says, already walking. 'Cool. Good talk.' The project will still get finished. Something else won't.",
+        "emotionalBeat": "The cost of the easier lie",
+        "defaultNextScene": "scene-11-final-choice"
+      },
+      {
+        "id": "scene-11-final-choice",
+        "title": "Where You Sit",
+        "location": "Cafeteria, presentation day",
+        "characters": [
+          "player",
+          "maya",
+          "jordan",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "The project's turned in, graded well, over. Maya waves Wren over to the usual table like nothing happened — there's an open seat with Wren's name basically on it. Across the room, Alex sits alone with their notebook, not looking over, not not looking over either. Jordan hovers between both tables, holding two trays and no opinion.",
+        "emotionalBeat": "The choice that isn't about a project anymore",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-12-ending-authentic",
+        "title": "New Table",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Wren sits with Alex. It's quieter over there, and a little uncertain, and Alex actually laughs — a real one, surprised out of them — when Wren asks about the moss war. Jordan wanders over a minute later with his tray, unsure if he's allowed, and gets waved into a seat. It doesn't feel like winning. It feels like something sturdier than that.",
+        "emotionalBeat": "Belonging that costs something and is worth it",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-12-ending-popularity",
+        "title": "The Usual Seat",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Wren sits with Maya. It's easy, the way it always is, and nobody brings up Alex again, which is its own kind of message. Across the room, Alex doesn't look over. Wren catches herself checking anyway, more than once, for reasons she doesn't examine too closely.",
+        "emotionalBeat": "Comfort with a hairline crack in it",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-12-ending-bridge",
+        "title": "Two Trays",
+        "location": "Cafeteria",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Wren doesn't pick a side — she pulls a chair from Maya's table over toward Alex's, splitting the difference in full view of everyone. It's awkward. Maya raises an eyebrow but doesn't stop her. Alex looks startled, then, cautiously, slides their notebook an inch toward the middle of the table. Nothing's settled. Something's possible.",
+        "emotionalBeat": "A risk that hasn't resolved yet, on purpose",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2-lunch-pressure",
+        "prompt": "The table's laughing at Alex. What does Wren do?",
+        "context": "Maya's mockery is low-stakes-feeling but has a real target sitting close enough to hear. Everyone at the table is watching Wren's face for her reaction, not just listening for it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "\"Alex is actually cool, I don't think that's fair.\"",
+            "nextScene": "scene-3-defend-alex"
+          },
+          {
+            "id": "b",
+            "text": "Laugh along — \"Yeah, good luck with that.\"",
+            "nextScene": "scene-3-laugh-along"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-4-library-session",
+        "prompt": "The silence in the study room is asking to be filled. How?",
+        "context": "Whatever happened at lunch is sitting between them, unaddressed, and it's going to shape whether this partnership is forty minutes of task-management or something more useful.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Bring up what happened at lunch, honestly.",
+            "nextScene": "scene-5-open-up"
+          },
+          {
+            "id": "b",
+            "text": "Stay focused on the assignment, avoid the topic.",
+            "nextScene": "scene-5-tense-work"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "COMMUNICATION": -1,
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-7-maya-needles",
+        "prompt": "Everyone just heard Maya's joke land on Alex. The room is waiting to see what happens next.",
+        "context": "Mr. Alvarez didn't clock it. Alex is trying to recover on their own. Maya's not looking for a fight — she's looking for the room to agree with her, and Wren is the room's tiebreaker.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Back Alex's idea out loud, in front of everyone.",
+            "nextScene": "scene-8-public-stand"
+          },
+          {
+            "id": "b",
+            "text": "Say nothing and let the moment pass.",
+            "nextScene": "scene-8-public-silence"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": -1,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-9-aftermath-confrontation",
+        "prompt": "Alex is asking directly. There's no group, no audience, no easy exit line.",
+        "context": "This is the one moment in the episode with zero social cover. Whatever Wren says here isn't a performance for anyone but Alex.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tell the truth about the lunch table, no excuses attached.",
+            "nextScene": "scene-10-honest-repair"
+          },
+          {
+            "id": "b",
+            "text": "Deflect — pretend not to remember it clearly.",
+            "nextScene": "scene-10-fractured-trust"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 3,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "INTEGRITY": -3,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-11-final-choice",
+        "prompt": "Two tables. One tray. Where does Wren sit?",
+        "context": "This isn't really about lunch anymore — it's about which version of the last two weeks Wren decides was the real one.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Alex.",
+            "nextScene": "scene-12-ending-authentic"
+          },
+          {
+            "id": "b",
+            "text": "Sit with Maya, like usual.",
+            "nextScene": "scene-12-ending-popularity"
+          },
+          {
+            "id": "c",
+            "text": "Try to bridge both tables, openly.",
+            "nextScene": "scene-12-ending-bridge"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 1,
+            "JUDGMENT": 2
+          },
+          "b": {
+            "JUDGMENT": -2,
+            "INTEGRITY": -1
+          },
+          "c": {
+            "JUDGMENT": 2,
+            "COMMUNICATION": 2
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-integrity-core",
+        "name": "Standing Up Early",
+        "triggeredBy": [
+          "choice-1:a"
+        ],
+        "description": "Wren pushes back on Maya's joke at the very first opportunity, before she's had time to build any real relationship with Alex to justify it. It costs her a flicker of table-status but opens the door to genuine trust later.",
+        "outcome": "Alex enters the library session wary but not closed off, making choice-2's honest option land more easily and setting up a stronger foundation for the confrontation scene."
+      },
+      {
+        "id": "branch-popularity-core",
+        "name": "Laughing First, Feeling It Later",
+        "triggeredBy": [
+          "choice-1:b"
+        ],
+        "description": "Wren takes the easy social win at lunch, then has to live with Alex having heard it. Every later scene now carries the weight of that first betrayal, whether or not Wren tries to repair it.",
+        "outcome": "The library session and public moment both play out under a heavier tension; recovery is possible but requires more deliberate honesty later to counteract the initial breach."
+      },
+      {
+        "id": "branch-trust-repaired",
+        "name": "The True Thing",
+        "triggeredBy": [
+          "choice-4:a"
+        ],
+        "description": "Regardless of how the earlier choices went, Wren chooses honesty in the one moment with no audience, which Alex explicitly values more than a clean track record.",
+        "outcome": "Alex offers cautious, real trust going into the final scene, making the authentic and bridge endings feel earned rather than assumed."
+      },
+      {
+        "id": "branch-trust-fractured",
+        "name": "Noted",
+        "triggeredBy": [
+          "choice-4:b"
+        ],
+        "description": "Wren protects herself in the one moment that mattered most, even if she'd defended Alex publicly minutes earlier. The inconsistency reads to Alex as confirmation, not surprise.",
+        "outcome": "The final table choice carries more risk and less warmth no matter which seat Wren picks; even choosing Alex's table afterward reads as guilt, not friendship, unless the player leans hard into it."
+      },
+      {
+        "id": "branch-final-identity",
+        "name": "Where You Sit",
+        "triggeredBy": [
+          "choice-5:a",
+          "choice-5:b",
+          "choice-5:c"
+        ],
+        "description": "The episode's real thesis, made literal: the project was never the point, the seat is. Three distinct endings reflect three different working theories of what 'belonging' means after two weeks at Crestwood.",
+        "outcome": "Authentic ending favors depth over ease; popularity ending favors comfort with an acknowledged cost; bridge ending is the highest-judgment, highest-risk option, rewarding players who built trust with Alex earlier without fully burning the bridge to Maya."
+      }
+    ],
+    "emotionalArc": [
+      "Mild dread at an unwanted pairing (scene 1)",
+      "Sharp social pressure disguised as a joke (scene 2)",
+      "A small, private consequence lands (scene 3)",
+      "A window for real connection opens or stays shut (scene 4-5)",
+      "Stakes go public without warning (scene 6)",
+      "Peer pressure crescendos in front of an audience (scene 7-8)",
+      "The mask comes off in a one-on-one confrontation (scene 9-10)",
+      "A quiet, personal reckoning about identity and belonging (scene 11-12)"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Wren moves from managing her image reflexively to being forced, repeatedly, to choose between comfort and honesty — with the final scene asking her to commit to an answer rather than keep performing flexibility."
+      },
+      {
+        "character": "alex",
+        "arc": "Alex tests Wren in escalating, increasingly unguarded ways — a passive overhearing, a shared notebook, a direct question — mirroring how much risk Alex is willing to take on trusting someone new after (implied) getting burned before."
+      },
+      {
+        "character": "maya",
+        "arc": "Maya isn't punished or redeemed this episode — she stays exactly herself, a stable, magnetic pull toward the path of least resistance, which is what makes her dangerous rather than villainous."
+      },
+      {
+        "character": "jordan",
+        "arc": "Jordan continues to model conflict-avoidance as a coping strategy, holding two trays literally and figuratively, which throws Wren's own choices into sharper relief by comparison."
+      },
+      {
+        "character": "mr-alvarez",
+        "arc": "Alvarez's well-meaning 'share-out' surprise is the clumsy adult intervention that forces the real conflict into the open — he never finds out what it cost anyone, which is itself a quiet comment on how much kids navigate alone."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "INTEGRITY",
+        "description": "Tracked through whether Wren's words match what she actually believes when it's costly to say so — at lunch, in the classroom spotlight, and in the unwitnessed hallway confrontation. The confrontation scene (choice-4) is weighted heaviest since it has zero social audience to perform for."
+      },
+      {
+        "trait": "COMMUNICATION",
+        "description": "Tracked through whether Wren names the actual problem out loud (at lunch, in the library, in the final bridge attempt) versus letting silence or vague deflection stand in for a real conversation."
+      },
+      {
+        "trait": "JUDGMENT",
+        "description": "Tracked through Wren's read on when standing firm helps versus when it's performative, and culminates in the final scene where the 'bridge' option rewards nuanced risk-assessment over binary loyalty."
+      }
+    ],
+    "relationshipDynamics": [
+      "Wren & Alex: starts as a mandatory pairing and becomes the episode's real emotional through-line — trust is built or broken in small, specific increments rather than one big gesture.",
+      "Wren & Maya: an unspoken negotiation over what belonging costs; Maya never threatens Wren directly, which makes the pressure harder to name and resist.",
+      "Wren & Jordan: a low-stakes mirror — Jordan's conflict avoidance shows Wren what happens if she never risks anything, without judging him for it.",
+      "Alex & Maya: never directly confront each other; their entire dynamic is mediated through Wren's choices, which is the point."
+    ],
+    "replayHooks": [
+      "The moss-comic reveal only happens if choice-2 goes the honest route — players who avoided the topic never learn what's in Alex's notebook.",
+      "Choice-4's confrontation scene reads completely differently depending on choice-1 and choice-3, even though the dialogue prompt is identical — replaying reveals how much the earlier choices were 'seen' by Alex.",
+      "The three-way final choice (stay with Maya, move to Alex, bridge both) means no single playthrough shows the full picture of Crestwood's social map, inviting comparison with friends about which ending they got.",
+      "Players who laugh along at lunch but then tell the truth in the hallway get a distinctly bittersweet version of trust-building that first-time players rarely expect is possible."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Model the difference between social ease and genuine belonging without stating it as a lesson",
+      "Practice recognizing peer pressure in its low-stakes, deniable everyday form rather than only in dramatic confrontations",
+      "Show that honesty has a real, sometimes costly price, and let players feel that cost rather than being told about it",
+      "Illustrate that teamwork under social pressure requires direct communication, not just task completion"
+    ],
+    "conversationStarters": [
+      "Was there a moment where you picked the option that felt 'easier' even though you knew what you'd choose in real life?",
+      "Did you trust Alex right away, or did it take the whole episode to get there? What changed your mind?",
+      "What do you think Maya would say if she found out what happened in the hallway with Alex?",
+      "Which ending felt most true to how you actually navigate lunch tables in real life?"
+    ]
+  },
+  "designNotes": "This episode deliberately routes almost every choice through a low-stakes, deniable social situation (a joke, a silence, a seating choice) rather than a dramatic villain moment, because that's what peer pressure actually feels like at 13 — cumulative and hard to point to. The structure uses two early diverging scenes (choice-1) that converge at the library and spotlight scenes so both branches experience the same climactic confrontation, but arrive at it carrying different emotional weight — this keeps the episode tight (18 scenes, ~13 min) while still letting the choice-1 decision meaningfully color everything downstream. Mr. Alvarez's 'surprise share-out' functions as the mechanical forcing-function for the public reckoning, consistent with his established character as a well-meaning architect of discomfort. The three-way final choice is intentionally the highest-complexity node, rewarding players who built trust with Alex without necessarily burning Maya, which should generate real disagreement/comparison among players.",
+  "uncertainties": [
+    "Whether 13 minutes is achievable given 18 scenes — actual pacing will depend heavily on UI (tap-to-continue speed) and voiceover/text length; may need trimming scene-3 pair or merging scene-6 into scene-7 if playtesting runs long.",
+    "The scene-8 public moment assumes players will find Maya's joke recognizably 'mean' rather than genuinely funny — calibrating the joke's tone in final dialogue will matter a lot for whether choice-3 feels like a real dilemma or an obvious call.",
+    "Choice-4's framing (Alex directly confronting Wren) requires Alex to be uncharacteristically direct for a 'guarded' character — this is intentional as a one-time exception under real emotional stakes, but should be flagged for voice/writing consistency with Alex's established guardedness.",
+    "The bridge ending (choice-5:c) is the most mechanically and emotionally complex outcome and may need its own short epilogue beat in a future episode to pay off convincingly rather than reading as a cop-out 'have it both ways' choice."
+  ],
+  "alternativesConsidered": [
+    "Considered making the project itself academically substantive (e.g., an actual history research deliverable) rather than a light MacGuffin — decided against it to keep focus on relational stakes rather than task content, per 'story first' principle.",
+    "Considered a version where Jordan actively takes Maya's side against Alex, raising the stakes further — rejected because it would make Jordan's conflict-avoidance read as active betrayal rather than the more realistic 'exhausting neutrality' his character is built on.",
+    "Considered giving Maya a private vulnerable moment (mirroring her insecurity-under-polish trait) to humanize her within this episode — deferred to a later episode so this episode can stay tightly focused on Wren/Alex without diluting the peer-pressure throughline.",
+    "Considered a binary two-ending structure instead of three at the finale — added the bridge ending because it maps well to JUDGMENT as a distinct trait from INTEGRITY and creates a genuinely different replay incentive rather than just a 'good/bad' fork."
+  ]
+}
