@@ -12,6 +12,7 @@
     "test": "jest",
     "test:integration": "jest tests/integration",
     "test:models": "node scripts/test-api-models.js",
+    "test:bedrock-models": "node scripts/test-bedrock-models.js",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
     "demo:episode": "npx tsx scripts/demo-sample-episode.ts",
@@ -21,12 +22,13 @@
     "persist:run": "node scripts/persist-run.js"
   },
   "devDependencies": {
+    "@aws-sdk/client-bedrock": "^3.1085.0",
     "@jest/globals": "^29.7.0",
-    "pg": "^8.13.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.16",
     "@types/uuid": "^10.0.0",
     "jest": "^29.7.0",
+    "pg": "^8.13.1",
     "ts-jest": "^29.1.2",
     "tsx": "^4.23.0",
     "turbo": "^2.10.3",
