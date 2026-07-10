@@ -1,0 +1,123 @@
+{
+  "episode": {
+    "number": 2,
+    "title": "The Bridge Table",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "e841abfd-3f02-4738-ba5e-25ad0fb1463b",
+    "threadId": "c9664fa5-80b4-4396-8d91-c87d712988cf",
+    "startedAt": "2026-07-10T15:32:04.986Z",
+    "completedAt": "2026-07-10T15:42:56.806Z",
+    "totalSeconds": 651.8,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [],
+    "previousEpisodes": [
+      {
+        "id": "ep-1",
+        "title": "First Bell"
+      }
+    ],
+    "previousEpisodesSource": "postgres",
+    "previousProtagonist": {
+      "name": "Marisol \"Sol\" Delgado-Reyes",
+      "source": "postgres"
+    },
+    "reusedSupportingCharacters": [
+      {
+        "id": "alex",
+        "name": "Alex Nakamura-Torres"
+      },
+      {
+        "id": "jordan",
+        "name": "Jordan Alvarez"
+      },
+      {
+        "id": "priya",
+        "name": "Priya Kapoor"
+      },
+      {
+        "id": "ms-chen",
+        "name": "Diane Chen"
+      }
+    ],
+    "usage": {
+      "calls": 7,
+      "inputTokens": 143366,
+      "outputTokens": 65453,
+      "totalTokens": 208819,
+      "cacheCreationInputTokens": 72774,
+      "cacheReadInputTokens": 45742,
+      "budget": 2000000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 5,
+          "inputTokens": 102787,
+          "outputTokens": 57261,
+          "cacheReadInputTokens": 27032
+        },
+        "claude-haiku-4-5-20251001": {
+          "calls": 2,
+          "inputTokens": 40579,
+          "outputTokens": 8192,
+          "cacheReadInputTokens": 18710
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Marisol \"Sol\" Delgado-Reyes",
+      "role": "Player-controlled protagonist of 'First Bell.' Sol is the emotional lens through which the player experiences the tension between social safety and authenticity. Every choice about how she talks, who she sits with, and how she treats Alex shapes both her arc and the episode's thematic payoff.",
+      "active": true
+    },
+    {
+      "id": "alex",
+      "name": "Alex Nakamura-Torres",
+      "role": "Alex is the mirror the episode's title implies — a quieter, less socially fluent version of Sol's own outsider self, and the living cost of every choice Sol makes about belonging. Alex isn't a lesson to be learned; they're a person who can be genuinely helped or genuinely hurt by how Sol shows up, moment to moment, and they respond to both with real, specific consequences rather than symbolic ones.",
+      "active": true
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Alvarez",
+      "role": "Jordan is the seductive, non-villainous face of social belonging — the friend who makes fitting in feel easy and guilt-free, which is exactly what makes him dangerous to Sol's integrity arc. He never asks her to be cruel; he just never asks her to be brave, either. His warmth is real, which is precisely the point: the pull toward comfortable belonging is more insidious than the pull toward outright meanness, and Priya's sharper edges only work because Jordan's ease makes the table feel safe.",
+      "active": true
+    },
+    {
+      "id": "priya",
+      "name": "Priya Kapoor",
+      "role": "Priya is the gravitational center of the 'easy belonging' Sol is tempted by — sharper and more consciously status-driven than Jordan, she's the one who makes cruelty feel like wit and exclusion feel like standards. She is not a mean-girl cardboard cutout: her jokes land because she's genuinely funny and genuinely perceptive, which is what makes the discomfort in 'The Popular Table' so effective — Sol isn't laughing at something stupid, she's laughing at something sharp, aimed at someone real. Priya's arc across the episode is small but real: she never apologizes outright, but her eyebrow-raise-not-object at the Bridge Table and her final nod in 'Quiet Strength' show a girl clocking, almost against her will, that there's a kind of strength she doesn't have and maybe respects.",
+      "active": true
+    },
+    {
+      "id": "ms-chen",
+      "name": "Diane Chen",
+      "role": "The structural hand behind the episode's central test: Ms. Chen forces the Sol/Alex partnership without explanation or leniency, creating the container in which every earlier social choice gets tested. She is not a mentor figure who explains the theme — she simply holds the line, notices everything, and lets consequences play out in front of the whole class. Her few, precise comments in 'Presentation Day' and its branches land harder because she rarely comments at all.",
+      "active": true
+    }
+  ],
+  "finalStatus": "APPROVED",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "PASS",
+    "childPsychologist": "APPROVED",
+    "gameDesigner": "GOOD",
+    "ethicsReviewer": "GOOD"
+  },
+  "revisions": [],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "06-psych-review.json",
+    "07-game-review.json",
+    "08-ethics-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}

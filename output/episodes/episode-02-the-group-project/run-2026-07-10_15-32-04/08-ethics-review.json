@@ -1,0 +1,92 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex (nonbinary, mixed-heritage surname Nakamura-Torres) is the primary vehicle for the episode's 'hardship/exclusion' storyline, and their family financial precarity (nurse mom, absent dad, eviction notice in the comic) is the emotional core of the vulnerability plot.",
+      "location": "scene-5, scene-6a/b/c, comic content",
+      "harmPotential": "Could read as pairing a nonbinary character's identity with tragedy/poverty if not balanced elsewhere in the season; risk of 'struggling marginalized kid' becoming their sole narrative function.",
+      "recommendation": "Ensure companion scenes/episodes show Alex with agency, humor, and interests unrelated to hardship (the sketchbook/comic-artist identity already helps this — lean further into their skill and interiority in future episodes so hardship isn't their only defining trait).",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "STEREOTYPE",
+      "issue": "Priya (Indian-American) is written as sharp, status-obsessed, and controlling, echoing a 'ambitious overachiever' pattern sometimes applied to South Asian characters, though this is offset by strong interiority and a hidden caretaking home life.",
+      "location": "priya character sheet, scenes 1, 3b, 7",
+      "harmPotential": "If Priya were the only South Asian character and remained purely a 'mean girl,' this could feel like a narrow portrayal; mitigated by her complexity and the planned arc revealing her loneliness/backstory.",
+      "recommendation": "Continue the planned arc (Priya's sixth-grade backstory, the Nani ring) in-season so her complexity is confirmed on-page rather than only in background notes; consider surfacing a hint of it within this episode (e.g., the ring under her shirt) for players who won't see future episodes.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Priya's mockery of Alex's project ('cry for help', 'a choice') goes largely unpunished narratively except via Sol's optional pushback; in branches where Sol doesn't intervene, Priya faces no consequence at all within the episode.",
+      "location": "scene-3b, scene-7, branch outcomes 8b/8c",
+      "harmPotential": "Low — this is likely intentional (realistic peer dynamics, consequences deferred to future episodes), but on its own the episode could read as normalizing status-driven mockery going unchecked when player chooses passive options.",
+      "recommendation": "Consider a small in-episode beat (even in the passive branches) where Priya's joke visibly costs her something socially or where Ms. Chen or another peer registers disapproval, reinforcing that cruelty has a cost even when Sol doesn't intervene.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex's nonbinary identity (they/them) is present but entirely unremarked upon by any character — no misgendering conflict, but also no explicit normalization moment (e.g., no one visibly uses correct pronouns as a matter of course in dialogue tags players see, since narration/other characters mostly refer to Alex by name).",
+      "location": "throughout, especially dialogue where other characters address Alex",
+      "harmPotential": "Low harm — actually reflects healthy normalization (identity not treated as 'special'), but there's a missed opportunity to model peers using correct pronouns naturally, which reinforces inclusive behavior for the target age group.",
+      "recommendation": "In a line or two (e.g., Jordan or Ms. Chen referring to Alex), naturally use 'they/them' in dialogue to model correct pronoun usage for young players without making it a Very Special Moment.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "No character is defined solely by identity; each has multi-dimensional goals, secrets, strengths and flaws unrelated to their demographic markers",
+    "Cultural and family details (Sol's abuela, Spanish phrases, Priya's family restaurant, Alex's mixed heritage, Jordan's Filipino-American family) are woven in with specificity and warmth rather than as tokenistic flavor",
+    "Priya and Jordan are 'popular' antagonist-adjacent figures but both are given real interiority, secret vulnerabilities, and non-cartoonish motivations, avoiding a 'mean kids are simply bad' trope",
+    "The episode explicitly models peer pressure as it appears in warm, non-hostile settings rather than only overt bullying — a nuanced and developmentally appropriate lesson",
+    "Consequences for Sol's choices are proportionate and realistic (social awkwardness, a friend's quiet withdrawal) rather than melodramatic or punitive",
+    "Ms. Chen, an adult authority figure, models fairness and quiet accountability without being preachy, and her 'social engineering' backstory is handled with restraint",
+    "No romantic or power-imbalanced relationships between adults and teens; all peer relationships are age-appropriate",
+    "The nonbinary character (Alex) is written with agency, skill, humor, and narrative centrality rather than only as a lesson for the protagonist"
+  ],
+  "recommendations": [
+    "In future episodes, give Alex material success/joy scenes disconnected from hardship to avoid any cumulative 'tragic marginalized kid' read across the season",
+    "Have at least one line of dialogue where a peer naturally uses they/them pronouns for Alex to model normalized correct usage",
+    "Consider surfacing a small hint of Priya's own vulnerability within this episode (not just planned for later) so players who don't continue the season still see her complexity",
+    "Add a minor consequence for Priya's mockery even in passive-choice branches, to avoid the impression that status-based cruelty is cost-free when the player doesn't intervene"
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 8,
+    "tropes": 8,
+    "ethicalModeling": 8,
+    "culturalSensitivity": 8,
+    "overall": 8
+  },
+  "flaggedContent": [
+    {
+      "type": "NARRATIVE",
+      "location": "scene-6b/8b/10b/10c passive branches",
+      "content": "Passive/self-protective choices leave Priya's mockery uncontested and Alex isolated with no narrative counterweight within the same scene",
+      "concern": "Could read as cruelty going unaddressed if player takes every passive option, though this is likely intentional as a cautionary branch",
+      "suggestion": "Add a subtle social cost or peer reaction to Priya's behavior even in the passive branches, reinforcing that unkindness has consequences regardless of player choice"
+    }
+  ],
+  "summary": {
+    "verdict": "This episode handles a diverse middle-school cast with notable nuance — popular, guarded, and quiet characters alike are given interiority, flaws, and agency rather than reductive stereotypes. The core peer-pressure and honesty lessons are well-modeled through proportionate, realistic consequences rather than melodrama. Minor concerns exist around ensuring Alex's arc doesn't calcify into a 'struggling marginalized kid' pattern across the season and around modeling pronoun normalization explicitly, but nothing rises to a level requiring revision before publication.",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [
+      "Balance Alex's hardship-centered arc with joy/agency in future episodes",
+      "Model correct they/them pronoun usage naturally in dialogue",
+      "Surface a hint of Priya's complexity within this episode itself",
+      "Consider adding a small consequence for Priya's mockery in passive-choice branches"
+    ],
+    "strengths": [
+      "Complex, non-stereotypical portrayals across the diverse cast",
+      "Realistic, proportionate consequence modeling for peer pressure and honesty themes",
+      "Healthy, age-appropriate power dynamics throughout",
+      "Nonbinary character written with agency and narrative centrality, not as a token or lesson device"
+    ],
+    "readyForPublication": true
+  }
+}

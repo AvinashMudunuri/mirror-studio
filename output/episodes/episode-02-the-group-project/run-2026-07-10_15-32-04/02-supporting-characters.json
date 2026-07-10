@@ -1,0 +1,385 @@
+[
+  {
+    "character": {
+      "id": "alex",
+      "age": 13,
+      "name": "Alex Nakamura-Torres",
+      "goals": {
+        "conscious": [
+          "Get through the semester without needing anyone",
+          "Finish the project well enough that no one has a reason to complain about their partner"
+        ],
+        "unconscious": [
+          "To be chosen without having to ask — to find out if inclusion can survive being tested",
+          "To be known for who they are, not pitied for who they seem to be"
+        ]
+      },
+      "pronouns": "they/them",
+      "storyRole": "Alex is the mirror the episode's title implies — a quieter, less socially fluent version of Sol's own outsider self, and the living cost of every choice Sol makes about belonging. Alex isn't a lesson to be learned; they're a person who can be genuinely helped or genuinely hurt by how Sol shows up, moment to moment, and they respond to both with real, specific consequences rather than symbolic ones.",
+      "appearance": {
+        "brief": "Medium height, still growing into their limbs, the kind of posture that tries to take up as little space as possible. Wears the same three hoodies in rotation, sleeves pushed up to the elbow so graphite doesn't smudge. Hair is dyed a different color at the tips than it was two months ago — a small rebellion nobody at Crestwood has noticed yet.",
+        "distinctiveFeatures": [
+          "Ink stains permanently on the side of the right hand",
+          "A sketchbook that goes everywhere, held like a shield more than a tool",
+          "Chews the end of pencils down to nothing"
+        ]
+      },
+      "background": {
+        "family": "Raised by their mom, Teresa, a nurse who picked up a job at Crestwood General six months ago after a layoff back home — the move was sudden and non-negotiable. Alex has a younger half-brother, Mateo (7), who they walk home from school and half-parent most afternoons while Teresa works doubles. Dad is present but distant, still in the old city, calls are inconsistent.",
+        "secrets": [
+          "Still texts their old best friend Priyanka every night and lets Crestwood think they've made peace with the move — they haven't",
+          "The comic they draw is wish-fulfillment: a version of themself who's fine alone, because the real one isn't sure they are"
+        ],
+        "interests": [
+          "Drawing — specifically an ongoing comic starring an exaggerated version of themself who doesn't need anyone",
+          "Skateboarding, though there's nowhere as good to skate here",
+          "Lo-fi and emo playlists inherited from their old best friend",
+          "Making genuinely excellent, weirdly specific mac and cheese (a family recipe, dad's side)"
+        ],
+        "strengths": [
+          "Sharp observer of people — notices who's performing and who isn't, almost instantly",
+          "Resilient in the boring, unglamorous way — keeps functioning even when it's hard",
+          "Fiercely loyal to the very small number of people let inside the perimeter"
+        ],
+        "struggles": [
+          "Chronic preemptive withdrawal — expects to be dropped, so they drop people first",
+          "Homesickness they refuse to name as homesickness",
+          "Struggles to ask for anything, including help, including friendship"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "guarded",
+          "perceptive",
+          "quietly funny",
+          "loyal once trusted",
+          "self-protective to a fault"
+        ],
+        "mannerisms": [
+          "Starts packing their bag the moment a conversation feels like it might end badly — leaving before they can be left",
+          "Draws instead of answering when a question gets too close to something real",
+          "Makes a joke exactly one beat too late, like it took them that long to decide it was safe to say"
+        ],
+        "bigFiveProfile": {
+          "openness": 8,
+          "neuroticism": 7,
+          "extraversion": 2,
+          "agreeableness": 5,
+          "conscientiousness": 6
+        },
+        "speechPatterns": [
+          "Short, flat sentences when guarded — answers questions with the minimum viable number of words",
+          "When comfortable, drops into rapid, specific, funny observations — like a pressure valve releasing",
+          "Rarely says 'I' statements about feelings directly; deflects through their sketchbook ('this guy's having a rough day' about a drawn character that is very obviously them)"
+        ],
+        "emotionalTendencies": "Alex runs hot underneath a cold surface. They feel things fast and hard — hope, hurt, gratitude — but have trained themselves to show almost none of it in real time, because showing it once (at the last school) got them nothing but a room that emptied out anyway. The performance of not caring is armor, not truth, and it cracks easiest around people who don't perform back."
+      },
+      "arcPotential": [
+        "Across 'First Bell': Alex moves from performed indifference to cautious trust to (branch-dependent) either deepened friendship, guarded withdrawal, or quiet mutual respect — the throughline is that Alex never fully believes they're safe until Sol proves it under real pressure, in public, at cost.",
+        "Future episode potential: Alex slowly unpacking the homesickness they won't name, possibly reconnecting with their old best friend in a way that tests the new friendship with Sol — do old loyalties and new ones have to compete?",
+        "Longer arc: Alex sharing the comic/sketchbook publicly for the first time, using art as connection instead of armor."
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "\"You don't have to sit here. I'm not, like, a project.\" (Quiet Bench, testing whether Sol will stay anyway)",
+          "\"It's fine.\" (Strictly Business — the door shutting, three syllables doing the work of an entire conversation Alex won't have)",
+          "\"You came.\" (A Promise Kept — flat, but the eyes give it away before Alex can catch it)",
+          "\"He's got a good arm, terrible aim. Kind of like you.\" (rare, comfortable teasing — about the comic character, and also not about the comic character at all)",
+          "\"I packed my stuff so you wouldn't have to be the one to say it.\" (Partner Assignment, said almost like a joke, landing like the opposite)"
+        ],
+        "vocabularyLevel": "Sharp, economical, occasionally surprising — Alex reads a lot and it shows in word choice, but they underplay it, like they don't want to seem like they're trying.",
+        "sentenceComplexity": "Clipped and simple when guarded; longer, tangent-prone, and specific when relaxed — Alex talks in whole paragraphs about things they love (art, Mateo, the old neighborhood) and single syllables about things they're scared to feel.",
+        "emotionalExpressiveness": "Indirect by default. Feelings get routed through a drawing, a joke, or a change of subject before they get routed through actual words — but when the words do come, they land hard, because they're rare."
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  },
+  {
+    "character": {
+      "id": "jordan",
+      "age": 14,
+      "name": "Jordan Alvarez",
+      "goals": {
+        "conscious": [
+          "Keep his friend group happy and drama-free",
+          "Be the guy everyone likes, without exception",
+          "Make Sol feel welcome — he genuinely likes her right away"
+        ],
+        "unconscious": [
+          "Prove to himself that this version of him — easy, popular, safe — is the real one, and the old version is gone for good",
+          "Avoid ever being powerless in a room again"
+        ]
+      },
+      "pronouns": "he/him",
+      "storyRole": "Jordan is the seductive, non-villainous face of social belonging — the friend who makes fitting in feel easy and guilt-free, which is exactly what makes him dangerous to Sol's integrity arc. He never asks her to be cruel; he just never asks her to be brave, either. His warmth is real, which is precisely the point: the pull toward comfortable belonging is more insidious than the pull toward outright meanness, and Priya's sharper edges only work because Jordan's ease makes the table feel safe.",
+      "appearance": {
+        "brief": "Medium height, easy posture, the kind of face that looks like it's about to smile even at rest. Perpetually a little sun-pink from swim practice, hair still damp-looking most mornings.",
+        "distinctiveFeatures": [
+          "Chlorine-bleached streak in his dark hair he pretends is intentional",
+          "Wears his older cousin's varsity swim jacket even though he's JV",
+          "Bounces on his heels when he's excited, which is often"
+        ]
+      },
+      "background": {
+        "family": "Middle child of three, Filipino-American, parents run a small catering business that eats most of their weekends. Jordan's been in charge of his younger sister since he was ten — quick to soothe, quick to distract her from whatever's actually bothering her, a skill set he's ported directly into his social life.",
+        "secrets": [
+          "He was the 'sketchbook kid' at his old school two years ago, before his family moved and he got to reinvent himself — he's never told anyone at Crestwood this",
+          "He knows exactly what Priya's joke at Alex's expense felt like, from the other side, and laughed anyway"
+        ],
+        "interests": [
+          "competitive swimming (JV, works harder at it than he lets on)",
+          "curating group chats and hangouts",
+          "mediocre but enthusiastic guitar",
+          "knowing everyone's business, not maliciously"
+        ],
+        "strengths": [
+          "Makes new people feel instantly welcome",
+          "Genuinely remembers details about others — birthdays, small stuff",
+          "Can read a room's temperature in seconds"
+        ],
+        "struggles": [
+          "Cannot tolerate being the reason a room turns tense",
+          "Confuses keeping the peace with doing the right thing",
+          "Low-grade fear that his popularity is more precarious than it looks, so he overinvests in staying likable to everyone at once"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "genuinely warm",
+          "conflict-avoidant",
+          "socially fluent",
+          "quietly anxious under the ease",
+          "generous with low-stakes kindness"
+        ],
+        "mannerisms": [
+          "Touches people's shoulders/arms when he talks to them — a connector's habit",
+          "Laughs a half-second before a joke actually lands, to keep things moving",
+          "Says people's names a lot ('No for real, Sol—') like it's a verbal high-five",
+          "Gets very busy with his phone or his tray when a conversation turns tense"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "neuroticism": 6,
+          "extraversion": 9,
+          "agreeableness": 8,
+          "conscientiousness": 5
+        },
+        "speechPatterns": [
+          "Uses 'honestly' and 'no for real' as filler intensifiers",
+          "Texts in all lowercase, heavy emoji use, exclamation points doing emotional labor",
+          "Smooths over awkward moments with quick reframes: 'okay but anyway—'",
+          "Compliments fast and often, sometimes generic ('you're so funny, I love that')"
+        ],
+        "emotionalTendencies": "Jordan feels things quickly and wants everyone comfortable immediately — his own included. He reads a room in seconds and adjusts. What he doesn't do is sit in discomfort long enough to challenge it. When something's wrong, his instinct is to lighten it, not fix it."
+      },
+      "arcPotential": [
+        "First Bell: Jordan is the open door to belonging that never quite closes, even when Sol starts choosing Alex — he doesn't punish her for it, which makes the choice harder, not easier.",
+        "Future episode: A moment where Jordan's own history (the old 'sketchbook kid' identity) surfaces, forcing him to choose between his curated ease and being honest about who he used to be — possibly triggered by Sol calling him out gently for the Priya-table laugh.",
+        "Future episode: Jordan could be the one who needs someone to break the unspoken rule and defend him for once, testing whether Sol's growth from 'First Bell' holds."
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "\"Okay, new girl, you're sitting with us, no it's not a discussion, come on—\"",
+          "\"Priya's just— that's just how she talks, honestly, don't take it personal.\"",
+          "\"Wait you're bringing sketchbook— I mean, Alex? Yeah, no, totally, the more the merrier, honestly.\"",
+          "\"look i know tonight's bad timing but EVERYONE'S gonna be there tonight only, i'll literally die, come for like an hour 😭😭\""
+        ],
+        "vocabularyLevel": "Casual contemporary teen, warm and quick, low vocabulary complexity but emotionally fluent",
+        "sentenceComplexity": "Short, forward-moving sentences; trails off or redirects when things get heavy",
+        "emotionalExpressiveness": "Very expressive on the surface (compliments, enthusiasm, physical warmth) but avoids expressing actual discomfort or conflict directly"
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  },
+  {
+    "character": {
+      "id": "priya",
+      "age": 14,
+      "name": "Priya Kapoor",
+      "goals": {
+        "conscious": [
+          "Stay the center of gravity at the table",
+          "Win the debate regional this year",
+          "Keep her siblings and home life completely separate from school Priya"
+        ],
+        "unconscious": [
+          "To be liked for something other than being entertaining/useful",
+          "To never again feel as invisible as she did in sixth grade",
+          "Permission to stop performing and just be tired sometimes"
+        ]
+      },
+      "pronouns": "she/her",
+      "storyRole": "Priya is the gravitational center of the 'easy belonging' Sol is tempted by — sharper and more consciously status-driven than Jordan, she's the one who makes cruelty feel like wit and exclusion feel like standards. She is not a mean-girl cardboard cutout: her jokes land because she's genuinely funny and genuinely perceptive, which is what makes the discomfort in 'The Popular Table' so effective — Sol isn't laughing at something stupid, she's laughing at something sharp, aimed at someone real. Priya's arc across the episode is small but real: she never apologizes outright, but her eyebrow-raise-not-object at the Bridge Table and her final nod in 'Quiet Strength' show a girl clocking, almost against her will, that there's a kind of strength she doesn't have and maybe respects.",
+      "appearance": {
+        "brief": "Tall for her grade with excellent posture she worked hard to have. Wears her hair in a sleek, ever-changing rotation of styles (currently a sharp middle part with gold clips) and clothes that are clearly chosen, not just worn — she irons her own T-shirts.",
+        "distinctiveFeatures": [
+          "A thin white scar through one eyebrow from a bike accident at nine, which she now works into her arched 'unimpressed' eyebrow look",
+          "Bites the inside of her cheek when she's holding back a real reaction",
+          "Wears a thin gold ring on a chain — her Nani's — tucked under her shirt where no one at the table has ever seen it"
+        ]
+      },
+      "background": {
+        "family": "Oldest of three, in a house where her parents run a small but stressful family restaurant. She's unofficially the built-in adult for her two younger siblings most weeknights — homework help, dinner reheating, arguments refereed. Nobody at school knows this; at school she is effortless.",
+        "secrets": [
+          "She used to eat lunch alone in the library in sixth grade at her old school, and reinvented herself completely when she got to Crestwood so no one would ever know that girl existed",
+          "She actually thought sketchbook-kid's drawing was good — she clocked the talent instantly, which is part of why the joke came out of her mouth so fast"
+        ],
+        "interests": [
+          "Debate team (she is terrifyingly good)",
+          "Curating table seating like it's chess",
+          "Bollywood dance videos she films but never posts",
+          "Thrifting and redesigning clothes"
+        ],
+        "strengths": [
+          "Genuinely sharp mind — reads people and rooms fast",
+          "Fierce, real protectiveness once someone is 'hers'",
+          "Natural leader other kids orbit without her even trying"
+        ],
+        "struggles": [
+          "Cannot tolerate being anything less than in-control in public",
+          "Uses jokes at others' expense to preempt ever being the butt of one herself",
+          "Has one real friend (Jordan, since third grade) and doesn't fully trust anyone else not to leave if she stops being useful/entertaining"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "quick-witted",
+          "status-vigilant",
+          "loyal to her chosen few",
+          "controlling",
+          "secretly lonely at the top"
+        ],
+        "mannerisms": [
+          "Snaps a joke the second a silence gets uncomfortable — hers or anyone else's",
+          "Physically repositions herself at the head of whatever table she's at, even a picnic table with no head",
+          "Checks her phone not to see notifications but to have something to look composed doing"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "neuroticism": 6,
+          "extraversion": 9,
+          "agreeableness": 4,
+          "conscientiousness": 8
+        },
+        "speechPatterns": [
+          "Landing lines like punchlines, with a half-beat pause before the hit",
+          "Uses 'obviously' and 'literally' as connective tissue",
+          "Switches to shorter, flatter sentences the moment she's actually annoyed instead of performing annoyance"
+        ],
+        "emotionalTendencies": "Priya performs confidence as a full-time job. Her humor is a scalpel she reaches for before anyone can use one on her first. She reads a room in under three seconds and has never once told anyone what she found there."
+      },
+      "arcPotential": [
+        "Episode 'First Bell': Establishes Priya as the seductive, high-status option whose approval feels like winning — until her humor's cost becomes visible through Alex.",
+        "Future episode potential: A storyline cracking open Priya's home life / sixth-grade backstory, letting her reinvention unravel a little in front of someone (possibly Sol) who's earned enough trust to see it.",
+        "Future episode potential: Debate team arc where Priya's need to control the narrative is tested by a partner or opponent she can't out-talk, forcing growth outside her comfort zone."
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "\"Oh, honey, no — the seat next to me is not a democracy.\"",
+          "\"I'm not saying don't invite Sketchbook. I'm saying I hope he's got a permission slip for that many colored pencils.\"",
+          "\"Relax. It's a joke. Everyone laughed.\" (beat) \"...Didn't they?\"",
+          "\"You didn't need me to carry that. You just needed someone to believe you could.\" (to Alex, quiet, almost surprised at herself)"
+        ],
+        "vocabularyLevel": "Sharp, current, confident — she talks like someone who's aware people are listening, even when it's just lunch.",
+        "sentenceComplexity": "Clipped and punchy when performing; slightly longer and more hesitant in the rare unguarded moment.",
+        "emotionalExpressiveness": "Loud on the surface, cagey underneath. She'll tell you exactly what she thinks of your outfit before she'll tell you she's had a bad day."
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  },
+  {
+    "character": {
+      "id": "ms-chen",
+      "age": 34,
+      "name": "Diane Chen",
+      "goals": {
+        "conscious": [
+          "Get students to produce work they're actually proud of, not just work that's finished",
+          "Run a classroom where effort is legible and rewarded, regardless of social status"
+        ],
+        "unconscious": [
+          "Give the quiet, overlooked kids the intervention she never got",
+          "Prove to herself that structure and fairness can still make a difference, even when she's tired"
+        ]
+      },
+      "pronouns": "she/her",
+      "storyRole": "The structural hand behind the episode's central test: Ms. Chen forces the Sol/Alex partnership without explanation or leniency, creating the container in which every earlier social choice gets tested. She is not a mentor figure who explains the theme — she simply holds the line, notices everything, and lets consequences play out in front of the whole class. Her few, precise comments in 'Presentation Day' and its branches land harder because she rarely comments at all.",
+      "appearance": {
+        "brief": "Compact and quick-moving, with the kind of energy that makes a classroom feel smaller and warmer at once. Favors cardigans over blouses, sleeves perpetually pushed up like she's mid-task even when she's standing still.",
+        "distinctiveFeatures": [
+          "A chipped ceramic mug on her desk that says 'World's Okayest Teacher' — a gift from a former student she never got rid of",
+          "Reading glasses she wears low on her nose and looks over rather than through, which somehow makes her stare more effective",
+          "A habit of tapping two fingers on the desk when she's deciding whether to say something or let a moment breathe"
+        ]
+      },
+      "background": {
+        "family": "Grew up the quiet, watchful middle child of three loud siblings; learned early how to read a room before she learned how to command one. Now married, no kids of her own by choice — she says she has 150 a year and that's plenty, though she says it with more affection than the joke implies.",
+        "secrets": [
+          "She pairs students deliberately, not randomly — she's been doing informal social engineering with her seating charts and project groups for years, and she has a quiet theory about which pairings will actually change someone",
+          "She once was the quiet kid nobody picked for group work, and every 'random' pairing she makes is a small, private correction to that memory"
+        ],
+        "interests": [
+          "restoring old furniture on weekends",
+          "true crime podcasts she pretends not to listen to at volume in her car",
+          "running a fairly ruthless fantasy football league with other teachers"
+        ],
+        "strengths": [
+          "reads social dynamics in a classroom almost instantly",
+          "gives real feedback instead of empty praise",
+          "remembers small details about kids that make them feel seen without her making a show of it"
+        ],
+        "struggles": [
+          "burnout she doesn't talk about — seven years in, she's tired in a way she hides well",
+          "tends to under-intervene in student conflict, trusting kids to work it out even when it costs someone a hard day",
+          "can come across as unbothered when she's actually paying very close attention"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "observant",
+          "dry-humored",
+          "unsentimental",
+          "quietly relentless",
+          "fair to a fault"
+        ],
+        "mannerisms": [
+          "Pairs students with a clipboard and zero visible negotiation — decisions announced, not debated",
+          "Waits a beat too long after asking a question, letting silence do the work",
+          "Writes feedback in the margins in tiny, precise handwriting instead of saying it out loud in front of the class"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "neuroticism": 4,
+          "extraversion": 6,
+          "agreeableness": 6,
+          "conscientiousness": 8
+        },
+        "speechPatterns": [
+          "Short, declarative sentences — she doesn't pad things",
+          "Occasional dry one-liners delivered totally deadpan, so kids aren't always sure she's joking",
+          "Uses students' full attention as currency: she'll pause mid-sentence until the room settles, never raises her voice to get it"
+        ],
+        "emotionalTendencies": "Diane keeps a controlled, low-key classroom presence — she rarely shows strong emotion in front of students, but it leaks out in small tells: a longer pause before praising real effort, a flicker of something like disappointment (quickly masked) when a kid takes the easy way out. She's not cold; she's economical. She's seen enough middle schoolers cycle through her room to know performance from growth, and she doesn't waste warmth on the former."
+      },
+      "arcPotential": [
+        "First Bell: Establishes her as an unsentimental engineer of the central conflict — her pairing decision is the hinge the whole episode turns on, and her measured, specific feedback in the presentation scenes gives weight to whichever version of Sol showed up.",
+        "Future episode potential: A scene where a student pushes back on one of her pairings and gets a rare, honest glimpse of why she does it this way — revealing the quiet kid she used to be, without turning it into a speech."
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "\"Sol and Alex. That's the pairing. I don't take requests, and I definitely don't take them after the fact.\"",
+          "\"You covered a lot of ground up there. Some of it wasn't yours to cover.\"",
+          "\"I noticed what you did — stepping back. That's harder than people think. Good.\""
+        ],
+        "vocabularyLevel": "Adult, precise, occasionally wry — she doesn't dumb things down for her students but keeps her language clean and direct rather than academic.",
+        "sentenceComplexity": "Short and declarative for instructions; slightly longer, more measured sentences when giving feedback or making a point she wants to land.",
+        "emotionalExpressiveness": "Restrained and controlled on the surface, with meaning carried in timing, pauses, and small word choices rather than overt emotion."
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  }
+]

@@ -1,0 +1,601 @@
+{
+  "episodeOutline": {
+    "title": "The Bridge Table",
+    "synopsis": "When Ms. Chen forces Sol into a term project with Alex — the quiet classmate she's still deciding whether to be loyal to — every lunchtime choice, every laugh at someone else's expense, and every small honesty or omission gets tested in real time. Jordan makes belonging feel effortless; Priya makes cruelty feel like wit; Alex just wants to know if Sol is who she seemed to be on day one. By presentation day, Sol has to answer — out loud, in front of everyone — whose story it actually was.",
+    "themes": [
+      "Peer Pressure",
+      "Honesty",
+      "Teamwork"
+    ],
+    "targetTraits": [
+      "INTEGRITY",
+      "COMMUNICATION",
+      "JUDGMENT"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "The Pairing Board",
+        "location": "Homeroom 114, Crestwood High",
+        "characters": [
+          "player",
+          "alex",
+          "jordan",
+          "priya",
+          "ms-chen"
+        ],
+        "duration": 1,
+        "description": "Ms. Chen posts the term project pairings without ceremony: 'Personal Histories Project — presentations Friday.' Sol's name sits next to Alex's. Jordan shoots her a sympathetic, amused look across the room; Priya smirks like she's already written the joke. Alex doesn't look up from their sketchbook — already braced for disappointment before Sol's said a word.",
+        "emotionalBeat": "Anticipation laced with social calculation — an assignment Sol didn't choose lands like a spotlight.",
+        "defaultNextScene": "scene-2"
+      },
+      {
+        "id": "scene-2",
+        "title": "Cafeteria Crossroads",
+        "location": "Crestwood cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "priya",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Jordan waves Sol toward the loud, easy table where Priya's already holding court. Across the room, Alex sits alone near the recycling bins, sketchbook open, not looking around — like they've stopped expecting anyone to sit down. Sol's tray suddenly feels heavier than it should.",
+        "emotionalBeat": "The pull between comfort and connection, made suddenly, physically real."
+      },
+      {
+        "id": "scene-3a",
+        "title": "Bridge Table",
+        "location": "Cafeteria, corner table near the windows",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Sol sits across from Alex, who doesn't make a thing of it — just slides their tray over an inch. They talk sketchbooks, bad skateboarding, the telenovela-without-subtitles thing. Then, quieter: 'Did Jordan invite you today too?' It's not an accusation. It's a test disguised as a question.",
+        "emotionalBeat": "Fragile trust forming, tested immediately by honesty."
+      },
+      {
+        "id": "scene-3b",
+        "title": "The Popular Table",
+        "location": "Cafeteria, the center table",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "The table is warm, loud, easy — Jordan makes room, Priya's mid-story and genuinely funny. Then Priya glances across the room: 'Is Sketchbook still doing the lone-wolf thing?' The table laughs before Sol can decide how she feels about it.",
+        "emotionalBeat": "Belonging that costs something Sol hasn't priced yet."
+      },
+      {
+        "id": "scene-4",
+        "title": "Library Table",
+        "location": "School library, after-school project block",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen"
+        ],
+        "duration": 1,
+        "description": "Ms. Chen circles the tables checking progress, unimpressed by excuses, quietly relentless about the Friday deadline. When she moves on, Alex pulls out a battered sketchbook — not schoolwork, something older, something personal.",
+        "emotionalBeat": "The forced container tightens; work becomes intimacy whether either of them planned it.",
+        "defaultNextScene": "scene-5"
+      },
+      {
+        "id": "scene-5",
+        "title": "The Idea",
+        "location": "School library",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Alex proposes the real idea: telling their family's story as a comic-style visual narrative — raw, specific, nothing like a normal slideshow. It's good. It's also exactly the kind of thing that gets laughed at by a certain table. Alex watches Sol's face for the verdict.",
+        "emotionalBeat": "Vulnerability offered, waiting to see if it will be honored or managed."
+      },
+      {
+        "id": "scene-6a",
+        "title": "Creative Momentum",
+        "location": "Library table, then Alex's kitchen (montage)",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "They lean fully into Alex's idea — Sol sketching panel layouts, Alex opening up about what actually inspired the comic. It's the most fun either of them has had with schoolwork all year, and the most exposed Sol's felt taking a side.",
+        "emotionalBeat": "Joyful risk, momentum built on trust.",
+        "defaultNextScene": "scene-7"
+      },
+      {
+        "id": "scene-6b",
+        "title": "Safe and Hollow",
+        "location": "Library table (montage)",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "They build a safer, conventional slideshow instead — competent, unremarkable, easy to defend. Alex goes quiet in a way that isn't relief. The sketchbook stays zipped in their bag for the rest of the week.",
+        "emotionalBeat": "Safety purchased with a small, specific loss.",
+        "defaultNextScene": "scene-7"
+      },
+      {
+        "id": "scene-6c",
+        "title": "The Middle Version",
+        "location": "Library table (montage)",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "They land on a compromise — Alex's story, told in a slightly safer format, the rawest panels quietly cut 'for time.' It's good work. It's also a negotiation neither of them names out loud.",
+        "emotionalBeat": "A compromise that feels reasonable and slightly unfinished.",
+        "defaultNextScene": "scene-7"
+      },
+      {
+        "id": "scene-7",
+        "title": "Rehearsal Day",
+        "location": "Hallway outside the library",
+        "characters": [
+          "player",
+          "alex",
+          "priya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Rehearsing in the hall, Priya passes with Jordan and catches a glimpse of the project — and has Opinions, delivered with her usual wit, aimed just sharp enough to land. Jordan doesn't laugh this time, exactly, but he doesn't stop her either. Alex's jaw tightens.",
+        "emotionalBeat": "The cost of earlier choices arrives in public, in real time."
+      },
+      {
+        "id": "scene-8a",
+        "title": "The Line Held",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "alex",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Sol pushes back — not loudly, just clearly. Priya's eyebrow goes up, more surprise than anger. Alex doesn't say thank you, but they stand a little straighter for the rest of the walk to class.",
+        "emotionalBeat": "Quiet vindication, a spine finally shown.",
+        "defaultNextScene": "scene-9"
+      },
+      {
+        "id": "scene-8b",
+        "title": "The Moment Passes",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "alex",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Sol lets it go, tells herself it wasn't a big deal. Alex's face does something complicated, then closes entirely. The rest of the walk is very quiet.",
+        "emotionalBeat": "The specific ache of a choice not made.",
+        "defaultNextScene": "scene-9"
+      },
+      {
+        "id": "scene-8c",
+        "title": "The Half-Joke",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "alex",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Sol hedges — 'yeah, it's a little weird, right?' — trying to stay safe on both sides. It doesn't work. Priya smiles like she's won something. Alex looks at Sol a second too long before walking ahead.",
+        "emotionalBeat": "Betrayal dressed as a joke, and both of them know it.",
+        "defaultNextScene": "scene-9"
+      },
+      {
+        "id": "scene-9",
+        "title": "Presentation Day",
+        "location": "Ms. Chen's classroom",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen",
+          "priya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The presentation goes fine — or it doesn't — until Ms. Chen asks the question she asks every group, unsentimental as ever: 'Whose idea was this, really?' The room waits. Alex looks at their shoes. This is the whole episode, distilled into one answer.",
+        "emotionalBeat": "The public reckoning every earlier choice was quietly building toward."
+      },
+      {
+        "id": "scene-10a",
+        "title": "Said Plainly",
+        "location": "Ms. Chen's classroom",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Sol says it plainly: it was Alex's story, Alex's idea, and she's glad she got to help tell it. Alex's head comes up, surprised. Ms. Chen almost smiles. Priya, for once, doesn't have a comeback — just the smallest nod, like she's clocking something she doesn't have a name for yet.",
+        "emotionalBeat": "Earned pride, the relief of a truth spoken out loud.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-10b",
+        "title": "Comfortably Vague",
+        "location": "Ms. Chen's classroom",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen"
+        ],
+        "duration": 1,
+        "description": "Sol answers carefully: 'we worked on it together.' Technically true, comfortably vague. It lands fine. Alex says nothing, packs up fast, and is gone before Sol can catch their eye. The grade will be good. That's not what feels bad.",
+        "emotionalBeat": "A hollow win, success curdling into quiet guilt.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-10c",
+        "title": "Left Holding It",
+        "location": "Ms. Chen's classroom",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen"
+        ],
+        "duration": 1,
+        "description": "Sol freezes, then lets the safest, smallest answer slip out — one that leaves Alex holding all of it alone. Alex answers Ms. Chen's follow-up questions in a flat, careful voice usually reserved for strangers. After class, they don't wait for Sol at the door. They just don't.",
+        "emotionalBeat": "The particular loneliness of watching a bridge burn from the safe side of it.",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2",
+        "prompt": "Where do you sit for lunch?",
+        "context": "Jordan's holding a seat at the table everyone wants. Alex is alone across the room, sketchbook open, not expecting company.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Cross the cafeteria and sit with Alex",
+            "nextScene": "scene-3a"
+          },
+          {
+            "id": "b",
+            "text": "Take the open seat at Jordan and Priya's table",
+            "nextScene": "scene-3b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "COMMUNICATION": 1,
+            "JUDGMENT": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2a",
+        "scene": "scene-3a",
+        "prompt": "Alex asks: 'Did Jordan invite you today too?' How do you answer?",
+        "context": "It's a quiet question with a lot riding on it — Alex is testing whether Sol will be straight with them.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Be honest — yes, but you chose this table",
+            "nextScene": "scene-4"
+          },
+          {
+            "id": "b",
+            "text": "Shrug it off — 'it's not a big deal'",
+            "nextScene": "scene-4"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 2
+          },
+          "b": {
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2b",
+        "scene": "scene-3b",
+        "prompt": "Priya's joke about Alex lands, and the table's already laughing. What do you do?",
+        "context": "It's sharp, it's funny, and it's aimed at someone real. Nobody's waiting long for Sol's reaction.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Say something in Alex's defense",
+            "nextScene": "scene-4"
+          },
+          {
+            "id": "b",
+            "text": "Laugh along",
+            "nextScene": "scene-4"
+          },
+          {
+            "id": "c",
+            "text": "Change the subject",
+            "nextScene": "scene-4"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "JUDGMENT": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "JUDGMENT": -1
+          },
+          "c": {
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-5",
+        "prompt": "Alex's idea is personal and risky. What do you push for?",
+        "context": "Alex is watching your face, not just waiting for an opinion on a project — waiting to see if their real story is safe with you.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Champion Alex's original idea fully",
+            "nextScene": "scene-6a"
+          },
+          {
+            "id": "b",
+            "text": "Suggest a safer, more conventional approach",
+            "nextScene": "scene-6b"
+          },
+          {
+            "id": "c",
+            "text": "Propose a blended compromise",
+            "nextScene": "scene-6c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "JUDGMENT": 1,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "JUDGMENT": -1,
+            "INTEGRITY": -1
+          },
+          "c": {
+            "JUDGMENT": 1,
+            "COMMUNICATION": 1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-7",
+        "prompt": "Priya mocks the project in front of Jordan and half the hallway. What do you do?",
+        "context": "This is happening in public, in real time, and Alex is standing right there.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Defend the project and Alex, calmly and clearly",
+            "nextScene": "scene-8a"
+          },
+          {
+            "id": "b",
+            "text": "Say nothing and let it pass",
+            "nextScene": "scene-8b"
+          },
+          {
+            "id": "c",
+            "text": "Hedge with a half-joke that sides with Priya",
+            "nextScene": "scene-8c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 2
+          },
+          "b": {
+            "COMMUNICATION": -1
+          },
+          "c": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-9",
+        "prompt": "Ms. Chen asks, in front of the whole class: 'Whose idea was this, really?'",
+        "context": "There's no script for this. Alex is looking at their shoes. Everyone is waiting for what Sol says next.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Give Alex full, honest credit",
+            "nextScene": "scene-10a"
+          },
+          {
+            "id": "b",
+            "text": "Answer vaguely — 'we worked on it together'",
+            "nextScene": "scene-10b"
+          },
+          {
+            "id": "c",
+            "text": "Let the safest, smallest answer slip out, leaving Alex exposed",
+            "nextScene": "scene-10c"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 3,
+            "COMMUNICATION": 2
+          },
+          "b": {
+            "INTEGRITY": -1,
+            "COMMUNICATION": -1
+          },
+          "c": {
+            "INTEGRITY": -3,
+            "JUDGMENT": -1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-bridge-loyalty",
+        "name": "The Bridge Table Path",
+        "triggeredBy": [
+          "choice-1:a"
+        ],
+        "description": "Sol chooses connection with Alex from the first lunch bell, building trust early that later choices either honor or spend.",
+        "outcome": "Alex enters the forced partnership already half-trusting Sol, raising the emotional stakes of every later choice — betrayal here would cost more; loyalty here compounds."
+      },
+      {
+        "id": "branch-popular-pull",
+        "name": "The Popular Table Path",
+        "triggeredBy": [
+          "choice-1:b"
+        ],
+        "description": "Sol takes the easy, warm seat at Jordan and Priya's table, and is immediately implicated in a joke at Alex's expense before the project even starts.",
+        "outcome": "Alex enters the partnership guarded and unsurprised by Sol, meaning trust has to be built from a deficit — a harder, more dramatic redemption arc if Sol chooses integrity later."
+      },
+      {
+        "id": "branch-integrity-ending",
+        "name": "Quiet Strength",
+        "triggeredBy": [
+          "choice-5:a"
+        ],
+        "description": "Sol names the truth publicly, giving Alex real credit in front of the class that has spent the episode deciding whether Alex was worth noticing.",
+        "outcome": "Alex's trust in Sol solidifies; Priya's small nod suggests a crack in her own status armor. Sol's arc closes on authenticity chosen under pressure, not by accident."
+      },
+      {
+        "id": "branch-compromised-ending",
+        "name": "Comfortably Vague",
+        "triggeredBy": [
+          "choice-5:b"
+        ],
+        "description": "Sol avoids an outright lie but also avoids the harder truth, protecting her own social position at a small, real cost to Alex.",
+        "outcome": "The grade is fine. The friendship is not. Sol is left holding a success that doesn't feel like one — a deliberately unresolved, replay-motivating middle ending."
+      },
+      {
+        "id": "branch-fracture-ending",
+        "name": "Left Holding It",
+        "triggeredBy": [
+          "choice-5:c"
+        ],
+        "description": "Sol chooses self-protection at the exact moment it costs Alex the most, echoing the very dynamic Alex has spent the episode bracing against.",
+        "outcome": "The partnership fractures visibly. This is the episode's clearest cautionary path — not punished by the plot with drama, but with quiet, believable withdrawal."
+      }
+    ],
+    "emotionalArc": [
+      "Setup: an unchosen partnership creates immediate social risk (scene-1)",
+      "Temptation: two competing invitations to belonging, one easy, one costly (scene-2)",
+      "Intimacy or complicity: early trust built or early complicity incurred (scene-3a/3b)",
+      "Convergence: the forced container tightens regardless of earlier choices (scene-4)",
+      "Vulnerability: real stakes emerge through Alex's authentic idea (scene-5)",
+      "Risk and identity: Sol's judgment about whose story matters shapes the work itself (scene-6a/b/c)",
+      "Public pressure: the cost of earlier choices arrives in front of witnesses (scene-7)",
+      "Consequence: relationship damage or repair plays out in real time (scene-8a/b/c)",
+      "Climax: a single public question forces a definitive answer (scene-9)",
+      "Resolution: integrity, compromise, or fracture — earned, not delivered (scene-10a/b/c)"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Sol moves from reactive social navigation toward a chosen, public stance on honesty and loyalty — or doesn't, and has to sit with that instead."
+      },
+      {
+        "character": "alex",
+        "arc": "Alex risks real vulnerability (the personal project idea) as a test of whether this partnership is safe, and their trajectory — opening up further or closing off entirely — is a direct, specific consequence of Sol's choices."
+      },
+      {
+        "character": "jordan",
+        "arc": "Jordan remains warm and conflict-avoidant throughout, never cruel but never brave — his quiet non-intervention during Priya's jokes becomes its own small, honest character beat."
+      },
+      {
+        "character": "priya",
+        "arc": "Priya's wit stays sharp all episode, but small cracks appear — an eyebrow raised instead of a comeback, a nod instead of a joke — suggesting she notices something in Sol she doesn't quite respect in herself."
+      },
+      {
+        "character": "ms-chen",
+        "arc": "Ms. Chen never moralizes; she simply holds the structural line (the pairing, the deadline, the public question) that makes every other character's choices matter."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "INTEGRITY",
+        "description": "Tracked through moments where Sol can either tell an inconvenient truth or protect her social position — from admitting the lunch invitation to naming Alex's authorship in front of the class."
+      },
+      {
+        "trait": "COMMUNICATION",
+        "description": "Tracked through whether Sol speaks up clearly in charged moments (defending Alex, naming credit) versus deflecting, hedging, or going silent."
+      },
+      {
+        "trait": "JUDGMENT",
+        "description": "Tracked through Sol's read on which risks are worth taking — championing a vulnerable creative idea, weighing loyalty against belonging, choosing when confrontation is warranted versus counterproductive."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player-alex",
+        "dynamic": "Starts guarded on Alex's side regardless of path, but every choice point either builds or erodes specific, earned trust — this is the episode's emotional spine."
+      },
+      {
+        "pair": "player-jordan",
+        "dynamic": "Stays low-conflict and warm throughout; Jordan never punishes Sol for any choice, which is precisely what makes his gravitational pull worth examining rather than resenting."
+      },
+      {
+        "pair": "player-priya",
+        "dynamic": "Shifts based on how much Sol pushes back — Priya respects clear pushback more than compliance, a small ironic reward for integrity that players may not expect on a first playthrough."
+      },
+      {
+        "pair": "alex-priya",
+        "dynamic": "Largely one-directional in this episode (Priya's jokes land on Alex, who absorbs them silently), which makes Sol's choice to intervene or not the true site of dramatic tension."
+      }
+    ],
+    "replayHooks": [
+      "The three-way choice at the idea pitch (scene-5) changes what the project actually is, not just how Sol feels about it — replaying reveals a genuinely different Friday presentation.",
+      "Priya's small character crack (the nod, the raised eyebrow) only appears on the integrity ending, rewarding players who want to see 'the popular girl' respond to something other than status.",
+      "The two lunch-table openings (3a/3b) contain entirely different dialogue and relationship-building content, not just cosmetic variation, inviting a full replay from the top.",
+      "The compromised ending (10b) is deliberately the least dramatic and most quietly uncomfortable — likely to prompt players to go back and ask 'what if I'd just said it plainly?'",
+      "Achievement-style curiosity: players who defended Alex early but folded at the final question (or vice versa) will want to see if consistency changes the ending tone."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Practice recognizing peer pressure as it appears in warm, non-hostile social settings, not just obvious bullying",
+      "Build comfort with speaking honestly in low-stakes moments so it's available in high-stakes ones",
+      "Explore the judgment calls involved in balancing loyalty to a friend against social cost",
+      "Model that integrity is a series of small, repeatable choices rather than one dramatic act"
+    ],
+    "conversationStarters": [
+      "Was there a moment where Sol could have said something and didn't — what do you think stopped her?",
+      "Jordan never says anything mean, but he also never defends Alex. Is that different from what Priya does? How?",
+      "Why might Alex ask 'did Jordan invite you today too?' instead of just asking directly if Sol still wants to be friends?",
+      "If you replayed this episode and made all the opposite choices, which ending do you think would feel most true to a real friendship?",
+      "Ms. Chen never explains why she paired Sol and Alex. Do you think that was fair? Why or why not?"
+    ]
+  },
+  "designNotes": "The episode is built as a diamond structure: one major early fork (lunch table) that meaningfully diverges tone and relationship-starting-state, followed by choices that converge into the same forced-partnership container (per the character brief's instruction that Ms. Chen 'holds the line' without commentary), then re-diverges through the idea pitch and hallway confrontation before funneling into a single climactic public question with three distinct endings. This keeps the branch count playable within 10-15 minutes while still giving every choice real narrative weight — none of the choices are cosmetic, even when they share a nextScene, because the underlying relationship state (implied through trait deltas) changes what later scenes mean even if the scene IDs converge. Educational goals are never named in-story; they surface only in the outline's own metadata, per the invisible-curriculum requirement.",
+  "uncertainties": [
+    "Some choices (2a, 2b) intentionally converge to the same next scene id despite different trait deltas — this assumes the executing engine tracks trait/relationship state across scenes rather than requiring scene-level divergence for every choice. If the engine only branches on scene id and ignores accumulated state, some of the later emotional nuance (e.g., Alex's guardedness in scene-4) would need to be hardcoded as a single 'average' tone rather than truly reactive.",
+    "Priya and Jordan appearing in scene-9 (Presentation Day) as classroom audience is implied but not deeply dramatized — depending on tone, the studio may want an explicit reaction beat for them in the final scene rather than leaving it to background presence.",
+    "The three-way choices (2b, 3, 4, 5) increase authorial and voice-acting workload versus a strict binary structure; if production constraints favor binary choices only, options 'c' in each triad could be cut with modest loss to nuance."
+  ],
+  "alternativesConsidered": [
+    "A fully binary-choice structure (no three-option choice points) was considered for simplicity and lower production cost, but was rejected because the 'compromise' and 'hedge' middle options are where Priya and Jordan's non-villainous social pressure reads most authentically — cutting them would push the episode toward a more black-and-white morality than the character briefs intend.",
+    "A version where Sol's lunch-table choice locks her into a single linear path for the rest of the episode (no reconvergence at the library) was considered for starker branching, but rejected because it would have doubled scene count without adding proportional emotional value, and would have undercut the brief's emphasis on Ms. Chen's forced, unavoidable partnership as the episode's true structural spine.",
+    "An alternate ending where Alex proactively forgives Sol regardless of her final answer was considered to soften the fracture ending, but rejected as inconsistent with Alex's established 'self-protective to a fault' trait and with the brief's insistence that Alex's reactions be real consequences, not symbolic lessons."
+  ]
+}

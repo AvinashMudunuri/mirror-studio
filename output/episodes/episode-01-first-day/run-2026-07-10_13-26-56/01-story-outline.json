@@ -1,0 +1,745 @@
+{
+  "episodeOutline": {
+    "title": "First Bell",
+    "synopsis": "On the first day at Crestwood High, a transfer student must decide who to sit with, who to stand up for, and who to become before anyone else decides it for them. A single lunch period sets off a chain of choices that determines whether the player finds belonging through popularity, authenticity, or something harder and more honest in between.",
+    "themes": [
+      "Belonging",
+      "Authenticity",
+      "First Impressions"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "EMPATHY",
+      "ADAPTABILITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-arrival",
+        "title": "Front Steps",
+        "location": "Crestwood High - Front Steps",
+        "characters": [
+          "player"
+        ],
+        "duration": 1,
+        "description": "The player stands outside an unfamiliar building, schedule crumpled in hand, watching strangers who already know each other stream past. A fresh start is terrifying precisely because it's a blank page.",
+        "emotionalBeat": "anticipation and nervousness",
+        "defaultNextScene": "scene-hallway"
+      },
+      {
+        "id": "scene-hallway",
+        "title": "The Hallway Read",
+        "location": "Main Hallway",
+        "characters": [
+          "player",
+          "jordan",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Jordan, easygoing and instantly friendly, offers to walk the player to homeroom. Across the hall, a quiet student (Alex) glances up, then looks away fast and slips into a classroom alone, clearly used to not being noticed.",
+        "emotionalBeat": "curiosity - first read of the social map",
+        "defaultNextScene": "scene-classroom"
+      },
+      {
+        "id": "scene-classroom",
+        "title": "All Eyes On You",
+        "location": "Homeroom - Mr. Alvarez's Class",
+        "characters": [
+          "player",
+          "jordan",
+          "alex",
+          "maya",
+          "mr-alvarez"
+        ],
+        "duration": 1.5,
+        "description": "Mr. Alvarez asks the new student to share something about themselves in front of the whole class. Maya, clearly the social center of gravity, sizes the player up. Alex watches quietly from the back row.",
+        "emotionalBeat": "vulnerability under the spotlight"
+      },
+      {
+        "id": "scene-lunch-setup",
+        "title": "The Cafeteria Math",
+        "location": "Cafeteria Entrance",
+        "characters": [
+          "player",
+          "jordan",
+          "alex",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "Tray in hand, the player scans the room. Maya's table waves them over with easy, magnetic confidence. Across the room, Alex eats alone, fast, eyes down, clearly hoping not to be seen.",
+        "emotionalBeat": "the weight of a first social decision"
+      },
+      {
+        "id": "scene-lunch-popular",
+        "title": "Maya's Table",
+        "location": "Cafeteria - Maya's Table",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "The jokes are quick and the gossip quicker. When someone spots Alex fumbling a tray across the room, the table's laughter turns that direction. Maya looks at the player, waiting to see if they'll join in.",
+        "emotionalBeat": "peer pressure disguised as belonging"
+      },
+      {
+        "id": "scene-popular-join",
+        "title": "Easy Laughter",
+        "location": "Cafeteria - Maya's Table",
+        "characters": [
+          "player",
+          "maya",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "The player leans into the joke. Laughter erupts, Maya grins approvingly - but across the room, Alex's face falls before they look away.",
+        "emotionalBeat": "hollow acceptance",
+        "defaultNextScene": "scene-project-team"
+      },
+      {
+        "id": "scene-popular-neutral",
+        "title": "The Non-Answer",
+        "location": "Cafeteria - Maya's Table",
+        "characters": [
+          "player",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "The player gives a noncommittal half-laugh, neither joining nor objecting. The moment passes unremarked, but something uneasy settles in the player's stomach.",
+        "emotionalBeat": "moral ambivalence",
+        "defaultNextScene": "scene-project-team"
+      },
+      {
+        "id": "scene-popular-defend",
+        "title": "A Small Redirection",
+        "location": "Cafeteria - Maya's Table",
+        "characters": [
+          "player",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "The player quietly says, 'First days are rough for everyone, give her a break.' Maya's eyebrow lifts in surprise. The table goes quiet for a beat, testing whether the new kid meant it.",
+        "emotionalBeat": "risking status for integrity",
+        "defaultNextScene": "scene-project-team"
+      },
+      {
+        "id": "scene-lunch-alex",
+        "title": "The Back Corner",
+        "location": "Cafeteria - Back Corner Table",
+        "characters": [
+          "player",
+          "alex",
+          "maya"
+        ],
+        "duration": 1.5,
+        "description": "Alex is wary at first, then opens up a little about transferring schools mid-year. As Maya's group passes by, someone tosses a quiet jab clearly meant for Alex to hear.",
+        "emotionalBeat": "building trust interrupted by cruelty"
+      },
+      {
+        "id": "scene-alex-confront",
+        "title": "Calling It Out",
+        "location": "Cafeteria - Back Corner Table",
+        "characters": [
+          "player",
+          "alex",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "The player calls Maya out directly, loud enough for nearby tables to hear. The cafeteria quiets. Maya is caught off guard; Alex looks equal parts grateful and mortified.",
+        "emotionalBeat": "bold defense, real risk",
+        "defaultNextScene": "scene-project-team"
+      },
+      {
+        "id": "scene-alex-ignore",
+        "title": "Letting It Slide",
+        "location": "Cafeteria - Back Corner Table",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "The player lets the comment go, focusing on Alex instead. Alex tenses but says nothing. The silence between them says more than words would have.",
+        "emotionalBeat": "restraint and a missed moment",
+        "defaultNextScene": "scene-project-team"
+      },
+      {
+        "id": "scene-alex-humor",
+        "title": "Diffusing It",
+        "location": "Cafeteria - Back Corner Table",
+        "characters": [
+          "player",
+          "alex",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "The player cracks a well-timed joke that deflates the tension without a direct confrontation. Alex almost smiles. Maya rolls her eyes and walks off, more amused than angry.",
+        "emotionalBeat": "clever de-escalation",
+        "defaultNextScene": "scene-project-team"
+      },
+      {
+        "id": "scene-lunch-invite",
+        "title": "Building a Bridge",
+        "location": "Cafeteria - A New Middle Table",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "The player waves Alex over toward Maya's group. The mix is immediately awkward - whispers, stiff shoulders, Jordan's small talk falling flat into silence.",
+        "emotionalBeat": "brave, precarious bridge-building"
+      },
+      {
+        "id": "scene-invite-humor",
+        "title": "Breaking the Ice",
+        "location": "Cafeteria - Middle Table",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "A well-placed joke gets both sides of the table laughing at the same thing for the first time. It's fragile, but it's real.",
+        "emotionalBeat": "fragile connection",
+        "defaultNextScene": "scene-project-team"
+      },
+      {
+        "id": "scene-invite-honesty",
+        "title": "Just Saying It",
+        "location": "Cafeteria - Middle Table",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player admits plainly: 'I just wanted everyone to have a decent first day.' It catches the table off guard - Alex softens, Maya gives a slow, considering nod.",
+        "emotionalBeat": "vulnerable authenticity rewarded",
+        "defaultNextScene": "scene-project-team"
+      },
+      {
+        "id": "scene-invite-awkward",
+        "title": "Letting It Sit",
+        "location": "Cafeteria - Middle Table",
+        "characters": [
+          "player",
+          "alex",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "The player lets the silence stretch, hoping it resolves itself. It doesn't. Lunch ends with the tension unspoken and unresolved.",
+        "emotionalBeat": "unresolved discomfort",
+        "defaultNextScene": "scene-project-team"
+      },
+      {
+        "id": "scene-project-team",
+        "title": "Group of Four",
+        "location": "Homeroom - Project Announcement",
+        "characters": [
+          "player",
+          "maya",
+          "alex",
+          "jordan",
+          "mr-alvarez"
+        ],
+        "duration": 1.5,
+        "description": "Mr. Alvarez assigns a term project in groups of four: the player, Maya, Alex, and Jordan. The room tenses as everyone recalls lunch. Someone has to decide how this group is actually going to work.",
+        "emotionalBeat": "forced reckoning"
+      },
+      {
+        "id": "scene-climax",
+        "title": "The Library Standoff",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "maya",
+          "alex",
+          "jordan"
+        ],
+        "duration": 2,
+        "description": "Midway through the project, Maya flatly dismisses Alex's idea in front of everyone. Alex starts to shut down and pull away. The group is one wrong move from falling apart, and all eyes land on the player.",
+        "emotionalBeat": "climactic values test"
+      },
+      {
+        "id": "scene-ending-integrated",
+        "title": "A New Kind of Table",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "maya",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player's diplomatic stand shifts the room. Maya grudgingly credits Alex's idea; Alex finds their voice. The project comes together, and so, quietly, does something like a new social circle - one the player actually built.",
+        "emotionalBeat": "earned belonging",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-ending-popular-lonely",
+        "title": "The Cost of Peace",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "maya",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Siding with Maya keeps the peace and cements the player's spot at the popular table. But Alex quietly withdraws - from the project, and from the player - a small loss tucked under a shiny new popularity.",
+        "emotionalBeat": "bittersweet success",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-ending-outsider-strong",
+        "title": "Real, Just Smaller",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "alex",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "Standing firmly with Alex costs the player standing with Maya's crowd. But a genuine friendship takes root. The player learns that real belonging never actually required that other table.",
+        "emotionalBeat": "authentic connection",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-ending-compromise",
+        "title": "Both, Somehow",
+        "location": "Library Study Room",
+        "characters": [
+          "player",
+          "maya",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The player's creative blend of both ideas surprises everyone. Maya and Alex find unlikely common ground, and the player emerges as someone who can bend without breaking.",
+        "emotionalBeat": "integrated growth",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-classroom",
+        "prompt": "Mr. Alvarez asks you to share something about yourself with the class. What do you say?",
+        "context": "First impressions are forming in real time, and the whole room is watching.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Own it boldly - crack a confident, attention-grabbing line.",
+            "nextScene": "scene-lunch-setup"
+          },
+          {
+            "id": "b",
+            "text": "Share something small but true about yourself.",
+            "nextScene": "scene-lunch-setup"
+          },
+          {
+            "id": "c",
+            "text": "Deflect with a joke to get the attention off you.",
+            "nextScene": "scene-lunch-setup"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "EMPATHY": 1,
+            "CONFIDENCE": 1
+          },
+          "c": {
+            "ADAPTABILITY": 2
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-lunch-setup",
+        "prompt": "Where do you sit for lunch?",
+        "context": "Maya's table is waving you over. Alex is sitting alone across the room. This decision will shape the rest of the day.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Maya's table - it's the easy, confident choice.",
+            "nextScene": "scene-lunch-popular"
+          },
+          {
+            "id": "b",
+            "text": "Sit with Alex - nobody should eat alone on their first day.",
+            "nextScene": "scene-lunch-alex"
+          },
+          {
+            "id": "c",
+            "text": "Wave Alex over to join you near Maya's group.",
+            "nextScene": "scene-lunch-invite"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "EMPATHY": 2
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3a",
+        "scene": "scene-lunch-popular",
+        "prompt": "The table's laughter turns toward Alex fumbling a tray. Maya looks at you, waiting.",
+        "context": "Joining in cements your place at this table. Not joining might not.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Join the joke.",
+            "nextScene": "scene-popular-join"
+          },
+          {
+            "id": "b",
+            "text": "Give a noncommittal laugh and stay quiet.",
+            "nextScene": "scene-popular-neutral"
+          },
+          {
+            "id": "c",
+            "text": "Gently redirect - defend Alex without making a scene.",
+            "nextScene": "scene-popular-defend"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -2
+          },
+          "b": {
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3b",
+        "scene": "scene-lunch-alex",
+        "prompt": "Maya's group tosses a quiet jab at Alex as they pass. Alex freezes.",
+        "context": "You're building trust with Alex, and this moment will define whether that trust feels safe.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Call Maya out directly, loud enough for others to hear.",
+            "nextScene": "scene-alex-confront"
+          },
+          {
+            "id": "b",
+            "text": "Let it go and focus on Alex.",
+            "nextScene": "scene-alex-ignore"
+          },
+          {
+            "id": "c",
+            "text": "Defuse the moment with a well-timed joke.",
+            "nextScene": "scene-alex-humor"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 1
+          },
+          "b": {
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-3c",
+        "scene": "scene-lunch-invite",
+        "prompt": "The mixed table is stiff and awkward. Someone needs to break the tension.",
+        "context": "You created this bridge - now you have to decide how to hold it together.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Crack a joke that includes everyone.",
+            "nextScene": "scene-invite-humor"
+          },
+          {
+            "id": "b",
+            "text": "Be honest about why you wanted everyone together.",
+            "nextScene": "scene-invite-honesty"
+          },
+          {
+            "id": "c",
+            "text": "Let the silence play out and hope it resolves itself.",
+            "nextScene": "scene-invite-awkward"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "ADAPTABILITY": 2
+          },
+          "b": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "c": {
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-project-team",
+        "prompt": "The group needs a way of working together. What do you propose?",
+        "context": "Whatever happened at lunch is still hanging in the air between Maya and Alex.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Take charge and assign roles yourself.",
+            "nextScene": "scene-climax"
+          },
+          {
+            "id": "b",
+            "text": "Suggest a collaborative approach that uses everyone's strengths.",
+            "nextScene": "scene-climax"
+          },
+          {
+            "id": "c",
+            "text": "Defer to Maya's plan to avoid conflict.",
+            "nextScene": "scene-climax"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "EMPATHY": 2,
+            "ADAPTABILITY": 1
+          },
+          "c": {
+            "ADAPTABILITY": 1,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-climax",
+        "prompt": "Maya flatly dismisses Alex's idea. Alex starts to shut down. What do you do?",
+        "context": "This is the moment that decides what kind of person you're going to be at this school.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Diplomatically make the case for Alex's idea.",
+            "nextScene": "scene-ending-integrated"
+          },
+          {
+            "id": "b",
+            "text": "Side with Maya to keep the group's peace.",
+            "nextScene": "scene-ending-popular-lonely"
+          },
+          {
+            "id": "c",
+            "text": "Firmly back Alex, even if it costs you with Maya.",
+            "nextScene": "scene-ending-outsider-strong"
+          },
+          {
+            "id": "d",
+            "text": "Propose a creative blend of both ideas.",
+            "nextScene": "scene-ending-compromise"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 2
+          },
+          "b": {
+            "CONFIDENCE": 1,
+            "EMPATHY": -1
+          },
+          "c": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "d": {
+            "ADAPTABILITY": 2,
+            "EMPATHY": 1,
+            "CONFIDENCE": 1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-popular",
+        "name": "The Popular Path",
+        "triggeredBy": [
+          "choice-2:a"
+        ],
+        "description": "The player prioritizes fitting in with Maya's established social circle from the start.",
+        "outcome": "Fast social acceptance, but repeated small tests of whether that acceptance is worth its cost."
+      },
+      {
+        "id": "branch-authentic",
+        "name": "The Authentic Path",
+        "triggeredBy": [
+          "choice-2:b"
+        ],
+        "description": "The player chooses connection with Alex over social climbing on day one.",
+        "outcome": "A slower-built but genuine relationship, occasionally at odds with the school's social hierarchy."
+      },
+      {
+        "id": "branch-bridge",
+        "name": "The Bridge-Builder Path",
+        "triggeredBy": [
+          "choice-2:c"
+        ],
+        "description": "The player attempts the riskiest option - pulling both social worlds to the same table.",
+        "outcome": "Higher initial tension but the most material to work with when the climax arrives."
+      },
+      {
+        "id": "branch-integrated",
+        "name": "Earned Belonging",
+        "triggeredBy": [
+          "choice-5:a"
+        ],
+        "description": "The player advocates diplomatically for Alex at the moment it matters most.",
+        "outcome": "Both relationships survive; the player becomes a bridge between two social worlds rather than a citizen of just one."
+      },
+      {
+        "id": "branch-popular-lonely",
+        "name": "Popularity's Price",
+        "triggeredBy": [
+          "choice-5:b"
+        ],
+        "description": "The player chooses social safety over standing up for Alex.",
+        "outcome": "Secure popularity, but a real friendship quietly closes its door."
+      },
+      {
+        "id": "branch-outsider-strong",
+        "name": "Small and Real",
+        "triggeredBy": [
+          "choice-5:c"
+        ],
+        "description": "The player firmly sides with Alex, accepting exclusion from the popular group.",
+        "outcome": "The player loses social capital but gains a durable, honest friendship."
+      },
+      {
+        "id": "branch-compromise",
+        "name": "Bending Without Breaking",
+        "triggeredBy": [
+          "choice-5:d"
+        ],
+        "description": "The player finds a creative synthesis rather than choosing a side.",
+        "outcome": "Both Maya and Alex find unexpected respect for the player's approach and, cautiously, each other."
+      }
+    ],
+    "emotionalArc": [
+      "Nervous anticipation walking into the unknown",
+      "Sudden vulnerability when singled out in class",
+      "The quiet dread and thrill of a first social choice",
+      "Escalating tension as loyalties are tested in real time",
+      "A climactic moment where values outweigh convenience",
+      "A resolution that reflects, rather than judges, the choices made"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from reactive uncertainty about how to be perceived toward a self-defined sense of who they want to be, regardless of ending."
+      },
+      {
+        "character": "maya",
+        "arc": "Introduced as an intimidating social gatekeeper; depending on player choices, is either quietly humbled, mildly alienated, or unexpectedly won over - never purely villain or friend."
+      },
+      {
+        "character": "alex",
+        "arc": "Moves from guarded self-protection to either trust, disappointment, or cautious hope, mirroring how consistently the player shows up for them."
+      },
+      {
+        "character": "jordan",
+        "arc": "A steady, low-stakes presence representing the 'easy' social default - present throughout as a gentle contrast to the harder choices around Maya and Alex."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "expression": "Tested through self-presentation (choice-1), willingness to take social risk (choices 2, 3a-c), and leadership under pressure (choice-4, choice-5)."
+      },
+      {
+        "trait": "EMPATHY",
+        "expression": "Tested through noticing and acting on Alex's isolation (choices 2, 3a-c) and through advocacy in the climax (choice-5)."
+      },
+      {
+        "trait": "ADAPTABILITY",
+        "expression": "Tested through bridge-building choices (choice-2c, choice-3c), de-escalation tactics (choice-3b, choice-4), and creative synthesis at the climax (choice-5d)."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player-maya",
+        "dynamic": "Starts as an aspirational, slightly intimidating social gate; evolves into either alliance, quiet rivalry, or grudging respect depending on choices."
+      },
+      {
+        "pair": "player-alex",
+        "dynamic": "Starts as a missed connection or noticed outsider; evolves into either genuine friendship, quiet estrangement, or cautious trust."
+      },
+      {
+        "pair": "player-jordan",
+        "dynamic": "A steady, low-conflict friendship that serves as an emotional constant regardless of which path the player takes."
+      },
+      {
+        "pair": "maya-alex",
+        "dynamic": "Starts adversarial or indifferent; can end resolved, unresolved, or transformed depending entirely on player intervention."
+      }
+    ],
+    "replayHooks": [
+      "Four distinct endings encourage players to ask 'what if I'd sat somewhere else at lunch?'",
+      "Maya is written with enough complexity that players may replay just to see if she can be won over rather than opposed.",
+      "The three parallel lunch branches (popular / Alex / bridge) contain entirely different scenes, rewarding replay to see content otherwise missed.",
+      "Players who play it 'safe' the first time often want to replay to try the riskier bridge-building or confrontation options.",
+      "The climax choice deliberately offers a fourth 'compromise' option that isn't obviously signposted earlier, rewarding players who explore."
+    ],
+    "estimatedPlayTime": 12,
+    "educationalGoals": [
+      "Practice recognizing and acting on social risk in a low-stakes context (CONFIDENCE)",
+      "Build the instinct to notice and respond to someone else's exclusion or discomfort (EMPATHY)",
+      "Develop flexible responses to social tension rather than defaulting to one script (ADAPTABILITY)",
+      "Normalize that first impressions are choices, not fixed truths, and can be revised"
+    ],
+    "conversationStarters": [
+      "What made you decide where to sit at lunch? Would you make the same choice in real life?",
+      "Was there a moment where you felt pressure to go along with something you weren't sure about? What did you do?",
+      "Do you think Maya was really a 'mean girl,' or just someone protecting her own position?",
+      "What would it have taken for Alex to trust the player faster - or slower?",
+      "Which ending felt most true to how you actually want to handle new social situations?"
+    ]
+  },
+  "designNotes": "The episode hides its trait-tracking inside ordinary first-day-of-school stakes: where to sit, what to say, who to defend. No scene explicitly names 'confidence,' 'empathy,' or 'adaptability' - they surface only through the natural texture of cafeteria politics and a group project gone sideways. Maya is deliberately written as neither a pure antagonist nor a simple mean girl; she's a mirror for the player's own uncertainty about status, which keeps the moral choices from feeling preachy. The three parallel lunch branches (popular table / Alex's table / bridge table) are the core divergence engine - each is a genuinely different scene with different characters foregrounded, not just a reskinned version of the same beats. All branches converge at the group project so the episode can deliver a focused, high-stakes climax without ballooning runtime, then re-diverge into four distinct endings so replay value stays high without needing a second episode's worth of content.",
+  "uncertainties": [
+    "Whether four endings dilutes the emotional clarity of the climax choice versus a tighter three-ending structure.",
+    "Whether Maya reads as sufficiently sympathetic given limited screen time in the popular-path branch, or whether she needs one more humanizing beat.",
+    "Whether the parallel lunch-branch structure (three fully separate scene sets) is too content-heavy for a 10-15 minute target if a studio wants full VO/art for every branch.",
+    "Whether choice-4 (project approach) is impactful enough on its own or should more directly foreshadow which ending is 'easiest' to reach from it."
+  ],
+  "alternativesConsidered": [
+    "A version where Maya's crew is uniformly hostile and one-dimensional - rejected because it removes moral complexity and makes 'defend Alex' too easy a choice to feel meaningful.",
+    "Using a single shared lunch scene with internal state flags instead of three fully separate branch scenes - rejected in favor of explicit branching scenes since the target format requires concrete scene-to-scene transitions rather than hidden variables.",
+    "Reducing the climax to three endings instead of four - considered for tighter focus, but the fourth 'compromise' ending was kept because it rewards ADAPTABILITY specifically and gives a distinct replay incentive beyond a binary 'pick a side' framing.",
+    "Opening with the group project first and lunch second - rejected because the lunch-seating choice is a more universally resonant, lower-stakes entry point for first-time players before the higher-stakes project climax."
+  ]
+}

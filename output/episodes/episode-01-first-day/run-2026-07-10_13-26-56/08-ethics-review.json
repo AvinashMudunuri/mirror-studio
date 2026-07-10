@@ -1,0 +1,98 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "STEREOTYPE",
+      "issue": "Wren's code-switching/chameleon trait is tied to her mixed-heritage, multiple-moves background in a way that could brush against the 'adaptable multicultural kid' trope if handled carelessly, though the narrative treats it as a psychological coping mechanism rather than an essentialized racial trait.",
+      "location": "Character bio - Wren Okafor-Silva; scene-hallway, scene-classroom",
+      "harmPotential": "Low risk, but could read as implying mixed-race/immigrant-family kids are inherently 'chameleons' rather than this being an individual trauma response to frequent moves.",
+      "recommendation": "Keep the framing (already mostly present) explicit that this is about repeated relocation trauma, not her ethnicity/heritage itself — the current text does this reasonably well by grounding it in her dad's job requiring moves.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Maya's arc partially normalizes 'mean girl redeemed by protagonist' without her ever facing real accountability toward Alex directly within this episode — she gets social pushback from Wren but Alex never receives an apology in any branch.",
+      "location": "scene-alex-confront, scene-ending-integrated, scene-ending-compromise",
+      "harmPotential": "Could inadvertently teach that bystander intervention is sufficient and the person who caused harm doesn't need to make amends directly to the harmed party.",
+      "recommendation": "Consider adding an optional beat/line in the higher-empathy endings where Maya says something closer to a direct acknowledgment to Alex (not just 'fine, Alex's idea was good') to model repair, not just concession.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex's backstory (past humiliation forcing a school transfer) is the only characterization drawn from real suffering/trauma among the four peer characters; while not identity-based, it places the 'guarded, hurt' role disproportionately on the one character coded as possibly queer/gender-nonconforming (they/them pronouns).",
+      "location": "Character bio - Alex Rivera-Chen; scene-lunch-alex; scene-climax",
+      "harmPotential": "Could unintentionally reinforce a 'tragic outsider' pattern where the only non-binary-coded character's defining trait is past victimization/exclusion, even though the material intent is clearly to build empathy rather than punish identity.",
+      "recommendation": "Consider a future episode beat (already hinted in arcPotential) where Alex's competence, humor, and interests (the notebook world) are foregrounded as much as their past pain, so the character isn't defined primarily by having been bullied. This episode alone is fine, but the studio should track this across the season.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "In the 'Popularity's Price' ending, the consequence for choosing social safety over defending Alex is handled through Alex's silent withdrawal rather than any explicit narrative signal that this was the less admirable choice, which could read as morally ambiguous rather than a clear (if bittersweet) lesson.",
+      "location": "scene-ending-popular-lonely",
+      "harmPotential": "Minimal — the INTERNAL line ('You got exactly what you wanted... why does it feel like you lost something too') does gesture at cost, but a player could miss the ethical throughline if not paying close attention.",
+      "recommendation": "This is largely fine as nuanced, non-preachy consequence design (avoiding a heavy-handed 'moral'), but consider strengthening the INTERNAL beat slightly so the emotional cost registers unambiguously.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "Diverse cast (Nigerian-Brazilian, Nigerian-American, Latino/mixed, Black/mixed-heritage Southern-coded surnames) portrayed as ordinary middle schoolers whose ethnic/cultural backgrounds are present but not exoticized or played for stereotype — race is backgrounded as texture, not spectacle.",
+    "Alex's they/them pronouns are simply present without being commented on, questioned, or made into an 'issue' by any character — excellent normalization of gender diversity for this age group.",
+    "Maya, the 'mean girl' antagonist figure, is given real interiority (insecurity, a parallel past as a former outcast) rather than being flattened into a villain, avoiding harmful cardboard antagonist tropes.",
+    "No adult-teen boundary violations; Mr. Alvarez is written with clear professional warmth and self-aware fallibility, appropriately modeling flawed-but-well-intentioned adult authority.",
+    "The branching structure explicitly avoids moralizing about a single 'correct' choice, instead showing proportionate, believable social consequences for confidence, avoidance, defense, and compromise — strong ethical decision modeling for the 11-14 target age.",
+    "The 'bridge-building' path realistically shows that good intentions (mixing social groups) can still be awkward and imperfect, which is a mature, honest depiction of social risk rather than a saccharine one.",
+    "Wren's anxiety and identity performance are treated with psychological nuance (the 'Who I Was At Each School' notebook) rather than as a quirky gimmick, modeling healthy vocabulary for identity exploration."
+  ],
+  "recommendations": [
+    "Track Alex's characterization across the season to ensure future episodes build out strengths/interests/agency beyond the 'guarded kid with a painful past,' per the studio's own arcPotential notes.",
+    "Consider adding a small direct-acknowledgment beat from Maya to Alex in the most empathetic endings to model interpersonal repair, not just social pressure/concession.",
+    "Slightly sharpen the internal-monologue cost signal in the 'Popularity's Price' ending so players clearly register the ethical trade-off even on a fast playthrough.",
+    "In future episodes, consider giving Jordan's Nigerian-American family/background similar texture to Wren's rather than leaving it purely functional (peacemaker role) — small nice-to-have for representation depth."
+  ],
+  "scores": {
+    "biasAvoidance": 9,
+    "representation": 8,
+    "tropes": 8,
+    "ethicalModeling": 9,
+    "culturalSensitivity": 9,
+    "overall": 9
+  },
+  "flaggedContent": [
+    {
+      "type": "PORTRAYAL",
+      "location": "scene-alex-confront / scene-climax",
+      "content": "Alex is repeatedly positioned as the target of jokes/dismissal whose fate depends on Wren's intervention.",
+      "concern": "Risk of 'passive marginalized character rescued by protagonist' pattern if repeated across future episodes without giving Alex independent agency/wins.",
+      "suggestion": "Ensure Alex gets moments (as arcPotential already suggests, e.g., sharing the notebook world) where they act with agency unprompted by Wren's choices."
+    },
+    {
+      "type": "DECISION",
+      "location": "scene-ending-popular-lonely",
+      "content": "Choosing peace with Maya results in Alex's silent, unexplained withdrawal with no direct confrontation or resolution.",
+      "concern": "Could read as ambiguous about whether the 'popular' choice was actually wrong, since the narrative consequence is subtle rather than explicit.",
+      "suggestion": "Slightly amplify the INTERNAL reflection line to make the emotional cost unambiguous without being preachy."
+    }
+  ],
+  "summary": {
+    "verdict": "This episode demonstrates strong, thoughtful ethical design: diverse identities are normalized rather than tokenized, the antagonist figure is humanized rather than flattened, gender diversity is presented matter-of-factly, and the branching choice structure models proportionate, non-preachy consequences well-suited to building empathy and confidence in the 11-14 target age. Only minor, forward-looking concerns exist around ensuring Alex's characterization broadens beyond guarded-outsider-with-a-painful-past in future episodes, and around slightly sharpening moral clarity in the 'easy popularity' ending.",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [
+      "Consider adding direct Maya-to-Alex repair beat in empathetic endings",
+      "Track Alex's characterization breadth across the season",
+      "Slightly sharpen emotional cost signal in 'Popularity's Price' ending"
+    ],
+    "strengths": [
+      "Naturalistic, non-tokenizing diverse cast",
+      "Humanized antagonist rather than flat villain",
+      "Unremarked-upon nonbinary representation (Alex)",
+      "Healthy adult-teen power dynamics",
+      "Non-moralizing, consequence-proportionate branching design"
+    ],
+    "readyForPublication": true
+  }
+}
