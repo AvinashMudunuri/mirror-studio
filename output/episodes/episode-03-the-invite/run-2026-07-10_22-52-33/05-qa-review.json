@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Several dialogue entries have an empty string for 'text' while conveying only a reaction via 'action'/'emotion' (e.g., a laugh cut short). This works as a non-verbal beat but could render as a blank speech bubble in some UI implementations.",
+      "location": "scene-3a-curation-meeting.dialogue[s3a-3], scene-5-the-leak.dialogue[s5-3], scene-6b-private-support.dialogue[s6b-2]",
+      "suggestion": "Either omit these entries and fold the action into the surrounding NARRATOR line, or add a minimal non-verbal placeholder (e.g., '...') so rendering pipelines that assume non-empty text don't produce empty bubbles."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Only 3 of the many possible choice-history permutations (choice-1 × choice-2a/2b × choice-3 × choice-4 × choice-5) map to a named outcome in 'outcomes[].triggeredBy'. E.g., choosing choice-1:a, choice-2a:a (defend), then choice-3:c (silence) doesn't exactly match branch-full-authentic, branch-full-status, or branch-late-course-correct.",
+      "location": "outcomes[*].triggeredBy",
+      "suggestion": "Document the fallback/closest-match resolution logic explicitly (e.g., weighted trait scoring or partial-match rules) so the runtime has deterministic behavior for unlisted permutations, or add a default/'mixed' outcome branch."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "choice-4's two options ('ask Alex' vs 'move them to smaller slot') both route to the same nextScene (scene-8-backstage-question), meaning the choice only affects trait mapping and a single reply line from Alvarez, not the actual scene path. This is valid per the data model but could feel low-stakes to players expecting a visible branch.",
+      "location": "choice-4.options",
+      "suggestion": "Consider giving the 'b' option a small downstream dialogue difference in scene-8 (e.g., Alex referencing that their slot was moved) to make the choice's consequence more legible, or note in design docs that this choice is intentionally trait-only."
+    },
+    {
+      "category": "STYLE",
+      "message": "scene-9a-showcase-real and scene-9b-showcase-safe both have transition.type 'default' pointing to 'END', which is correct, but the branchDialogue for these endings is selected by outcome id rather than by scene — worth double-checking the runtime picks the correct branchDialogue block when a playthrough doesn't cleanly match any of the 3 outcomes (see above warning).",
+      "location": "branchDialogue",
+      "suggestion": "Add a fallback branchDialogue entry (e.g., 'branch-default') for scene-9a and scene-9b in case no outcome fully matches."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 30,
+    "failedChecks": 0,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Add an explicit fallback/default outcome to handle choice-history permutations that don't exactly match the 3 defined outcomes, to guarantee deterministic branchDialogue selection at the ending scenes.",
+    "Consider light dialogue differentiation for choice-4's two options so the choice has a small perceptible downstream effect beyond trait deltas.",
+    "Review empty-text dialogue entries for renderer compatibility; confirm the UI gracefully handles action-only beats."
+  ]
+}

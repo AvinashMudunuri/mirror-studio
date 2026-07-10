@@ -1,0 +1,85 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "CHOICES",
+      "issue": "Choice-4 (Alvarez schedule question) offers two options but both route to the identical next scene, and the substantive difference is only reflected in a short dialogue branch rather than any structural consequence.",
+      "location": "scene-7-alvarez-prep / choice-4",
+      "impact": "Players may feel the choice is cosmetic since the scene graph doesn't diverge, slightly undercutting the sense of agency right before the climax.",
+      "fix": "Let option 'b' (move to smaller slot) actually alter scene-8 framing (e.g., Alex arrives already relocated, changing the tone of the direct question) so the branch has a visible downstream fingerprint, not just a line of dialogue."
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Scene 1 (announcement) is fairly long and expository relative to later scenes, front-loading a lot of character introductions (Maya's committee comment, Jordan's playlist, Alex's reaction) before the first real choice.",
+      "location": "scene-1-showcase-announcement",
+      "impact": "Slight lag before player agency kicks in; low-engagement risk for players wanting to act quickly.",
+      "fix": "Trim 1-2 lines of setup banter or move the first choice earlier (e.g., let Maya's committee pitch happen in the same beat) to tighten time-to-first-choice."
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPLAYABILITY",
+      "issue": "Only 3 named outcome branches are defined despite 5 sequential binary/ternary choices (2^4 x 3 = 48 theoretical paths), meaning most choice combinations collapse into the same 'full-status' or 'full-authentic' outcome without unique acknowledgment.",
+      "location": "outcomes array",
+      "impact": "Players who mix strategies (e.g., quiet at the leak but decisive backstage) won't see their specific pattern reflected, reducing the payoff of replaying with different choice combinations.",
+      "fix": "Add 1-2 more mixed-outcome variants (e.g., 'Public bravado, private doubt') or at least vary closing dialogue lines based on partial trait totals rather than only the three canonical paths."
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "No explicit signal to new players that earlier small choices (committee, curation) accumulate toward the big leak/backstage moments — the causal chain is implicit only.",
+      "location": "throughout, especially choice-1 through choice-2",
+      "impact": "First-time players may not realize early 'low stakes' choices are quietly building toward the emotionally loaded finale, understating their weight.",
+      "fix": "A subtle INTERNAL line after choice-2a/2b hinting 'this isn't the last time this will matter' would reinforce stakes without breaking immersion."
+    }
+  ],
+  "strengths": [
+    "Excellent escalating structure: low-stakes committee choice → mid-stakes curation choice → high-stakes public leak choice → reflective adult-mediated choice → intimate capstone choice, mirroring rising tension well",
+    "Choice-3 (the leak) is a genuinely well-designed three-way dilemma (loud defense / quiet support / silence) with no clean 'correct' answer and clear trait signaling for different playstyles",
+    "Strong use of recurring motifs (four taps, half-late laugh) that pay off across branches, rewarding attentive players",
+    "The 'Late, But Real' outcome is a smart design choice — it explicitly validates recovery/redemption arcs rather than punishing an early misstep permanently, which is rare and valuable in branching narrative design",
+    "Backstage direct question (choice-5) creates a satisfying narrative rhyme/callback to the leak scene, giving the finale real weight without needing new mechanics",
+    "Good variety in scene length and emotional register — quiet library scenes contrast well with the loud cafeteria set-piece"
+  ],
+  "recommendations": [
+    "Add a small mid-episode agency beat (e.g., a brief exchange with Jordan) to break up the long stretch between choice-2 and choice-3 where the player is otherwise mostly reactive",
+    "Consider surfacing a lightweight trait/relationship indicator after major choices so players can track their 'build' without needing to infer it from dialogue tone alone",
+    "Expand the outcomes table to at least acknowledge 2 more hybrid paths so replay experimentation feels rewarded",
+    "Slightly tighten scene-1 dialogue to get to the first choice faster"
+  ],
+  "scores": {
+    "engagement": 8,
+    "choiceQuality": 8,
+    "pacing": 7,
+    "playerAgency": 7,
+    "replayability": 6,
+    "overall": 7
+  },
+  "metrics": {
+    "averageSceneLength": 50,
+    "choiceFrequency": 0.38,
+    "branchingFactor": 2.2,
+    "estimatedReplayValue": 6
+  },
+  "summary": {
+    "verdict": "A well-crafted, emotionally coherent episode with a strong central dilemma (the cafeteria leak) and a satisfying redemption path, but replayability and mid-episode agency are only good, not great — no blocking issues.",
+    "keyIssues": [
+      "Choice-4 lacks structural divergence despite dialogue differences",
+      "Outcome variety undercounts the actual choice-combination space",
+      "Slow time-to-first-choice in the opening scene"
+    ],
+    "topStrengths": [
+      "Escalating stakes structure culminating in a genuinely dilemma-rich leak scene",
+      "Rewarding 'late course-correct' redemption path design",
+      "Strong callback structure (four taps, half-late laugh, direct-question rhyme) rewarding attentive play"
+    ],
+    "mustFix": [],
+    "niceToHave": [
+      "Give choice-4 a visible structural consequence, not just dialogue flavor",
+      "Add hybrid outcome variants for underrepresented choice combinations",
+      "Trim opening scene to reach first choice faster",
+      "Add a lightweight progress/relationship signal after major choices"
+    ]
+  }
+}
