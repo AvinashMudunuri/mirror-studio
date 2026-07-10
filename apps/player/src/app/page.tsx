@@ -1,14 +1,11 @@
 import { getPool } from '@/lib/db';
+import { listPublishedPlayerEpisodes } from '@/lib/episodes';
 
 export const dynamic = 'force-dynamic';
 
-const EPISODES = [
-  { worldId: 'NEW_SCHOOL', episodeNumber: 1, label: 'Episode 1 — First Bell' },
-  { worldId: 'NEW_SCHOOL', episodeNumber: 2, label: 'Episode 2 — Group Work' }
-];
-
 export default async function HomePage() {
   const pool = getPool();
+  const episodes = pool ? await listPublishedPlayerEpisodes(pool) : [];
 
   return (
     <div className="container page">
@@ -23,11 +20,25 @@ export default async function HomePage() {
         </div>
       )}
 
+      {pool && episodes.length === 0 && (
+        <div className="notice" style={{ marginBottom: 20 }}>
+          No published episodes yet. Publish an APPROVED run in the admin app.
+        </div>
+      )}
+
       <div className="episode-list">
-        {EPISODES.map(ep => (
-          <a key={`${ep.worldId}-${ep.episodeNumber}`} className="episode-card" href={`/play/${ep.worldId}/${ep.episodeNumber}`}>
-            <h3>{ep.label}</h3>
-            <p>{ep.worldId} · episode {ep.episodeNumber}</p>
+        {episodes.map(ep => (
+          <a
+            key={`${ep.worldId}-${ep.episodeNumber}`}
+            className="episode-card"
+            href={`/play/${ep.worldId}/${ep.episodeNumber}`}
+          >
+            <h3>
+              Episode {ep.episodeNumber} — {ep.title}
+            </h3>
+            <p>
+              {ep.worldId} · episode {ep.episodeNumber}
+            </p>
           </a>
         ))}
       </div>
