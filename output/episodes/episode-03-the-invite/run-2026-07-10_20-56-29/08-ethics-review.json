@@ -1,0 +1,82 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "STEREOTYPE",
+      "issue": "Alex, a mixed-race Japanese-American/Latino character, is nicknamed 'Sketchbook' and mocked by Priya using a diminishing nickname ('Sketchbook') rather than their name — this is clearly framed as a microaggression/exclusion tactic, not endorsed by the narrative, but worth flagging for how it reads in isolation.",
+      "location": "party-day-together (pdt-5), choiceDialogue for choice-6a",
+      "harmPotential": "Could feel uncomfortably close to real bullying dynamics some quiet/artistic kids experience; low risk since narrative treats it as the antagonist's flaw to be confronted.",
+      "recommendation": "Keep as-is since it's narratively condemned, but ensure at least one branch has an adult or peer explicitly naming why 'nicknaming to erase someone's name' is a subtle exclusion tactic, to make the lesson explicit for younger players (11-12 range).",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Priya (South Asian) is written as the sharp, status-driven, controlling 'mean girl' archetype and Jordan (Filipino-American) as the conflict-avoidant peacemaker who 'confuses keeping the peace with doing the right thing' — both are given genuine interiority and sympathetic backstory, which mitigates stereotype risk, but the pairing of the two named characters of color as the social-pressure axis (versus the Latina protagonist and mixed-race Alex as the moral center) could read as coincidental clustering worth double-checking against the rest of the season for balance.",
+      "location": "Character profiles: priya, jordan",
+      "harmPotential": "If this patterning repeats across other episodes (e.g., characters of color consistently coded as socially manipulative or as the ones requiring readers to prove empathy toward), it could create a subtle cumulative bias even though each character individually is well-rounded.",
+      "recommendation": "No single-episode fix needed since both characters are richly humanized with real strengths and vulnerabilities (Priya's loneliness, Jordan's own hidden 'sketchbook kid' past). Recommend a cross-episode representation audit to confirm this isn't a recurring pattern in the season.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Ms. Chen's 'social engineering' of seating charts is presented approvingly as a benevolent authority tactic, but it also means an adult is covertly manipulating adolescent social dynamics without transparency or consent — for a middle-school-targeted show this is a low-stakes classroom device, but it slightly under-models the value of transparent adult communication.",
+      "location": "ms-chen background secrets; skip-to-project-class scene",
+      "harmPotential": "Minimal — mostly a missed opportunity rather than active harm. Some students/parents could read covert 'pairing engineering' as an adult overstepping, even if well-intentioned.",
+      "recommendation": "Consider a future beat where Ms. Chen's rationale becomes explicit to a student, reinforcing that adult guidance works best when eventually made visible/understandable, not just covert.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "Exclusion is portrayed as socially coded and 'funny' rather than overtly cruel — an accurate, age-appropriate depiction of how real middle-school marginalization often operates through humor and omission rather than outright meanness.",
+    "Priya and Jordan are not flattened into a 'mean girl' and 'nice guy' binary; both have real interiority, backstory-based vulnerability (Priya's sixth-grade loneliness, Jordan's own 'sketchbook kid' past), and moments of subtle change (Priya's nod, not-quite-apology) that avoid cheap redemption or villainization.",
+    "Alex is written with full agency — they are not a passive 'sad kid' waiting to be saved; they set boundaries, decline invitations, tease back, and have their own rich inner life (family responsibilities, art, homesickness) independent of their function in Sol's arc.",
+    "No single ending is moralized as the 'only correct' choice — the branching structure (Quiet Strength, Balanced Growth, Comfortable Fit) allows for imperfect repair and honest self-reflection rather than punishing all missteps irrecoverably, which models realistic growth for 11-14 year olds.",
+    "Cultural/family details (Sol's abuela, Priya's Nani's ring, Alex's family recipe) are treated as personal texture rather than exoticized markers, and are not weaponized as sources of conflict or comedy.",
+    "Power dynamics are peer-to-peer and age-appropriate throughout; no adult-teen boundary issues; Ms. Chen's authority is used to create structure, not humiliation.",
+    "The 'Comfortable Fit' ending resists a simplistic morality-tale wrap-up — it ends in quiet discomfort rather than punishment, correctly modeling that choosing ease over integrity has an emotional cost rather than a dramatic public consequence, which is more realistic and less preachy."
+  ],
+  "recommendations": [
+    "Track cross-episode patterns to ensure characters of color aren't disproportionately cast as either 'social gatekeepers' (Priya) or 'moral tests' (Alex) across the season as a whole.",
+    "Consider one branch where an adult (Ms. Chen or Jordan) explicitly names the 'nicknaming as erasure' dynamic for younger players who may not decode subtext as fluently.",
+    "In a future episode, surface Ms. Chen's covert pairing strategy to a student to model transparent adult communication alongside her effective structural interventions.",
+    "Continue the strong practice of giving every character (including the 'antagonist' Priya) a believable, sympathetic interior life — this is a major strength of the writing."
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 9,
+    "tropes": 9,
+    "ethicalModeling": 9,
+    "culturalSensitivity": 9,
+    "overall": 9
+  },
+  "flaggedContent": [
+    {
+      "type": "LANGUAGE",
+      "location": "party-day-together, choiceDialogue choice-6a",
+      "content": "Priya calling Alex 'Sketchbook' instead of their name in front of the group",
+      "concern": "Could mirror real exclusionary nicknaming tactics used against quiet/artistic kids; needs to remain clearly framed as wrong within the narrative.",
+      "suggestion": "Already handled well via Sol's choice options condemning it — consider ensuring at least one branch has explicit naming of the tactic for younger players."
+    }
+  ],
+  "summary": {
+    "verdict": "This is a well-crafted, emotionally nuanced episode that handles social exclusion, peer pressure, and belonging with age-appropriate realism and moral complexity. No character is reduced to a stereotype; even the 'popular' antagonist figures (Priya, Jordan) are given genuine depth, vulnerability, and non-cartoonish motivations. Alex, the character most at risk of being tokenized as a 'sad outsider to be rescued,' is instead written with full agency, boundaries, humor, and a rich inner life independent of the protagonist. The branching structure models realistic, non-punitive growth — imperfect repair is treated as meaningful, and no single choice is irrecoverable. Only minor, non-blocking concerns remain, primarily around cross-episode pattern-tracking rather than anything within this episode itself.",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [
+      "Watch for cross-episode clustering of characters of color into 'social gatekeeper' vs 'moral test' roles",
+      "Consider more explicit adult/peer naming of subtle exclusion tactics (e.g., diminishing nicknames) for younger end of target age range",
+      "Ms. Chen's covert social engineering could be made transparent in a future episode to model open adult communication"
+    ],
+    "strengths": [
+      "Rich, non-stereotypical interiority for all characters including the 'antagonist'",
+      "Alex written with full agency and complexity, avoiding 'tragic outsider' trope",
+      "Multiple non-punitive, realistic endings modeling imperfect but meaningful growth",
+      "Cultural details used with warmth and specificity, not exoticization",
+      "Healthy, age-appropriate peer power dynamics throughout"
+    ],
+    "readyForPublication": true
+  }
+}

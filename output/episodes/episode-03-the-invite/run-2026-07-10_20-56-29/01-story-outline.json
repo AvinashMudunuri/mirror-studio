@@ -1,0 +1,689 @@
+{
+  "episodeOutline": {
+    "title": "The Guest List",
+    "synopsis": "When Jordan announces a birthday hangout at the skate bowl, Priya's exclusive guest list becomes the episode's quiet battlefield — and Alex is the name nobody says out loud. Over one week of lunches, hallway run-ins, and a party that tests every choice that came before it, Sol has to decide whether belonging is worth what it costs someone else, and whether she's brave enough to find out before it's too late to matter.",
+    "themes": [
+      "Inclusion",
+      "Social Status",
+      "Loyalty"
+    ],
+    "targetTraits": [
+      "EMPATHY",
+      "CONFIDENCE",
+      "EMOTIONAL_AWARENESS"
+    ],
+    "scenes": [
+      {
+        "id": "cafeteria-buzz",
+        "title": "Countdown to Jordan's",
+        "location": "Crestwood cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Jordan is buzzing about his birthday hangout at the skate bowl by the reservoir — bonfire, string lights, half the grade apparently coming. Priya already has her Notes app open, curating something with the focus she usually saves for debate prep. Sol feels the warm, familiar pull of being on the inside of something.",
+        "emotionalBeat": "Anticipation; the comfort of belonging",
+        "defaultNextScene": "guest-list-tease"
+      },
+      {
+        "id": "guest-list-tease",
+        "title": "The List",
+        "location": "Crestwood cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 1,
+        "description": "Priya reads names off her phone like a verdict: 'We're capping it at forty — can't invite the whole zip code.' It's funny. It's also aimed, and everyone at the table knows exactly whose direction her eyes flicked toward for half a second before she moved on. Jordan laughs it off. Sol doesn't.",
+        "emotionalBeat": "Discomfort disguised as humor",
+        "defaultNextScene": null
+      },
+      {
+        "id": "priya-pushback",
+        "title": "Since When",
+        "location": "Crestwood cafeteria",
+        "characters": [
+          "player",
+          "priya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Priya's eyebrow goes up — not quite hostile, more like a test. 'Since when is Alex your business, Sol?' Jordan glances between them, hoping this doesn't turn into a thing at his own birthday planning session.",
+        "emotionalBeat": "Social risk; the price of speaking up",
+        "defaultNextScene": null
+      },
+      {
+        "id": "easy-comfort",
+        "title": "Easy Laugh",
+        "location": "Crestwood cafeteria",
+        "characters": [
+          "player",
+          "priya",
+          "jordan",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "The table laughs, Sol included, and Priya's approval lands warm and immediate — Jordan relaxes, the moment smooths itself over. Across the room, Alex glances up at the sound of the laugh, just for a second, then goes back to their sketchbook like they didn't.",
+        "emotionalBeat": "Seductive ease shadowed by quiet guilt",
+        "defaultNextScene": "guilty-lunch"
+      },
+      {
+        "id": "quiet-deflection",
+        "title": "Change of Subject",
+        "location": "Crestwood cafeteria",
+        "characters": [
+          "player",
+          "priya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Sol asks about the party playlist instead, and it works — Priya pivots to logistics without a second thought. Nothing was said. Nothing was decided. The list stands exactly as it was.",
+        "emotionalBeat": "Relief tangled with unease",
+        "defaultNextScene": "guilty-lunch"
+      },
+      {
+        "id": "guilty-lunch",
+        "title": "Empty Seat",
+        "location": "Crestwood cafeteria",
+        "characters": [
+          "player",
+          "jordan",
+          "priya",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Lunch winds down. Sol watches Alex bus their tray alone and slip out early — the way they used to, before the project forced them into the same space. Nobody else at the table seems to notice. Sol can't stop noticing.",
+        "emotionalBeat": "The quiet weight of unspoken guilt",
+        "defaultNextScene": null
+      },
+      {
+        "id": "find-alex",
+        "title": "Catching Up",
+        "location": "Hallway outside the art room",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 2,
+        "description": "Sol catches Alex after class to actually invite them to Jordan's. Alex's guard snaps up instantly, half-joke, half-shield: 'Since when do I get invited to swim-bro pool parties?' There's something real underneath the deflection.",
+        "emotionalBeat": "Vulnerability testing trust",
+        "defaultNextScene": null
+      },
+      {
+        "id": "hallway-check-in",
+        "title": "Before They Disappear",
+        "location": "Locker hallway",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 2,
+        "description": "Sol catches Alex before they can vanish for the day. Alex doesn't make it easy — 'Wow. Checking on me. Big day.' But they don't walk away, either, and that has to mean something.",
+        "emotionalBeat": "Cautious, brittle opening",
+        "defaultNextScene": null
+      },
+      {
+        "id": "skip-to-project-class",
+        "title": "Five-Minute Check-In",
+        "location": "Ms. Chen's classroom",
+        "characters": [
+          "player",
+          "alex",
+          "ms-chen"
+        ],
+        "duration": 1,
+        "description": "Days pass. Ms. Chen pairs students for a brisk five-minute progress check on the ongoing unit project — a quiet callback to the proximity she forced last time. Alex is polite, professional, and completely closed off. Sol realizes how much distance grew while nobody was saying anything out loud.",
+        "emotionalBeat": "The cost of silence made visible",
+        "defaultNextScene": "party-day-absent"
+      },
+      {
+        "id": "alex-warms",
+        "title": "Not a No",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Alex doesn't promise anything, but something shifts — a small, real 'maybe' instead of a flat refusal. It isn't resolved. It isn't closed, either.",
+        "emotionalBeat": "Fragile hope",
+        "defaultNextScene": "party-day-together"
+      },
+      {
+        "id": "alex-unsure",
+        "title": "I'll Think About It",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Alex says they'll think about it, in a tone that mostly means no — but not entirely. Sol can't tell if she helped or just made the ask harder to ignore.",
+        "emotionalBeat": "Ambiguous, uneasy hope",
+        "defaultNextScene": "party-day-tense"
+      },
+      {
+        "id": "alex-declines-firmly",
+        "title": "I'm Good",
+        "location": "Hallway",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Alex is polite but clear: 'I'm good. Really.' It isn't cold, but it's final — the kind of boundary that used to be pure armor and now just sounds tired.",
+        "emotionalBeat": "Respected distance; quiet loss",
+        "defaultNextScene": "party-day-absent"
+      },
+      {
+        "id": "party-day-together",
+        "title": "At the Edge of the Fire",
+        "location": "Skate bowl by the reservoir",
+        "characters": [
+          "player",
+          "alex",
+          "jordan",
+          "priya"
+        ],
+        "duration": 2,
+        "description": "String lights, a bonfire, half the grade laughing too loud. Alex actually showed up — hovering at the edge, skateboard under one arm like an exit strategy. Mid-story to the group, Priya tosses a joke in Alex's direction, sharp enough that a few people laugh before they even understand it.",
+        "emotionalBeat": "Public test of loyalty",
+        "defaultNextScene": null
+      },
+      {
+        "id": "party-day-tense",
+        "title": "Deciding Whether to Stay",
+        "location": "Skate bowl by the reservoir",
+        "characters": [
+          "player",
+          "alex",
+          "jordan",
+          "priya"
+        ],
+        "duration": 2,
+        "description": "Alex came, but barely — arms crossed near the drink table, visibly deciding whether this was a mistake. Priya, half habit, half test, makes a comment that lands wrong. A few heads turn to see how Sol reacts.",
+        "emotionalBeat": "Precarious trust, raised stakes",
+        "defaultNextScene": null
+      },
+      {
+        "id": "party-day-absent",
+        "title": "Checking the Gate",
+        "location": "Skate bowl by the reservoir",
+        "characters": [
+          "player",
+          "jordan",
+          "priya"
+        ],
+        "duration": 2,
+        "description": "The party is exactly the fun Jordan promised. Alex isn't there. Nobody else seems to notice the absence. Sol keeps catching herself glancing at the entrance anyway.",
+        "emotionalBeat": "Absence as consequence",
+        "defaultNextScene": null
+      },
+      {
+        "id": "ending-quiet-strength",
+        "title": "Quiet Strength",
+        "location": "Skate bowl / walking home",
+        "characters": [
+          "player",
+          "alex",
+          "priya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Whether by standing up in front of everyone or showing up when it actually mattered, Sol chose Alex over the easier version of the night. Priya doesn't apologize outright — she never really does — but there's a small, real nod across the firelight that says she noticed something she doesn't quite have herself. Alex, for maybe the first time, looks like they believe Sol might actually stick around.",
+        "emotionalBeat": "Earned belonging; integrity rewarded",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "ending-balanced-growth",
+        "title": "Not a Clean Win",
+        "location": "Skate bowl / walking home",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "It isn't a movie moment. Sol didn't say everything right and didn't fix things in one night — but she showed up, imperfectly, and Alex noticed the effort even if they're not ready to call it trust. Growth, Sol is learning, rarely looks like a clean win.",
+        "emotionalBeat": "Honest imperfection; quiet self-awareness",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "ending-comfortable-fit",
+        "title": "Comfortable Fit",
+        "location": "Skate bowl / walking home",
+        "characters": [
+          "player",
+          "priya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The party is great. Sol is exactly where she wanted to be — in the middle of it, laughing, warm, safe. It isn't until she's walking home alone that the quiet catches up with her: the specific, familiar ache of choosing easy over honest, and getting away with it.",
+        "emotionalBeat": "Hollow victory; dawning self-awareness",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "guest-list-tease",
+        "prompt": "Priya's joke lands right where everyone knows it's aimed. What does Sol do?",
+        "context": "The table is laughing. Priya is watching Sol specifically, like she already knows which way this goes.",
+        "options": [
+          {
+            "id": "speak-up",
+            "text": "Say something — suggest Alex should actually be on the list.",
+            "nextScene": "priya-pushback"
+          },
+          {
+            "id": "laugh-along",
+            "text": "Laugh along. It's easier, and it's not like she said anything that mean.",
+            "nextScene": "easy-comfort"
+          },
+          {
+            "id": "change-subject",
+            "text": "Steer the conversation somewhere else entirely.",
+            "nextScene": "quiet-deflection"
+          }
+        ],
+        "traitMapping": {
+          "speak-up": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "laugh-along": {
+            "EMPATHY": -2
+          },
+          "change-subject": {
+            "EMOTIONAL_AWARENESS": 1,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "priya-pushback",
+        "prompt": "Priya's pushing back. Does Sol hold her ground or let it go?",
+        "context": "Jordan is watching to see if this becomes a thing. Priya isn't really angry — she's testing.",
+        "options": [
+          {
+            "id": "hold-ground",
+            "text": "Hold the line: 'I just think it'd be nice, that's all.'",
+            "nextScene": "find-alex"
+          },
+          {
+            "id": "back-off",
+            "text": "Back off: 'Whatever, forget it, it's your party.'",
+            "nextScene": "guilty-lunch"
+          }
+        ],
+        "traitMapping": {
+          "hold-ground": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 1
+          },
+          "back-off": {
+            "CONFIDENCE": -2,
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "guilty-lunch",
+        "prompt": "Alex just left the cafeteria alone, and nobody else noticed. Does Sol follow?",
+        "context": "There's no more table drama happening. This is just Sol, deciding whether the quiet feeling counts as something worth acting on.",
+        "options": [
+          {
+            "id": "follow-alex",
+            "text": "Get up and go after Alex.",
+            "nextScene": "hallway-check-in"
+          },
+          {
+            "id": "stay-seated",
+            "text": "Stay at the table. It's probably nothing.",
+            "nextScene": "skip-to-project-class"
+          }
+        ],
+        "traitMapping": {
+          "follow-alex": {
+            "EMPATHY": 2,
+            "EMOTIONAL_AWARENESS": 1
+          },
+          "stay-seated": {
+            "CONFIDENCE": -1,
+            "EMPATHY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "find-alex",
+        "prompt": "Alex is deflecting hard. How does Sol handle it?",
+        "context": "Alex's joke about 'swim-bro parties' is doing a lot of work to cover something more real underneath.",
+        "options": [
+          {
+            "id": "name-the-awkward",
+            "text": "Name it gently: 'I get why it'd feel weird. I'd still want you there.'",
+            "nextScene": "alex-warms"
+          },
+          {
+            "id": "confident-reassure",
+            "text": "Reassure with confidence: 'It'll be fine, trust me, just come.'",
+            "nextScene": "alex-unsure"
+          },
+          {
+            "id": "respect-and-drop",
+            "text": "Respect it and drop it: 'No pressure. Just wanted you to know.'",
+            "nextScene": "alex-declines-firmly"
+          }
+        ],
+        "traitMapping": {
+          "name-the-awkward": {
+            "EMOTIONAL_AWARENESS": 2,
+            "EMPATHY": 1
+          },
+          "confident-reassure": {
+            "CONFIDENCE": 1,
+            "EMOTIONAL_AWARENESS": -1
+          },
+          "respect-and-drop": {
+            "EMOTIONAL_AWARENESS": 1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "hallway-check-in",
+        "prompt": "Alex is testing whether this check-in is real. What does Sol say?",
+        "context": "Alex hasn't walked away yet. That's the opening, if Sol wants it.",
+        "options": [
+          {
+            "id": "honest-admission",
+            "text": "Be honest: 'I should've said something at lunch. I'm sorry I didn't.'",
+            "nextScene": "alex-warms"
+          },
+          {
+            "id": "casual-reassure",
+            "text": "Keep it light: 'You okay? You seemed kind of off.'",
+            "nextScene": "alex-unsure"
+          },
+          {
+            "id": "direct-invite-repair",
+            "text": "Skip the apology and just ask directly: 'Come to Jordan's. I want you there.'",
+            "nextScene": "alex-warms"
+          }
+        ],
+        "traitMapping": {
+          "honest-admission": {
+            "EMOTIONAL_AWARENESS": 2,
+            "EMPATHY": 1
+          },
+          "casual-reassure": {
+            "CONFIDENCE": 1,
+            "EMOTIONAL_AWARENESS": -1
+          },
+          "direct-invite-repair": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-6a",
+        "scene": "party-day-together",
+        "prompt": "Priya's joke just landed on Alex in front of the group. What does Sol do?",
+        "context": "People are already half-laughing. Alex hasn't moved, but their jaw is tight.",
+        "options": [
+          {
+            "id": "stand-up-publicly",
+            "text": "Call it out, right there, in front of everyone.",
+            "nextScene": "ending-quiet-strength"
+          },
+          {
+            "id": "stay-quiet",
+            "text": "Let it pass. Making it a thing might make it worse.",
+            "nextScene": "ending-comfortable-fit"
+          },
+          {
+            "id": "pull-aside-private",
+            "text": "Quietly pull Alex aside instead of confronting Priya head-on.",
+            "nextScene": "ending-balanced-growth"
+          }
+        ],
+        "traitMapping": {
+          "stand-up-publicly": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 1
+          },
+          "stay-quiet": {
+            "CONFIDENCE": -1,
+            "EMPATHY": -1
+          },
+          "pull-aside-private": {
+            "EMOTIONAL_AWARENESS": 2,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-6b",
+        "scene": "party-day-tense",
+        "prompt": "Priya's comment just landed wrong, and Alex looks like they're about to leave. What does Sol do?",
+        "context": "The trust here is thin already. Whatever Sol does next either confirms Alex's guard or breaks it down a little.",
+        "options": [
+          {
+            "id": "stand-up-publicly",
+            "text": "Say something, clearly, in front of the group.",
+            "nextScene": "ending-quiet-strength"
+          },
+          {
+            "id": "stay-quiet",
+            "text": "Stay out of it and hope Alex rides it out.",
+            "nextScene": "ending-comfortable-fit"
+          },
+          {
+            "id": "pull-aside-private",
+            "text": "Go to Alex quietly before they can walk off.",
+            "nextScene": "ending-balanced-growth"
+          }
+        ],
+        "traitMapping": {
+          "stand-up-publicly": {
+            "CONFIDENCE": 2,
+            "EMPATHY": 1
+          },
+          "stay-quiet": {
+            "CONFIDENCE": -1,
+            "EMPATHY": -1
+          },
+          "pull-aside-private": {
+            "EMOTIONAL_AWARENESS": 2,
+            "EMPATHY": 1
+          }
+        }
+      },
+      {
+        "id": "choice-7",
+        "scene": "party-day-absent",
+        "prompt": "Alex isn't here, and Sol can't stop noticing. What now?",
+        "context": "The party is going fine without them. That's almost the worst part.",
+        "options": [
+          {
+            "id": "leave-to-find-alex",
+            "text": "Leave the party to go check on Alex in person.",
+            "nextScene": "ending-quiet-strength"
+          },
+          {
+            "id": "text-later",
+            "text": "Send a text now, but stay at the party.",
+            "nextScene": "ending-balanced-growth"
+          },
+          {
+            "id": "stay-and-enjoy",
+            "text": "Let it go and enjoy the night.",
+            "nextScene": "ending-comfortable-fit"
+          }
+        ],
+        "traitMapping": {
+          "leave-to-find-alex": {
+            "EMPATHY": 2,
+            "CONFIDENCE": 1
+          },
+          "text-later": {
+            "EMOTIONAL_AWARENESS": 1
+          },
+          "stay-and-enjoy": {
+            "EMPATHY": -2,
+            "CONFIDENCE": -1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-advocate",
+        "name": "The Advocate Path",
+        "triggeredBy": [
+          "choice-1:speak-up",
+          "choice-2:hold-ground"
+        ],
+        "description": "Sol speaks up the moment Priya's joke lands and holds her ground under social pressure, going straight to Alex to make the invitation real instead of symbolic.",
+        "outcome": "The most direct route to alex-warms and a strong shot at Quiet Strength, though the party climax still demands Sol follow through when it costs something."
+      },
+      {
+        "id": "branch-comfort",
+        "name": "The Comfortable Belonging Path",
+        "triggeredBy": [
+          "choice-1:laugh-along"
+        ],
+        "description": "Sol chooses the easy laugh, prioritizing table warmth over addressing the exclusion in the moment it happens.",
+        "outcome": "Creates the episode's strongest undertow of guilt; recoverable only through later choices like choice-3 and choice-7, starting the farthest from Alex."
+      },
+      {
+        "id": "branch-deflection",
+        "name": "The Deflection Path",
+        "triggeredBy": [
+          "choice-1:change-subject"
+        ],
+        "description": "Sol avoids conflict without actively participating in the exclusion, staying safely uncommitted in the moment.",
+        "outcome": "A watchful, self-protective route that mirrors Alex's own guardedness — whether it drifts toward empathy or toward comfort depends entirely on choice-3."
+      },
+      {
+        "id": "branch-repair",
+        "name": "The Repair Path",
+        "triggeredBy": [
+          "choice-2:back-off",
+          "choice-3:follow-alex"
+        ],
+        "description": "After an initial misstep — backing off from Priya or laughing along earlier — Sol still chooses to go after Alex directly and attempt repair.",
+        "outcome": "Demonstrates the episode doesn't punish a single wrong choice; it rewards recognizing and correcting course, restoring real stakes in hallway-check-in."
+      },
+      {
+        "id": "branch-status-lock",
+        "name": "The Status-Locked Path",
+        "triggeredBy": [
+          "choice-1:laugh-along",
+          "choice-3:stay-seated",
+          "choice-7:stay-and-enjoy"
+        ],
+        "description": "Sol consistently chooses comfort over confrontation at every major fork, never closing the distance with Alex.",
+        "outcome": "Leads directly to ending-comfortable-fit — the full status-quo path where Alex is never truly seen, and Sol has to sit with that on the walk home."
+      }
+    ],
+    "emotionalArc": [
+      "Anticipation and comfort — belonging feels effortless and good",
+      "A crack forms — humor reveals who is and isn't counted as 'everyone'",
+      "Social risk — speaking up or staying silent both cost something real",
+      "Guilt or ease settles in, depending on the path taken",
+      "A vulnerable attempt at reconnection — trust is offered cautiously, not guaranteed",
+      "A public or private test of loyalty at the party itself, when it's hardest",
+      "Resolution: earned integrity, honest imperfection, or a hollow, quiet ache"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Sol moves from watching social dynamics from a safe distance to being forced to act inside them, discovering that confidence isn't the absence of risk but the willingness to be seen making a choice."
+      },
+      {
+        "character": "alex",
+        "arc": "Alex tests every gesture of inclusion against a long history of being an afterthought, and responds with real, proportionate trust or real, proportionate withdrawal — never as a lesson, always as a person."
+      },
+      {
+        "character": "priya",
+        "arc": "Priya never apologizes outright, but her small, involuntary nod at the party — present only in the Quiet Strength ending — shows a girl clocking a kind of strength she doesn't quite have herself."
+      },
+      {
+        "character": "jordan",
+        "arc": "Jordan's genuine warmth and conflict-avoidance are shown to have a cost of their own: his ease never actively excludes, but it never actively includes either, until Sol's choices force the room to notice."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "EMPATHY",
+        "narrativeSignal": "Choices where Sol notices, names, or acts on Alex's likely feelings — even at social cost — score high; choices that prioritize her own comfort over Alex's exclusion score low."
+      },
+      {
+        "trait": "CONFIDENCE",
+        "narrativeSignal": "Choices where Sol acts on her own judgment despite social pressure (from Priya especially) score high; choices where she retreats, defers, or stays silent under pressure score low."
+      },
+      {
+        "trait": "EMOTIONAL_AWARENESS",
+        "narrativeSignal": "Choices where Sol correctly reads what's underneath someone's deflection (Alex's jokes, Priya's testing) and responds to the real feeling rather than the surface line score high."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player-alex",
+        "dynamic": "A trust relationship rebuilt in small, specific increments — every gesture is tested against Alex's guardedness, and nothing is granted just because Sol means well."
+      },
+      {
+        "pair": "player-priya",
+        "dynamic": "A push-pull of approval and challenge; Priya never punishes Sol for choosing Alex, but she does notice, and her respect shifts subtly based on whether Sol backs down."
+      },
+      {
+        "pair": "player-jordan",
+        "dynamic": "Jordan is never the obstacle — he's the ambient pressure of a comfortable status quo that requires no cruelty to be exclusionary."
+      },
+      {
+        "pair": "alex-priya",
+        "dynamic": "Largely one-directional in this episode: Priya's careless jokes versus Alex's practiced non-reaction, until the party scene makes the dynamic public."
+      }
+    ],
+    "replayHooks": [
+      "The Priya nod at the fire only appears in the Quiet Strength ending — easy to miss, meaningful to catch.",
+      "Alex's line about 'swim-bro parties' changes delivery slightly depending on whether Sol already laughed along with Priya earlier, rewarding players who notice continuity.",
+      "The skip-to-project-class scene with Ms. Chen only triggers on the stay-seated path, hiding an entire scene most players won't see on a first run.",
+      "Three structurally different party scenes (together / tense / absent) mean the climax choice never plays out the same way twice.",
+      "Players who reach ending-comfortable-fit are likely to want to immediately replay choice-1 differently, since the ending's ache is deliberately underplayed rather than punished."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Recognize subtle, socially-coded exclusion (the 'joke' aimed at someone real) as a moment of real choice, not just background noise",
+      "Practice distinguishing between avoiding conflict and actually resolving it",
+      "Build comfort with imperfect repair — showing up late or awkwardly still matters more than not showing up at all",
+      "Notice the difference between confidence used for self-protection and confidence used on someone else's behalf"
+    ],
+    "conversationStarters": [
+      "Was there a moment where Sol could have said something and didn't? What do you think stopped her?",
+      "Do you think Priya actually dislikes Alex, or is something else going on with her?",
+      "If you were Alex, would 'I'd still want you there' be enough to trust Sol again? Why or why not?",
+      "Is it possible to be a good friend and still end up in the comfortable-fit ending? What would you tell Sol afterward?"
+    ]
+  },
+  "designNotes": "This episode leans on ep-2's established Sol/Alex/Priya/Jordan dynamics but deliberately avoids repeating the 'forced project' mechanism — instead using a social event (the guest list, the party) as the pressure container, since Ms. Chen's structural hand should not be overused. The three-pronged initial choice (speak-up/laugh-along/change-subject) is designed to feel equally 'reasonable' in the moment, which is the point: none of the options are villainous, mirroring Jordan's non-malicious complicity described in his character brief. The branch-repair path is intentionally included so that an early 'wrong' choice is never a dead end — matching the design principle that character growth should be rewarded even when it starts from a stumble. Ms. Chen's one scene is used sparingly and without commentary, consistent with her 'holds the line, rarely comments' characterization from prior episodes.",
+  "uncertainties": [
+    "The three-way convergence at 'guilty-lunch' (from back-off, easy-comfort, and quiet-deflection) treats those three emotionally distinct choices identically going forward; a richer version might give each a slightly different flavor of the guilty-lunch scene rather than one shared scene.",
+    "choice-6a and choice-6b are near-duplicates with different framing text; this was a deliberate simplification for playability, but a more elaborate build could diverge their option outcomes as well as their prompts.",
+    "The 'text-later' option in choice-7 leading to ending-balanced-growth assumes a text is a meaningfully partial gesture rather than a hollow one — this is a judgment call about what 'partial effort' should mean mechanically.",
+    "Priya's arc payoff (the nod) is currently only visible in one ending; there's a case for giving her a smaller, distinct beat in ending-balanced-growth too, so the 'she's quietly noticing' arc isn't binary."
+  ],
+  "alternativesConsidered": [
+    "An alternate structure where the exclusion target was a new, unnamed character rather than Alex was considered, but reusing Alex leverages the emotional investment already built in ep-1 and ep-2 and keeps the season's mirror metaphor intact.",
+    "A version where Ms. Chen assigns party-adjacent group logistics as an explicit in-class task (making the exclusion literally graded) was considered and rejected as too on-the-nose for the 'educational goals must be invisible' principle.",
+    "A four-branch ending structure (adding a distinct 'Alex confronts Sol first' ending) was considered but cut to keep total playtime within the 10-15 minute target and avoid diluting the clarity of the three core outcomes.",
+    "Placing the big public-confrontation choice earlier (at the cafeteria) instead of at the party was considered, but delaying it to the party raises the stakes by adding an audience and a longer runway of consequence, which better serves the CONFIDENCE trait target."
+  ]
+}
