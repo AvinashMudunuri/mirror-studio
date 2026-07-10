@@ -138,3 +138,48 @@ export async function publishEpisode(pool: Pool, episodeId: string): Promise<{ p
   );
   return { publishedAt: updated.rows[0].published_at };
 }
+
+/** One row per persisted episode — used to label run folders on the dashboard. */
+export interface PublishedRunIndexEntry {
+  worldId: string;
+  episodeNumber: number;
+  title: string;
+  publishedRunFolder: string | null;
+  publishedAt: string | null;
+  /** Latest persisted content (`episodes.metadata.runFolder`), may differ from published. */
+  contentRunFolder: string | null;
+}
+
+/**
+ * Map of repo-relative run folder path → publish state for dashboard badges.
+ * Only includes episodes that have been persisted to Postgres at least once.
+ */
+export async function listPublishedRunIndex(pool: Pool): Promise<PublishedRunIndexEntry[]> {
+  const result = await pool.query(
+    `SELECT s.world_id, e.episode_number, e.title, e.published_run_folder, e.published_at,
+            e.metadata->>'runFolder' AS content_run_folder
+     FROM episodes e
+     JOIN seasons s ON s.id = e.season_id
+     ORDER BY e.episode_number ASC`
+  );
+  return result.rows.map(row => ({
+    worldId: row.world_id,
+    episodeNumber: row.episode_number,
+    title: row.title,
+    publishedRunFolder: row.published_run_folder,
+    publishedAt: row.published_at,
+    contentRunFolder: row.content_run_folder
+  }));
+}
+
+export type RunPublishLabel = 'live' | 'latest' | 'not_published';
+
+/** How this run folder relates to what the player serves (if Postgres is configured). */
+export function publishLabelForRun(
+  runPath: string,
+  index: PublishedRunIndexEntry[]
+): RunPublishLabel {
+  if (index.some(e => e.publishedRunFolder === runPath)) return 'live';
+  if (index.some(e => e.contentRunFolder === runPath)) return 'latest';
+  return 'not_published';
+}

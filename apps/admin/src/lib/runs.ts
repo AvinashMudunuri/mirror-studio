@@ -17,6 +17,8 @@ export function episodesRoot(): string {
 export interface RunSummary {
   episodeFolder: string;
   runFolder: string;
+  episodeNumber: number | null;
+  worldId: string | null;
   startedAt: string | null;
   totalSeconds: number | null;
   finalStatus: string;
@@ -52,6 +54,8 @@ function summarize(episodeFolder: string, runFolder: string): RunSummary {
   return {
     episodeFolder,
     runFolder,
+    episodeNumber: manifest?.episode?.number ?? null,
+    worldId: manifest?.episode?.world ?? null,
     startedAt: manifest?.run?.startedAt ?? null,
     totalSeconds: manifest?.run?.totalSeconds ?? null,
     // Legacy manifests (pre-revision-loop) have verdicts but no finalStatus.
@@ -81,6 +85,11 @@ export function listRuns(): RunSummary[] {
   
   // Newest first (run folder names embed the timestamp)
   return runs.sort((a, b) => b.runFolder.localeCompare(a.runFolder));
+}
+
+/** Repo-relative path for a run folder — matches `metadata.runFolder` / `published_run_folder` in Postgres. */
+export function runFolderPath(episodeFolder: string, runFolder: string): string {
+  return `output/episodes/${episodeFolder}/${runFolder}`;
 }
 
 /** Whitelist: only artifacts inside the run folder are exposed. */
