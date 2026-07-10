@@ -1,0 +1,72 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex's queerness (they/them pronouns) is present but entirely unremarked upon in-story; gender identity is neither discussed nor made a plot point.",
+      "location": "Throughout — Alex characterization",
+      "harmPotential": "Low harm potential; could read either as healthy normalization (identity isn't a 'topic') or as underdeveloped representation if players expect any acknowledgment. Some nonbinary players/readers might appreciate the non-issue treatment; others might feel their identity is invisible rather than affirmed.",
+      "recommendation": "Consider a small, natural beat (not a lesson) where pronouns are used correctly by peers without fanfare, reinforcing normalization rather than leaving it fully unaddressed — e.g., Jordan or Alvarez using 'they' naturally in dialogue to model correct usage for young players who may not encounter this often.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "BIAS",
+      "issue": "Diverse surnames (Okafor-Silva, Delacroix-Thompson, Oyelaran, Rivera-Chen, Alvarez) are used as a marker of diversity, but character personalities are not stereotyped to their heritage — this is a strength, but worth confirming no compensating stereotype slipped in (e.g., Jordan's 'loud, close Nigerian-American household' framing).",
+      "location": "Character backgrounds (Jordan, Wren)",
+      "harmPotential": "Low — describing large/close immigrant families as 'loud' could edge toward a mild stereotype if overused, but it's a single throwaway detail, not behaviorally reinforced in scenes.",
+      "recommendation": "In future episodes, ensure family descriptors don't cluster into a monolithic 'loud immigrant family' pattern across multiple non-white characters; vary family dynamics shown on-page.",
+      "priority": 2
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Mr. Alvarez, the adult authority figure, never notices or addresses the Maya-Alex mockery in scene 7 even in the 'silence' branch, letting the peer resolution carry the entire ethical weight without adult accountability.",
+      "location": "scene-7-maya-needles, scene-8-public-silence",
+      "harmPotential": "Minimal — this is likely intentional (kids must self-resolve, per educational goals), but could send a subtle message that adults won't reliably intervene against peer mockery, which might discourage real students from expecting adult support.",
+      "recommendation": "Consider a brief later beat (even outside this episode) where Alvarez reflects on or catches this pattern, tying into his established guilt/attentiveness trait, to reinforce that adult accountability matters too.",
+      "priority": 3
+    }
+  ],
+  "strengths": [
+    "Excellent non-tokenized diversity: the entire named cast has varied, non-Anglo surnames without any single character being reduced to a 'representative' of their ethnicity — race/ethnicity is present but not the source of conflict or characterization.",
+    "Alex avoids the 'tragic queer/disabled kid' trope — their guardedness stems from a specific, relatable social wound (past humiliation), not from their identity itself, and they have clear agency, wit, and interiority independent of being 'rescued.'",
+    "Wren is not a savior figure — the branching structure explicitly punishes performative rescue (public-silence, fractured-trust paths) and rewards consistent, costly honesty, avoiding a 'privileged kid saves marginalized kid' dynamic. Alex retains agency throughout (sets project terms, asks the direct question, chooses whether to open up).",
+    "Maya is humanized rather than villainized — her cruelty is contextualized (insecurity, own history as a former outsider) without excusing it, modeling nuanced understanding of bullying behavior rather than flat antagonism.",
+    "The episode's ethical modeling is exceptionally clear and age-appropriate: peer pressure is shown in its realistic, low-stakes/deniable form (a 'joke') rather than melodrama, and consequences scale naturally to choices (deflection costs trust; honesty earns it) without heavy-handed moralizing or unrealistic instant redemption.",
+    "No adult-teen boundary violations, no romanticized risk behavior, and identity exploration (Wren's chameleon persona) is handled supportively as a psychological pattern to examine, not pathologized or mocked.",
+    "Power dynamics between the four peer characters are balanced — no single identity group holds all the social power or all the moral high ground; Maya (socially dominant, mixed heritage), Jordan (well-liked, Nigerian-American), Alex (marginalized socially, not by identity per se), and Wren (biracial, adaptive) each have complexity and flaws."
+  ],
+  "recommendations": [
+    "In future episodes, add a small natural moment normalizing Alex's pronouns through peer usage rather than leaving it entirely unspoken.",
+    "Vary family-dynamic descriptors across non-white characters in future world-building to avoid unintentional pattern clustering.",
+    "Consider a longer-arc beat where Alvarez's adult accountability around peer mockery is addressed, complementing his established backstory guilt."
+  ],
+  "scores": {
+    "biasAvoidance": 9,
+    "representation": 9,
+    "tropes": 9,
+    "ethicalModeling": 9,
+    "culturalSensitivity": 9,
+    "overall": 9
+  },
+  "flaggedContent": [],
+  "summary": {
+    "verdict": "This episode is a strong, ethically sound piece of writing that handles peer pressure, honesty, and belonging with nuance appropriate for its 11-14 target audience. Diverse characters are portrayed with agency, complexity, and interiority rather than reduced to identity markers; no harmful tropes (savior narrative, tragic minority, bury-your-gays, model minority) are present. The branching structure meaningfully ties consequences to ethical choices without heavy-handedness. Only minor, non-blocking refinements are suggested regarding pronoun normalization and adult accountability follow-through.",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [
+      "Alex's pronouns/identity could be lightly normalized through peer dialogue rather than left fully unaddressed.",
+      "Watch for family-descriptor patterns clustering across non-white characters in future episodes.",
+      "Consider follow-up beat on Alvarez's adult accountability for unaddressed peer mockery."
+    ],
+    "strengths": [
+      "Non-tokenized, agency-driven diverse cast",
+      "Avoids all major harmful tropes",
+      "Nuanced antagonist (Maya) and marginalized character (Alex) both fully humanized",
+      "Clear, age-appropriate ethical consequences tied to honesty vs. social conformity"
+    ],
+    "readyForPublication": true
+  }
+}

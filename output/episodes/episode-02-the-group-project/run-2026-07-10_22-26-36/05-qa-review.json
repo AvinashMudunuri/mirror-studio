@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Episode's seasonId ('season-1') doesn't obviously map to the world's seasons list, which contains a descriptive string ('Season 1: First Year') rather than an id. Without episode-1 data to cross-check, this can't be confirmed as broken, but the id/label mismatch could cause lookup issues if seasons are keyed by id elsewhere.",
+      "location": "seasonId",
+      "suggestion": "Confirm the world/season data model uses a canonical 'season-1' id somewhere, or align the episode's seasonId with however season-1 is actually keyed in the world/episode index."
+    },
+    {
+      "category": "STYLE",
+      "message": "Jordan is listed in the 'characters' array for scene-6-spotlight-setup and scene-7-maya-needles but never speaks or is referenced in the scene's dialogue/narration for scene-6.",
+      "location": "scenes[5].characters (scene-6-spotlight-setup)",
+      "suggestion": "Either give Jordan a reaction beat (consistent with his conflict-avoidant characterization — a nervous laugh, a glance) or remove him from the characters array for scenes where he has no presence."
+    },
+    {
+      "category": "STYLE",
+      "message": "Alex is listed as present in scene-11-final-choice but has no dialogue lines — only narrated description ('not looking over, not not looking over either'). This is intentional per the scene description, but worth flagging in case rendering logic expects at least one line per listed character.",
+      "location": "scenes (scene-11-final-choice).characters",
+      "suggestion": "No action needed if the rendering pipeline supports silent/present characters; otherwise add a small non-verbal beat entry."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "The 'DAYS SINCE INCIDENT' whiteboard detail and Alvarez's backstory (a former student he failed to protect) set up in his character sheet are never touched in this episode's content, despite thematic overlap with Alex's isolation arc.",
+      "location": "characters[mr-alvarez].background.secrets",
+      "suggestion": "Not a defect for this episode, but a missed opportunity worth flagging for writers — could be surfaced in a future episode or subtly referenced here."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 34,
+    "failedChecks": 0,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "All scene transitions (default and choice-driven) were traced end-to-end from scene-1 through every scene-12 ending; no orphaned or unreachable scenes were found, and every choice's nextScene values match the corresponding scene's expected outgoing options exactly.",
+    "All character ids referenced in dialogue (player, mr-alvarez, maya, jordan, alex) resolve correctly against the roster, and NARRATOR/INTERNAL are used appropriately as reserved non-roster speakers.",
+    "Trait mappings on choice-1, choice-2, choice-3, choice-4, and choice-5 are present, within a reasonable (-3 to +3) range, and thematically aligned with the target traits (INTEGRITY, COMMUNICATION, JUDGMENT) declared at the episode level.",
+    "The five outcomes/branches all have valid triggeredBy references to existing choice+option ids, and branchDialogue entries correctly key off those same branch ids across all three ending scenes.",
+    "Consider double-checking the seasonId convention against episode 1's data during a follow-up continuity pass, since that data wasn't available in this review."
+  ]
+}

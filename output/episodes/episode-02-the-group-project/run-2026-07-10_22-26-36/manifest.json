@@ -1,0 +1,117 @@
+{
+  "episode": {
+    "number": 2,
+    "title": "Show Your Work",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "18058056-aa1c-4c39-a09f-11c287e35915",
+    "threadId": "070ca325-e628-4ebf-a3a9-5eaed1a6ee8c",
+    "startedAt": "2026-07-10T22:26:36.677Z",
+    "completedAt": "2026-07-10T22:37:35.497Z",
+    "totalSeconds": 658.8,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-haiku-4-5-20251001",
+    "skippedReviewers": [],
+    "previousEpisodes": [
+      {
+        "id": "ep-1",
+        "title": "First Bell"
+      }
+    ],
+    "previousEpisodesSource": "postgres",
+    "previousProtagonist": {
+      "name": "Wren Okafor-Silva",
+      "source": "postgres"
+    },
+    "reusedSupportingCharacters": [
+      {
+        "id": "mr-alvarez",
+        "name": "David Alvarez"
+      },
+      {
+        "id": "maya",
+        "name": "Maya Delacroix-Thompson"
+      },
+      {
+        "id": "jordan",
+        "name": "Jordan Oyelaran"
+      },
+      {
+        "id": "alex",
+        "name": "Alex Rivera-Chen"
+      }
+    ],
+    "usage": {
+      "calls": 7,
+      "inputTokens": 168257,
+      "outputTokens": 63548,
+      "totalTokens": 231805,
+      "cacheCreationInputTokens": 56626,
+      "cacheReadInputTokens": 84939,
+      "budget": 800000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 7,
+          "inputTokens": 168257,
+          "outputTokens": 63548,
+          "cacheReadInputTokens": 84939
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Wren Okafor-Silva",
+      "role": "Player-character protagonist of 'First Bell.' Her practiced first-day survival system collides with real choices — who to sit with, who to defend, who to become — forcing her to notice, maybe for the first time, that the performance has a cost.",
+      "active": true
+    },
+    {
+      "id": "mr-alvarez",
+      "name": "David Alvarez",
+      "role": "The well-meaning adult architect of the episode's central pressure points — he creates both the vulnerable spotlight moment and the forced-collaboration reckoning, not out of cluelessness but out of a genuine, slightly clumsy belief that discomfort now prevents isolation later. He's not neutral scenery; his choices actively shape the social chessboard the player has to navigate, and his own history with being the outsider quietly parallels Wren's arc without ever being stated outright.",
+      "active": true
+    },
+    {
+      "id": "maya",
+      "name": "Maya Delacroix-Thompson",
+      "role": "Maya is the gravitational center of the popular table and the primary test of the player's spine — not a villain, but a mirror of what Wren's own survival instincts could calcify into if she never risks anything. Every scene with Maya is a referendum on whether the player mistakes magnetism for belonging.",
+      "active": true
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Oyelaran",
+      "role": "The warm first contact who represents 'belonging' as ease and popularity-by-proximity — a low-stakes ally whose limits (avoiding real conflict) surface right when the player needs someone to hold ground, making room for the player's own growth to matter more.",
+      "active": true
+    },
+    {
+      "id": "alex",
+      "name": "Alex Rivera-Chen",
+      "role": "Alex is the emotional stakes-bearer of 'First Bell' — the human cost that makes the player's social choices matter. Alex is not a lesson in tolerance; they're a specific, guarded kid testing whether this new place will go the way the last one did. Every branch of the episode is really a referendum on whether Wren notices Alex, and what she does with that noticing — from a passing glance in the hallway to a real, if fragile, friendship forged under pressure in the library.",
+      "active": true
+    }
+  ],
+  "finalStatus": "APPROVED",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "PASS",
+    "childPsychologist": "APPROVED",
+    "gameDesigner": "GOOD",
+    "ethicsReviewer": "GOOD"
+  },
+  "revisions": [],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "06-psych-review.json",
+    "07-game-review.json",
+    "08-ethics-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}
