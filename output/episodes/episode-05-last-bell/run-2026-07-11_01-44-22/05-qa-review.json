@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Outcome triggeredBy conditions are not mutually exclusive and no resolution priority/logic is specified. A single playthrough can satisfy conditions for more than one outcome simultaneously (e.g., choice-5:a alone satisfies part of 'branch-reckoning' while choice-2:a + choice-3:a + choice-6:a fully satisfies 'branch-authentic' — if the engine treats triggeredBy as ANY-match rather than ALL-match, both could fire). The episode never specifies whether triggeredBy entries are AND'd or OR'd, nor a tiebreak/priority order.",
+      "location": "outcomes[0].triggeredBy, outcomes[1].triggeredBy, outcomes[2].triggeredBy",
+      "suggestion": "Document (or enforce upstream) whether triggeredBy is evaluated as full-set match (all listed choice:option pairs must be present) or any-match, and define a priority order for resolving overlapping matches — e.g., most-specific (most matched conditions) wins, with 'branch-reckoning' or 'branch-authentic' as explicit tiebreak winner."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "choice-4 (the presentation-day 'true story vs. safe reel' choice) is not referenced by any outcome's triggeredBy list, despite being a major, emotionally central decision point (own dedicated scenes 9a/9b) and having a notable trait swing (CONFIDENCE +2 vs -1). Its result currently has no bearing on which ending branch/branchDialogue variant fires.",
+      "location": "outcomes[*].triggeredBy (missing any 'choice-4:*' entries)",
+      "suggestion": "Either fold choice-4 outcomes into the triggeredBy conditions for the three branches, or explicitly note that choice-4 affects trait totals only and is intentionally excluded from branch selection."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "choice-1:b and choice-5:b are never referenced in any outcome's triggeredBy list, meaning some individual choice outcomes contribute to trait totals but never factor into which ending narrative variant is shown.",
+      "location": "outcomes[*].triggeredBy",
+      "suggestion": "Confirm this is intentional (only a subset of choices gate the ending flavor text) or add coverage for completeness/symmetry."
+    },
+    {
+      "category": "STYLE",
+      "message": "Minor tonal/logic note: in choice-1, option 'b' ('Brush it off — partners are partners') is the choice that avoids helping Maya undermine the pairing, yet it maps to JUDGMENT:+2/CONFIDENCE:+1, while option 'a' (going to Alvarez, which Wren does with visible ambivalence, not malice) maps to JUDGMENT:-1. This is a defensible authorial call but worth a sanity check since 'informing a teacher of a pairing concern' is a much milder infraction than the scene text implies it should be judged as.",
+      "location": "choices[0].traitMapping",
+      "suggestion": "No change required; flagging for narrative-design review only."
+    }
+  ],
+  "summary": {
+    "totalChecks": 27,
+    "passedChecks": 27,
+    "failedChecks": 0,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Add an explicit spec note (in the outcomes schema or a comment) clarifying how triggeredBy arrays are evaluated (ANY vs ALL) and how conflicts between overlapping outcomes are resolved at runtime.",
+    "Consider incorporating choice-4's result into at least one outcome's triggeredBy list so the presentation-day choice has narrative as well as trait-based consequences.",
+    "Full choice/scene graph was traced end-to-end (scene-1 → ... → scene-12 → END across all three choice-6 branches) with no unreachable scenes, no dangling nextScene/defaultNextScene references, no duplicate scene/choice/dialogue ids, and no character references outside the defined roster — this portion of the episode is solid and ready to ship as-is."
+  ]
+}
