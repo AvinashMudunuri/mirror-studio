@@ -19,6 +19,12 @@ Everything is opt-in via `DATABASE_URL`; without it the pipeline is
 filesystem-only. Memory calls are wrapped so DB failures degrade to
 warnings — never let persistence kill a paid run.
 
+**Publish + player require Postgres** (ADR 003). For one database across
+Codespaces and Cursor Cloud Agents, use a shared cloud instance — see
+`docs/runbooks/shared-postgres.md` (ADR 006). Cloud Agents should
+generate and commit run folders; run `persist:run` + publish from an env
+with the shared `DATABASE_URL`, not ephemeral agent-local Postgres.
+
 ## Local setup (no Docker needed; Docker compose also works)
 
 ```bash
