@@ -1,0 +1,643 @@
+{
+  "episodeOutline": {
+    "title": "The Doodle Kingdom",
+    "synopsis": "A joke that costs more than Wren realizes in the moment kicks off a week of forced proximity, awkward repair attempts, and one very deliberate seating chart courtesy of Mr. Alvarez. When Wren is paired with Alex — the exact person she just publicly embarrassed — she has to figure out whether an apology is a thing you say once or a thing you keep proving, especially when the easiest laugh in the room is still sitting right there, waiting to be taken again.",
+    "themes": [
+      "Conflict Repair",
+      "Apology",
+      "Boundaries"
+    ],
+    "targetTraits": [
+      "COMMUNICATION",
+      "EMOTIONAL_AWARENESS",
+      "INTEGRITY"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1-the-laugh",
+        "title": "The Easy Laugh",
+        "location": "Cafeteria - Maya's table",
+        "characters": [
+          "player",
+          "maya",
+          "jordan",
+          "alex"
+        ],
+        "duration": 2,
+        "description": "Wren's found her groove at Maya's table — the deflecting joke, the perfectly timed line. When Maya fishes for something funny, Wren reaches for the easiest material in her pocket: a riff on the elaborate invented kingdom Alex once let her glimpse in the margins of a notebook, in confidence. The table erupts. Twelve feet away, at the end of another table, Alex goes very still, then packs up without a word and walks out.",
+        "emotionalBeat": "The cost of the performance becomes visible for the first time — a real person, not a social maneuver.",
+        "defaultNextScene": "scene-2-the-weight"
+      },
+      {
+        "id": "scene-2-the-weight",
+        "title": "The Drop",
+        "location": "Cafeteria, moments later",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "The laugh is still hanging in the air. Jordan's smile falters half a second too late. Maya's already moved on like nothing happened. Wren's stomach drops as the cafeteria door swings shut behind Alex.",
+        "emotionalBeat": "The gap between performance and feeling cracks open."
+      },
+      {
+        "id": "scene-3a-hallway-chase",
+        "title": "One Shot",
+        "location": "Hallway outside the cafeteria",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 2,
+        "description": "Wren catches Alex by the lockers. Alex won't quite look at her, arms crossed around the notebook like a shield. Whatever Wren says next either lands as an actual apology or as more noise.",
+        "emotionalBeat": "The first real test of honesty over cleverness."
+      },
+      {
+        "id": "scene-3b-letting-it-sit",
+        "title": "The Narrow Window",
+        "location": "Cafeteria, then hallway",
+        "characters": [
+          "player",
+          "alex",
+          "mr-alvarez"
+        ],
+        "duration": 2,
+        "description": "Wren tells herself she'll catch Alex after class. The bell rings before she fully decides. She spots Alex slipping into Mr. Alvarez's room ahead of her, spine very straight — a narrow window in the crowd, right before the door closes.",
+        "emotionalBeat": "Guilt curdling into avoidance, with one last chance to choose differently."
+      },
+      {
+        "id": "scene-4-pairing-warm",
+        "title": "Named Together",
+        "location": "Mr. Alvarez's classroom",
+        "characters": [
+          "player",
+          "alex",
+          "mr-alvarez",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Mr. Alvarez announces the 'Identity Map' project — pairs, not chosen by students. He reads the list like he already knew exactly who needed to be put together: 'Wren and Alex.' Alex's shoulders don't fully unclench, but they don't fully close either.",
+        "emotionalBeat": "A cautious, fragile opening.",
+        "defaultNextScene": "scene-5-library-warm"
+      },
+      {
+        "id": "scene-4-pairing-cold",
+        "title": "Named Together, Anyway",
+        "location": "Mr. Alvarez's classroom",
+        "characters": [
+          "player",
+          "alex",
+          "mr-alvarez",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Same announcement, same pairing — but Alex's face closes like a door the second the names are read together. Whatever chance existed didn't get taken, and now they're stuck together anyway.",
+        "emotionalBeat": "Forced proximity with an unhealed wound.",
+        "defaultNextScene": "scene-5-library-cold"
+      },
+      {
+        "id": "scene-5-library-warm",
+        "title": "The Real Map",
+        "location": "Library, work session",
+        "characters": [
+          "player",
+          "alex",
+          "mr-alvarez"
+        ],
+        "duration": 2,
+        "description": "Alex actually starts talking — cautiously showing Wren the real page of the invented world, not the punchline version. Then, quietly, sets a rule: 'If we're doing this, you don't get to use my stuff as material. Not ever. Not even the safe version.' It's said like a boundary that's been broken before.",
+        "emotionalBeat": "Trust extended in exchange for a boundary named out loud."
+      },
+      {
+        "id": "scene-5-library-cold",
+        "title": "Minimum Required",
+        "location": "Library, work session",
+        "characters": [
+          "player",
+          "alex",
+          "mr-alvarez"
+        ],
+        "duration": 2,
+        "description": "Alex keeps the project strictly professional — hands over the minimum, nothing more. When Wren pushes for more material, Alex finally snaps, quiet and precise: 'Why should I trust you with anything else?' It's a real question, not rhetorical.",
+        "emotionalBeat": "A closed door with one small crack of an opening."
+      },
+      {
+        "id": "scene-6-showdown-solid",
+        "title": "The Line",
+        "location": "Classroom, presentation day",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "jordan",
+          "mr-alvarez"
+        ],
+        "duration": 2,
+        "description": "Right before Wren and Alex present, Maya leans over with a smirk: 'Please tell me you're not actually presenting the doodle kingdom.' The old easy laugh is right there, free for the taking — and Alex is close enough to hear.",
+        "emotionalBeat": "The choice that proves whether the apology was real."
+      },
+      {
+        "id": "scene-6-showdown-strained",
+        "title": "The Line, Thinner Ice",
+        "location": "Classroom, presentation day",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "jordan",
+          "mr-alvarez"
+        ],
+        "duration": 2,
+        "description": "Same moment, higher stakes — the trust between Wren and Alex is thinner this time. Maya's comment lands right as Alex double-checks the poster board, a visible flinch, waiting to see which Wren shows up.",
+        "emotionalBeat": "A second chance to prove the first apology wasn't the only real thing she'll say."
+      },
+      {
+        "id": "scene-6-showdown-fractured",
+        "title": "The Line, Already Crossed Once",
+        "location": "Classroom, presentation day",
+        "characters": [
+          "player",
+          "alex",
+          "maya",
+          "jordan",
+          "mr-alvarez"
+        ],
+        "duration": 2,
+        "description": "Alex has barely spoken to Wren all week. When Maya's comment lands, Alex doesn't wait to see what Wren does — already stepping back, already expecting the worst, notebook held tight like the first time.",
+        "emotionalBeat": "The relationship is on the edge of over before it started."
+      },
+      {
+        "id": "scene-7-resolution-friendship",
+        "title": "Same Time Tomorrow",
+        "location": "Hallway, after class",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Alex smiles — small, real, surprised by itself. Doesn't say the friendship is fixed. Says: 'Same time tomorrow? I want to show you the part I didn't present.' Not everything. Enough to build on.",
+        "emotionalBeat": "Earned, fragile hope — repair as ongoing practice, not a fixed event.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-7-resolution-tentative",
+        "title": "The Door, Cracked",
+        "location": "Hallway, after class",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Alex doesn't say much, but doesn't walk away either — just a nod, a 'see you tomorrow,' the door left open a crack instead of shut. Whatever gets built from here is still Wren's to earn.",
+        "emotionalBeat": "Uncertain but not hopeless.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-7-resolution-lonely-win",
+        "title": "The Empty Seat",
+        "location": "Cafeteria, next day",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Maya's table is warmer to Wren than ever — she 'gets it' now. But there's an empty seat two tables over where Alex sits alone, and Wren can't stop noticing it, every day after.",
+        "emotionalBeat": "Belonging that costs more than it gives — the hollow win.",
+        "defaultNextScene": "END"
+      },
+      {
+        "id": "scene-7-resolution-broken",
+        "title": "No Eye Contact",
+        "location": "Hallway, days later",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Alex has stopped making eye contact in the hallway entirely. The project got finished, technically, in near-silence. Whatever might have been possible is quietly, permanently closed.",
+        "emotionalBeat": "The real cost of choices left unaddressed.",
+        "defaultNextScene": "END"
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2-the-weight",
+        "prompt": "Go after Alex, or stay at the table?",
+        "context": "Getting up now means leaving Maya mid-sentence, in front of everyone.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Get up and go find Alex",
+            "nextScene": "scene-3a-hallway-chase"
+          },
+          {
+            "id": "b",
+            "text": "Stay, laugh along, fix it later",
+            "nextScene": "scene-3b-letting-it-sit"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMOTIONAL_AWARENESS": 2,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "EMOTIONAL_AWARENESS": -1,
+            "INTEGRITY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-3a-hallway-chase",
+        "prompt": "How do you apologize?",
+        "context": "Alex is waiting, guarded, giving you exactly one shot before the bell.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Name exactly what you did and why it was wrong — no excuses",
+            "nextScene": "scene-4-pairing-warm"
+          },
+          {
+            "id": "b",
+            "text": "Apologize, but explain you were just trying to be funny",
+            "nextScene": "scene-4-pairing-cold"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 2,
+            "INTEGRITY": 2,
+            "EMOTIONAL_AWARENESS": 1
+          },
+          "b": {
+            "COMMUNICATION": -1,
+            "INTEGRITY": -1
+          }
+        }
+      },
+      {
+        "id": "choice-2b",
+        "scene": "scene-3b-letting-it-sit",
+        "prompt": "Take the last chance in the hallway, or let the bell decide?",
+        "context": "It would mean pushing through the crowd to catch Alex in the ten seconds before class starts.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Push through and say something, even rushed",
+            "nextScene": "scene-4-pairing-warm"
+          },
+          {
+            "id": "b",
+            "text": "Let it go — deal with it later",
+            "nextScene": "scene-4-pairing-cold"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "COMMUNICATION": 1,
+            "EMOTIONAL_AWARENESS": 1,
+            "INTEGRITY": 1
+          },
+          "b": {
+            "INTEGRITY": -1,
+            "EMOTIONAL_AWARENESS": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-5-library-warm",
+        "prompt": "How do you respond to the boundary Alex just set?",
+        "context": "Alex is watching to see if the apology was real or just a performance of one.",
+        "options": [
+          {
+            "id": "a",
+            "text": "I hear you. That's fair — thank you for telling me.",
+            "nextScene": "scene-6-showdown-solid"
+          },
+          {
+            "id": "b",
+            "text": "I already said sorry, what more do you want from me?",
+            "nextScene": "scene-6-showdown-strained"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1,
+            "EMOTIONAL_AWARENESS": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-3b",
+        "scene": "scene-5-library-cold",
+        "prompt": "Answer honestly, or protect yourself?",
+        "context": "This is the first real chance to explain the why behind the joke — not excuse it, explain it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Admit the truth: you wanted to matter at that table, and it cost you something you didn't mean to spend",
+            "nextScene": "scene-6-showdown-strained"
+          },
+          {
+            "id": "b",
+            "text": "Deflect: 'It's not that big a deal, you're overreacting'",
+            "nextScene": "scene-6-showdown-fractured"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "EMOTIONAL_AWARENESS": 2,
+            "INTEGRITY": 1,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "EMOTIONAL_AWARENESS": -2,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-6-showdown-solid",
+        "prompt": "Take the easy laugh, or hold the line?",
+        "context": "Everyone's watching, including Alex.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Shut it down and mean it: 'It's actually really good — you'll see.'",
+            "nextScene": "scene-7-resolution-friendship"
+          },
+          {
+            "id": "b",
+            "text": "Laugh it off vaguely to keep the peace with Maya's table",
+            "nextScene": "scene-7-resolution-tentative"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 2
+          },
+          "b": {
+            "INTEGRITY": -1,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4b",
+        "scene": "scene-6-showdown-strained",
+        "prompt": "Take the easy laugh, or hold the line?",
+        "context": "The stakes are higher this time because the trust between you is thinner.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Hold the line, clearly and publicly",
+            "nextScene": "scene-7-resolution-tentative"
+          },
+          {
+            "id": "b",
+            "text": "Hedge — half-defend, half-laugh",
+            "nextScene": "scene-7-resolution-lonely-win"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1
+          },
+          "b": {
+            "INTEGRITY": -1,
+            "COMMUNICATION": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4c",
+        "scene": "scene-6-showdown-fractured",
+        "prompt": "One last real chance, or the pattern repeats?",
+        "context": "Alex has stopped waiting for you to be different.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Stop everything and actually mean it this time — apologize again, in front of everyone if that's what it takes",
+            "nextScene": "scene-7-resolution-lonely-win"
+          },
+          {
+            "id": "b",
+            "text": "Freeze, say nothing, let the moment pass",
+            "nextScene": "scene-7-resolution-broken"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "INTEGRITY": 2,
+            "COMMUNICATION": 1,
+            "EMOTIONAL_AWARENESS": 1
+          },
+          "b": {
+            "INTEGRITY": -2,
+            "EMOTIONAL_AWARENESS": -1
+          }
+        }
+      }
+    ],
+    "branchMatchingPolicy": "Branches are matched in two ways depending on their type. EXACT branches ('matchType': 'exact') require every listed choice:option pair in 'triggeredBy' to be satisfied, with no unlisted choice points involved — these represent single, specific playthroughs worth naming individually because the exact route matters narratively. PATTERN branches ('matchType': 'pattern') are keyed off 'requiredSceneVisited' (the scene-6 variant actually reached) plus a small 'triggeredBy' set covering only the decisive final choice(s); any earlier choice point not mentioned is a wildcard and does not affect which pattern branch applies. This ensures all 16 reachable leaf paths (4 sequential binary choices) resolve to exactly one branch each, with no gaps or overlaps. Evaluate exact branches first; if none match, evaluate pattern branches using requiredSceneVisited + the final choice made in that scene.",
+    "branches": [
+      {
+        "id": "branch-authentic-repair",
+        "name": "The Authentic Repair Path",
+        "matchType": "exact",
+        "endingScene": "scene-7-resolution-friendship",
+        "requiredSceneVisited": "scene-6-showdown-solid",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-2:a",
+          "choice-3:a",
+          "choice-4:a"
+        ],
+        "description": "Wren chooses honesty and accountability at every turn — chasing Alex down immediately, naming the harm specifically, accepting the boundary without defensiveness, and holding the line publicly when it costs her socially.",
+        "outcome": "A real, if fragile, friendship begins — Alex extends an invitation to see more of the invented world, on their own terms. (Ends: scene-7-resolution-friendship)"
+      },
+      {
+        "id": "branch-guarded-thaw",
+        "name": "The Late Repair Path",
+        "matchType": "exact",
+        "endingScene": "scene-7-resolution-friendship",
+        "requiredSceneVisited": "scene-6-showdown-solid",
+        "triggeredBy": [
+          "choice-1:b",
+          "choice-2b:a",
+          "choice-3:a",
+          "choice-4:a"
+        ],
+        "description": "Wren stumbles at the very first opportunity, letting the moment pass and choosing comfort at the table — but she catches the narrow second chance in the hallway, recovers with a genuinely accountable apology, and later accepts Alex's boundary without flinching, holding the line when the old laugh resurfaces.",
+        "outcome": "Trust is rebuilt despite the false start — the relationship reaches the same fragile hope as the direct path, proving that recovery counts as much as instinct. (Ends: scene-7-resolution-friendship)"
+      },
+      {
+        "id": "branch-warm-hesitation",
+        "name": "The Warm-but-Hedged Path",
+        "matchType": "pattern",
+        "endingScene": "scene-7-resolution-tentative",
+        "requiredSceneVisited": "scene-6-showdown-solid",
+        "triggeredBy": [
+          "choice-4:b"
+        ],
+        "description": "Regardless of exactly how Wren reached solid trust with Alex (immediate chase or recovered second chance, so long as the boundary was accepted well), she flinches at the final public moment and lets the old laugh stand unchallenged rather than defending Alex outright.",
+        "outcome": "The door stays open a crack instead of swinging wide — good groundwork undercut by one moment of self-protection. (Ends: scene-7-resolution-tentative)"
+      },
+      {
+        "id": "branch-strained-recovery",
+        "name": "The Strained-but-Held Path",
+        "matchType": "pattern",
+        "endingScene": "scene-7-resolution-tentative",
+        "requiredSceneVisited": "scene-6-showdown-strained",
+        "triggeredBy": [
+          "choice-4b:a"
+        ],
+        "description": "Whatever combination of stumbles got Wren here — a defensive apology, a defensive response to the boundary, or both — trust is thinner than it should be. But when the pressure returns, Wren holds the line clearly and publicly anyway.",
+        "outcome": "It's not enough to erase the earlier damage, but it's enough to leave the relationship uncertain rather than closed. (Ends: scene-7-resolution-tentative)"
+      },
+      {
+        "id": "branch-popularity-cost",
+        "name": "The Performed Apology Path",
+        "matchType": "pattern",
+        "endingScene": "scene-7-resolution-lonely-win",
+        "requiredSceneVisited": "scene-6-showdown-strained",
+        "triggeredBy": [
+          "choice-4b:b"
+        ],
+        "description": "Somewhere along the way — a weak apology, a defensive reaction to Alex's boundary, or both — Wren never fully closes the gap she opened. When the pressure returns in front of Maya's table, she hedges rather than fully choosing Alex.",
+        "outcome": "Wren keeps her social ease at Maya's table but the relationship with Alex quietly erodes into distance — a hollow win she can't stop noticing. (Ends: scene-7-resolution-lonely-win)"
+      },
+      {
+        "id": "branch-late-redemption-shortfall",
+        "name": "The Too-Late Redemption Path",
+        "matchType": "pattern",
+        "endingScene": "scene-7-resolution-lonely-win",
+        "requiredSceneVisited": "scene-6-showdown-fractured",
+        "triggeredBy": [
+          "choice-4c:a"
+        ],
+        "description": "By the time the climax arrives, Alex has already stopped expecting anything different — the relationship is fractured, not just strained. Wren finally musters a real, public apology, but it arrives after the trust is already mostly gone.",
+        "outcome": "The gesture is real, but it's not enough to rebuild what avoidance and deflection already cost — a win that still feels hollow, just for different reasons than the performed-apology path. (Ends: scene-7-resolution-lonely-win)"
+      },
+      {
+        "id": "branch-avoidance-spiral",
+        "name": "The Avoidance Path",
+        "matchType": "pattern",
+        "endingScene": "scene-7-resolution-broken",
+        "requiredSceneVisited": "scene-6-showdown-fractured",
+        "triggeredBy": [
+          "choice-4c:b"
+        ],
+        "description": "Wren avoids honesty at nearly every opportunity — whether that started with silence at the table, a defensive apology, or a dismissive response to Alex's boundary — and when the very last chance arrives, she freezes instead of finally speaking up.",
+        "outcome": "The relationship closes, quietly and permanently, and Wren has to sit with what that costs. (Ends: scene-7-resolution-broken)"
+      }
+    ],
+    "emotionalArc": [
+      "Comfortable performance and belonging-by-proximity at Maya's table",
+      "Sudden, visceral guilt as the human cost of the joke becomes visible",
+      "Dissonance between wanting to fix it and wanting to protect the social win",
+      "Forced proximity via the project removes the option to avoid the problem",
+      "A boundary is named out loud, testing whether the apology was real",
+      "Public pressure re-tempts Wren with the original harm, now with full knowledge of its cost",
+      "Resolution lands somewhere on a spectrum from earned trust to quiet, permanent loss"
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from treating social ease as the goal to discovering that the performance that gets her a seat at any table can cost her the one relationship built on being actually known."
+      },
+      {
+        "character": "alex",
+        "arc": "Tests, cautiously and specifically, whether this new place will repeat the pattern of being someone else's material — and whether an apology this time means anything under pressure."
+      },
+      {
+        "character": "mr-alvarez",
+        "arc": "Engineers the forced pairing deliberately, betting on discomfort now over isolation later — his own quiet history with being the outsider never stated, only implied in how carefully he watches the two of them work."
+      },
+      {
+        "character": "maya",
+        "arc": "Remains, unchanged, the gravitational pull toward the version of belonging that costs nothing and means nothing — a mirror for what Wren's instincts could calcify into."
+      },
+      {
+        "character": "jordan",
+        "arc": "Registers the discomfort of the initial joke but never intervenes, modeling the limits of conflict-avoidant warmth and making room for Wren's own growth to matter more."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "COMMUNICATION",
+        "description": "Tracked through how specifically and directly Wren names the harm, states her reasoning, and defends Alex out loud versus deflecting, hedging, or staying silent under social pressure."
+      },
+      {
+        "trait": "EMOTIONAL_AWARENESS",
+        "description": "Tracked through whether Wren notices and acts on Alex's visible hurt in real time, and whether she can name her own underlying motive (wanting to belong) honestly rather than minimizing it."
+      },
+      {
+        "trait": "INTEGRITY",
+        "description": "Tracked through whether Wren's apology is followed by consistent behavior — accepting the boundary, not repeating the harm, and holding her ground publicly even when it costs social capital."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": "player-alex",
+        "dynamic": "The emotional core of the episode — a specific, guarded kid testing whether this new place repeats an old pattern, and whether Wren's noticing translates into consistent action."
+      },
+      {
+        "pair": "player-maya",
+        "dynamic": "A referendum on whether Wren mistakes magnetism for belonging; Maya never changes, so every return to her table is a choice, not a default."
+      },
+      {
+        "pair": "player-mr-alvarez",
+        "dynamic": "An adult who engineers discomfort on purpose, believing it prevents isolation later — his intervention creates the structure but never does the emotional work for Wren."
+      },
+      {
+        "pair": "player-jordan",
+        "dynamic": "A low-stakes, conflict-avoidant presence whose failure to intervene highlights exactly what Wren has to do that easier friendships don't require."
+      }
+    ],
+    "replayHooks": [
+      "The apology scene (choice-2 / choice-2b) plays out completely differently depending on timing and specificity, changing Alex's guardedness for the rest of the episode.",
+      "Only the fully authentic path unlocks Alex actually sharing the real invented-world map rather than the guarded minimum.",
+      "The climax choice (choice-4/4b/4c) can be replayed to see the same public moment resolve as triumph, cracked-open hope, hollow victory, or quiet loss depending on everything that came before.",
+      "Two distinct routes reach the friendship ending (immediate honesty vs. recovered honesty after a stumble) — replaying to find both rewards players who explore the 'wrong' first choice.",
+      "The two lonely-win branches (performed apology vs. too-late redemption) reframe the same ending scene with different emotional textures depending on when in the story Wren finally told the truth.",
+      "Mr. Alvarez's brief reactions shift subtly across branches, rewarding attentive replays with hints about why he engineered the pairing at all."
+    ],
+    "estimatedPlayTime": 12,
+    "educationalGoals": [
+      "Model the difference between saying 'sorry' and actually repairing harm through specific acknowledgment and changed behavior",
+      "Show boundary-setting as a normal, healthy act rather than a conflict to be avoided",
+      "Demonstrate that integrity is tested most under peer pressure, not in private",
+      "Illustrate emotional awareness as noticing impact on others in real time, not just intent"
+    ],
+    "conversationStarters": [
+      "Was there a moment where you would have made a different choice than Wren did? What would you have said instead?",
+      "Why do you think Alex's boundary in the library mattered so much, even after Wren already apologized?",
+      "What do you think Mr. Alvarez was hoping would happen when he paired them up on purpose?",
+      "Which ending felt most true to how real friendships actually get repaired — or not repaired?",
+      "Have you ever had to choose between an easy laugh and defending someone? What did you do?"
+    ]
+  },
+  "designNotes": "The core fix addresses the QA gap between 16 mathematically reachable leaf paths (4 sequential binary choice points: choice-1/choice-2-or-2b, choice-3-or-3b, choice-4/4b/4c) and only 4 named branches. Rather than enumerating all 16 paths as separate branch objects (technically complete but noisy and unreadable), I restructured 'branches' into two explicit types, declared via a new 'matchType' field and documented in a new top-level 'branchMatchingPolicy' string: (1) EXACT branches — used only for the 2 paths reaching the friendship ending, because the specific route (immediate honesty vs. recovered-after-a-stumble honesty) is narratively meaningful enough to name individually; (2) PATTERN branches — keyed off 'requiredSceneVisited' (which scene-6 showdown variant was reached) plus the decisive final choice, treating earlier choices as wildcards. I verified by hand that this produces exactly one matching branch per leaf path with no gaps or overlaps: solid (4 paths: 1 authentic-repair, 1 guarded-thaw, 2 warm-hesitation), strained (8 paths: 4 strained-recovery, 4 popularity-cost), fractured (4 paths: 2 late-redemption-shortfall, 2 avoidance-spiral) = 16 total. No scene, choicePoint, or transition structure needed to change — all nextScene/defaultNextScene wiring in the draft was already fully connected and reachable; the issue was purely in how outcomes were documented and matched. I did add one new branch (late-redemption-shortfall) to give the fractured-scene 'apologize again publicly' choice its own distinct narrative meaning rather than silently collapsing it into popularity-cost, since arriving at lonely-win from a fully broken relationship reads differently than arriving there from a merely strained one.",
+  "uncertainties": [
+    "The 'matchType'/'requiredSceneVisited'/'branchMatchingPolicy' fields are a schema extension beyond the original draft's branch shape. If the downstream engine strictly expects only {id, name, triggeredBy, description, outcome} and can't consume extra fields or pattern semantics, branches would need to be fully enumerated as 16 exact-match objects instead — functionally equivalent but far more verbose. I chose the documented-pattern approach for readability and maintainability, but can switch to full enumeration if the runtime requires literal choice-history matching only.",
+    "I collapsed some upstream narrative variation (e.g., the four different routes into scene-6-showdown-strained) into single pattern branches for the tentative and lonely-win endings. This keeps the outline manageable, but if finer-grained conversation-starter differentiation is wanted per exact route, those two pattern branches could each be split into 2-4 more specific sub-branches at the cost of added complexity.",
+    "The trait-scoring math (via traitMapping on choicePoints) is additive across the whole playthrough and wasn't part of the QA complaint, but with 4 sequential choices the score range is fairly wide; I didn't re-tune weights here — worth a separate balance pass if trait totals are used for player-facing feedback."
+  ]
+}

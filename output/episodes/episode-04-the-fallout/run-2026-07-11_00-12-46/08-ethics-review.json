@@ -1,0 +1,83 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex's identity (they/them, non-binary coded) is not referenced or acknowledged by any character within the episode text — no misgendering, but also no organic textual moment confirming peers use correct pronouns, which is a missed opportunity to model normalized respect.",
+      "location": "Throughout Alex's scenes",
+      "harmPotential": "Low direct harm, but a missed chance to positively model pronoun respect for non-binary students; ambiguity could read as identity being incidental rather than affirmed.",
+      "recommendation": "Add one small, low-key line where a character uses 'they' naturally referring to Alex (e.g., Mr. Alvarez or Jordan), reinforcing normalized inclusion without making it a lesson.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Mr. Alvarez engineers a forced social pairing/spotlight dynamic as a pedagogical tool; while framed as well-intentioned, an adult deliberately putting a recently-harmed student back in proximity with the person who hurt them without checking in privately first could read as a subtle endorsement of forcing reconciliation.",
+      "location": "scene-4-pairing-warm/cold",
+      "harmPotential": "Could inadvertently suggest to teen players that adults may/should force proximity between a harmed party and the person who harmed them without consent, which is not ideal conflict-resolution modeling for real bullying/harm situations.",
+      "recommendation": "Add a brief beat (even one line) showing Alvarez privately checking with Alex beforehand or acknowledging awareness of the incident, to clarify this is thoughtful facilitation rather than a blind seating chart.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "BIAS",
+      "issue": "Jordan (only major Black/Nigerian-American male character in the ensemble alongside Wren's dad) is coded as 'a little exhausting,' conflict-avoidant, and overly eager to please — while not a harmful stereotype per se, combined with his family framing (siblings are the 'stars,' he's the 'peacemaker') there's a mild pattern of Black male characters being cast as accommodating/emotionally overextended rather than centered as complex leads in their own right within this episode.",
+      "location": "Jordan's characterization throughout, especially s4w-3, s6t/s6f context notes",
+      "harmPotential": "Low but worth monitoring across the series — risk of a recurring 'agreeable sidekick' pattern for a character of color if this trait isn't balanced with agency/depth in other episodes.",
+      "recommendation": "In future episodes, give Jordan a moment of his own needs/boundaries being centered (already planned per his arcPotential notes) — flag for series-level tracking rather than blocking this episode.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "CULTURAL",
+      "issue": "Wren's mixed Nigerian/Brazilian-American heritage and Jordan's Nigerian-American family are mentioned only in background metadata, not surfaced in this episode's actual scenes — cultural identity exists as backstory flavor rather than lived-in text here.",
+      "location": "Character background fields vs. episode dialogue",
+      "harmPotential": "Minimal — but risks cultural identity feeling like a checkbox rather than integrated characterization if this pattern continues episode over episode.",
+      "recommendation": "Consider small organic textural details (food, phrases, family references) surfacing in dialogue in future episodes so heritage feels lived rather than purely biographical.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "Alex's guardedness and hurt are portrayed as a specific, earned emotional response to a specific betrayal — not tied to their identity as a queer-coded/non-binary or economically-strained character, avoiding a 'tragic identity' trope.",
+    "The episode carefully avoids conflating Alex's marginalization with the source of humor — the joke targets a private creative act, not an identity trait, which sidesteps mocking-identity tropes entirely.",
+    "Maya, the sharp/socially dominant girl, is given interiority and backstory (her own history as an 'Alex') rather than being a flat mean-girl antagonist — avoids simplistic villain framing.",
+    "Multiple diverse identities (Nigerian-Brazilian, Nigerian-American, Latino/Chinese-coded, non-binary) are present without any single character being reduced to a 'representative' of their group.",
+    "The branching structure directly and consistently ties consequences to integrity/communication/emotional awareness choices, modeling that apologies require specific acknowledgment and behavioral change, not just words — strong, developmentally appropriate ethical modeling for the target age.",
+    "No romantic/power-imbalanced adult-teen dynamics; Mr. Alvarez's warmth stays appropriately bounded by professional context.",
+    "The 'lonely win' and 'broken' outcome branches responsibly show that choosing social ease over integrity has real relational costs, rather than being reward-neutral."
+  ],
+  "recommendations": [
+    "Add a small explicit textual moment where Alex's pronouns are used naturally by a peer/adult to reinforce normalized respect.",
+    "Insert a brief beat clarifying Mr. Alvarez's awareness/care in the pairing decision so forced proximity reads as thoughtful facilitation, not a blind pedagogical gamble.",
+    "Track Jordan's characterization across the series to ensure his 'accommodating peacemaker' trait is balanced with agency-centered moments, per his own arc notes.",
+    "In future episodes, let cultural heritage details surface organically in dialogue/scene texture rather than remaining in background-only metadata."
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 8,
+    "tropes": 9,
+    "ethicalModeling": 9,
+    "culturalSensitivity": 7,
+    "overall": 8
+  },
+  "flaggedContent": [],
+  "summary": {
+    "verdict": "This episode handles a sensitive conflict-repair storyline with care, nuance, and strong ethical modeling. Alex's hurt is treated as a specific response to a specific harm rather than an identity-based tragedy, and the branching consequences meaningfully reward honesty and integrity over social convenience. No critical or major issues were identified; the few notes raised are minor polish items (pronoun normalization, clarifying adult intentionality, series-level character-pattern tracking) that would strengthen an already solid, age-appropriate script.",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [
+      "Consider a natural pronoun-use moment for Alex to reinforce normalized inclusion.",
+      "Clarify Mr. Alvarez's intentionality behind the pairing to avoid reading as a blind forced-proximity tactic.",
+      "Monitor Jordan's 'agreeable peacemaker' trait across the series for balance.",
+      "Let cultural heritage details surface organically in dialogue in future episodes."
+    ],
+    "strengths": [
+      "Avoids tragic-identity and mockery-of-identity tropes entirely",
+      "Gives antagonist-coded character (Maya) real interiority and history",
+      "Strong, consistent ethical consequence structure across branches",
+      "Healthy, appropriately bounded adult-student dynamic"
+    ],
+    "readyForPublication": true
+  }
+}

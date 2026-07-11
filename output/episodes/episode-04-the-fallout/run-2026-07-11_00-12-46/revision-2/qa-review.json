@@ -1,0 +1,70 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "CRITICAL",
+      "category": "LOGIC",
+      "message": "The 'outcomes' array only defines 4 named branches (authentic-repair, guarded-thaw, popularity-cost, avoidance-spiral), but the branching tree has 16 possible leaf paths (4 binary choice points) that resolve into only 4 ending scenes (friendship, tentative, lonely-win, broken). Most paths reaching scene-7-resolution-tentative, scene-7-resolution-lonely-win, and scene-7-resolution-broken do NOT match any outcome's 'triggeredBy' list. For example, reaching scene-6-showdown-strained -> choice-4b:'a' -> scene-7-resolution-tentative is a fully valid, reachable path, but no outcome entry has triggeredBy = [...,'choice-4b:a'] ending in tentative from that route (only choice-4b:b -> lonely-win is covered, and only for one specific upstream history).",
+      "location": "outcomes[]",
+      "expectedValue": "An outcome entry (or clearly defined fallback logic) covering every reachable choice-history/ending-scene combination, or documentation that outcome-matching degrades gracefully to a default branch",
+      "actualValue": "Only 4 of ~16 reachable paths have matching outcome definitions",
+      "fix": "Either add outcome entries for all reachable path permutations that terminate in scene-7-resolution-tentative / lonely-win / broken, or restructure 'triggeredBy' matching to key off which ending scene was reached (with sub-variants) rather than an exact full choice-history array, and document that behavior."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "CONSISTENCY",
+      "message": "branchDialogue contains an entry with branchId 'ending-tentative-ground' that does not correspond to any id in the top-level 'outcomes' array (valid ids are branch-authentic-repair, branch-guarded-thaw, branch-popularity-cost, branch-avoidance-spiral). Per the data model, branchDialogue variants are keyed off outcome branch ids, so this entry is orphaned and will never be selected by any outcome-matching logic.",
+      "location": "branchDialogue[4] (branchId: 'ending-tentative-ground')",
+      "expectedValue": "branchId matching an existing entry in outcomes[].id",
+      "actualValue": "'ending-tentative-ground' — not present in outcomes[]",
+      "fix": "Add a corresponding outcome object with id 'ending-tentative-ground' (or 'branch-tentative-ground') to the outcomes array, including a description and triggeredBy list covering the choice combinations that lead to scene-7-resolution-tentative, or rename this branchDialogue entry to match an existing outcome id."
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "SCHEMA",
+      "message": "The branchDialogue entry for 'ending-tentative-ground' uses a different internal shape than all other branchDialogue entries — it has 'endingTitle' and 'flavorLines' fields instead of the 'lines' field used everywhere else, with no 'sceneId'/'branchId' pairing consistent with the other four entries' structure (those use {sceneId, branchId, lines: [...]}).",
+      "location": "branchDialogue[4]",
+      "expectedValue": "{ sceneId, branchId, lines: [...] } matching the shape of branchDialogue[0..3]",
+      "actualValue": "{ branchId, sceneId, endingTitle, flavorLines: [...] }",
+      "fix": "Normalize this entry to the same schema as the other branchDialogue entries (rename 'flavorLines' to 'lines', drop or standardize 'endingTitle' across all entries if it's meant to be a general field)."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "choice-3b option 'b' (deflect) maps three traits simultaneously (EMOTIONAL_AWARENESS:-2, INTEGRITY:-2, COMMUNICATION:-1), which is a large combined negative swing for a single choice compared to other choices in the episode that typically move 1-2 traits by 1-2 points.",
+      "location": "choices[4] (choice-3b).traitMapping.b",
+      "suggestion": "Consider reducing to two trait dimensions or smaller magnitudes to keep trait swings consistent with the rest of the episode's calibration."
+    },
+    {
+      "category": "STYLE",
+      "message": "Scene s6f-2 dialogue has an odd 'character: jordan, text: \"\", emotion: laughs early, then catches Alex's face, stops' entry with empty text but populated action field in scene-6-showdown-solid (s6s-3) as well — an empty text string for a speaking character line reads awkwardly in a dialogue renderer that expects non-empty text per line.",
+      "location": "scene-6-showdown-solid.dialogue[s6s-3], scene-6-showdown-fractured (similar pattern)",
+      "suggestion": "Either give jordan a short verbal beat (e.g., '...') or restructure this as a pure NARRATOR/action-only beat instead of attributing an empty string to a named character."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Multiple distinct upstream choice histories converge on the same scene-6 variants (e.g., scene-6-showdown-strained is reachable both from the 'solid' library path via choice-3:b and from the 'cold' library path via choice-3b:a), which is intentional design but means the emotional-beat framing text in scene-6-showdown-strained ('the trust between Wren and Alex is thinner this time') may not perfectly fit both entry contexts.",
+      "location": "scene-6-showdown-strained.description",
+      "suggestion": "Confirm the description reads naturally regardless of which upstream path led here, or split into two convergent-but-distinct scene variants if the emotional context differs meaningfully."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "estimatedPlayTime of 12 minutes seems low for an episode with 15 scenes, 8 choices, and multiple full branches of dialogue — likely fine for a single playthrough but worth double-checking against actual dialogue line counts.",
+      "location": "estimatedPlayTime",
+      "suggestion": "Verify against a timed read-through; consider revising if average playthrough (single path) exceeds 12 minutes."
+    }
+  ],
+  "summary": {
+    "totalChecks": 24,
+    "passedChecks": 20,
+    "failedChecks": 3,
+    "warningCount": 4
+  },
+  "recommendations": [
+    "Rework the outcome-matching system so every reachable ending scene has full coverage of the choice-history permutations that lead there — either via exhaustive triggeredBy lists or via ending-scene-keyed matching rather than full-history matching.",
+    "Normalize the branchDialogue schema so all entries use the same field names (lines vs flavorLines, presence/absence of endingTitle).",
+    "Add an explicit outcome entry for the 'tentative' ending state so it has parity with friendship/lonely-win/broken outcomes for analytics and dialogue-branch resolution.",
+    "Consider a QA pass that walks all 16 possible choice-path permutations end-to-end to confirm each resolves to a coherent narration + matching outcome/branch dialogue."
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "episode": {
+    "number": 4,
+    "title": "The Doodle Kingdom",
+    "world": "NEW_SCHOOL"
+  },
+  "run": {
+    "workflowId": "9206164e-2b25-4715-9224-9f10b61514d7",
+    "threadId": "476a962f-aa37-44e6-842d-1b14b83cf345",
+    "startedAt": "2026-07-11T00:12:46.418Z",
+    "completedAt": "2026-07-11T00:48:04.472Z",
+    "totalSeconds": 2118,
+    "model": "claude-sonnet-5",
+    "reviewModel": "claude-sonnet-5",
+    "skippedReviewers": [],
+    "previousEpisodes": [],
+    "previousEpisodesSource": null,
+    "previousProtagonist": {
+      "name": "Wren Okafor-Silva",
+      "source": "filesystem"
+    },
+    "reusedSupportingCharacters": [
+      {
+        "id": "maya",
+        "name": "Maya Delacroix-Thompson"
+      },
+      {
+        "id": "jordan",
+        "name": "Jordan Oyelaran"
+      },
+      {
+        "id": "alex",
+        "name": "Alex Rivera-Chen"
+      },
+      {
+        "id": "mr-alvarez",
+        "name": "David Alvarez"
+      }
+    ],
+    "usage": {
+      "calls": 15,
+      "inputTokens": 284420,
+      "outputTokens": 187489,
+      "totalTokens": 471909,
+      "cacheCreationInputTokens": 131545,
+      "cacheReadInputTokens": 73758,
+      "budget": 800000,
+      "byModel": {
+        "claude-sonnet-5": {
+          "calls": 15,
+          "inputTokens": 284420,
+          "outputTokens": 187489,
+          "cacheReadInputTokens": 73758
+        }
+      }
+    }
+  },
+  "roster": [
+    {
+      "id": "player",
+      "name": "Wren Okafor-Silva",
+      "role": "Player-character protagonist of 'First Bell.' Her practiced first-day survival system collides with real choices \u2014 who to sit with, who to defend, who to become \u2014 forcing her to notice, maybe for the first time, that the performance has a cost.",
+      "active": true
+    },
+    {
+      "id": "maya",
+      "name": "Maya Delacroix-Thompson",
+      "role": "Maya is the gravitational center of the popular table and the primary test of the player's spine \u2014 not a villain, but a mirror of what Wren's own survival instincts could calcify into if she never risks anything. Every scene with Maya is a referendum on whether the player mistakes magnetism for belonging.",
+      "active": true
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Oyelaran",
+      "role": "The warm first contact who represents 'belonging' as ease and popularity-by-proximity \u2014 a low-stakes ally whose limits (avoiding real conflict) surface right when the player needs someone to hold ground, making room for the player's own growth to matter more.",
+      "active": true
+    },
+    {
+      "id": "alex",
+      "name": "Alex Rivera-Chen",
+      "role": "Alex is the emotional stakes-bearer of 'First Bell' \u2014 the human cost that makes the player's social choices matter. Alex is not a lesson in tolerance; they're a specific, guarded kid testing whether this new place will go the way the last one did. Every branch of the episode is really a referendum on whether Wren notices Alex, and what she does with that noticing \u2014 from a passing glance in the hallway to a real, if fragile, friendship forged under pressure in the library.",
+      "active": true
+    },
+    {
+      "id": "mr-alvarez",
+      "name": "David Alvarez",
+      "role": "The well-meaning adult architect of the episode's central pressure points \u2014 he creates both the vulnerable spotlight moment and the forced-collaboration reckoning, not out of cluelessness but out of a genuine, slightly clumsy belief that discomfort now prevents isolation later. He's not neutral scenery; his choices actively shape the social chessboard the player has to navigate, and his own history with being the outsider quietly parallels Wren's arc without ever being stated outright.",
+      "active": true
+    }
+  ],
+  "finalStatus": "APPROVED",
+  "verdicts": {
+    "creativeDirector": "APPROVED",
+    "qaReviewer": "PASS",
+    "childPsychologist": "APPROVED",
+    "gameDesigner": "GOOD",
+    "ethicsReviewer": "GOOD"
+  },
+  "revisions": [
+    {
+      "iteration": 1,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 2,
+      "dialogueFeedbackCount": 1,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    },
+    {
+      "iteration": 2,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "dialogue-revision"
+      ],
+      "storyFeedbackCount": 0,
+      "dialogueFeedbackCount": 1,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "FAIL",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    },
+    {
+      "iteration": 3,
+      "failingBefore": [
+        "qaReviewer"
+      ],
+      "actions": [
+        "story-revision",
+        "dialogue-rewrite"
+      ],
+      "storyFeedbackCount": 1,
+      "dialogueFeedbackCount": 2,
+      "verdictsAfter": {
+        "creativeDirector": "APPROVED",
+        "qaReviewer": "PASS",
+        "childPsychologist": "APPROVED",
+        "gameDesigner": "GOOD",
+        "ethicsReviewer": "GOOD"
+      }
+    }
+  ],
+  "files": [
+    "01-story-outline.json",
+    "02-protagonist.json",
+    "02-supporting-characters.json",
+    "03-dialogue.json",
+    "04-creative-review.json",
+    "05-qa-review.json",
+    "06-psych-review.json",
+    "07-game-review.json",
+    "08-ethics-review.json",
+    "revision-1/feedback.json",
+    "revision-1/story-outline.json",
+    "revision-1/dialogue.json",
+    "revision-1/qa-review.json",
+    "revision-2/feedback.json",
+    "revision-2/dialogue.json",
+    "revision-2/qa-review.json",
+    "revision-3/feedback.json",
+    "revision-3/story-outline.json",
+    "revision-3/dialogue.json",
+    "revision-3/qa-review.json",
+    "manifest.json",
+    "episode-script.md"
+  ]
+}

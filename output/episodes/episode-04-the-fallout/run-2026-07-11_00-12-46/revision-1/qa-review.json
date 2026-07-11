@@ -1,0 +1,58 @@
+{
+  "status": "FAIL",
+  "errors": [
+    {
+      "severity": "CRITICAL",
+      "category": "COMPLETENESS",
+      "message": "The ending scene 'scene-7-resolution-tentative' is a fully reachable terminal scene (via choice-4 option 'b' and choice-4b option 'a') but has no corresponding entry in the top-level 'outcomes' array and no 'branchDialogue' variant. All three other endings (friendship, lonely-win, broken) have documented outcomes and branch-specific dialogue; this ending is undocumented, meaning analytics/trait-summary tooling and any ending-specific dialogue variation will silently fail to identify or narrate this path correctly.",
+      "location": "outcomes[] / branchDialogue[] (missing entries referencing scene-7-resolution-tentative)",
+      "expectedValue": "An outcome entry (e.g. 'branch-cautious-progress') with triggeredBy paths resolving to scene-7-resolution-tentative, plus a matching branchDialogue block",
+      "actualValue": "No outcome or branchDialogue references scene-7-resolution-tentative",
+      "fix": "Add an outcome object describing the path(s) that lead to scene-7-resolution-tentative (e.g. choice-1:a/b, choice-2:a, choice-3:a, choice-4:b OR choice-3b:a, choice-4b:a) and add a branchDialogue entry for flavor text specific to that ending."
+    }
+  ],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Dialogue line has an empty 'text' field, relying entirely on the 'action' field. Depending on the renderer, this could produce an empty speech bubble for Jordan.",
+      "location": "scenes[scene-6-showdown-solid].dialogue[id=s6s-3]",
+      "suggestion": "Either give this line minimal text (e.g. a laugh interjection like 'Ha—') or mark it explicitly as an action-only beat (e.g. character: NARRATOR) so renderers don't attempt to draw an empty bubble for Jordan."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Only 4 of the many possible choice-path permutations (2^4=16 combinations across choice-1/2(2b)/3(3b)/4(4b/4c)) are documented as named outcomes. This is likely an intentional design choice to highlight archetypal paths, but it means most actual playthroughs will not match any outcome's triggeredBy list exactly.",
+      "location": "outcomes[]",
+      "suggestion": "Either document all reachable path clusters or explicitly state in outcome descriptions that these are representative archetypes rather than exhaustive, so downstream trait-scoring logic derives outcome from ending scene rather than exact triggeredBy match."
+    },
+    {
+      "category": "STYLE",
+      "message": "Episode's seasonId 'season-1' does not textually mirror the world's season label 'Season 1: First Year' — not a functional bug given seasons are plain strings in the world schema, but worth aligning naming conventions for readability.",
+      "location": "episode.seasonId",
+      "suggestion": "Consider a naming convention doc (e.g. season-1 always maps to the first string in world.seasons) to avoid ambiguity in multi-season worlds."
+    },
+    {
+      "category": "PERFORMANCE",
+      "message": "estimatedPlayTime of 12 minutes seems low given 15 scenes with substantial dialogue and 8 choice points; players reading all dialogue plus choice deliberation may take longer.",
+      "location": "episode.estimatedPlayTime",
+      "suggestion": "Re-time via a playtest pass and adjust if needed; not a blocking issue."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "scene-6-showdown-solid and scene-6-showdown-strained/fractured list 'mr-alvarez' and other characters in their 'characters' array who never speak or are referenced in that scene's dialogue (e.g. mr-alvarez in showdown scenes, jordan in scene-3b/scene-5). This is consistent with 'present but silent' staging, but worth a pass to confirm each listed character is intentionally silent rather than an oversight.",
+      "location": "scenes[scene-6-showdown-solid/strained/fractured].characters",
+      "suggestion": "Add a brief silent-reaction beat or confirm intentional omission in scene notes."
+    }
+  ],
+  "summary": {
+    "totalChecks": 24,
+    "passedChecks": 19,
+    "failedChecks": 1,
+    "warningCount": 5
+  },
+  "recommendations": [
+    "Add an outcome + branchDialogue entry for scene-7-resolution-tentative to fully close the documentation loop on all reachable endings.",
+    "Run a full path-traversal simulation (all 2^4 combinations) programmatically to confirm every combination resolves to one of the four ending scenes without dead ends — the manual trace here found no dead ends, but automated coverage would catch this earlier next time.",
+    "Consider giving Jordan's empty-text reaction line in scene-6-showdown-solid actual text for renderer safety.",
+    "Document that 'outcomes' represent archetypal paths rather than exhaustive branch coverage, to set correct expectations for analytics tooling."
+  ]
+}

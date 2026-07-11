@@ -1,0 +1,1240 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1-the-laugh",
+      "lines": [
+        {
+          "id": "s1-01",
+          "character": "NARRATOR",
+          "text": "Maya's table sits by the window — best seats in the room. Wren's three days in and already sitting like she's always been there."
+        },
+        {
+          "id": "s1-02",
+          "character": "maya",
+          "text": "Okay, question.",
+          "action": "snaps fingers softly",
+          "emotion": "playful"
+        },
+        {
+          "id": "s1-03",
+          "character": "maya",
+          "text": "Word going around you got seated at the quiet corner first period. Before us. Explain."
+        },
+        {
+          "id": "s1-04",
+          "character": "jordan",
+          "text": "It wasn't the quiet corner, it was — okay, it was a little bit the quiet corner.",
+          "emotion": "laughing a half-second early"
+        },
+        {
+          "id": "s1-05",
+          "character": "player",
+          "text": "I said 'hi' and someone showed me a notebook like it was classified information."
+        },
+        {
+          "id": "s1-06",
+          "character": "maya",
+          "text": "Wait. Rivera-Chen? The one with the little map thing?",
+          "action": "leans in, grin sharpening"
+        },
+        {
+          "id": "s1-07",
+          "character": "player",
+          "text": "It's not a 'little map thing,' Maya, it's a whole kingdom. Flag. Currency. Possibly a war."
+        },
+        {
+          "id": "s1-08",
+          "character": "jordan",
+          "text": "Wait — a war? Over what, crayons?",
+          "emotion": "already laughing"
+        },
+        {
+          "id": "s1-09",
+          "character": "player",
+          "text": "Cheese, actually. There's a whole uprising. I think it's called the Provolone Uprising. I could've been drafted."
+        },
+        {
+          "id": "s1-10",
+          "character": "NARRATOR",
+          "text": "The table loses it. Maya's laugh is the loudest, head tipped back — and for one clean second, Wren feels the exact shape of belonging."
+        },
+        {
+          "id": "s1-11",
+          "character": "maya",
+          "text": "The — okay, the *Provolone Uprising*. I'm framing that. That's a t-shirt, right?",
+          "emotion": "delighted"
+        },
+        {
+          "id": "s1-12",
+          "character": "jordan",
+          "text": "No for real, do the guard voice, do the — what was the guard thing—",
+          "emotion": "wheezing"
+        },
+        {
+          "id": "s1-13",
+          "character": "NARRATOR",
+          "text": "Twelve feet away, at the end of the long table by the recycling bins, Alex goes very still."
+        },
+        {
+          "id": "s1-14",
+          "character": "NARRATOR",
+          "text": "The notebook closes — slow, deliberate, like it costs something. Alex stands, gathers a tray without looking up, and walks. The door swings shut once, behind them."
+        },
+        {
+          "id": "s1-15",
+          "character": "INTERNAL",
+          "text": "The laugh's still on my face. Takes a second to notice it's the only thing still moving."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2-the-weight",
+      "lines": [
+        {
+          "id": "s2-01",
+          "character": "NARRATOR",
+          "text": "The cafeteria door settles into its frame. Nobody else seems to hear it."
+        },
+        {
+          "id": "s2-02",
+          "character": "jordan",
+          "text": "...Was that — should someone go check—",
+          "emotion": "smile flickering, half a beat too late"
+        },
+        {
+          "id": "s2-03",
+          "character": "jordan",
+          "text": "Honestly, probably nothing. Alex does that.",
+          "action": "laughs it off, unconvincingly"
+        },
+        {
+          "id": "s2-04",
+          "character": "maya",
+          "text": "Okay so, new business — Marcus asked Dana to the thing and she said—",
+          "action": "twirls a fry, already onto the next topic"
+        },
+        {
+          "id": "s2-05",
+          "character": "INTERNAL",
+          "text": "Stomach just dropped through the floor. The door's still going and nobody else is even looking at it."
+        },
+        {
+          "id": "s2-06",
+          "character": "maya",
+          "text": "...You good? You look like you saw a ghost."
+        },
+        {
+          "id": "s2-07",
+          "character": "INTERNAL",
+          "text": "Twelve feet and one hallway. That's it. That's the whole distance."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3a-hallway-chase",
+      "lines": [
+        {
+          "id": "s3a-01",
+          "character": "NARRATOR",
+          "text": "Alex is at their locker, notebook hugged to their chest like it might get taken again."
+        },
+        {
+          "id": "s3a-02",
+          "character": "player",
+          "text": "Hey — Alex. Wait, can I—",
+          "action": "catching up, a little out of breath"
+        },
+        {
+          "id": "s3a-03",
+          "character": "alex",
+          "text": "It's fine.",
+          "emotion": "flat, not looking up"
+        },
+        {
+          "id": "s3a-04",
+          "character": "player",
+          "text": "It's not, I just—"
+        },
+        {
+          "id": "s3a-05",
+          "character": "alex",
+          "text": "Doesn't matter. You got your laugh.",
+          "emotion": "clipped"
+        },
+        {
+          "id": "s3a-06",
+          "character": "NARRATOR",
+          "text": "Alex still hasn't looked at her. Four fingers tap the locker door — quiet, contained."
+        },
+        {
+          "id": "s3a-07",
+          "character": "INTERNAL",
+          "text": "Say something real, or say something clever. Pick one."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3b-letting-it-sit",
+      "lines": [
+        {
+          "id": "s3b-01",
+          "character": "NARRATOR",
+          "text": "Fifth period's a scramble — the kind where the hallway becomes a river and you're just hoping to end up on the right bank."
+        },
+        {
+          "id": "s3b-02",
+          "character": "INTERNAL",
+          "text": "I'll catch them after. There's still time. There's always still—"
+        },
+        {
+          "id": "s3b-03",
+          "character": "NARRATOR",
+          "text": "Up ahead, Alex slips through the crowd toward Mr. Alvarez's room, spine straight, notebook clamped under one arm like armor."
+        },
+        {
+          "id": "s3b-04",
+          "character": "NARRATOR",
+          "text": "The warning bell cuts through the noise. The door's still open. Barely."
+        },
+        {
+          "id": "s3b-05",
+          "character": "INTERNAL",
+          "text": "Now or never. Mostly never, if I'm honest."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4-pairing-warm",
+      "lines": [
+        {
+          "id": "s4w-01",
+          "character": "NARRATOR",
+          "text": "Mr. Alvarez leans against the front desk, list in hand, doing his slow scan of the room before he says anything."
+        },
+        {
+          "id": "s4w-02",
+          "character": "mr-alvarez",
+          "text": "Identity Map project. Pairs — not your choice, my choice, so save the negotiating for something that'll actually work on me.",
+          "emotion": "dry"
+        },
+        {
+          "id": "s4w-03",
+          "character": "mr-alvarez",
+          "text": "Here's the thing. I already know who needs to be put together."
+        },
+        {
+          "id": "s4w-04",
+          "character": "mr-alvarez",
+          "text": "...Wren and Alex.",
+          "action": "reading down the list"
+        },
+        {
+          "id": "s4w-05",
+          "character": "NARRATOR",
+          "text": "Alex's shoulders tighten, then don't. Not fully. Something in between."
+        },
+        {
+          "id": "s4w-06",
+          "character": "maya",
+          "text": "Ooh. Rough draw, Okafor-Silva.",
+          "action": "stage whisper across the room"
+        },
+        {
+          "id": "s4w-07",
+          "character": "jordan",
+          "text": "No for real, it'll be — you guys will be great, honestly, Alex is really good at this stuff—",
+          "emotion": "overcompensating"
+        },
+        {
+          "id": "s4w-08",
+          "character": "player",
+          "text": "...Hey.",
+          "action": "glancing over, trying for eye contact"
+        },
+        {
+          "id": "s4w-09",
+          "character": "alex",
+          "text": "Hey.",
+          "emotion": "not quite meeting her eyes, but not turning away either"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4-pairing-cold",
+      "lines": [
+        {
+          "id": "s4c-01",
+          "character": "NARRATOR",
+          "text": "Mr. Alvarez leans against the front desk, list in hand, doing his slow scan of the room before he says anything."
+        },
+        {
+          "id": "s4c-02",
+          "character": "mr-alvarez",
+          "text": "Identity Map project. Pairs — not your choice, my choice.",
+          "emotion": "dry"
+        },
+        {
+          "id": "s4c-03",
+          "character": "mr-alvarez",
+          "text": "...Wren and Alex.",
+          "action": "reading down the list"
+        },
+        {
+          "id": "s4c-04",
+          "character": "NARRATOR",
+          "text": "Alex's face closes like a door being shut — quiet, and complete."
+        },
+        {
+          "id": "s4c-05",
+          "character": "maya",
+          "text": "Ooh. Rough draw, Okafor-Silva.",
+          "action": "stage whisper"
+        },
+        {
+          "id": "s4c-06",
+          "character": "jordan",
+          "text": "No for real, it'll be fine, honestly—",
+          "emotion": "overcompensating"
+        },
+        {
+          "id": "s4c-07",
+          "character": "player",
+          "text": "...Hey.",
+          "action": "trying for eye contact, not getting it"
+        },
+        {
+          "id": "s4c-08",
+          "character": "alex",
+          "text": "Great.",
+          "emotion": "flat, already opening the notebook to a blank page"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-library-warm",
+      "lines": [
+        {
+          "id": "s5w-01",
+          "character": "NARRATOR",
+          "text": "The library's back table, the one nobody fights over. Alex sits with the notebook closed under one hand, tapping four times against the table edge."
+        },
+        {
+          "id": "s5w-02",
+          "character": "alex",
+          "text": "...I had an idea. For the project. It's dumb, forget it.",
+          "emotion": "not looking up"
+        },
+        {
+          "id": "s5w-03",
+          "character": "player",
+          "text": "No, say it. I want to hear it."
+        },
+        {
+          "id": "s5w-04",
+          "character": "alex",
+          "text": "...This is the real one. Not the — not the version everyone laughed at.",
+          "action": "opens the notebook to a different page, cautious"
+        },
+        {
+          "id": "s5w-05",
+          "character": "NARRATOR",
+          "text": "The page is dense, careful — years of it. A coastline redrawn and erased at least three times."
+        },
+        {
+          "id": "s5w-06",
+          "character": "alex",
+          "text": "The Provolone thing isn't even — that's not the real name, that was just the part that sounded funny out loud. The actual conflict's been going for like four versions of this map. It's about a bridge, mostly.",
+          "emotion": "getting specific, faster, guard slipping"
+        },
+        {
+          "id": "s5w-07",
+          "character": "player",
+          "text": "...A bridge."
+        },
+        {
+          "id": "s5w-08",
+          "character": "alex",
+          "text": "It's a whole thing. I'm not explaining the bridge right now.",
+          "emotion": "almost a real laugh"
+        },
+        {
+          "id": "s5w-09",
+          "character": "player",
+          "text": "Okay, but for the record, I would listen to the whole bridge thing."
+        },
+        {
+          "id": "s5w-10",
+          "character": "alex",
+          "text": "...If we're doing this — the project, all of it — you don't get to use my stuff as material. Not ever. Not even the safe version. Not to Maya. Not to anyone.",
+          "emotion": "quiet, the real ask underneath"
+        },
+        {
+          "id": "s5w-11",
+          "character": "NARRATOR",
+          "text": "It's said like a rule that's been broken before Wren got here."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-library-cold",
+      "lines": [
+        {
+          "id": "s5c-01",
+          "character": "NARRATOR",
+          "text": "Alex slides a single index card across the table. Bullet points. Nothing else."
+        },
+        {
+          "id": "s5c-02",
+          "character": "player",
+          "text": "...That's it? That's kind of thin for a whole project."
+        },
+        {
+          "id": "s5c-03",
+          "character": "alex",
+          "text": "That's what you get.",
+          "emotion": "not looking up"
+        },
+        {
+          "id": "s5c-04",
+          "character": "player",
+          "text": "Come on, there's gotta be more we can use — the kingdom thing was good, if we just—"
+        },
+        {
+          "id": "s5c-05",
+          "character": "alex",
+          "text": "Why should I trust you with anything else?",
+          "emotion": "sharp, quiet, precise"
+        },
+        {
+          "id": "s5c-06",
+          "character": "NARRATOR",
+          "text": "It's not rhetorical. Alex is actually waiting for an answer."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-showdown-solid",
+      "lines": [
+        {
+          "id": "s6s-01",
+          "character": "NARRATOR",
+          "text": "Poster boards lean against the wall. Presentation day nerves buzz through the room. Wren and Alex are near the front of the line."
+        },
+        {
+          "id": "s6s-02",
+          "character": "maya",
+          "text": "Please tell me you're not actually presenting the doodle kingdom.",
+          "action": "leaning over, smirking",
+          "emotion": "not unkind, but not thinking"
+        },
+        {
+          "id": "s6s-03",
+          "character": "NARRATOR",
+          "text": "Alex is close enough to hear. Doesn't move. Waits."
+        },
+        {
+          "id": "s6s-04",
+          "character": "INTERNAL",
+          "text": "The laugh's right there. It always is."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-showdown-strained",
+      "lines": [
+        {
+          "id": "s6st-01",
+          "character": "NARRATOR",
+          "text": "Alex double-checks the poster board's corners for the third time — a tell, if you know to look for it."
+        },
+        {
+          "id": "s6st-02",
+          "character": "maya",
+          "text": "Please tell me you're not actually presenting the doodle kingdom.",
+          "emotion": "same smirk, same lack of thought"
+        },
+        {
+          "id": "s6st-03",
+          "character": "NARRATOR",
+          "text": "Alex's hand stills on the poster board. Doesn't turn around. Waiting to see which version of Wren shows up this time."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-showdown-fractured",
+      "lines": [
+        {
+          "id": "s6f-01",
+          "character": "NARRATOR",
+          "text": "Alex hasn't said more than a few words to Wren all week. The poster board between them feels borrowed, not shared."
+        },
+        {
+          "id": "s6f-02",
+          "character": "maya",
+          "text": "Please tell me you're not actually presenting the doodle kingdom.",
+          "emotion": "smirking, oblivious as ever"
+        },
+        {
+          "id": "s6f-03",
+          "character": "NARRATOR",
+          "text": "Alex doesn't wait to find out. Already stepping back, notebook pulled tight against their chest — the same posture as that first day by the recycling bins."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-friendship",
+      "lines": [
+        {
+          "id": "s7f-01",
+          "character": "NARRATOR",
+          "text": "Hallway, after the bell. The crowd thins around them."
+        },
+        {
+          "id": "s7f-02",
+          "character": "alex",
+          "text": "...Same time tomorrow?",
+          "emotion": "small smile, surprised by itself"
+        },
+        {
+          "id": "s7f-03",
+          "character": "alex",
+          "text": "I want to show you the part I didn't present."
+        },
+        {
+          "id": "s7f-04",
+          "character": "player",
+          "text": "Yeah. Obviously yeah."
+        },
+        {
+          "id": "s7f-05",
+          "character": "alex",
+          "text": "...Cool.",
+          "emotion": "the smile holding a beat longer than it needs to"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-tentative",
+      "lines": [
+        {
+          "id": "s7t-01",
+          "character": "NARRATOR",
+          "text": "Hallway, after the bell."
+        },
+        {
+          "id": "s7t-02",
+          "character": "alex",
+          "text": "...See you tomorrow.",
+          "emotion": "nod, not much else"
+        },
+        {
+          "id": "s7t-03",
+          "character": "NARRATOR",
+          "text": "The door doesn't close all the way. Just — narrower than it was."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-lonely-win",
+      "lines": [
+        {
+          "id": "s7l-01",
+          "character": "NARRATOR",
+          "text": "Maya's table, the next day. Warmer than it's ever been — Wren's officially one of them now."
+        },
+        {
+          "id": "s7l-02",
+          "character": "maya",
+          "text": "Okay, you're just, like, one of us now. Officially. Took you long enough.",
+          "action": "twirling a braid, genuinely warm for once"
+        },
+        {
+          "id": "s7l-03",
+          "character": "player",
+          "text": "...Yeah. Guess so.",
+          "emotion": "smiling, but her eyes drift"
+        },
+        {
+          "id": "s7l-04",
+          "character": "NARRATOR",
+          "text": "Two tables over, there's an empty seat where Alex used to sit. Wren notices it. She'll keep noticing it, every day after."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-broken",
+      "lines": [
+        {
+          "id": "s7b-01",
+          "character": "NARRATOR",
+          "text": "Hallway, days later. Alex passes without a glance — not cold, exactly. Just finished."
+        },
+        {
+          "id": "s7b-02",
+          "character": "NARRATOR",
+          "text": "The project got turned in. A passing grade, technically. Nothing else got finished."
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Get up and go find Alex"
+        },
+        {
+          "id": "b",
+          "text": "Stay, laugh along, fix it later"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c1a-1",
+            "character": "player",
+            "text": "I'll be right back.",
+            "action": "already standing"
+          },
+          {
+            "id": "c1a-2",
+            "character": "maya",
+            "text": "...Okay? Weird. Table's still here.",
+            "emotion": "eyebrow raised"
+          }
+        ],
+        "b": [
+          {
+            "id": "c1b-1",
+            "character": "player",
+            "text": "No, yeah — I'm good. What'd Dana say?",
+            "action": "forcing the laugh back into her face"
+          },
+          {
+            "id": "c1b-2",
+            "character": "INTERNAL",
+            "text": "Fix it later. Later's still today. Probably."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"I took something you trusted me with and turned it into a joke at your expense. That was wrong — no excuses.\""
+        },
+        {
+          "id": "b",
+          "text": "\"I'm sorry, I just wasn't trying to be mean, I was just trying to be funny.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2a-1",
+            "character": "player",
+            "text": "I took something you showed me — something you trusted me with — and I turned it into a bit to get a laugh at your expense. That was wrong. Not 'sorry if you got upset' wrong. Just wrong. I knew it while I was doing it."
+          },
+          {
+            "id": "c2a-2",
+            "character": "alex",
+            "text": "...Oh.",
+            "action": "finally looks up, caught off guard"
+          },
+          {
+            "id": "c2a-3",
+            "character": "alex",
+            "text": "That's — okay.",
+            "action": "taps four times, quieter this time"
+          },
+          {
+            "id": "c2a-4",
+            "character": "alex",
+            "text": "...Wasn't expecting that."
+          },
+          {
+            "id": "c2a-5",
+            "character": "player",
+            "text": "Yeah. Me neither, honestly."
+          },
+          {
+            "id": "c2a-6",
+            "character": "alex",
+            "text": "...Don't make it a bit.",
+            "emotion": "almost a laugh, stopped halfway"
+          },
+          {
+            "id": "c2a-7",
+            "character": "player",
+            "text": "Wouldn't dream of it. Anymore."
+          }
+        ],
+        "b": [
+          {
+            "id": "c2b-1",
+            "character": "player",
+            "text": "I'm sorry, okay? I didn't mean anything by it, I was just — it was a joke, people were laughing, I wasn't trying to—"
+          },
+          {
+            "id": "c2b-2",
+            "character": "alex",
+            "text": "Right. Sure.",
+            "emotion": "flat, already turning back to the locker"
+          },
+          {
+            "id": "c2b-3",
+            "character": "player",
+            "text": "I mean it, I—"
+          },
+          {
+            "id": "c2b-4",
+            "character": "alex",
+            "text": "So it's my fault for thinking it was private.",
+            "action": "closes the locker"
+          },
+          {
+            "id": "c2b-5",
+            "character": "alex",
+            "text": "Got it."
+          },
+          {
+            "id": "c2b-6",
+            "character": "NARRATOR",
+            "text": "Alex walks off before Wren can fix the sentence."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2b",
+      "options": [
+        {
+          "id": "a",
+          "text": "Push through and say something, even rushed"
+        },
+        {
+          "id": "b",
+          "text": "Let it go — deal with it later"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2ba-1",
+            "character": "player",
+            "text": "Alex — hey — wait, I just — that was a jerk thing to do back there and I'm sorry, for real, I shouldn't have—",
+            "action": "calling out, jogging the last few steps"
+          },
+          {
+            "id": "c2ba-2",
+            "character": "NARRATOR",
+            "text": "Alex stops, half a step from the doorway. Doesn't turn all the way around."
+          },
+          {
+            "id": "c2ba-3",
+            "character": "alex",
+            "text": "...Okay.",
+            "emotion": "quiet"
+          },
+          {
+            "id": "c2ba-4",
+            "character": "NARRATOR",
+            "text": "The door swings shut behind them before Wren can tell if 'okay' meant anything."
+          }
+        ],
+        "b": [
+          {
+            "id": "c2bb-1",
+            "character": "INTERNAL",
+            "text": "Later. Definitely later. It'd be weird to chase them down right as the bell's ringing, right?"
+          },
+          {
+            "id": "c2bb-2",
+            "character": "NARRATOR",
+            "text": "The door closes. Wren stands in the emptying hallway, the excuse already going stale in her mouth."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "I hear you. That's fair — thank you for telling me."
+        },
+        {
+          "id": "b",
+          "text": "I already said sorry, what more do you want from me?"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3a-1",
+            "character": "player",
+            "text": "I hear you. That's fair — thank you for telling me."
+          },
+          {
+            "id": "c3a-2",
+            "character": "alex",
+            "text": "...Okay.",
+            "emotion": "small nod, tension easing just slightly"
+          },
+          {
+            "id": "c3a-3",
+            "character": "alex",
+            "text": "Cool. Great.",
+            "action": "taps the table once, like resetting"
+          },
+          {
+            "id": "c3a-4",
+            "character": "alex",
+            "text": "Moving on before this gets weird."
+          },
+          {
+            "id": "c3a-5",
+            "character": "player",
+            "text": "Deal.",
+            "emotion": "small smile"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3b-1",
+            "character": "player",
+            "text": "I already said sorry, what more do you want from me?"
+          },
+          {
+            "id": "c3b-2",
+            "character": "alex",
+            "text": "Nothing. Forget it.",
+            "emotion": "flat and small, closing the notebook"
+          },
+          {
+            "id": "c3b-3",
+            "character": "NARRATOR",
+            "text": "The page disappears. Whatever door was open a crack just found its latch."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3b",
+      "options": [
+        {
+          "id": "a",
+          "text": "Admit it: you wanted to matter at that table, and it cost you something you didn't mean to spend."
+        },
+        {
+          "id": "b",
+          "text": "\"It's not that big a deal, you're overreacting.\""
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3ba-1",
+            "character": "player",
+            "text": "...Honestly? I wanted to be the funny one at that table. I wanted it more than I thought about what it would cost you. That's it. That's the whole reason, and it's not a good one."
+          },
+          {
+            "id": "c3ba-2",
+            "character": "alex",
+            "text": "...Huh.",
+            "action": "caught off guard, taps four times, slower"
+          },
+          {
+            "id": "c3ba-3",
+            "character": "alex",
+            "text": "That's the first thing you've said that didn't sound like a save."
+          },
+          {
+            "id": "c3ba-4",
+            "character": "player",
+            "text": "Doesn't undo it."
+          },
+          {
+            "id": "c3ba-5",
+            "character": "alex",
+            "text": "No. But it's something.",
+            "action": "pushes the index card back toward the middle of the table"
+          },
+          {
+            "id": "c3ba-6",
+            "character": "alex",
+            "text": "...Fine. There's more. Not all of it. Some of it."
+          }
+        ],
+        "b": [
+          {
+            "id": "c3bb-1",
+            "character": "player",
+            "text": "It's not that big a deal, honestly, you're kind of overreacting—"
+          },
+          {
+            "id": "c3bb-2",
+            "character": "alex",
+            "text": "Right. Sure I am.",
+            "emotion": "cold, already closing the notebook"
+          },
+          {
+            "id": "c3bb-3",
+            "character": "NARRATOR",
+            "text": "Alex doesn't say anything else for the rest of the period. The silence has a shape to it."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"It's actually really good — you'll see.\""
+        },
+        {
+          "id": "b",
+          "text": "Laugh it off vaguely to keep the peace"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4a-1",
+            "character": "player",
+            "text": "It's actually really good — you'll see."
+          },
+          {
+            "id": "c4a-2",
+            "character": "maya",
+            "text": "...Okay, weird flex, but okay.",
+            "emotion": "surprised, half-laughing"
+          },
+          {
+            "id": "c4a-3",
+            "character": "alex",
+            "text": "...Didn't expect you to say that part out loud.",
+            "emotion": "quiet, almost to themselves, jaw easing"
+          },
+          {
+            "id": "c4a-4",
+            "character": "player",
+            "text": "Yeah, well. Get used to it."
+          }
+        ],
+        "b": [
+          {
+            "id": "c4b-1",
+            "character": "player",
+            "text": "I mean — you'll see, I guess.",
+            "emotion": "half-laugh, shrug"
+          },
+          {
+            "id": "c4b-2",
+            "character": "maya",
+            "text": "Right? Called it.",
+            "emotion": "satisfied, already turning away"
+          },
+          {
+            "id": "c4b-3",
+            "character": "NARRATOR",
+            "text": "Alex's face doesn't change. That's the worst part — no flinch, just confirmation of something already expected. A small step back, recalibrating distance."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4b",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hold the line, clearly and publicly"
+        },
+        {
+          "id": "b",
+          "text": "Hedge — half-defend, half-laugh"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4ba-1",
+            "character": "player",
+            "text": "It's not a joke, Maya. It's actually really good work, and I'm not doing that again.",
+            "emotion": "clear, no hedge"
+          },
+          {
+            "id": "c4ba-2",
+            "character": "maya",
+            "text": "...Okay, jeez. Didn't know it was sacred now.",
+            "action": "blinking, then shrugging"
+          },
+          {
+            "id": "c4ba-3",
+            "character": "alex",
+            "text": "...You didn't have to say that in front of everyone.",
+            "action": "finally turning, something careful in the look"
+          },
+          {
+            "id": "c4ba-4",
+            "character": "player",
+            "text": "I know. I wanted to."
+          }
+        ],
+        "b": [
+          {
+            "id": "c4bb-1",
+            "character": "player",
+            "text": "I mean — it's not that bad, don't be dramatic.",
+            "emotion": "half-laughing, not quite committing"
+          },
+          {
+            "id": "c4bb-2",
+            "character": "maya",
+            "text": "Sure, sure.",
+            "emotion": "laughing, moving on"
+          },
+          {
+            "id": "c4bb-3",
+            "character": "alex",
+            "text": "...Right.",
+            "action": "quiet, already turning back around — the four-tap rhythm starting again, fast"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4c",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stop everything and mean it this time — apologize again, in front of everyone if that's what it takes"
+        },
+        {
+          "id": "b",
+          "text": "Freeze. Say nothing. Let it pass."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4ca-1",
+            "character": "player",
+            "text": "Hey — no. Everyone — this project is Alex's work, it's good, and the fact that I ever made fun of it was garbage of me, and I'm sorry. Actually sorry. Not the version I said the first time.",
+            "emotion": "loud enough for the room, no hedge"
+          },
+          {
+            "id": "c4ca-2",
+            "character": "NARRATOR",
+            "text": "The room goes quiet in the specific way rooms go quiet when something real happens by accident."
+          },
+          {
+            "id": "c4ca-3",
+            "character": "alex",
+            "text": "...You didn't have to do all that.",
+            "emotion": "staring at her, unreadable for a second"
+          },
+          {
+            "id": "c4ca-4",
+            "character": "player",
+            "text": "I know. I think I needed to, though."
+          },
+          {
+            "id": "c4ca-5",
+            "character": "alex",
+            "text": "...Okay.",
+            "emotion": "quiet, not fully thawed, but not walking away either"
+          }
+        ],
+        "b": [
+          {
+            "id": "c4cb-1",
+            "character": "INTERNAL",
+            "text": "Say something. Say anything."
+          },
+          {
+            "id": "c4cb-2",
+            "character": "NARRATOR",
+            "text": "The moment passes. Maya laughs, moves on. Alex doesn't look back at Wren for the rest of the period."
+          },
+          {
+            "id": "c4cb-3",
+            "character": "alex",
+            "text": "...Right. Figured.",
+            "action": "picking up the poster board alone, flat, to no one in particular"
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-7-resolution-friendship",
+      "branchId": "branch-authentic-repair",
+      "lines": [
+        {
+          "id": "b-auth-1",
+          "character": "alex",
+          "text": "You know you came after me that same day. Before you even knew what you were going to say."
+        },
+        {
+          "id": "b-auth-2",
+          "character": "player",
+          "text": "I didn't really plan it. I just didn't want to sit there another second."
+        },
+        {
+          "id": "b-auth-3",
+          "character": "alex",
+          "text": "...That's the part I noticed most, actually.",
+          "emotion": "quiet"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-friendship",
+      "branchId": "branch-guarded-thaw",
+      "lines": [
+        {
+          "id": "b-thaw-1",
+          "character": "alex",
+          "text": "You almost didn't come back. In the hallway, I mean. I saw you almost not."
+        },
+        {
+          "id": "b-thaw-2",
+          "character": "player",
+          "text": "I almost didn't. Glad I did, though."
+        },
+        {
+          "id": "b-thaw-3",
+          "character": "alex",
+          "text": "...Yeah. Me too. That counts, you know. Coming back.",
+          "emotion": "small, honest"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-tentative",
+      "branchId": "branch-warm-hesitation",
+      "lines": [
+        {
+          "id": "b-warmhes-1",
+          "character": "alex",
+          "text": "You didn't say anything, back there. With Maya."
+        },
+        {
+          "id": "b-warmhes-2",
+          "character": "player",
+          "text": "I know. I should've."
+        },
+        {
+          "id": "b-warmhes-3",
+          "character": "alex",
+          "text": "...Just — think about it next time. That's all I'm asking.",
+          "action": "taps twice, stops"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-tentative",
+      "branchId": "branch-strained-recovery",
+      "lines": [
+        {
+          "id": "b-strained-1",
+          "character": "alex",
+          "text": "I wasn't sure you'd actually say it. Out loud. In front of everyone."
+        },
+        {
+          "id": "b-strained-2",
+          "character": "player",
+          "text": "Yeah, well. Guess I surprised both of us."
+        },
+        {
+          "id": "b-strained-3",
+          "character": "alex",
+          "text": "...Don't let it be the only time.",
+          "emotion": "almost a real laugh"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-lonely-win",
+      "branchId": "branch-popularity-cost",
+      "lines": [
+        {
+          "id": "b-pop-1",
+          "character": "INTERNAL",
+          "text": "I hedged. Once, in front of everyone, and that turned out to be the only time that mattered."
+        },
+        {
+          "id": "b-pop-2",
+          "character": "INTERNAL",
+          "text": "The table's warm. It's just missing exactly one person — the one I actually owed something to."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-lonely-win",
+      "branchId": "branch-late-redemption-shortfall",
+      "lines": [
+        {
+          "id": "b-late-1",
+          "character": "INTERNAL",
+          "text": "I finally said it. Out loud, in front of everyone, meant every word. It just came about four apologies too late to matter."
+        },
+        {
+          "id": "b-late-2",
+          "character": "INTERNAL",
+          "text": "Alex said 'okay.' Not 'we're okay.' Just — okay. There's a difference, and I know it now."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-broken",
+      "branchId": "branch-avoidance-spiral",
+      "lines": [
+        {
+          "id": "b-avoid-1",
+          "character": "INTERNAL",
+          "text": "I had four chances. I counted them, after. I didn't take one."
+        },
+        {
+          "id": "b-avoid-2",
+          "character": "INTERNAL",
+          "text": "The notebook's probably still got that page in it. The one about the bridge. I'll never know now."
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Wren's dialogue should always have a slight performance quality — even her honest lines land a little clean, a little quotable, because that's her survival skill. The tell that she's being REALLY honest (not performing honesty) is when her lines get shorter and less clever, not longer. Her internal voice should be plainer and more anxious than her spoken voice — that gap IS the character. Maya never apologizes directly in this episode; her warmth in the lonely-win ending is real but oblivious, which is the point — she genuinely doesn't register the cost. Jordan's lines should almost always be slightly too long, filling space, with 'honestly' or 'no for real' doing emotional labor his actual words aren't doing. Alex's dialogue should get shorter when hurt and longer/more fluent only when discussing the invented world specifically — that fluency is the tell that trust is opening up, more than any direct statement of trust would be. Mr. Alvarez should never be preachy — his 'here's the thing' lines pivot the scene but he lets the kids do the emotional work themselves. Avoid having Alex ever say 'I forgive you' in any branch — repair in this episode is always shown through small behavioral shifts (a nod, tapping slowing down, opening the notebook) rather than declared.",
+  "alternativeLines": [
+    {
+      "lineId": "s5w-10",
+      "alternatives": [
+        "...If we keep doing this, there's one rule. You don't get to use my stuff as material. Ever. Even the version that seems safe.",
+        "...Here's the deal, if there's gonna be a deal. My stuff doesn't become a bit. Not the funny version, not any version."
+      ],
+      "reasoning": "Original keeps Alex's clipped cadence but slightly formal ('if we're doing this') — these alternates trade some of that formality for more clearly 'kid' phrasing if a more casual read is preferred."
+    },
+    {
+      "lineId": "c2a-1",
+      "alternatives": [
+        "I used something you showed me — in confidence — as a punchline. In front of everyone. That's what happened, and it was wrong, full stop.",
+        "You showed me your notebook because you trusted me, and I turned it into a joke to get a laugh. That's the whole thing. I'm not going to pretend it's smaller than that."
+      ],
+      "reasoning": "Provides slightly shorter, punchier variants of the 'real apology' — some players may prefer a line with less rhetorical polish so it reads as less performed."
+    },
+    {
+      "lineId": "s1-09",
+      "alternatives": [
+        "Cheese, actually. There's a whole civil war over a wheel of provolone. I could've been drafted.",
+        "Cheese-based. There's an uprising. I think I have refugee status."
+      ],
+      "reasoning": "Keeps the bit's escalating absurdity while offering slightly different joke rhythms depending on how broad vs. dry the humor should land in voice direction."
+    }
+  ]
+}

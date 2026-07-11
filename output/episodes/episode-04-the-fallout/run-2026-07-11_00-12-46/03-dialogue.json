@@ -1,0 +1,1101 @@
+{
+  "dialogue": [
+    {
+      "sceneId": "scene-1-the-laugh",
+      "lines": [
+        {
+          "id": "s1-1",
+          "character": "NARRATOR",
+          "text": "Cafeteria noise, mid-roar. Maya's table already laughing about something else as Wren slides into her seat, tray clattering."
+        },
+        {
+          "id": "s1-2",
+          "character": "maya",
+          "text": "Okay, new-girl-who's-not-new-anymore.",
+          "action": "snaps fingers softly",
+          "emotion": "playful"
+        },
+        {
+          "id": "s1-3",
+          "character": "maya",
+          "text": "Give the table something. We're dying over here, right?"
+        },
+        {
+          "id": "s1-4",
+          "character": "jordan",
+          "text": "Honestly, no for real, Wednesdays are just rough. We need content.",
+          "emotion": "laughing half a beat early"
+        },
+        {
+          "id": "s1-5",
+          "character": "player",
+          "text": "Content. Right. Let me check my content folder.",
+          "action": "chews the inside of her cheek, buying time"
+        },
+        {
+          "id": "s1-6",
+          "character": "maya",
+          "text": "Ten seconds. Go."
+        },
+        {
+          "id": "s1-7",
+          "character": "player",
+          "text": "Okay, okay — you know Rivera-Chen? Never talks, always drawing in that notebook like it's a top-secret government document?",
+          "action": "eyes flick toward Alex's table, twelve feet away"
+        },
+        {
+          "id": "s1-8",
+          "character": "maya",
+          "text": "Oh my god, yes — what is that, like a diary? Please tell me it's a diary.",
+          "action": "leans in"
+        },
+        {
+          "id": "s1-9",
+          "character": "player",
+          "text": "Better. It's a whole kingdom. Flag and everything. A *flag*, Maya, for a country that isn't real. Ruled by — I'm not kidding — a raccoon king named Sir Fluffington the Third."
+        },
+        {
+          "id": "s1-10",
+          "character": "jordan",
+          "text": "Wait — a raccoon — A RACCOON KING—",
+          "emotion": "cracking up, laugh already going before the line lands"
+        },
+        {
+          "id": "s1-11",
+          "character": "maya",
+          "text": "Sir Fluffington the Third! Okay that's — that's elite. That's a ten.",
+          "action": "snaps fingers, cackling"
+        },
+        {
+          "id": "s1-12",
+          "character": "INTERNAL",
+          "text": "...That landed. That really landed."
+        },
+        {
+          "id": "s1-13",
+          "character": "player",
+          "text": "There's also a whole royal court — advisors and stuff. I think one of them's a raccoon too, it's very inbred—",
+          "emotion": "riding the laugh, can't stop now"
+        },
+        {
+          "id": "s1-14",
+          "character": "NARRATOR",
+          "text": "Twelve feet away, the notebook snaps shut. Alex stands, slings the bag over one shoulder, and walks out without a word. The cafeteria door swings shut behind them."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-2-the-weight",
+      "lines": [
+        {
+          "id": "s2-1",
+          "character": "NARRATOR",
+          "text": "The cafeteria door is still swinging. Laughter fading unevenly around the table."
+        },
+        {
+          "id": "s2-2",
+          "character": "jordan",
+          "text": "...Wait, was that—",
+          "action": "smile faltering, then forcing itself back on"
+        },
+        {
+          "id": "s2-3",
+          "character": "jordan",
+          "text": "—okay, no for real, that was funny though. Sir Fluffington. Iconic."
+        },
+        {
+          "id": "s2-4",
+          "character": "maya",
+          "text": "Okay but for real, Friday. Dance thing. In or out?",
+          "action": "already moved on, snapping fingers"
+        },
+        {
+          "id": "s2-5",
+          "character": "INTERNAL",
+          "text": "That was Alex's. That was actually Alex's."
+        },
+        {
+          "id": "s2-6",
+          "character": "maya",
+          "text": "...You good?",
+          "emotion": "noticing Wren's face for half a second"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3a-hallway-chase",
+      "lines": [
+        {
+          "id": "s3a-1",
+          "character": "NARRATOR",
+          "text": "Hallway, mostly empty. Alex is at their locker, spine rigid, notebook clutched to their chest like a shield."
+        },
+        {
+          "id": "s3a-2",
+          "character": "player",
+          "text": "Alex — hey. Wait, hold on—"
+        },
+        {
+          "id": "s3a-3",
+          "character": "alex",
+          "text": "It's fine.",
+          "action": "taps four times on the locker, doesn't turn"
+        },
+        {
+          "id": "s3a-4",
+          "character": "player",
+          "text": "It's not — can you just look at me for a second?"
+        },
+        {
+          "id": "s3a-5",
+          "character": "alex",
+          "text": "What.",
+          "action": "turns halfway",
+          "emotion": "flat, guarded"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-3b-letting-it-sit",
+      "lines": [
+        {
+          "id": "s3b-1",
+          "character": "NARRATOR",
+          "text": "Bell rings. Hallway floods."
+        },
+        {
+          "id": "s3b-2",
+          "character": "INTERNAL",
+          "text": "I'll catch them after math. Plenty of time. It's fine."
+        },
+        {
+          "id": "s3b-3",
+          "character": "NARRATOR",
+          "text": "Through the crowd, Alex slips into Mr. Alvarez's room ahead of everyone else — spine very straight, notebook held tight."
+        },
+        {
+          "id": "s3b-4",
+          "character": "INTERNAL",
+          "text": "Narrow window. Closing."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4-pairing-warm",
+      "lines": [
+        {
+          "id": "s4w-1",
+          "character": "NARRATOR",
+          "text": "Classroom. Mr. Alvarez leans against the front desk, clipboard in hand."
+        },
+        {
+          "id": "s4w-2",
+          "character": "mr-alvarez",
+          "text": "Identity Map project. Pairs — and before anyone asks, no, you don't get to pick. I already know how that goes.",
+          "emotion": "dry smile"
+        },
+        {
+          "id": "s4w-3",
+          "character": "jordan",
+          "text": "Honestly? Vibes are already tense. No for real, this is gonna be a whole thing.",
+          "action": "whisper-loud to no one in particular"
+        },
+        {
+          "id": "s4w-4",
+          "character": "mr-alvarez",
+          "text": "Wren and Alex.",
+          "action": "taps two knuckles on the desk, already scanning the room before he says it"
+        },
+        {
+          "id": "s4w-5",
+          "character": "NARRATOR",
+          "text": "Alex's shoulders don't fully unclench. But across the room, for half a second, they glance up — not away."
+        },
+        {
+          "id": "s4w-6",
+          "character": "maya",
+          "text": "...Interesting.",
+          "action": "twirls a braid, eyebrow up"
+        },
+        {
+          "id": "s4w-7",
+          "character": "INTERNAL",
+          "text": "Okay. Okay, that's — that's actually good. I think."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-4-pairing-cold",
+      "lines": [
+        {
+          "id": "s4c-1",
+          "character": "NARRATOR",
+          "text": "Classroom. Mr. Alvarez leans against the front desk, clipboard in hand."
+        },
+        {
+          "id": "s4c-2",
+          "character": "mr-alvarez",
+          "text": "Identity Map project. Pairs. I'm picking, so save your negotiating skills for something that'll actually work on me."
+        },
+        {
+          "id": "s4c-3",
+          "character": "mr-alvarez",
+          "text": "Wren and Alex.",
+          "action": "taps two knuckles on the desk"
+        },
+        {
+          "id": "s4c-4",
+          "character": "NARRATOR",
+          "text": "Alex's face closes like a door. Doesn't look up. Notebook pulled tighter against their chest."
+        },
+        {
+          "id": "s4c-5",
+          "character": "jordan",
+          "text": "...Oh. Okay. That's — no for real, that'll be fine, probably.",
+          "emotion": "wincing, laughing a beat too late"
+        },
+        {
+          "id": "s4c-6",
+          "character": "maya",
+          "text": "Yikes. Good luck with that.",
+          "emotion": "not unkind, just observing"
+        },
+        {
+          "id": "s4c-7",
+          "character": "INTERNAL",
+          "text": "Watching a face turn into a door."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-library-warm",
+      "lines": [
+        {
+          "id": "s5w-1",
+          "character": "NARRATOR",
+          "text": "Library table, half-buried in poster board and markers. Alex has the notebook open — a different page than before."
+        },
+        {
+          "id": "s5w-2",
+          "character": "alex",
+          "text": "...This is the real page. Not the version anyone laughs at.",
+          "action": "slides it partway toward Wren, not all the way"
+        },
+        {
+          "id": "s5w-3",
+          "character": "player",
+          "text": "Whoa. Okay, this is — the detail on this is insane. Is that a coastline?",
+          "action": "leaning in, careful"
+        },
+        {
+          "id": "s5w-4",
+          "character": "alex",
+          "text": "Yeah. Took two notebooks to get the border right.",
+          "emotion": "small, guarded pride"
+        },
+        {
+          "id": "s5w-5",
+          "character": "alex",
+          "text": "It's not — it's not a big deal.",
+          "action": "quieter"
+        },
+        {
+          "id": "s5w-6",
+          "character": "player",
+          "text": "It kind of is, though."
+        },
+        {
+          "id": "s5w-7",
+          "character": "alex",
+          "text": "If we're doing this — the project, whatever — you don't get to use my stuff as material. Not ever. Not even the safe version.",
+          "action": "taps four times on the table, then stops, deliberately",
+          "emotion": "flat, precise, like it's been said before and not listened to"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-5-library-cold",
+      "lines": [
+        {
+          "id": "s5c-1",
+          "character": "NARRATOR",
+          "text": "Library table. Alex has handed over exactly three index cards — name, grade, one fact. Nothing else."
+        },
+        {
+          "id": "s5c-2",
+          "character": "player",
+          "text": "This is it? That's the whole map?"
+        },
+        {
+          "id": "s5c-3",
+          "character": "alex",
+          "text": "That's what's due Friday.",
+          "action": "not looking up"
+        },
+        {
+          "id": "s5c-4",
+          "character": "player",
+          "text": "Come on, there's gotta be more you're into than—",
+          "action": "gestures at the cards",
+          "text2": "—three facts and a grade level."
+        },
+        {
+          "id": "s5c-5",
+          "character": "alex",
+          "text": "Doesn't matter.",
+          "emotion": "flat"
+        },
+        {
+          "id": "s5c-6",
+          "character": "player",
+          "text": "It kind of does, if we're supposed to be doing an *identity* map—"
+        },
+        {
+          "id": "s5c-7",
+          "character": "alex",
+          "text": "Why should I trust you with anything else?",
+          "action": "finally looks up",
+          "emotion": "quiet, precise, not raised — genuinely asking"
+        },
+        {
+          "id": "s5c-8",
+          "character": "NARRATOR",
+          "text": "It's not rhetorical. Alex is actually waiting for an answer."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-showdown-solid",
+      "lines": [
+        {
+          "id": "s6s-1",
+          "character": "NARRATOR",
+          "text": "Classroom, presentation day. Wren and Alex's map — genuinely detailed, coastlines and all — waits at the front."
+        },
+        {
+          "id": "s6s-2",
+          "character": "maya",
+          "text": "Please tell me you're not actually presenting the doodle kingdom.",
+          "action": "leans over, smirk, low enough for just the row"
+        },
+        {
+          "id": "s6s-3",
+          "character": "NARRATOR",
+          "text": "Alex is close enough to hear. Doesn't move. Waits."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-showdown-strained",
+      "lines": [
+        {
+          "id": "s6t-1",
+          "character": "NARRATOR",
+          "text": "Alex double-checks the poster board corners, straightening them for the third time. Hands not quite steady."
+        },
+        {
+          "id": "s6t-2",
+          "character": "maya",
+          "text": "Please tell me you're not actually presenting the doodle kingdom.",
+          "action": "leans over, smirk"
+        },
+        {
+          "id": "s6t-3",
+          "character": "NARRATOR",
+          "text": "Alex's hands go still on the poster. Doesn't turn around. Waiting to see."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-6-showdown-fractured",
+      "lines": [
+        {
+          "id": "s6f-1",
+          "character": "NARRATOR",
+          "text": "Alex hasn't said more than four words to Wren all week. Holds the poster like a shield, same as the notebook that first day."
+        },
+        {
+          "id": "s6f-2",
+          "character": "maya",
+          "text": "Please tell me you're not actually presenting the doodle kingdom.",
+          "action": "smirk, leaning over"
+        },
+        {
+          "id": "s6f-3",
+          "character": "NARRATOR",
+          "text": "Alex doesn't wait to see. Already stepping back half a step, jaw tight, bracing."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-friendship",
+      "lines": [
+        {
+          "id": "s7f-1",
+          "character": "NARRATOR",
+          "text": "Hallway after class, backpacks slung, everyone else already gone."
+        },
+        {
+          "id": "s7f-2",
+          "character": "alex",
+          "text": "...Same time tomorrow?",
+          "emotion": "small, real smile, surprised by itself"
+        },
+        {
+          "id": "s7f-3",
+          "character": "alex",
+          "text": "I want to show you the part I didn't present."
+        },
+        {
+          "id": "s7f-4",
+          "character": "player",
+          "text": "Yeah. Obviously yeah."
+        },
+        {
+          "id": "s7f-5",
+          "character": "NARRATOR",
+          "text": "Alex doesn't say the word 'friends.' Doesn't have to."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-tentative",
+      "lines": [
+        {
+          "id": "s7t-1",
+          "character": "NARRATOR",
+          "text": "Hallway, quieter than the day before. Alex adjusts the strap of their bag, doesn't quite meet Wren's eyes, but doesn't leave either."
+        },
+        {
+          "id": "s7t-2",
+          "character": "alex",
+          "text": "...See you tomorrow.",
+          "emotion": "not quite a question, not quite settled"
+        },
+        {
+          "id": "s7t-3",
+          "character": "player",
+          "text": "Yeah. Tomorrow."
+        },
+        {
+          "id": "s7t-4",
+          "character": "NARRATOR",
+          "text": "The door doesn't close. It just stays open a crack."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-lonely-win",
+      "lines": [
+        {
+          "id": "s7l-1",
+          "character": "NARRATOR",
+          "text": "Cafeteria, the next day. Maya's table louder than ever, waving Wren over before she's even through the door."
+        },
+        {
+          "id": "s7l-2",
+          "character": "maya",
+          "text": "There she is — sit, sit, you're basically one of us now."
+        },
+        {
+          "id": "s7l-3",
+          "character": "NARRATOR",
+          "text": "Two tables over, a single seat sits empty. Notebook-shaped absence. Wren can't stop looking at it."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-broken",
+      "lines": [
+        {
+          "id": "s7b-1",
+          "character": "NARRATOR",
+          "text": "Hallway, days later. Alex passes by, eyes fixed straight ahead, like Wren's just part of the wall."
+        },
+        {
+          "id": "s7b-2",
+          "character": "player",
+          "text": "Hey—",
+          "emotion": "dies before it becomes anything else"
+        },
+        {
+          "id": "s7b-3",
+          "character": "NARRATOR",
+          "text": "The project got turned in. Got a fine grade. Nobody mentioned the raccoon king again."
+        }
+      ]
+    }
+  ],
+  "choiceDialogue": [
+    {
+      "choiceId": "choice-1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Go after Alex. Right now."
+        },
+        {
+          "id": "b",
+          "text": "Stay. Laugh it off. Fix it later."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c1-a-1",
+            "character": "maya",
+            "text": "Wait, where are — okay. Whatever.",
+            "emotion": "shrugs"
+          },
+          {
+            "id": "c1-a-2",
+            "character": "jordan",
+            "text": "Oh! Should I — no? Okay, cool, I'll just... hold your seat, I guess."
+          }
+        ],
+        "b": [
+          {
+            "id": "c1-b-1",
+            "character": "player",
+            "text": "Ha — yeah, no, Sir Fluffington's legacy lives on.",
+            "emotion": "forced"
+          },
+          {
+            "id": "c1-b-2",
+            "character": "INTERNAL",
+            "text": "I'll catch them after lunch. Definitely. For sure."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tell them exactly what I did, straight up — no excuses."
+        },
+        {
+          "id": "b",
+          "text": "Say sorry, but explain I was just trying to be funny."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2-a-1",
+            "character": "player",
+            "text": "I took something you showed me — in confidence — and turned it into a bit for a laugh. That wasn't mine to use, and I knew it when I did it."
+          },
+          {
+            "id": "c2-a-2",
+            "character": "alex",
+            "text": "...Yeah.",
+            "action": "arms loosen slightly, still guarded"
+          },
+          {
+            "id": "c2-a-3",
+            "character": "alex",
+            "text": "You did.",
+            "action": "beat"
+          },
+          {
+            "id": "c2-a-4",
+            "character": "alex",
+            "text": "That's — that's actually most of what I needed you to say.",
+            "action": "taps twice, not four, looks away"
+          },
+          {
+            "id": "c2-a-5",
+            "character": "alex",
+            "text": "...Okay. See you around, I guess.",
+            "emotion": "quieter, half over the shoulder"
+          }
+        ],
+        "b": [
+          {
+            "id": "c2-b-1",
+            "character": "player",
+            "text": "I'm sorry, okay? I didn't mean anything by it, I was just trying to get a laugh, it wasn't even about you—"
+          },
+          {
+            "id": "c2-b-2",
+            "character": "alex",
+            "text": "It was pretty specifically about me.",
+            "emotion": "dry, deadpan"
+          },
+          {
+            "id": "c2-b-3",
+            "character": "alex",
+            "text": "Cool talk.",
+            "action": "turns, taps four times against the locker, tighter than before"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-2b",
+      "options": [
+        {
+          "id": "a",
+          "text": "Catch the door. Say something, even if it's rushed."
+        },
+        {
+          "id": "b",
+          "text": "Let it go. Deal with it later."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c2b-a-1",
+            "character": "NARRATOR",
+            "text": "Wren cuts through the crowd, catches the door before it swings shut."
+          },
+          {
+            "id": "c2b-a-2",
+            "character": "player",
+            "text": "Hey — Alex, wait, I just — I'm sorry. About lunch. That wasn't okay, what I did."
+          },
+          {
+            "id": "c2b-a-3",
+            "character": "alex",
+            "text": "...Yeah. Okay.",
+            "action": "already half inside, doesn't fully turn"
+          },
+          {
+            "id": "c2b-a-4",
+            "character": "alex",
+            "text": "I have to sit down.",
+            "action": "disappears inside"
+          },
+          {
+            "id": "c2b-a-5",
+            "character": "INTERNAL",
+            "text": "Not nothing. Not enough, either."
+          }
+        ],
+        "b": [
+          {
+            "id": "c2b-b-1",
+            "character": "NARRATOR",
+            "text": "The door swings shut. Wren doesn't move."
+          },
+          {
+            "id": "c2b-b-2",
+            "character": "INTERNAL",
+            "text": "Later. I'll do it later."
+          },
+          {
+            "id": "c2b-b-3",
+            "character": "INTERNAL",
+            "text": "...Later's going to need a lot of later's, huh."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3",
+      "options": [
+        {
+          "id": "a",
+          "text": "I hear you. That's fair — thank you for telling me."
+        },
+        {
+          "id": "b",
+          "text": "I already said sorry, what more do you want from me?"
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3-a-1",
+            "character": "alex",
+            "text": "...Okay.",
+            "emotion": "like they expected pushback and didn't get it"
+          },
+          {
+            "id": "c3-a-2",
+            "character": "alex",
+            "text": "Cool.",
+            "action": "goes back to the notebook, a little looser"
+          }
+        ],
+        "b": [
+          {
+            "id": "c3-b-1",
+            "character": "alex",
+            "text": "Forget it. Let's just do the project.",
+            "action": "closes the notebook halfway, voice flat",
+            "emotion": "closed"
+          },
+          {
+            "id": "c3-b-2",
+            "character": "NARRATOR",
+            "text": "Alex doesn't look up again for the rest of the session."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-3b",
+      "options": [
+        {
+          "id": "a",
+          "text": "Admit it — I wanted to matter at that table, and it cost you something I didn't mean to spend."
+        },
+        {
+          "id": "b",
+          "text": "It's not that big a deal, you're overreacting."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c3b-a-1",
+            "character": "alex",
+            "text": "...Yeah. That tracks.",
+            "action": "long pause, taps four times, softer this time"
+          },
+          {
+            "id": "c3b-a-2",
+            "character": "alex",
+            "text": "Okay.",
+            "action": "slides one more index card over, small, testing"
+          },
+          {
+            "id": "c3b-a-3",
+            "character": "alex",
+            "text": "Here. One more fact. See what you do with it."
+          }
+        ],
+        "b": [
+          {
+            "id": "c3b-b-1",
+            "character": "alex",
+            "text": "Right.",
+            "action": "closes the notebook fully",
+            "emotion": "done"
+          },
+          {
+            "id": "c3b-b-2",
+            "character": "alex",
+            "text": "Let's just finish the cards."
+          },
+          {
+            "id": "c3b-b-3",
+            "character": "NARRATOR",
+            "text": "Alex doesn't say another word the rest of the session."
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Shut it down: 'It's actually really good — you'll see.'"
+        },
+        {
+          "id": "b",
+          "text": "Laugh it off vaguely, keep the peace."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4-a-1",
+            "character": "player",
+            "text": "It's actually really good. You'll see."
+          },
+          {
+            "id": "c4-a-2",
+            "character": "alex",
+            "text": "...Don't oversell it.",
+            "emotion": "almost a smile",
+            "action": "glances over, something loosens in the shoulders"
+          },
+          {
+            "id": "c4-a-3",
+            "character": "maya",
+            "text": "Whatever, your funeral.",
+            "action": "shrugs, leans back, unbothered"
+          }
+        ],
+        "b": [
+          {
+            "id": "c4-b-1",
+            "character": "player",
+            "text": "I mean — it's, uh—",
+            "emotion": "weak laugh, trails off"
+          },
+          {
+            "id": "c4-b-2",
+            "character": "alex",
+            "text": "...",
+            "action": "goes still, taps four times fast on the poster edge"
+          },
+          {
+            "id": "c4-b-3",
+            "character": "maya",
+            "text": "Right? Called it.",
+            "emotion": "satisfied"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4b",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hold the line, clearly, so everyone hears it."
+        },
+        {
+          "id": "b",
+          "text": "Hedge — half-defend, half-laugh."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4b-a-1",
+            "character": "player",
+            "text": "It's a real project. We worked hard on it. You'll see."
+          },
+          {
+            "id": "c4b-a-2",
+            "character": "alex",
+            "text": "...Thanks.",
+            "action": "turns, slow, searching Wren's face for the catch and not finding one",
+            "emotion": "barely audible"
+          },
+          {
+            "id": "c4b-a-3",
+            "character": "alex",
+            "text": "...",
+            "action": "taps twice — half the usual four"
+          }
+        ],
+        "b": [
+          {
+            "id": "c4b-b-1",
+            "character": "player",
+            "text": "I mean, it's not that bad, calm down—",
+            "emotion": "laughs a little, doesn't fully commit"
+          },
+          {
+            "id": "c4b-b-2",
+            "character": "alex",
+            "text": "Cool.",
+            "action": "doesn't turn around, picks up the poster alone"
+          }
+        ]
+      }
+    },
+    {
+      "choiceId": "choice-4c",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stop everything. Actually mean it this time."
+        },
+        {
+          "id": "b",
+          "text": "Freeze. Say nothing."
+        }
+      ],
+      "responseDialogue": {
+        "a": [
+          {
+            "id": "c4c-a-1",
+            "character": "player",
+            "text": "Maya. No.",
+            "emotion": "loud enough for the row"
+          },
+          {
+            "id": "c4c-a-2",
+            "character": "player",
+            "text": "And also — Alex, I'm sorry. Actually sorry. Not the lunch-table kind."
+          },
+          {
+            "id": "c4c-a-3",
+            "character": "NARRATOR",
+            "text": "A few heads turn. Alex doesn't look at Wren, but doesn't step back any further either."
+          },
+          {
+            "id": "c4c-a-4",
+            "character": "alex",
+            "text": "...Little late.",
+            "emotion": "very quiet, not looking up"
+          },
+          {
+            "id": "c4c-a-5",
+            "character": "alex",
+            "text": "But noted."
+          }
+        ],
+        "b": [
+          {
+            "id": "c4c-b-1",
+            "character": "NARRATOR",
+            "text": "Wren opens her mouth. Nothing comes out."
+          },
+          {
+            "id": "c4c-b-2",
+            "character": "maya",
+            "text": "Yeah, that's what I thought.",
+            "emotion": "taking the silence as agreement, laughing"
+          },
+          {
+            "id": "c4c-b-3",
+            "character": "alex",
+            "text": "...",
+            "action": "picks up the poster alone, steps to the front without Wren"
+          }
+        ]
+      }
+    }
+  ],
+  "branchDialogue": [
+    {
+      "sceneId": "scene-7-resolution-friendship",
+      "branchId": "branch-authentic-repair",
+      "lines": [
+        {
+          "id": "b-auth-1",
+          "character": "alex",
+          "text": "You didn't laugh. When Maya went for it. I kept waiting for you to.",
+          "action": "beat"
+        },
+        {
+          "id": "b-auth-2",
+          "character": "alex",
+          "text": "You didn't."
+        },
+        {
+          "id": "b-auth-3",
+          "character": "player",
+          "text": "I know what it cost the first time. Wasn't doing that again."
+        },
+        {
+          "id": "b-auth-4",
+          "character": "alex",
+          "text": "...Cool.",
+          "action": "taps twice, not four, like the nerves finally have somewhere else to go",
+          "emotion": "small smile"
+        },
+        {
+          "id": "b-auth-5",
+          "character": "alex",
+          "text": "Bring your own markers tomorrow. Mine are all dying."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-tentative",
+      "branchId": "branch-guarded-thaw",
+      "lines": [
+        {
+          "id": "b-thaw-1",
+          "character": "alex",
+          "text": "You were kind of a mess this week. Just so you know."
+        },
+        {
+          "id": "b-thaw-2",
+          "character": "player",
+          "text": "Yeah. I know.",
+          "emotion": "half laugh"
+        },
+        {
+          "id": "b-thaw-3",
+          "character": "alex",
+          "text": "...You came back, though. Eventually.",
+          "action": "beat"
+        },
+        {
+          "id": "b-thaw-4",
+          "character": "alex",
+          "text": "That's something."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-lonely-win",
+      "branchId": "branch-popularity-cost",
+      "lines": [
+        {
+          "id": "b-pop-1",
+          "character": "jordan",
+          "text": "Honestly? Vibes are great today. No for real.",
+          "action": "glances at the empty seat too, a beat too long"
+        },
+        {
+          "id": "b-pop-2",
+          "character": "INTERNAL",
+          "text": "I got exactly what I wanted at this table. I keep checking anyway. Every day. For a seat that isn't there."
+        },
+        {
+          "id": "b-pop-3",
+          "character": "maya",
+          "text": "Okay, new bit — who's got something?",
+          "action": "snaps fingers, oblivious"
+        },
+        {
+          "id": "b-pop-4",
+          "character": "INTERNAL",
+          "text": "...Not me. Not today."
+        }
+      ]
+    },
+    {
+      "sceneId": "scene-7-resolution-broken",
+      "branchId": "branch-avoidance-spiral",
+      "lines": [
+        {
+          "id": "b-avoid-1",
+          "character": "INTERNAL",
+          "text": "I kept thinking there'd be a better time. Turns out the window doesn't wait around forever."
+        },
+        {
+          "id": "b-avoid-2",
+          "character": "INTERNAL",
+          "text": "Alex stopped expecting anything from me around Wednesday. I noticed. Didn't do anything about it."
+        },
+        {
+          "id": "b-avoid-3",
+          "character": "NARRATOR",
+          "text": "Somewhere in a notebook Wren will never see again, there's a kingdom with a coastline nobody else got to hear about."
+        }
+      ]
+    }
+  ],
+  "voiceNotes": "Wren tests every room before she speaks in it — her humor is a survival skill, not cruelty, which is why the laugh in scene 1 has to feel earned and almost involuntary, not villainous. Her apologies should never be eloquent on the first try; real accountability (choice-2a) should feel harder to say than the deflecting version, slightly clumsy, like she's fighting her own instinct to make it a bit. Alex's guardedness is load-bearing: short sentences, the four-taps tic as an anxiety tell that changes rhythm (four = guarded, two = softening) tracks the emotional temperature scene to scene without narration having to state it. Maya is never malicious, which is what makes her dangerous — she genuinely doesn't register the cost of what she asks for, and that obliviousness should read as a specific character trait, not just plot convenience. Jordan's 'laughing before the joke lands' and late-arriving discomfort ('...Wait, was that—') are his tell for conflict he can't yet name; he should always almost say something true and then cover it with a bit. Mr. Alvarez should never lecture — his lines land through structure (the seating chart, the pairing) more than speeches; 'here's the thing' is reserved for when he actually pivots something, not overused. Branch logic assumed: choice-1a -> scene-3a; choice-1b -> scene-3b. Within 3a, choice-2a -> pairing-warm; choice-2b -> pairing-cold. Within 3b, either choice-2b outcome -> pairing-cold. Library-warm's choice-3a continues toward showdown-solid/friendship; choice-3b diverts toward popularity-cost. Library-cold's choice-3b-a is the guarded-thaw recovery toward showdown-strained/tentative; choice-3b-b continues toward fractured/broken outcomes depending on the final choice-4 variant chosen.",
+  "alternativeLines": [
+    {
+      "lineId": "s1-9",
+      "alternatives": [
+        "Better. It's a whole kingdom — flag, royal court, the works. Ruled by a raccoon king. I'm not making that up.",
+        "Better. There's a flag. For a country that isn't real. And the king's a raccoon, apparently."
+      ],
+      "reasoning": "Keeping the exact 'Sir Fluffington the Third' beat but allowing a slightly less elaborate version in case the escalation feels too performed for a first read-through — the alt versions land the same joke with less setup, useful if the pacing needs to move faster."
+    },
+    {
+      "lineId": "c2-a-1",
+      "alternatives": [
+        "I used something you only showed me because you trusted me, and I turned it into a joke to get a laugh at a table. That wasn't fair to you, and I knew it while I was doing it.",
+        "I took your notebook — the thing you specifically didn't want made fun of — and made fun of it. On purpose. For laughs."
+      ],
+      "reasoning": "The core line needs to name the specific harm (confidence broken, not just 'feelings hurt') without over-explaining; alternates offer slightly different register — one more formal/complete, one more clipped and guilty — depending on how raw the delivery should feel."
+    },
+    {
+      "lineId": "s5c-7",
+      "alternatives": [
+        "Give me one reason I should hand you anything else.",
+        "What would even be the point? You already know how this goes."
+      ],
+      "reasoning": "Alex's line needs to feel like a genuine, unrhetorical question rather than a mic-drop; the alternates keep the flatness but vary how much bitterness leaks through, useful depending on how much warmth is left in the cold-path relationship at this point."
+    }
+  ]
+}

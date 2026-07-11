@@ -1,0 +1,374 @@
+[
+  {
+    "character": {
+      "id": "maya",
+      "age": 13,
+      "name": "Maya Delacroix-Thompson",
+      "goals": {
+        "conscious": [
+          "Stay on top — keep the table hers",
+          "Be the one everyone wants to sit with, not the one hoping to be asked"
+        ],
+        "unconscious": [
+          "Prove that the version of her that got mocked once is gone for good",
+          "Be genuinely liked, not just orbited"
+        ]
+      },
+      "pronouns": "she/her",
+      "storyRole": "Maya is the gravitational center of the popular table and the primary test of the player's spine — not a villain, but a mirror of what Wren's own survival instincts could calcify into if she never risks anything. Every scene with Maya is a referendum on whether the player mistakes magnetism for belonging.",
+      "appearance": {
+        "brief": "Medium height, holds herself like she's always about to laugh at something. Box braids with gold thread woven through, usually half-up. Dresses like she planned the outfit the night before — because she did.",
+        "distinctiveFeatures": [
+          "A laugh that starts before the joke's even finished, like she's already decided it's funny",
+          "Chipped gold nail polish she never quite gets around to redoing",
+          "A habit of tilting her chin up slightly when she's sizing someone up"
+        ]
+      },
+      "background": {
+        "family": "Middle of three kids in a loud, close family — her older sister set the popularity bar high at this same school two years ago, and Maya's been quietly measuring herself against that shadow since sixth grade.",
+        "secrets": [
+          "She was the 'Alex' at her old school for one brutal semester before she figured out the game and started playing it from the other side",
+          "She actually thinks Alex's ideas are sharp and has noticed them more than she'd ever admit"
+        ],
+        "interests": [
+          "Choreographing dances for the talent show she'll never actually enter",
+          "Curating group chats like they're art",
+          "Secretly rewatching baking competition shows alone at night"
+        ],
+        "strengths": [
+          "Reads a room in seconds",
+          "Genuinely funny — not just cruel-funny",
+          "Fierce about the people she's decided are hers"
+        ],
+        "struggles": [
+          "Conflates being needed with being loved",
+          "Doesn't know how to back down without it feeling like losing",
+          "Struggles to apologize directly — she'll do something nice instead and never mention the thing she's making up for"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "magnetic",
+          "sharp-tongued",
+          "insecure under the polish",
+          "quick to laugh, quicker to deflect",
+          "surprisingly perceptive"
+        ],
+        "mannerisms": [
+          "Snaps her fingers softly when she's building toward a punchline",
+          "Glances around the table mid-joke to check who's laughing and who isn't",
+          "Twirls a braid when a conversation gets closer to something real"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "neuroticism": 6,
+          "extraversion": 9,
+          "agreeableness": 4,
+          "conscientiousness": 5
+        },
+        "speechPatterns": [
+          "Uses nicknames fast — a way of claiming people before they can decide not to be claimed",
+          "Punctuates jokes with a rhetorical 'right?' that dares you to disagree",
+          "Switches to flatter, quieter sentences when she's actually rattled — the performance drops for a second and you can hear it"
+        ],
+        "emotionalTendencies": "Maya runs hot and fast — quick to laugh, quick to sting, quick to move on. She's terrified of being the one left out of the joke, so she makes sure she's always the one telling it. Underneath the confidence is a kid who's been the 'new girl' twice before and learned that being liked fast is safer than being liked slow."
+      },
+      "arcPotential": [
+        "Episode 'First Bell': Maya challenges the player early with easy inclusion at a cost, then is genuinely destabilized by any pushback — she's not used to being told no by someone she hasn't already written off.",
+        "Future episode potential: A storyline where Maya's own history as a former 'Alex' surfaces, forcing her to confront why she rebuilt herself as someone who laughs first so she's never laughed at again.",
+        "Future episode potential: A cracked-open moment where Maya and Alex, thrown together again, find the uneasy respect that was always half-visible under the jabs — recontextualizing her cruelty as fear rather than dominance."
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "\"Okay, new girl, sell yourself. You've got ten seconds before I decide you're boring.\"",
+          "\"Relax, it's a joke. God, why's everyone so — okay, fine. Whatever.\"",
+          "\"...You really gonna do that? Here? Fine. Fine! Table's still open, by the way. Door's not locked or whatever.\""
+        ],
+        "vocabularyLevel": "Confident, current, casual — she talks like she's already won the conversation.",
+        "sentenceComplexity": "Short, punchy setups; longer, looser sentences when she's actually engaged in something instead of performing.",
+        "emotionalExpressiveness": "Big and loud on the surface, guarded and clipped the moment something touches a nerve."
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  },
+  {
+    "character": {
+      "id": "jordan",
+      "age": 13,
+      "name": "Jordan Oyelaran",
+      "goals": {
+        "conscious": [
+          "Make the new kid feel welcome",
+          "Keep the group project (and lunch table, and life in general) drama-free"
+        ],
+        "unconscious": [
+          "Be indispensable enough that no one leaves him out again",
+          "Avoid ever being the reason a room goes quiet"
+        ]
+      },
+      "pronouns": "he/him",
+      "storyRole": "The warm first contact who represents 'belonging' as ease and popularity-by-proximity — a low-stakes ally whose limits (avoiding real conflict) surface right when the player needs someone to hold ground, making room for the player's own growth to matter more.",
+      "appearance": {
+        "brief": "Medium height, still growing into his limbs, always looks like he just jogged a few steps to catch up with someone. Wears his older brother's hand-me-down varsity jacket even though he's not on any team yet.",
+        "distinctiveFeatures": [
+          "Gap between front teeth he shows off when he grins",
+          "A rotating collection of enamel pins on his backpack strap from every school event he's ever attended",
+          "Chews the end of his pen cap when he's nervous, which he thinks no one notices"
+        ]
+      },
+      "background": {
+        "family": "Third of four kids in a loud, close Nigerian-American household; his older siblings are the 'stars' (one's a football captain, one's valedictorian material) and Jordan has quietly appointed himself the family's designated peacemaker, a role he's ported directly into school.",
+        "secrets": [
+          "He was the new kid himself last year and nobody walked him anywhere — he's been trying to be the person he wished he'd had, but hasn't told anyone that's why"
+        ],
+        "interests": [
+          "Collecting school event pins",
+          "Basketball (plays pickup, not on a team)",
+          "Making Spotify playlists for literally every occasion, including 'walking to homeroom'"
+        ],
+        "strengths": [
+          "Instantly makes new people feel noticed",
+          "Genuinely no malice in him — doesn't gossip to hurt, just to fill air",
+          "Remembers small details about people (birthdays, favorite snacks) and brings them up later"
+        ],
+        "struggles": [
+          "Can't tolerate conflict long enough to actually resolve it",
+          "Says yes to too many things and quietly resents it later",
+          "Mistakes being liked for being known"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "welcoming",
+          "conflict-avoidant",
+          "eager to please",
+          "genuinely warm",
+          "a little exhausting"
+        ],
+        "mannerisms": [
+          "Claps a hand on your shoulder when introducing you to someone, like he's presenting a prize",
+          "Laughs a half-second before the joke actually lands, just in case",
+          "Fills silence immediately — physically looks uncomfortable when a room goes quiet"
+        ],
+        "bigFiveProfile": {
+          "openness": 6,
+          "neuroticism": 6,
+          "extraversion": 9,
+          "agreeableness": 8,
+          "conscientiousness": 5
+        },
+        "speechPatterns": [
+          "Overuses 'honestly' and 'no for real' to sell sincerity",
+          "Narrates what's happening ('okay so this is the hallway, this is basically the whole school, we're small')",
+          "Ends tense moments with a joke that doesn't quite land, then laughs at it anyway to cover the gap"
+        ],
+        "emotionalTendencies": "Jordan reads a room fast and tries to smooth it before anyone else even notices it's rough. He genuinely wants everyone comfortable, but that want is tangled up with a deep discomfort with tension of any kind — he'll crack a joke or change the subject rather than sit in an awkward silence, even when the silence is doing important work. Under real pressure (like the library standoff), he freezes up or over-jokes, because he's never learned how to just *say the hard thing.*"
+      },
+      "arcPotential": [
+        "First Bell: Jordan's cheerful smoothing-over gets gently exposed as avoidance during the library standoff — his jokes stop working, forcing him to either sit in the discomfort or let the player lead",
+        "Future episode: Jordan overcommits to too many friend groups/clubs trying to keep everyone happy, and has a quiet burnout moment where the player (having learned authenticity from Alex/Maya arc) gets to return the favor and tell Jordan the hard true thing he needs to hear"
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "\"Okay, homeroom's this way, don't worry, Mr. Alvarez looks scary but he's like, ninety percent bark.\"",
+          "\"Honestly? Vibes are immaculate today. No for real, I can feel it.\"",
+          "(in the library standoff, voice cracking a little) \"Okay — okay, does anyone want, like, a snack break? I have gum. I have a lot of gum.\""
+        ],
+        "vocabularyLevel": "Casual middle-school vernacular, upbeat, a little performative — talks like he's narrating a tour",
+        "sentenceComplexity": "Short, punchy, run-on when excited or nervous",
+        "emotionalExpressiveness": "Very outwardly expressive but shallow under pressure — smiles and jokes cover real feeling until directly confronted"
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  },
+  {
+    "character": {
+      "id": "alex",
+      "age": 13,
+      "name": "Alex Rivera-Chen",
+      "goals": {
+        "conscious": [
+          "Get through the day — and the year — without being singled out",
+          "Keep the notebook and the world inside it entirely private"
+        ],
+        "unconscious": [
+          "To be truly seen and chosen by someone without having to perform or shrink first",
+          "To find out if it's safe to want something — a friend, a table, a place — again"
+        ]
+      },
+      "pronouns": "they/them",
+      "storyRole": "Alex is the emotional stakes-bearer of 'First Bell' — the human cost that makes the player's social choices matter. Alex is not a lesson in tolerance; they're a specific, guarded kid testing whether this new place will go the way the last one did. Every branch of the episode is really a referendum on whether Wren notices Alex, and what she does with that noticing — from a passing glance in the hallway to a real, if fragile, friendship forged under pressure in the library.",
+      "appearance": {
+        "brief": "Medium height, slight build, dark messy hair usually pushed under a faded olive-green hoodie even when it's warm. Wears the same three t-shirts on rotation, all a size too big — hand-me-downs from an older cousin. Carries a beat-up canvas backpack covered in small hand-drawn stickers.",
+        "distinctiveFeatures": [
+          "A spiral notebook, corners soft from handling, always tucked under one arm like a shield",
+          "Chews on pen caps until they're flattened",
+          "Sleeve pulled over one hand, a habit from the old school they don't talk about"
+        ]
+      },
+      "background": {
+        "family": "Lives with mom and a younger half-sibling; parents split two years ago and Alex switched schools mid-year following the move to a smaller apartment closer to mom's new job. This is Alex's second 'first day' in fourteen months.",
+        "secrets": [
+          "At their old school, a 'friend group' turned a private joke of Alex's into a running bit that humiliated them for weeks before they left — nobody at Crestwood knows this",
+          "Alex has already decided, on some level, not to try to make real friends here — it's safer to just get through the year"
+        ],
+        "interests": [
+          "Fills notebooks with an ongoing hand-drawn comic/map of an invented world — the one thing Alex has total control over",
+          "Knows an unreasonable amount about obscure video game lore",
+          "Secretly good at voices/impressions but only performs them for maybe one person, ever"
+        ],
+        "strengths": [
+          "Genuinely original thinker — sees angles on problems other people miss",
+          "Once trust is earned, ferociously loyal and generous with time and attention",
+          "Self-aware enough to know exactly what they're doing and why, even mid-flinch"
+        ],
+        "struggles": [
+          "Assumes new relationships will end the way the last school did — with a joke made at their expense that everyone else finds funny",
+          "Struggles to advocate for their own ideas out loud, even when they're right",
+          "Isolation has become a habit that's now partly self-inflicted, not just imposed"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "guarded",
+          "sharp-witted",
+          "observant",
+          "loyal in private",
+          "quietly funny"
+        ],
+        "mannerisms": [
+          "Eats fast, head down, timing bites to the bell so they can leave first",
+          "Taps a rhythm on the edge of the table when anxious — four taps, always four",
+          "Doodles in notebook margins mid-conversation, half-listening, half-hiding",
+          "Laughs a half-second late, like they're checking it's safe to laugh first"
+        ],
+        "bigFiveProfile": {
+          "openness": 8,
+          "neuroticism": 8,
+          "extraversion": 2,
+          "agreeableness": 5,
+          "conscientiousness": 6
+        },
+        "speechPatterns": [
+          "Clipped, minimal sentences when guarded ('It's fine.' 'Doesn't matter.')",
+          "Gets fluent and specific only when talking about something they actually care about",
+          "Dry, deadpan humor that sneaks up on people — delivered flat, almost accidental",
+          "Deflects compliments immediately, redirects attention elsewhere"
+        ],
+        "emotionalTendencies": "Alex runs hot underneath a controlled surface — quick to assume the worst-case social read, quick to brace for rejection before it happens. When someone gets past the guard, the warmth that comes out is disproportionate to how small the moment seemed from outside. Humiliation lands harder and longer on Alex than on most people; a single jab can cost them the rest of the day."
+      },
+      "arcPotential": [
+        "Episode 'First Bell': Depending on the player's path, Alex either finds a first real foothold of belonging at Crestwood (Real, Just Smaller / A New Kind of Table / Both, Somehow), or quietly reinforces the belief that new places always end the same way (The Cost of Peace) — setting up very different starting conditions for Alex in future episodes.",
+        "Future episode potential: Alex slowly opens the notebook world to trusted people, and it becomes a shared creative project — a mid-season episode could center on Alex being pushed (by supportive friends) to share the work more widely, testing whether the earned trust holds under new pressure.",
+        "Future episode potential: The old-school humiliation resurfaces — a rumor follows Alex to Crestwood, forcing Wren to choose whether to defend a much harder, messier truth than 'new kid eats alone.'"
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "\"It's fine. I eat fast. Efficient, really — leaves more time for not talking to anyone.\"",
+          "\"I had an idea. It's dumb, forget it.\"",
+          "\"You don't have to do that, you know. Say something. I've had worse. I'm basically an expert.\"",
+          "\"...Okay, that was actually a good joke. I hate that I laughed.\"",
+          "\"It's just a world I made up. It's not — it's not a big deal.\" *(pause)* \"Do you want to see it?\""
+        ],
+        "vocabularyLevel": "Everyday middle-school vocabulary, but precise and often a beat more articulate than expected when Alex talks about something they actually care about — a small tell that there's more going on upstairs than the guarded exterior suggests.",
+        "sentenceComplexity": "Short and clipped under stress; longer, more detailed and unselfconscious when discussing their notebook world or something they've clearly thought about a lot.",
+        "emotionalExpressiveness": "Mostly withheld and flat on the surface — humor and sarcasm are the main leak points for real feeling. Genuine warmth, when it appears, is understated but unmistakable, often expressed through an offered detail rather than a stated feeling ('You can borrow it. Just — don't lose my place.')."
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  },
+  {
+    "character": {
+      "id": "mr-alvarez",
+      "age": 34,
+      "name": "David Alvarez",
+      "goals": {
+        "conscious": [
+          "Get every student, especially transfers, one genuine foothold in the room by day one",
+          "Make the group project a real test of collaboration, not just busywork"
+        ],
+        "unconscious": [
+          "Prove to himself he's not repeating the mistake of a kid he failed to protect years ago",
+          "Be the adult he needed when he was the new kid"
+        ]
+      },
+      "pronouns": "he/him",
+      "storyRole": "The well-meaning adult architect of the episode's central pressure points — he creates both the vulnerable spotlight moment and the forced-collaboration reckoning, not out of cluelessness but out of a genuine, slightly clumsy belief that discomfort now prevents isolation later. He's not neutral scenery; his choices actively shape the social chessboard the player has to navigate, and his own history with being the outsider quietly parallels Wren's arc without ever being stated outright.",
+      "appearance": {
+        "brief": "Medium height, solid build, sleeves always rolled to the elbow no matter the weather. Keeps his hair a little too long for a teacher, like he forgets to get it cut until someone mentions it.",
+        "distinctiveFeatures": [
+          "A chipped Golden State Warriors mug on his desk that says 'World's OK-est Bartender' (a gift, never explained)",
+          "Reading glasses pushed up on his head that he pats for constantly, forgetting they're already there",
+          "A whiteboard corner reserved for a running, unexplained tally labeled 'DAYS SINCE INCIDENT'"
+        ]
+      },
+      "background": {
+        "family": "Youngest of four, grew up in the same district he now teaches in. Married, no kids of his own yet — jokes that he has 150 kids for nine months a year, which is 'plenty.'",
+        "secrets": [
+          "He remembers exactly which kid got frozen out last year and never stepped in soon enough — it's part of why he pushes so hard, sometimes clumsily, on the first days now"
+        ],
+        "interests": [
+          "basketball (plays pickup on weekends, badly)",
+          "true crime podcasts he pretends he doesn't listen to during grading",
+          "collects terrible classroom motivational posters ironically"
+        ],
+        "strengths": [
+          "genuinely remembers small details about students",
+          "good at defusing tension with humor before it escalates",
+          "creates structure that gives quiet kids an opening without cornering them"
+        ],
+        "struggles": [
+          "Was the new kid four times growing up (military family) and still overcorrects trying to make transfers feel welcome — sometimes putting them on the spot in the process",
+          "Struggles to know when to let a conflict play out versus stepping in",
+          "Tends to assume the socially confident kids (like Maya) have it more together than they do"
+        ]
+      },
+      "personality": {
+        "coreTraits": [
+          "warm",
+          "watchful",
+          "self-deprecating",
+          "quietly strategic",
+          "stubbornly optimistic"
+        ],
+        "mannerisms": [
+          "Leans against the front desk instead of sitting behind it, like he's trying to erase the distance",
+          "Does a slow, deliberate scan of the room before calling on anyone — he's already been watching",
+          "Taps two knuckles on a desk when he wants to redirect a conversation without making it a big deal"
+        ],
+        "bigFiveProfile": {
+          "openness": 7,
+          "neuroticism": 4,
+          "extraversion": 6,
+          "agreeableness": 8,
+          "conscientiousness": 7
+        },
+        "speechPatterns": [
+          "Uses dry, teacher-specific humor that lands about 60% of the time and he knows it",
+          "Says 'Here's the thing' before pivoting a conversation toward something real",
+          "Occasionally slips into over-explaining when he senses he's misjudged a moment"
+        ],
+        "emotionalTendencies": "Alvarez leads with warmth and a joke, but he's been doing this eight years and he notices everything — who flinches, who performs, who goes quiet. He second-guesses himself constantly about whether he's helping or making things worse, especially with kids who remind him of himself at their age. He doesn't always get it right, and he knows it."
+      },
+      "arcPotential": [
+        "Later episode: Alvarez notices the group dynamic he engineered has gone sideways and has to decide whether to intervene or trust the kids to work it out — a small mirror of his own unresolved guilt",
+        "Later episode: A quieter scene reveals which former student he failed to protect, recontextualizing why he pushes so hard on early belonging"
+      ],
+      "voiceGuidelines": {
+        "examples": [
+          "\"New person, hot seat — don't worry, no wrong answers, unless you say pineapple doesn't belong on pizza. Then we'll talk.\"",
+          "\"Here's the thing — I'm not putting you four together because I think you'll like it. I'm putting you together because I think you can handle it.\"",
+          "\"I've been the new kid enough times to know that spotlight feels like a trapdoor. So — quick, easy one. Favorite thing to do on a Saturday. Go.\""
+        ],
+        "vocabularyLevel": "Adult, casual-professional. Uses teacher-isms ('let's circle back,' 'thoughts before I lose you to lunch') without sounding stiff.",
+        "sentenceComplexity": "Mix of short classroom-management sentences and longer, warmer asides when he's talking to one student directly.",
+        "emotionalExpressiveness": "Warm but restrained in front of the class; more direct and specific one-on-one. Uses humor as a pressure valve, not a deflection from real feeling."
+      }
+    },
+    "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+    "uncertainties": []
+  }
+]
