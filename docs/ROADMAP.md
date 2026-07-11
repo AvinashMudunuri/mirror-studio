@@ -1,8 +1,8 @@
 # Project MIRROR Studio - Implementation Roadmap
 
-**Version**: 2.0
-**Last Updated**: July 7, 2026
-**Status**: Content pipeline operational (backend-only); production/frontend phases not started
+**Version**: 2.1
+**Last Updated**: July 11, 2026
+**Status**: Season 1 content complete (5 episodes); publish + player live on shared Neon Postgres
 
 ---
 
@@ -18,9 +18,9 @@ This roadmap outlines the implementation strategy for Project MIRROR Studio, bre
 
 ## Actual status at a glance
 
-**What exists and works, live-verified against the real Claude API:** an 8-agent pipeline (`scripts/create-real-episode.js`) that takes an episode brief, produces a full outline, protagonist + NPC roster, scene dialogue, runs a 5-agent review board, revises against feedback (bounded loop), and binds a final screenplay — with Postgres persistence, cross-run continuity (episode 2 reads episode 1), prompt-cost optimization, and a read-only admin dashboard over the results.
+**What exists and works, live-verified against the real Claude API (direct Anthropic or AWS Bedrock):** an 8-agent pipeline (`scripts/create-real-episode.js`) that takes an episode brief, produces a full outline, protagonist + NPC roster, scene dialogue, runs a 5-agent review board, revises against feedback (bounded loop), and binds a final screenplay — with Postgres persistence, cross-run continuity (protagonist + NPCs carry over), prompt-cost optimization, an admin dashboard (generate, review, publish), and a player app that reads published episodes from Postgres.
 
-**What doesn't exist yet:** anything past "generate and internally review an episode." No production/publish agents, no API, no player-facing app, no monitoring. This is a content-generation backend, not yet a product.
+**What doesn't exist yet:** player polish (profiles, trait UI, reflection prompts, save/resume), analytics, monitoring/observability, Teen Reviewer agent, and launch-scale ops. The core generate → publish → play loop works.
 
 | Phase (original) | Status | Notes |
 |---|---|---|
@@ -28,11 +28,21 @@ This roadmap outlines the implementation strategy for Project MIRROR Studio, bre
 | 2. Core Agents | ✅ Done, exceeded milestone | Real episodes generated end-to-end, not just outlines |
 | 3. Review Agents | ⚠️ Mostly done | 4 of 5 reviewers built (no Teen Reviewer); debate system never built (feedback routing instead) |
 | 4. Production Agents | ✅ Minimal scope done, differently than planned | Publish is a human action in `apps/admin`, not an agent (ADR 003); Analytics still deferred (no players yet) |
-| 5. Frontend Experience | ⚠️ Started (minimal) | `apps/player` on port 3400: interactive playthrough of published episodes via the player content projection; not yet profiles, reflection UI, or world selection |
-| 6. Polish & Launch | ❌ Not started | No monitoring, nothing published; basic CI exists (build + test) |
-| 7. Growth & Iteration | ❌ Not started | N/A until Phase 4-6 exist |
+| 5. Frontend Experience | ⚠️ Started (minimal) | `apps/player` on port 3400: homepage lists all published episodes from Postgres (not hardcoded); interactive playthrough via `projectPlayerEpisode()`. No profiles, trait UI, reflection prompts, or world selection yet |
+| 6. Polish & Launch | ⚠️ Partial | CI gates every PR (`build` + Postgres integration tests). No OpenTelemetry/Grafana/Sentry. Season 1 (5 eps) generated; 4/5 published on shared Neon as of 2026-07-11 |
+| 7. Growth & Iteration | ❌ Not started | N/A until player polish + real users exist |
 
-Episode output so far: 2 episode concepts in 1 world (`NEW_SCHOOL`) across ~10 live runs. Roughly half of full-board runs land `NEEDS_HUMAN_REVIEW` rather than a clean `APPROVED` — reviewer verdict variance is a known, documented quirk (`docs/OPEN-QUESTIONS.md` item 4), not a regression. A publish mechanism now exists (item 1b/ADR 003) — a human can click "Publish" in `apps/admin` on a full-board `APPROVED` run — but no database ships with the repo, so a fresh environment starts with nothing published until someone actually clicks it.
+**Season 1 (`NEW_SCHOOL`) — complete, protagonist Wren Okafor-Silva throughout:**
+
+| Ep | Title | Canonical run | Status (Neon) |
+|---|---|---|---|
+| 1 | First Bell | `run-2026-07-10_13-26-56` | PUBLISHED |
+| 2 | Show Your Work | `run-2026-07-10_22-26-36` | PUBLISHED |
+| 3 | Showcase | `run-2026-07-10_22-52-33` | PUBLISHED |
+| 4 | The Doodle Kingdom | `run-2026-07-11_00-12-46` | PUBLISHED |
+| 5 | Where I'm From | `run-2026-07-11_01-44-22` | APPROVED (publish pending) |
+
+Publish is manual in `apps/admin` (ADR 003). Shared cloud Postgres (`docs/decisions/006-shared-cloud-postgres.md`) is the source of truth for publish/player/continuity — not local Postgres. Reviewer verdict variance on complex episodes is documented (`docs/OPEN-QUESTIONS.md` item 4); Season 1 canonical runs all reached `APPROVED` (ep 4 after 3 revisions; ep 5 first pass).
 
 ---
 
@@ -112,20 +122,19 @@ Implemented and running live in the review board:
 
 **Goal**: Implement production deployment and data systems
 
-### Status: Minimal scope done (2026-07-08), original scope deliberately not built
+### Status: Minimal scope done (2026-07-08), original agent scope deliberately not built
 
 - **Publisher** — NOT an agent, by design (`docs/decisions/003-publish-scope-proposal.md`, Accepted). Publishing is a human clicking "Publish" in `apps/admin` on a full-board `APPROVED` run, which snapshots content into durable `published_*` columns.
-- **Analytics Agent** — still does not exist, deliberately deferred. No player interaction data is collected (there are no players yet).
-- **JSON Export Agent** — not built as a separate agent; `GET /api/published/[world]/[episodeNumber]` (`apps/admin`) is the read path a frontend would consume instead.
+- **Analytics Agent** — still does not exist, deliberately deferred. No player interaction data is collected yet.
+- **JSON Export Agent** — not built as a separate agent; `GET /api/published/[world]/[episodeNumber]` (`apps/admin`) is the read path the player consumes.
 
 ### What exists now
 - `episodes.published_content`/`published_metadata`/`published_at`/`published_run_folder` (migration `2026-07-08-add-published-columns.sql`) — a durable snapshot decoupled from `content`, which every pipeline run keeps mutating.
-- `apps/admin`'s Publish button (`src/lib/publish.ts`, `runs/[episode]/[run]/actions.ts`), gated on full-board `APPROVED` (a dev-mode `SKIP_REVIEWERS` run never qualifies, even if `APPROVED`).
-- `GET /api/published/[world]/[episodeNumber]` and a minimal `/published/[world]/[episodeNumber]` preview page rendering the published scenes/dialogue directly in the admin app.
-- Live-verified end-to-end via the admin UI: publish → success message → API returns content → preview renders it; unpublished episodes 404; non-`APPROVED` runs show why they can't be published.
-
-### Deliberately NOT built
-A trimmed player-facing content projection (the read path returns the full authoring shape as-is — deferred until a real frontend needs something narrower), a separate `apps/player` app, and any auth/role gate on who can publish (`apps/admin` has none today). See "What we deliberately did NOT build" in the ADR for the full list.
+- `apps/admin`'s Publish button, gated on full-board `APPROVED` (a dev-mode `SKIP_REVIEWERS` run never qualifies, even if `APPROVED`).
+- Admin run list: LIVE / latest / not published badges; default filter **Published** (LIVE only) — PR #42.
+- `GET /api/published/[world]/[episodeNumber]` and preview page; `?format=player` for the player projection.
+- **Shared Neon Postgres** (ADR 006): one `DATABASE_URL` for publish, player, and continuity across Codespaces and Cloud Agents (`docs/runbooks/shared-postgres.md`).
+- Live-verified: 4/5 Season 1 episodes published on Neon; player homepage shows all published episodes from Postgres (PR #43).
 
 ---
 
@@ -133,14 +142,11 @@ A trimmed player-facing content projection (the read path returns the full autho
 
 **Goal**: Build player-facing web application
 
-### Status: Minimal preview started (2026-07-10)
+### Status: Minimal player started (2026-07-10), expanded 2026-07-11
 
-**What exists:** `apps/player` — a player-facing Next.js app (port 3400) that reads published Postgres snapshots, projects them via `projectPlayerEpisode()` (`@mirror/schemas`), and renders an interactive playthrough (scene dialogue, choices, branch-specific ending lines). The admin publish API also exposes the same projection at `GET /api/published/[world]/[episodeNumber]?format=player`.
+**What exists:** `apps/player` — Next.js app (port 3400) that queries Postgres for all published episodes (homepage is dynamic, not hardcoded — PR #43), projects via `projectPlayerEpisode()` (`@mirror/schemas`), and renders interactive playthrough (scene dialogue, choices, branch-specific ending lines). Admin publish API exposes the same projection at `GET /api/published/[world]/[episodeNumber]?format=player`.
 
-**What doesn't exist yet:** Episode Player polish (no save/resume, no trait UI), Character System, Reflection Interface, World Selection, Profile & Progress. `apps/admin` remains the internal authoring/review dashboard.
-
-### Before this phase can start
-Needs Phase 4 (or at least a stable content format/API) so the frontend has something real to consume beyond raw run-folder JSON.
+**What doesn't exist yet:** save/resume, trait tracking UI, reflection prompts, world selection, profiles & progress. `apps/admin` remains the internal authoring/review/publish dashboard.
 
 ---
 
@@ -148,12 +154,12 @@ Needs Phase 4 (or at least a stable content format/API) so the frontend has some
 
 **Goal**: Production-ready system with monitoring
 
-### Status: Not started (basic CI is the one exception)
+### Status: Partial — CI done; Season 1 content done; monitoring not started
 
-- **Basic CI — done (2026-07-07)**: `.github/workflows/ci.yml` runs build + the full test suite (including the Postgres-gated integration suite, via a `pgvector` service container) on every PR and push to `main`. No LLM API keys needed — the pipeline's unit/integration tests mock the LLM gateway; only a real Postgres instance is required.
+- **Basic CI — done (2026-07-07, hardened 2026-07-11)**: `.github/workflows/ci.yml` runs build + full test suite (Postgres-gated integration via `pgvector` service container) on every PR and push to `main`. Build step wipes stale `.next` artifacts before turbo build (PR #45).
+- **Season 1 content — done (2026-07-11)**: 5 `APPROVED` episodes in `NEW_SCHOOL`, protagonist Wren Okafor-Silva enforced by `scripts/lib/continuity-guard.js` for ep 2+. Four published on shared Neon; ep 5 pending publish.
 - No OpenTelemetry/Grafana/Sentry integration.
-- Content creation: 2 episode concepts in 1 world exist (not "3-5 episodes across 2 worlds"), and roughly half of full-board review runs land `NEEDS_HUMAN_REVIEW` rather than a clean pass (see the run table in "Actual status at a glance").
-- Testing: 163 unit/integration tests passing (`npm test`), covering agent logic, parsing, pipeline helpers, and Postgres-gated persistence — no end-to-end or load testing, since there's no end-to-end (player-facing) system yet.
+- Testing: unit + integration suite (`npm test`); no end-to-end browser tests or load testing yet.
 
 ---
 
@@ -176,7 +182,7 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 ### Still open
 1. **Agent State Management**: still simplified — the orchestrator script IS the state machine; no formal state persistence/resume mid-run beyond the run-folder artifacts already on disk.
 2. **Memory System**: works, but semantic search (`MemorySystem.search()`) is untested live — needs `OPENAI_API_KEY` for embeddings (`docs/OPEN-QUESTIONS.md` item 2).
-3. **Content Quality**: reviewer verdict variance is real and documented, not fully solved — roughly half of full-board runs still need human review. Game Designer/Ethics Reviewer/Child Psychologist's gate was tightened to check severity instead of just status tier (see "New decisions since v1.0" above); this initially made two real episodes fail that previously passed silently, but escalating QA/Game Designer/Ethics Reviewer to `claude-sonnet-5` (their haiku reviews were found to be hallucinating on complex episodes, not just noisy) got both back to genuine first-pass `APPROVED` — so the net effect isn't simply "more human review," it's "haiku alone is no longer sufficient for review at this episode complexity." See `docs/OPEN-QUESTIONS.md` items 4 and 11.
+3. **Content Quality**: reviewer verdict variance is real on complex episodes (`docs/OPEN-QUESTIONS.md` item 4). Cloud Agent runs use `claude-sonnet-5` for QA/Game Designer/Ethics Reviewer via Bedrock env overrides; Season 1 canonical runs all reached `APPROVED`.
 4. **Zod output validation**: schemas exist in `@mirror/schemas` but agent outputs are validated by ad-hoc checks, not the schemas themselves (`docs/OPEN-QUESTIONS.md` item 6).
 
 ### Identified risks (re-assessed)
@@ -184,7 +190,7 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 2. **Agent Response Time** — unaddressed; the 5-reviewer board still runs sequentially in `runReviewers()` even though the reviewers are independent and could run concurrently. Full-board runs with 2 revision iterations take 25-52 minutes.
 3. **Content Quality** — see above; partially mitigated by the revision loop and deterministic fixes, not solved.
 4. **Bias in AI** — Ethics Reviewer exists and runs on every episode; no diverse-testing or continuous-monitoring process exists beyond that.
-5. **User Engagement** — cannot be assessed; no users exist yet (no Phase 5).
+5. **User Engagement** — cannot be assessed at scale; playtest Season 1 via `npm run dev -w @mirror/player` (port 3400) against published Neon episodes.
 
 ---
 
@@ -219,22 +225,29 @@ Everything in this phase (content expansion, parent/teacher portals, voice/illus
 ## Next Actions (re-derived from `docs/OPEN-QUESTIONS.md`, not a calendar)
 
 Done since this list was written (2026-07-07):
-- ~~Basic CI~~ — `.github/workflows/ci.yml` builds + runs the full test suite (including the Postgres-gated integration suite, via a `pgvector` service container) on every PR and push to `main`.
+- ~~Basic CI~~ — `.github/workflows/ci.yml` builds + runs the full test suite on every PR and push to `main`.
 - ~~Protagonist continuity across episodes~~ — `loadPreviousProtagonist()` carries the protagonist's full profile into episode 2+ and skips Character Designer for it entirely; live-verified the Story Architect using the carried-over name unprompted 44 times in one outline. See `docs/OPEN-QUESTIONS.md` item 2.
 - ~~NPC continuity~~ — generalized to `loadPreviousCast()`; the Story Architect can now optionally bring back any previous episode's supporting character by id. Live-verified: it brought back all 3 of episode 1's NPCs by name in one run, with zero Character Designer calls for any of them, while still correctly generating a genuinely new character introduced mid-revision. See `docs/OPEN-QUESTIONS.md` item 2.
 - ~~Decide what "publish" means and scope Phase 4~~ — decided AND implemented 2026-07-08: `docs/decisions/003-publish-scope-proposal.md` (Accepted). Manual publish button in `apps/admin`, full board required, durable `published_*` snapshot columns, a read API + preview page. Live-verified end-to-end.
 - ~~AWS Bedrock as an alternative Claude backend~~ — `docs/decisions/004-aws-bedrock-alternative-backend.md` (Accepted, 2026-07-08). `CLAUDE_BACKEND=bedrock` routes Claude calls through `@anthropic-ai/bedrock-sdk` instead of the direct Anthropic API; every other gateway feature (adaptive thinking, prompt caching, retries, usage accounting) is shared unchanged. Live-verified the real network path with dummy AWS credentials (genuine AWS 403, proving the request format is accepted); full verification against a real Bedrock response needs a human to provision AWS credentials with Bedrock access.
 - ~~Reviewer calibration: tighten Game Designer/Ethics Reviewer/Child Psychologist~~ — `docs/OPEN-QUESTIONS.md` item 11 (2026-07-08). `REVIEWER_PASSES` now checks issue severity and readiness booleans instead of trusting the coarse status tier alone; prompts gained an explicit calibration rubric mirroring Creative Director's. Verified by replaying all 6 real historical runs where these reviewers ran through the new gate — every one now correctly fails on findings the old gate ignored.
 - ~~Get episode 1 and episode 2 back to APPROVED under the tightened gate~~ — done 2026-07-08, live-verified. Along the way: fixed QA's truncating `maxTokens`, raised `MAX_REVISION_ITERATIONS` to 3, fixed a real Story Architect bug (`validateTransitions()` never checked choice-bearing scenes for a stray `defaultNextScene`), and discovered/escalated QA's haiku hallucination problem (see above). Both episodes reached genuine `APPROVED` on the first pass once QA/Game Designer/Ethics Reviewer ran on `claude-sonnet-5`.
-- ~~Admin phase 2: generate-from-UI~~ — done 2026-07-08. `/generate`: episode-brief form (not limited to the 2 hardcoded episodes anymore), budget/revision/skip-reviewer controls, console streamed live via SSE from a server-spawned `create-real-episode.js` process. Live-verified end-to-end with a real (token-capped) run. See `docs/OPEN-QUESTIONS.md` item 1.
+- ~~Admin phase 2: generate-from-UI~~ — done 2026-07-08. See `docs/OPEN-QUESTIONS.md` item 1.
+- ~~Season 1 content (eps 1–5, Wren protagonist)~~ — done 2026-07-11. Briefs in `EPISODE_BRIEFS`; continuity guard enforces protagonist canon for ep 2+ (PR #39). Eps 1–4 published on Neon; ep 5 APPROVED pending publish.
+- ~~Player dynamic episode list~~ — done 2026-07-10 (PR #43). Homepage queries Postgres, not a hardcoded list.
+- ~~Admin publish labels + default Published filter~~ — done 2026-07-10 (PRs #41, #42).
+- ~~Shared cloud Postgres runbook~~ — done 2026-07-11 (ADR 006, PR #37).
+- ~~Build flake fix (admin `.next` trace ENOENT)~~ — done 2026-07-11 (PR #45).
 
 Cheap, well-scoped, not yet done:
 1. Extend `previousEpisodes` continuity to the remaining 3 reviewers if evidence shows it's worth it.
 
-Bigger, would start actual Phase 4/5 work:
+Bigger, Phase 5+ work:
 2. ~~A trimmed player-facing content projection~~ — done 2026-07-10. `projectPlayerEpisode()` in `@mirror/schemas`; admin API `?format=player`; consumed by `apps/player`.
-3. Admin phase 3: rich editors, re-run specific agents, versioning — backed by the Postgres layer.
-4. Phase 5 expansion: save/resume, trait tracking UI, reflection prompts, world selection — building on the player projection + `apps/player` skeleton.
+3. **Publish episode 5** and playtest Season 1 end-to-end in the player.
+4. Admin phase 3: rich editors, re-run specific agents, versioning — backed by the Postgres layer.
+5. Phase 5 expansion: save/resume, trait tracking UI, reflection prompts, world selection, profiles.
+6. **Season 2 / new world** — new `EPISODE_BRIEFS` table; anthology model (new protagonist per world, ADR 005).
 
 ---
 
@@ -248,8 +261,8 @@ Bigger, would start actual Phase 4/5 work:
 
 **Year 5**: Project MIRROR Studio becomes the OS for autonomous AI collaboration across industries
 
-These are unchanged from v1.0 and unre-assessed — at 2 episode concepts in 1 world, it's too early to have evidence either way about the Year 1+ vision.
+These are unchanged from v1.0 and unre-assessed — at 5 episodes in 1 world with a working publish/play loop, Year 1+ targets remain aspirational.
 
 ---
 
-**Current Status**: The content-generation backend works and is live-verified against real infrastructure (Claude, Postgres). Everything from "publish" onward — API, frontend, players, monitoring, launch — has not been started.
+**Current Status**: The generate → review → publish → play loop works on shared Neon Postgres. Season 1 (`NEW_SCHOOL`, 5 episodes, Wren protagonist) is complete; 4/5 published. Remaining work is player polish, analytics, monitoring, and Season 2 / new worlds.

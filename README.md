@@ -19,23 +19,21 @@ Behind the scenes, an AI studio of specialized agents collaborates to create, re
 ```
 mirror-studio/
 ├── apps/
-│   ├── web/          # React frontend (player experience)
-│   └── api/          # Node.js backend API
+│   ├── admin/        # Internal dashboard: runs, generate, publish (port 3300)
+│   └── player/       # Player-facing app: published episodes (port 3400)
 ├── packages/
 │   ├── agents/       # AI agent framework and implementations
-│   ├── prompts/      # Agent prompts and templates
-│   ├── engine/       # Story engine (runtime for episodes)
-│   ├── memory/       # Memory systems (agent learning, player data)
-│   ├── analytics/    # Analytics and metrics
-│   ├── ui/           # Shared UI components
-│   ├── schemas/      # TypeScript types and Zod schemas
-│   ├── stories/      # Story content and world definitions
-│   └── evaluation/   # Quality evaluation and testing
-├── docs/
-│   ├── PRD-V1.md                    # Product Requirements Document
-│   ├── AI-STUDIO-HANDBOOK-V1.md     # Complete agent specifications
-│   └── ROADMAP.md                   # Implementation roadmap
-└── tests/            # End-to-end and integration tests
+│   ├── memory/       # Postgres agent memory (pgvector)
+│   ├── message-bus/  # Redis Streams (built, not in runtime — ADR 001)
+│   └── schemas/      # TypeScript types, Zod schemas, player projection
+├── scripts/
+│   └── create-real-episode.js   # Main pipeline orchestrator
+├── infrastructure/db/           # Postgres schema + migrations
+├── output/episodes/             # Run artifacts (source of truth on disk)
+└── docs/
+    ├── ROADMAP.md               # Current phase status (start here)
+    ├── OPEN-QUESTIONS.md        # Backlog and open decisions
+    └── decisions/               # ADRs
 ```
 
 ---
@@ -60,32 +58,17 @@ mirror-studio/
 ## Technology Stack
 
 ### Frontend
-- **React** - UI framework
-- **TypeScript** - Type safety
-- **MUI** - Component library
-- **Framer Motion** - Animations
-- **React Query** - Data fetching
+- **Next.js 15** — `apps/admin` and `apps/player`
+- **React 19** + **TypeScript**
 
-### Backend
-- **Node.js** - Runtime
-- **Express** - API framework
-- **PostgreSQL** - Primary database
-- **Redis** - Caching and message bus
-- **pgvector** - Vector similarity search
+### Backend / data
+- **Node.js ≥ 20** — monorepo (npm workspaces + Turbo)
+- **PostgreSQL + pgvector** — episode persistence, agent memory, publish snapshots
+- **Neon** (shared cloud Postgres for Codespaces + Cloud Agents — ADR 006)
 
 ### AI
-- **Claude Sonnet 4.5** - Strategic and creative agents (Anthropic)
-- **GPT-5.4** - Specialist agents (OpenAI)
-- **Sequential orchestrator script** (`scripts/create-real-episode.js`) - Agent
-  orchestration (see ADR 001; LangGraph was considered early on but never
-  adopted — ADR 002 lists what we port from it natively)
-
-### Infrastructure
-- **Turbo** - Monorepo build system
-- **Docker** - Containerization
-- **OpenTelemetry** - Observability
-- **Grafana** - Metrics visualization
-- **Sentry** - Error tracking
+- **Claude** — creation (`claude-sonnet-5`) and review board; direct Anthropic API or **AWS Bedrock** (`CLAUDE_BACKEND=bedrock`)
+- **Sequential orchestrator** (`scripts/create-real-episode.js`) — 8 agents, ADR 001 (no message bus in runtime)
 
 ---
 
@@ -95,43 +78,27 @@ mirror-studio/
 
 - Node.js ≥ 20.0.0
 - npm ≥ 10.0.0
-- PostgreSQL 15+
-- Redis 7+
+- PostgreSQL 15+ (local dev) or **Neon** `DATABASE_URL` (shared publish/play — see `docs/runbooks/shared-postgres.md`)
+- Claude API key **or** AWS Bedrock credentials (for episode generation)
 
 ### Installation
 
 ```bash
-# Clone the repository
 git clone <repository-url>
 cd mirror-studio
-
-# Install dependencies
 npm install
-
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your API keys and database credentials
-
-# Run database migrations
-npm run db:migrate
-
-# Start development servers
-npm run dev
+cp .env.example .env   # set DATABASE_URL, CLAUDE_BACKEND, model IDs, etc.
+npm run build
+npm test
 ```
 
-### Development
+### Run locally
 
 ```bash
-# Run all packages in watch mode
-npm run dev
-
-# Run tests
-npm run test
-
-# Lint code
-npm run lint
-
-# Build for production
+npm run dev -w @mirror/admin    # http://localhost:3300 — runs, generate, publish
+npm run dev -w @mirror/player     # http://localhost:3400 — play published episodes
+EPISODE_NUMBER=1 npm run real:episode   # generate (needs Claude/Bedrock creds)
+npm test
 npm run build
 ```
 
@@ -271,14 +238,13 @@ The platform tracks 10 core emotional intelligence traits:
 
 ## Development Roadmap
 
-See **[Roadmap](docs/ROADMAP.md)** for the current, evidence-based phase-by-phase status (last rewritten 2026-07-07 — this section used to duplicate it with a stale week-numbered plan). Summary:
+See **[Roadmap](docs/ROADMAP.md)** for current, evidence-based status (v2.1, 2026-07-11). Summary:
 
-- **Phase 1 (Foundation)**: ✅ done, on a different architecture than originally planned — message bus built but deliberately kept out of the runtime (ADR 001); Postgres memory live-verified.
-- **Phase 2 (Core Agents)**: ✅ done, exceeded the original milestone — full episodes generated end-to-end, not just outlines.
-- **Phase 3 (Review Agents)**: ⚠️ mostly done — 4 of 5 reviewers built (no Teen Reviewer); no agent-to-agent debate system (orchestrator-routed feedback instead).
-- **Phase 4 (Production Agents)**: ❌ not started — no Publisher/Analytics/JSON Export agents, no API.
-- **Phase 5 (Frontend)**: ❌ not started — `apps/admin` is an internal read-only dashboard, not a player-facing app.
-- **Phase 6 (Polish & Launch)**: ❌ not started — no monitoring, no CI configured in this repo.
+- **Phases 1–3**: ✅ done (8-agent pipeline, review board, revision loop)
+- **Phase 4 (Publish)**: ✅ minimal scope done — manual publish in admin, shared Neon Postgres
+- **Phase 5 (Player)**: ⚠️ started — `apps/player` reads published episodes from Postgres
+- **Phase 6 (Launch)**: ⚠️ partial — CI; Season 1 (5 eps) generated; monitoring not started
+- **Backlog**: `docs/OPEN-QUESTIONS.md`
 
 ---
 
