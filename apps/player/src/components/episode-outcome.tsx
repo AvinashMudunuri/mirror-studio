@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { reflectionPromptForThemes } from '@/lib/reflection-prompts';
 
 interface EpisodeOutcomeProps {
@@ -34,6 +35,7 @@ export function EpisodeOutcome({
   onPlayAgain,
   saving
 }: EpisodeOutcomeProps) {
+  const [showReflection, setShowReflection] = useState(true);
   const headline = endingSceneTitle || endingBranchName || 'Your path through this story';
   const prompt = reflectionPromptForThemes(themes);
   const leans = choiceOutcomes?.filter(Boolean) ?? [];
@@ -44,23 +46,27 @@ export function EpisodeOutcome({
       <h2 className="outcome-title">{headline}</h2>
       <p className="outcome-sub">
         You made <strong>{choiceCount}</strong> choice{choiceCount === 1 ? '' : 's'} in{' '}
-        <em>{title}</em>. Every path is different — this one is yours.
+        <em>{title}</em>. This was one path through the story — not a test, and not the only
+        way to play it.
       </p>
 
       {leans.length > 0 && (
         <div className="outcome-leans">
-          <span className="outcome-leans-label">Along the way, you leaned toward</span>
+          <span className="outcome-leans-label">On this path, the story touched on</span>
           <ul className="outcome-leans-list">
             {leans.map(lean => (
               <li key={lean}>{lean}</li>
             ))}
           </ul>
+          <p className="outcome-leans-note">
+            That describes this playthrough, not you. Replay anytime to try a different path.
+          </p>
         </div>
       )}
 
       {themes.length > 0 && (
         <div className="outcome-themes">
-          <span className="outcome-themes-label">This episode explored</span>
+          <span className="outcome-themes-label">Themes in this episode</span>
           <div className="theme-chips">
             {themes.map(theme => (
               <span key={theme} className="theme-chip">{theme}</span>
@@ -69,21 +75,39 @@ export function EpisodeOutcome({
         </div>
       )}
 
-      <div className="reflection-block">
-        <label className="reflection-label" htmlFor="reflection-input">
-          {prompt}
-        </label>
-        <textarea
-          id="reflection-input"
-          className="reflection-input"
-          rows={4}
-          placeholder="Optional — just for you. Nothing here is graded or shared."
-          value={reflectionText}
-          onChange={e => onReflectionChange(e.target.value)}
-          onBlur={onSaveReflection}
-        />
-        {saving && <p className="reflection-hint">Saving…</p>}
-      </div>
+      {showReflection ? (
+        <div className="reflection-block">
+          <div className="reflection-block-header">
+            <label className="reflection-label" htmlFor="reflection-input">
+              {prompt}
+            </label>
+            <button
+              type="button"
+              className="reflection-skip"
+              onClick={() => setShowReflection(false)}
+            >
+              Skip for now
+            </button>
+          </div>
+          <p className="reflection-optional-note">
+            Totally optional. Nothing here is graded, scored, or shared with anyone.
+          </p>
+          <textarea
+            id="reflection-input"
+            className="reflection-input"
+            rows={4}
+            placeholder="Only if you want to — your notes stay on this device."
+            value={reflectionText}
+            onChange={e => onReflectionChange(e.target.value)}
+            onBlur={onSaveReflection}
+          />
+          {saving && <p className="reflection-hint">Saving…</p>}
+        </div>
+      ) : (
+        <p className="reflection-skipped-note">
+          Reflection skipped — you can always replay and jot something down later.
+        </p>
+      )}
 
       <div className="outcome-actions">
         {nextEpisodeNumber != null && (
@@ -92,10 +116,10 @@ export function EpisodeOutcome({
           </Link>
         )}
         <button type="button" className="secondary" onClick={onPlayAgain}>
-          Play this episode again
+          Try a different path
         </button>
         <Link href="/" className="secondary-link">
-          Back to episodes
+          Back to browse
         </Link>
       </div>
     </div>
