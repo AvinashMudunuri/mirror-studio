@@ -20,7 +20,8 @@
     "real:episode": "node scripts/create-real-episode.js",
     "real:episode:dev": "SKIP_REVIEWERS=childPsychologist,gameDesigner,ethicsReviewer MAX_RUN_TOKENS=400000 node scripts/create-real-episode.js",
     "bind:script": "node scripts/compile-screenplay.js",
-    "persist:run": "node scripts/persist-run.js"
+    "persist:run": "node scripts/persist-run.js",
+    "art:ep1": "node scripts/generate-ep1-scene-art.js"
   },
   "devDependencies": {
     "@aws-sdk/client-bedrock": "^3.1085.0",

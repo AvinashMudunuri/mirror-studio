@@ -316,6 +316,11 @@ export function EpisodePlayer({
     };
   }, []);
 
+  // Keep the viewport at the top when advancing scenes, choices, or phases.
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [sceneId, beat, phase]);
+
   if (phase === 'intro') {
     return (
       <div className="player-intro">
