@@ -43,7 +43,8 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        # Avoid stale/partial .next artifacts causing ENOENT during trace collection.
+        run: rm -rf apps/admin/.next apps/player/.next && npm run build
 
       - name: Apply DB schema
         run: |
