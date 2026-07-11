@@ -1,0 +1,70 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "REPRESENTATION",
+      "issue": "Alex, the only explicitly gender-nonconforming/nonbinary-coded (they/them) character, is also the episode's primary 'suffering' figure — past humiliation, isolation, guardedness — and their arc's emotional payoff is largely defined by whether Wren notices/befriends them.",
+      "location": "Alex's background and arc across scenes 3b, 4, 5a, 6, 7a/b, 8, 12",
+      "harmPotential": "Could read as pairing nonbinary identity with tragedy/isolation by default, even though the isolation is explicitly tied to a past social humiliation rather than identity itself. Risk is subtle rather than overt, but nonbinary players might feel their only mirror character exists mainly to be rescued or to validate the protagonist's growth.",
+      "recommendation": "Consider giving Alex a beat of self-directed agency/resolution that doesn't route through Wren's choices (e.g., Alex proactively invites someone, or thrives independent of being 'picked'). The presentation-day scene already does some of this well (Alex is brave regardless of Wren's choice) — lean further into that so Alex's worth is never contingent on being chosen."
+    },
+    {
+      "severity": "MINOR",
+      "category": "ETHICAL_MODELING",
+      "issue": "Jordan's conflict-avoidant, people-pleasing pattern is coded through an 'exhausting'/eager-to-please Black-Nigerian-American middle child dynamic; while not a harmful stereotype per se, it sits close to a 'comic relief peacemaker' role without much interiority in this episode compared to Wren, Alex, and Maya.",
+      "location": "Scenes 2, 6, 7a/7b, 10",
+      "harmPotential": "Low — Jordan has a rich background bio establishing depth (family dynamics, motivations), but within this episode's text he mostly serves a functional role (comic deflection, filling silence) rather than displaying that interiority on-page.",
+      "recommendation": "A single line surfacing Jordan's own stake (e.g., his internal reason for avoiding conflict) in-episode, not just in his background bio, would round him out and avoid him reading as a flatter 'agreeable sidekick' type in this installment."
+    },
+    {
+      "severity": "MINOR",
+      "category": "BIAS",
+      "issue": "Maya, coded as a Black/mixed-heritage girl (Delacroix-Thompson) with braids, is the primary source of social cruelty/mockery in the episode, which could risk aligning with a 'mean popular girl of color' pattern if viewed in isolation from her full arc.",
+      "location": "Scenes 2, 6, 7a/7b, 11a/11b",
+      "harmPotential": "Low but worth flagging — Maya's cruelty is thoughtfully contextualized (her own history as a former 'Alex,' her fear of losing status) and she's given real vulnerability and growth potential, which mitigates the trope. Still, in isolated play sessions where players don't reach her softer beats, she could land as a flat 'mean girl' stereotype.",
+      "recommendation": "Ensure the branch structure guarantees at least a glimpse of Maya's vulnerability even in 'safe'/non-confrontational playthroughs (currently her softening is concentrated in choice-5a/11a, which some players may never see). A small crack in her polish earlier (already present in s2-13 pause beat) helps; consider one more subtle humanizing beat in the 7b/11b harder branch."
+    }
+  ],
+  "strengths": [
+    "Diverse cast (Nigerian-Brazilian, Black/mixed, Latino/Chinese, Nigerian-American) is normalized as simply 'kids at a school' — heritage is present in names/family texture without being exoticized or turned into a plot device.",
+    "Alex's guardedness is explicitly traced to a specific prior social injury (a joke turned into bullying), not to their identity itself — this correctly separates 'why a kid is guarded' from 'who they are,' avoiding a tragic-identity trope.",
+    "Maya and Jordan are both given clear psychological interiority in their background bios (fear of losing status, compulsive peacemaking) that recontextualizes surface behavior as coping rather than innate cruelty or annoyingness — strong modeling of empathy over judgment.",
+    "Mr. Alvarez's authority is used ethically: he holds a boundary (declines to change pairings) without shaming Wren, and validates honesty without punishing the 'safe' choice — modeling healthy adult authority.",
+    "The choice architecture consistently rewards authenticity and calibrated courage over both people-pleasing and avoidance, without ever fully punishing the 'safe' path into humiliation — consequences are proportionate and non-punitive.",
+    "No romance, no adult-minor boundary issues, no glorified risk behavior; conflicts are entirely social/emotional and age-appropriate for 11-14.",
+    "The 'popular mean girl' and 'guarded outsider' archetypes are both given interiority and a path toward mutual understanding rather than being flattened into hero/villain roles."
+  ],
+  "recommendations": [
+    "Add a small beat where Alex's sense of self-worth is affirmed independent of Wren's attention, so the character doesn't read as existing solely to test/reward the protagonist.",
+    "Surface a touch more of Jordan's internal stakes on-page (not just in his bio) so his warmth doesn't read as purely functional.",
+    "Guarantee a humanizing beat for Maya even in the least-forgiving branches, so players who choose the 'harder' paths don't walk away with only a flat impression of her."
+  ],
+  "scores": {
+    "biasAvoidance": 8,
+    "representation": 8,
+    "tropes": 8,
+    "ethicalModeling": 9,
+    "culturalSensitivity": 8,
+    "overall": 8
+  },
+  "flaggedContent": [],
+  "summary": {
+    "verdict": "This episode handles identity, social hierarchy, and vulnerability with notable care. Diverse characters are written with interiority and agency rather than as stereotypes or plot devices, and the branching choice structure consistently models that genuine connection outweighs social currency, without heavy-handedly punishing every misstep. The few concerns identified are minor and interpretive risks (e.g., ensuring Alex's arc doesn't read as contingent on being 'chosen,' ensuring Maya's humanity surfaces even in less generous playthroughs) rather than active harms.",
+    "criticalIssues": [],
+    "majorConcerns": [],
+    "minorNotes": [
+      "Consider giving Alex an agency beat independent of Wren's choices.",
+      "Surface Jordan's interiority on-page, not just in background bio.",
+      "Guarantee a humanizing Maya beat across all branches, not just the reconciliation path."
+    ],
+    "strengths": [
+      "Authentic, non-tokenized diverse cast normalized within the setting",
+      "Isolation/guardedness tied to specific events, not identity itself",
+      "Ethically sound adult authority figure",
+      "Choice consequences are proportionate and encourage courage without punishing vulnerability",
+      "Age-appropriate, healthy social conflict with no romantic or power-dynamic concerns"
+    ],
+    "readyForPublication": true
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "character": {
+    "id": "player",
+    "age": 13,
+    "name": "Wren Okafor-Silva",
+    "goals": {
+      "conscious": [
+        "Find a table to sit at that doesn't feel like a test she can fail",
+        "Not be 'the weird new kid' by 3rd period",
+        "Make it to winter break without having to switch schools again"
+      ],
+      "unconscious": [
+        "Be liked for who she actually is, not the version she performs",
+        "Stop treating every new place like it requires a new self",
+        "Trust that people won't leave/be left before she does"
+      ]
+    },
+    "pronouns": "she/her",
+    "storyRole": "Player-character protagonist of 'First Bell.' Her practiced first-day survival system collides with real choices — who to sit with, who to defend, who to become — forcing her to notice, maybe for the first time, that the performance has a cost.",
+    "appearance": {
+      "brief": "Medium height, brown skin, tight coils she usually pulls into a messy top-knot with a pencil stuck through it because she 'forgot' hair ties again. Wears mismatched thrifted layers — a band tee under a cardigan from her abuela, chunky sneakers held together with paint pen doodles.",
+      "distinctiveFeatures": [
+        "A chipped front tooth from a skateboarding fall she tells three different stories about",
+        "Draws tiny stars on the back of her hand in pen when she's nervous",
+        "Wears her late grandfather's watch, always five minutes fast"
+      ]
+    },
+    "background": {
+      "family": "Only child of a Nigerian dad (traveling nurse, reason for the moves) and Brazilian-American mom (teaches ESL). Close with her mom, complicated with her dad — she loves him but resents that his job keeps uprooting her life. Her abuela lives two states away and is the one person Wren is never performing for on the phone.",
+      "secrets": [
+        "She has a notebook with a running list titled 'Who I Was At Each School' — different names for her different personas (Skater Wren, Nice Wren, Funny Wren)",
+        "She cried in the car the morning of the move and told her dad she was 'just tired'"
+      ],
+      "interests": [
+        "skateboarding (mediocre, enthusiastic)",
+        "collecting stickers/pins from every city she's lived in",
+        "true crime podcasts",
+        "drawing tiny comics in the margins of her notebooks"
+      ],
+      "strengths": [
+        "reads social dynamics instantly",
+        "genuinely funny — can defuse tension in a room",
+        "fiercely protective of people she decides are 'hers'"
+      ],
+      "struggles": [
+        "doesn't know who she is without an audience to calibrate against",
+        "avoids conflict by joking it away, even when she should speak up",
+        "low-grade dread that every friendship has an expiration date, so why get attached"
+      ]
+    },
+    "personality": {
+      "coreTraits": [
+        "adaptive",
+        "funny",
+        "watchful",
+        "loyal once earned",
+        "quietly anxious"
+      ],
+      "mannerisms": [
+        "Mirrors the body language/slang of whoever she's talking to within minutes of meeting them",
+        "Cracks a joke the second a room goes quiet or tense",
+        "Chews the inside of her cheek when deciding whether to speak up"
+      ],
+      "bigFiveProfile": {
+        "openness": 8,
+        "neuroticism": 7,
+        "extraversion": 6,
+        "agreeableness": 7,
+        "conscientiousness": 6
+      },
+      "speechPatterns": [
+        "Code-switches fluidly — formal with adults, clipped and sarcastic with peers she's testing out",
+        "Uses questions as a shield ('Wait, is that weird? No? Cool, cool.')",
+        "Drops one-liners fast, then goes quiet right after like she's checking if it landed"
+      ],
+      "emotionalTendencies": "Wren reads a room in seconds and adjusts herself to fit it — she's been the 'new kid' four times before and has learned that fitting in fast means surviving. Underneath the quick jokes is a kid exhausted from constantly auditioning for belonging, terrified that if people saw the unedited version of her, they'd pass."
+    },
+    "arcPotential": [
+      "Episode 'First Bell': Wren must choose a lunch table, decide whether to stand up for a student getting mocked, and confront whether her chameleon act is protecting her or erasing her.",
+      "Episode 'The List': Wren's persona-notebook gets found/shared, forcing a reckoning with who she's been performing versus who she wants to be.",
+      "Episode 'Staying': As the semester ends without a move for once, Wren must decide if she's willing to let people know her long enough to actually be known."
+    ],
+    "voiceGuidelines": {
+      "examples": [
+        "\"Oh, I'm not nervous. This is just my face. I have a nervous face and a normal face and they're identical, it's a whole medical thing.\"",
+        "\"Cool, cool, cool — so is this a 'sit wherever' cafeteria or is this a 'sit wherever and regret it for the rest of the year' cafeteria?\"",
+        "\"I've done first days at four schools. I have a system. The system is: pretend you already know where you're going, even when you very much do not.\"",
+        "\"...No, I don't need you to save me a seat. I mean — unless you were gonna. Then, yeah. Obviously. Save me a seat.\""
+      ],
+      "vocabularyLevel": "Contemporary middle-school casual with some quick wit; references pop culture and podcasts, never sounds like an adult wrote her a lesson.",
+      "sentenceComplexity": "Short, punchy sentences when joking or deflecting; longer, run-on thoughts when she's anxious and overexplaining.",
+      "emotionalExpressiveness": "Expressive through humor and small physical tells (the star-doodles, cheek-chewing) rather than direct statements — she'll joke about something true before she'll say it plainly."
+    }
+  },
+  "designNotes": "Continuity: reused an established character from a previous episode rather than designing a new one.",
+  "uncertainties": []
+}

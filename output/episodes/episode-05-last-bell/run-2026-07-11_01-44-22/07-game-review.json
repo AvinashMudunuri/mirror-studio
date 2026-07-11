@@ -1,0 +1,89 @@
+{
+  "status": "GOOD",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "category": "CHOICES",
+      "issue": "Choice-1 (help Maya vs. brush off) is somewhat front-loaded and low-stakes compared to later choices, since consequences are mostly just Maya's flicker of a reaction rather than a lasting branch difference.",
+      "location": "scene-2 / choice-1",
+      "impact": "Early choice feels slightly weightless, risking players not realizing choices compound until later.",
+      "fix": "Add a small callback later (e.g., Alvarez or Alex referencing whether Wren tried to get pairings changed) to make the consequence more visible.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "PACING",
+      "issue": "Six binary choices in fairly quick succession (roughly one every 1-2 scenes) create a consistent rhythm but the middle stretch (scenes 4-8) has little pure downtime/levity between emotionally weighty beats.",
+      "location": "scenes 4 through 8",
+      "impact": "Could feel emotionally relentless for a middle-school target audience without a breather beat.",
+      "fix": "Consider a brief lighter beat (a joke exchange, a small mundane task) between scene 6 (callout) and scene 8 (presentation) to vary intensity.",
+      "priority": 3
+    },
+    {
+      "severity": "MINOR",
+      "category": "REPLAYABILITY",
+      "issue": "Only choice-6 has three options; all other choices are binary, and the three named outcome branches map fairly cleanly onto 'good/bad' performance rather than truly distinct playstyles.",
+      "location": "outcomes list / choice architecture overall",
+      "impact": "Replay incentive is present but somewhat linear (authentic=good ending, safe=hollow ending, reckoning=middle path) rather than offering equally valid alternate identities.",
+      "fix": "Add a distinct flavor of consequence for the 'safe' path that isn't just 'worse outcome' — e.g., a unique scene where the performance actually pays off socially in a way the authentic path doesn't, to avoid a single normatively 'correct' route.",
+      "priority": 4
+    },
+    {
+      "severity": "MINOR",
+      "category": "TUTORIAL",
+      "issue": "No explicit signal to new players that internal monologue lines are reflecting trait-relevant choices; players may not realize their choices are being tracked toward CONFIDENCE/RESILIENCE/JUDGMENT.",
+      "location": "throughout, especially first choice",
+      "impact": "Players unfamiliar with the system may not calibrate their choices meaningfully until several choices in.",
+      "fix": "Keep as is if the platform already has a standard trait-feedback UI; if not, consider a subtle first-choice framing that hints stakes/traits are being shaped.",
+      "priority": 2
+    }
+  ],
+  "strengths": [
+    "Strong escalating structure: five choices each raise stakes plausibly from mild social calculus to full public vulnerability, giving a satisfying arc of increasing difficulty.",
+    "Choices are genuinely dilemma-shaped — Maya's ask, Alex's question, the callout, the presentation, and the final table choice all have real trade-offs with no obviously 'correct' answer for a middle-schooler weighing social safety vs. authenticity.",
+    "Final choice (choice-6) elegantly ties all prior choices together thematically and offers three flavors of resolution, including a creative third option ('pull a chair to the edge of both') that rewards nuanced play.",
+    "Good use of internal monologue lines after each choice to give immediate, personal feedback on the choice's emotional weight — reinforces agency without a stats screen.",
+    "Distinct branch dialogue for scene-12 outcomes (branch-authentic/safe/reckoning) gives meaningfully different final beats, rewarding replay.",
+    "Pacing alternates between quieter dyadic scenes (library) and higher-pressure social scenes (cafeteria, presentation), giving decent tension/release rhythm overall."
+  ],
+  "recommendations": [
+    "Add a mid-episode checkpoint or subtle UI cue reflecting accumulated trait shifts so players sense momentum before the finale.",
+    "Introduce one more 3-option choice earlier (e.g., choice-3's callout moment) to diversify choice architecture beyond binary throughout.",
+    "Consider giving the 'safe' branch a genuine, non-punitive upside beat so it doesn't read purely as 'worse ending,' improving replay motivation for exploring it.",
+    "Insert a short breather/humor beat between the callout and presentation scenes to modulate emotional intensity for target age group."
+  ],
+  "scores": {
+    "engagement": 8,
+    "choiceQuality": 8,
+    "pacing": 7,
+    "playerAgency": 8,
+    "replayability": 7,
+    "overall": 8
+  },
+  "metrics": {
+    "averageSceneLength": 55,
+    "choiceFrequency": 0.46,
+    "branchingFactor": 2.17,
+    "estimatedReplayValue": 7
+  },
+  "summary": {
+    "verdict": "A well-constructed, emotionally resonant episode with strong choice escalation and a satisfying capstone decision; minor pacing and replay-variety tweaks would push it from good to excellent.",
+    "keyIssues": [
+      "Early choice (choice-1) feels lower stakes than later ones with limited visible consequence",
+      "Middle stretch lacks a breather beat amid consistently heavy emotional content",
+      "Outcome branches lean toward a single 'best' path rather than equally valid divergent playstyles"
+    ],
+    "topStrengths": [
+      "Escalating five-choice structure builds toward a resonant, player-owned finale",
+      "Genuine dilemmas with no obvious right answer, well-suited to target age group",
+      "Distinct branch dialogue rewarding replay across three thematic endings"
+    ],
+    "mustFix": [],
+    "niceToHave": [
+      "Add visible payoff/callback for early choice-1 decision",
+      "Insert a lighter beat between callout and presentation scenes",
+      "Give the 'safe' path a genuine alternate upside for replay balance",
+      "Diversify choice architecture with more 3-option decisions earlier in the episode"
+    ]
+  }
+}

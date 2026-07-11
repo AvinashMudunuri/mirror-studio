@@ -1,0 +1,614 @@
+{
+  "episodeOutline": {
+    "title": "Where I'm From",
+    "synopsis": "Mr. Alvarez assigns a vulnerable 'Where I'm From' project and pairs Wren with Alex — the one kid at the popular table who unsettles Maya's careful hierarchy. As the project forces real disclosure, Wren has to decide, in five escalating moments, whether her survival system (smile, adapt, don't get attached) is actually protecting her, or just keeping her alone in a room full of people. By presentation day, she has to choose not just a partner, but a self.",
+    "themes": [
+      "Growth",
+      "Identity",
+      "Choosing Your People"
+    ],
+    "targetTraits": [
+      "CONFIDENCE",
+      "RESILIENCE",
+      "JUDGMENT"
+    ],
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "The Pairing",
+        "location": "Homeroom, mid-morning",
+        "characters": [
+          "player",
+          "mr-alvarez",
+          "alex",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Mr. Alvarez announces the semester's 'Where I'm From' project — a personal presentation, done in pairs he's assigning himself, 'on purpose, not at random.' Wren is paired with Alex. Maya's face does a complicated thing. Jordan mouths 'good luck' like it's a joke and isn't.",
+        "emotionalBeat": "Curiosity laced with dread — a system Wren didn't build just got imposed on her.",
+        "defaultNextScene": "scene-2"
+      },
+      {
+        "id": "scene-2",
+        "title": "The Ask",
+        "location": "Cafeteria, Maya's table",
+        "characters": [
+          "player",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Maya complains about her own partner and pivots: she says it'd be 'so easy' if Wren just mentioned to Alvarez that the pairings feel unfair — everyone knows Alex 'doesn't really do groups.' It's framed as a favor, a joke, an inside thing. Jordan laughs along but won't meet Wren's eyes.",
+        "emotionalBeat": "The pull of being useful to the person who decides who's in.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-3a",
+        "title": "Speaking Up",
+        "location": "Hallway outside the classroom",
+        "characters": [
+          "player",
+          "mr-alvarez",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Wren brings Maya's complaint to Mr. Alvarez, half-hoping he'll just fix it. He listens, kind but unmoved: 'Pairings are staying as they are — for a reason.' Alex, arriving early, clocks the tail end of the conversation and says nothing, which is somehow worse than saying something.",
+        "emotionalBeat": "The sting of being seen doing the thing you didn't fully want to do.",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-3b",
+        "title": "Before the Bell",
+        "location": "Hallway outside the classroom",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1,
+        "description": "Wren finds Alex already at the lockers, jaw tight, clearly braced for the project to go badly. Wren doesn't bring up Maya at all — just says something low-key normal about the assignment. Alex's shoulders drop half an inch.",
+        "emotionalBeat": "A small, undramatic kindness that costs Wren nothing but time.",
+        "defaultNextScene": "scene-4"
+      },
+      {
+        "id": "scene-4",
+        "title": "The Library Table",
+        "location": "School library, after school",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Working session. Alex is sharp, funny in a guarded way, clearly testing whether Wren's warmth has a shelf life. They ask, almost casually, what Wren's actual 'where I'm from' story is — not the postcard version. It's a door, held open just barely.",
+        "emotionalBeat": "The risk of being known versus the safety of being liked.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-5a",
+        "title": "The Real Thing",
+        "location": "School library, after school",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Wren tells the truth — the sticker-and-pin ritual from every city she's had to leave, the low hum of always being new. Alex, unprompted, shows her a page of their invented-world comic, the thing they never show anyone. Something real gets built in fifteen minutes that Wren's whole survival system never managed in a year.",
+        "emotionalBeat": "Earned, fragile trust — the first non-performed friendship of the year.",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-5b",
+        "title": "Kept at Arm's Length",
+        "location": "School library, after school",
+        "characters": [
+          "player",
+          "alex"
+        ],
+        "duration": 1.5,
+        "description": "Wren deflects with a joke and steers back to the assignment. It's smooth, practiced, safe. Alex takes the cue, closes back up, and the session finishes efficient and hollow — a good project, no connection.",
+        "emotionalBeat": "The quiet loneliness of a defense mechanism working exactly as designed.",
+        "defaultNextScene": "scene-6"
+      },
+      {
+        "id": "scene-6",
+        "title": "The Callout",
+        "location": "Cafeteria, next day",
+        "characters": [
+          "player",
+          "maya",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1,
+        "description": "Maya, performing for the table, mocks the project topic Wren and Alex picked — not cruel exactly, just cutting, the kind of joke that gets a table laughing at someone's expense. Alex goes still. Jordan looks at his tray. The table waits to see what Wren does.",
+        "emotionalBeat": "The exact moment magnetism reveals its cost.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-7a",
+        "title": "Holding Ground",
+        "location": "Cafeteria, next day",
+        "characters": [
+          "player",
+          "maya",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Wren pushes back, calm and specific, not a scene — just enough to shift the room's temperature. Maya recovers with a laugh, but something's shifted; she's recalculating. Alex's expression flickers — surprise, then something warmer.",
+        "emotionalBeat": "Fear metabolized into steadiness — the cost of standing somewhere.",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-7b",
+        "title": "Laughing Along",
+        "location": "Cafeteria, next day",
+        "characters": [
+          "player",
+          "maya",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Wren laughs, just a beat too long, just enough to stay safe. Alex's face closes like a door. Maya, satisfied, moves on. Nobody at the table notices what just got traded away except the two people it happened to.",
+        "emotionalBeat": "The particular shame of choosing comfort and knowing exactly what it cost.",
+        "defaultNextScene": "scene-8"
+      },
+      {
+        "id": "scene-8",
+        "title": "Presentation Day",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "mr-alvarez",
+          "alex",
+          "maya",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Pairs present 'Where I'm From.' Alex's segment is unexpectedly brave. Then it's Wren's turn to speak — about her own story, in front of everyone, with no group to hide inside.",
+        "emotionalBeat": "The spotlight Wren has spent a year avoiding, arriving anyway.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-9a",
+        "title": "Out Loud",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "alex",
+          "mr-alvarez"
+        ],
+        "duration": 1,
+        "description": "Wren tells the true version — the moving, the reinventing, the exhausting math of new schools. It's not polished. It lands anyway. Alex catches her eye afterward: a small, real nod.",
+        "emotionalBeat": "Relief that outweighs the fear — visibility didn't kill her.",
+        "defaultNextScene": "scene-10"
+      },
+      {
+        "id": "scene-9b",
+        "title": "The Safe Version",
+        "location": "Classroom",
+        "characters": [
+          "player",
+          "alex",
+          "mr-alvarez"
+        ],
+        "duration": 1,
+        "description": "Wren gives the funny, curated, city-hopping highlight reel — technically true, emotionally empty. Polite applause. Mr. Alvarez's eyes linger on her a beat too long, like he clocked the gap between the story and the girl telling it.",
+        "emotionalBeat": "The specific hollowness of a performance that succeeded.",
+        "defaultNextScene": "scene-10"
+      },
+      {
+        "id": "scene-10",
+        "title": "In the Hallway After",
+        "location": "Hallway, after class",
+        "characters": [
+          "player",
+          "jordan",
+          "maya"
+        ],
+        "duration": 1,
+        "description": "Jordan tries to smooth everything over — 'let's just make it not weird' — inviting Wren back into easy neutrality. Maya lingers a beat longer than she needs to, like she wants to say something and won't be the one to start.",
+        "emotionalBeat": "The fork between peace that heals and peace that just buries.",
+        "defaultNextScene": null
+      },
+      {
+        "id": "scene-11a",
+        "title": "Saying the Thing",
+        "location": "Hallway, after class",
+        "characters": [
+          "player",
+          "maya"
+        ],
+        "duration": 1.5,
+        "description": "Wren names it directly — the callout, the ask, the pattern. Maya's polish cracks for a second; underneath is a kid terrified of losing her table the way Wren has learned to lose everything. It doesn't fix anything instantly, but it's the first honest sentence they've traded all year.",
+        "emotionalBeat": "Discomfort that produces something real instead of just relief.",
+        "defaultNextScene": "scene-12"
+      },
+      {
+        "id": "scene-11b",
+        "title": "Letting It Go",
+        "location": "Hallway, after class",
+        "characters": [
+          "player",
+          "jordan",
+          "maya"
+        ],
+        "duration": 1.5,
+        "description": "Wren takes the exit Jordan's offering. Everyone's fine, technically. Maya's thank-you smile doesn't reach her eyes. The tension doesn't resolve — it just goes underground, waiting.",
+        "emotionalBeat": "Peace bought on credit.",
+        "defaultNextScene": "scene-12"
+      },
+      {
+        "id": "scene-12",
+        "title": "Where to Sit",
+        "location": "Cafeteria, the next day",
+        "characters": [
+          "player",
+          "maya",
+          "alex",
+          "jordan"
+        ],
+        "duration": 1.5,
+        "description": "Tray in hand, Wren scans the room: Maya's table, magnetic as ever; Alex, alone at the edge with a notebook; Jordan hovering between both, hopeful nobody makes him pick. For the first time this year, the choice is entirely, quietly hers.",
+        "emotionalBeat": "The choice underneath every choice this whole episode has been building toward.",
+        "defaultNextScene": null
+      }
+    ],
+    "choicePoints": [
+      {
+        "id": "choice-1",
+        "scene": "scene-2",
+        "prompt": "Do you help Maya try to get the pairing changed?",
+        "context": "Maya's framing it as a favor between friends. Saying no risks the easy warmth of her table before you've even earned a seat at it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Go along with it — mention it to Mr. Alvarez.",
+            "nextScene": "scene-3a"
+          },
+          {
+            "id": "b",
+            "text": "Brush it off — 'partners are partners.'",
+            "nextScene": "scene-3b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "JUDGMENT": -1,
+            "CONFIDENCE": 0
+          },
+          "b": {
+            "JUDGMENT": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      },
+      {
+        "id": "choice-2",
+        "scene": "scene-4",
+        "prompt": "Alex just asked for the real version of your story. What do you give them?",
+        "context": "You've got a practiced answer that always works. This time it doesn't feel like it would land the same way.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tell the truth — the moving, the loneliness, all of it.",
+            "nextScene": "scene-5a"
+          },
+          {
+            "id": "b",
+            "text": "Deflect with a joke and stay on-topic.",
+            "nextScene": "scene-5b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "RESILIENCE": 1
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "RESILIENCE": 0
+          }
+        }
+      },
+      {
+        "id": "choice-3",
+        "scene": "scene-6",
+        "prompt": "Maya's mocking your project — and Alex — in front of everyone. Do you say something?",
+        "context": "The whole table is watching to see which way you'll go. There's no version where nobody notices.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Push back, calm and specific.",
+            "nextScene": "scene-7a"
+          },
+          {
+            "id": "b",
+            "text": "Laugh along and let it pass.",
+            "nextScene": "scene-7b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "RESILIENCE": 2,
+            "JUDGMENT": 1,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "RESILIENCE": -1,
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-4",
+        "scene": "scene-8",
+        "prompt": "It's your turn to present 'Where I'm From.' Which version do you give the room?",
+        "context": "You could give them the funny highlight reel that always works, or the true, messier thing underneath it.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tell the true story, unpolished and all.",
+            "nextScene": "scene-9a"
+          },
+          {
+            "id": "b",
+            "text": "Give the safe, curated highlight reel.",
+            "nextScene": "scene-9b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 2,
+            "RESILIENCE": 1
+          },
+          "b": {
+            "CONFIDENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-5",
+        "scene": "scene-10",
+        "prompt": "Jordan wants to smooth this over and move on. Do you let him, or say the real thing to Maya?",
+        "context": "Easy peace is right there, free of charge. Honesty might cost you the table entirely.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Say the real thing to Maya directly.",
+            "nextScene": "scene-11a"
+          },
+          {
+            "id": "b",
+            "text": "Let Jordan smooth it over.",
+            "nextScene": "scene-11b"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "JUDGMENT": 2,
+            "RESILIENCE": 1,
+            "CONFIDENCE": 1
+          },
+          "b": {
+            "JUDGMENT": -1,
+            "RESILIENCE": -1
+          }
+        }
+      },
+      {
+        "id": "choice-6",
+        "scene": "scene-12",
+        "prompt": "Tray in hand — where do you sit?",
+        "context": "No adult is assigning this one. This is the first fully unforced choice you've made all year.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sit with Alex.",
+            "nextScene": "END"
+          },
+          {
+            "id": "b",
+            "text": "Sit with Maya's table.",
+            "nextScene": "END"
+          },
+          {
+            "id": "c",
+            "text": "Pull a chair to the edge of both — start something new.",
+            "nextScene": "END"
+          }
+        ],
+        "traitMapping": {
+          "a": {
+            "CONFIDENCE": 1,
+            "JUDGMENT": 1,
+            "RESILIENCE": 1
+          },
+          "b": {
+            "CONFIDENCE": -1,
+            "JUDGMENT": -1
+          },
+          "c": {
+            "JUDGMENT": 2,
+            "CONFIDENCE": 1
+          }
+        }
+      }
+    ],
+    "branches": [
+      {
+        "id": "branch-authentic",
+        "name": "The Real Thing",
+        "triggeredBy": [
+          "choice-2:a",
+          "choice-3:a",
+          "choice-6:a"
+        ],
+        "description": "Wren risks disclosure with Alex, defends them publicly, and ends up choosing that friendship openly — at the cost of easy standing with Maya's table.",
+        "outcome": "A small, real friendship is forged under pressure, and Wren gets her first taste of belonging that doesn't require a performance."
+      },
+      {
+        "id": "branch-safe",
+        "name": "The Performance Holds",
+        "triggeredBy": [
+          "choice-1:a",
+          "choice-2:b",
+          "choice-3:b",
+          "choice-6:b"
+        ],
+        "description": "Wren protects her position at the popular table at every turn, keeping Alex and her own story at arm's length.",
+        "outcome": "Wren keeps the social ground she started with, but the episode closes on the quiet cost of never being fully known by anyone there."
+      },
+      {
+        "id": "branch-reckoning",
+        "name": "Saying the Thing",
+        "triggeredBy": [
+          "choice-5:a",
+          "choice-6:c"
+        ],
+        "description": "Regardless of earlier missteps, Wren chooses honesty with Maya and refuses to fully pick a side, carving a third way between the two social poles.",
+        "outcome": "Wren starts to build a version of belonging that isn't about who lets her in, but who she chooses to stand next to — including, sometimes, herself."
+      }
+    ],
+    "emotionalArc": [
+      {
+        "scene": "scene-1",
+        "beat": "Unease — the system is disrupted by an adult's deliberate choice."
+      },
+      {
+        "scene": "scene-2",
+        "beat": "Temptation — the pull of easy social currency."
+      },
+      {
+        "scene": "scene-4",
+        "beat": "Risk — the first real crack in the performance."
+      },
+      {
+        "scene": "scene-6",
+        "beat": "Pressure — public stakes force a visible choice."
+      },
+      {
+        "scene": "scene-8",
+        "beat": "Exposure — Wren in the spotlight with nowhere to hide."
+      },
+      {
+        "scene": "scene-10",
+        "beat": "Reckoning — the cost of the choices comes due."
+      },
+      {
+        "scene": "scene-12",
+        "beat": "Agency — Wren chooses, for once, without a script."
+      }
+    ],
+    "characterArcs": [
+      {
+        "character": "player",
+        "arc": "Moves from performing belonging to practicing it — learning that the survival system that got her through new schools can't get her a real friendship."
+      },
+      {
+        "character": "alex",
+        "arc": "Tests whether this new place will go the way the last one did; depending on Wren's choices, either finds a real ally or confirms it's safer to stay guarded."
+      },
+      {
+        "character": "maya",
+        "arc": "Revealed as insecure under the polish; Wren's honesty (or lack of it) either cracks her defenses slightly or lets her stay untouched."
+      },
+      {
+        "character": "jordan",
+        "arc": "Consistently avoids real conflict, showing the limits of ease-based belonging and making space for Wren's own courage to matter."
+      },
+      {
+        "character": "mr-alvarez",
+        "arc": "Quietly engineers discomfort that serves growth, never explaining himself — a structural mirror to Wren's own arc that's felt, not stated."
+      }
+    ],
+    "traitMapping": [
+      {
+        "trait": "CONFIDENCE",
+        "surfaces_in": [
+          "choice-2",
+          "choice-3",
+          "choice-4",
+          "choice-6"
+        ],
+        "hiddenAs": "Whether Wren tells the true story about herself or performs a safer one."
+      },
+      {
+        "trait": "RESILIENCE",
+        "surfaces_in": [
+          "choice-3",
+          "choice-4",
+          "choice-5",
+          "choice-6"
+        ],
+        "hiddenAs": "Whether Wren can absorb social risk (embarrassment, public pushback) and stay standing."
+      },
+      {
+        "trait": "JUDGMENT",
+        "surfaces_in": [
+          "choice-1",
+          "choice-3",
+          "choice-5",
+          "choice-6"
+        ],
+        "hiddenAs": "Whether Wren can tell the difference between loyalty-as-belonging and loyalty-as-self-erasure."
+      }
+    ],
+    "relationshipDynamics": [
+      {
+        "pair": [
+          "player",
+          "alex"
+        ],
+        "dynamic": "Tentative mutual testing that can deepen into real friendship or stall into polite distance, depending entirely on Wren's willingness to be known first."
+      },
+      {
+        "pair": [
+          "player",
+          "maya"
+        ],
+        "dynamic": "A referendum on whether Wren mistakes magnetism for belonging; can end in confrontation, avoidance, or a fragile new honesty."
+      },
+      {
+        "pair": [
+          "player",
+          "jordan"
+        ],
+        "dynamic": "Low-stakes warmth that reveals its limits exactly when real conflict shows up, making room for Wren's own growth to matter more than his approval."
+      }
+    ],
+    "replayHooks": [
+      "The three-way final choice (Alex / Maya / both) produces genuinely different next-day social realities worth seeing all of.",
+      "Choosing the safe path all the way through reveals a quieter, sadder version of the episode that recontextualizes Wren's Episode 1 survival instincts.",
+      "The scene-11a 'Saying the Thing' branch unlocks a version of Maya rarely seen — replaying just to reach that scene is its own hook.",
+      "Small early choices (helping Maya vs. not) subtly reframe how the same later scenes read, rewarding a second playthrough with new subtext."
+    ],
+    "estimatedPlayTime": 13,
+    "educationalGoals": [
+      "Practice distinguishing between social ease and genuine belonging without ever naming the distinction outright.",
+      "Build tolerance for the discomfort of authentic self-disclosure as a route to real connection.",
+      "Develop judgment about when smoothing over conflict helps versus when it just defers cost.",
+      "Model resilience as recovering from embarrassment/social risk rather than avoiding it entirely."
+    ],
+    "conversationStarters": [
+      "Was there a moment where Wren could have said something and didn't? What do you think held her back?",
+      "Do you think Maya is a villain in this story, or something else? What makes you think that?",
+      "What's the difference between Jordan's kind of 'nice' and Alex's kind of 'real'?",
+      "If you replayed and picked differently, what do you think would change — and what do you think wouldn't?"
+    ]
+  },
+  "designNotes": "The structure uses five 'diamond' branch-and-merge beats (choices that fork and then reconverge) followed by a true three-way terminal fork, which keeps the episode tight (12-13 min) while still letting choices meaningfully color tone and relationship texture even when scenes technically re-merge. Trait pressure is always routed through social/relational stakes (who to defend, how much to reveal, whether to confront) rather than any on-the-nose 'be confident' prompting — the educational scaffolding should be invisible in play and only visible in retrospect or discussion. Maya is deliberately not villainized; her insincerity is given a source (insecurity, fear of losing her table) so that both the 'stand up to her' and 'reconcile with her' paths feel like real character work rather than a morality meter.",
+  "uncertainties": [
+    "Whether the scene-3a/3b micro-branch (which barely changes plot mechanics) earns its place, or whether it should be cut to tighten runtime — kept it because it lets Choice 1 have a visible, felt consequence rather than a purely narrated one.",
+    "Whether Jordan's conflict-avoidance needs one more beat of his own (a small moment where his avoidance visibly costs him something) to keep him from reading as purely functional scaffolding for Wren's growth.",
+    "Whether three endings at Choice 6 dilutes the emotional clarity of a binary choice, versus enriching replay value — currently betting on replay value given the brief's emphasis on 'what if.'",
+    "Unclear whether Mr. Alvarez's deliberate pairing logic should ever be textually confirmed (e.g., a knowing aside) or stay fully implicit as designed — leaning implicit per his character brief, but flagging as a discussable choice."
+  ],
+  "alternativesConsidered": [
+    "A version where the central pressure is a group talent-show number (leaning on Maya's choreography background) instead of the 'Where I'm From' project — rejected because it externalized stakes into performance skill rather than identity disclosure, diluting the Growth/Identity themes.",
+    "A version with Mr. Alvarez directly confronting Wren about her 'performance' — rejected as too on-the-nose; keeping his role structural (assigning pressure, not naming it) preserves the 'invisible educational goal' principle.",
+    "A version where Alex rejects Wren regardless of choices, making the episode purely about resilience after failure — considered for tonal variety but rejected as too punishing for a mid-season episode; reserved as a possible darker Season 2 beat instead.",
+    "Making Jordan the one who needs rescuing from Maya's table instead of Alex — rejected because Alex's established guardedness and 'testing the new place' arc from the brief made them the stronger emotional anchor for the disclosure theme."
+  ]
+}
