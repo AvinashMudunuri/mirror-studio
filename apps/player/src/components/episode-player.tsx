@@ -5,6 +5,7 @@ import {
   resolveBranchLines,
   resolvePrimaryEndingBranch,
   summarizeChoiceOutcomes,
+  trimNarrationLines,
   type PlayerChoiceOption,
   type PlayerDialogueLine,
   type PlayerEpisode,
@@ -12,7 +13,7 @@ import {
 } from '@mirror/schemas';
 import { moodClassForLocation } from '@/lib/scene-mood';
 import { sceneArtUrl } from '@/lib/scene-art';
-import { seasonForWorld } from '@/lib/season-config';
+import { episodeTitleForSeason, seasonForWorld } from '@/lib/season-config';
 import { EpisodeOutcome } from '@/components/episode-outcome';
 
 type Phase = 'intro' | 'playing' | 'outcome';
@@ -49,7 +50,7 @@ function lineKind(character: string): DisplayLine['kind'] {
 }
 
 function toDisplayLines(lines: PlayerDialogueLine[], episode: PlayerEpisode, prefix: string): DisplayLine[] {
-  return lines.map(line => ({
+  return trimNarrationLines(lines).map(line => ({
     key: `${prefix}-${line.id}`,
     speaker: speakerLabel(line.character, episode),
     text: line.text,
@@ -72,22 +73,23 @@ export function EpisodePlayer({
   initialProgress
 }: EpisodePlayerProps) {
   const sceneMap = useMemo(() => new Map(episode.scenes.map(s => [s.id, s])), [episode.scenes]);
+  const sceneOrder = useMemo(() => episode.scenes.map(s => s.id), [episode.scenes]);
   const startedAtRef = useRef<number>(Date.now());
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const [phase, setPhase] = useState<Phase>(() =>
-    initialProgress?.status === 'completed' ? 'intro' : 'intro'
-  );
+  const [phase, setPhase] = useState<Phase>('intro');
   const [sceneId, setSceneId] = useState(episode.startSceneId);
   const [choiceHistory, setChoiceHistory] = useState<string[]>([]);
   const [beat, setBeat] = useState<'scene' | 'response'>('scene');
   const [displayLines, setDisplayLines] = useState<DisplayLine[]>([]);
+  const [lineIndex, setLineIndex] = useState(0);
   const [awaitingChoice, setAwaitingChoice] = useState(false);
   const [reflectionText, setReflectionText] = useState(initialProgress?.reflectionText ?? '');
   const [outcomeMeta, setOutcomeMeta] = useState({
     endingSceneTitle: initialProgress?.endingSceneTitle,
     endingBranchName: initialProgress?.endingBranchName,
-    choiceOutcomes: initialProgress?.choiceOutcomes ?? [] as string[]
+    endingBranchOutcome: initialProgress?.endingBranchOutcome,
+    choiceOutcomes: initialProgress?.choiceOutcomes ?? ([] as string[])
   });
   const [saving, setSaving] = useState(false);
   const [resumeOffer, setResumeOffer] = useState<PlayerProgressPayload | null>(
@@ -98,6 +100,9 @@ export function EpisodePlayer({
   const moodClass = currentScene
     ? moodClassForLocation(currentScene.location, currentScene.id)
     : 'mood-neutral';
+  const sceneProgressIndex = Math.max(0, sceneOrder.indexOf(sceneId));
+  const linesComplete = displayLines.length === 0 || lineIndex >= displayLines.length - 1;
+  const visibleLines = displayLines.slice(0, Math.max(1, lineIndex + 1));
 
   const persistProgress = useCallback(
     (payload: PlayerProgressPayload) => {
@@ -144,6 +149,7 @@ export function EpisodePlayer({
       const meta = {
         endingSceneTitle: endScene?.title,
         endingBranchName: branch?.name,
+        endingBranchOutcome: branch?.outcome,
         choiceOutcomes
       };
       setOutcomeMeta(meta);
@@ -177,30 +183,26 @@ export function EpisodePlayer({
 
       setSceneId(nextSceneId);
       setBeat(nextBeat);
-      if (nextBeat === 'scene') {
-        const lines = sceneBundle(scene, history, episode);
-        setDisplayLines(toDisplayLines(lines, episode, nextSceneId));
-      }
-
-      if (scene.transition.type === 'choice' && nextBeat === 'scene') {
-        setAwaitingChoice(true);
-        persistProgress(
-          buildPayload({
-            choiceHistory: history,
-            currentSceneId: nextSceneId,
-            beat: 'scene',
-            pendingChoicePath: undefined
-          })
-        );
-        return;
-      }
-
-      if (scene.transition.type === 'end') {
-        finishEpisode(history, nextSceneId);
-        return;
-      }
-
       setAwaitingChoice(false);
+      setLineIndex(0);
+
+      if (nextBeat === 'scene') {
+        const lines = toDisplayLines(sceneBundle(scene, history, episode), episode, nextSceneId);
+        setDisplayLines(lines);
+        // Empty scene with a choice → show choices immediately
+        if (scene.transition.type === 'choice' && lines.length === 0) {
+          setAwaitingChoice(true);
+        }
+      }
+
+      if (scene.transition.type === 'end' && nextBeat === 'scene') {
+        // Still show ending lines first; finish after player advances through them
+        if (sceneBundle(scene, history, episode).length === 0) {
+          finishEpisode(history, nextSceneId);
+          return;
+        }
+      }
+
       persistProgress(
         buildPayload({
           choiceHistory: history,
@@ -210,7 +212,7 @@ export function EpisodePlayer({
         })
       );
     },
-    [buildPayload, choiceHistory, episode, finishEpisode, persistProgress, sceneId, sceneMap]
+    [buildPayload, episode, finishEpisode, persistProgress, sceneId, sceneMap]
   );
 
   const startEpisode = useCallback(() => {
@@ -236,7 +238,9 @@ export function EpisodePlayer({
       if (option) {
         setSceneId(resumeOffer.currentSceneId);
         setBeat('response');
-        setDisplayLines(toDisplayLines(option.responseLines, episode, resumeOffer.pendingChoicePath));
+        const lines = toDisplayLines(option.responseLines, episode, resumeOffer.pendingChoicePath);
+        setDisplayLines(lines);
+        setLineIndex(0);
         setAwaitingChoice(false);
         setResumeOffer(null);
         return;
@@ -247,7 +251,12 @@ export function EpisodePlayer({
     showScene(resumeOffer.currentSceneId, resumeOffer.choiceHistory, 'scene');
   }, [episode, resumeOffer, sceneMap, showScene]);
 
-  const continueLinear = useCallback(() => {
+  const advanceLineOrScene = useCallback(() => {
+    if (!linesComplete) {
+      setLineIndex(i => i + 1);
+      return;
+    }
+
     if (beat === 'response') {
       const scene = sceneMap.get(sceneId);
       if (!scene || scene.transition.type !== 'choice') return;
@@ -263,9 +272,31 @@ export function EpisodePlayer({
       return;
     }
 
-    if (!currentScene || currentScene.transition.type !== 'linear') return;
-    showScene(currentScene.transition.nextSceneId, choiceHistory, 'scene');
-  }, [beat, choiceHistory, currentScene, finishEpisode, sceneId, sceneMap, showScene]);
+    if (!currentScene) return;
+
+    if (currentScene.transition.type === 'choice') {
+      setAwaitingChoice(true);
+      return;
+    }
+
+    if (currentScene.transition.type === 'end') {
+      finishEpisode(choiceHistory, sceneId);
+      return;
+    }
+
+    if (currentScene.transition.type === 'linear') {
+      showScene(currentScene.transition.nextSceneId, choiceHistory, 'scene');
+    }
+  }, [
+    beat,
+    choiceHistory,
+    currentScene,
+    finishEpisode,
+    linesComplete,
+    sceneId,
+    sceneMap,
+    showScene
+  ]);
 
   const pickOption = useCallback(
     (option: PlayerChoiceOption, choiceId: string) => {
@@ -275,9 +306,11 @@ export function EpisodePlayer({
       setChoiceHistory(nextHistory);
       setAwaitingChoice(false);
       setBeat('response');
-      setDisplayLines(toDisplayLines(option.responseLines, episode, `${sceneId}-${path}`));
+      const lines = toDisplayLines(option.responseLines, episode, `${sceneId}-${path}`);
+      setDisplayLines(lines);
+      setLineIndex(0);
 
-      if (option.nextSceneId === 'END') {
+      if (option.nextSceneId === 'END' && lines.length === 0) {
         finishEpisode(nextHistory, sceneId);
         return;
       }
@@ -316,7 +349,6 @@ export function EpisodePlayer({
     };
   }, []);
 
-  // Keep the viewport at the top when advancing scenes, choices, or phases.
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [sceneId, beat, phase]);
@@ -327,9 +359,12 @@ export function EpisodePlayer({
         <p className="intro-eyebrow">Episode {episodeNumber}</p>
         <h1 className="intro-title">{title}</h1>
         <p className="intro-synopsis">{synopsis}</p>
-        <p className="intro-playing-as">You are <strong>{episode.protagonist.name}</strong></p>
+        <p className="intro-playing-as">
+          You are <strong>{episode.protagonist.name}</strong>
+        </p>
         <p className="intro-practice-note">
-          Practice, not a test — there&apos;s no right answer. Pick what feels true for you in each moment.
+          Practice, not a test — there&apos;s no right answer. Pick what feels true for you in each
+          moment.
         </p>
         {initialProgress?.status === 'completed' && (
           <p className="intro-status completed">You finished this episode before. Replay to explore another path.</p>
@@ -337,8 +372,12 @@ export function EpisodePlayer({
         <div className="intro-actions">
           {resumeOffer ? (
             <>
-              <button type="button" className="primary" onClick={resumeEpisode}>Continue where you left off</button>
-              <button type="button" className="secondary" onClick={startEpisode}>Start over</button>
+              <button type="button" className="primary" onClick={resumeEpisode}>
+                Continue where you left off
+              </button>
+              <button type="button" className="secondary" onClick={startEpisode}>
+                Start over
+              </button>
             </>
           ) : (
             <button type="button" className="primary" onClick={startEpisode}>
@@ -353,6 +392,8 @@ export function EpisodePlayer({
   const season = seasonForWorld(worldId);
   const nextEpisodeNumber =
     season?.episodeNumbers.includes(episodeNumber + 1) ? episodeNumber + 1 : null;
+  const nextEpisodeTitle =
+    nextEpisodeNumber != null ? episodeTitleForSeason(worldId, nextEpisodeNumber) : null;
   const sceneArt = currentScene ? sceneArtUrl(worldId, episodeNumber, currentScene.id) : null;
 
   if (phase === 'outcome') {
@@ -361,9 +402,10 @@ export function EpisodePlayer({
         title={title}
         worldId={worldId}
         nextEpisodeNumber={nextEpisodeNumber}
-        themes={episode.themes}
+        nextEpisodeTitle={nextEpisodeTitle}
         endingSceneTitle={outcomeMeta.endingSceneTitle}
         endingBranchName={outcomeMeta.endingBranchName}
+        endingBranchOutcome={outcomeMeta.endingBranchOutcome}
         choiceOutcomes={outcomeMeta.choiceOutcomes}
         choiceCount={choiceHistory.length}
         reflectionText={reflectionText}
@@ -375,8 +417,23 @@ export function EpisodePlayer({
     );
   }
 
+  const showChoicePanel =
+    awaitingChoice && linesComplete && currentScene?.transition.type === 'choice';
+  const showContinue = !showChoicePanel;
+
   return (
     <div className={`scene-stage ${moodClass}`}>
+      <div className="scene-progress" aria-label={`Scene ${sceneProgressIndex + 1} of ${sceneOrder.length}`}>
+        {sceneOrder.map((id, i) => (
+          <span
+            key={id}
+            className={`scene-progress-dot${i <= sceneProgressIndex ? ' is-done' : ''}${
+              i === sceneProgressIndex ? ' is-current' : ''
+            }`}
+          />
+        ))}
+      </div>
+
       {sceneArt && (
         <div className="scene-art-panel" aria-hidden="true">
           <img className="scene-art-image" src={sceneArt} alt="" />
@@ -388,11 +445,9 @@ export function EpisodePlayer({
       </header>
 
       <div className="scene-body" aria-live="polite">
-        {displayLines.map(entry => (
+        {visibleLines.map(entry => (
           <div key={entry.key} className={`scene-line scene-line--${entry.kind}`}>
-            {entry.kind !== 'narration' && (
-              <div className="scene-speaker">{entry.speaker}</div>
-            )}
+            {entry.kind !== 'narration' && <div className="scene-speaker">{entry.speaker}</div>}
             <p className="scene-text">{entry.text}</p>
             {entry.action && <p className="scene-action">{entry.action}</p>}
           </div>
@@ -400,7 +455,7 @@ export function EpisodePlayer({
       </div>
 
       <footer className="scene-footer">
-        {awaitingChoice && currentScene?.transition.type === 'choice' && (
+        {showChoicePanel && currentScene.transition.type === 'choice' && (
           <div className="choice-panel">
             {choiceHistory.length === 0 && (
               <p className="choice-reassurance">
@@ -420,7 +475,9 @@ export function EpisodePlayer({
                   onClick={() =>
                     pickOption(
                       option,
-                      currentScene.transition.type === 'choice' ? currentScene.transition.choice.id : ''
+                      currentScene.transition.type === 'choice'
+                        ? currentScene.transition.choice.id
+                        : ''
                     )
                   }
                 >
@@ -431,14 +488,8 @@ export function EpisodePlayer({
           </div>
         )}
 
-        {!awaitingChoice && beat === 'response' && (
-          <button type="button" className="primary scene-continue" onClick={continueLinear}>
-            Continue
-          </button>
-        )}
-
-        {!awaitingChoice && beat === 'scene' && currentScene?.transition.type === 'linear' && (
-          <button type="button" className="primary scene-continue" onClick={continueLinear}>
+        {showContinue && (
+          <button type="button" className="primary scene-continue" onClick={advanceLineOrScene}>
             Continue
           </button>
         )}

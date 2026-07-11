@@ -60,5 +60,6 @@ describe('SEASON_CONFIGS', () => {
     const ns = SEASON_CONFIGS.find(s => s.worldId === 'NEW_SCHOOL') as SeasonConfig;
     expect(ns.title).toBe('New School');
     expect(ns.episodeNumbers).toEqual([1, 2, 3, 4, 5]);
+    expect(ns.episodeTitles[2]).toBe('Show Your Work');
   });
 });

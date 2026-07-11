@@ -2,15 +2,15 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { reflectionPromptForThemes } from '@/lib/reflection-prompts';
 
 interface EpisodeOutcomeProps {
   title: string;
   worldId: string;
   nextEpisodeNumber: number | null;
-  themes: string[];
+  nextEpisodeTitle?: string | null;
   endingSceneTitle?: string;
   endingBranchName?: string;
+  endingBranchOutcome?: string;
   choiceOutcomes?: string[];
   choiceCount: number;
   reflectionText: string;
@@ -24,9 +24,10 @@ export function EpisodeOutcome({
   title,
   worldId,
   nextEpisodeNumber,
-  themes,
+  nextEpisodeTitle,
   endingSceneTitle,
   endingBranchName,
+  endingBranchOutcome,
   choiceOutcomes,
   choiceCount,
   reflectionText,
@@ -35,10 +36,16 @@ export function EpisodeOutcome({
   onPlayAgain,
   saving
 }: EpisodeOutcomeProps) {
-  const [showReflection, setShowReflection] = useState(true);
+  // Default hidden: optional reflection without looking like homework (#52 Skip + kid-pacing collapse).
+  const [showReflection, setShowReflection] = useState(false);
   const headline = endingSceneTitle || endingBranchName || 'Your path through this story';
-  const prompt = reflectionPromptForThemes(themes);
-  const leans = choiceOutcomes?.filter(Boolean) ?? [];
+  const storyBeats = choiceOutcomes?.filter(Boolean) ?? [];
+  const nextLabel =
+    nextEpisodeNumber != null
+      ? nextEpisodeTitle
+        ? `Next: ${nextEpisodeTitle} →`
+        : 'Next episode →'
+      : null;
 
   return (
     <div className="outcome-screen">
@@ -50,11 +57,17 @@ export function EpisodeOutcome({
         way to play it.
       </p>
 
-      {leans.length > 0 && (
+      {endingBranchOutcome && (
+        <div className="outcome-story">
+          <p className="outcome-story-text">{endingBranchOutcome}</p>
+        </div>
+      )}
+
+      {storyBeats.length > 0 && (
         <div className="outcome-leans">
           <span className="outcome-leans-label">On this path, the story touched on</span>
           <ul className="outcome-leans-list">
-            {leans.map(lean => (
+            {storyBeats.map(lean => (
               <li key={lean}>{lean}</li>
             ))}
           </ul>
@@ -64,22 +77,11 @@ export function EpisodeOutcome({
         </div>
       )}
 
-      {themes.length > 0 && (
-        <div className="outcome-themes">
-          <span className="outcome-themes-label">Themes in this episode</span>
-          <div className="theme-chips">
-            {themes.map(theme => (
-              <span key={theme} className="theme-chip">{theme}</span>
-            ))}
-          </div>
-        </div>
-      )}
-
       {showReflection ? (
         <div className="reflection-block">
           <div className="reflection-block-header">
             <label className="reflection-label" htmlFor="reflection-input">
-              {prompt}
+              Anything stick with you from this path?
             </label>
             <button
               type="button"
@@ -95,7 +97,7 @@ export function EpisodeOutcome({
           <textarea
             id="reflection-input"
             className="reflection-input"
-            rows={4}
+            rows={3}
             placeholder="Only if you want to — your notes stay on this device."
             value={reflectionText}
             onChange={e => onReflectionChange(e.target.value)}
@@ -105,14 +107,20 @@ export function EpisodeOutcome({
         </div>
       ) : (
         <p className="reflection-skipped-note">
-          Reflection skipped — you can always replay and jot something down later.
+          <button
+            type="button"
+            className="reflection-skip"
+            onClick={() => setShowReflection(true)}
+          >
+            Optional — jot a thought
+          </button>
         </p>
       )}
 
       <div className="outcome-actions">
-        {nextEpisodeNumber != null && (
+        {nextEpisodeNumber != null && nextLabel && (
           <Link href={`/play/${worldId}/${nextEpisodeNumber}`} className="primary-link">
-            Next episode →
+            {nextLabel}
           </Link>
         )}
         <button type="button" className="secondary" onClick={onPlayAgain}>
