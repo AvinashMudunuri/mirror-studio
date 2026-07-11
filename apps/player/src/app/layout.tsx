@@ -9,19 +9,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        <header className="site-header">
-          <div className="container site-header-inner">
-            <div>
-              <h1>MIRROR Player</h1>
-              <p className="sub">Interactive stories — your choices are saved</p>
-            </div>
+      <body className="app-body" suppressHydrationWarning>
+        <header className="site-header site-header--browse">
+          <div className="container-wide site-header-inner">
+            <a href="/" className="site-logo">
+              <span className="site-logo-mark">MIRROR</span>
+            </a>
             <nav className="site-nav">
-              <a href="/">Episodes</a>
+              <a href="/" className="site-nav-link site-nav-link--active">Browse</a>
             </nav>
           </div>
         </header>
-        <main>{children}</main>
+        <main className="app-main">{children}</main>
       </body>
     </html>
   );
