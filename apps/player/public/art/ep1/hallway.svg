@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img" aria-label="Busy school hallway">
+  <defs>
+    <linearGradient id="hall-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a2840"/>
+      <stop offset="100%" stop-color="#243050"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#hall-bg)"/>
+  <rect x="0" y="200" width="800" height="120" fill="#141c2e"/>
+  <line x1="0" y1="200" x2="800" y2="200" stroke="#3a4a68" stroke-width="2"/>
+  <rect x="40" y="60" width="60" height="140" fill="#2a3550" opacity="0.8"/>
+  <rect x="700" y="60" width="60" height="140" fill="#2a3550" opacity="0.8"/>
+  <rect x="280" y="100" width="50" height="90" fill="#5b7cff" opacity="0.2"/>
+  <rect x="470" y="100" width="50" height="90" fill="#5b7cff" opacity="0.2"/>
+  <circle cx="200" cy="170" r="18" fill="#7c9cff" opacity="0.4"/>
+  <circle cx="350" cy="160" r="14" fill="#9aa8c7" opacity="0.35"/>
+  <circle cx="500" cy="175" r="16" fill="#7c9cff" opacity="0.4"/>
+  <circle cx="620" cy="165" r="14" fill="#9aa8c7" opacity="0.35"/>
+  <text x="400" y="300" text-anchor="middle" fill="#9aa8c7" font-family="system-ui,sans-serif" font-size="14" opacity="0.7">Hallway</text>
+</svg>

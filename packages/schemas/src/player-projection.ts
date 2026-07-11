@@ -23,6 +23,8 @@ export interface PlayerChoiceOption {
   text: string;
   nextSceneId: string;
   responseLines: PlayerDialogueLine[];
+  /** Trait deltas from authoring traitMapping (e.g. { EMPATHY: 2, CONFIDENCE: -1 }). */
+  traitDeltas?: Record<string, number>;
 }
 
 export type PlayerSceneTransition =
@@ -84,6 +86,7 @@ export interface AuthoringEpisodeContent {
       prompt?: string;
       context?: string;
       options?: Array<{ id: string; text?: string; nextScene?: string }>;
+      traitMapping?: Record<string, Record<string, number>>;
     }>;
     branches?: Array<{ id: string; name?: string; triggeredBy?: string[] }>;
   };
@@ -193,6 +196,55 @@ export interface PlayerProgressPayload {
   endingSceneTitle?: string;
   reflectionText?: string;
   playTimeSeconds?: number;
+  choiceOutcomes?: string[];
+}
+
+/** Kid-friendly phrasing for trait lean summaries (not diagnostic labels). */
+export const TRAIT_LEAN_PHRASES: Record<string, string> = {
+  CONFIDENCE: 'speaking up',
+  EMPATHY: 'noticing how others feel',
+  ADAPTABILITY: 'finding your footing in new situations',
+  INTEGRITY: 'standing by what you believe',
+  COMMUNICATION: 'saying what you mean',
+  EMOTIONAL_AWARENESS: 'paying attention to the mood in the room',
+  JUDGMENT: 'thinking before you act',
+  RESILIENCE: 'bouncing back when things get awkward',
+  CURIOSITY: 'asking questions and paying attention',
+  LEADERSHIP: 'stepping up when no one else will'
+};
+
+/**
+ * Sum trait deltas from the player's choice paths and return 1–3 plain-language leans.
+ * Uses only positive net traits — never surfaces negative scores as labels (ADR 005).
+ */
+export function summarizeChoiceOutcomes(
+  episode: Pick<PlayerEpisode, 'scenes'>,
+  choiceHistory: string[]
+): string[] {
+  const totals: Record<string, number> = {};
+
+  for (const path of choiceHistory) {
+    const [choiceId, optionId] = path.split(':');
+    if (!choiceId || !optionId) continue;
+
+    for (const scene of episode.scenes) {
+      if (scene.transition.type !== 'choice' || scene.transition.choice.id !== choiceId) continue;
+      const option = scene.transition.choice.options.find(o => o.id === optionId);
+      if (!option?.traitDeltas) continue;
+      for (const [trait, delta] of Object.entries(option.traitDeltas)) {
+        totals[trait] = (totals[trait] ?? 0) + delta;
+      }
+    }
+  }
+
+  const ranked = Object.entries(totals)
+    .filter(([, score]) => score > 0)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3);
+
+  return ranked
+    .map(([trait]) => TRAIT_LEAN_PHRASES[trait] ?? trait.toLowerCase().replace(/_/g, ' '))
+    .filter(Boolean);
 }
 
 /** Pure projection from persisted authoring content to a player graph. */
@@ -259,7 +311,10 @@ export function projectPlayerEpisode(content: AuthoringEpisodeContent): PlayerEp
             id: opt.id,
             text: opt.text || opt.id,
             nextSceneId: opt.nextScene || 'END',
-            responseLines: asLines(responseDialogue[opt.id])
+            responseLines: asLines(responseDialogue[opt.id]),
+            ...(choicePoint.traitMapping?.[opt.id]
+              ? { traitDeltas: choicePoint.traitMapping[opt.id] }
+              : {})
           }))
         }
       };
