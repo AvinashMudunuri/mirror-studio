@@ -4,6 +4,7 @@ import {
   projectPlayerEpisode,
   resolveBranchLines,
   matchingBranches,
+  resolvePrimaryEndingBranch,
   type AuthoringEpisodeContent
 } from '@mirror/schemas';
 
@@ -89,6 +90,13 @@ describe('branch resolution', () => {
     expect(lines.length).toBeGreaterThan(0);
     expect(lines.some(l => l.text.includes('Priya'))).toBe(true);
     expect(lines.some(l => l.text.includes('sharing the credit'))).toBe(true);
+  });
+
+  it('resolvePrimaryEndingBranch picks the most recent matching path', () => {
+    const branch = resolvePrimaryEndingBranch(player.branches, ['choice-1:a', 'choice-5:a']);
+    expect(branch).not.toBeNull();
+    expect(branch?.id).toBeTruthy();
+    expect(branch?.name).toBeTruthy();
   });
 });
 

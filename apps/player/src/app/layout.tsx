@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="container site-header-inner">
             <div>
               <h1>MIRROR Player</h1>
-              <p className="sub">Phase 5 preview — published episodes only</p>
+              <p className="sub">Interactive stories — your choices are saved</p>
             </div>
             <nav className="site-nav">
               <a href="/">Episodes</a>

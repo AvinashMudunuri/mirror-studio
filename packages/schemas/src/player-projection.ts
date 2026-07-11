@@ -150,6 +150,51 @@ export function resolveBranchLines(
   return variants.flatMap(v => asLines(v.lines));
 }
 
+/**
+ * Pick the single best-matching ending branch for the player's path.
+ * Prefers the branch tied to the most recent choice, then the most specific path.
+ */
+export function resolvePrimaryEndingBranch(
+  branches: Array<{ id: string; name: string; triggeredBy: string[] }>,
+  choiceHistory: string[]
+): { id: string; name: string } | null {
+  const matched = matchingBranches(branches, choiceHistory);
+  if (!matched.length) return null;
+
+  const historyIndex = new Map(choiceHistory.map((path, i) => [path, i]));
+  const sortKey = (triggeredBy: string[]) => {
+    const indices = triggeredBy.map(path => historyIndex.get(path) ?? -1);
+    const latest = Math.max(...indices);
+    return [latest, triggeredBy.length] as const;
+  };
+
+  matched.sort((a, b) => {
+    const [aLatest, aLen] = sortKey(a.triggeredBy);
+    const [bLatest, bLen] = sortKey(b.triggeredBy);
+    if (aLatest !== bLatest) return bLatest - aLatest;
+    return bLen - aLen;
+  });
+
+  return { id: matched[0].id, name: branches.find(b => b.id === matched[0].id)?.name ?? matched[0].id };
+}
+
+/** Anonymous player progress stored in player_progress.choices JSONB. */
+export interface PlayerProgressPayload {
+  status: 'in_progress' | 'completed';
+  choiceHistory: string[];
+  currentSceneId: string;
+  /** scene = showing scene lines; response = showing post-choice response before next scene */
+  beat: 'scene' | 'response';
+  pendingChoicePath?: string;
+  startedAt: string;
+  completedAt?: string;
+  endingBranchId?: string;
+  endingBranchName?: string;
+  endingSceneTitle?: string;
+  reflectionText?: string;
+  playTimeSeconds?: number;
+}
+
 /** Pure projection from persisted authoring content to a player graph. */
 export function projectPlayerEpisode(content: AuthoringEpisodeContent): PlayerEpisode {
   const outline = content.outline || {};
