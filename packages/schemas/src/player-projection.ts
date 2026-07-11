@@ -64,7 +64,7 @@ export interface PlayerEpisode {
   protagonist: { name: string; pronouns?: string };
   characters: Array<{ id: string; name: string; pronouns?: string }>;
   scenes: PlayerScene[];
-  branches: Array<{ id: string; name: string; triggeredBy: string[] }>;
+  branches: Array<{ id: string; name: string; triggeredBy: string[]; outcome?: string }>;
   branchResolution: 'all-matching-append-ordered';
 }
 
@@ -88,7 +88,7 @@ export interface AuthoringEpisodeContent {
       options?: Array<{ id: string; text?: string; nextScene?: string }>;
       traitMapping?: Record<string, Record<string, number>>;
     }>;
-    branches?: Array<{ id: string; name?: string; triggeredBy?: string[] }>;
+    branches?: Array<{ id: string; name?: string; triggeredBy?: string[]; outcome?: string }>;
   };
   cast?: Array<{ id: string; name?: string; pronouns?: string }>;
   dialogue?: Array<{ sceneId: string; lines?: PlayerDialogueLine[] }>;
@@ -158,9 +158,9 @@ export function resolveBranchLines(
  * Prefers the branch tied to the most recent choice, then the most specific path.
  */
 export function resolvePrimaryEndingBranch(
-  branches: Array<{ id: string; name: string; triggeredBy: string[] }>,
+  branches: Array<{ id: string; name: string; triggeredBy: string[]; outcome?: string }>,
   choiceHistory: string[]
-): { id: string; name: string } | null {
+): { id: string; name: string; outcome?: string } | null {
   const matched = matchingBranches(branches, choiceHistory);
   if (!matched.length) return null;
 
@@ -178,7 +178,29 @@ export function resolvePrimaryEndingBranch(
     return bLen - aLen;
   });
 
-  return { id: matched[0].id, name: branches.find(b => b.id === matched[0].id)?.name ?? matched[0].id };
+  const full = branches.find(b => b.id === matched[0].id);
+  return {
+    id: matched[0].id,
+    name: full?.name ?? matched[0].id,
+    ...(full?.outcome ? { outcome: full.outcome } : {})
+  };
+}
+
+/**
+ * Keep dialogue + inner voice; cap narrator lines so art/setting can carry atmosphere.
+ * Default: at most one NARRATOR line per scene beat.
+ */
+export function trimNarrationLines(
+  lines: PlayerDialogueLine[],
+  maxNarration = 1
+): PlayerDialogueLine[] {
+  let kept = 0;
+  return lines.filter(line => {
+    if (line.character !== 'NARRATOR') return true;
+    if (kept >= maxNarration) return false;
+    kept += 1;
+    return true;
+  });
 }
 
 /** Anonymous player progress stored in player_progress.choices JSONB. */
@@ -193,6 +215,7 @@ export interface PlayerProgressPayload {
   completedAt?: string;
   endingBranchId?: string;
   endingBranchName?: string;
+  endingBranchOutcome?: string;
   endingSceneTitle?: string;
   reflectionText?: string;
   playTimeSeconds?: number;
@@ -277,7 +300,8 @@ export function projectPlayerEpisode(content: AuthoringEpisodeContent): PlayerEp
   const branchMeta = (outline.branches || []).map(b => ({
     id: b.id,
     name: b.name || b.id,
-    triggeredBy: b.triggeredBy || []
+    triggeredBy: b.triggeredBy || [],
+    ...(b.outcome ? { outcome: b.outcome } : {})
   }));
 
   const branchTriggeredBy = new Map(branchMeta.map(b => [b.id, b.triggeredBy]));

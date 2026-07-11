@@ -6,8 +6,10 @@ import {
   matchingBranches,
   resolvePrimaryEndingBranch,
   summarizeChoiceOutcomes,
+  trimNarrationLines,
   TRAIT_LEAN_PHRASES,
   type AuthoringEpisodeContent,
+  type PlayerDialogueLine,
   type PlayerEpisode
 } from '@mirror/schemas';
 
@@ -100,6 +102,34 @@ describe('branch resolution', () => {
     expect(branch).not.toBeNull();
     expect(branch?.id).toBeTruthy();
     expect(branch?.name).toBeTruthy();
+  });
+
+  it('projects authored branch outcome text onto player branches', () => {
+    expect(player.branches.some(b => typeof b.outcome === 'string' && b.outcome.length > 0)).toBe(
+      true
+    );
+    const branch = resolvePrimaryEndingBranch(player.branches, ['choice-1:a', 'choice-5:a']);
+    expect(branch?.outcome).toBeTruthy();
+  });
+});
+
+describe('trimNarrationLines', () => {
+  const lines: PlayerDialogueLine[] = [
+    { id: 'n1', character: 'NARRATOR', text: 'Noise on the steps.' },
+    { id: 'i1', character: 'INTERNAL', text: 'Fourth school.' },
+    { id: 'n2', character: 'NARRATOR', text: 'More atmospheric filler.' },
+    { id: 'd1', character: 'player', text: 'Okay. Cool.' },
+    { id: 'n3', character: 'NARRATOR', text: 'Yet more setting.' }
+  ];
+
+  it('keeps at most one narrator line by default', () => {
+    const trimmed = trimNarrationLines(lines);
+    expect(trimmed.filter(l => l.character === 'NARRATOR')).toHaveLength(1);
+    expect(trimmed.map(l => l.id)).toEqual(['n1', 'i1', 'd1']);
+  });
+
+  it('can drop all narration when max is 0', () => {
+    expect(trimNarrationLines(lines, 0).every(l => l.character !== 'NARRATOR')).toBe(true);
   });
 });
 

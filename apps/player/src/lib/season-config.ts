@@ -4,6 +4,8 @@ export interface SeasonConfig {
   title: string;
   subtitle: string;
   episodeNumbers: number[];
+  /** Display titles for browse + next-episode teases */
+  episodeTitles: Record<number, string>;
 }
 
 export const SEASON_CONFIGS: SeasonConfig[] = [
@@ -11,12 +13,23 @@ export const SEASON_CONFIGS: SeasonConfig[] = [
     worldId: 'NEW_SCHOOL',
     title: 'New School',
     subtitle: 'Season 1: First Year',
-    episodeNumbers: [1, 2, 3, 4, 5]
+    episodeNumbers: [1, 2, 3, 4, 5],
+    episodeTitles: {
+      1: 'First Bell',
+      2: 'Show Your Work',
+      3: 'Showcase',
+      4: 'The Doodle Kingdom',
+      5: "Where I'm From"
+    }
   }
 ];
 
 export function seasonForWorld(worldId: string): SeasonConfig | undefined {
   return SEASON_CONFIGS.find(s => s.worldId === worldId);
+}
+
+export function episodeTitleForSeason(worldId: string, episodeNumber: number): string | null {
+  return seasonForWorld(worldId)?.episodeTitles[episodeNumber] ?? null;
 }
 
 export type EpisodeAccess = 'available' | 'up_next' | 'locked' | 'completed';

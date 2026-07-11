@@ -1,15 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { reflectionPromptForThemes } from '@/lib/reflection-prompts';
 
 interface EpisodeOutcomeProps {
   title: string;
   worldId: string;
   nextEpisodeNumber: number | null;
-  themes: string[];
+  nextEpisodeTitle?: string | null;
   endingSceneTitle?: string;
   endingBranchName?: string;
+  endingBranchOutcome?: string;
   choiceOutcomes?: string[];
   choiceCount: number;
   reflectionText: string;
@@ -23,9 +23,10 @@ export function EpisodeOutcome({
   title,
   worldId,
   nextEpisodeNumber,
-  themes,
+  nextEpisodeTitle,
   endingSceneTitle,
   endingBranchName,
+  endingBranchOutcome,
   choiceOutcomes,
   choiceCount,
   reflectionText,
@@ -35,8 +36,13 @@ export function EpisodeOutcome({
   saving
 }: EpisodeOutcomeProps) {
   const headline = endingSceneTitle || endingBranchName || 'Your path through this story';
-  const prompt = reflectionPromptForThemes(themes);
-  const leans = choiceOutcomes?.filter(Boolean) ?? [];
+  const storyBeats = choiceOutcomes?.filter(Boolean) ?? [];
+  const nextLabel =
+    nextEpisodeNumber != null
+      ? nextEpisodeTitle
+        ? `Next: ${nextEpisodeTitle} →`
+        : 'Next episode →'
+      : null;
 
   return (
     <div className="outcome-screen">
@@ -44,51 +50,49 @@ export function EpisodeOutcome({
       <h2 className="outcome-title">{headline}</h2>
       <p className="outcome-sub">
         You made <strong>{choiceCount}</strong> choice{choiceCount === 1 ? '' : 's'} in{' '}
-        <em>{title}</em>. Every path is different — this one is yours.
+        <em>{title}</em>.
       </p>
 
-      {leans.length > 0 && (
+      {endingBranchOutcome && (
+        <div className="outcome-story">
+          <p className="outcome-story-text">{endingBranchOutcome}</p>
+        </div>
+      )}
+
+      {storyBeats.length > 0 && (
         <div className="outcome-leans">
-          <span className="outcome-leans-label">Along the way, you leaned toward</span>
+          <span className="outcome-leans-label">Along the way</span>
           <ul className="outcome-leans-list">
-            {leans.map(lean => (
+            {storyBeats.map(lean => (
               <li key={lean}>{lean}</li>
             ))}
           </ul>
         </div>
       )}
 
-      {themes.length > 0 && (
-        <div className="outcome-themes">
-          <span className="outcome-themes-label">This episode explored</span>
-          <div className="theme-chips">
-            {themes.map(theme => (
-              <span key={theme} className="theme-chip">{theme}</span>
-            ))}
-          </div>
+      <details className="reflection-details">
+        <summary className="reflection-summary">Optional — jot a thought</summary>
+        <div className="reflection-block">
+          <label className="reflection-label" htmlFor="reflection-input">
+            Anything stick with you from this path?
+          </label>
+          <textarea
+            id="reflection-input"
+            className="reflection-input"
+            rows={3}
+            placeholder="Just for you. Not graded or shared."
+            value={reflectionText}
+            onChange={e => onReflectionChange(e.target.value)}
+            onBlur={onSaveReflection}
+          />
+          {saving && <p className="reflection-hint">Saving…</p>}
         </div>
-      )}
-
-      <div className="reflection-block">
-        <label className="reflection-label" htmlFor="reflection-input">
-          {prompt}
-        </label>
-        <textarea
-          id="reflection-input"
-          className="reflection-input"
-          rows={4}
-          placeholder="Optional — just for you. Nothing here is graded or shared."
-          value={reflectionText}
-          onChange={e => onReflectionChange(e.target.value)}
-          onBlur={onSaveReflection}
-        />
-        {saving && <p className="reflection-hint">Saving…</p>}
-      </div>
+      </details>
 
       <div className="outcome-actions">
-        {nextEpisodeNumber != null && (
+        {nextEpisodeNumber != null && nextLabel && (
           <Link href={`/play/${worldId}/${nextEpisodeNumber}`} className="primary-link">
-            Next episode →
+            {nextLabel}
           </Link>
         )}
         <button type="button" className="secondary" onClick={onPlayAgain}>

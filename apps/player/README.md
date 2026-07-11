@@ -1,6 +1,6 @@
 # MIRROR Player (`apps/player`)
 
-Interactive episode player — Tier 0 UX with anonymous progress and outcome screen.
+Interactive episode player — scene pacing, anonymous progress, story outcomes.
 
 ## Run locally
 
@@ -16,10 +16,10 @@ Episodes must be published first via `apps/admin` (`/runs/...` → Publish).
 
 ## Features
 
-- **Tier 0 presentation** — one scene at a time, location header, mood backgrounds, choice cards (not a scrolling script)
+- **Line-at-a-time play** — sticky Continue, progress dots, at most one narrator line per beat (art + dialogue/inner voice carry the rest)
 - **Anonymous progress** — `mirror_player_id` httpOnly cookie → `players` + `player_progress` rows; resume on same device
-- **Outcome screen** — ending title, themes practiced, optional reflection (saved to progress JSONB)
-- Homepage shows **Finished** / **In progress** badges per episode
+- **Story outcome screen** — ending title + authored branch outcome text, optional collapsed reflection, next-episode tease
+- Homepage — Netflix-style browse with Finished / In progress / soft locks
 
 ## Content contract
 
@@ -34,4 +34,4 @@ Episodes must be published first via `apps/admin` (`/runs/...` → Publish).
 
 ## Not yet built
 
-Profiles/auth, trait UI, illustrations, save/resume across devices, analytics.
+Profiles/auth, trait UI, save/resume across devices, art for episodes 2–5, analytics.
