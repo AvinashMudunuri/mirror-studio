@@ -1,6 +1,6 @@
 /**
  * Episode 1 scene art pilot — AI-generated location plates keyed by scene id.
- * Regenerate with: npm run art:ep1 (see scripts/generate-ep1-scene-art.js).
+ * Regenerate with: npm run art:ep1 (Bedrock Stability Ultra in us-west-2 by default).
  */
 
 const EP1_LOCATION_ART: Record<string, string> = {
