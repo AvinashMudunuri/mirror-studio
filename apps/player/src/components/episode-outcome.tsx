@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface EpisodeOutcomeProps {
   title: string;
@@ -35,6 +36,8 @@ export function EpisodeOutcome({
   onPlayAgain,
   saving
 }: EpisodeOutcomeProps) {
+  // Default hidden: optional reflection without looking like homework (#52 Skip + kid-pacing collapse).
+  const [showReflection, setShowReflection] = useState(false);
   const headline = endingSceneTitle || endingBranchName || 'Your path through this story';
   const storyBeats = choiceOutcomes?.filter(Boolean) ?? [];
   const nextLabel =
@@ -50,7 +53,8 @@ export function EpisodeOutcome({
       <h2 className="outcome-title">{headline}</h2>
       <p className="outcome-sub">
         You made <strong>{choiceCount}</strong> choice{choiceCount === 1 ? '' : 's'} in{' '}
-        <em>{title}</em>.
+        <em>{title}</em>. This was one path through the story — not a test, and not the only
+        way to play it.
       </p>
 
       {endingBranchOutcome && (
@@ -61,33 +65,57 @@ export function EpisodeOutcome({
 
       {storyBeats.length > 0 && (
         <div className="outcome-leans">
-          <span className="outcome-leans-label">Along the way</span>
+          <span className="outcome-leans-label">On this path, the story touched on</span>
           <ul className="outcome-leans-list">
             {storyBeats.map(lean => (
               <li key={lean}>{lean}</li>
             ))}
           </ul>
+          <p className="outcome-leans-note">
+            That describes this playthrough, not you. Replay anytime to try a different path.
+          </p>
         </div>
       )}
 
-      <details className="reflection-details">
-        <summary className="reflection-summary">Optional — jot a thought</summary>
+      {showReflection ? (
         <div className="reflection-block">
-          <label className="reflection-label" htmlFor="reflection-input">
-            Anything stick with you from this path?
-          </label>
+          <div className="reflection-block-header">
+            <label className="reflection-label" htmlFor="reflection-input">
+              Anything stick with you from this path?
+            </label>
+            <button
+              type="button"
+              className="reflection-skip"
+              onClick={() => setShowReflection(false)}
+            >
+              Skip for now
+            </button>
+          </div>
+          <p className="reflection-optional-note">
+            Totally optional. Nothing here is graded, scored, or shared with anyone.
+          </p>
           <textarea
             id="reflection-input"
             className="reflection-input"
             rows={3}
-            placeholder="Just for you. Not graded or shared."
+            placeholder="Only if you want to — your notes stay on this device."
             value={reflectionText}
             onChange={e => onReflectionChange(e.target.value)}
             onBlur={onSaveReflection}
           />
           {saving && <p className="reflection-hint">Saving…</p>}
         </div>
-      </details>
+      ) : (
+        <p className="reflection-skipped-note">
+          <button
+            type="button"
+            className="reflection-skip"
+            onClick={() => setShowReflection(true)}
+          >
+            Optional — jot a thought
+          </button>
+        </p>
+      )}
 
       <div className="outcome-actions">
         {nextEpisodeNumber != null && nextLabel && (
@@ -96,10 +124,10 @@ export function EpisodeOutcome({
           </Link>
         )}
         <button type="button" className="secondary" onClick={onPlayAgain}>
-          Play this episode again
+          Try a different path
         </button>
         <Link href="/" className="secondary-link">
-          Back to episodes
+          Back to browse
         </Link>
       </div>
     </div>

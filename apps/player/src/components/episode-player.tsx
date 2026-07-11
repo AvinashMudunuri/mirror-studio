@@ -362,8 +362,12 @@ export function EpisodePlayer({
         <p className="intro-playing-as">
           You are <strong>{episode.protagonist.name}</strong>
         </p>
+        <p className="intro-practice-note">
+          Practice, not a test — there&apos;s no right answer. Pick what feels true for you in each
+          moment.
+        </p>
         {initialProgress?.status === 'completed' && (
-          <p className="intro-status completed">You finished this episode before.</p>
+          <p className="intro-status completed">You finished this episode before. Replay to explore another path.</p>
         )}
         <div className="intro-actions">
           {resumeOffer ? (
@@ -453,6 +457,11 @@ export function EpisodePlayer({
       <footer className="scene-footer">
         {showChoicePanel && currentScene.transition.type === 'choice' && (
           <div className="choice-panel">
+            {choiceHistory.length === 0 && (
+              <p className="choice-reassurance">
+                No right answer — choose what you&apos;d actually try here.
+              </p>
+            )}
             <p className="choice-prompt">{currentScene.transition.choice.prompt}</p>
             {currentScene.transition.choice.context && (
               <p className="choice-context">{currentScene.transition.choice.context}</p>
