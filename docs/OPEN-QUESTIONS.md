@@ -1,7 +1,7 @@
 # Open Questions & Backlog
 
 Living document: the undecided questions and unstarted work items, with the
-evidence behind each. Updated 2026-07-06 (post PRs #13–#16).
+evidence behind each. Updated 2026-07-11 (post Season 1 completion, PRs #39–#46).
 
 For what already WORKS, see the run evidence in `output/episodes/…/manifest.json`
 and each run's bound script (`episode-script.md`): the 8-agent pipeline
@@ -11,12 +11,12 @@ runs, all under a hard token budget.
 
 ---
 
-## 1. Admin tools for content creation (planned, not started)
+## 1. Admin tools for content creation — mostly done (2026-07-11)
 
-`PHASE-2-PLAN.md` Track B specifies a web UI (generator form with per-agent
+`PHASE-2-PLAN.md` Track B specified a web UI (generator form with per-agent
 progress, review dashboard, episode viewer, agent config presets), a rich
-content editor, and an analytics dashboard. None of it exists — the
-`apps/*` workspace glob matches nothing.
+content editor, and an analytics dashboard. **`apps/admin` and `apps/player`
+now exist** — the analytics dashboard and rich editors do not.
 
 Build order and status:
 
@@ -25,17 +25,22 @@ Build order and status:
    badges, token cost and revision count; run detail with roster, revision
    history, rendered bound script; raw artifact viewer. Legacy runs render
    as LEGACY, crashed runs as INCOMPLETE.
+   **Updated 2026-07-10 (PRs #41, #42):** LIVE / latest / not published
+   badges on run list; default filter **Published** (shows only LIVE runs).
 2. **Generate from the UI** — DONE 2026-07-08. `/generate` page: episode
-   number + optional custom brief (title/themes/traits/synopsis — not
-   limited to the two hardcoded episodes anymore), budget/revision-iteration/
-   skip-reviewer controls, an "Advanced" section for the QA/Game Designer/
-   Ethics Reviewer model overrides from item 4. Submitting spawns
-   `scripts/create-real-episode.js` server-side and streams its console
-   live via SSE. Live-verified end-to-end with a real (intentionally
-   token-capped) run — see below.
+   number + optional custom brief (title/themes/traits/synopsis — all five
+   Season 1 briefs are in `EPISODE_BRIEFS`, plus custom JSON via
+   `EPISODE_BRIEF_JSON`), budget/revision-iteration/skip-reviewer controls,
+   an "Advanced" section for the QA/Game Designer/Ethics Reviewer model
+   overrides from item 4. Submitting spawns `scripts/create-real-episode.js`
+   server-side and streams its console live via SSE.
 3. **Editing + review workflow**: rich editors, re-run specific agents,
-   versioning — backed by the Postgres layer (item 2 below).
+   versioning — **not started**; backed by the Postgres layer (item 2).
 4. **Publish / "preview as player"** — DONE 2026-07-08. See item 1b.
+5. **Player app** (`apps/player`) — DONE 2026-07-10/11. Port 3400;
+   homepage lists all published episodes from Postgres (PR #43); interactive
+   playthrough via `projectPlayerEpisode()`. No profiles, trait UI, or
+   reflection prompts yet (Phase 5+).
 
 ### Generate-from-UI implementation notes
 
@@ -174,6 +179,12 @@ needed, unlike the episode-reference loader). Two effects:
    name/pronouns/traits from the start instead of a generic "player"
    placeholder some other step has to reconcile later.
 
+**Protagonist canon — DONE (2026-07-10, PR #39).** `scripts/lib/continuity-guard.js`
+blocks generation when the carried-over protagonist name does not match the
+established canon (Season 1: **Wren Okafor-Silva**, set in ep 1). All five
+Season 1 canonical runs use Wren. Superseded Sol runs exist in
+`output/episodes/` but must not be published.
+
 Live-verified (`run-2026-07-07_16-51-12`): log line `👤 Continuity:
 protagonist "Wren Castillo" carries over from postgres`, `✅ Protagonist
 carried over (0.0s)` (confirming zero Character Designer calls for it),
@@ -182,6 +193,10 @@ and — the strongest evidence — the Story Architect's own output used
 correctly used her established pronouns, and referenced "since day one"
 tying back to episode 1's events. `manifest.run.previousProtagonist:
 {name: "Wren Castillo", source: "postgres"}`.
+
+*(Note: early continuity runs used "Wren Castillo"; canonical published
+protagonist is **Wren Okafor-Silva** from the ep 1 regen run
+`run-2026-07-10_13-26-56`.)*
 
 **NPC continuity — DONE (2026-07-07).** Generalized the protagonist
 mechanism: `loadPreviousCast()` replaces `loadPreviousProtagonist()`
@@ -215,6 +230,9 @@ all-reused or all-fresh one. `manifest.run.reusedSupportingCharacters:
 
 Still open:
 - Semantic search needs `OPENAI_API_KEY` for embeddings and is untested live.
+- **Shared Postgres ops**: ADR 006 + `docs/runbooks/shared-postgres.md` document
+  the Neon setup; baking `DATABASE_URL` into Cursor `environment.json` for
+  Cloud Agents is not done yet (onboard manually per runbook).
 
 ## 3. Message bus (decided: out of runtime — ADR 001)
 
@@ -399,12 +417,13 @@ complexity threshold instead of extrapolating from a single data point.
 
 **Decision still pending a human:** whether to promote
 `QA_REVIEWER_MODEL`/`GAME_DESIGNER_MODEL=claude-sonnet-5` from a per-run
-env override (used only for the two manual recovery runs above, not
-committed anywhere) to a permanent `config.ts` default. Cost tradeoff:
-sonnet is far more expensive than haiku per call, and every full-board run
-calls these reviewers multiple times across revision iterations — raising
-the default would increase cost on every run, including simple ones that
-may never hit this failure mode at all.
+env override to a permanent `config.ts` default.
+
+**Operational practice (2026-07-11):** Cloud Agent episode generation runs
+use Bedrock with Sonnet for all reviewers (`ANTHROPIC_REVIEW_MODEL` set to
+the account's Bedrock Sonnet ID — see `docs/decisions/004-aws-bedrock-
+alternative-backend.md`), not haiku. Season 1 eps 4–5 reached `APPROVED`
+under this setup (ep 4 after 3 revisions; ep 5 first pass).
 
 ## 5. Branch selection at runtime (schema gap, flagged by QA)
 
@@ -441,26 +460,24 @@ Zod validation at the `json-parsing.ts` hook (item 6), structured
 per-step events for the admin UI (item 1), and the bounded
 rebuttal/CEO-debate round in the revision loop (relates to item 4).
 
-**`docs/ROADMAP.md` rewritten (2026-07-07, v2.0)**: v1.0 described a
-12-week, week-numbered plan and was accurate for about half a day before
-ADR 001 superseded its core premise (LangGraph + message-bus
-orchestration). v2.0 reports actual per-phase status instead of a
-calendar: Phases 1-2 done (differently than planned — see ADR 001),
-Phase 3 mostly done (no Teen Reviewer, no debate system), Phases 4-7
-(publish/API, player frontend, launch, growth) not started at all. Also
-surfaces two things v1.0 didn't mention: no CI is configured anywhere in
-the repo, and roughly half of full-board episode runs land
-`NEEDS_HUMAN_REVIEW` rather than a clean pass (verdict variance, item 4)
-— i.e. nothing has actually been "published" in the Phase 4 sense.
+**`docs/ROADMAP.md` refreshed (2026-07-11, v2.1)**: reflects Season 1
+complete (5 episodes, Wren protagonist), publish/play loop on shared Neon,
+admin filters, player dynamic homepage, ADR 006.
 
-Still stale: the PHASE-* files and several root-level summaries describe pre-PR-#9
-architecture (bus-driven orchestration, 4-agent pipeline, broken sample
-scripts as entry points). `INTEGRATION-TESTING-COMPLETE.md`,
-`TESTING-SUMMARY.md`, `NEXT-STEPS.md`, and `ANTHROPIC-API-TROUBLESHOOTING.md`
-overlap and partially contradict current behavior. Consolidate into
-`README.md` + `docs/` and delete the rest (git history preserves them).
-`output/real-episode/` is the legacy flat evidence folder, superseded by
-`output/episodes/…` — keep or delete deliberately.
+**`docs/OPEN-QUESTIONS.md` refreshed (2026-07-11)**: this file.
+
+Still stale — consolidate or delete (git history preserves them):
+- **`README.md`** — repository structure still lists `apps/web`, `apps/api`,
+  and packages that don't exist; Development Roadmap summary was outdated
+  until 2026-07-11 partial fix.
+- **`NEXT-STEPS.md`** — Phase 1 mobile handoff from 2026-07; superseded.
+- **`PHASE-*` files** and root-level summaries (`INTEGRATION-TESTING-COMPLETE.md`,
+  `TESTING-SUMMARY.md`, `ANTHROPIC-API-TROUBLESHOOTING.md`) — pre-PR-#9
+  architecture (bus-driven orchestration, 4-agent pipeline).
+- **`output/real-episode/`** — legacy flat evidence folder, superseded by
+  `output/episodes/…`.
+- **`docs/AI-STUDIO-HANDBOOK-V1.md`** — week-numbered phase plan; use
+  `docs/ROADMAP.md` for current status instead.
 
 ## 8. Reviewer parse-failure retry — DONE (2026-07-07)
 
