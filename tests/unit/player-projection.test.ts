@@ -5,7 +5,10 @@ import {
   resolveBranchLines,
   matchingBranches,
   resolvePrimaryEndingBranch,
-  type AuthoringEpisodeContent
+  summarizeChoiceOutcomes,
+  TRAIT_LEAN_PHRASES,
+  type AuthoringEpisodeContent,
+  type PlayerEpisode
 } from '@mirror/schemas';
 
 const RUN = join(
@@ -103,5 +106,70 @@ describe('branch resolution', () => {
 describe('projectPlayerEpisode validation', () => {
   it('throws when outline has no scenes', () => {
     expect(() => projectPlayerEpisode({ outline: { title: 'Empty' } })).toThrow(/no scenes/);
+  });
+});
+
+describe('summarizeChoiceOutcomes', () => {
+  const miniEpisode: Pick<PlayerEpisode, 'scenes'> = {
+    scenes: [
+      {
+        id: 'scene-a',
+        title: 'A',
+        location: '',
+        lines: [],
+        transition: {
+          type: 'choice',
+          choice: {
+            id: 'choice-1',
+            prompt: 'Pick',
+            options: [
+              {
+                id: 'a',
+                text: 'Empathy',
+                nextSceneId: 'END',
+                responseLines: [],
+                traitDeltas: { EMPATHY: 2, CONFIDENCE: -1 }
+              },
+              {
+                id: 'b',
+                text: 'Confidence',
+                nextSceneId: 'END',
+                responseLines: [],
+                traitDeltas: { CONFIDENCE: 3 }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  };
+
+  it('returns kid-friendly leans for positive net traits only', () => {
+    const leans = summarizeChoiceOutcomes(miniEpisode, ['choice-1:a']);
+    expect(leans).toEqual([TRAIT_LEAN_PHRASES.EMPATHY]);
+  });
+
+  it('ranks traits by total positive delta and caps at three', () => {
+    const leans = summarizeChoiceOutcomes(miniEpisode, ['choice-1:b', 'choice-1:a']);
+    expect(leans[0]).toBe(TRAIT_LEAN_PHRASES.CONFIDENCE);
+    expect(leans).toContain(TRAIT_LEAN_PHRASES.EMPATHY);
+    expect(leans.length).toBeLessThanOrEqual(3);
+  });
+
+  it('returns empty when no trait deltas match history', () => {
+    expect(summarizeChoiceOutcomes(miniEpisode, [])).toEqual([]);
+    expect(summarizeChoiceOutcomes(miniEpisode, ['choice-99:z'])).toEqual([]);
+  });
+
+  it('projects traitMapping onto choice options from authoring content', () => {
+    const content = loadAuthoringContent();
+    const hallway = content.outline?.choicePoints?.find(cp => cp.id === 'choice-1');
+    expect(hallway?.traitMapping).toBeTruthy();
+
+    const player = projectPlayerEpisode(content);
+    const scene = player.scenes.find(s => s.transition.type === 'choice');
+    if (scene?.transition.type !== 'choice') throw new Error('expected choice scene');
+    const withDeltas = scene.transition.choice.options.filter(o => o.traitDeltas);
+    expect(withDeltas.length).toBeGreaterThan(0);
   });
 });

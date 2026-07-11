@@ -4,12 +4,15 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   resolveBranchLines,
   resolvePrimaryEndingBranch,
+  summarizeChoiceOutcomes,
   type PlayerChoiceOption,
   type PlayerDialogueLine,
   type PlayerEpisode,
   type PlayerProgressPayload
 } from '@mirror/schemas';
 import { moodClassForLocation } from '@/lib/scene-mood';
+import { sceneArtUrl } from '@/lib/scene-art';
+import { seasonForWorld } from '@/lib/season-config';
 import { EpisodeOutcome } from '@/components/episode-outcome';
 
 type Phase = 'intro' | 'playing' | 'outcome';
@@ -83,7 +86,8 @@ export function EpisodePlayer({
   const [reflectionText, setReflectionText] = useState(initialProgress?.reflectionText ?? '');
   const [outcomeMeta, setOutcomeMeta] = useState({
     endingSceneTitle: initialProgress?.endingSceneTitle,
-    endingBranchName: initialProgress?.endingBranchName
+    endingBranchName: initialProgress?.endingBranchName,
+    choiceOutcomes: initialProgress?.choiceOutcomes ?? [] as string[]
   });
   const [saving, setSaving] = useState(false);
   const [resumeOffer, setResumeOffer] = useState<PlayerProgressPayload | null>(
@@ -135,10 +139,12 @@ export function EpisodePlayer({
     (history: string[], endSceneId: string) => {
       const endScene = sceneMap.get(endSceneId);
       const branch = resolvePrimaryEndingBranch(episode.branches, history);
+      const choiceOutcomes = summarizeChoiceOutcomes(episode, history);
       const elapsed = Math.round((Date.now() - startedAtRef.current) / 1000);
       const meta = {
         endingSceneTitle: endScene?.title,
-        endingBranchName: branch?.name
+        endingBranchName: branch?.name,
+        choiceOutcomes
       };
       setOutcomeMeta(meta);
       setPhase('outcome');
@@ -158,7 +164,7 @@ export function EpisodePlayer({
       };
       persistProgress(completed);
     },
-    [episode.branches, persistProgress, reflectionText, sceneMap]
+    [episode, persistProgress, reflectionText, sceneMap]
   );
 
   const showScene = useCallback(
@@ -336,13 +342,21 @@ export function EpisodePlayer({
     );
   }
 
+  const season = seasonForWorld(worldId);
+  const nextEpisodeNumber =
+    season?.episodeNumbers.includes(episodeNumber + 1) ? episodeNumber + 1 : null;
+  const sceneArt = currentScene ? sceneArtUrl(worldId, episodeNumber, currentScene.id) : null;
+
   if (phase === 'outcome') {
     return (
       <EpisodeOutcome
         title={title}
+        worldId={worldId}
+        nextEpisodeNumber={nextEpisodeNumber}
         themes={episode.themes}
         endingSceneTitle={outcomeMeta.endingSceneTitle}
         endingBranchName={outcomeMeta.endingBranchName}
+        choiceOutcomes={outcomeMeta.choiceOutcomes}
         choiceCount={choiceHistory.length}
         reflectionText={reflectionText}
         onReflectionChange={setReflectionText}
@@ -355,6 +369,11 @@ export function EpisodePlayer({
 
   return (
     <div className={`scene-stage ${moodClass}`}>
+      {sceneArt && (
+        <div className="scene-art-panel" aria-hidden="true">
+          <img className="scene-art-image" src={sceneArt} alt="" />
+        </div>
+      )}
       <header className="scene-header">
         {currentScene?.location && <p className="scene-location">{currentScene.location}</p>}
         {currentScene?.title && <h2 className="scene-title">{currentScene.title}</h2>}

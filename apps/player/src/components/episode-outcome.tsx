@@ -5,9 +5,12 @@ import { reflectionPromptForThemes } from '@/lib/reflection-prompts';
 
 interface EpisodeOutcomeProps {
   title: string;
+  worldId: string;
+  nextEpisodeNumber: number | null;
   themes: string[];
   endingSceneTitle?: string;
   endingBranchName?: string;
+  choiceOutcomes?: string[];
   choiceCount: number;
   reflectionText: string;
   onReflectionChange: (text: string) => void;
@@ -19,10 +22,11 @@ interface EpisodeOutcomeProps {
 export function EpisodeOutcome({
   title,
   worldId,
-  episodeNumber,
+  nextEpisodeNumber,
   themes,
   endingSceneTitle,
   endingBranchName,
+  choiceOutcomes,
   choiceCount,
   reflectionText,
   onReflectionChange,
@@ -32,6 +36,7 @@ export function EpisodeOutcome({
 }: EpisodeOutcomeProps) {
   const headline = endingSceneTitle || endingBranchName || 'Your path through this story';
   const prompt = reflectionPromptForThemes(themes);
+  const leans = choiceOutcomes?.filter(Boolean) ?? [];
 
   return (
     <div className="outcome-screen">
@@ -41,6 +46,17 @@ export function EpisodeOutcome({
         You made <strong>{choiceCount}</strong> choice{choiceCount === 1 ? '' : 's'} in{' '}
         <em>{title}</em>. Every path is different — this one is yours.
       </p>
+
+      {leans.length > 0 && (
+        <div className="outcome-leans">
+          <span className="outcome-leans-label">Along the way, you leaned toward</span>
+          <ul className="outcome-leans-list">
+            {leans.map(lean => (
+              <li key={lean}>{lean}</li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {themes.length > 0 && (
         <div className="outcome-themes">
@@ -70,10 +86,15 @@ export function EpisodeOutcome({
       </div>
 
       <div className="outcome-actions">
+        {nextEpisodeNumber != null && (
+          <Link href={`/play/${worldId}/${nextEpisodeNumber}`} className="primary-link">
+            Next episode →
+          </Link>
+        )}
         <button type="button" className="secondary" onClick={onPlayAgain}>
           Play this episode again
         </button>
-        <Link href="/" className="primary-link">
+        <Link href="/" className="secondary-link">
           Back to episodes
         </Link>
       </div>
