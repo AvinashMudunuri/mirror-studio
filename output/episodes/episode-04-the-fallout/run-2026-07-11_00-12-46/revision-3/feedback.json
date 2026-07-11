@@ -1,0 +1,26 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "The 'outcomes' array only defines 4 named branches (authentic-repair, guarded-thaw, popularity-cost, avoidance-spiral), but the branching tree has 16 possible leaf paths (4 binary choice points) that resolve into only 4 ending scenes (friendship, tentative, lonely-win, broken). Most paths reaching scene-7-resolution-tentative, scene-7-resolution-lonely-win, and scene-7-resolution-broken do NOT match any outcome's 'triggeredBy' list. For example, reaching scene-6-showdown-strained -> choice-4b:'a' -> scene-7-resolution-tentative is a fully valid, reachable path, but no outcome entry has triggeredBy = [...,'choice-4b:a'] ending in tentative from that route (only choice-4b:b -> lonely-win is covered, and only for one specific upstream history). — Suggested fix: Either add outcome entries for all reachable path permutations that terminate in scene-7-resolution-tentative / lonely-win / broken, or restructure 'triggeredBy' matching to key off which ending scene was reached (with sub-variants) rather than an exact full choice-history array, and document that behavior. (location: outcomes[])",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "branchDialogue contains an entry with branchId 'ending-tentative-ground' that does not correspond to any id in the top-level 'outcomes' array (valid ids are branch-authentic-repair, branch-guarded-thaw, branch-popularity-cost, branch-avoidance-spiral). Per the data model, branchDialogue variants are keyed off outcome branch ids, so this entry is orphaned and will never be selected by any outcome-matching logic. — Suggested fix: Add a corresponding outcome object with id 'ending-tentative-ground' (or 'branch-tentative-ground') to the outcomes array, including a description and triggeredBy list covering the choice combinations that lead to scene-7-resolution-tentative, or rename this branchDialogue entry to match an existing outcome id. (location: branchDialogue[4] (branchId: 'ending-tentative-ground'))",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "The branchDialogue entry for 'ending-tentative-ground' uses a different internal shape than all other branchDialogue entries — it has 'endingTitle' and 'flavorLines' fields instead of the 'lines' field used everywhere else, with no 'sceneId'/'branchId' pairing consistent with the other four entries' structure (those use {sceneId, branchId, lines: [...]}). — Suggested fix: Normalize this entry to the same schema as the other branchDialogue entries (rename 'flavorLines' to 'lines', drop or standardize 'endingTitle' across all entries if it's meant to be a general field). (location: branchDialogue[4])",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

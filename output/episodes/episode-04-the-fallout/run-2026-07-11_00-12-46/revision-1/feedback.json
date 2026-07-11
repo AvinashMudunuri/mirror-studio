@@ -1,0 +1,26 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "outcomes[1] ('branch-guarded-thaw').triggeredBy lists a choice combination that is structurally impossible given the scene graph. choice-2b:a routes to scene-4-pairing-warm, whose defaultNextScene is scene-5-library-warm — a scene gated by choice-3 (not choice-3b). Therefore 'choice-3b:a' can never co-occur with 'choice-2b:a' in an actual playthrough. — Suggested fix: Correct the triggeredBy list to only include choices from a single reachable path, or change the branch-matching logic to use partial/weighted trait scoring instead of an exact literal choice-history match. (location: outcomes[1].triggeredBy)",
+        "severity": "MAJOR"
+      },
+      {
+        "from": "QA_REVIEWER",
+        "message": "outcomes[2] ('branch-popularity-cost').triggeredBy lists a choice combination that is structurally impossible. choice-2:b routes to scene-4-pairing-cold → scene-5-library-cold, which is gated by choice-3b (not choice-3). 'choice-3:b' cannot follow 'choice-2:b'. — Suggested fix: Replace 'choice-3:b' with the correct choice id from the reachable branch (choice-3b), and re-verify the full path resolves to a real end scene consistent with the described outcome. (location: outcomes[2].triggeredBy)",
+        "severity": "MAJOR"
+      }
+    ],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "Two dialogue lines use an undocumented 'text2' field in addition to 'text', which does not appear anywhere else in the dialogue schema. Rendering pipelines that only read 'text' will silently drop this content, breaking the line ('—three facts and a grade level.' and part of the raccoon-court joke). — Suggested fix: Merge text2 content into the 'text' field (or into 'action' if it's meant as a stage direction) so no dialogue content is lost during rendering. (location: scenes[0].dialogue[12] (id: s1-13) and choiceDialogue (choiceId: choice-3b response for scene-5-library-cold, dialogue id: s5c-4))",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}

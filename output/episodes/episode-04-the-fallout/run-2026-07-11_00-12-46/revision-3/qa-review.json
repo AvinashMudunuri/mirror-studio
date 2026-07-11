@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    {
+      "category": "BEST_PRACTICE",
+      "message": "mr-alvarez is listed in the scene's 'characters' array but never speaks or is referenced in the dialogue/narration of the scene.",
+      "location": "scenes[scene-5-library-warm].characters, scenes[scene-5-library-cold].characters",
+      "suggestion": "Either remove mr-alvarez from the characters array for these scenes, or add a brief narration beat acknowledging his presence (e.g., supervising the library work session) to justify listing him."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "jordan is listed in the scene's 'characters' array for all three scene-6 variants (solid/strained/fractured) but has no dialogue or narrative reference in any of them.",
+      "location": "scenes[scene-6-showdown-solid].characters, scenes[scene-6-showdown-strained].characters, scenes[scene-6-showdown-fractured].characters",
+      "suggestion": "Add a small reaction line/beat for Jordan (consistent with his conflict-avoidant characterization) or remove him from the characters list if he's not meaningfully present."
+    },
+    {
+      "category": "STYLE",
+      "message": "Scene 'duration' field units are unspecified (appears to be arbitrary narrative-minutes rather than real playtime), making it hard to verify against 'estimatedPlayTime': 12.",
+      "location": "scenes[*].duration, episode.estimatedPlayTime",
+      "suggestion": "Clarify whether 'duration' represents in-fiction minutes or estimated player engagement time, and document the unit for future authors/validators."
+    },
+    {
+      "category": "STYLE",
+      "message": "createdAt and updatedAt timestamps are identical, which is plausible for a fresh draft but worth confirming isn't a copy-paste artifact.",
+      "location": "episode.createdAt, episode.updatedAt",
+      "suggestion": "Confirm this is intentional (episode not yet revised) rather than a placeholder that was never updated."
+    },
+    {
+      "category": "BEST_PRACTICE",
+      "message": "Two distinct outcome branches ('branch-authentic-repair' and 'branch-guarded-thaw') both use matchType 'exact' and lead to the same endingScene via different choice histories, and both share the same requiredSceneVisited value. This is logically sound but could be confusing to maintain without an inline comment explaining the two valid 'happy paths'.",
+      "location": "outcomes[branch-authentic-repair], outcomes[branch-guarded-thaw]",
+      "suggestion": "Consider adding a short note/comment in the outcome descriptions (already present) but also confirm the branch-resolution engine correctly checks 'exact' matches in order before falling back to 'pattern' matches, since pattern-matching outcomes for choice-4:b could theoretically also match histories that satisfy the exact branches if evaluated in the wrong order."
+    }
+  ],
+  "summary": {
+    "totalChecks": 34,
+    "passedChecks": 34,
+    "failedChecks": 0,
+    "warningCount": 5
+  },
+  "recommendations": [
+    "Consider adding a brief acknowledgment line for background characters (mr-alvarez, jordan) in scenes where they are listed as present but silent, to reinforce scene staging for readers/players.",
+    "Document the unit and intended use of the 'duration' field on scenes for future content consistency.",
+    "Explicitly document evaluation order (exact-match branches checked before pattern-match branches) in the branching engine or episode metadata to prevent future ambiguity as more branches are authored."
+  ]
+}

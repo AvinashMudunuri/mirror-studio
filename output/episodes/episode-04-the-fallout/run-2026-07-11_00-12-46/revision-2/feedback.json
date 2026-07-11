@@ -1,0 +1,15 @@
+{
+  "failing": [
+    "qaReviewer"
+  ],
+  "feedback": {
+    "story": [],
+    "dialogue": [
+      {
+        "from": "QA_REVIEWER",
+        "message": "The ending scene 'scene-7-resolution-tentative' is a fully reachable terminal scene (via choice-4 option 'b' and choice-4b option 'a') but has no corresponding entry in the top-level 'outcomes' array and no 'branchDialogue' variant. All three other endings (friendship, lonely-win, broken) have documented outcomes and branch-specific dialogue; this ending is undocumented, meaning analytics/trait-summary tooling and any ending-specific dialogue variation will silently fail to identify or narrate this path correctly. — Suggested fix: Add an outcome object describing the path(s) that lead to scene-7-resolution-tentative (e.g. choice-1:a/b, choice-2:a, choice-3:a, choice-4:b OR choice-3b:a, choice-4b:a) and add a branchDialogue entry for flavor text specific to that ending. (location: outcomes[] / branchDialogue[] (missing entries referencing scene-7-resolution-tentative))",
+        "severity": "MAJOR"
+      }
+    ]
+  }
+}
