@@ -115,6 +115,12 @@ Postgres and upserts the finished episode (best effort — a DB failure
 never kills a completed run); `npm run persist:run [run-folder]` backfills
 any committed run for free.
 
+**Table usage (2026-07-19):** most schema tables are unused. Live set =
+`worlds`/`seasons`/`episodes`/`agent_memory`/`players`/`player_progress`.
+Do **not** wire `characters`, `player_traits`, `character_relationships`,
+`analytics_events`, `agent_messages`, `workflows`, or `debates` without an
+explicit product decision — see `docs/decisions/007-postgres-table-usage.md`.
+
 Fixed on the way in (both verified against a live Postgres 16 + pgvector):
 - `agent_memory` upsert crashed without `UNIQUE (agent_id, key)` — added
   to the init schema; existing DBs use

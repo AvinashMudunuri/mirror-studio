@@ -32,6 +32,13 @@ Episodes must be published first via `apps/admin` (`/runs/...` → Publish).
 - `GET /api/progress?world=&episodeNumber=` — load saved progress
 - `POST /api/progress` — save progress `{ world, episodeNumber, progress }`
 
+## Scene art
+
+- Ep1 plates: `public/art/ep1/` — `npm run art:ep1`
+- Shared campus plates (library / courtyard / auditorium): `public/art/locations/` — `npm run art:locations`
+- Mapping: `src/lib/scene-art.ts` (scene id + location text heuristics for all Season 1 episodes)
+
 ## Not yet built
 
-Profiles/auth, trait UI, save/resume across devices, art for episodes 2–5, analytics.
+Profiles/auth, trait UI, save/resume across devices, analytics. See
+`docs/decisions/007-postgres-table-usage.md` before wiring empty schema tables.

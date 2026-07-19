@@ -40,7 +40,7 @@ This roadmap outlines the implementation strategy for Project MIRROR Studio, bre
 | 2 | Show Your Work | `run-2026-07-10_22-26-36` | PUBLISHED |
 | 3 | Showcase | `run-2026-07-10_22-52-33` | PUBLISHED |
 | 4 | The Doodle Kingdom | `run-2026-07-11_00-12-46` | PUBLISHED |
-| 5 | Where I'm From | `run-2026-07-11_01-44-22` | APPROVED (publish pending) |
+| 5 | Where I'm From | `run-2026-07-11_01-44-22` | PUBLISHED |
 
 Publish is manual in `apps/admin` (ADR 003). Shared cloud Postgres (`docs/decisions/006-shared-cloud-postgres.md`) is the source of truth for publish/player/continuity — not local Postgres. Reviewer verdict variance on complex episodes is documented (`docs/OPEN-QUESTIONS.md` item 4); Season 1 canonical runs all reached `APPROVED` (ep 4 after 3 revisions; ep 5 first pass).
 
@@ -134,7 +134,7 @@ Implemented and running live in the review board:
 - Admin run list: LIVE / latest / not published badges; default filter **Published** (LIVE only) — PR #42.
 - `GET /api/published/[world]/[episodeNumber]` and preview page; `?format=player` for the player projection.
 - **Shared Neon Postgres** (ADR 006): one `DATABASE_URL` for publish, player, and continuity across Codespaces and Cloud Agents (`docs/runbooks/shared-postgres.md`).
-- Live-verified: 4/5 Season 1 episodes published on Neon; player homepage shows all published episodes from Postgres (PR #43).
+- Live-verified: **5/5** Season 1 episodes published on Neon; player homepage shows all published episodes from Postgres (PR #43).
 
 ---
 
@@ -244,7 +244,7 @@ Cheap, well-scoped, not yet done:
 
 Bigger, Phase 5+ work:
 2. ~~A trimmed player-facing content projection~~ — done 2026-07-10. `projectPlayerEpisode()` in `@mirror/schemas`; admin API `?format=player`; consumed by `apps/player`.
-3. **Publish episode 5** and playtest Season 1 end-to-end in the player.
+3. ~~**Publish episode 5**~~ — done (LIVE on Neon). Playtest Season 1 end-to-end in the player.
 4. Admin phase 3: rich editors, re-run specific agents, versioning — backed by the Postgres layer.
 5. Phase 5 expansion: save/resume, trait tracking UI, reflection prompts, world selection, profiles.
 6. **Season 2 / new world** — new `EPISODE_BRIEFS` table; anthology model (new protagonist per world, ADR 005).

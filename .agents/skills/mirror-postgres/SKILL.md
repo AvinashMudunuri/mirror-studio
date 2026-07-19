@@ -14,10 +14,17 @@ The filesystem run folder is the SOURCE OF TRUTH. Postgres holds:
 - `episodes`: the latest content per (season, episode_number), upserted at
   end of run and via `npm run persist:run [run-folder]` (zero-token backfill)
 - `agent_memory`: agents' remember()/recall() writes during runs
+- `players` + `player_progress`: anonymous player resume (player app)
 
 Everything is opt-in via `DATABASE_URL`; without it the pipeline is
 filesystem-only. Memory calls are wrapped so DB failures degrade to
 warnings — never let persistence kill a paid run.
+
+**Which tables are live?** See `docs/decisions/007-postgres-table-usage.md`.
+Live today: `worlds` (seed), `seasons`, `episodes`, `agent_memory`, `players`,
+`player_progress`. Schema-only (do not wire): `characters`, `player_traits`,
+`character_relationships`, `analytics_events`, `agent_messages`, `workflows`,
+`debates`.
 
 **Publish + player require Postgres** (ADR 003). For one database across
 Codespaces and Cursor Cloud Agents, use a shared cloud instance — see

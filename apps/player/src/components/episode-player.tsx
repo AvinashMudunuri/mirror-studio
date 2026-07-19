@@ -394,7 +394,9 @@ export function EpisodePlayer({
     season?.episodeNumbers.includes(episodeNumber + 1) ? episodeNumber + 1 : null;
   const nextEpisodeTitle =
     nextEpisodeNumber != null ? episodeTitleForSeason(worldId, nextEpisodeNumber) : null;
-  const sceneArt = currentScene ? sceneArtUrl(worldId, episodeNumber, currentScene.id) : null;
+  const sceneArt = currentScene
+    ? sceneArtUrl(worldId, episodeNumber, currentScene.id, currentScene.location)
+    : null;
 
   if (phase === 'outcome') {
     return (
